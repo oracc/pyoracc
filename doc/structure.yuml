@@ -6,6 +6,7 @@
 [Milestone]<>-*>[LineElement]
 [StructureElement]^-[PhysicalStructureElement]
 [StructureElement]^-[Milestone]
+[PhysicalStructureElement]^-[Object]
 [PhysicalStructureElement]^-[Surface]
 [PhysicalStructureElement]^-[Column]
 [PhysicalStructureElement]^-[Line]
