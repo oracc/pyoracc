@@ -39,6 +39,7 @@ tokens=([
   'OTHER',
   'LINELABEL',
   'ID',
+  'SINGLEID',
   'PROTOCOL',
   'DOLLAR',
   'LOOSE',
@@ -47,7 +48,8 @@ tokens=([
   'COMMENT',
   'PRIME',
   'DIVISION',
-  'NOTEREF'
+  'NOTEREF',
+  'TRANSLATIONTEXT'
 ]+protocols.values()+protocol_tokens.values()+
   divisions.values()+flags.values()+dollar_tokens.values())
 
@@ -58,20 +60,20 @@ states=(
   ('text','exclusive'),
   ('lemmatize','exclusive'),
   ('dollar','exclusive'),
-  ('comment','exclusive'),
-  ('note','exclusive')
+  ('note','exclusive'),
+  ('translation','exclusive')
 )
 
 def t_LINELABEL(t):
   r'^[1-9][0-9]*[a-z]*\.'
   t.value=t.value[:-1]
-  t.lexer.begin('text')
+  t.lexer.push_state('text')
   return t
 
 def t_CODE(t):
   '^&[A-Z][0-9]+\ \=\ '
   t.value=t.value[1:-3]
-  t.lexer.begin('code')
+  t.lexer.push_state('code')
   return t
   # Match e.g. &X0001 at the start of a line
 
@@ -80,31 +82,34 @@ def t_PROTOCOL(t):
   t.value=t.value[1:-2]
   t.type=protocols.get(t.value,'PROTOCOL')
   if t.value=="lem":
-    t.lexer.begin("lemmatize")
+    t.lexer.push_state("lemmatize")
   elif t.value=="note":
-    t.lexer.begin("comment")
+    t.lexer.push_state("note")
   else:
-    t.lexer.begin('protocol')
+    t.lexer.push_state('protocol')
   return t
 
 def t_COMMENT(t):
-  "^\#\ "
-  t.lexer.begin("comment")
+  "^\#\ .*$"
+  t.value=t.value[2:]
   return t
 
-def t_DIVISION(t):
+def t_INITIAL_translation_DIVISION(t):
   "^@[a-z]*"
   t.value=t.value[1:]
   t.type=divisions.get(t.value,'DIVISION')
   if t.type=="NOTE":
-    t.lexer.begin("comment")
+    t.lexer.push_state("note")
+  elif t.type=="TRANSLATION":
+    t.lexer.push_state("translation")
+    t.lexer.push_state("division")
   else:
-    t.lexer.begin('division')
+    t.lexer.push_state('division')
   return t
 
 def t_DOLLAR(t):
   r'^\$\ '
-  t.lexer.begin('dollar')
+  t.lexer.push_state('dollar')
   return t
 
 def t_dollar_LOOSE(t):
@@ -137,7 +142,8 @@ def t_division_FLAG(t):
   t.type=flags[t.value]
   return t
 
-t_division_ID="[a-z]"
+t_division_ID="[a-z][a-z]+"
+t_division_SINGLEID="[a-z]"
 t_division_NUMBER="[1-9][0-9]*"
 t_division_PRIME="'"
 
@@ -154,17 +160,27 @@ def t_INITIAL_division_protocol_dollar_SPACE(t):
 
 t_text_OTHER="."
 t_lemmatize_OTHER="."
-t_comment_OTHER="."
 
-def t_division_NOTEREF(t):
+def t_note_NOTEREF(t):
   "\^(.*?)\^"
   t.value=t.value[1:-1]
   return t
 
-def t_ANY_NEWLINE(t):
+t_note_COMMENT=".+$"
+
+def t_protocol_code_text_division_note_dollar_lemmatize_NEWLINE(t):
   r'\n'
-  t.lexer.begin('INITIAL')
+  t.lexer.pop_state()
   # No return, don't add to token stream
+
+t_INITIAL_translation_NEWLINE=r'\n'
+
+def t_translation_LINELABEL(t):
+  r'^[1-9][0-9]*[a-z]*\.'
+  t.value=t.value[:-1]
+  return t
+
+t_translation_TRANSLATIONTEXT=".+$"
 
 # Error handling rule
 def t_error(t):
