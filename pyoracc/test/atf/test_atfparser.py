@@ -28,4 +28,24 @@ class testParser(object):
     )
     assert_is_instance(artifact,Artifact)
     assert_equal(artifact.code,"X001001")
+    assert_equal(artifact.project,"cams/gkab")
+
+  def test_artifact_language(self):
+    artifact=self.try_parse(
+      "&X001001 = JCS 48, 089\n"+
+      "#atf: lang akk-x-stdbab\n"
+    )
+    assert_is_instance(artifact,Artifact)
     assert_equal(artifact.code,"X001001")
+    assert_equal(artifact.language,"akk-x-stdbab")
+
+  def test_artifact_protocol_language(self):
+    artifact=self.try_parse(
+      "&X001001 = JCS 48, 089\n"+
+      "#project: cams/gkab\n"+
+      "#atf: lang akk-x-stdbab\n"
+    )
+    assert_is_instance(artifact,Artifact)
+    assert_equal(artifact.code,"X001001")
+    assert_equal(artifact.project,"cams/gkab")
+    assert_equal(artifact.language,"akk-x-stdbab")
