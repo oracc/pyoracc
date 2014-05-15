@@ -6,6 +6,8 @@ from atflex import AtfLexer
 class AtfFile(object):
   def __init__(self,content):
     self.content=content
-    for token in AtfLexer(content).lexer:
+    lexer=AtfLexer().lexer
+    lexer.input(content)
+    for token in lexer:
       print token
     self.artifact=parse.artifact

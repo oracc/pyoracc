@@ -247,19 +247,15 @@ class AtfLexer(object):
     # No token generated
 
   #--- RULES FOR THE lemmatize STATE
-  t_lemmatize_ID="[^\ \t\; \n\r]+"
-  t_lemmatize_ENDLEMMA=r'\;'
-
-  def t_lemmatize_SPACE(self,t):
-    r'[\ \t]'
-    # No token generated
+  t_lemmatize_ID="[^\;\n\r]+"
+  t_lemmatize_ENDLEMMA=r'\;[\ \t]*'
 
   #--- RULES FOR THE TRANSLATION STATE ---
   # In this state, linelabels are tokenised separately,
   # But everything else is free text
   def t_translation_LINELABEL(self,t):
-    r'^[1-9][0-9]*[a-z]*\.[\ \t]*'
-    t.value=t.value[:-1]
+    r'^([1-9][0-9]*[a-z]*)\.[\ \t]*'
+    t.value=t.lexer.lexmatch.groups()[2]
     return t
 
   t_translation_ID=".+$"
@@ -269,6 +265,5 @@ class AtfLexer(object):
       print "Illegal character '%s'" % t.value[0]
       t.lexer.skip(1)
 
-  def __init__(self,content):
+  def __init__(self):
     self.lexer=lex.lex(module=self,reflags=re.MULTILINE)
-    self.lexer.input(content)
