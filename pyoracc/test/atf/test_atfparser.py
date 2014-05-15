@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from ...artifact import Artifact
+from ...text import Text
 from ...atf.atfyacc import AtfParser
 from ...atf.atflex import AtfLexer
 from nose.tools import assert_in, assert_equal, assert_is_instance
@@ -16,36 +16,36 @@ class testParser(object):
       return self.parser.parse(content,lexer=self.lexer)
 
   def test_code(self):
-    artifact=self.try_parse("&X001001 = JCS 48, 089\n")
-    assert_is_instance(artifact,Artifact)
-    assert_equal(artifact.description,"JCS 48, 089")
-    assert_equal(artifact.code,"X001001")
+    text=self.try_parse("&X001001 = JCS 48, 089\n")
+    assert_is_instance(text,Text)
+    assert_equal(text.description,"JCS 48, 089")
+    assert_equal(text.code,"X001001")
 
-  def test_artifact_project(self):
-    artifact=self.try_parse(
+  def test_text_project(self):
+    text=self.try_parse(
       "&X001001 = JCS 48, 089\n"+
       "#project: cams/gkab\n"
     )
-    assert_is_instance(artifact,Artifact)
-    assert_equal(artifact.code,"X001001")
-    assert_equal(artifact.project,"cams/gkab")
+    assert_is_instance(text,Text)
+    assert_equal(text.code,"X001001")
+    assert_equal(text.project,"cams/gkab")
 
-  def test_artifact_language(self):
-    artifact=self.try_parse(
+  def test_text_language(self):
+    text=self.try_parse(
       "&X001001 = JCS 48, 089\n"+
       "#atf: lang akk-x-stdbab\n"
     )
-    assert_is_instance(artifact,Artifact)
-    assert_equal(artifact.code,"X001001")
-    assert_equal(artifact.language,"akk-x-stdbab")
+    assert_is_instance(text,Text)
+    assert_equal(text.code,"X001001")
+    assert_equal(text.language,"akk-x-stdbab")
 
-  def test_artifact_protocol_language(self):
-    artifact=self.try_parse(
+  def test_text_protocol_language(self):
+    text=self.try_parse(
       "&X001001 = JCS 48, 089\n"+
       "#project: cams/gkab\n"+
       "#atf: lang akk-x-stdbab\n"
     )
-    assert_is_instance(artifact,Artifact)
-    assert_equal(artifact.code,"X001001")
-    assert_equal(artifact.project,"cams/gkab")
-    assert_equal(artifact.language,"akk-x-stdbab")
+    assert_is_instance(text,Text)
+    assert_equal(text.code,"X001001")
+    assert_equal(text.project,"cams/gkab")
+    assert_equal(text.language,"akk-x-stdbab")

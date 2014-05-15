@@ -8,4 +8,4 @@ class AtfFile(object):
     self.content=content
     lexer=AtfLexer().lexer
     parser=AtfParser().parser
-    self.artifact=parser.parse(content,lexer=lexer)
+    self.text=parser.parse(content,lexer=lexer)
