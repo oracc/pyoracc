@@ -1,13 +1,11 @@
 import sys
 import antlr3
 from atflex import AtfLexer
-#from atfyacc import parser
+from atfyacc import AtfParser
 
 class AtfFile(object):
   def __init__(self,content):
     self.content=content
     lexer=AtfLexer().lexer
-    lexer.input(content)
-    for token in lexer:
-      print token
-    self.artifact=parse.artifact
+    parser=AtfParser().parser
+    self.artifact=parser.parse(content,lexer=lexer)
