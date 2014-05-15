@@ -122,3 +122,14 @@ class testParser(TestCase):
     "# A comment"
     )
     assert_equal(len(art.children[0].children),0)
+
+  def test_note(self):
+    art=self.try_parse(
+    "@tablet\n"+
+    "@obverse\n"+
+    "3.	U₄!-BI? 20* [(ina)] 9.30 ina(DIŠ) MAŠ₂!(BAR)\n"+
+    "#note: Note to line."
+    )
+    assert_equal(art.children[0].children[0].notes[0],
+                "Note to line."
+    )

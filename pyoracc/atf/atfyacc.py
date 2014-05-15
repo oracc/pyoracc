@@ -5,6 +5,7 @@ from ..model.oraccobject import OraccObject
 from ..model.oraccnamedobject import OraccNamedObject
 from ..model.line import Line
 from ..model.ruling import Ruling
+from ..model.note import Note
 
 class AtfParser(object):
   tokens=AtfLexer.tokens
@@ -161,3 +162,12 @@ class AtfParser(object):
     "surface : surface ruling"
     p[0]=p[1]
     p[0].children.append(p[2])
+
+  def p_note(self,p):
+    "note : NOTE ID"
+    p[0]=p[2]
+
+  def p_line_note(self,p):
+    "line : line note"
+    p[0]=p[1]
+    p[0].notes.append(p[2])

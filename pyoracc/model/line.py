@@ -3,3 +3,4 @@ class Line(object):
     self.label=label
     self.words=[]
     self.lemmas=[]
+    self.notes=[]
