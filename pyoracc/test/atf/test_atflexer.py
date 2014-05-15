@@ -97,3 +97,10 @@ class testLexer(object):
       ["TRANSLATION","ID","ID","ID","NEWLINE","LINELABEL","ID"],
       [None,"parallel","en","project",None,"1","Year 63, Ṭebetu (Month X), night of day 2:^1^"]
     )
+
+  def test_division_note(self):
+    self.compare_tokens(
+      "@note ^1^ A note to the translation.",
+      ["NOTE","NOTEREF","ID"],
+      [None,"1","A note to the translation."]
+    )

@@ -235,7 +235,10 @@ class AtfLexer(object):
     t.value=t.lexer.lexmatch.groups()[2]
     return t
 
-  t_note_ID=r'[^\^\n]+'
+  def t_note_ID(self,t):
+    r'[^\^\n]+'
+    t.value=t.value.strip()
+    if t.value: return t
 
   # Does NOT apply when parsing CODE LINE, or COMMENT as that is literal and
   # inside the token
