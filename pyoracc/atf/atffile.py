@@ -1,5 +1,4 @@
 import sys
-import antlr3
 from atflex import AtfLexer
 from atfyacc import AtfParser
 

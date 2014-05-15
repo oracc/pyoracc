@@ -106,3 +106,11 @@ class testParser(TestCase):
     )
     assert_equal(len(art.children[0].children[0].words),6)
     assert_equal(len(art.children[0].children[0].lemmas),6)
+
+  def test_ruling(self):
+    art=self.try_parse(
+    "@tablet\n"+
+    "@obverse\n"+
+    "$ triple ruling"
+    )
+    assert_equal(art.children[0].children[0].count,3)

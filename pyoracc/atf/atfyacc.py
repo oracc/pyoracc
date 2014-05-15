@@ -4,6 +4,7 @@ from ..model.text import Text
 from ..model.oraccobject import OraccObject
 from ..model.oraccnamedobject import OraccNamedObject
 from ..model.line import Line
+from ..model.ruling import Ruling
 
 class AtfParser(object):
   tokens=AtfLexer.tokens
@@ -141,5 +142,22 @@ class AtfParser(object):
 
   def p_surface_line(self,p):
     "surface : surface line"
+    p[0]=p[1]
+    p[0].children.append(p[2])
+
+  def p_ruling(self,p):
+    """ruling : DOLLAR SINGLE RULING
+              | DOLLAR DOUBLE RULING
+              | DOLLAR TRIPLE RULING
+    """
+    counts={
+      'single':1,
+      'double':2,
+      'triple':3,
+    }
+    p[0]=Ruling(counts[p[2]])
+
+  def p_surface_ruling(self,p):
+    "surface : surface ruling"
     p[0]=p[1]
     p[0].children.append(p[2])
