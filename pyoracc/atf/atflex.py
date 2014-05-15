@@ -75,7 +75,8 @@ class AtfLexer(object):
     'PRIME',
     'DIVISION',
     'NOTEREF',
-    'COMMENT'
+    'COMMENT',
+    'ENDLEMMA'
   ]
 
   tokens=list(set(
@@ -154,7 +155,7 @@ class AtfLexer(object):
   def t_protocol_code_text_division_note_dollar_lemmatize_NEWLINE(self,t):
     r'\n'
     t.lexer.pop_state()
-    # No return, don't add to token stream
+    return t
 
   # In the multi-line base states, a newline doesn't change state
   t_INITIAL_translation_NEWLINE=r'\n'
@@ -240,16 +241,24 @@ class AtfLexer(object):
   # inside the token
 
   #--- RULES FOR THE text STATE ----
-  t_text_OTHER="."
+  t_text_ID="[^\ \t \n\r]+"
+  def t_text_SPACE(self,t):
+    r'[\ \t]'
+    # No token generated
 
   #--- RULES FOR THE lemmatize STATE
-  t_lemmatize_OTHER="."
+  t_lemmatize_ID="[^\ \t\; \n\r]+"
+  t_lemmatize_ENDLEMMA=r'\;'
+
+  def t_lemmatize_SPACE(self,t):
+    r'[\ \t]'
+    # No token generated
 
   #--- RULES FOR THE TRANSLATION STATE ---
   # In this state, linelabels are tokenised separately,
   # But everything else is free text
   def t_translation_LINELABEL(self,t):
-    r'^[1-9][0-9]*[a-z]*\.'
+    r'^[1-9][0-9]*[a-z]*\.[\ \t]*'
     t.value=t.value[:-1]
     return t
 
