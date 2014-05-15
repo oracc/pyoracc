@@ -117,3 +117,10 @@ class testLexer(TestCase):
       "$ single ruling",
       ["DOLLAR","SINGLE","RULING"]
     )
+
+  def test_described_object(self):
+    self.compare_tokens(
+      "@object An object that fits no other category",
+      ["OBJECT","ID"],
+      [None,"An object that fits no other category"]
+    )

@@ -131,7 +131,9 @@ class AtfLexer(object):
     "^@[a-z]*"
     t.value=t.value[1:]
     t.type=self.resolve_keyword(t.value,AtfLexer.divisions)
-    if t.type=="NOTE":
+    if t.type in ["NOTE","OBJECT"]:
+      # Because for general object divisions, all the remaining text
+      # Is it's identifier token
       t.lexer.push_state("note")
     elif t.type=="TRANSLATION":
       t.lexer.push_state("translation")

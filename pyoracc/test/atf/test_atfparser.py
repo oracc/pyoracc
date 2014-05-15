@@ -4,6 +4,7 @@ from unittest import TestCase
 
 from ...model.text import Text
 from ...model.oraccobject import OraccObject
+from ...model.oraccnamedobject import OraccNamedObject
 from ...atf.atfyacc import AtfParser
 from ...atf.atflex import AtfLexer
 from nose.tools import assert_in, assert_equal, assert_is_instance
@@ -59,3 +60,12 @@ class testParser(TestCase):
     )
     assert_is_instance(obj,OraccObject)
     assert_equal(obj.objecttype,"tablet")
+
+
+  def test_generic_object(self):
+    obj=self.try_parse(
+      "@object That fits no other category\n"
+    )
+    assert_is_instance(obj,OraccNamedObject)
+    assert_equal(obj.objecttype,"object")
+    assert_equal(obj.name,"That fits no other category")
