@@ -20,7 +20,7 @@ class testParser(TestCase):
       return self.parser.parse(content,lexer=self.lexer)
 
   def test_code(self):
-    text=self.try_parse("&X001001 = JCS 48, 089\n")
+    text=self.try_parse("&X001001 = JCS 48, 089")
     assert_is_instance(text,Text)
     assert_equal(text.description,"JCS 48, 089")
     assert_equal(text.code,"X001001")
@@ -37,7 +37,7 @@ class testParser(TestCase):
   def test_text_language(self):
     text=self.try_parse(
       "&X001001 = JCS 48, 089\n"+
-      "#atf: lang akk-x-stdbab\n"
+      "#atf: lang akk-x-stdbab"
     )
     assert_is_instance(text,Text)
     assert_equal(text.code,"X001001")
@@ -47,7 +47,7 @@ class testParser(TestCase):
     text=self.try_parse(
       "&X001001 = JCS 48, 089\n"+
       "#project: cams/gkab\n"+
-      "#atf: lang akk-x-stdbab\n"
+      "#atf: lang akk-x-stdbab"
     )
     assert_is_instance(text,Text)
     assert_equal(text.code,"X001001")

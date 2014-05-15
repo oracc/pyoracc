@@ -15,13 +15,13 @@ class AtfParser(object):
     p[0]=p[1]
 
   def p_codeline(self,p):
-    "code : CODE ID NEWLINE"
+    "code : CODE ID"
     p[0]=Text()
     p[0].code=p[1]
     p[0].description=p[2]
 
   def p_project(self,p):
-    "project : PROJECT ID NEWLINE"
+    "project : PROJECT ID"
     p[0]=p[2]
 
   def p_text_project(self,p):
@@ -34,13 +34,13 @@ class AtfParser(object):
     p[0]=p[1]
 
   def p_unicode(self,p):
-    "unicode : ATF USE UNICODE NEWLINE"
+    "unicode : ATF USE UNICODE"
 
   def p_math(self,p):
-    "math : ATF USE MATH NEWLINE"
+    "math : ATF USE MATH"
 
   def p_language_protoocol(self,p):
-    "language_protocol : ATF LANG ID NEWLINE"
+    "language_protocol : ATF LANG ID"
     p[0]=p[3]
 
   def p_text_math(self,p):
@@ -54,15 +54,19 @@ class AtfParser(object):
     p[0]=p[1]
     p[0].language=p[2]
 
+  def p_structure_header(self,p):
+    pass
+
   def p_structure_nolabel(self,p):
-    '''structure : TABLET NEWLINE
-              | ENVELOPE NEWLINE
-              | PRISM NEWLINE
-              | BULLA NEWLINE'''
+    '''structure : TABLET
+              | ENVELOPE
+              | PRISM
+              | BULLA'''
     p[0]=OraccObject(p[1])
 
   def p_structure_label(self,p):
-    '''structure : FRAGMENT ID NEWLINE | OBJECT ID NEWLINE'''
+    '''structure : FRAGMENT ID
+                 | OBJECT ID'''
     p[0]=OraccNamedObject(p[1],p[2])
 
   def p_debug_object(self,p):

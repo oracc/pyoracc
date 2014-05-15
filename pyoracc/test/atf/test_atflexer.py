@@ -94,8 +94,8 @@ class testLexer(TestCase):
     self.compare_tokens(
       "@translation parallel en project\n"+
       "1.	Year 63, Ṭebetu (Month X), night of day 2:^1^",
-      ["TRANSLATION","ID","ID","ID","NEWLINE","LINELABEL","ID"],
-      [None,"parallel","en","project",None,"1","Year 63, Ṭebetu (Month X), night of day 2:^1^"]
+      ["TRANSLATION","ID","ID","ID","LINELABEL","ID"],
+      [None,"parallel","en","project","1","Year 63, Ṭebetu (Month X), night of day 2:^1^"]
     )
 
   def test_division_note(self):

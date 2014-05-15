@@ -61,7 +61,6 @@ class AtfLexer(object):
 
   base_tokens=[
     'CODE',
-    'NEWLINE',
     'SPACE',
     'OTHER',
     'LINELABEL',
@@ -157,10 +156,11 @@ class AtfLexer(object):
   def t_protocol_code_text_structure_note_dollar_lemmatize_NEWLINE(self,t):
     r'\n'
     t.lexer.pop_state()
-    return t
+    # Don't add newlines to the token stream
 
   # In the multi-line base states, a newline doesn't change state
-  t_INITIAL_translation_NEWLINE=r'\n'
+  def t_INITIAL_translation_NEWLINE(self,t):
+    r'\n'
 
   #-- RULES FOR THE code STATE ---
   # In this state, everything before the equals is tokenised
@@ -260,7 +260,7 @@ class AtfLexer(object):
   # But everything else is free text
   def t_translation_LINELABEL(self,t):
     r'^([1-9][0-9]*[a-z]*)\.[\ \t]*'
-    t.value=t.lexer.lexmatch.groups()[2]
+    t.value=t.lexer.lexmatch.groups()[3]
     return t
 
   t_translation_ID=".+$"
