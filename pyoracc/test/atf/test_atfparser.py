@@ -1,18 +1,21 @@
 # -*- coding: utf-8 -*-
 
-from ...text import Text
+from unittest import TestCase
+
+from ...model.text import Text
+from ...model.oraccobject import OraccObject
 from ...atf.atfyacc import AtfParser
 from ...atf.atflex import AtfLexer
 from nose.tools import assert_in, assert_equal, assert_is_instance
 from itertools import izip,repeat
 from fixtures import belsunu
 
-class testParser(object):
+class testParser(TestCase):
   def setUp(self):
     self.lexer=AtfLexer().lexer
 
-  def try_parse(self,content,start=None):
-      self.parser=AtfParser(start=start).parser
+  def try_parse(self,content):
+      self.parser=AtfParser().parser
       return self.parser.parse(content,lexer=self.lexer)
 
   def test_code(self):
@@ -49,3 +52,10 @@ class testParser(object):
     assert_equal(text.code,"X001001")
     assert_equal(text.project,"cams/gkab")
     assert_equal(text.language,"akk-x-stdbab")
+
+  def test_simple_object(self):
+    obj=self.try_parse(
+      "@tablet\n"
+    )
+    assert_is_instance(obj,OraccObject)
+    assert_equal(obj.objecttype,"tablet")

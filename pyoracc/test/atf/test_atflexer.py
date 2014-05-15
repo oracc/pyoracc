@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-
+from unittest import TestCase
 from ...atf.atflex import AtfLexer
 from nose.tools import assert_in, assert_equal
 from itertools import izip,repeat
 from fixtures import belsunu
 
-class testLexer(object):
+class testLexer(TestCase):
   def setUp(self):
     self.lexer=AtfLexer().lexer
 
