@@ -62,8 +62,7 @@ class AtfParser(object):
     p[0]=OraccObject(p[1])
 
   def p_structure_label(self,p):
-    '''structure : FRAGMENT ID NEWLINE
-                 | OBJECT ID NEWLINE'''
+    '''structure : FRAGMENT ID NEWLINE | OBJECT ID NEWLINE'''
     p[0]=OraccNamedObject(p[1],p[2])
 
   def p_debug_object(self,p):
