@@ -104,3 +104,16 @@ class testLexer(object):
       ["NOTE","NOTEREF","ID"],
       [None,"1","A note to the translation."]
     )
+
+  def test_comment(self):
+    self.compare_tokens(
+      "# I've added various things for test purposes",
+      ["COMMENT","ID"],
+      [None,"I've added various things for test purposes"]
+    )
+
+  def test_ruling(self):
+    self.compare_tokens(
+      "$ single ruling",
+      ["DOLLAR","SINGLE","RULING"]
+    )
