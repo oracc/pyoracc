@@ -148,10 +148,8 @@ class AtfLexer(object):
     return t
 
   def t_COMMENT(self,t):
-    "^\#\ "
-    t.value=t.value[2:]
-    t.lexer.push_state('note')
-    return t
+    "^\#[^\n\r]*"
+    # No token
 
   # In all the single-line lexer states, a newline returns to the base state
   def t_protocol_code_text_structure_note_dollar_lemmatize_NEWLINE(self,t):

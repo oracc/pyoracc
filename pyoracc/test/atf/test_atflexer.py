@@ -108,8 +108,7 @@ class testLexer(TestCase):
   def test_comment(self):
     self.compare_tokens(
       "# I've added various things for test purposes",
-      ["COMMENT","ID"],
-      [None,"I've added various things for test purposes"]
+      []
     )
 
   def test_ruling(self):
