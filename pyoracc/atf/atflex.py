@@ -72,11 +72,10 @@ class AtfLexer(object):
     'LOOSE',
     'RANGE',
     'NUMBER',
-    'COMMENT',
     'PRIME',
     'DIVISION',
     'NOTEREF',
-    'TRANSLATIONTEXT'
+    'COMMENT'
   ]
 
   tokens=list(set(
@@ -145,20 +144,51 @@ class AtfLexer(object):
     t.lexer.push_state('dollar')
     return t
 
-  #-- OTHER RULES ---
-
   def t_COMMENT(self,t):
-    "^\#\ .*$"
+    "^\#\ "
     t.value=t.value[2:]
+    t.lexer.push_state('note')
     return t
 
+  # In all the single-line lexer states, a newline returns to the base state
+  def t_protocol_code_text_division_note_dollar_lemmatize_NEWLINE(self,t):
+    r'\n'
+    t.lexer.pop_state()
+    # No return, don't add to token stream
 
+  # In the multi-line base states, a newline doesn't change state
+  t_INITIAL_translation_NEWLINE=r'\n'
 
-  def t_dollar_LOOSE(self,t):
-    # Currently violates images
-    "\((.*)\)"
-    t.value=t.value[1:-1]
+  #-- RULES FOR THE code STATE ---
+  # In this state, everything before the equals is tokenised
+  # as a code token, and everything after, as a discussion
+
+  def t_code_ID(self,t):
+    r'[^\n]+'
     return t
+
+  #-- RULES FOR THE protocol STATE ---
+  # In this state, tokens are whitespace-separated,
+  # and some are interpreted as keywords
+
+  def t_protocol_SPACE(self,t):
+    r'[ ]'
+  # No return, don't add to token stream
+
+  def t_protocol_ID(self,t):
+    '[a-zA-Z\-\/]+'
+    t.type=self.resolve_keyword(t.value,AtfLexer.protocol_keywords,'ID')
+    return t
+
+  #-- RULES FOR THE dollar STATE ---
+  # In this state, tokens are whitespace-separated,
+  # and some are interpreted as keywords
+  # Numbers and ranges are tokenized separately
+  # Bracketed content is assumed to be a single token
+
+  def t_dollar_SPACE(self,t):
+    r'[ ]'
+  # No return, don't add to token stream
 
   def t_dollar_ID(self,t):
     '[a-zA-Z]+'
@@ -169,14 +199,20 @@ class AtfLexer(object):
   t_dollar_RANGE="[1-9][0-9]*\-[1-9][0-9]"
   t_dollar_NUMBER="[1-9][0-9]*"
 
-  def t_protocol_ID(self,t):
-    '[a-zA-Z\-\/]+'
-    t.type=self.resolve_keyword(t.value,AtfLexer.protocol_keywords,'ID')
+  def t_dollar_LOOSE(self,t):
+    # Currently violates images
+    "\((.*)\)"
+    t.value=t.value[1:-1]
     return t
 
-  def t_code_ID(self,t):
-    r'[^\n]+'
-    return t
+  #-- RULES FOR THE division STATE
+  # In this state, tokens are whitespace-separated,
+  # Certain characters are treated as flag markers
+  # Single-character and number tokens are separately tokenised
+
+  def t_division_SPACE(self,t):
+    r'[ ]'
+    # No return, don't add to token stream
 
   def t_division_FLAG(self,t):
     r'[\?\!\#\*]'
@@ -188,43 +224,39 @@ class AtfLexer(object):
   t_division_NUMBER="[1-9][0-9]*"
   t_division_PRIME="'"
 
-  LANG="lang"
-  t_protocol_USE="use"
-  t_protocol_UNICODE="unicode"
-  t_protocol_MATH="math"
+  #-- RULES FOR THE note STATE
+  # In this state, all non-newline characters are interpreted as a
+  # single token
+  # Except for ^1^ which is tokenised as a NOTEREF
+
+  def t_note_NOTEREF(self,t):
+    "\^(.*?)\^\s*"
+    t.value=t.lexer.lexmatch.groups()[2]
+    return t
+
+  t_note_ID=r'[^\^\n]+'
 
   # Does NOT apply when parsing CODE LINE, or COMMENT as that is literal and
   # inside the token
-  def t_INITIAL_division_protocol_dollar_SPACE(self,t):
-    r'[ ]'
-    # No return, don't add to token stream
 
+  #--- RULES FOR THE text STATE ----
   t_text_OTHER="."
+
+  #--- RULES FOR THE lemmatize STATE
   t_lemmatize_OTHER="."
 
-  def t_note_NOTEREF(self,t):
-    "\^(.*?)\^"
-    t.value=t.value[1:-1]
-    return t
-
-  t_note_COMMENT=".+$"
-
-  def t_protocol_code_text_division_note_dollar_lemmatize_NEWLINE(self,t):
-    r'\n'
-    t.lexer.pop_state()
-    # No return, don't add to token stream
-
-  t_INITIAL_translation_NEWLINE=r'\n'
-
+  #--- RULES FOR THE TRANSLATION STATE ---
+  # In this state, linelabels are tokenised separately,
+  # But everything else is free text
   def t_translation_LINELABEL(self,t):
     r'^[1-9][0-9]*[a-z]*\.'
     t.value=t.value[:-1]
     return t
 
-  t_translation_TRANSLATIONTEXT=".+$"
+  t_translation_ID=".+$"
 
   # Error handling rule
-  def t_error(self,t):
+  def t_ANY_error(self,t):
       print "Illegal character '%s'" % t.value[0]
       t.lexer.skip(1)
 
