@@ -11,12 +11,21 @@ class testParser(object):
   def setUp(self):
     self.lexer=AtfLexer().lexer
 
-  def try_parse(self,content,start):
+  def try_parse(self,content,start=None):
       self.parser=AtfParser(start=start).parser
       return self.parser.parse(content,lexer=self.lexer)
 
   def test_code(self):
-    artifact=self.try_parse("&X001001 = JCS 48, 089\n","code")
+    artifact=self.try_parse("&X001001 = JCS 48, 089\n")
     assert_is_instance(artifact,Artifact)
     assert_equal(artifact.description,"JCS 48, 089")
+    assert_equal(artifact.code,"X001001")
+
+  def test_artifact_project(self):
+    artifact=self.try_parse(
+      "&X001001 = JCS 48, 089\n"+
+      "#project: cams/gkab\n"
+    )
+    assert_is_instance(artifact,Artifact)
+    assert_equal(artifact.code,"X001001")
     assert_equal(artifact.code,"X001001")
