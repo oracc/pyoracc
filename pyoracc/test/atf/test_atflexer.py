@@ -124,3 +124,19 @@ class testLexer(TestCase):
       ["OBJECT","ID"],
       [None,"An object that fits no other category"]
     )
+
+  def test_nested_object(self):
+    self.compare_tokens(
+      "@tablet\n"+
+      "@obverse",
+      ["TABLET","OBVERSE"]
+    )
+
+  def test_object_line(self):
+    self.compare_tokens(
+      "@tablet\n"+
+      "@obverse\n"+
+      "1.	[MU] 1.03-KAM {iti}AB GE₆ U₄ 2-KAM\n"
+      "#lem: šatti[year]N; n; Ṭebetu[1]MN; mūša[at night]AV; ūm[day]N; n",
+      ['TABLET', 'OBVERSE', 'LINELABEL']+['ID']*6+['LEM']+['ID','ENDLEMMA']*5+['ID']
+    )

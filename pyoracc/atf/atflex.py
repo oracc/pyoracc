@@ -38,7 +38,8 @@ class AtfLexer(object):
     'WITNESSES',
     'TRANSLATION',
     'NOTE',
-    'M'
+    'M',
+    'H'
   ]
 
   protocols=['ATF','LEM','PROJECT','NOTE']
@@ -56,7 +57,8 @@ class AtfLexer(object):
     '!':'REMARK',
     '#':'BROKEN',
     '?':'QUERY',
-    '*':'COLLATED'
+    '*':'COLLATED',
+    "'":'PRIME'
   }
 
   base_tokens=[
@@ -71,7 +73,6 @@ class AtfLexer(object):
     'LOOSE',
     'RANGE',
     'NUMBER',
-    'PRIME',
     'STRUCTURE',
     'NOTEREF',
     'COMMENT',
@@ -130,7 +131,7 @@ class AtfLexer(object):
     "^@[a-z]*"
     t.value=t.value[1:]
     t.type=self.resolve_keyword(t.value,AtfLexer.structures)
-    if t.type in ["NOTE","OBJECT"]:
+    if t.type in ["NOTE","OBJECT","SURFACE"]:
       # Because for general object structures, all the remaining text
       # Is it's identifier token
       t.lexer.push_state("note")
@@ -218,14 +219,13 @@ class AtfLexer(object):
     # No return, don't add to token stream
 
   def t_structure_FLAG(self,t):
-    r'[\?\!\#\*]'
+    r'[\?\!\#\*\']'
     t.type=flags[t.value]
     return t
 
   t_structure_ID="[a-z][a-z]+"
   t_structure_SINGLEID="[a-z]"
   t_structure_NUMBER="[1-9][0-9]*"
-  t_structure_PRIME="'"
 
   #-- RULES FOR THE note STATE
   # In this state, all non-newline characters are interpreted as a

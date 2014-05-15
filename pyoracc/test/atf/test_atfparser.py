@@ -69,3 +69,40 @@ class testParser(TestCase):
     assert_is_instance(obj,OraccNamedObject)
     assert_equal(obj.objecttype,"object")
     assert_equal(obj.name,"That fits no other category")
+
+  def test_substructure(self):
+    obj=self.try_parse(
+      "@tablet\n"+
+      "@obverse"
+    )
+    assert_is_instance(obj.children[0],OraccObject)
+    assert_equal(obj.children[0].objecttype,"obverse")
+
+  def test_triple_substructure(self):
+    art=self.try_parse(
+      "&X001001 = My Text\n"+
+      "@tablet\n"+
+      "@obverse"
+    )
+    assert_is_instance(art.children[0],OraccObject)
+    assert_is_instance(art.children[0].children[0],OraccObject)
+    assert_equal(art.children[0].children[0].objecttype,"obverse")
+
+  def test_line(self):
+    art=self.try_parse(
+    "@tablet\n"+
+    "@obverse\n"+
+    "1.	[MU] 1.03-KAM {iti}AB GE₆ U₄ 2-KAM"
+    ##lem: šatti[year]N; n; Ṭebetu[1]MN; mūša[at night]AV; ūm[day]N; n
+    )
+    assert_equal(len(art.children[0].children[0].words),6)
+
+  def test_line_lemmas(self):
+    art=self.try_parse(
+    "@tablet\n"+
+    "@obverse\n"+
+    "1.	[MU] 1.03-KAM {iti}AB GE₆ U₄ 2-KAM\n"
+    "#lem: šatti[year]N; n; Ṭebetu[1]MN; mūša[at night]AV; ūm[day]N; n"
+    )
+    assert_equal(len(art.children[0].children[0].words),6)
+    assert_equal(len(art.children[0].children[0].lemmas),6)
