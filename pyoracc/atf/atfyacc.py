@@ -54,18 +54,18 @@ class AtfParser(object):
     p[0]=p[1]
     p[0].language=p[2]
 
-  def p_object_nolabel(self,p):
-    '''object : TABLET NEWLINE
+  def p_structure_nolabel(self,p):
+    '''structure : TABLET NEWLINE
               | ENVELOPE NEWLINE
               | PRISM NEWLINE
               | BULLA NEWLINE'''
     p[0]=OraccObject(p[1])
 
-  def p_object_label(self,p):
-    '''object : FRAGMENT ID NEWLINE
-              | OBJECT ID NEWLINE'''
+  def p_structure_label(self,p):
+    '''structure : FRAGMENT ID NEWLINE
+                 | OBJECT ID NEWLINE'''
     p[0]=OraccNamedObject(p[1],p[2])
 
   def p_debug_object(self,p):
-    "document : object"
+    """document : structure"""
     p[0]=p[1]

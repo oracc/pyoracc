@@ -11,7 +11,7 @@ class AtfLexer(object):
     return self._keyword_dict(source).get(value,fallback)
 
 
-  divisions=[
+  structures=[
     'TABLET',
     'ENVELOPE',
     'PRISM',
@@ -73,14 +73,14 @@ class AtfLexer(object):
     'RANGE',
     'NUMBER',
     'PRIME',
-    'DIVISION',
+    'STRUCTURE',
     'NOTEREF',
     'COMMENT',
     'ENDLEMMA'
   ]
 
   tokens=list(set(
-    divisions+
+    structures+
     protocols+
     protocol_keywords+
     dollar_keywords+
@@ -90,7 +90,7 @@ class AtfLexer(object):
   state_names=[
     'protocol',
     'code',
-    'division',
+    'structure',
     'text',
     'lemmatize',
     'dollar',
@@ -127,19 +127,19 @@ class AtfLexer(object):
       t.lexer.push_state('protocol')
     return t
 
-  def t_INITIAL_translation_DIVISION(self,t):
+  def t_INITIAL_translation_STRUCTURE(self,t):
     "^@[a-z]*"
     t.value=t.value[1:]
-    t.type=self.resolve_keyword(t.value,AtfLexer.divisions)
+    t.type=self.resolve_keyword(t.value,AtfLexer.structures)
     if t.type in ["NOTE","OBJECT"]:
-      # Because for general object divisions, all the remaining text
+      # Because for general object structures, all the remaining text
       # Is it's identifier token
       t.lexer.push_state("note")
     elif t.type=="TRANSLATION":
       t.lexer.push_state("translation")
-      t.lexer.push_state("division")
+      t.lexer.push_state("structure")
     else:
-      t.lexer.push_state('division')
+      t.lexer.push_state('structure')
     return t
 
   def t_DOLLAR(self,t):
@@ -154,7 +154,7 @@ class AtfLexer(object):
     return t
 
   # In all the single-line lexer states, a newline returns to the base state
-  def t_protocol_code_text_division_note_dollar_lemmatize_NEWLINE(self,t):
+  def t_protocol_code_text_structure_note_dollar_lemmatize_NEWLINE(self,t):
     r'\n'
     t.lexer.pop_state()
     return t
@@ -196,7 +196,7 @@ class AtfLexer(object):
   def t_dollar_ID(self,t):
     '[a-zA-Z]+'
     t.type=self.resolve_keyword(t.value,
-      AtfLexer.dollar_keywords+AtfLexer.divisions,'ID')
+      AtfLexer.dollar_keywords+AtfLexer.structures,'ID')
     return t
 
   t_dollar_RANGE="[1-9][0-9]*\-[1-9][0-9]"
@@ -208,24 +208,24 @@ class AtfLexer(object):
     t.value=t.value[1:-1]
     return t
 
-  #-- RULES FOR THE division STATE
+  #-- RULES FOR THE structure STATE
   # In this state, tokens are whitespace-separated,
   # Certain characters are treated as flag markers
   # Single-character and number tokens are separately tokenised
 
-  def t_division_SPACE(self,t):
+  def t_structure_SPACE(self,t):
     r'[ ]'
     # No return, don't add to token stream
 
-  def t_division_FLAG(self,t):
+  def t_structure_FLAG(self,t):
     r'[\?\!\#\*]'
     t.type=flags[t.value]
     return t
 
-  t_division_ID="[a-z][a-z]+"
-  t_division_SINGLEID="[a-z]"
-  t_division_NUMBER="[1-9][0-9]*"
-  t_division_PRIME="'"
+  t_structure_ID="[a-z][a-z]+"
+  t_structure_SINGLEID="[a-z]"
+  t_structure_NUMBER="[1-9][0-9]*"
+  t_structure_PRIME="'"
 
   #-- RULES FOR THE note STATE
   # In this state, all non-newline characters are interpreted as a
