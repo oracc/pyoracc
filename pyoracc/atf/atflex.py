@@ -144,7 +144,7 @@ class AtfLexer(object):
     if t.type == "TRANSLATION":
       t.lexer.push_state('translation')
     if t.type == "LEM":
-      t.lexer.push_state('lemmatization')
+      t.lexer.push_state('lemmatize')
     if t.type in AtfLexer.absorbing_keywords:
       t.lexer.push_state('absorb')
     return t

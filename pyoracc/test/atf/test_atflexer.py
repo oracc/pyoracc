@@ -68,7 +68,7 @@ class testLexer(TestCase):
   def test_lemmatize(self):
     self.compare_tokens(
       "#lem: šatti[year]N; n; Ṭebetu[1]MN; mūša[at night]AV; ūm[day]N; n",
-      ["HASH","LEM"]+['ID','ENDLEMMA']*5+['ID']
+      ["HASH","LEM"]+['ID','SEMICOLON']*5+['ID']
     )
 
   def test_loose_dollar(self):
