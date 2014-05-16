@@ -16,7 +16,6 @@ class testLexer(TestCase):
     for token,expected_type,expected_value in izip(self.lexer,
         expected_types,
         expected_values):
-      print token.type,token.value,expected_type,expected_value
       assert_equal(token.type,expected_type)
       if expected_value:
         assert_equal(token.value,expected_value)
@@ -37,9 +36,9 @@ class testLexer(TestCase):
 
   def test_language_protocol(self):
     self.compare_tokens(
-      "#atf: lang akk-x-stdbab",
-      ["ATF","LANG","ID"],
-      [None,None,"akk-x-stdbab"]
+      "#atf: lang akk-x-stdbab\n",
+      ["HASH","ATF","LANG","ID","NEWLINE"],
+      [None,None,None,"akk-x-stdbab"]
     )
 
   def test_use_unicode(self):

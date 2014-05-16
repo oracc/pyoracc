@@ -141,7 +141,6 @@ class AtfLexer(object):
 
   def t_ID(self,t):
     '[a-zA-Z][a-zA-Z0-9\[\]]+\:?'
-    print t.value
     t.type=self.resolve_keyword(t.value,'ID')
     if t.type == "TRANSLATION":
       t.lexer.push_state('translation')

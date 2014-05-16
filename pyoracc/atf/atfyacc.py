@@ -43,8 +43,8 @@ class AtfParser(object):
     "math : ATF USE MATH"
 
   def p_language_protoocol(self,p):
-    "language_protocol : ATF LANG ID"
-    p[0]=p[3]
+    "language_protocol : HASH ATF LANG ID NEWLINE"
+    p[0]=p[4]
 
   def p_text_math(self,p):
     "text : text math"
