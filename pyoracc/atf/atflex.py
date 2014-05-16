@@ -2,13 +2,20 @@ import ply.lex as lex
 import re
 
 class AtfLexer(object):
-  def _keyword_dict(self,tokens):
-    return {token.lower(): token for token in tokens}
 
-  def resolve_keyword(self,value,source,fallback=None):
+  def _keyword_token_to_text(self,token):
+    if token in AtfLexer.protocols:
+      return ":"+token.lower()
+    return token.lower()
+
+  def _keyword_dict(self,tokens):
+    return {self._keyword_token_to_text(token): token for token in tokens}
+
+  def resolve_keyword(self,value,fallback=None):
+    source = self._keyword_dict(AtfLexer.keyword_tokens)
     if not fallback:
-      return self._keyword_dict(source)[value]
-    return self._keyword_dict(source).get(value,fallback)
+      return source[value]
+    return source.get(value,fallback)
 
 
   structures=[
@@ -16,30 +23,33 @@ class AtfLexer(object):
     'ENVELOPE',
     'PRISM',
     'BULLA',
-    'FRAGMENT',
-    'OBJECT',
-    'SEAL',
     'OBVERSE',
     'REVERSE',
     'LEFT',
     'RIGHT',
     'TOP',
     'BOTTOM',
-    'FACE',
-    'SURFACE',
-    'EDGE',
-    'COLUMN',
     'CATCHLINE',
     'COLOPHON',
     'DATE',
     'SIGNATURES',
     'SIGNATURE',
     'SUMMARY',
+    'FACE',
+    'EDGE',
+    'COLUMN',
+    'SEAL',
     'WITNESSES',
     'TRANSLATION',
     'NOTE',
     'M',
     'H'
+  ]
+
+  long_argument_structures=[
+    'OBJECT',
+    'SURFACE',
+    'FRAGMENT'
   ]
 
   protocols=['ATF','LEM','PROJECT','NOTE']
@@ -53,54 +63,69 @@ class AtfLexer(object):
     'BLANK','BROKEN','EFFACED','ILLEGIBLE','MISSING','TRACES',
     'RULING','SINGLE','DOUBLE','TRIPLE']
 
-  flags={
-    '!':'REMARK',
-    '#':'BROKEN',
-    '?':'QUERY',
-    '*':'COLLATED',
-    "'":'PRIME'
-  }
-
   base_tokens=[
-    'CODE',
-    'SPACE',
-    'OTHER',
+    'AMPERSAND',
     'LINELABEL',
     'ID',
     'SINGLEID',
-    'PROTOCOL',
     'DOLLAR',
-    'LOOSE',
-    'RANGE',
+    'LPAREN',
+    'RPAREN',
     'NUMBER',
-    'STRUCTURE',
-    'NOTEREF',
-    'COMMENT',
-    'ENDLEMMA'
+    'HAT',
+    'SEMICOLON',
+    'EQUALS',
+    'LSQUARE',
+    'RSQUARE',
+    'EXCLAIM',
+    'QUERY',
+    'STAR',
+    'PRIME',
+    'RANGE',
+    'LETTER',
+    'HASH'
   ]
 
-  tokens=list(set(
+  keyword_tokens=list(set(
     structures+
+    long_argument_structures+
     protocols+
     protocol_keywords+
-    dollar_keywords+
-    flags.values()+
+    dollar_keywords
+  ))
+
+  tokens=list(set(
+    keyword_tokens+
     base_tokens))
 
   state_names=[
-    'protocol',
-    'code',
-    'structure',
+    'absorb',
     'text',
     'lemmatize',
-    'dollar',
-    'note',
     'translation'
   ]
 
   states=[(state,'exclusive') for state in state_names ]
 
-  #----- METHODS DEFINING LINE-START TOKENS, WHICH SET STATE ----
+  absorbing_keywords=[
+    'LANG',
+    'PROJECT',
+  ]+long_argument_structures
+
+  t_AMPERSAND="\&"
+  t_HASH="\#"
+  t_AT="\@"
+  t_EXCLAIM="\!"
+  t_QUERY="\?"
+  t_STAR="\*"
+  t_PRIME=r'\''
+  t_DOLLAR="\$"
+  t_LPAREN=r'\('
+  t_RPAREN=r'\)'
+
+  def t_WHITESPACE(self,t):
+    r'[\t ]+'
+    # NO TOKEN
 
   def t_LINELABEL(self,t):
     r'^[1-9][0-9]*[a-z]*\.'
@@ -108,140 +133,54 @@ class AtfLexer(object):
     t.lexer.push_state('text')
     return t
 
-  def t_CODE(self,t):
-    '^&[A-Z][0-9]+\ \=\ '
-    t.value=t.value[1:-3]
-    t.lexer.push_state('code')
-    return t
-    # Match e.g. &X0001 at the start of a line
-
-  def t_PROTOCOL(self,t):
-    "^\#[a-z]*:\ "
-    t.value=t.value[1:-2]
-    t.type=self.resolve_keyword(t.value,AtfLexer.protocols)
-    if t.value=="lem":
-      t.lexer.push_state("lemmatize")
-    elif t.value=="note":
-      t.lexer.push_state("note")
-    else:
-      t.lexer.push_state('protocol')
+  def t_EQUALS(self,t):
+    "\="
+    t.lexer.push_state('absorb')
     return t
 
-  def t_INITIAL_translation_STRUCTURE(self,t):
-    "^@[a-z]*"
-    t.value=t.value[1:]
-    t.type=self.resolve_keyword(t.value,AtfLexer.structures)
-    if t.type in ["NOTE","OBJECT","SURFACE"]:
-      # Because for general object structures, all the remaining text
-      # Is it's identifier token
-      t.lexer.push_state("note")
-    elif t.type=="TRANSLATION":
-      t.lexer.push_state("translation")
-      t.lexer.push_state("structure")
-    else:
-      t.lexer.push_state('structure')
-    return t
-
-  def t_DOLLAR(self,t):
-    r'^\$\ '
-    t.lexer.push_state('dollar')
+  def t_ID(self,t):
+    '[a-zA-Z][a-zA-Z0-9\[\]]+\:?'
+    t.type=self.resolve_keyword(t.value,'ID')
+    if t.type == "TRANSLATION":
+      t.lexer.push_state('translation')
+    if t.type == "LEM":
+      t.lexer.push_state('lemmatization')
+    if t.type in AtfLexer.absorbing_keywords:
+      t.lexer.push_state('absorb')
     return t
 
   def t_COMMENT(self,t):
     "^\#[^\n\r]*"
     # No token
 
-  # In all the single-line lexer states, a newline returns to the base state
-  def t_protocol_code_text_structure_note_dollar_lemmatize_NEWLINE(self,t):
+  # In the absorb, text, and lemmatize states, a newline returns to the base state
+  def t_absorb_text_lemmatize_NEWLINE(self,t):
     r'\n'
     t.lexer.pop_state()
-    # Don't add newlines to the token stream
+    return t
 
   # In the multi-line base states, a newline doesn't change state
   def t_INITIAL_translation_NEWLINE(self,t):
     r'\n'
-
-  #-- RULES FOR THE code STATE ---
-  # In this state, everything before the equals is tokenised
-  # as a code token, and everything after, as a discussion
-
-  def t_code_ID(self,t):
-    r'[^\n]+'
     return t
 
-  #-- RULES FOR THE protocol STATE ---
-  # In this state, tokens are whitespace-separated,
-  # and some are interpreted as keywords
+  t_RANGE="[1-9][0-9]*\-[1-9][0-9]"
+  t_NUMBER="[1-9][0-9]*"
 
-  def t_protocol_SPACE(self,t):
-    r'[ ]'
-  # No return, don't add to token stream
+  t_LETTER="[a-z]"
 
-  def t_protocol_ID(self,t):
-    '[a-zA-Z\-\/]+'
-    t.type=self.resolve_keyword(t.value,AtfLexer.protocol_keywords,'ID')
-    return t
+  #--- RULES FOR THE ABSORB STATE ---
 
-  #-- RULES FOR THE dollar STATE ---
-  # In this state, tokens are whitespace-separated,
-  # and some are interpreted as keywords
-  # Numbers and ranges are tokenized separately
-  # Bracketed content is assumed to be a single token
-
-  def t_dollar_SPACE(self,t):
-    r'[ ]'
-  # No return, don't add to token stream
-
-  def t_dollar_ID(self,t):
-    '[a-zA-Z]+'
-    t.type=self.resolve_keyword(t.value,
-      AtfLexer.dollar_keywords+AtfLexer.structures,'ID')
-    return t
-
-  t_dollar_RANGE="[1-9][0-9]*\-[1-9][0-9]"
-  t_dollar_NUMBER="[1-9][0-9]*"
-
-  def t_dollar_LOOSE(self,t):
-    # Currently violates images
-    "\((.*)\)"
-    t.value=t.value[1:-1]
-    return t
-
-  #-- RULES FOR THE structure STATE
-  # In this state, tokens are whitespace-separated,
-  # Certain characters are treated as flag markers
-  # Single-character and number tokens are separately tokenised
-
-  def t_structure_SPACE(self,t):
-    r'[ ]'
-    # No return, don't add to token stream
-
-  def t_structure_FLAG(self,t):
-    r'[\?\!\#\*\']'
-    t.type=flags[t.value]
-    return t
-
-  t_structure_ID="[a-z][a-z]+"
-  t_structure_SINGLEID="[a-z]"
-  t_structure_NUMBER="[1-9][0-9]*"
-
-  #-- RULES FOR THE note STATE
-  # In this state, all non-newline characters are interpreted as a
-  # single token
-  # Except for ^1^ which is tokenised as a NOTEREF
-
-  def t_note_NOTEREF(self,t):
-    "\^(.*?)\^\s*"
+  def t_absorb_ID(self,t):
+    r'[\ \t]?([^\#\!\*\'\?\n\r]+)'
     t.value=t.lexer.lexmatch.groups()[2]
     return t
 
-  def t_note_ID(self,t):
-    r'[^\^\n]+'
-    t.value=t.value.strip()
-    if t.value: return t
-
-  # Does NOT apply when parsing CODE LINE, or COMMENT as that is literal and
-  # inside the token
+  t_absorb_HASH="\#"
+  t_absorb_AT="\@"
+  t_absorb_EXCLAIM="\!"
+  t_absorb_QUERY="\?"
+  t_absorb_STAR="\*"
 
   #--- RULES FOR THE text STATE ----
   t_text_ID="[^\ \t \n\r]+"
@@ -251,7 +190,7 @@ class AtfLexer(object):
 
   #--- RULES FOR THE lemmatize STATE
   t_lemmatize_ID="[^\;\n\r]+"
-  t_lemmatize_ENDLEMMA=r'\;[\ \t]*'
+  t_lemmatize_SEMICOLON=r'\;[\ \t]*'
 
   #--- RULES FOR THE TRANSLATION STATE ---
   # In this state, linelabels are tokenised separately,

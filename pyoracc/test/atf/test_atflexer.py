@@ -23,8 +23,8 @@ class testLexer(TestCase):
   def test_code(self):
     self.compare_tokens(
       "&X001001 = JCS 48, 089",
-      ["CODE","ID"],
-      ["X001001","JCS 48, 089"]
+      ["AMPERSAND","ID","EQUALS","ID"],
+      [None,"X001001",None,"JCS 48, 089"]
     )
 
   def test_project(self):

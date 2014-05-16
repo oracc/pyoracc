@@ -18,10 +18,10 @@ class AtfParser(object):
     p[0]=p[1]
 
   def p_codeline(self,p):
-    "code : CODE ID"
+    "code : AMPERSAND ID EQUALS ID"
     p[0]=Text()
-    p[0].code=p[1]
-    p[0].description=p[2]
+    p[0].code=p[2]
+    p[0].description=p[4]
 
   def p_project(self,p):
     "project : PROJECT ID"
@@ -132,7 +132,7 @@ class AtfParser(object):
     p[0]=[p[2]]
 
   def p_lemma_id(self,p):
-    "lemma_list : lemma_list ENDLEMMA ID"
+    "lemma_list : lemma_list SEMICOLON ID"
     p[0]=p[1]
     p[0].append(p[3])
 
