@@ -17,6 +17,7 @@ class AtfLexer(object):
   def resolve_keyword(self,value,fallback=None):
     source = self._keyword_dict(AtfLexer.keyword_tokens)
     source['note']="NOTE" # Note is both an @ and a #: keyword
+    source['at']="ATWORD"
     if not fallback:
       return source[value]
     return source.get(value,fallback)
@@ -62,7 +63,7 @@ class AtfLexer(object):
   protocol_keywords=['LANG','USE','MATH','UNICODE']
 
   dollar_keywords=[
-    'AT','MOST','ABOUT',
+    'ATWORD','MOST','LEAST','ABOUT',
     'SEVERAL','SOME','REST','OF','START','BEGINNING','MIDDLE','END',
     'COLUMNS','LINE','LINES','CASE','CASES','SURFACE',
     'BLANK','BROKEN','EFFACED','ILLEGIBLE','MISSING','TRACES',
@@ -83,6 +84,7 @@ class AtfLexer(object):
     'RSQUARE',
     'EXCLAIM',
     'QUERY',
+    'AT',
     'STAR',
     'PRIME',
     'RANGE',
@@ -144,6 +146,7 @@ class AtfLexer(object):
   # In the multi-line base states, a newline doesn't change state
   def t_INITIAL_translation_NEWLINE(self,t):
     r'\n'
+    t.lexer.lineno += 1
     return t
 
   def t_INITIAL_translation_ID(self,t):
@@ -155,7 +158,6 @@ class AtfLexer(object):
       t.lexer.push_state('lemmatize')
     if t.type in AtfLexer.absorbing_keywords:
       t.lexer.push_state('absorb')
-    print t.type
     return t
 
   def t_LINELABEL(self,t):
@@ -168,10 +170,11 @@ class AtfLexer(object):
   # In the absorb, text, and lemmatize states, a newline returns to the base state
   def t_absorb_text_lemmatize_NEWLINE(self,t):
     r'\n'
+    t.lexer.lineno += 1
     t.lexer.pop_state()
     return t
 
-  t_RANGE="[1-9][0-9]*\-[1-9][0-9]"
+  t_RANGE="[1-9][0-9]*\-[1-9][0-9]*"
   t_NUMBER="[1-9][0-9]*"
 
   t_LETTER="[a-z]"
@@ -207,7 +210,6 @@ class AtfLexer(object):
   # But everything else is free text
   def t_translation_LINELABEL(self,t):
     r'^([1-9][0-9]*[a-z]*)\.[\ \t]*'
-    print t.lexer.lexmatch.groups()
     t.value=t.lexer.lexmatch.groups()[6]
     t.lexer.push_state('absorb')
     return t

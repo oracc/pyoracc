@@ -6,6 +6,7 @@ from ..model.oraccnamedobject import OraccNamedObject
 from ..model.line import Line
 from ..model.ruling import Ruling
 from ..model.note import Note
+from ..model.state import State
 
 class AtfParser(object):
   tokens=AtfLexer.tokens
@@ -18,13 +19,13 @@ class AtfParser(object):
     p[0]=p[1]
 
   def p_codeline(self,p):
-    "code : AMPERSAND ID EQUALS ID NEWLINE"
+    "code : AMPERSAND ID EQUALS ID newline_sequence"
     p[0]=Text()
     p[0].code=p[2]
     p[0].description=p[4]
 
   def p_project(self,p):
-    "project : HASH PROJECT ID NEWLINE"
+    "project : HASH PROJECT ID newline_sequence"
     p[0]=p[3]
 
   def p_text_project(self,p):
@@ -37,13 +38,13 @@ class AtfParser(object):
     p[0]=p[1]
 
   def p_unicode(self,p):
-    "unicode : HASH ATF USE UNICODE"
+    "unicode : HASH ATF USE UNICODE newline_sequence"
 
   def p_math(self,p):
-    "math : HASH ATF USE MATH NEWLINE"
+    "math : HASH ATF USE MATH newline_sequence"
 
   def p_language_protoocol(self,p):
-    "language_protocol : HASH ATF LANG ID NEWLINE"
+    "language_protocol : HASH ATF LANG ID newline_sequence"
     p[0]=p[4]
 
   def p_text_math(self,p):
@@ -58,19 +59,25 @@ class AtfParser(object):
     p[0].language=p[2]
 
   def p_object_decl(self,p):
-    "object : AT object_specifier NEWLINE"
-    p[0]=p[2]
+    "object : AT object_specifier newline_sequence"
+    if len(p[2])==2:
+      p[0]=OraccNamedObject(*p[2])
+    else:
+      p[0]=OraccObject(*p[2])
 
   def p_object_nolabel(self,p):
     '''object_specifier : TABLET
               | ENVELOPE
               | PRISM
               | BULLA'''
-    p[0]=OraccObject(p[1])
+    p[0]=(p[1],)
 
   def p_surface_decl(self,p):
-    "surface : AT surface_specifier NEWLINE"
-    p[0]=p[2]
+    "surface : AT surface_specifier newline_sequence"
+    if len(p[2])==2:
+      p[0]=OraccNamedObject(*p[2])
+    else:
+      p[0]=OraccObject(*p[2])
 
   def p_surface_nolabel(self,p):
     '''surface_specifier : OBVERSE
@@ -86,19 +93,13 @@ class AtfParser(object):
               | SIGNATURE
               | SUMMARY
               | WITNESSES'''
-    p[0]=OraccObject(p[1])
+    p[0]=(p[1],)
 
 
   def p_object_label(self,p):
-    '''object_specifer : FRAGMENT ID
-                 | OBJECT ID
-                 | FACE SINGLEID
-                 | SURFACE ID
-                 | EDGE ID
-                 | COLUMN NUMBER
-                 | SEAL NUMBER
-                 | H NUMBER'''
-    p[0]=OraccNamedObject(p[1],p[2])
+    '''object_specifier : FRAGMENT ID
+                 | OBJECT ID'''
+    p[0]=(p[1],p[2])
 
   def p_surface_label(self,p):
     '''surface_specifier : FACE SINGLEID
@@ -107,7 +108,7 @@ class AtfParser(object):
                  | COLUMN NUMBER
                  | SEAL NUMBER
                  | H NUMBER'''
-    p[0]=OraccNamedObject(p[1],p[2])
+    p[0]=(p[1],p[2])
 
   # WE DO NOT YET HANDLE @M=DIVSION lines.
 
@@ -126,14 +127,18 @@ class AtfParser(object):
     p[0].children.append(p[2])
 
   def p_linelabel(self,p):
-    "line : LINELABEL ID"
+    "line_sequence : LINELABEL ID"
     p[0]=Line(p[1])
     p[0].words.append(p[2])
 
   def p_line_id(self,p):
-    "line : line ID"
+    "line_sequence : line_sequence ID"
     p[0]=p[1]
     p[0].words.append(p[2])
+
+  def p_line_statement(self,p):
+    "line_statement : line_sequence newline_sequence"
+    p[0]=p[1]
 
   def p_lemma_list(self,p):
     "lemma_list : HASH LEM ID"
@@ -145,19 +150,23 @@ class AtfParser(object):
     p[0].append(p[3])
 
   def p_line_lemmas(self,p):
-    "line : line lemma_list NEWLINE"
+    "line_statement : line_statement lemma_statement"
     p[0]=p[1]
-    p[1].lemmas=p[2]
+    p[0].lemmas=p[2]
+
+  def p_lemma_statement(self,p):
+    "lemma_statement : lemma_list newline_sequence"
+    p[0]=p[1]
 
   def p_surface_line(self,p):
-    "surface : surface line"
+    "surface : surface line_statement"
     p[0]=p[1]
     p[0].children.append(p[2])
 
   def p_ruling(self,p):
-    """ruling : DOLLAR SINGLE RULING NEWLINE
-              | DOLLAR DOUBLE RULING NEWLINE
-              | DOLLAR TRIPLE RULING NEWLINE
+    """ruling : DOLLAR SINGLE RULING newline_sequence
+              | DOLLAR DOUBLE RULING newline_sequence
+              | DOLLAR TRIPLE RULING newline_sequence
     """
     counts={
       'single':1,
@@ -172,10 +181,98 @@ class AtfParser(object):
     p[0].children.append(p[2])
 
   def p_note(self,p):
-    "note : NOTE ID"
-    p[0]=p[2]
+    "note_statement : HASH NOTE ID newline_sequence"
+    p[0]=p[3]
 
   def p_line_note(self,p):
-    "line : line note"
+    "line_statement : line_statement note_statement"
     p[0]=p[1]
     p[0].notes.append(p[2])
+
+  def p_newline_sequence(self,p):
+    """newline_sequence : NEWLINE
+                     | newline_sequence NEWLINE"""
+
+  def p_loose_dollar(self,p):
+    "loose_dollar_statement : DOLLAR PARENTHETICALID newline_sequence"
+    p[0]=State(loose=p[2])
+
+  def p_surface_loose(self,p):
+    "surface : surface loose_dollar_statement"
+    p[0]=p[1]
+    p[0].children.append(p[2])
+
+  def p_strict_dollar_statement(self,p):
+    "strict_dollar_statement : DOLLAR state_description newline_sequence"
+    p[0]=p[2]
+
+  def p_surface_strict(self,p):
+    "surface : surface strict_dollar_statement"
+    p[0]=p[1]
+    p[0].children.append(p[2])
+
+  def p_state_description(self,p):
+    """state_description : plural_state_description
+                         | singular_state_description"""
+    p[0]=p[1]
+
+  def p_plural_state_description(self,p):
+    """plural_state_description : plural_quantifier plural_scope state
+                               | NUMBER plural_scope state
+                               | RANGE plural_scope state"""
+    p[0]=State(p[3],p[2],p[1])
+
+  def p_qualified_state_description(self,p):
+    "plural_state_description : qualification plural_state_description"
+    p[0]=p[2]
+    p[0].qualification=p[1]
+
+  def p_singular_state_description(self,p):
+    """singular_state_description : singular_scope state
+                               | object_specifier state
+                               | surface_specifier state"""
+    p[0]=State(p[2]," ".join(p[1]))
+
+  def p_partial_state_description(self,p):
+    "singular_state_description : partial_quantifier singular_state_description"
+    p[0]=p[2]
+    p[0].extent=p[1]
+
+  def p_state(self,p):
+    """state : BLANK
+            | BROKEN
+            | EFFACED
+            | ILLEGIBLE
+            | MISSING
+            | TRACES"""
+    p[0]=p[1]
+
+  def p_plural_quantifier(self,p):
+    """plural_quantifier : SEVERAL
+                         | SOME"""
+
+  def p_singular_scope(self,p):
+    """singular_scope : LINE
+                      | CASE"""
+    p[0]=[p[1]]
+
+  def p_plural_scope(self,p):
+    """plural_scope : COLUMNS
+                    | LINES
+                    | CASES"""
+    p[0]=p[1]
+
+  def p_partial_quantifier(self,p):
+    """partial_quantifier : REST OF
+                         | START OF
+                         | BEGINNING OF
+                         | MIDDLE OF
+                         | END OF"""
+    p[0]=" ".join(p[1:])
+
+  def p_qualification(self,p):
+    """qualification : ATWORD LEAST
+                  | ATWORD MOST
+                  | ABOUT
+                  """
+    p[0]=" ".join(p[1:])

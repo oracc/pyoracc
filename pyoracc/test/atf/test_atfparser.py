@@ -73,7 +73,7 @@ class testParser(TestCase):
   def test_substructure(self):
     obj=self.try_parse(
       "@tablet\n"+
-      "@obverse"
+      "@obverse\n"
     )
     assert_is_instance(obj.children[0],OraccObject)
     assert_equal(obj.children[0].objecttype,"obverse")
@@ -82,7 +82,7 @@ class testParser(TestCase):
     art=self.try_parse(
       "&X001001 = My Text\n"+
       "@tablet\n"+
-      "@obverse"
+      "@obverse\n"
     )
     assert_is_instance(art.children[0],OraccObject)
     assert_is_instance(art.children[0].children[0],OraccObject)
@@ -92,7 +92,7 @@ class testParser(TestCase):
     art=self.try_parse(
     "@tablet\n"+
     "@obverse\n"+
-    "1.	[MU] 1.03-KAM {iti}AB GE₆ U₄ 2-KAM"
+    "1.	[MU] 1.03-KAM {iti}AB GE₆ U₄ 2-KAM\n"
     ##lem: šatti[year]N; n; Ṭebetu[1]MN; mūša[at night]AV; ūm[day]N; n
     )
     assert_equal(len(art.children[0].children[0].words),6)
@@ -102,7 +102,7 @@ class testParser(TestCase):
     "@tablet\n"+
     "@obverse\n"+
     "1.	[MU] 1.03-KAM {iti}AB GE₆ U₄ 2-KAM\n"
-    "#lem: šatti[year]N; n; Ṭebetu[1]MN; mūša[at night]AV; ūm[day]N; n"
+    "#lem: šatti[year]N; n; Ṭebetu[1]MN; mūša[at night]AV; ūm[day]N; n\n"
     )
     assert_equal(len(art.children[0].children[0].words),6)
     assert_equal(len(art.children[0].children[0].lemmas),6)
@@ -111,7 +111,7 @@ class testParser(TestCase):
     art=self.try_parse(
     "@tablet\n"+
     "@obverse\n"+
-    "$ triple ruling"
+    "$ triple ruling\n"
     )
     assert_equal(art.children[0].children[0].count,3)
 
@@ -119,7 +119,7 @@ class testParser(TestCase):
     art=self.try_parse(
     "@tablet\n"+
     "@obverse\n"+
-    "# A comment"
+    "# A comment\n"
     )
     assert_equal(len(art.children[0].children),0)
 
@@ -128,8 +128,69 @@ class testParser(TestCase):
     "@tablet\n"+
     "@obverse\n"+
     "3.	U₄!-BI? 20* [(ina)] 9.30 ina(DIŠ) MAŠ₂!(BAR)\n"+
-    "#note: Note to line."
+    "#note: Note to line.\n"
     )
     assert_equal(art.children[0].children[0].notes[0],
                 "Note to line."
     )
+
+  def test_loose_dollar(self):
+    art=self.try_parse(
+    "@tablet\n"+
+    "@obverse\n"+
+    "3.	U₄!-BI? 20* [(ina)] 9.30 ina(DIŠ) MAŠ₂!(BAR)\n"+
+    "$ (something loose)\n"
+    )
+    assert_equal(art.children[0].children[1].loose,
+                "(something loose)"
+    )
+
+  def test_strict_dollar_simple(self):
+    art=self.try_parse(
+    "@tablet\n"+
+    "@obverse\n"+
+    "$case blank\n"
+    )
+    assert_equal(art.children[0].children[0].state,"blank")
+    assert_equal(art.children[0].children[0].scope,"case")
+
+  def test_strict_dollar_plural_difficult(self):
+    art=self.try_parse(
+    "@tablet\n"+
+    "@obverse\n"+
+    "$5-7 lines blank\n"
+    )
+    assert_equal(art.children[0].children[0].state,"blank")
+    assert_equal(art.children[0].children[0].scope,"lines")
+    assert_equal(art.children[0].children[0].extent,"5-7")
+
+  def test_strict_dollar_singular_difficult(self):
+    art=self.try_parse(
+    "@tablet\n"+
+    "@obverse\n"+
+    "$rest of bulla blank\n"
+    )
+    assert_equal(art.children[0].children[0].state,"blank")
+    assert_equal(art.children[0].children[0].scope,"bulla")
+    assert_equal(art.children[0].children[0].extent,"rest of")
+
+  def test_strict_dollar_plural_qualified(self):
+    art=self.try_parse(
+    "@tablet\n"+
+    "@obverse\n"+
+    "$at most 5 columns blank\n"
+    )
+    assert_equal(art.children[0].children[0].state,"blank")
+    assert_equal(art.children[0].children[0].scope,"columns")
+    assert_equal(art.children[0].children[0].extent,"5")
+    assert_equal(art.children[0].children[0].qualification,"at most")
+
+  def test_strict_dollar_labelled(self):
+    art=self.try_parse(
+    "@tablet\n"+
+    "@obverse\n"+
+    "$rest of column 1 blank\n"
+    )
+    assert_equal(art.children[0].children[0].state,"blank")
+    assert_equal(art.children[0].children[0].scope,"column 1")
+    assert_equal(art.children[0].children[0].extent,"rest of")

@@ -16,7 +16,6 @@ class testLexer(TestCase):
     for token,expected_type,expected_value in izip(self.lexer,
         expected_types,
         expected_values):
-      print token.type, expected_type, token.value, expected_value
       assert_equal(token.type,expected_type)
       if expected_value:
         assert_equal(token.value,expected_value)
@@ -107,9 +106,19 @@ class testLexer(TestCase):
       [None,None,None,"1",None,"A note to the translation."]
     )
 
+  def test_division_note(self):
+    self.compare_tokens(
+      "@tablet\n"+
+      "@obverse\n"+
+      "3.	U₄!-BI? 20* [(ina)] 9.30 ina(DIŠ) MAŠ₂!(BAR)\n"+
+      "#note: Note to line.\n",
+      ["AT","TABLET","NEWLINE","AT","OBVERSE","NEWLINE",
+      "LINELABEL"]+["ID"]*6+["NEWLINE","HASH","NOTE","ID","NEWLINE"]
+    )
+
   def test_comment(self):
     self.compare_tokens(
-      "# I've added various things for test purposes",
+      "# I've added various things for test purposes\n",
       []
     )
 
@@ -138,8 +147,8 @@ class testLexer(TestCase):
       "@tablet\n"+
       "@obverse\n"+
       "1.	[MU] 1.03-KAM {iti}AB GE₆ U₄ 2-KAM\n"
-      "#lem: šatti[year]N; n; Ṭebetu[1]MN; mūša[at night]AV; ūm[day]N; n",
+      "#lem: šatti[year]N; n; Ṭebetu[1]MN; mūša[at night]AV; ūm[day]N; n\n",
       ['AT','TABLET','NEWLINE',
        'AT', "OBVERSE",'NEWLINE',
-       'LINELABEL']+['ID']*6+['NEWLINE','HASH','LEM']+['ID','SEMICOLON']*5+['ID']
+       'LINELABEL']+['ID']*6+['NEWLINE','HASH','LEM']+['ID','SEMICOLON']*5+['ID',"NEWLINE"]
     )
