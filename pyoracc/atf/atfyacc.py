@@ -57,15 +57,23 @@ class AtfParser(object):
     p[0]=p[1]
     p[0].language=p[2]
 
+  def p_object_decl(self,p):
+    "object : AT object_specifier NEWLINE"
+    p[0]=p[2]
+
   def p_object_nolabel(self,p):
-    '''object : TABLET
+    '''object_specifier : TABLET
               | ENVELOPE
               | PRISM
               | BULLA'''
     p[0]=OraccObject(p[1])
 
+  def p_surface_decl(self,p):
+    "surface : AT surface_specifier NEWLINE"
+    p[0]=p[2]
+
   def p_surface_nolabel(self,p):
-    '''surface : OBVERSE
+    '''surface_specifier : OBVERSE
               | REVERSE
               | LEFT
               | RIGHT
@@ -82,7 +90,7 @@ class AtfParser(object):
 
 
   def p_object_label(self,p):
-    '''object : FRAGMENT ID
+    '''object_specifer : FRAGMENT ID
                  | OBJECT ID
                  | FACE SINGLEID
                  | SURFACE ID
@@ -93,7 +101,7 @@ class AtfParser(object):
     p[0]=OraccNamedObject(p[1],p[2])
 
   def p_surface_label(self,p):
-    '''surface : FACE SINGLEID
+    '''surface_specifier : FACE SINGLEID
                  | SURFACE ID
                  | EDGE ID
                  | COLUMN NUMBER
@@ -128,7 +136,7 @@ class AtfParser(object):
     p[0].words.append(p[2])
 
   def p_lemma_list(self,p):
-    "lemma_list : LEM ID"
+    "lemma_list : HASH LEM ID"
     p[0]=[p[2]]
 
   def p_lemma_id(self,p):
@@ -137,7 +145,7 @@ class AtfParser(object):
     p[0].append(p[3])
 
   def p_line_lemmas(self,p):
-    "line : line lemma_list"
+    "line : line lemma_list NEWLINE"
     p[0]=p[1]
     p[1].lemmas=p[2]
 
@@ -147,9 +155,9 @@ class AtfParser(object):
     p[0].children.append(p[2])
 
   def p_ruling(self,p):
-    """ruling : DOLLAR SINGLE RULING
-              | DOLLAR DOUBLE RULING
-              | DOLLAR TRIPLE RULING
+    """ruling : DOLLAR SINGLE RULING NEWLINE
+              | DOLLAR DOUBLE RULING NEWLINE
+              | DOLLAR TRIPLE RULING NEWLINE
     """
     counts={
       'single':1,

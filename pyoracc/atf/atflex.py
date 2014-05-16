@@ -4,6 +4,9 @@ import re
 class AtfLexer(object):
 
   def _keyword_token_to_text(self,token):
+    # We have to absorb the : into protocol
+    # Keywords, otherwise we can't treat the following colon
+    # differently from any following plain text
     if token in AtfLexer.protocols:
       return token.lower()+":"
     return token.lower()
@@ -13,6 +16,7 @@ class AtfLexer(object):
 
   def resolve_keyword(self,value,fallback=None):
     source = self._keyword_dict(AtfLexer.keyword_tokens)
+    source['note']="NOTE" # Note is both an @ and a #: keyword
     if not fallback:
       return source[value]
     return source.get(value,fallback)
@@ -49,7 +53,8 @@ class AtfLexer(object):
   long_argument_structures=[
     'OBJECT',
     'SURFACE',
-    'FRAGMENT'
+    'FRAGMENT',
+    'NOTE'
   ]
 
   protocols=['ATF','LEM','PROJECT','NOTE']
@@ -112,33 +117,36 @@ class AtfLexer(object):
     'PROJECT',
   ]+long_argument_structures
 
-  t_AMPERSAND="\&"
-  t_HASH="\#"
-  t_AT="\@"
-  t_EXCLAIM="\!"
-  t_QUERY="\?"
-  t_STAR="\*"
-  t_PRIME=r'\''
-  t_DOLLAR="\$"
+  t_INITIAL_translation_AMPERSAND="\&"
+  t_INITIAL_translation_HASH="\#"
+  t_INITIAL_translation_AT="\@"
+  t_INITIAL_translation_EXCLAIM="\!"
+  t_INITIAL_translation_QUERY="\?"
+  t_INITIAL_translation_STAR="\*"
+  t_INITIAL_translation_PRIME=r'\''
+  t_INITIAL_translation_DOLLAR="\$"
 
   t_PARENTHETICALID="\([^\)\n\r]*\)"
 
-  def t_WHITESPACE(self,t):
+  def t_INITIAL_translation_WHITESPACE(self,t):
     r'[\t ]+'
     # NO TOKEN
 
-  def t_LINELABEL(self,t):
-    r'^[1-9][0-9]*[a-z]*\.'
-    t.value=t.value[:-1]
-    t.lexer.push_state('text')
-    return t
-
-  def t_EQUALS(self,t):
+  def t_INITIAL_translation_EQUALS(self,t):
     "\="
     t.lexer.push_state('absorb')
     return t
 
-  def t_ID(self,t):
+  def t_INITIAL_translation_COMMENT(self,t):
+    "^\#[\ \t][^\n\r]*"
+    # No token
+
+  # In the multi-line base states, a newline doesn't change state
+  def t_INITIAL_translation_NEWLINE(self,t):
+    r'\n'
+    return t
+
+  def t_INITIAL_translation_ID(self,t):
     '[a-zA-Z][a-zA-Z0-9\[\]]+\:?'
     t.type=self.resolve_keyword(t.value,'ID')
     if t.type == "TRANSLATION":
@@ -147,21 +155,20 @@ class AtfLexer(object):
       t.lexer.push_state('lemmatize')
     if t.type in AtfLexer.absorbing_keywords:
       t.lexer.push_state('absorb')
+    print t.type
     return t
 
-  def t_COMMENT(self,t):
-    "^\#[\ \t][^\n\r]*"
-    # No token
+  def t_LINELABEL(self,t):
+    r'^[1-9][0-9]*[a-z]*\.'
+    t.value=t.value[:-1]
+    t.lexer.push_state('text')
+    return t
+
 
   # In the absorb, text, and lemmatize states, a newline returns to the base state
   def t_absorb_text_lemmatize_NEWLINE(self,t):
     r'\n'
     t.lexer.pop_state()
-    return t
-
-  # In the multi-line base states, a newline doesn't change state
-  def t_INITIAL_translation_NEWLINE(self,t):
-    r'\n'
     return t
 
   t_RANGE="[1-9][0-9]*\-[1-9][0-9]"
@@ -172,15 +179,18 @@ class AtfLexer(object):
   #--- RULES FOR THE ABSORB STATE ---
 
   def t_absorb_ID(self,t):
-    r'[\ \t]?([^\#\!\*\'\?\n\r]+)'
+    r'[\ \t]*([^\ \t\#\!\^\*\'\?\n\r][^\#\!\^\*\'\?\n\r]*)'
+    # Discard leading whitespace, token is not flag or newline
+    # And has at least one non-whitespace character
     t.value=t.lexer.lexmatch.groups()[2]
     return t
 
   t_absorb_HASH="\#"
-  t_absorb_AT="\@"
   t_absorb_EXCLAIM="\!"
   t_absorb_QUERY="\?"
   t_absorb_STAR="\*"
+  t_absorb_PRIME="'"
+  t_absorb_HAT="[\ \t]*\^[\ \t]*"
 
   #--- RULES FOR THE text STATE ----
   t_text_ID="[^\ \t \n\r]+"
@@ -197,10 +207,10 @@ class AtfLexer(object):
   # But everything else is free text
   def t_translation_LINELABEL(self,t):
     r'^([1-9][0-9]*[a-z]*)\.[\ \t]*'
-    t.value=t.lexer.lexmatch.groups()[3]
+    print t.lexer.lexmatch.groups()
+    t.value=t.lexer.lexmatch.groups()[6]
+    t.lexer.push_state('absorb')
     return t
-
-  t_translation_ID=".+$"
 
   # Error handling rule
   def t_ANY_error(self,t):

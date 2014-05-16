@@ -16,6 +16,7 @@ class testLexer(TestCase):
     for token,expected_type,expected_value in izip(self.lexer,
         expected_types,
         expected_values):
+      print token.type, expected_type, token.value, expected_value
       assert_equal(token.type,expected_type)
       if expected_value:
         assert_equal(token.value,expected_value)
@@ -87,22 +88,23 @@ class testLexer(TestCase):
   def test_translation_intro(self):
     self.compare_tokens(
       "@translation parallel en project",
-      ["TRANSLATION","ID","ID","ID"]
+      ["AT","TRANSLATION","ID","ID","ID"]
     )
 
   def test_translation_text(self):
     self.compare_tokens(
       "@translation parallel en project\n"+
       "1.	Year 63, Ṭebetu (Month X), night of day 2:^1^",
-      ["TRANSLATION","ID","ID","ID","LINELABEL","ID"],
-      [None,"parallel","en","project","1","Year 63, Ṭebetu (Month X), night of day 2:^1^"]
+      ["AT","TRANSLATION","ID","ID","ID","NEWLINE","LINELABEL","ID","HAT","ID","HAT"],
+      [None,None,"parallel","en","project",None,
+       "1","Year 63, Ṭebetu (Month X), night of day 2:",None,'1',None]
     )
 
   def test_division_note(self):
     self.compare_tokens(
       "@note ^1^ A note to the translation.",
-      ["NOTE","NOTEREF","ID"],
-      [None,"1","A note to the translation."]
+      ["AT","NOTE","HAT","ID","HAT","ID","NEWLINE"],
+      [None,None,None,"1",None,"A note to the translation."]
     )
 
   def test_comment(self):
@@ -119,16 +121,16 @@ class testLexer(TestCase):
 
   def test_described_object(self):
     self.compare_tokens(
-      "@object An object that fits no other category",
-      ["OBJECT","ID"],
-      [None,"An object that fits no other category"]
+      "@object An object that fits no other category\n",
+      ["AT","OBJECT","ID","NEWLINE"],
+      [None,None,"An object that fits no other category"]
     )
 
   def test_nested_object(self):
     self.compare_tokens(
       "@tablet\n"+
-      "@obverse",
-      ["TABLET","OBVERSE"]
+      "@obverse\n",
+      ["AT","TABLET","NEWLINE","AT","OBVERSE","NEWLINE"]
     )
 
   def test_object_line(self):
@@ -137,5 +139,7 @@ class testLexer(TestCase):
       "@obverse\n"+
       "1.	[MU] 1.03-KAM {iti}AB GE₆ U₄ 2-KAM\n"
       "#lem: šatti[year]N; n; Ṭebetu[1]MN; mūša[at night]AV; ūm[day]N; n",
-      ['TABLET', 'OBVERSE', 'LINELABEL']+['ID']*6+['LEM']+['ID','ENDLEMMA']*5+['ID']
+      ['AT','TABLET','NEWLINE',
+       'AT', "OBVERSE",'NEWLINE',
+       'LINELABEL']+['ID']*6+['NEWLINE','HASH','LEM']+['ID','SEMICOLON']*5+['ID']
     )
