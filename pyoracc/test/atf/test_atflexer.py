@@ -44,19 +44,19 @@ class testLexer(TestCase):
   def test_use_unicode(self):
     self.compare_tokens(
       "#atf: use unicode",
-      ["ATF","USE","UNICODE"]
+      ["HASH","ATF","USE","UNICODE","NEWLINE"]
     )
 
   def test_use_unicode(self):
     self.compare_tokens(
       "#atf: use math",
-      ["ATF","USE","MATH"]
+      ["HASH","ATF","USE","MATH","NEWLINE"]
     )
 
   def test_division_tablet(self):
     self.compare_tokens(
       "@tablet",
-      ["TABLET"]
+      ["AT","TABLET"]
     )
 
   def test_text_linenumber(self):
@@ -68,14 +68,14 @@ class testLexer(TestCase):
   def test_lemmatize(self):
     self.compare_tokens(
       "#lem: šatti[year]N; n; Ṭebetu[1]MN; mūša[at night]AV; ūm[day]N; n",
-      ["LEM"]+['ID','ENDLEMMA']*5+['ID']
+      ["HASH","LEM"]+['ID','ENDLEMMA']*5+['ID']
     )
 
   def test_loose_dollar(self):
     self.compare_tokens(
       "$ (a loose dollar line)",
-      ["DOLLAR","LOOSE"],
-      [None,"a loose dollar line"]
+      ["DOLLAR","PARENTHETICALID"],
+      [None,"(a loose dollar line)"]
     )
 
   def test_strict_dollar(self):

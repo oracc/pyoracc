@@ -69,8 +69,7 @@ class AtfLexer(object):
     'ID',
     'SINGLEID',
     'DOLLAR',
-    'LPAREN',
-    'RPAREN',
+    'PARENTHETICALID',
     'NUMBER',
     'HAT',
     'SEMICOLON',
@@ -121,8 +120,8 @@ class AtfLexer(object):
   t_STAR="\*"
   t_PRIME=r'\''
   t_DOLLAR="\$"
-  t_LPAREN=r'\('
-  t_RPAREN=r'\)'
+
+  t_PARENTHETICALID="\([^\)\n\r]*\)"
 
   def t_WHITESPACE(self,t):
     r'[\t ]+'

@@ -37,10 +37,10 @@ class AtfParser(object):
     p[0]=p[1]
 
   def p_unicode(self,p):
-    "unicode : ATF USE UNICODE"
+    "unicode : HASH ATF USE UNICODE"
 
   def p_math(self,p):
-    "math : ATF USE MATH"
+    "math : HASH ATF USE MATH NEWLINE"
 
   def p_language_protoocol(self,p):
     "language_protocol : HASH ATF LANG ID NEWLINE"
