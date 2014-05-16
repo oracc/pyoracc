@@ -15,18 +15,23 @@ class AtfParser(object):
 
 
   def p_document(self,p):
-    "document : text"
+    """document : text
+                | object"""
     p[0]=p[1]
 
   def p_codeline(self,p):
-    "code : AMPERSAND ID EQUALS ID newline_sequence"
+    "text_statement : AMPERSAND ID EQUALS ID newline_sequence"
     p[0]=Text()
     p[0].code=p[2]
     p[0].description=p[4]
 
-  def p_project(self,p):
-    "project : HASH PROJECT ID newline_sequence"
+  def p_project_statement(self,p):
+    "project_statement : HASH PROJECT ID newline_sequence"
     p[0]=p[3]
+
+  def p_project(self,p):
+    "project : project_statement"
+    p[0]=p[1]
 
   def p_text_project(self,p):
     "text : text project"
@@ -34,7 +39,7 @@ class AtfParser(object):
     p[0].project=p[2]
 
   def p_code(self,p):
-    "text : code"
+    "text : text_statement"
     p[0]=p[1]
 
   def p_unicode(self,p):
@@ -58,8 +63,14 @@ class AtfParser(object):
     p[0]=p[1]
     p[0].language=p[2]
 
-  def p_object_decl(self,p):
-    "object : AT object_specifier newline_sequence"
+  def p_text_object(self,p):
+    """text : text object"""
+    p[0]=p[1]
+    p[0].children.append(p[2])
+
+
+  def p_object_statement(self,p):
+    "object_statement : AT object_specifier newline_sequence"
     if len(p[2])==2:
       p[0]=OraccNamedObject(*p[2])
     else:
@@ -67,64 +78,71 @@ class AtfParser(object):
 
   def p_object_nolabel(self,p):
     '''object_specifier : TABLET
-              | ENVELOPE
-              | PRISM
-              | BULLA'''
+                        | ENVELOPE
+                        | PRISM
+                        | BULLA'''
     p[0]=(p[1],)
 
+
+  def p_object_label(self,p):
+    '''object_specifier : FRAGMENT ID
+                        | OBJECT ID'''
+    p[0]=(p[1],p[2])
+
+  def p_object(self,p):
+    "object : object_statement"
+    p[0]=p[1]
+
+  def p_object_surface(self,p):
+    "object : object surface"
+    p[0]=p[1]
+    p[0].children.append(p[2])
+
   def p_surface_decl(self,p):
-    "surface : AT surface_specifier newline_sequence"
+    "surface_statement : AT surface_specifier newline_sequence"
     if len(p[2])==2:
       p[0]=OraccNamedObject(*p[2])
     else:
       p[0]=OraccObject(*p[2])
 
   def p_surface_nolabel(self,p):
-    '''surface_specifier : OBVERSE
-              | REVERSE
-              | LEFT
-              | RIGHT
-              | TOP
-              | BOTTOM
-              | CATCHLINE
-              | COLOPHON
-              | DATE
-              | SIGNATURES
-              | SIGNATURE
-              | SUMMARY
-              | WITNESSES'''
+    '''surface_specifier  : OBVERSE
+                          | REVERSE
+                          | LEFT
+                          | RIGHT
+                          | TOP
+                          | BOTTOM
+                          | CATCHLINE
+                          | COLOPHON
+                          | DATE
+                          | SIGNATURES
+                          | SIGNATURE
+                          | SUMMARY
+                          | WITNESSES'''
     p[0]=(p[1],)
-
-
-  def p_object_label(self,p):
-    '''object_specifier : FRAGMENT ID
-                 | OBJECT ID'''
-    p[0]=(p[1],p[2])
 
   def p_surface_label(self,p):
     '''surface_specifier : FACE SINGLEID
-                 | SURFACE ID
-                 | EDGE ID
-                 | COLUMN NUMBER
-                 | SEAL NUMBER
-                 | H NUMBER'''
+                         | SURFACE ID
+                         | EDGE ID
+                         | COLUMN NUMBER
+                         | SEAL NUMBER
+                         | H NUMBER'''
     p[0]=(p[1],p[2])
 
+  def p_surface(self,p):
+    "surface : surface_statement"
+    p[0]=p[1]
+
+  def p_surface_line(self,p):
+    """surface : surface line
+               | surface ruling
+               | surface loose_dollar_statement
+               | surface strict_dollar_statement"""
+    p[0]=p[1]
+    p[0].children.append(p[2])
+
   # WE DO NOT YET HANDLE @M=DIVSION lines.
-
-  def p_debug_object(self,p):
-    """document : object"""
-    p[0]=p[1]
-
-  def p_text_object(self,p):
-    """text : text object"""
-    p[0]=p[1]
-    p[0].children.append(p[2])
-
-  def p_object_surface(self,p):
-    "object : object surface"
-    p[0]=p[1]
-    p[0].children.append(p[2])
 
   def p_linelabel(self,p):
     "line_sequence : LINELABEL ID"
@@ -140,6 +158,20 @@ class AtfParser(object):
     "line_statement : line_sequence newline_sequence"
     p[0]=p[1]
 
+  def p_line(self,p):
+    "line : line_statement"
+    p[0]=p[1]
+
+  def p_line_lemmas(self,p):
+    "line : line lemma_statement"
+    p[0]=p[1]
+    p[0].lemmas=p[2]
+
+  def p_line_note(self,p):
+    "line : line note_statement"
+    p[0]=p[1]
+    p[0].notes.append(p[2])
+
   def p_lemma_list(self,p):
     "lemma_list : HASH LEM ID"
     p[0]=[p[2]]
@@ -149,19 +181,9 @@ class AtfParser(object):
     p[0]=p[1]
     p[0].append(p[3])
 
-  def p_line_lemmas(self,p):
-    "line_statement : line_statement lemma_statement"
-    p[0]=p[1]
-    p[0].lemmas=p[2]
-
   def p_lemma_statement(self,p):
     "lemma_statement : lemma_list newline_sequence"
     p[0]=p[1]
-
-  def p_surface_line(self,p):
-    "surface : surface line_statement"
-    p[0]=p[1]
-    p[0].children.append(p[2])
 
   def p_ruling(self,p):
     """ruling : DOLLAR SINGLE RULING newline_sequence
@@ -175,41 +197,21 @@ class AtfParser(object):
     }
     p[0]=Ruling(counts[p[2]])
 
-  def p_surface_ruling(self,p):
-    "surface : surface ruling"
-    p[0]=p[1]
-    p[0].children.append(p[2])
-
   def p_note(self,p):
     "note_statement : HASH NOTE ID newline_sequence"
     p[0]=p[3]
 
-  def p_line_note(self,p):
-    "line_statement : line_statement note_statement"
-    p[0]=p[1]
-    p[0].notes.append(p[2])
-
   def p_newline_sequence(self,p):
     """newline_sequence : NEWLINE
-                     | newline_sequence NEWLINE"""
+                        | newline_sequence NEWLINE"""
 
   def p_loose_dollar(self,p):
     "loose_dollar_statement : DOLLAR PARENTHETICALID newline_sequence"
     p[0]=State(loose=p[2])
 
-  def p_surface_loose(self,p):
-    "surface : surface loose_dollar_statement"
-    p[0]=p[1]
-    p[0].children.append(p[2])
-
   def p_strict_dollar_statement(self,p):
     "strict_dollar_statement : DOLLAR state_description newline_sequence"
     p[0]=p[2]
-
-  def p_surface_strict(self,p):
-    "surface : surface strict_dollar_statement"
-    p[0]=p[1]
-    p[0].children.append(p[2])
 
   def p_state_description(self,p):
     """state_description : plural_state_description
@@ -218,8 +220,8 @@ class AtfParser(object):
 
   def p_plural_state_description(self,p):
     """plural_state_description : plural_quantifier plural_scope state
-                               | NUMBER plural_scope state
-                               | RANGE plural_scope state"""
+                                | NUMBER plural_scope state
+                                | RANGE plural_scope state"""
     p[0]=State(p[3],p[2],p[1])
 
   def p_qualified_state_description(self,p):
@@ -229,8 +231,8 @@ class AtfParser(object):
 
   def p_singular_state_description(self,p):
     """singular_state_description : singular_scope state
-                               | object_specifier state
-                               | surface_specifier state"""
+                                  | object_specifier state
+                                  | surface_specifier state"""
     p[0]=State(p[2]," ".join(p[1]))
 
   def p_partial_state_description(self,p):
@@ -240,11 +242,11 @@ class AtfParser(object):
 
   def p_state(self,p):
     """state : BLANK
-            | BROKEN
-            | EFFACED
-            | ILLEGIBLE
-            | MISSING
-            | TRACES"""
+             | BROKEN
+             | EFFACED
+             | ILLEGIBLE
+             | MISSING
+             | TRACES"""
     p[0]=p[1]
 
   def p_plural_quantifier(self,p):
@@ -264,15 +266,14 @@ class AtfParser(object):
 
   def p_partial_quantifier(self,p):
     """partial_quantifier : REST OF
-                         | START OF
-                         | BEGINNING OF
-                         | MIDDLE OF
-                         | END OF"""
+                          | START OF
+                          | BEGINNING OF
+                          | MIDDLE OF
+                          | END OF"""
     p[0]=" ".join(p[1:])
 
   def p_qualification(self,p):
     """qualification : ATWORD LEAST
-                  | ATWORD MOST
-                  | ABOUT
-                  """
+                     | ATWORD MOST
+                     | ABOUT"""
     p[0]=" ".join(p[1:])
