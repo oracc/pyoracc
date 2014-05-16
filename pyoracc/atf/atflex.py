@@ -5,7 +5,7 @@ class AtfLexer(object):
 
   def _keyword_token_to_text(self,token):
     if token in AtfLexer.protocols:
-      return ":"+token.lower()
+      return token.lower()+":"
     return token.lower()
 
   def _keyword_dict(self,tokens):
@@ -141,6 +141,7 @@ class AtfLexer(object):
 
   def t_ID(self,t):
     '[a-zA-Z][a-zA-Z0-9\[\]]+\:?'
+    print t.value
     t.type=self.resolve_keyword(t.value,'ID')
     if t.type == "TRANSLATION":
       t.lexer.push_state('translation')
@@ -151,7 +152,7 @@ class AtfLexer(object):
     return t
 
   def t_COMMENT(self,t):
-    "^\#[^\n\r]*"
+    "^\#[\ \t][^\n\r]*"
     # No token
 
   # In the absorb, text, and lemmatize states, a newline returns to the base state

@@ -16,6 +16,7 @@ class testLexer(TestCase):
     for token,expected_type,expected_value in izip(self.lexer,
         expected_types,
         expected_values):
+      print token.type,token.value,expected_type,expected_value
       assert_equal(token.type,expected_type)
       if expected_value:
         assert_equal(token.value,expected_value)
@@ -29,9 +30,9 @@ class testLexer(TestCase):
 
   def test_project(self):
     self.compare_tokens(
-      "#project: cams/gkab",
-      ["PROJECT","ID"],
-      [None,"cams/gkab"]
+      "#project: cams/gkab\n",
+      ['HASH',"PROJECT","ID","NEWLINE"],
+      [None,None,"cams/gkab",None]
     )
 
   def test_language_protocol(self):

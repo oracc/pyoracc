@@ -24,8 +24,8 @@ class AtfParser(object):
     p[0].description=p[4]
 
   def p_project(self,p):
-    "project : PROJECT ID"
-    p[0]=p[2]
+    "project : HASH PROJECT ID NEWLINE"
+    p[0]=p[3]
 
   def p_text_project(self,p):
     "text : text project"
