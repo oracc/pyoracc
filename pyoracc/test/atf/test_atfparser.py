@@ -3,6 +3,7 @@
 from unittest import TestCase
 
 from ...model.text import Text
+from ...model.translation import Translation
 from ...model.oraccobject import OraccObject
 from ...model.oraccnamedobject import OraccNamedObject
 from ...atf.atfyacc import AtfParser
@@ -130,7 +131,7 @@ class testParser(TestCase):
     "3.	U₄!-BI? 20* [(ina)] 9.30 ina(DIŠ) MAŠ₂!(BAR)\n"+
     "#note: Note to line.\n"
     )
-    assert_equal(art.children[0].children[0].notes[0],
+    assert_equal(art.children[0].children[0].notes[0].content,
                 "Note to line."
     )
 
@@ -194,3 +195,39 @@ class testParser(TestCase):
     assert_equal(art.children[0].children[0].state,"blank")
     assert_equal(art.children[0].children[0].scope,"column 1")
     assert_equal(art.children[0].children[0].extent,"rest of")
+
+  def test_translation_intro(self):
+    art=self.try_parse(
+      "@tablet\n"+
+      "@translation parallel en project\n"
+    )
+    assert_is_instance(art.children[0],Translation)
+
+  def test_translation_text(self):
+    art=self.try_parse(
+      "@tablet\n"+
+      "@translation parallel en project\n"+
+      "@obverse\n"
+      "1.	Year 63, Ṭebetu (Month X), night of day 2\n"
+    )
+    assert_is_instance(art.children[0],Translation)
+    assert_equal(art.children[0].children[0].children[0].label,'1')
+    assert_equal(art.children[0].children[0].children[0].words[0],
+      "Year 63, Ṭebetu (Month X), night of day 2")
+
+  def test_translation_links(self):
+    art=self.try_parse(
+      "@tablet\n"+
+      "@translation parallel en project\n"+
+      "@obverse\n"
+      "1.	Year 63, Ṭebetu (Month X), night of day 2:^1^\n\n"
+      "@note ^1^ A note to the translation.\n"
+    )
+    assert_is_instance(art.children[0],Translation)
+    assert_equal(art.children[0].children[0].children[0].label,'1')
+    assert_equal(art.children[0].children[0].children[0].words[0],
+      "Year 63, Ṭebetu (Month X), night of day 2:")
+    assert_equal(art.children[0].children[0].children[0].references[0],
+      "1")
+    assert_equal(art.children[0].children[0].children[0].notes[0].references[0],
+      "1")

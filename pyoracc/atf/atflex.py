@@ -181,8 +181,22 @@ class AtfLexer(object):
 
   #--- RULES FOR THE ABSORB STATE ---
 
+  white=r'[\ \t]'
+  nonflagnonwhite=r'[^\ \t\#\!\^\*\'\?\n\r]'
+  internalonly=r'[^\n\^\r]'
+  nonflag=r'[^\ \t\#\!\^\*\'\?\n\r]'
+  absorb_regex=(white+'*'+'('+nonflagnonwhite+
+                        '('+
+                            '('+internalonly+'*'+nonflag+'+'+')'+
+                            '|'+
+                            nonflag+'*'+
+                        ')'+
+                      ')')
+
+  @lex.TOKEN(absorb_regex)
   def t_absorb_ID(self,t):
-    r'[\ \t]*([^\ \t\#\!\^\*\'\?\n\r][^\#\!\^\*\'\?\n\r]*)'
+
+
     # Discard leading whitespace, token is not flag or newline
     # And has at least one non-whitespace character
     t.value=t.lexer.lexmatch.groups()[2]

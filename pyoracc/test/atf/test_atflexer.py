@@ -99,6 +99,34 @@ class testLexer(TestCase):
        "1","Year 63, Ṭebetu (Month X), night of day 2:",None,'1',None]
     )
 
+  def test_note_internalflag(self):
+    self.compare_tokens(
+    "@note Hello James's World",
+    ["AT","NOTE","ID"],
+    [None,None,"Hello James's World"]
+    )
+
+  def test_note_internalspace(self):
+    self.compare_tokens(
+    "@note Hello James",
+    ["AT","NOTE","ID"],
+    [None,None,"Hello James"]
+    )
+
+  def test_note_onechar(self):
+    self.compare_tokens(
+    "@note H",
+    ["AT","NOTE","ID"],
+    [None,None,"H"]
+    )
+
+  def test_note_short(self):
+    self.compare_tokens(
+    "@note I'm",
+    ["AT","NOTE","ID"],
+    [None,None,"I'm"]
+    )
+
   def test_division_note(self):
     self.compare_tokens(
       "@note ^1^ A note to the translation.",

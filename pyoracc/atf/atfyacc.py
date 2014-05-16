@@ -7,6 +7,7 @@ from ..model.line import Line
 from ..model.ruling import Ruling
 from ..model.note import Note
 from ..model.state import State
+from ..model.translation import Translation
 
 class AtfParser(object):
   tokens=AtfLexer.tokens
@@ -54,9 +55,11 @@ class AtfParser(object):
 
   def p_text_math(self,p):
     "text : text math"
+    p[0]=p[1]
 
   def p_text_unicode(self,p):
     "text : text unicode"
+    p[0]=p[1]
 
   def p_text_language(self,p):
     "text : text language_protocol"
@@ -94,7 +97,8 @@ class AtfParser(object):
     p[0]=p[1]
 
   def p_object_surface(self,p):
-    "object : object surface"
+    """object : object surface
+              | object translation"""
     p[0]=p[1]
     p[0].children.append(p[2])
 
@@ -149,10 +153,17 @@ class AtfParser(object):
     p[0]=Line(p[1])
     p[0].words.append(p[2])
 
+
+
   def p_line_id(self,p):
     "line_sequence : line_sequence ID"
     p[0]=p[1]
     p[0].words.append(p[2])
+
+  def p_line_reference(self,p):
+    "line_sequence : line_sequence reference"
+    p[0]=p[1]
+    p[0].references.append(p[2])
 
   def p_line_statement(self,p):
     "line_statement : line_sequence newline_sequence"
@@ -198,8 +209,27 @@ class AtfParser(object):
     p[0]=Ruling(counts[p[2]])
 
   def p_note(self,p):
-    "note_statement : HASH NOTE ID newline_sequence"
-    p[0]=p[3]
+    """note_statement : HASH note_sequence newline_sequence
+                      | AT note_sequence newline_sequence"""
+    p[0]=p[2]
+
+  def p_note_sequence(self,p):
+    """note_sequence : NOTE"""
+    p[0]=Note()
+
+  def p_note_sequence_content(self,p):
+    """note_sequence : note_sequence ID"""
+    p[0]=p[1]
+    p[0].content+=p[2]
+
+  def p_note_sequence_link(self,p):
+    """note_sequence : note_sequence reference"""
+    p[0]=p[1]
+    p[0].references.append(p[2])
+
+  def p_reference(self,p):
+    "reference : HAT ID HAT"
+    p[0]=p[2]
 
   def p_newline_sequence(self,p):
     """newline_sequence : NEWLINE
@@ -277,3 +307,25 @@ class AtfParser(object):
                      | ATWORD MOST
                      | ABOUT"""
     p[0]=" ".join(p[1:])
+
+  def p_translation_statement(self,p):
+    "translation_statement : AT translation_declaration newline_sequence"
+    p[0]=p[2]
+
+  def p_translation_declaration(self,p):
+    "translation_declaration : TRANSLATION"
+    p[0]=Translation()
+
+  # This is a placeholder, translation grammar is more complex
+  def p_translation_info(self,p):
+    "translation_declaration : translation_declaration ID"
+    p[0]=p[1] # We ignore the 'parallel en project'
+
+  def p_translation(self,p):
+    "translation : translation_statement"
+    p[0]=p[1]
+
+  def p_translation_surface(self,p):
+    "translation : translation surface"
+    p[0]=p[1]
+    p[0].children.append(p[2])
