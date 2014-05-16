@@ -83,7 +83,8 @@ class AtfLexer(object):
     'PRIME',
     'RANGE',
     'LETTER',
-    'HASH'
+    'HASH',
+    'NEWLINE'
   ]
 
   keyword_tokens=list(set(

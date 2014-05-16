@@ -18,7 +18,7 @@ class AtfParser(object):
     p[0]=p[1]
 
   def p_codeline(self,p):
-    "code : AMPERSAND ID EQUALS ID"
+    "code : AMPERSAND ID EQUALS ID NEWLINE"
     p[0]=Text()
     p[0].code=p[2]
     p[0].description=p[4]

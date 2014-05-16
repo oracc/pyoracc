@@ -20,7 +20,7 @@ class testParser(TestCase):
       return self.parser.parse(content,lexer=self.lexer)
 
   def test_code(self):
-    text=self.try_parse("&X001001 = JCS 48, 089")
+    text=self.try_parse("&X001001 = JCS 48, 089\n")
     assert_is_instance(text,Text)
     assert_equal(text.description,"JCS 48, 089")
     assert_equal(text.code,"X001001")

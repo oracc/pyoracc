@@ -22,8 +22,8 @@ class testLexer(TestCase):
 
   def test_code(self):
     self.compare_tokens(
-      "&X001001 = JCS 48, 089",
-      ["AMPERSAND","ID","EQUALS","ID"],
+      "&X001001 = JCS 48, 089\n",
+      ["AMPERSAND","ID","EQUALS","ID","NEWLINE"],
       [None,"X001001",None,"JCS 48, 089"]
     )
 
