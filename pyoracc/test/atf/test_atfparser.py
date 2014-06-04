@@ -71,6 +71,17 @@ class testParser(TestCase):
     assert_equal(obj.objecttype,"object")
     assert_equal(obj.name,"That fits no other category")
 
+  def test_flagged_object(self):
+    obj=self.try_parse(
+      "@object which is remarkable and broken!#\n"
+    )
+    assert_is_instance(obj,OraccNamedObject)
+    assert_equal(obj.objecttype,"object")
+    assert_equal(obj.name,"which is remarkable and broken")
+    assert(obj.broken)
+    assert(obj.remarkable)
+    assert(not obj.collated)
+
   def test_substructure(self):
     obj=self.try_parse(
       "@tablet\n"+

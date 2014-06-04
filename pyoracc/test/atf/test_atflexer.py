@@ -144,6 +144,10 @@ class testLexer(TestCase):
       "LINELABEL"]+["ID"]*6+["NEWLINE","HASH","NOTE","ID","NEWLINE"]
     )
 
+  def test_flagged_object(self):
+    self.compare_tokens("@object which is remarkable and broken!#\n",
+    ["AT","OBJECT","ID","EXCLAIM","HASH"])
+
   def test_comment(self):
     self.compare_tokens(
       "# I've added various things for test purposes\n",
