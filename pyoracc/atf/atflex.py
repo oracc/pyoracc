@@ -54,11 +54,11 @@ class AtfLexer(object):
   protocol_keywords=['LANG','USE','MATH','UNICODE']
 
   dollar_keywords=[
-    'ATWORD','MOST','LEAST','ABOUT',
+    'MOST','LEAST','ABOUT',
     'SEVERAL','SOME','REST','OF','START','BEGINNING','MIDDLE','END',
     'COLUMNS','LINE','LINES','CASE','CASES','SURFACE',
     'BLANK','BROKEN','EFFACED','ILLEGIBLE','MISSING','TRACES',
-    'RULING','SINGLE','DOUBLE','TRIPLE']
+    'RULING','SINGLE','DOUBLE','TRIPLE','AT']
 
   base_tokens=[
     'AMPERSAND',
@@ -75,7 +75,6 @@ class AtfLexer(object):
     'RSQUARE',
     'EXCLAIM',
     'QUERY',
-    'AT',
     'STAR',
     'PRIME',
     'RANGE',
@@ -137,7 +136,8 @@ class AtfLexer(object):
 
   def t_INITIAL_translation_ATID(self,t):
     '\@[a-zA-Z][a-zA-Z0-9\[\]]+'
-    t.type=self.resolve_keyword(t.value[1:],
+    t.value=t.value[1:]
+    t.type=self.resolve_keyword(t.value,
       AtfLexer.structures+AtfLexer.long_argument_structures,'ID')
     if t.type == "TRANSLATION":
       t.lexer.push_state('translation')
@@ -156,7 +156,7 @@ class AtfLexer(object):
       AtfLexer.structures+
       AtfLexer.long_argument_structures,'ID')
 
-    if t.type in [AtfLexer.structures+AtfLexer.long_argument_structures]:
+    if t.type in set(AtfLexer.structures+AtfLexer.long_argument_structures)-set(["NOTE"]):
       # Since @structure tokens are so important to the grammar,
       # the keywords refering to structural elements in strict dollar
       # lines must be DIFFERENT TOKENS IN THE LEXER

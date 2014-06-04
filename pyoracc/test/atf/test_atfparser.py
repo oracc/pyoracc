@@ -19,7 +19,7 @@ class testParser(TestCase):
 
   def try_parse(self,content):
       self.parser=AtfParser().parser
-      return self.parser.parse(content,lexer=self.lexer,debug=1)
+      return self.parser.parse(content,lexer=self.lexer)
 
   def test_code(self):
     text=self.try_parse("&X001001 = JCS 48, 089\n")
@@ -164,18 +164,18 @@ class testParser(TestCase):
     assert_is_instance(art,Text)
     tablet=art.children[0]
     assert_is_instance(tablet,OraccObject)
-    #case=art.children[1]
-    #assert_equal(len(art.children),2)
+    case=art.children[1]
+    assert_equal(len(art.children),2)
     obverse=tablet.children[0]
     assert_is_instance(obverse,OraccObject)
-    #reverse=tablet.children[1]
-    #assert_equal(len(tablet.children),2)
-    #caseobverse=case.children[0]
-    #assert_equal(len(case.children),1)
-    lines=obverse.children[:]#+reverse.children[:]+caseobverse[:]
+    reverse=tablet.children[1]
+    assert_equal(len(tablet.children),2)
+    caseobverse=case.children[0]
+    assert_equal(len(case.children),1)
+    lines=obverse.children[:]+reverse.children[:]+caseobverse.children[:]
     assert_equal(len(lines),4)
     assert_equal(lines[1].lemmas[1],"two")
-    assert_equal(lines[3].notes[0],"Note to line three")
+    assert_equal(lines[2].notes[0].content,"Note to line three")
 
   def test_line(self):
     art=self.try_parse(

@@ -67,44 +67,37 @@ class AtfParser(object):
     p[0].language=p[2]
 
   def p_text_object(self,p):
-    """text : text object %prec OBJECT_COMPOSITION"""
+    """text : text object"""
     p[0]=p[1]
     p[0].children.append(p[2])
 
 
   def p_object_statement(self,p):
-    """object_statement : object_declarator newline_sequence"""
+    """object_statement : object_specifier newline_sequence"""
     p[0]=p[1]
 
-  def p_object_declarator(self,p):
-    """object_declarator : AT object_specifier"""
-    if len(p[2])==2:
-      p[0]=OraccNamedObject(*p[2])
-    else:
-      p[0]=OraccObject(*p[2])
-
   def p_object_flag_broken(self,p):
-    "object_declarator : object_declarator HASH"
+    "object_specifier : object_specifier HASH"
     p[0]=p[1]
     p[0].broken=True
 
   def p_object_flag_remarkable(self,p):
-    "object_declarator : object_declarator EXCLAIM"
+    "object_specifier : object_specifier EXCLAIM"
     p[0]=p[1]
     p[0].remarkable=True
 
   def p_object_flag_prime(self,p):
-    "object_declarator : object_declarator PRIME"
+    "object_specifier : object_specifier PRIME"
     p[0]=p[1]
     p[0].prime=True
 
   def p_object_flag_query(self,p):
-    "object_declarator : object_declarator QUERY"
+    "object_specifier : object_specifier QUERY"
     p[0]=p[1]
     p[0].query=True
 
   def p_object_flag_collated(self,p):
-    "object_declarator : object_declarator STAR"
+    "object_specifier : object_specifier STAR"
     p[0]=p[1]
     p[0].collated=True
 
@@ -116,13 +109,13 @@ class AtfParser(object):
                         | ENVELOPE
                         | PRISM
                         | BULLA'''
-    p[0]=(p[1],)
+    p[0]=OraccObject(p[1])
 
 
   def p_object_label(self,p):
     '''object_specifier : FRAGMENT ID
                         | OBJECT ID'''
-    p[0]=(p[1],p[2])
+    p[0]=OraccNamedObject(p[1],p[2])
 
 
   def p_object(self,p):
@@ -130,44 +123,37 @@ class AtfParser(object):
     p[0]=p[1]
 
   def p_object_surface(self,p):
-    """object : object surface %prec OBJECT_COMPOSITION
-              | object translation %prec OBJECT_COMPOSITION """
+    """object : object surface
+              | object translation """
     p[0]=p[1]
     p[0].children.append(p[2])
 
   def p_surface_statement(self,p):
-    "surface_statement : surface_declarator newline_sequence"
+    "surface_statement : surface_specifier newline_sequence"
     p[0]=p[1]
 
-  def p_surface_decl(self,p):
-    "surface_declarator : AT surface_specifier"
-    if len(p[2])==2:
-      p[0]=OraccNamedObject(*p[2])
-    else:
-      p[0]=OraccObject(*p[2])
-
   def p_surface_flag_broken(self,p):
-    "surface_declarator : surface_declarator HASH"
+    "surface_specifier : surface_specifier HASH"
     p[0]=p[1]
     p[0].broken=True
 
   def p_surface_flag_remarkable(self,p):
-    "surface_declarator : surface_declarator EXCLAIM"
+    "surface_specifier : surface_specifier EXCLAIM"
     p[0]=p[1]
     p[0].remarkable=True
 
   def p_surface_flag_prime(self,p):
-    "surface_declarator : surface_declarator PRIME"
+    "surface_specifier : surface_specifier PRIME"
     p[0]=p[1]
     p[0].prime=True
 
   def p_surface_flag_query(self,p):
-    "surface_declarator : surface_declarator QUERY"
+    "surface_specifier : surface_specifier QUERY"
     p[0]=p[1]
     p[0].query=True
 
   def p_surface_flag_collated(self,p):
-    "surface_declarator : surface_declarator STAR"
+    "surface_specifier : surface_specifier STAR"
     p[0]=p[1]
     p[0].collated=True
 
@@ -185,7 +171,7 @@ class AtfParser(object):
                           | SIGNATURE
                           | SUMMARY
                           | WITNESSES'''
-    p[0]=(p[1],)
+    p[0]=OraccObject(p[1])
 
   def p_surface_label(self,p):
     '''surface_specifier : FACE SINGLEID
@@ -194,17 +180,17 @@ class AtfParser(object):
                          | COLUMN NUMBER
                          | SEAL NUMBER
                          | H NUMBER'''
-    p[0]=(p[1],p[2])
+    p[0]=OraccNamedObject(p[1],p[2])
 
   def p_surface(self,p):
     "surface : surface_statement"
     p[0]=p[1]
 
   def p_surface_line(self,p):
-    """surface : surface line %prec SURFACE_COMPOSITION
-               | surface ruling %prec SURFACE_COMPOSITION
-               | surface loose_dollar_statement %prec SURFACE_COMPOSITION
-               | surface strict_dollar_statement %prec SURFACE_COMPOSITION """
+    """surface : surface line
+               | surface ruling
+               | surface loose_dollar_statement
+               | surface strict_dollar_statement """
     p[0]=p[1]
     p[0].children.append(p[2])
 
@@ -236,12 +222,12 @@ class AtfParser(object):
     p[0]=p[1]
 
   def p_line_lemmas(self,p):
-    "line : line lemma_statement %prec LINE_COMPOSITION "
+    "line : line lemma_statement  "
     p[0]=p[1]
     p[0].lemmas=p[2]
 
   def p_line_note(self,p):
-    "line : line note_statement %prec LINE_COMPOSITION"
+    "line : line note_statement "
     p[0]=p[1]
     p[0].notes.append(p[2])
 
@@ -276,7 +262,7 @@ class AtfParser(object):
 
   def p_note_sequence(self,p):
     """note_sequence : HASH NOTE
-                     | ATNOTE """
+                     | NOTE """
     p[0]=Note()
 
   def p_note_sequence_content(self,p):
@@ -323,9 +309,11 @@ class AtfParser(object):
 
   def p_singular_state_description(self,p):
     """singular_state_description : singular_scope state
-                                  | object_specifier state
-                                  | surface_specifier state"""
-    p[0]=State(p[2]," ".join(p[1]))
+                                  | REFERENCE state
+                                  | REFERENCE ID state
+                                  | REFERENCE NUMBER state"""
+    text=list(p)
+    p[0]=State(text[-1]," ".join(text[1:-1]))
 
   def p_partial_state_description(self,p):
     "singular_state_description : partial_quantifier singular_state_description"
@@ -348,7 +336,7 @@ class AtfParser(object):
   def p_singular_scope(self,p):
     """singular_scope : LINE
                       | CASE"""
-    p[0]=[p[1]]
+    p[0]=p[1]
 
   def p_plural_scope(self,p):
     """plural_scope : COLUMNS
@@ -365,30 +353,21 @@ class AtfParser(object):
     p[0]=" ".join(p[1:])
 
   def p_qualification(self,p):
-    """qualification : ATWORD LEAST
-                     | ATWORD MOST
+    """qualification : AT LEAST
+                     | AT MOST
                      | ABOUT"""
     p[0]=" ".join(p[1:])
 
   def p_translation_statement(self,p):
-    "translation_statement : AT translation_declaration newline_sequence"
-    p[0]=p[2]
-
-  def p_translation_declaration(self,p):
-    "translation_declaration : TRANSLATION"
+    "translation_statement : TRANSLATION ID ID PROJECT newline_sequence"
     p[0]=Translation()
-
-  # This is a placeholder, translation grammar is more complex
-  def p_translation_info(self,p):
-    "translation_declaration : translation_declaration ID"
-    p[0]=p[1] # We ignore the 'parallel en project'
 
   def p_translation(self,p):
     "translation : translation_statement"
     p[0]=p[1]
 
   def p_translation_surface(self,p):
-    "translation : translation surface %prec OBJECT_COMPOSITION"
+    "translation : translation surface "
     p[0]=p[1]
     p[0].children.append(p[2])
 
@@ -403,11 +382,3 @@ class AtfParser(object):
   # where text(object(surface)) could be read as text(object) . surface
   # These need to be resolved by making the potential declaration of a new
   # child entity take precedence over composition of an object into its parent
-
-  precedence = (
-    ('nonassoc','OBJECT_COMPOSITION'),
-    ('nonassoc','AT'),
-    ('nonassoc','SURFACE_COMPOSITION'),
-    ('nonassoc','LINE_COMPOSITION'),
-    ('nonassoc','HASH'),
-  )

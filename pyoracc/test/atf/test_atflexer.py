@@ -81,7 +81,7 @@ class testLexer(TestCase):
   def test_strict_dollar(self):
     self.compare_tokens(
       "$ reverse blank",
-      ["DOLLAR","REVERSE","BLANK"]
+      ["DOLLAR","REFERENCE","BLANK"]
     )
 
   def test_translation_intro(self):
