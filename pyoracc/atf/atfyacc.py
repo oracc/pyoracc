@@ -124,7 +124,7 @@ class AtfParser(object):
 
   def p_object_surface(self,p):
     """object : object surface
-              | object translation """
+              | object translation %prec TRANSLATIONEND """
     p[0]=p[1]
     p[0].children.append(p[2])
 
@@ -371,14 +371,23 @@ class AtfParser(object):
     p[0]=p[1]
     p[0].children.append(p[2])
 
-  # There is a potential shift-reduce error in the following sample:
+  # There is a potential shift-reduce conflict in the following sample:
 
   """
-  &X=Something
   @tablet
+  @obverse
+  @translation
   @obverse
   """
 
-  # where text(object(surface)) could be read as text(object) . surface
-  # These need to be resolved by making the potential declaration of a new
-  # child entity take precedence over composition of an object into its parent
+  # where (object(surface,translation(surface))) could be read as
+  # object(surface,translation(),surface)
+  # These need to be resolved by making surface establishment and composition
+  # take precedence over the completion of a translation
+
+  precedence = (
+    ('nonassoc','TRANSLATIONEND'),
+    ('nonassoc','OBVERSE','REVERSE','LEFT','RIGHT','TOP','BOTTOM',
+    'CATCHLINE','COLOPHON','DATE','SIGNATURES','SIGNATURE','SUMMARY',
+    'WITNESSES','FACE','SINGLEID','SURFACE','EDGE','COLUMN','SEAL')
+  )
