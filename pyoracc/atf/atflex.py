@@ -137,10 +137,8 @@ class AtfLexer(object):
 
   def t_INITIAL_translation_ATID(self,t):
     '\@[a-zA-Z][a-zA-Z0-9\[\]]+'
-    print t.type,t.value[1:]
     t.type=self.resolve_keyword(t.value[1:],
       AtfLexer.structures+AtfLexer.long_argument_structures,'ID')
-    print t.type
     if t.type == "TRANSLATION":
       t.lexer.push_state('translation')
     if t.type in AtfLexer.long_argument_structures+["NOTE"]:
@@ -233,7 +231,6 @@ class AtfLexer(object):
   # But everything else is free text
   def t_translation_LINELABEL(self,t):
     r'^([1-9][0-9]*[a-z]*)\.[\ \t]*'
-    print t.lexer.lexmatch.groups()
     t.value=t.lexer.lexmatch.groups()[7]
     t.lexer.push_state('absorb')
     return t
