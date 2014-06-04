@@ -56,7 +56,7 @@ class testLexer(TestCase):
   def test_division_tablet(self):
     self.compare_tokens(
       "@tablet",
-      ["AT","TABLET"]
+      ["TABLET"]
     )
 
   def test_text_linenumber(self):
@@ -87,50 +87,50 @@ class testLexer(TestCase):
   def test_translation_intro(self):
     self.compare_tokens(
       "@translation parallel en project",
-      ["AT","TRANSLATION","ID","ID","ID"]
+      ["TRANSLATION","ID","ID","PROJECT"]
     )
 
   def test_translation_text(self):
     self.compare_tokens(
       "@translation parallel en project\n"+
       "1.	Year 63, Ṭebetu (Month X), night of day 2:^1^",
-      ["AT","TRANSLATION","ID","ID","ID","NEWLINE","LINELABEL","ID","HAT","ID","HAT"],
-      [None,None,"parallel","en","project",None,
+      ["TRANSLATION","ID","ID","PROJECT","NEWLINE","LINELABEL","ID","HAT","ID","HAT"],
+      [None,"parallel","en","project",None,
        "1","Year 63, Ṭebetu (Month X), night of day 2:",None,'1',None]
     )
 
   def test_note_internalflag(self):
     self.compare_tokens(
     "@note Hello James's World",
-    ["ATNOTE","ID"],
-    [None,None,"Hello James's World"]
+    ["NOTE","ID"],
+    [None,"Hello James's World"]
     )
 
   def test_note_internalspace(self):
     self.compare_tokens(
     "@note Hello James",
-    ["ATNOTE","ID"],
-    [None,None,"Hello James"]
+    ["NOTE","ID"],
+    [None,"Hello James"]
     )
 
   def test_note_onechar(self):
     self.compare_tokens(
     "@note H",
-    ["ATNOTE","ID"],
+    ["NOTE","ID"],
     [None,"H"]
     )
 
   def test_note_short(self):
     self.compare_tokens(
     "@note I'm",
-    ["ATNOTE","ID"],
+    ["NOTE","ID"],
     [None,"I'm"]
     )
 
   def test_division_note(self):
     self.compare_tokens(
       "@note ^1^ A note to the translation.",
-      ["ATNOTE","HAT","ID","HAT","ID","NEWLINE"],
+      ["NOTE","HAT","ID","HAT","ID","NEWLINE"],
       [None,"1",None,"A note to the translation."]
     )
 
@@ -140,13 +140,13 @@ class testLexer(TestCase):
       "@obverse\n"+
       "3.	U₄!-BI? 20* [(ina)] 9.30 ina(DIŠ) MAŠ₂!(BAR)\n"+
       "#note: Note to line.\n",
-      ["AT","TABLET","NEWLINE","AT","OBVERSE","NEWLINE",
+      ["TABLET","NEWLINE","OBVERSE","NEWLINE",
       "LINELABEL"]+["ID"]*6+["NEWLINE","HASH","NOTE","ID","NEWLINE"]
     )
 
   def test_flagged_object(self):
     self.compare_tokens("@object which is remarkable and broken!#\n",
-    ["AT","OBJECT","ID","EXCLAIM","HASH"])
+    ["OBJECT","ID","EXCLAIM","HASH"])
 
   def test_comment(self):
     self.compare_tokens(
@@ -163,15 +163,15 @@ class testLexer(TestCase):
   def test_described_object(self):
     self.compare_tokens(
       "@object An object that fits no other category\n",
-      ["AT","OBJECT","ID","NEWLINE"],
-      [None,None,"An object that fits no other category"]
+      ["OBJECT","ID","NEWLINE"],
+      [None,"An object that fits no other category"]
     )
 
   def test_nested_object(self):
     self.compare_tokens(
       "@tablet\n"+
       "@obverse\n",
-      ["AT","TABLET","NEWLINE","AT","OBVERSE","NEWLINE"]
+      ["TABLET","NEWLINE","OBVERSE","NEWLINE"]
     )
 
   def test_object_line(self):
@@ -180,7 +180,7 @@ class testLexer(TestCase):
       "@obverse\n"+
       "1.	[MU] 1.03-KAM {iti}AB GE₆ U₄ 2-KAM\n"
       "#lem: šatti[year]N; n; Ṭebetu[1]MN; mūša[at night]AV; ūm[day]N; n\n",
-      ['AT','TABLET','NEWLINE',
-       'AT', "OBVERSE",'NEWLINE',
+      ['TABLET','NEWLINE',
+       "OBVERSE",'NEWLINE',
        'LINELABEL']+['ID']*6+['NEWLINE','HASH','LEM']+['ID','SEMICOLON']*5+['ID',"NEWLINE"]
     )

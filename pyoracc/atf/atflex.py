@@ -3,20 +3,13 @@ import re
 
 class AtfLexer(object):
 
-  def _keyword_token_to_text(self,token):
-    # We have to absorb the : into protocol
-    # Keywords, otherwise we can't treat the following colon
-    # differently from any following plain text
-    if token in AtfLexer.protocols:
-      return token.lower()+":"
-    return token.lower()
-
   def _keyword_dict(self,tokens):
-    return {self._keyword_token_to_text(token): token for token in tokens}
+    return {token.lower(): token for token in tokens}
 
-  def resolve_keyword(self,value,fallback=None):
-    source = self._keyword_dict(AtfLexer.keyword_tokens)
-    source['at']="ATWORD"
+  def resolve_keyword(self,value,source,fallback=None):
+    if value[-1]==":" : # If this is a #lem: for example,
+      value=value[:-1]
+    source = self._keyword_dict(source)
     if not fallback:
       return source[value]
     return source.get(value,fallback)
@@ -53,7 +46,7 @@ class AtfLexer(object):
   long_argument_structures=[
     'OBJECT',
     'SURFACE',
-    'FRAGMENT',
+    'FRAGMENT'
   ]
 
   protocols=['ATF','LEM','PROJECT','NOTE']
@@ -89,7 +82,7 @@ class AtfLexer(object):
     'LETTER',
     'HASH',
     'NEWLINE',
-    'ATNOTE' # In translations, @ doesn't necessarily introduce structure
+    'REFERENCE'
   ]
 
   keyword_tokens=list(set(
@@ -113,15 +106,8 @@ class AtfLexer(object):
 
   states=[(state,'exclusive') for state in state_names ]
 
-  absorbing_keywords=[
-    'LANG',
-    'PROJECT',
-    'NOTE',
-  ]+long_argument_structures
-
   t_INITIAL_translation_AMPERSAND="\&"
   t_INITIAL_translation_HASH="\#"
-  t_INITIAL_translation_AT="\@"
   t_INITIAL_translation_EXCLAIM="\!"
   t_INITIAL_translation_QUERY="\?"
   t_INITIAL_translation_STAR="\*"
@@ -149,14 +135,37 @@ class AtfLexer(object):
     t.lexer.lineno += 1
     return t
 
-  def t_INITIAL_translation_ID(self,t):
-    '[a-zA-Z][a-zA-Z0-9\[\]]+\:?'
-    t.type=self.resolve_keyword(t.value,'ID')
+  def t_INITIAL_translation_ATID(self,t):
+    '\@[a-zA-Z][a-zA-Z0-9\[\]]+'
+    print t.type,t.value[1:]
+    t.type=self.resolve_keyword(t.value[1:],
+      AtfLexer.structures+AtfLexer.long_argument_structures,'ID')
+    print t.type
     if t.type == "TRANSLATION":
       t.lexer.push_state('translation')
+    if t.type in AtfLexer.long_argument_structures+["NOTE"]:
+      t.lexer.push_state('absorb')
+    return t
+
+  def t_INITIAL_translation_ID(self,t):
+    '[a-zA-Z][a-zA-Z0-9\[\]]+\:?'
+    # Note that \:? absorbs a trailing colon in protocol keywords
+
+    t.type=self.resolve_keyword(t.value,
+      AtfLexer.protocols+
+      AtfLexer.protocol_keywords+
+      AtfLexer.dollar_keywords+
+      AtfLexer.structures+
+      AtfLexer.long_argument_structures,'ID')
+
+    if t.type in [AtfLexer.structures+AtfLexer.long_argument_structures]:
+      # Since @structure tokens are so important to the grammar,
+      # the keywords refering to structural elements in strict dollar
+      # lines must be DIFFERENT TOKENS IN THE LEXER
+      t.type = "REFERENCE"
     if t.type == "LEM":
       t.lexer.push_state('lemmatize')
-    if t.type in AtfLexer.absorbing_keywords:
+    if t.type in ['LANG','PROJECT','NOTE']:
       t.lexer.push_state('absorb')
     return t
 
@@ -224,12 +233,8 @@ class AtfLexer(object):
   # But everything else is free text
   def t_translation_LINELABEL(self,t):
     r'^([1-9][0-9]*[a-z]*)\.[\ \t]*'
-    t.value=t.lexer.lexmatch.groups()[6]
-    t.lexer.push_state('absorb')
-    return t
-
-  def t_INITIAL_translation_ATNOTE(self,t):
-    "\@note"
+    print t.lexer.lexmatch.groups()
+    t.value=t.lexer.lexmatch.groups()[7]
     t.lexer.push_state('absorb')
     return t
 
