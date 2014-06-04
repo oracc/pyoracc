@@ -67,7 +67,7 @@ class AtfParser(object):
     p[0].language=p[2]
 
   def p_text_object(self,p):
-    """text : text object"""
+    """text : text object %prec COMPOSITION"""
     p[0]=p[1]
     p[0].children.append(p[2])
 
@@ -97,8 +97,8 @@ class AtfParser(object):
     p[0]=p[1]
 
   def p_object_surface(self,p):
-    """object : object surface
-              | object translation"""
+    """object : object surface %prec COMPOSITION
+              | object translation %prec COMPOSITION """
     p[0]=p[1]
     p[0].children.append(p[2])
 
@@ -139,10 +139,10 @@ class AtfParser(object):
     p[0]=p[1]
 
   def p_surface_line(self,p):
-    """surface : surface line
-               | surface ruling
-               | surface loose_dollar_statement
-               | surface strict_dollar_statement"""
+    """surface : surface line %prec COMPOSITION
+               | surface ruling %prec COMPOSITION
+               | surface loose_dollar_statement %prec COMPOSITION
+               | surface strict_dollar_statement %prec COMPOSITION """
     p[0]=p[1]
     p[0].children.append(p[2])
 
@@ -174,12 +174,12 @@ class AtfParser(object):
     p[0]=p[1]
 
   def p_line_lemmas(self,p):
-    "line : line lemma_statement"
+    "line : line lemma_statement %prec COMPOSITION "
     p[0]=p[1]
     p[0].lemmas=p[2]
 
   def p_line_note(self,p):
-    "line : line note_statement"
+    "line : line note_statement %prec COMPOSITION"
     p[0]=p[1]
     p[0].notes.append(p[2])
 
@@ -329,3 +329,21 @@ class AtfParser(object):
     "translation : translation surface"
     p[0]=p[1]
     p[0].children.append(p[2])
+
+  # There is a potential shift-reduce error in the following sample:
+
+  """
+  &X=Something
+  @tablet
+  @obverse
+  """
+
+  # where text(object(surface)) could be read as text(object) . surface
+  # These need to be resolved by making the potential declaration of a new
+  # child entity take precedence over composition of an object into its parent
+
+  precedence = (
+    ('nonassoc','COMPOSITION'),
+    ('nonassoc','HASH'),
+    ('nonassoc','AT'),
+  )
