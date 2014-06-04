@@ -7,8 +7,6 @@ class AtfLexer(object):
     return {token.lower(): token for token in tokens}
 
   def resolve_keyword(self,value,source,fallback=None):
-    if value[-1]==":" : # If this is a #lem: for example,
-      value=value[:-1]
     source = self._keyword_dict(source)
     if not fallback:
       return source[value]
@@ -53,6 +51,8 @@ class AtfLexer(object):
 
   protocol_keywords=['LANG','USE','MATH','UNICODE']
 
+  translation_keywords=['PARALLEL','PROJECT']
+
   dollar_keywords=[
     'MOST','LEAST','ABOUT',
     'SEVERAL','SOME','REST','OF','START','BEGINNING','MIDDLE','END',
@@ -89,7 +89,8 @@ class AtfLexer(object):
     long_argument_structures+
     protocols+
     protocol_keywords+
-    dollar_keywords
+    dollar_keywords+
+    translation_keywords
   ))
 
   tokens=list(set(
@@ -138,33 +139,44 @@ class AtfLexer(object):
     '\@[a-zA-Z][a-zA-Z0-9\[\]]+'
     t.value=t.value[1:]
     t.type=self.resolve_keyword(t.value,
-      AtfLexer.structures+AtfLexer.long_argument_structures,'ID')
+      AtfLexer.structures+AtfLexer.long_argument_structures)
     if t.type == "TRANSLATION":
       t.lexer.push_state('translation')
     if t.type in AtfLexer.long_argument_structures+["NOTE"]:
       t.lexer.push_state('absorb')
     return t
 
-  def t_INITIAL_translation_ID(self,t):
-    '[a-zA-Z][a-zA-Z0-9\[\]]+\:?'
+  def t_INITIAL_translation_HASHID(self,t):
+    '\#[a-zA-Z][a-zA-Z0-9\[\]]+\:'
     # Note that \:? absorbs a trailing colon in protocol keywords
+    t.value=t.value[1:-1]
+    t.type=self.resolve_keyword(t.value,
+      AtfLexer.protocols)
+
+    if t.type == "LEM":
+      t.lexer.push_state('lemmatize')
+    if t.type in ['PROJECT','NOTE']:
+      t.lexer.push_state('absorb')
+    return t
+
+  def t_INITIAL_translation_ID(self,t):
+    '[a-zA-Z][a-zA-Z0-9\[\]]+'
 
     t.type=self.resolve_keyword(t.value,
-      AtfLexer.protocols+
       AtfLexer.protocol_keywords+
       AtfLexer.dollar_keywords+
       AtfLexer.structures+
+      AtfLexer.translation_keywords+
       AtfLexer.long_argument_structures,'ID')
+
+    if t.type in ['LANG']:
+      t.lexer.push_state('absorb')
 
     if t.type in set(AtfLexer.structures+AtfLexer.long_argument_structures)-set(["NOTE"]):
       # Since @structure tokens are so important to the grammar,
       # the keywords refering to structural elements in strict dollar
       # lines must be DIFFERENT TOKENS IN THE LEXER
       t.type = "REFERENCE"
-    if t.type == "LEM":
-      t.lexer.push_state('lemmatize')
-    if t.type in ['LANG','PROJECT','NOTE']:
-      t.lexer.push_state('absorb')
     return t
 
   def t_LINELABEL(self,t):
@@ -231,7 +243,7 @@ class AtfLexer(object):
   # But everything else is free text
   def t_translation_LINELABEL(self,t):
     r'^([1-9][0-9]*[a-z]*)\.[\ \t]*'
-    t.value=t.lexer.lexmatch.groups()[7]
+    t.value=t.lexer.lexmatch.groups()[8]
     t.lexer.push_state('absorb')
     return t
 

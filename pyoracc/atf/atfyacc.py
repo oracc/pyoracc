@@ -27,8 +27,8 @@ class AtfParser(object):
     p[0].description=p[4]
 
   def p_project_statement(self,p):
-    "project_statement : HASH PROJECT ID newline_sequence"
-    p[0]=p[3]
+    "project_statement : PROJECT ID newline_sequence"
+    p[0]=p[2]
 
   def p_project(self,p):
     "project : project_statement"
@@ -44,14 +44,14 @@ class AtfParser(object):
     p[0]=p[1]
 
   def p_unicode(self,p):
-    "unicode : HASH ATF USE UNICODE newline_sequence"
+    "unicode : ATF USE UNICODE newline_sequence"
 
   def p_math(self,p):
-    "math : HASH ATF USE MATH newline_sequence"
+    "math : ATF USE MATH newline_sequence"
 
   def p_language_protoocol(self,p):
-    "language_protocol : HASH ATF LANG ID newline_sequence"
-    p[0]=p[4]
+    "language_protocol : ATF LANG ID newline_sequence"
+    p[0]=p[3]
 
   def p_text_math(self,p):
     "text : text math"
@@ -232,7 +232,7 @@ class AtfParser(object):
     p[0].notes.append(p[2])
 
   def p_lemma_list(self,p):
-    "lemma_list : HASH LEM ID"
+    "lemma_list : LEM ID"
     p[0]=[p[2]]
 
   def p_lemma_id(self,p):
@@ -261,8 +261,7 @@ class AtfParser(object):
     p[0]=p[1]
 
   def p_note_sequence(self,p):
-    """note_sequence : HASH NOTE
-                     | NOTE """
+    """note_sequence : NOTE """
     p[0]=Note()
 
   def p_note_sequence_content(self,p):
@@ -359,7 +358,7 @@ class AtfParser(object):
     p[0]=" ".join(p[1:])
 
   def p_translation_statement(self,p):
-    "translation_statement : TRANSLATION ID ID PROJECT newline_sequence"
+    "translation_statement : TRANSLATION PARALLEL ID PROJECT newline_sequence"
     p[0]=Translation()
 
   def p_translation(self,p):

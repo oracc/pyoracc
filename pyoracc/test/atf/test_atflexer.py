@@ -30,27 +30,27 @@ class testLexer(TestCase):
   def test_project(self):
     self.compare_tokens(
       "#project: cams/gkab\n",
-      ['HASH',"PROJECT","ID","NEWLINE"],
-      [None,None,"cams/gkab",None]
+      ["PROJECT","ID","NEWLINE"],
+      [None,"cams/gkab",None]
     )
 
   def test_language_protocol(self):
     self.compare_tokens(
       "#atf: lang akk-x-stdbab\n",
-      ["HASH","ATF","LANG","ID","NEWLINE"],
-      [None,None,None,"akk-x-stdbab"]
+      ["ATF","LANG","ID","NEWLINE"],
+      [None,None,"akk-x-stdbab"]
     )
 
   def test_use_unicode(self):
     self.compare_tokens(
       "#atf: use unicode",
-      ["HASH","ATF","USE","UNICODE","NEWLINE"]
+      ["ATF","USE","UNICODE","NEWLINE"]
     )
 
   def test_use_unicode(self):
     self.compare_tokens(
       "#atf: use math",
-      ["HASH","ATF","USE","MATH","NEWLINE"]
+      ["ATF","USE","MATH","NEWLINE"]
     )
 
   def test_division_tablet(self):
@@ -68,7 +68,7 @@ class testLexer(TestCase):
   def test_lemmatize(self):
     self.compare_tokens(
       "#lem: šatti[year]N; n; Ṭebetu[1]MN; mūša[at night]AV; ūm[day]N; n",
-      ["HASH","LEM"]+['ID','SEMICOLON']*5+['ID']
+      ["LEM"]+['ID','SEMICOLON']*5+['ID']
     )
 
   def test_loose_dollar(self):
@@ -87,14 +87,14 @@ class testLexer(TestCase):
   def test_translation_intro(self):
     self.compare_tokens(
       "@translation parallel en project",
-      ["TRANSLATION","ID","ID","PROJECT"]
+      ["TRANSLATION","PARALLEL","ID","PROJECT"]
     )
 
   def test_translation_text(self):
     self.compare_tokens(
       "@translation parallel en project\n"+
       "1.	Year 63, Ṭebetu (Month X), night of day 2:^1^",
-      ["TRANSLATION","ID","ID","PROJECT","NEWLINE","LINELABEL","ID","HAT","ID","HAT"],
+      ["TRANSLATION","PARALLEL","ID","PROJECT","NEWLINE","LINELABEL","ID","HAT","ID","HAT"],
       [None,"parallel","en","project",None,
        "1","Year 63, Ṭebetu (Month X), night of day 2:",None,'1',None]
     )
@@ -141,7 +141,7 @@ class testLexer(TestCase):
       "3.	U₄!-BI? 20* [(ina)] 9.30 ina(DIŠ) MAŠ₂!(BAR)\n"+
       "#note: Note to line.\n",
       ["TABLET","NEWLINE","OBVERSE","NEWLINE",
-      "LINELABEL"]+["ID"]*6+["NEWLINE","HASH","NOTE","ID","NEWLINE"]
+      "LINELABEL"]+["ID"]*6+["NEWLINE","NOTE","ID","NEWLINE"]
     )
 
   def test_flagged_object(self):
@@ -182,5 +182,5 @@ class testLexer(TestCase):
       "#lem: šatti[year]N; n; Ṭebetu[1]MN; mūša[at night]AV; ūm[day]N; n\n",
       ['TABLET','NEWLINE',
        "OBVERSE",'NEWLINE',
-       'LINELABEL']+['ID']*6+['NEWLINE','HASH','LEM']+['ID','SEMICOLON']*5+['ID',"NEWLINE"]
+       'LINELABEL']+['ID']*6+['NEWLINE','LEM']+['ID','SEMICOLON']*5+['ID',"NEWLINE"]
     )
