@@ -67,7 +67,7 @@ class AtfParser(object):
     p[0].language=p[2]
 
   def p_text_object(self,p):
-    """text : text object %prec COMPOSITION"""
+    """text : text object %prec OBJECT_COMPOSITION"""
     p[0]=p[1]
     p[0].children.append(p[2])
 
@@ -130,8 +130,8 @@ class AtfParser(object):
     p[0]=p[1]
 
   def p_object_surface(self,p):
-    """object : object surface %prec COMPOSITION
-              | object translation %prec COMPOSITION """
+    """object : object surface %prec OBJECT_COMPOSITION
+              | object translation %prec OBJECT_COMPOSITION """
     p[0]=p[1]
     p[0].children.append(p[2])
 
@@ -201,10 +201,10 @@ class AtfParser(object):
     p[0]=p[1]
 
   def p_surface_line(self,p):
-    """surface : surface line %prec COMPOSITION
-               | surface ruling %prec COMPOSITION
-               | surface loose_dollar_statement %prec COMPOSITION
-               | surface strict_dollar_statement %prec COMPOSITION """
+    """surface : surface line %prec SURFACE_COMPOSITION
+               | surface ruling %prec SURFACE_COMPOSITION
+               | surface loose_dollar_statement %prec SURFACE_COMPOSITION
+               | surface strict_dollar_statement %prec SURFACE_COMPOSITION """
     p[0]=p[1]
     p[0].children.append(p[2])
 
@@ -236,12 +236,12 @@ class AtfParser(object):
     p[0]=p[1]
 
   def p_line_lemmas(self,p):
-    "line : line lemma_statement %prec COMPOSITION "
+    "line : line lemma_statement %prec LINE_COMPOSITION "
     p[0]=p[1]
     p[0].lemmas=p[2]
 
   def p_line_note(self,p):
-    "line : line note_statement %prec COMPOSITION"
+    "line : line note_statement %prec LINE_COMPOSITION"
     p[0]=p[1]
     p[0].notes.append(p[2])
 
@@ -271,12 +271,12 @@ class AtfParser(object):
     p[0]=Ruling(counts[p[2]])
 
   def p_note(self,p):
-    """note_statement : HASH note_sequence newline_sequence
-                      | AT note_sequence newline_sequence"""
-    p[0]=p[2]
+    """note_statement : note_sequence newline_sequence"""
+    p[0]=p[1]
 
   def p_note_sequence(self,p):
-    """note_sequence : NOTE"""
+    """note_sequence : HASH NOTE
+                     | ATNOTE """
     p[0]=Note()
 
   def p_note_sequence_content(self,p):
@@ -388,7 +388,7 @@ class AtfParser(object):
     p[0]=p[1]
 
   def p_translation_surface(self,p):
-    "translation : translation surface"
+    "translation : translation surface %prec OBJECT_COMPOSITION"
     p[0]=p[1]
     p[0].children.append(p[2])
 
@@ -405,7 +405,9 @@ class AtfParser(object):
   # child entity take precedence over composition of an object into its parent
 
   precedence = (
-    ('nonassoc','COMPOSITION'),
-    ('nonassoc','HASH'),
+    ('nonassoc','OBJECT_COMPOSITION'),
     ('nonassoc','AT'),
+    ('nonassoc','SURFACE_COMPOSITION'),
+    ('nonassoc','LINE_COMPOSITION'),
+    ('nonassoc','HASH'),
   )

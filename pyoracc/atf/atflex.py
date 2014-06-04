@@ -16,7 +16,6 @@ class AtfLexer(object):
 
   def resolve_keyword(self,value,fallback=None):
     source = self._keyword_dict(AtfLexer.keyword_tokens)
-    source['note']="NOTE" # Note is both an @ and a #: keyword
     source['at']="ATWORD"
     if not fallback:
       return source[value]
@@ -55,7 +54,6 @@ class AtfLexer(object):
     'OBJECT',
     'SURFACE',
     'FRAGMENT',
-    'NOTE'
   ]
 
   protocols=['ATF','LEM','PROJECT','NOTE']
@@ -90,7 +88,8 @@ class AtfLexer(object):
     'RANGE',
     'LETTER',
     'HASH',
-    'NEWLINE'
+    'NEWLINE',
+    'ATNOTE' # In translations, @ doesn't necessarily introduce structure
   ]
 
   keyword_tokens=list(set(
@@ -117,6 +116,7 @@ class AtfLexer(object):
   absorbing_keywords=[
     'LANG',
     'PROJECT',
+    'NOTE',
   ]+long_argument_structures
 
   t_INITIAL_translation_AMPERSAND="\&"
@@ -225,6 +225,11 @@ class AtfLexer(object):
   def t_translation_LINELABEL(self,t):
     r'^([1-9][0-9]*[a-z]*)\.[\ \t]*'
     t.value=t.lexer.lexmatch.groups()[6]
+    t.lexer.push_state('absorb')
+    return t
+
+  def t_INITIAL_translation_ATNOTE(self,t):
+    "\@note"
     t.lexer.push_state('absorb')
     return t
 
