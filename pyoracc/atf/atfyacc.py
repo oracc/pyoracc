@@ -135,12 +135,41 @@ class AtfParser(object):
     p[0]=p[1]
     p[0].children.append(p[2])
 
+  def p_surface_statement(self,p):
+    "surface_statement : surface_declarator newline_sequence"
+    p[0]=p[1]
+
   def p_surface_decl(self,p):
-    "surface_statement : AT surface_specifier newline_sequence"
+    "surface_declarator : AT surface_specifier"
     if len(p[2])==2:
       p[0]=OraccNamedObject(*p[2])
     else:
       p[0]=OraccObject(*p[2])
+
+  def p_surface_flag_broken(self,p):
+    "surface_declarator : surface_declarator HASH"
+    p[0]=p[1]
+    p[0].broken=True
+
+  def p_surface_flag_remarkable(self,p):
+    "surface_declarator : surface_declarator EXCLAIM"
+    p[0]=p[1]
+    p[0].remarkable=True
+
+  def p_surface_flag_prime(self,p):
+    "surface_declarator : surface_declarator PRIME"
+    p[0]=p[1]
+    p[0].prime=True
+
+  def p_surface_flag_query(self,p):
+    "surface_declarator : surface_declarator QUERY"
+    p[0]=p[1]
+    p[0].query=True
+
+  def p_surface_flag_collated(self,p):
+    "surface_declarator : surface_declarator STAR"
+    p[0]=p[1]
+    p[0].collated=True
 
   def p_surface_nolabel(self,p):
     '''surface_specifier  : OBVERSE

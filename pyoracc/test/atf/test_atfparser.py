@@ -3,6 +3,7 @@
 from unittest import TestCase
 
 from ...model.text import Text
+from ...model.line import Line
 from ...model.translation import Translation
 from ...model.oraccobject import OraccObject
 from ...model.oraccnamedobject import OraccNamedObject
@@ -18,7 +19,7 @@ class testParser(TestCase):
 
   def try_parse(self,content):
       self.parser=AtfParser().parser
-      return self.parser.parse(content,lexer=self.lexer)
+      return self.parser.parse(content,lexer=self.lexer,debug=1)
 
   def test_code(self):
     text=self.try_parse("&X001001 = JCS 48, 089\n")
@@ -82,6 +83,18 @@ class testParser(TestCase):
     assert(obj.remarkable)
     assert(not obj.collated)
 
+  def test_flagged_object(self):
+    obj=self.try_parse(
+      "@tablet\n@column 2'*\n"
+    )
+    assert_is_instance(obj.children[0],OraccNamedObject)
+    assert_equal(obj.children[0].objecttype,"column")
+    assert_equal(obj.children[0].name,"2")
+    assert(obj.children[0].collated)
+    assert(obj.children[0].prime)
+    assert(not obj.children[0].broken)
+
+
   def test_substructure(self):
     obj=self.try_parse(
       "@tablet\n"+
@@ -96,9 +109,73 @@ class testParser(TestCase):
       "@tablet\n"+
       "@obverse\n"
     )
+    assert_is_instance(art,Text)
     assert_is_instance(art.children[0],OraccObject)
     assert_is_instance(art.children[0].children[0],OraccObject)
     assert_equal(art.children[0].children[0].objecttype,"obverse")
+
+  def test_two_surfaces(self):
+    art=self.try_parse(
+      "&X001001 = My Text\n"+
+      "@tablet\n"+
+      "@obverse\n"+
+      "@reverse\n"
+    )
+    assert_is_instance(art,Text)
+    assert_is_instance(art.children[0],OraccObject)
+    assert_is_instance(art.children[0].children[0],OraccObject)
+    assert_equal(art.children[0].children[0].objecttype,"obverse")
+    assert_equal(art.children[0].children[1].objecttype,"reverse")
+
+  def test_two_inscribed_surfaces(self):
+    art=self.try_parse(
+      "&X001001 = My Text\n"+
+      "@tablet\n"+
+      "@obverse\n"+
+      "1. line one\n"+
+      "@reverse\n"+
+      "2. line two\n"
+    )
+    assert_is_instance(art,Text)
+    assert_is_instance(art.children[0],OraccObject)
+    assert_is_instance(art.children[0].children[0],OraccObject)
+    assert_equal(art.children[0].children[0].objecttype,"obverse")
+    assert_equal(art.children[0].children[1].objecttype,"reverse")
+    assert_is_instance(art.children[0].children[0].children[0],Line)
+    assert_is_instance(art.children[0].children[1].children[0],Line)
+
+
+  def test_complex_substructure(self):
+    art=self.try_parse(
+      "&X001001 = My Text\n"+
+      "@tablet\n"+
+      "@obverse\n"+
+      "1. Line one\n"+
+      "2. Line two\n"+
+      "#lem: line; two\n"
+      "@reverse\n"+
+      "3. Line three\n"+
+      "#lem: line; three\n"+
+      "#note: Note to line three\n"+
+      "@object case\n"+
+      "@obverse\n"+
+      "4. Line four\n"
+    )
+    assert_is_instance(art,Text)
+    tablet=art.children[0]
+    assert_is_instance(tablet,OraccObject)
+    #case=art.children[1]
+    #assert_equal(len(art.children),2)
+    obverse=tablet.children[0]
+    assert_is_instance(obverse,OraccObject)
+    #reverse=tablet.children[1]
+    #assert_equal(len(tablet.children),2)
+    #caseobverse=case.children[0]
+    #assert_equal(len(case.children),1)
+    lines=obverse.children[:]#+reverse.children[:]+caseobverse[:]
+    assert_equal(len(lines),4)
+    assert_equal(lines[1].lemmas[1],"two")
+    assert_equal(lines[3].notes[0],"Note to line three")
 
   def test_line(self):
     art=self.try_parse(

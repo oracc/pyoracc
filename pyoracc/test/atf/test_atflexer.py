@@ -102,36 +102,36 @@ class testLexer(TestCase):
   def test_note_internalflag(self):
     self.compare_tokens(
     "@note Hello James's World",
-    ["AT","NOTE","ID"],
+    ["ATNOTE","ID"],
     [None,None,"Hello James's World"]
     )
 
   def test_note_internalspace(self):
     self.compare_tokens(
     "@note Hello James",
-    ["AT","NOTE","ID"],
+    ["ATNOTE","ID"],
     [None,None,"Hello James"]
     )
 
   def test_note_onechar(self):
     self.compare_tokens(
     "@note H",
-    ["AT","NOTE","ID"],
-    [None,None,"H"]
+    ["ATNOTE","ID"],
+    [None,"H"]
     )
 
   def test_note_short(self):
     self.compare_tokens(
     "@note I'm",
-    ["AT","NOTE","ID"],
-    [None,None,"I'm"]
+    ["ATNOTE","ID"],
+    [None,"I'm"]
     )
 
   def test_division_note(self):
     self.compare_tokens(
       "@note ^1^ A note to the translation.",
-      ["AT","NOTE","HAT","ID","HAT","ID","NEWLINE"],
-      [None,None,None,"1",None,"A note to the translation."]
+      ["ATNOTE","HAT","ID","HAT","ID","NEWLINE"],
+      [None,"1",None,"A note to the translation."]
     )
 
   def test_division_note(self):
