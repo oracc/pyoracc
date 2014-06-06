@@ -11,7 +11,6 @@ from ...atf.atfyacc import AtfParser
 from ...atf.atflex import AtfLexer
 from nose.tools import assert_in, assert_equal, assert_is_instance
 from itertools import izip, repeat
-from fixtures import belsunu
 
 
 class testParser(TestCase):
