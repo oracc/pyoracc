@@ -97,7 +97,7 @@ class testLexer(TestCase):
             "@translation parallel en project\n" +
             "1.    Year 63, Ṭebetu (Month X), night of day 2:^1^",
             ["TRANSLATION", "PARALLEL", "ID", "PROJECT", "NEWLINE",
-            "LINELABEL", "ID", "HAT", "ID", "HAT"],
+             "LINELABEL", "ID", "HAT", "ID", "HAT"],
             [None, "parallel", "en", "project", None,
              "1", "Year 63, Ṭebetu (Month X), night of day 2:",
              None, '1', None]
@@ -145,7 +145,7 @@ class testLexer(TestCase):
             "3.    U₄!-BI? 20* [(ina)] 9.30 ina(DIŠ) MAŠ₂!(BAR)\n" +
             "#note: Note to line.\n",
             ["TABLET", "NEWLINE", "OBVERSE", "NEWLINE",
-            "LINELABEL"] + ["ID"] * 6 + ["NEWLINE", "NOTE", "ID", "NEWLINE"]
+             "LINELABEL"] + ["ID"] * 6 + ["NEWLINE", "NOTE", "ID", "NEWLINE"]
         )
 
     def test_flagged_object(self):
