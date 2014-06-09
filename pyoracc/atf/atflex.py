@@ -48,9 +48,9 @@ class AtfLexer(object):
         'FRAGMENT'
     ]
 
-    protocols = ['ATF', 'LEM', 'PROJECT', 'NOTE']
+    protocols = ['ATF', 'LEM', 'PROJECT', 'NOTE', "LINK"]
 
-    protocol_keywords = ['LANG', 'USE', 'MATH', 'UNICODE']
+    protocol_keywords = ['LANG', 'USE', 'MATH', 'UNICODE', 'DEF']
 
     translation_keywords = ['PARALLEL', 'PROJECT']
 
@@ -121,7 +121,7 @@ class AtfLexer(object):
         r'[\t ]+'
         # NO TOKEN
 
-    def t_INITIAL_translation_EQUALS(self, t):
+    def t_INITIAL_translation_absorb_EQUALS(self, t):
         "\="
         t.lexer.push_state('absorb')
         return t
@@ -163,7 +163,7 @@ class AtfLexer(object):
         return t
 
     def t_INITIAL_translation_ID(self, t):
-        '[a-zA-Z][a-zA-Z0-9\[\]]+'
+        '[a-zA-Z][a-zA-Z0-9\[\]]*'
 
         t.type = self.resolve_keyword(t.value,
                                       AtfLexer.protocol_keywords +
@@ -204,9 +204,9 @@ class AtfLexer(object):
     #--- RULES FOR THE ABSORB STATE ---
 
     white = r'[\ \t]'
-    nonflagnonwhite = r'[^\ \t\#\!\^\*\'\?\n\r]'
-    internalonly = r'[^\n\^\r]'
-    nonflag = r'[^\ \t\#\!\^\*\'\?\n\r]'
+    nonflagnonwhite = r'[^\ \t\#\!\^\*\'\?\n\r\=]'
+    internalonly = r'[^\n\^\r\=]'
+    nonflag = r'[^\ \t\#\!\^\*\'\?\n\r\=]'
     many_int_then_nonflag = '(' + internalonly + '*' + nonflag + '+' + ')'
     many_nonflag = nonflag + '*'
     intern_or_nonflg = '(' + many_int_then_nonflag + '|' + many_nonflag + ')'

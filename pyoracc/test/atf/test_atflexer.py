@@ -17,8 +17,10 @@ class testLexer(TestCase):
                                                          expected_types,
                                                          expected_values):
             assert_equal(token.type, expected_type)
+            print token.type, expected_type
             if expected_value:
                 assert_equal(token.value, expected_value)
+                print token.value, expected_value
 
     def test_code(self):
         self.compare_tokens(
@@ -52,6 +54,13 @@ class testLexer(TestCase):
             "#atf: use math",
             ["ATF", "USE", "MATH", "NEWLINE"]
         )
+
+    def test_link(self):
+        self.compare_tokens(
+            "#link: def A = P363716 = TCL 06, 44\n",
+            ["LINK", "DEF", "ID", "EQUALS","ID","EQUALS","ID","NEWLINE"]
+        )
+
 
     def test_division_tablet(self):
         self.compare_tokens(
