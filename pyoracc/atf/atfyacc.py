@@ -77,13 +77,12 @@ class AtfParser(object):
     def p_text_surface(self, p):
         """text : text surface %prec OBJECT"""
         p[0] = p[1]
-        print "Missing rule"
         # Default to a tablet
         p[0].children.append(OraccObject("tablet"))
         p[0].children[0].children.append(p[2])
 
-    def p_text_line(self, p):
-        """text : text line %prec OBJECT"""
+    def p_text_surface_element(self, p):
+        """text : text surface_element %prec OBJECT"""
         p[0] = p[1]
         # Default to obverse of a  tablet
         p[0].children.append(OraccObject("tablet"))
@@ -164,8 +163,8 @@ class AtfParser(object):
         p[0] = p[1]
         p[0].children.append(p[2])
 
-    def p_object_line(self, p):
-        """object : object line %prec SURFACE"""
+    def p_object_surface_element(self, p):
+        """object : object surface_element %prec SURFACE"""
         p[0] = p[1]
         # Default surface is obverse
         p[0].children.append(OraccObject("obverse"))
@@ -229,14 +228,18 @@ class AtfParser(object):
         "surface : surface_statement"
         p[0] = p[1]
 
+    def p_surface_element_line(self, p):
+        """surface_element : line
+                           | ruling
+                           | loose_dollar_statement
+                           | strict_dollar_statement"""
+        p[0] = p[1]
+
     def p_surface_line(self, p):
-        """surface : surface line
-                   | surface ruling
-                   | surface loose_dollar_statement
-                   | surface strict_dollar_statement """
+        """surface : surface surface_element"""
         p[0] = p[1]
         p[0].children.append(p[2])
-    # WE DO NOT YET HANDLE @M=DIVSION lines.
+        # WE DO NOT YET HANDLE @M=DIVSION lines.
 
     def p_linelabel(self, p):
         "line_sequence : LINELABEL ID"
@@ -436,7 +439,7 @@ class AtfParser(object):
             'SIGNATURE', 'SUMMARY',
             'WITNESSES', 'FACE', 'SINGLEID',
             'SURFACE', 'EDGE', 'COLUMN', 'SEAL'),
-        ('nonassoc', "LINELABEL")
+        ('nonassoc', "LINELABEL", "DOLLAR", "LEM")
     )
 
     def p_error(self,p):

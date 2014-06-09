@@ -4,6 +4,7 @@ from unittest import TestCase
 
 from ...model.text import Text
 from ...model.line import Line
+from ...model.state import State
 from ...model.translation import Translation
 from ...model.oraccobject import OraccObject
 from ...model.oraccnamedobject import OraccNamedObject
@@ -253,6 +254,21 @@ class testParser(TestCase):
         assert_equal(art.children[0].children[0].scope, "lines")
         assert_equal(art.children[0].children[0].extent, "5-7")
 
+    def test_strict_dollar_in_lines(self):
+        art = self.try_parse(
+            "@tablet\n" +
+            "@obverse\n" +
+            "48.   lip#-tar-rik ina at-ma-ni šu-bat ki#-[iṣ-ṣi]\n" +
+            "$ 3 lines broken\n" +
+            "53.   ta#-[mit] iq#-bu-šu DINGIR an-[na i-pu-ul]\n"
+        )
+        content=art.children[0].children
+        assert_is_instance(content[0],Line)
+        assert_is_instance(content[2],Line)
+        assert_equal(content[1].state, "broken")
+        assert_equal(content[1].scope, "lines")
+        assert_equal(content[1].extent, "3")
+
     def test_strict_dollar_singular_difficult(self):
         art = self.try_parse(
             "@tablet\n" +
@@ -346,6 +362,35 @@ class testParser(TestCase):
         )
         assert_equal(text.children[0].objecttype, "tablet")
         assert_equal(text.children[0].children[0].objecttype, "obverse")
+
+    def test_default_object_surface_dollar(self):
+        text = self.try_parse(
+            "&Q002769 = SB Anzu 1\n" +
+            "$ 5 lines broken\n"
+        )
+        assert_equal(text.children[0].objecttype, "tablet")
+        assert_equal(text.children[0].children[0].objecttype, "obverse")
+        assert_is_instance(text.children[0].children[0].children[0],State)
+
+    def test_default_surface_dollar(self):
+        text = self.try_parse(
+            "&Q002769 = SB Anzu 1\n" +
+            "@tablet\n" +
+            "$ 5 lines broken\n"
+        )
+        assert_equal(text.children[0].objecttype, "tablet")
+        assert_equal(text.children[0].children[0].objecttype, "obverse")
+        assert_is_instance(text.children[0].children[0].children[0],State)
+
+    def test_default_object_dollar(self):
+        text = self.try_parse(
+            "&Q002769 = SB Anzu 1\n" +
+            "@obverse\n" +
+            "$ 5 lines broken\n"
+        )
+        assert_equal(text.children[0].objecttype, "tablet")
+        assert_equal(text.children[0].children[0].objecttype, "obverse")
+        assert_is_instance(text.children[0].children[0].children[0],State)
 
     def test_composite(self):
         composite = self.try_parse(
