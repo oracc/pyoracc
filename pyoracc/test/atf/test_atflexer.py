@@ -129,6 +129,19 @@ class testLexer(TestCase):
              None, '1', None]
         )
 
+    def test_translation_labeled_text(self):
+        self.compare_tokens(
+            "@translation labeled en project\n" +
+            "@label o 4\n"+
+            "Then it will be taken for the rites and rituals.\n",
+            ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
+             "LABEL", "ID", "NUMBER","NEWLINE",
+             "ID","NEWLINE"],
+            [None, "labeled", "en", "project", None,
+             None, "o", "4",None,
+             'Then it will be taken for the rites and rituals.', None]
+        )
+
     def test_note_internalflag(self):
         self.compare_tokens(
             "@note Hello James's World",
