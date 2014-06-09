@@ -68,9 +68,25 @@ class AtfParser(object):
         p[0].language = p[2]
 
     def p_text_object(self, p):
-        """text : text object"""
+        """text : text object %prec OBJECT"""
         p[0] = p[1]
         p[0].children.append(p[2])
+
+    def p_text_surface(self, p):
+        """text : text surface %prec OBJECT"""
+        p[0] = p[1]
+        print "Missing rule"
+        # Default to a tablet
+        p[0].children.append(OraccObject("tablet"))
+        p[0].children[0].children.append(p[2])
+
+    def p_text_line(self, p):
+        """text : text line %prec OBJECT"""
+        p[0] = p[1]
+        # Default to obverse of a  tablet
+        p[0].children.append(OraccObject("tablet"))
+        p[0].children[0].children.append(OraccObject("obverse"))
+        p[0].children[0].children[0].children.append(p[2])
 
     def p_object_statement(self, p):
         """object_statement : object_specifier newline"""
@@ -121,10 +137,17 @@ class AtfParser(object):
         p[0] = p[1]
 
     def p_object_surface(self, p):
-        """object : object surface
+        """object : object surface %prec SURFACE
               | object translation %prec TRANSLATIONEND """
         p[0] = p[1]
         p[0].children.append(p[2])
+
+    def p_object_line(self, p):
+        """object : object line %prec SURFACE"""
+        p[0] = p[1]
+        # Default surface is obverse
+        p[0].children.append(OraccObject("obverse"))
+        p[0].children[0].children.append(p[2])
 
     def p_surface_statement(self, p):
         "surface_statement : surface_specifier newline"
@@ -361,7 +384,7 @@ class AtfParser(object):
         p[0] = p[1]
 
     def p_translation_surface(self, p):
-        "translation : translation surface "
+        "translation : translation surface %prec SURFACE"
         p[0] = p[1]
         p[0].children.append(p[2])
     # There is a potential shift-reduce conflict in the following sample:
@@ -377,13 +400,21 @@ class AtfParser(object):
     # These need to be resolved by making surface establishment and composition
     # take precedence over the completion of a translation
 
+    # A number of conflicts are also introduced by the default rules:
+
+    # A text can directly contain a line (implying obverse of a tablet) etc.
+    #
+
     precedence = (
         ('nonassoc', 'TRANSLATIONEND'),
+        ('nonassoc','TABLET', 'ENVELOPE', 'PRISM', 'BULLA', 'FRAGMENT',
+            'OBJECT'),
         ('nonassoc', 'OBVERSE', 'REVERSE', 'LEFT', 'RIGHT', 'TOP', 'BOTTOM',
             'CATCHLINE', 'COLOPHON', 'DATE', 'SIGNATURES',
             'SIGNATURE', 'SUMMARY',
             'WITNESSES', 'FACE', 'SINGLEID',
-            'SURFACE', 'EDGE', 'COLUMN', 'SEAL')
+            'SURFACE', 'EDGE', 'COLUMN', 'SEAL'),
+        ('nonassoc', "LINELABEL")
     )
 
     def p_error(self,p):

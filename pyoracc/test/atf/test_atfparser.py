@@ -319,3 +319,29 @@ class testParser(TestCase):
         assert_equal(art.children[0].children[0]
                         .children[0].notes[0].references[0],
                      "1")
+
+    def test_default_surface(self):
+        text = self.try_parse(
+            "&Q002769 = SB Anzu 1\n" +
+            "@tablet\n"+
+            "1.   bi#-in šar da-ad-mi šu-pa-a na-ram {d}ma#-mi\n"
+        )
+        assert_equal(text.children[0].objecttype, "tablet")
+        assert_equal(text.children[0].children[0].objecttype, "obverse")
+
+    def test_default_object(self):
+        text = self.try_parse(
+            "&Q002769 = SB Anzu 1\n" +
+            "@obverse\n"+
+            "1.   bi#-in šar da-ad-mi šu-pa-a na-ram {d}ma#-mi\n"
+        )
+        assert_equal(text.children[0].objecttype, "tablet")
+        assert_equal(text.children[0].children[0].objecttype, "obverse")
+
+    def test_default_object_surface(self):
+        text = self.try_parse(
+            "&Q002769 = SB Anzu 1\n" +
+            "1.   bi#-in šar da-ad-mi šu-pa-a na-ram {d}ma#-mi\n"
+        )
+        assert_equal(text.children[0].objecttype, "tablet")
+        assert_equal(text.children[0].children[0].objecttype, "obverse")
