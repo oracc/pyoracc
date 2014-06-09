@@ -8,6 +8,7 @@ from ..model.ruling import Ruling
 from ..model.note import Note
 from ..model.state import State
 from ..model.translation import Translation
+from ..model.composite import Composite
 
 
 class AtfParser(object):
@@ -18,7 +19,8 @@ class AtfParser(object):
 
     def p_document(self, p):
         """document : text
-                    | object"""
+                    | object
+                    | composite"""
         p[0] = p[1]
 
     def p_codeline(self, p):
@@ -87,6 +89,26 @@ class AtfParser(object):
         p[0].children.append(OraccObject("tablet"))
         p[0].children[0].children.append(OraccObject("obverse"))
         p[0].children[0].children[0].children.append(p[2])
+
+    def p_text_composite(self,p):
+        """text : text COMPOSITE newline"""
+        p[0]=p[1]
+        p[0].composite=True
+
+    def p_text_text(self,p):
+        """composite : text text"""
+        # Text must be a composite
+        p[0]=Composite()
+        if not p[1].composite:
+            raise SyntaxError("Attempt to compose non-composite texts")
+        p[0].texts.append(p[1])
+        p[0].texts.append(p[2])
+
+    def p_composite_text(self,p):
+        """composite : composite text"""
+        # Text must be a composite
+        p[0]=p[1]
+        p[0].texts.append(p[2])
 
     def p_object_statement(self, p):
         """object_statement : object_specifier newline"""

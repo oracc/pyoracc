@@ -38,7 +38,8 @@ class AtfLexer(object):
         'TRANSLATION',
         'NOTE',
         'M',
-        'H'
+        'H',
+        'COMPOSITE'
     ]
 
     long_argument_structures = [

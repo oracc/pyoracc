@@ -189,3 +189,21 @@ class testLexer(TestCase):
              'LINELABEL'] + ['ID'] * 6 + ['NEWLINE', 'LEM'] +
             ['ID', 'SEMICOLON'] * 5 + ['ID', "NEWLINE"]
         )
+
+    def test_composite(self):
+        self.compare_tokens(
+            "&Q002769 = SB Anzu 1\n" +
+            "@composite\n" +
+            "#project: cams/gkab\n" +
+            "1.   bi#-in šar da-ad-mi šu-pa-a na-ram {d}ma#-mi\n"+
+            "&Q002770 = SB Anzu 2\n"+
+            "#project: cams/gkab\n"+
+            "1.   bi-riq ur-ha šuk-na a-dan-na\n",
+            ["AMPERSAND", "ID", "EQUALS", "ID", "NEWLINE"]+
+            ['COMPOSITE','NEWLINE']+
+            ["PROJECT", "ID", "NEWLINE"]+
+            ["LINELABEL"]+['ID']*6+['NEWLINE']+
+            ["AMPERSAND", "ID", "EQUALS", "ID", "NEWLINE"]+
+            ["PROJECT", "ID", "NEWLINE"]+
+            ["LINELABEL"]+['ID']*4
+        )

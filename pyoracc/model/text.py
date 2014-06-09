@@ -6,6 +6,7 @@ class Text(object):
 
     def __init__(self):
         self.children = []
+        self.composite = False
 
     def __str__(self):
         return Text.template.render(**vars(self))

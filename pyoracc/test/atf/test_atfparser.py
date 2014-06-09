@@ -7,6 +7,7 @@ from ...model.line import Line
 from ...model.translation import Translation
 from ...model.oraccobject import OraccObject
 from ...model.oraccnamedobject import OraccNamedObject
+from ...model.composite import Composite
 from ...atf.atfyacc import AtfParser
 from ...atf.atflex import AtfLexer
 from nose.tools import assert_in, assert_equal, assert_is_instance
@@ -345,3 +346,17 @@ class testParser(TestCase):
         )
         assert_equal(text.children[0].objecttype, "tablet")
         assert_equal(text.children[0].children[0].objecttype, "obverse")
+
+    def test_composite(self):
+        composite = self.try_parse(
+            "&Q002769 = SB Anzu 1\n" +
+            "@composite\n" +
+            "#project: cams/gkab\n" +
+            "1.   bi#-in šar da-ad-mi šu-pa-a na-ram {d}ma#-mi\n"+
+            "&Q002770 = SB Anzu 2\n"+
+            "#project: cams/gkab\n"+
+            "1.   bi-riq ur-ha šuk-na a-dan-na\n"
+        )
+        assert_is_instance(composite, Composite)
+        assert_is_instance(composite.texts[0], Text)
+        assert_is_instance(composite.texts[1], Text)
