@@ -7,6 +7,7 @@ from ...model.line import Line
 from ...model.state import State
 from ...model.translation import Translation
 from ...model.link import Link
+from ...model.link_reference import LinkReference
 from ...model.oraccobject import OraccObject
 from ...model.oraccnamedobject import OraccNamedObject
 from ...model.composite import Composite
@@ -410,10 +411,38 @@ class testParser(TestCase):
     def test_link_declaration(self):
         text = self.try_parse(
             "&Q002769 = SB Anzu 1\n" +
-            "#link: def A = P363716 = TCL 06, 44\n"
+            "#link: def A = P363716 = TCL 06, 44\n" +
+            "@tablet\n" +
+            "1. Some text\n"
         )
         link=text.links[0]
         assert_is_instance(link, Link)
         assert_equal(link.label,"A")
         assert_equal(link.code,"P363716")
         assert_equal(link.description,"TCL 06, 44")
+
+    def test_link_reference_simple(self):
+        text = self.try_parse(
+            "@tablet\n" +
+            "1. Some text\n" +
+            "|| A o ii 10\n" +
+            "2. Some more text\n"
+        )
+        link=text.children[0].children[0].links[0]
+        assert_is_instance(link,LinkReference)
+        assert_equal(link.target,"A")
+        assert_equal(link.operator,"||")
+        assert_equal(link.label,["o","ii","10"])
+
+    def test_link_reference_range(self):
+        text = self.try_parse(
+            "@tablet\n" +
+            "1. Some text\n" +
+            ">> A o ii 10 - o ii 15\n" +
+            "2. Some more text\n"
+        )
+        link=text.children[0].children[0].links[0]
+        assert_equal(link.target,"A")
+        assert_equal(link.operator,">>")
+        assert_equal(link.label,["o","ii","10"])
+        assert_equal(link.rangelabel,["o","ii","15"])

@@ -7,6 +7,7 @@ from ..model.line import Line
 from ..model.ruling import Ruling
 from ..model.note import Note
 from ..model.link import Link
+from ..model.link_reference import LinkReference
 from ..model.state import State
 from ..model.translation import Translation
 from ..model.composite import Composite
@@ -285,6 +286,11 @@ class AtfParser(object):
         p[0] = p[1]
         p[0].notes.append(p[2])
 
+    def p_line_link(self,p):
+        "line : line link_reference_statement "
+        p[0] = p[1]
+        p[0].links.append(p[2])
+
     def p_lemma_list(self, p):
         "lemma_list : LEM ID"
         p[0] = [p[2]]
@@ -423,6 +429,41 @@ class AtfParser(object):
         "translation : translation surface %prec SURFACE"
         p[0] = p[1]
         p[0].children.append(p[2])
+
+
+    def p_linkreference(self,p):
+        "link_reference : link_operator ID"
+        p[0]=LinkReference(p[1],p[2])
+
+    def p_linkreference_label(self,p):
+        """link_reference : link_reference ID
+                          | link_reference NUMBER """
+        p[0]=p[1]
+        p[0].label.append(p[2])
+
+    def p_link_range_reference_label(self,p):
+        """link_range_reference : link_range_reference ID
+                                | link_range_reference NUMBER """
+        p[0]=p[1]
+        p[0].rangelabel.append(p[2])
+
+    def p_link_range_reference(self,p):
+        """link_range_reference : link_reference MINUS"""
+        p[0]=p[1]
+
+    def p_linkreference_statement(self,p):
+        """link_reference_statement : link_reference newline
+                                    | link_range_reference newline
+        """
+        p[0]=p[1]
+
+    def p_link_operator(self,p):
+        """link_operator : PARBAR
+                         | TO
+                         | FROM """
+        p[0]=p[1]
+
+
     # There is a potential shift-reduce conflict in the following sample:
 
     """

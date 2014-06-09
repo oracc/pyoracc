@@ -5,3 +5,4 @@ class Line(object):
         self.lemmas = []
         self.notes = []
         self.references = []
+        self.links = []
