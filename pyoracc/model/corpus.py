@@ -14,15 +14,18 @@ class Corpus(object):
                 for file in files:
                     try:
                         path=os.path.join(dirpath,file)
-                        print("Parsing file", path)
+                        print("Parsing file", path, "... ", end="")
                         self.texts.append(AtfFile(open(path).read()))
                         self.successes += 1
+                        print("OK")
                     except SyntaxError:
                         self.texts.append(None)
                         self.failures += 1
+                        print("Failed")
 
 
 if __name__ == '__main__':
     corpus=Corpus(source = sys.argv[1])
+    print()
     print("Succeeded with ", corpus.successes, " out of ",
           corpus.failures + corpus.successes)
