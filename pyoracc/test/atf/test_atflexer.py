@@ -2,7 +2,7 @@
 from unittest import TestCase
 from ...atf.atflex import AtfLexer
 from nose.tools import assert_in, assert_equal
-from itertools import izip, repeat
+from itertools import izip_longest, repeat
 
 
 class testLexer(TestCase):
@@ -13,14 +13,17 @@ class testLexer(TestCase):
         self.lexer.input(content)
         if expected_values is None:
             expected_values = repeat(None)
-        for token, expected_type, expected_value in izip(self.lexer,
-                                                         expected_types,
-                                                         expected_values):
+        for expected_type, expected_value, token in izip_longest(
+                         expected_types,
+                         expected_values,
+                         self.lexer):
+            if token==None and expected_type==None:
+                break # The end-condition on the self.lexer iterable seems broken
             assert_equal(token.type, expected_type)
-            print token.type, expected_type
             if expected_value:
-                assert_equal(token.value, expected_value)
                 print token.value, expected_value
+                assert_equal(token.value, expected_value)
+
 
     def test_code(self):
         self.compare_tokens(
@@ -45,33 +48,36 @@ class testLexer(TestCase):
 
     def test_use_unicode(self):
         self.compare_tokens(
-            "#atf: use unicode",
+            "#atf: use unicode\n",
             ["ATF", "USE", "UNICODE", "NEWLINE"]
         )
 
-    def test_use_unicode(self):
+    def test_use_math(self):
         self.compare_tokens(
-            "#atf: use math",
+            "#atf: use math\n",
             ["ATF", "USE", "MATH", "NEWLINE"]
         )
 
     def test_link(self):
         self.compare_tokens(
-            "#link: def A = P363716 = TCL 06, 44\n",
-            ["LINK", "DEF", "ID", "EQUALS","ID","EQUALS","ID","NEWLINE"],
+            "#link: def A = P363716 = TCL 06, 44\n" +
+            "@tablet\n",
+            ["LINK", "DEF", "ID", "EQUALS","ID","EQUALS","ID","NEWLINE",
+            "TABLET","NEWLINE"],
             [None,None,"A",None,"P363716",None,"TCL 06, 44"]
         )
 
     def test_link_reference(self):
         self.compare_tokens(
             "|| A o ii 10\n",
-            ["LINK", "ID", "ID", "ID","NUMBER"]
+            ["PARBAR", "ID", "ID", "ID","NUMBER","NEWLINE"]
         )
 
-    def test_link_reference(self):
+    def test_link_reference_range(self):
         self.compare_tokens(
             "|| A o ii 10 -  o ii 12 \n",
-            ["PARBAR", "ID", "ID", "ID","NUMBER","MINUS","ID","ID","NUMBER"]
+            ["PARBAR", "ID", "ID", "ID","NUMBER","MINUS",
+            "ID","ID","NUMBER","NEWLINE"]
         )
 
     def test_division_tablet(self):
@@ -170,12 +176,12 @@ class testLexer(TestCase):
 
     def test_flagged_object(self):
         self.compare_tokens("@object which is remarkable and broken!#\n",
-                            ["OBJECT", "ID", "EXCLAIM", "HASH"])
+                            ["OBJECT", "ID", "EXCLAIM", "HASH", "NEWLINE"])
 
     def test_comment(self):
         self.compare_tokens(
             "# I've added various things for test purposes\n",
-            []
+            ['NEWLINE']
         )
 
     def test_ruling(self):
@@ -226,5 +232,5 @@ class testLexer(TestCase):
             ["LINELABEL"]+['ID']*6+['NEWLINE']+
             ["AMPERSAND", "ID", "EQUALS", "ID", "NEWLINE"]+
             ["PROJECT", "ID", "NEWLINE"]+
-            ["LINELABEL"]+['ID']*4
+            ["LINELABEL"]+['ID']*4+["NEWLINE"]
         )

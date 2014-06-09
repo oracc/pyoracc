@@ -129,7 +129,7 @@ class AtfLexer(object):
         r'[\t ]+'
         # NO TOKEN
 
-    def t_INITIAL_translation_absorb_EQUALS(self, t):
+    def t_INITIAL_translation_EQUALS(self, t):
         "\="
         t.lexer.push_state('absorb')
         return t
@@ -218,14 +218,15 @@ class AtfLexer(object):
     many_int_then_nonflag = '(' + internalonly + '*' + nonflag + '+' + ')'
     many_nonflag = nonflag + '*'
     intern_or_nonflg = '(' + many_int_then_nonflag + '|' + many_nonflag + ')'
-    absorb_regex = white + '*' + '(' + nonflagnonwhite + intern_or_nonflg + ')'
+    absorb_regex = (white + '*' + '(' + nonflagnonwhite + intern_or_nonflg +
+                   ')' + white + '*')
 
     @lex.TOKEN(absorb_regex)
     def t_absorb_ID(self, t):
 
         # Discard leading whitespace, token is not flag or newline
         # And has at least one non-whitespace character
-        t.value = t.lexer.lexmatch.groups()[3]
+        t.value = t.lexer.lexmatch.groups()[2]
         return t
 
     t_absorb_HASH = "\#"
@@ -234,6 +235,7 @@ class AtfLexer(object):
     t_absorb_STAR = "\*"
     t_absorb_PRIME = "'"
     t_absorb_HAT = "[\ \t]*\^[\ \t]*"
+    t_absorb_EQUALS = "\="
 
     #--- RULES FOR THE text STATE ----
     t_text_ID = "[^\ \t \n\r]+"
