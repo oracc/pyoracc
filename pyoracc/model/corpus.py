@@ -1,6 +1,7 @@
 from __future__ import print_function
 import sys
 import os
+import codecs
 from ..atf.atffile import AtfFile
 
 
@@ -15,7 +16,8 @@ class Corpus(object):
                     try:
                         path=os.path.join(dirpath,file)
                         print("Parsing file", path, "... ", end="")
-                        self.texts.append(AtfFile(open(path).read()))
+                        self.texts.append(AtfFile(codecs.open(path,
+                                                  encoding='utf-8').read()))
                         self.successes += 1
                         print("OK")
                     except SyntaxError:
@@ -28,4 +30,5 @@ if __name__ == '__main__':
     corpus=Corpus(source = sys.argv[1])
     print()
     print("Succeeded with ", corpus.successes, " out of ",
-          corpus.failures + corpus.successes)
+          corpus.failures + corpus.successes, "(" ,
+          corpus.successes*100.0/(corpus.failures+corpus.successes), "%)")
