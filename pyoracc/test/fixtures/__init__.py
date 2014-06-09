@@ -11,3 +11,8 @@ def belsunu():
 
 def tiny_corpus():
     return os.path.join(os.path.dirname(here),'tiny_corpus')
+
+def anzu():
+    return codecs.open(os.path.join(
+                       os.path.dirname(here),'sample_corpus',"anzu.atf"),
+                       encoding='utf-8').read()
