@@ -10,14 +10,17 @@ class Corpus(object):
         self.failures = 0
         self.successes = 0
         if 'source' in kwargs:
-            for _,_,files in os.walk(kwargs['source']):
+            for dirpath,_,files in os.walk(kwargs['source']):
                 for file in files:
                     try:
-                        self.texts.append(AtfFile(file))
+                        path=os.path.join(dirpath,file)
+                        print("Parsing file", path)
+                        self.texts.append(AtfFile(open(path).read()))
                         self.successes += 1
-                    except:
-                        self.texts.Append(None)
+                    except SyntaxError:
+                        self.texts.append(None)
                         self.failures += 1
+
 
 if __name__ == '__main__':
     corpus=Corpus(source = sys.argv[1])

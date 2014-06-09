@@ -385,3 +385,9 @@ class AtfParser(object):
             'WITNESSES', 'FACE', 'SINGLEID',
             'SURFACE', 'EDGE', 'COLUMN', 'SEAL')
     )
+
+    def p_error(self,p):
+        # All errors currently unrecoverable
+        # So just throw
+        raise SyntaxError
+        #pass
