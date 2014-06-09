@@ -6,6 +6,7 @@ from ...model.text import Text
 from ...model.line import Line
 from ...model.state import State
 from ...model.translation import Translation
+from ...model.link import Link
 from ...model.oraccobject import OraccObject
 from ...model.oraccnamedobject import OraccNamedObject
 from ...model.composite import Composite
@@ -405,3 +406,14 @@ class testParser(TestCase):
         assert_is_instance(composite, Composite)
         assert_is_instance(composite.texts[0], Text)
         assert_is_instance(composite.texts[1], Text)
+
+    def test_link_declaration(self):
+        text = self.try_parse(
+            "&Q002769 = SB Anzu 1\n" +
+            "#link: def A = P363716 = TCL 06, 44\n"
+        )
+        link=text.links[0]
+        assert_is_instance(link, Link)
+        assert_equal(link.label,"A")
+        assert_equal(link.code,"P363716")
+        assert_equal(link.description,"TCL 06, 44")

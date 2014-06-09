@@ -58,9 +58,21 @@ class testLexer(TestCase):
     def test_link(self):
         self.compare_tokens(
             "#link: def A = P363716 = TCL 06, 44\n",
-            ["LINK", "DEF", "ID", "EQUALS","ID","EQUALS","ID","NEWLINE"]
+            ["LINK", "DEF", "ID", "EQUALS","ID","EQUALS","ID","NEWLINE"],
+            [None,None,"A",None,"P363716",None,"TCL 06, 44"]
         )
 
+    def test_link_reference(self):
+        self.compare_tokens(
+            "|| A o ii 10\n",
+            ["LINK", "ID", "ID", "ID","NUMBER"]
+        )
+
+    def test_link_reference(self):
+        self.compare_tokens(
+            "|| A o ii 10 -  o ii 12 \n",
+            ["PARBAR", "ID", "ID", "ID","NUMBER","MINUS","ID","ID","NUMBER"]
+        )
 
     def test_division_tablet(self):
         self.compare_tokens(

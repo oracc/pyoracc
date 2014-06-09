@@ -6,6 +6,7 @@ from ..model.oraccnamedobject import OraccNamedObject
 from ..model.line import Line
 from ..model.ruling import Ruling
 from ..model.note import Note
+from ..model.link import Link
 from ..model.state import State
 from ..model.translation import Translation
 from ..model.composite import Composite
@@ -52,6 +53,11 @@ class AtfParser(object):
     def p_math(self, p):
         "math : ATF USE MATH newline"
 
+    def p_link(self,p):
+        "link : LINK DEF ID EQUALS ID EQUALS ID newline"
+        p[0] = Link(p[3],p[5],p[7])
+
+
     def p_language_protoocol(self, p):
         "language_protocol : ATF LANG ID newline"
         p[0] = p[3]
@@ -63,6 +69,11 @@ class AtfParser(object):
     def p_text_unicode(self, p):
         "text : text unicode"
         p[0] = p[1]
+
+    def p_text_link(self, p):
+        "text : text link"
+        p[0] = p[1]
+        p[0].links.append(p[2])
 
     def p_text_language(self, p):
         "text : text language_protocol"

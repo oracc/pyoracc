@@ -82,7 +82,11 @@ class AtfLexer(object):
         'LETTER',
         'HASH',
         'NEWLINE',
-        'REFERENCE'
+        'REFERENCE',
+        'MINUS',
+        'FROM',
+        'TO',
+        'PARBAR'
     ]
 
     keyword_tokens = list(set(
@@ -114,6 +118,10 @@ class AtfLexer(object):
     t_INITIAL_translation_STAR = "\*"
     t_INITIAL_translation_PRIME = r'\''
     t_INITIAL_translation_DOLLAR = "\$"
+    t_INITIAL_translation_MINUS = "\-"
+    t_INITIAL_translation_FROM = "\<\<"
+    t_INITIAL_translation_TO = "\>\>"
+    t_INITIAL_translation_PARBAR = "\|\|"
 
     t_PARENTHETICALID = "\([^\)\n\r]*\)"
 
@@ -217,7 +225,7 @@ class AtfLexer(object):
 
         # Discard leading whitespace, token is not flag or newline
         # And has at least one non-whitespace character
-        t.value = t.lexer.lexmatch.groups()[2]
+        t.value = t.lexer.lexmatch.groups()[3]
         return t
 
     t_absorb_HASH = "\#"
