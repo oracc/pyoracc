@@ -24,6 +24,7 @@ class Corpus(object):
                         self.texts.append(None)
                         self.failures += 1
                         print("Failed")
+                        #raise SyntaxError
 
 
 if __name__ == '__main__':
