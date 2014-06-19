@@ -14,16 +14,14 @@ class testLexer(TestCase):
         if expected_values is None:
             expected_values = repeat(None)
         for expected_type, expected_value, token in izip_longest(
-                         expected_types,
-                         expected_values,
-                         self.lexer):
-            if token==None and expected_type==None:
-                break # The end-condition on the self.lexer iterable seems broken
+                expected_types, expected_values, self.lexer):
+            if token is None and expected_type is None:
+                break  # The end-condition on the
+                       # self.lexer iterable seems broken
             assert_equal(token.type, expected_type)
             if expected_value:
                 print token.value, expected_value
                 assert_equal(token.value, expected_value)
-
 
     def test_code(self):
         self.compare_tokens(
@@ -62,22 +60,22 @@ class testLexer(TestCase):
         self.compare_tokens(
             "#link: def A = P363716 = TCL 06, 44\n" +
             "@tablet\n",
-            ["LINK", "DEF", "ID", "EQUALS","ID","EQUALS","ID","NEWLINE",
-            "TABLET","NEWLINE"],
-            [None,None,"A",None,"P363716",None,"TCL 06, 44"]
+            ["LINK", "DEF", "ID", "EQUALS", "ID", "EQUALS", "ID", "NEWLINE",
+            "TABLET", "NEWLINE"],
+            [None, None, "A", None, "P363716", None, "TCL 06, 44"]
         )
 
     def test_link_reference(self):
         self.compare_tokens(
             "|| A o ii 10\n",
-            ["PARBAR", "ID", "ID", "ID","NUMBER","NEWLINE"]
+            ["PARBAR", "ID", "ID", "ID", "NUMBER", "NEWLINE"]
         )
 
     def test_link_reference_range(self):
         self.compare_tokens(
             "|| A o ii 10 -  o ii 12 \n",
-            ["PARBAR", "ID", "ID", "ID","NUMBER","MINUS",
-            "ID","ID","NUMBER","NEWLINE"]
+            ["PARBAR", "ID", "ID", "ID", "NUMBER", "MINUS",
+            "ID", "ID", "NUMBER", "NEWLINE"]
         )
 
     def test_division_tablet(self):
@@ -132,13 +130,13 @@ class testLexer(TestCase):
     def test_translation_labeled_text(self):
         self.compare_tokens(
             "@translation labeled en project\n" +
-            "@label o 4\n"+
+            "@label o 4\n" +
             "Then it will be taken for the rites and rituals.\n",
             ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
-             "LABEL", "ID", "NUMBER","NEWLINE",
-             "ID","NEWLINE"],
+             "LABEL", "ID", "NUMBER", "NEWLINE",
+             "ID", "NEWLINE"],
             [None, "labeled", "en", "project", None,
-             None, "o", "4",None,
+             None, "o", "4", None,
              'Then it will be taken for the rites and rituals.', None]
         )
 
@@ -235,15 +233,15 @@ class testLexer(TestCase):
             "&Q002769 = SB Anzu 1\n" +
             "@composite\n" +
             "#project: cams/gkab\n" +
-            "1.   bi#-in šar da-ad-mi šu-pa-a na-ram {d}ma#-mi\n"+
-            "&Q002770 = SB Anzu 2\n"+
-            "#project: cams/gkab\n"+
+            "1.   bi#-in šar da-ad-mi šu-pa-a na-ram {d}ma#-mi\n" +
+            "&Q002770 = SB Anzu 2\n" +
+            "#project: cams/gkab\n" +
             "1.   bi-riq ur-ha šuk-na a-dan-na\n",
-            ["AMPERSAND", "ID", "EQUALS", "ID", "NEWLINE"]+
-            ['COMPOSITE','NEWLINE']+
-            ["PROJECT", "ID", "NEWLINE"]+
-            ["LINELABEL"]+['ID']*6+['NEWLINE']+
-            ["AMPERSAND", "ID", "EQUALS", "ID", "NEWLINE"]+
-            ["PROJECT", "ID", "NEWLINE"]+
-            ["LINELABEL"]+['ID']*4+["NEWLINE"]
+            ["AMPERSAND", "ID", "EQUALS", "ID", "NEWLINE"] +
+            ['COMPOSITE', 'NEWLINE'] +
+            ["PROJECT", "ID", "NEWLINE"] +
+            ["LINELABEL"] + ['ID'] * 6 + ['NEWLINE'] +
+            ["AMPERSAND", "ID", "EQUALS", "ID", "NEWLINE"] +
+            ["PROJECT", "ID", "NEWLINE"] +
+            ["LINELABEL"] + ['ID'] * 4 + ["NEWLINE"]
         )

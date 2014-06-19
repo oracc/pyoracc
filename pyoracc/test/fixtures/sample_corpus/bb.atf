@@ -1,0 +1,231 @@
+&X002002 = BagM Beih. 02, 005
+#project: cams/gkab
+#atf: lang akk-x-stdbab
+#atf: use unicode
+#link: def A = P363716 = TCL 06, 44
+@tablet
+@obverse
+1. e-nu-ma# LI#.LI#.[IZ₃ ...] x x x IGI?#-ka?#
+#lem: enūma[when]SBJ; +lilissu[kettledrum]N$lilis; u; u; u; u; +pānu[front//intention]N$pānika
+
+2. GU₄!(GA) ŠU.DU₇ GE₆ ša₂# {giš#}UMBIN#-MEŠ u SI-MEŠ-šu₂ šal-me#!(IGI)
+#lem: +alpu[ox//bull]N$alpa; +šuklulu[complete//ungelded]AJ$šuklula; +ṣalmu[black]AJ$ṣalma; +ša[that//whose]REL$; +ṣupru[nail//hoof]N$ṣuprātu; u[and]CNJ; +qarnu[horn]N$qarnātušu; +šalmu[intact]AJ$šalmē
+
+3. TA SAG.DU-šu₂ EN ap-pi KUN-šu₂ {lu₂}UM.ME.A mu-du-u₂ it-ta-nap-la-su-ma
+#lem: +ištu[from]PRP$; +qaqqadu[head]N$qaqqadišu; +adi[until//up to]PRP$; +appu[nose//tip]N$appi; +zibbatu[tail]N$zibbatišu; +ummiānu[expert]N$ummânu; +mūdû[knowing]AJ$; +palāsu[look at//examine]V$ittanaplassuma +.
+
+4. šum#-ma SU#-šu₂ SIG₂ GE₆ a-na GARZA u ki-du-de-e il-leq-qe₂
+#lem: +šumma[if]MOD$; +zumru[body]N$zumuršu; +šārtu[hair]N$; +ṣalmu[black]AJ$ṣalimtu; +ana[for]PRP$; +parṣu[office//rite]N$parṣī; u[and]CNJ; +kidudû[rites//rituals]N$kidudê; +leqû[take]V$illeqqe +.
+
+5. šum#-ma# 7# SIG₂ BABBAR ki-ma MUL ta-kip ina {giš}NIG₂.GIDRU ma-hi-iṣ ina qin-na-zu la-pit
+#lem: šumma[if]MOD; n; +šārtu[hair]N$šārāti; +peṣû[white]AJ$peṣâti; +kīma[like]PRP$; +kakkabu[star]N$kakkabi; +takpu[pricked//spotted (with)]AJ$takip; +ina[in//with]PRP$; +haṭṭu[stick]N$haṭṭi; +mahṣu[beaten]AJ$mahiṣ; ina[with]PRP; +qinnāzu[whip]N$; +laptu[touched//struck]AJ$lapit
+
+6. a#-na# GARZA u# ki-du-de-e ul TI{+qe₂}
+#lem: ana[for]PRP; parṣī[rite]N; u[and]CNJ; kidudê[rituals]N; ul[not]MOD; +leqû[take]V$illeqqe +.
+
+7. [e]-nu#-ma# GU₄ a-na E₂ mu-um-mu tu-šer₃-re-ba ina ITI šal-me ina U₄ ŠE.GA
+#lem: enūma[when]SBJ; alpa[bull]N; +ana[to//into]PRP$; bīt[house]; mummu[life-giving force?]; +erēbu[enter]V$tušerreba; +ina[in]PRP$; +warhu[month]N$arhi; +šalmu[intact//favourable]AJ$šalme; ina[on]PRP; +ūmu[day]N$ūm; +šemû[hear//accepting (prayer)]V'N$šemê
+
+# mummu: in online glossary with GW of life-giving-force?, but the second hyphen now looks like an error to me
+
+8. x x x ZI#.GA# KI tu-qad₂#-da-aš₂ A KU₃ SU₃{+ah} 12 SIG₄ LA₂{+aṣ!}
+#lem: u; u; u; +tebû[arise//step up]V$tetebbe; +qaqqaru[ground]N$qaqqara; +qadāšu[be(come) pure//purify]V$tuqaddaš; +mû[water]N$mê; +ellu[pure]AJ$ellūti; +salāhu[sprinkle]V$tasallah; n; +libittu[mudbrick]N$libnāti; +tarāṣu[stretch out//set up]V$tatarraṣ +.
+
+9. x x x x ina muh-hi ŠUB{+di} DINGIR-MEŠ 12-šu₂-nu ina muh-hi tu-še-šeb
+#lem: u; u; u; u; ina[in]PRP; +muhhu[skull]N$muhhi; +nadû[throw//lay down]V$tanaddi +.; +ilu[god]N$ilī; n; ina[on]PRP; muhhi[top]N; +wašābu[sit (down)]V$tušeššeb +.
+
+# last sign better transliterated as šeb according to Huehnergard; emailed Steve
+
+10. [...] x x-MEŠ# tuš-za-zi 2 DINGIR-MEŠ DINGIR GID₂.DA ŠU GID₂?#.DA.GID₂?#.DA
+#lem: u; u; u; +izuzzu[stand]V$tušzazzi +.; n; ilī[god]N; +ilu[god]N$ila; X; X; X
+
+11. x [... {d}]EN#.ME.ŠAR₂.RA ZI₃.DUB.DUB.BU-MEŠ tu-sar-raq
+#lem: u; u; Enmešara[1]DN; +zidubdubbû[(small heap of flour)]N$zidubdubbî; tusarraq[sprinkle]V +.
+
+12. x GI#.DU₈?# [x x] 7-TA.AM₃!(A) NINDA ŠE.BAR 7-TA.AM₃ NINDA IMGAGA NINDA#.I₃#.DE₂.AM₃
+#lem: u; +paṭīru[portable altar//offering table]N$paṭīrī; u; u +.; n; +akalu[food//loaf]N$akalī; +uṭṭatu[barley]N$uṭṭati; n; akalī[loaf]N; +kunāšu[emmer]N$kunāši; +mersu[(a cake)]N$meris
+
+13. LAL₃# I₃#.NUN#.NA# ZU₂#.LUM#.MA# {zi₃#}EŠA# DUB{+aq} KAŠ u GEŠTIN GUB{+an} 12 {udu}SISKUR₂ BAL#{+qi₂}
+#lem: dišpi[honey]N; +himētu[butter]N$himēti; +suluppu[date]N$suluppī; +saskû[(a fine flour)]N$saskî; +sarāqu[strew]V$tasarraq +.; šikara[beer]N; u[and]CNJ; +karānu[wine]N$karāna; +kânu[be(come) permanent//set up correctly]V$tukān +.; n; +nīqu[offering]N$nīqī; +naqû[pour (a libation)//present]V$tanaqqi +.
+
+14. {uzu}ZA₃.LU {uzu}ME.HE₂ u {uzu}KA.[IZI] tu#-ṭah-ha ŠE.BAR MUNU₆ IMGAGA GAR{+an}
+#lem: +imittu[support//shoulder]N$imitta; +himṣu[fatty tissue]N$himṣa; u[and]CNJ; +šumû[roast meat]N$šumê; +ṭehû[approach//present]V$tuṭahha +.; +uṭṭatu[barley]N$uṭṭata; +buqlu[malt]N$buqul; +kunāšu[emmer]N$kunāši; +šakānu[put]V$tašakkan +.
+
+15. SIG₂# SA₅?# {sig₂#}ZA.GIN₃.NA x x x x SIG₄-MEŠ DUB{+aq} A-MEŠ mah-ri-šu₂-nu tu#-kan-nu
+#lem: +šīpātu[wool]N$šīpāti; +sāmu[red]AJ$sāmāti; uqnâti[blue-green wool]N; u; u; u; u; +libittu[mudbrick]N$libnāti; tasarraq[strew]V +.; mê[water]N; +mahru[front//before]N'PRP$mahrišunu; +kânu[be(come) permanent//set up correctly]V$tukannu +.
+
+
+16. {gi}KID.MA₂.ŠU₂.A ŠUB{+di} ina KI#.TA {gi}KID#.MA₂.ŠU₂.A [ba]-aṣ#-ṣa DUB{+ak} A₂-MEŠ {gi}KID.MA₂.ŠU₂.A ŠUB{+di}
+#lem: +burû[(reed) mat]N$burâ; tanaddi[lay down]V +.; ina[in]PRP; +šaplu[underside]N$šapal; +burû[(reed) mat]N$burî; +bāṣu[sand]N$baṣṣa; +šapāku[heap up]V$tašappak +.; +idu[arm//side]N$idāt; burî[(reed) mat]N; tanaddi[lay down]V +.
+
+17. [ba]-aṣ?#-ṣa ta-lam-mi GU₄!(GA) ša₂-a-šu₂ ina muh-hi {gi}KID.MA₂.ŠU₂.A# tuš-za-as-su-ma
+#lem: baṣṣa[sand]N; +lawû[surround//encircle]V$talammi +.; alpa[bull]N; +šuāšim[to him//that]IP$šâšu; ina[in]PRP; muhhi[skull]N; burî[(reed) mat]N; +izuzzu[stand]V$tušzassuma +.
+
+@reverse
+1. [A]-MEŠ {dug}A.GUB₂#.[BA] ta#-sal#-lah₃-šu₂ KA-[šu₂ ... ZI₃.SUR].RA# ta-lam-mi₃-iš SIG₄ LA₂{+aṣ}
+#lem: mê[water]N; +agubbû[holy water vessel]N$agubbê; +salāhu[sprinkle]V$tasallahšu +.; +pû[mouth]N$pîšu; u +.; +zisurrû[magic circle]N$zisurrâ; +lawû[surround]V$talammiš +.; +libittu[mudbrick]N$libitta; tatarraṣ[set up]V +.
+
+2. NIG₂.NA {šim}LI ta-sar#-raq KAŠ SAG# [BAL]{+qi₂?#} EN₂ %s gud#!(GA) gal <gud> mah u₂ ki <us₂> kug-ga %sb <<UŠ KU>>
+#lem: +nignakku[censer]N$nignak; +burāšu[(species) of juniper]N$burāši; +sarāqu[strew]V$tasarraq +.; šikara[beer]N; +rēštû[first//first-class]NU'AJ$rēštâ; tanaqqi[pour (a libation)]V +.; šipta[incantation]N; gud[bull]; gal[big]; gud[bull]; +mah[great//magnificent]V/i/mah#~$; u[pasture]; ki[place]; us[follow]; +kug[pure//holy]V/i/kug#~$
+
+# ki us[set on the ground//tread]
+|| A o ii 9
+
+3. ina {gi#}SAG.KU₅ GI DU₁₀.GA a#-[na x x] GEŠTU#-MIN# ZA₃-šu₂ tu-lah₃-haš EGIR-šu₂
+#lem: +ina[in//through]PRP$; +takkussu[reed-stem//tube]N$takkus; +qanû[reed]N$qanî; +ṭābu[good//sweet]AJ$ṭābi; ana[to]PRP; u; u; +uznu[ear]N$uzun; imittišu[right]N; +lahāšu[whisper]V$tulahhaš +.; +warki[behind//after]PRP$arkišu
+
+# SAG.KU₅: transliteration follows current style, but online glossary has SAG.KUD (also in next line); missing text after ana = libbi
+
+4. EN₂ GU₄!(GA) i#-lit#-tu₄# an#-zi#-[i at]-ta#-ma ina {gi}SAG.KU₅ GI DU₁₀.GA a-na lib₃-bi GEŠTU-MIN GUB₃-šu₂ tu-lah₃-haš
+#lem: šipta[incantation]N; +alpu[bull]N$; +ilittu[birth//offspring]N$; +Anzu[]DN$Anzi; +attā[you]IP$attāma; ina[through]PRP; takkus[tube]N; qanî[reed]N; ṭābi[sweet]AJ; +ana[to]PRP$; libbi[interior]N; uzun[ear]N; šumēlišu[left]N; tulahhaš[whisper]V +.
+
+|| A o ii 10
+
+
+5. LI#.LI#.IZ₃ ZABAR# UŠ₂ {giš}EREN SU₃{+ah}-šu₂ GU₄!(GA) ša₂-a-šu₂ ina IGI LI.LI.IZ₃
+#lem: lilis[kettledrum]N; siparri[bronze]N; +dāmu[blood//resin]N$dām; +erēnu[cedar]N$erēni; +salāhu[sprinkle]V$tasallahšu +.; alpa[bull]N; šâšu[that]IP; +ina[in]PRP$; pān[front]N; +lilissu[kettledrum]N$lilissi
+
+6. ta#-pal#-laq#-ma lib₃-bi-šu₂ ina IGI LI.LI.IZ₃ {šim}LI DUB{+aq} KAŠ BAL{+qi₂}
+#lem: +palāqu[slaughter]V$tapallaqma +.; +libbu[interior//heart]N$libbišu; +ina[in]PRP$; pān[front]N; lilissi[kettledrum]N; burāši[(species of) juniper]N; tasarraq[strew]V +.; +šikara[beer]N; tanaqqi[pour (a libation)]V +.
+
+7. [x] x $KU $DU
+#lem: u; u; u; u +.
+
+8. EGIR?#-šu₂ ep-še-e-ti an-na-a-tu₂
+#lem: arkišu[after]PRP; +epištu[deed//action]N$epšēti; annâtu[this]DP
+
+9. A#-MEŠ IL₂-ma# šid-da# tu-na#-hu#
+#lem: mê[water]N; +našû[lift]V$tanaššima; +šiddu[length//curtain]N$šidda; +nâhu[rest//loosen]V$tunahhu +.
+
+10. [x x ša₂]-a#-šu₂ ta-leq!#(DI)-qe₂-e#-ma ina ZI₃.KUM {d}NISABA KU₃ ina A-MEŠ KAŠ GEŠTIN reš-tu₂!(TE)-u₂ ta-re-es-si#-in#
+#lem: u; u; šâšu[that]IP; +leqû[take]V$taleqqema; ina[with]PRP; +isqūqu[(a coarse flour)]N$isqūq; +nissabu[grain]N$nissabi; +ellu[pure]AJ$elleti; ina[in]PRP; mê[water]N; +šikaru[beer]N$šikari; +karānu[wine]N$karāni; +rēštû[first//first-class]NU'AJ$; +rasānu[soak]V$taressin +.
+
+11. ina#? I₃?#.[NUN.NA] {gu₄?#}[AB₂] KU₃{+ti₃}.GA IM.SAHAR.NA₄.KUR#.RA ša₂ {kur}hat-ti u {giš}HAB# ta-ṣar#-rap#-ma LI.LI.IZ₃ ZABAR# [x x]
+#lem: ina[with]PRP; +himētu[butter]N$himēt; +arhu[cow]N$arhi; +ellu[pure]AJ$elleti; +gabû[alum]N$gabî; ša[of]DET; +Hatti[]GN; u[and]CNJ; +hûratu[madder]N$hûrati; +ṣarāpu[burn//dye red]V$taṣarrapma; lilis[kettledrum]N; siparri[bronze]N; u; u +.
+
+12. ina# SA# GUB₃# ša₂ {uzu}GIŠ.KUN# KA₂-šu₂ ta-šap#-pi ina?# ALLA {giš}GAG-MEŠ LI.LI.IZ₃ [...]
+#lem: ina[with]PRP; +šerʾānu[vein//sinew]N$šerʾān; +šumēlu[left]N$šumēli; ša[of]DET; +rapaštu[loin//thigh]N$rapašti; +bābu[gate//opening]N$bābšu; +šapû[wrap up//fasten]V$tašappi +.; ina[in]PRP; +allānu[oak//acorn-shaped object]N$allāni; +sikkatu[peg]N$sikkāt; lilis[kettledrum]N; u +.
+
+13. ŠE.GIN₂# ta#-ṣap#-pi₂# I₃#.GIŠ?# ZALAG₂#.GA# ta-lap-pat-ma a-na lib₃-bi LI.LI.IZ₃ tu-ta-a-ri#
+#lem: +šimtu[mark//paint]N$šimta; +ṣapû[soak]V$taṣappi; +šamnu[oil]N$šamna; +nawru[bright]AJ$namra; +lapātu[touch//apply]V$talappatma; +ana[to]PRP$; libbi[interior]N; lilissi[kettledrum]N; +târu[turn//return]V$tutāri +.
+
+14. ina ITI šal#-me ina U₄ ŠE.GA [ep-še-e]-ti an-na-a-ti tep-pu-uš UZU GU₄!(GA) ša₂-a-šu₂ ina 1{+en} TUG₂#.[KUR.RA ...]
+#lem: ina[in]PRP; arhi[month]N; šalme[favourable]AJ; ina[on]PRP; ūm[day]N; šemê[accepting (prayer)]V'N; epšēti[action]N; +annû[this]DP$annâti; +epēšu[do//perform]V$teppuš +.; +šīru[flesh//meat]N$šīr; +alpu[bull]N$alpi; šâšu[that]IP; ina[in]PRP; n; X; u +.
+
+15. $TA x [x] x x x [x x] x x I₃.GIŠ gu-<un>-nu ana ŠA₃-šu₂ ŠUB#{+di} ta-qeb-[ber ...]
+#lem: u; u; u; u; u; u; u; u; u; u +.; +šamnu[oil]N$šamna; +gurnu[average quality//ordinary]AJ$gunnu; ana[to]PRP; +libbu[interior]N$libbišu; tanaddi[lay down]V +.; +qebēru[bury]V$taqebber; u
+
+16. a-na# IGI# {d#}[UTU.ŠU₂.A ...] KUŠ?#.[TAB].BA?# it-ti-šu# ta-qeb-ber
+#lem: ana[to]PRP; +pānu[front//direction]N$pān; +erbu[entrance]N$ereb&šamši[sun]N; u; X; +itti[with]PRP$ittišu; taqebber[bury]V +.
+
+
+@top
+1. [x] x x x [...]
+#lem: u; u; u; u; u
+
+2. u šu-ut? [...]
+#lem: u[and]CNJ; šūt[those]DET; u +.
+
+@left
+
+@colophon
+
+1. IM# {m}{d}60--EN-šu₂-nu A ša₂ {m}NIG₂.SUM#.MU#--{d#}[60] [...] UNUG?#{ki?#} {iti#}DU₆ <U₄> 10-KAM?
+#lem: +ṭuppu[tablet]N$ṭuppi; Anu-belšunu[1]PN; +aplu[son]N$apli; ša[of]DET; +Nidintu-Anu[]PN; u +.; Uruk[1]SN; Tašritu[1]MN; +ūmu[day]N$ūm; n +.
+
+2. MU# 1 ME 50-KAM# {m}an#-ti#-[i-ku-su ...] x x $NIG₂?# $U₂?# $TAR?#-šu₂
+#lem: +šattu[year]N$šanat; n; +meʾatu[hundred]NU$meʾatu; n; +"Antiochus"[]RN +.; u; u; u; u; u; u
+
+@translation labeled en project
+
+@label o 1
+When you intend ... the [...] kettledrum,
+
+@label o 2 - o 3
+a knowledgeable expert will carefully inspect from its head to the tip of its tail an ungelded black bull whose hooves and horns are in good condition.
+
+@label o 4
+Then if its body (has only) black hair it will be taken for the rites and rituals.
+
+@label o 5 - o 6
+If it is dotted with 7 white hairs like a star, (or) has been hit with a stick, (or) struck with a whip, it will not be taken for the rites and rituals.
+
+@label o 7 - o 8
+When you are to bring the bull into the temple-workshop, you step up ... in a favourable month on a propitious day, purify the ground, sprinkle pure water (and) position 12 bricks.
+
+@label o 9
+You put ... on top. You sit (representations of) 12 gods on top.
+
+@label o 10
+You stand [...] .... ... 2 gods,
+
+@label o 11
+you distribute heaps of flour, the ... [...] of Enmešara.
+
+@label o 12 - o 13
+[...] ... offering tables. You strew 7 loaves of barley, 7 loaves of emmer (and) a cake (made) of honey, butter, dates (and) fine flour. You set beer and wine in place. You present 12 offerings.
+
+@label o 14
+You present shoulder, fatty tissue and roast meat. You put barley and emmer-malt in place.
+
+@label o 15
+You strew red wool, blue wool ... on the bricks. You set water in place before them.
+
+@label o 16
+You lay a reed mat down. You pile sand underneath the mat. You let the sides of the mat (back) down.
+
+@label o 17
+You encircle (it) with sand. You stand that bull on top of the mat.
+
+@label r 1
+Then you sprinkle it with water from a sacred vessel. ... its mouth. You surround it with a magic circle. You set a brick in place.
+
+@label r 2 - r 4
+You swing a censer (filled) with juniper. You libate finest beer. You whisper the incantation 'Great bull, magnificent bull, treading holy meadows' into its right ear through a tube (made) of sweet reed. After that you whisper the incantation 'O bull, you (are) the offspring of Anzu' into its left ear through the tube (made) of sweet reed.
+
+@label r 5 - r 6
+You sprinkle the bronze kettledrum with cedar resin. You slaughter that bull in front of the kettledrum. Then you scatter its heart in front of the kettledrum with juniper. You libate beer.
+
+@label r 7
+[...] ....
+
+@label r 8
+After that (the priest says: 'All the gods have performed) these actions.'^1^
+
+@note ^1^ Parenthesised text follows Neo-Assyrian source (KAR 60 obv 17-rev 4).
+
+@label r 9
+You lift the water and then loosen the curtain.
+
+@label r 10
+You take that [...] and then soak (the hide) with pure-grain flour in water, beer (and) finest wine.
+
+@label r 11
+You dye (it) red with butter from a pure cow, alum from Hattu and madder-plant, and then [...] the bronze kettledrum.
+
+@label r 12
+You fasten its (the drum's) opening with sinew from (the bull's) left thigh. [...] the pegs of the [...] kettledrum @?in the shape of an acorn?@.
+
+@label r 13
+You soak paint (onto the pegs), apply shining oil and then return (them) to the kettledrum.
+
+@label r 14
+You perform these actions in a favourable month on a propitious day. [...] the meat from that bull in a ... [...] cloth.
+
+@label r 15
+.... You pour ordinary oil over it. You bury [...].
+
+@label r 16
+[...] in the direction of sunset. You bury the ... hide with it.
+
+@label t.e. 1
+[...] ... [...]
+
+@label t.e. 2
+and that of [...].
+
+@label l.e. 1
+Tablet of Anu-belšunu, son of Nidintu-Anu, [descendant of Sin-leqi-unnini]. Uruk, (month) Tašritu, day 10.
+
+@label l.e. 2
+Year 150 of Antiochus. [...] ....

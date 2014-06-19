@@ -54,10 +54,9 @@ class AtfParser(object):
     def p_math(self, p):
         "math : ATF USE MATH newline"
 
-    def p_link(self,p):
+    def p_link(self, p):
         "link : LINK DEF ID EQUALS ID EQUALS ID newline"
-        p[0] = Link(p[3],p[5],p[7])
-
+        p[0] = Link(p[3], p[5], p[7])
 
     def p_language_protoocol(self, p):
         "language_protocol : ATF LANG ID newline"
@@ -101,24 +100,24 @@ class AtfParser(object):
         p[0].children[0].children.append(OraccObject("obverse"))
         p[0].children[0].children[0].children.append(p[2])
 
-    def p_text_composite(self,p):
+    def p_text_composite(self, p):
         """text : text COMPOSITE newline"""
-        p[0]=p[1]
-        p[0].composite=True
+        p[0] = p[1]
+        p[0].composite = True
 
-    def p_text_text(self,p):
+    def p_text_text(self, p):
         """composite : text text"""
         # Text must be a composite
-        p[0]=Composite()
+        p[0] = Composite()
         if not p[1].composite:
             raise SyntaxError("Attempt to compose non-composite texts")
         p[0].texts.append(p[1])
         p[0].texts.append(p[2])
 
-    def p_composite_text(self,p):
+    def p_composite_text(self, p):
         """composite : composite text"""
         # Text must be a composite
-        p[0]=p[1]
+        p[0] = p[1]
         p[0].texts.append(p[2])
 
     def p_object_statement(self, p):
@@ -286,7 +285,7 @@ class AtfParser(object):
         p[0] = p[1]
         p[0].notes.append(p[2])
 
-    def p_line_link(self,p):
+    def p_line_link(self, p):
         "line : line link_reference_statement "
         p[0] = p[1]
         p[0].links.append(p[2])
@@ -418,7 +417,9 @@ class AtfParser(object):
         p[0] = " ".join(p[1:])
 
     def p_translation_statement(self, p):
-        "translation_statement : TRANSLATION PARALLEL ID PROJECT newline"
+        """translation_statement : TRANSLATION PARALLEL ID PROJECT newline
+                                 | TRANSLATION LABELED ID PROJECT newline
+        """
         p[0] = Translation()
 
     def p_translation(self, p):
@@ -430,42 +431,89 @@ class AtfParser(object):
         p[0] = p[1]
         p[0].children.append(p[2])
 
+    def p_translation_labeledline(self, p):
+        "translation : translation translationlabeledline"
+        p[0] = p[1]
+        p[0].children.append(p[2])
 
-    def p_linkreference(self,p):
-        "link_reference : link_operator ID"
-        p[0]=LinkReference(p[1],p[2])
+    def p_translationlabelledline(self, p):
+        """translationlabeledline : translationlabel NEWLINE
+                                  | translationrangelabel NEWLINE
+        """
+        p[0] = Line(p[1])
 
-    def p_linkreference_label(self,p):
-        """link_reference : link_reference ID
-                          | link_reference NUMBER """
-        p[0]=p[1]
+    def p_translationlabel(self, p):
+        "translationlabel : LABEL"
+        p[0] = LinkReference("||", None)
+
+    def p_translationlabel_id(self, p):
+        """translationlabel : translationlabel ID
+                            | translationlabel NUMBER
+                            | translationlabel LETTER"""
+        p[0] = p[1]
         p[0].label.append(p[2])
 
-    def p_link_range_reference_label(self,p):
-        """link_range_reference : link_range_reference ID
-                                | link_range_reference NUMBER """
-        p[0]=p[1]
+    def p_translationrangelabel(self, p):
+        "translationrangelabel : translationlabel MINUS"
+        p[0] = p[1]
+
+    def p_translationrangelabel_id(self, p):
+        """translationrangelabel : translationrangelabel ID
+                                 | translationrangelabel NUMBER
+                                 | translationrangelabel LETTER"""
+        p[0] = p[1]
         p[0].rangelabel.append(p[2])
 
-    def p_link_range_reference(self,p):
-        """link_range_reference : link_reference MINUS"""
-        p[0]=p[1]
+    def p_translationlabeledline_reference(self, p):
+        """translationlabeledline : translationlabeledline reference
+                                  | translationlabeledline reference newline"""
+        p[0] = p[1]
+        p[0].references.append(p[2])
 
-    def p_linkreference_statement(self,p):
+    def p_translationlabeledline_note(self, p):
+        "translationlabeledline : translationlabeledline note_statement"
+        p[0] = p[1]
+        p[0].notes.append(p[2])
+
+    def p_translationlabelledline_content(self, p):
+        """translationlabeledline : translationlabeledline ID
+                                  | translationlabeledline ID newline"""
+        p[0] = p[1]
+        p[0].words.append(p[2])
+
+    def p_linkreference(self, p):
+        "link_reference : link_operator ID"
+        p[0] = LinkReference(p[1], p[2])
+
+    def p_linkreference_label(self, p):
+        """link_reference : link_reference ID
+                          | link_reference NUMBER """
+        p[0] = p[1]
+        p[0].label.append(p[2])
+
+    def p_link_range_reference_label(self, p):
+        """link_range_reference : link_range_reference ID
+                                | link_range_reference NUMBER """
+        p[0] = p[1]
+        p[0].rangelabel.append(p[2])
+
+    def p_link_range_reference(self, p):
+        """link_range_reference : link_reference MINUS"""
+        p[0] = p[1]
+
+    def p_linkreference_statement(self, p):
         """link_reference_statement : link_reference newline
                                     | link_range_reference newline
         """
-        p[0]=p[1]
+        p[0] = p[1]
 
-    def p_link_operator(self,p):
+    def p_link_operator(self, p):
         """link_operator : PARBAR
                          | TO
                          | FROM """
-        p[0]=p[1]
-
+        p[0] = p[1]
 
     # There is a potential shift-reduce conflict in the following sample:
-
     """
       @tablet
       @obverse
@@ -483,18 +531,20 @@ class AtfParser(object):
     #
 
     precedence = (
+        # LOW precedence
         ('nonassoc', 'TRANSLATIONEND'),
-        ('nonassoc','TABLET', 'ENVELOPE', 'PRISM', 'BULLA', 'FRAGMENT',
+        ('nonassoc', 'TABLET', 'ENVELOPE', 'PRISM', 'BULLA', 'FRAGMENT',
             'OBJECT'),
         ('nonassoc', 'OBVERSE', 'REVERSE', 'LEFT', 'RIGHT', 'TOP', 'BOTTOM',
             'CATCHLINE', 'COLOPHON', 'DATE', 'SIGNATURES',
             'SIGNATURE', 'SUMMARY',
             'WITNESSES', 'FACE', 'SINGLEID',
             'SURFACE', 'EDGE', 'COLUMN', 'SEAL'),
-        ('nonassoc', "LINELABEL", "DOLLAR", "LEM")
+        ('nonassoc', "LINELABEL", "DOLLAR", "LEM"),
+        # HIGH precedence
     )
 
-    def p_error(self,p):
+    def p_error(self, p):
         # All errors currently unrecoverable
         # So just throw
         raise SyntaxError

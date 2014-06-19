@@ -39,7 +39,8 @@ class AtfLexer(object):
         'NOTE',
         'M',
         'H',
-        'COMPOSITE'
+        'COMPOSITE',
+        'LABEL'
     ]
 
     long_argument_structures = [
@@ -52,7 +53,7 @@ class AtfLexer(object):
 
     protocol_keywords = ['LANG', 'USE', 'MATH', 'UNICODE', 'DEF']
 
-    translation_keywords = ['PARALLEL', 'PROJECT']
+    translation_keywords = ['PARALLEL', 'PROJECT', "LABELED"]
 
     dollar_keywords = [
         'MOST', 'LEAST', 'ABOUT',
@@ -106,30 +107,31 @@ class AtfLexer(object):
         'absorb',
         'text',
         'lemmatize',
-        'translation'
+        'translation',
+        'transctrl'
     ]
 
     states = [(state, 'exclusive') for state in state_names]
 
-    t_INITIAL_translation_AMPERSAND = "\&"
-    t_INITIAL_translation_HASH = "\#"
-    t_INITIAL_translation_EXCLAIM = "\!"
-    t_INITIAL_translation_QUERY = "\?"
-    t_INITIAL_translation_STAR = "\*"
-    t_INITIAL_translation_PRIME = r'\''
-    t_INITIAL_translation_DOLLAR = "\$"
-    t_INITIAL_translation_MINUS = "\-"
-    t_INITIAL_translation_FROM = "\<\<"
-    t_INITIAL_translation_TO = "\>\>"
-    t_INITIAL_translation_PARBAR = "\|\|"
+    t_INITIAL_transctrl_AMPERSAND = "\&"
+    t_INITIAL_transctrl_HASH = "\#"
+    t_INITIAL_transctrl_EXCLAIM = "\!"
+    t_INITIAL_transctrl_QUERY = "\?"
+    t_INITIAL_transctrl_STAR = "\*"
+    t_INITIAL_transctrl_PRIME = r'\''
+    t_INITIAL_transctrl_DOLLAR = "\$"
+    t_INITIAL_transctrl_MINUS = "\-"
+    t_INITIAL_transctrl_FROM = "\<\<"
+    t_INITIAL_transctrl_TO = "\>\>"
+    t_INITIAL_transctrl_PARBAR = "\|\|"
 
     t_PARENTHETICALID = "\([^\)\n\r]*\)"
 
-    def t_INITIAL_translation_WHITESPACE(self, t):
+    def t_INITIAL_transctrl_WHITESPACE(self, t):
         r'[\t ]+'
         # NO TOKEN
 
-    def t_INITIAL_translation_EQUALS(self, t):
+    def t_INITIAL_transctrl_EQUALS(self, t):
         "\="
         t.lexer.push_state('absorb')
         return t
@@ -153,11 +155,14 @@ class AtfLexer(object):
                                       AtfLexer.long_argument_structures)
         if t.type == "TRANSLATION":
             t.lexer.push_state('translation')
+            t.lexer.push_state('transctrl')
+        if t.type == "LABEL":
+            t.lexer.push_state('transctrl')
         if t.type in AtfLexer.long_argument_structures + ["NOTE"]:
             t.lexer.push_state('absorb')
         return t
 
-    def t_INITIAL_translation_HASHID(self, t):
+    def t_HASHID(self, t):
         '\#[a-zA-Z][a-zA-Z0-9\[\]]+\:'
         # Note that \:? absorbs a trailing colon in protocol keywords
         t.value = t.value[1:-1]
@@ -170,7 +175,7 @@ class AtfLexer(object):
             t.lexer.push_state('absorb')
         return t
 
-    def t_INITIAL_translation_ID(self, t):
+    def t_INITIAL_transctrl_ID(self, t):
         '[a-zA-Z][a-zA-Z0-9\[\]]*'
 
         t.type = self.resolve_keyword(t.value,
@@ -197,18 +202,29 @@ class AtfLexer(object):
         t.lexer.push_state('text')
         return t
 
-    # In the absorb, text, and lemmatize states,
+    # In the absorb, text, transctrl and lemmatize states,
     # a newline returns to the base state
-    def t_absorb_text_lemmatize_NEWLINE(self, t):
+    def t_absorb_text_lemmatize_transctrl_NEWLINE(self, t):
         r'\n'
         t.lexer.lineno += 1
         t.lexer.pop_state()
         return t
 
     t_RANGE = "[1-9][0-9]*\-[1-9][0-9]*"
-    t_NUMBER = "[1-9][0-9]*"
+    t_INITIAL_transctrl_NUMBER = "[1-9][0-9]*"
 
-    t_LETTER = "[a-z]"
+    t_INITIAL_transctrl_LETTER = "[a-z]"
+
+    #--- RULES FOR THE TRANSLATION STATE ---
+    # In this state, the base state is free text
+    # And certain tokens deviate from that, rather
+    # than the other way round as for base state
+
+    def t_translation_LINELABEL(self, t):
+        r'^([1-9][0-9]*[a-z]*)\.[\ \t]*'
+        t.value = t.lexer.lexmatch.groups()[4]
+        return t
+
     #--- RULES FOR THE ABSORB STATE ---
 
     white = r'[\ \t]'
@@ -219,14 +235,13 @@ class AtfLexer(object):
     many_nonflag = nonflag + '*'
     intern_or_nonflg = '(' + many_int_then_nonflag + '|' + many_nonflag + ')'
     absorb_regex = (white + '*' + '(' + nonflagnonwhite + intern_or_nonflg +
-                   ')' + white + '*')
+                    ')' + white + '*')
 
     @lex.TOKEN(absorb_regex)
-    def t_absorb_ID(self, t):
-
+    def t_absorb_translation_ID(self, t):
         # Discard leading whitespace, token is not flag or newline
         # And has at least one non-whitespace character
-        t.value = t.lexer.lexmatch.groups()[2]
+        t.value = t.lexer.lexmatch.groups()[2] or t.lexer.lexmatch.groups()[6]
         return t
 
     t_absorb_HASH = "\#"
@@ -234,7 +249,7 @@ class AtfLexer(object):
     t_absorb_QUERY = "\?"
     t_absorb_STAR = "\*"
     t_absorb_PRIME = "'"
-    t_absorb_HAT = "[\ \t]*\^[\ \t]*"
+    t_absorb_translation_HAT = "[\ \t]*\^[\ \t]*"
     t_absorb_EQUALS = "\="
 
     #--- RULES FOR THE text STATE ----
@@ -244,18 +259,9 @@ class AtfLexer(object):
         r'[\ \t]'
         # No token generated
 
-        #--- RULES FOR THE lemmatize STATE
+    #--- RULES FOR THE lemmatize STATE
     t_lemmatize_ID = "[^\;\n\r]+"
     t_lemmatize_SEMICOLON = r'\;[\ \t]*'
-
-    #--- RULES FOR THE TRANSLATION STATE ---
-    # In this state, linelabels are tokenised separately,
-    # But everything else is free text
-    def t_translation_LINELABEL(self, t):
-        r'^([1-9][0-9]*[a-z]*)\.[\ \t]*'
-        t.value = t.lexer.lexmatch.groups()[8]
-        t.lexer.push_state('absorb')
-        return t
 
     # Error handling rule
     def t_ANY_error(self, t):

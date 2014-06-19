@@ -264,9 +264,9 @@ class testParser(TestCase):
             "$ 3 lines broken\n" +
             "53.   ta#-[mit] iq#-bu-šu DINGIR an-[na i-pu-ul]\n"
         )
-        content=art.children[0].children
-        assert_is_instance(content[0],Line)
-        assert_is_instance(content[2],Line)
+        content = art.children[0].children
+        assert_is_instance(content[0], Line)
+        assert_is_instance(content[2], Line)
         assert_equal(content[1].state, "broken")
         assert_equal(content[1].scope, "lines")
         assert_equal(content[1].extent, "3")
@@ -321,6 +321,50 @@ class testParser(TestCase):
         assert_equal(art.children[0].children[0].children[0].words[0],
                      "Year 63, Ṭebetu (Month X), night of day 2")
 
+    def test_translation_labeled_text(self):
+        art = self.try_parse(
+            "@tablet\n" +
+            "@translation labeled en project\n" +
+            "@label o 4\n"
+            "Then it will be taken for the rites and rituals.\n"
+        )
+        assert_is_instance(art.children[0], Translation)
+        assert_equal(art.children[0].children[0].label, 'o 4')
+        assert_equal(art.children[0].children[0].words[0],
+                     "Then it will be taken for the rites and rituals.")
+
+    def test_translation_labeled_text(self):
+        art = self.try_parse(
+            "@tablet\n" +
+            "@translation labeled en project\n" +
+            "@label o 2 - o 3\n" +
+            "an expert will carefully inspect an ungelded bull.")
+        assert_is_instance(art.children[0], Translation)
+        assert_equal(art.children[0].children[0].label.label, ['o', '2'])
+        assert_equal(art.children[0].children[0].label.rangelabel, ['o', '3'])
+        assert_equal(art.children[0].children[0].words[0],
+                     "an expert will carefully inspect an ungelded bull.")
+
+    def test_translation_labeled_noted_text(self):
+        art = self.try_parse(
+            "@tablet\n" +
+            "@translation labeled en project\n" +
+            "@label r 8\n" +
+            "The priest says the gods have performed these actions. ^1^\n" +
+            "\n" +
+            "@note ^1^ Parenthesised text follows Neo-Assyrian source\n"
+        )
+        assert_is_instance(art.children[0], Translation)
+        assert_equal(art.children[0].children[0].label.label, ['r', '8'])
+        assert_equal(art.children[0].children[0].words[0],
+                     "The priest says the gods have performed these actions.")
+        assert_equal(art.children[0].children[0].references[0],
+                     "1")
+        assert_equal(art.children[0].children[0].notes[0].references[0],
+                     "1")
+        assert_equal(art.children[0].children[0].notes[0].content,
+                     "Parenthesised text follows Neo-Assyrian source")
+
     def test_translation_links(self):
         art = self.try_parse(
             "@tablet\n" +
@@ -342,7 +386,7 @@ class testParser(TestCase):
     def test_default_surface(self):
         text = self.try_parse(
             "&Q002769 = SB Anzu 1\n" +
-            "@tablet\n"+
+            "@tablet\n" +
             "1.   bi#-in šar da-ad-mi šu-pa-a na-ram {d}ma#-mi\n"
         )
         assert_equal(text.children[0].objecttype, "tablet")
@@ -351,7 +395,7 @@ class testParser(TestCase):
     def test_default_object(self):
         text = self.try_parse(
             "&Q002769 = SB Anzu 1\n" +
-            "@obverse\n"+
+            "@obverse\n" +
             "1.   bi#-in šar da-ad-mi šu-pa-a na-ram {d}ma#-mi\n"
         )
         assert_equal(text.children[0].objecttype, "tablet")
@@ -372,7 +416,7 @@ class testParser(TestCase):
         )
         assert_equal(text.children[0].objecttype, "tablet")
         assert_equal(text.children[0].children[0].objecttype, "obverse")
-        assert_is_instance(text.children[0].children[0].children[0],State)
+        assert_is_instance(text.children[0].children[0].children[0], State)
 
     def test_default_surface_dollar(self):
         text = self.try_parse(
@@ -382,7 +426,7 @@ class testParser(TestCase):
         )
         assert_equal(text.children[0].objecttype, "tablet")
         assert_equal(text.children[0].children[0].objecttype, "obverse")
-        assert_is_instance(text.children[0].children[0].children[0],State)
+        assert_is_instance(text.children[0].children[0].children[0], State)
 
     def test_default_object_dollar(self):
         text = self.try_parse(
@@ -392,16 +436,16 @@ class testParser(TestCase):
         )
         assert_equal(text.children[0].objecttype, "tablet")
         assert_equal(text.children[0].children[0].objecttype, "obverse")
-        assert_is_instance(text.children[0].children[0].children[0],State)
+        assert_is_instance(text.children[0].children[0].children[0], State)
 
     def test_composite(self):
         composite = self.try_parse(
             "&Q002769 = SB Anzu 1\n" +
             "@composite\n" +
             "#project: cams/gkab\n" +
-            "1.   bi#-in šar da-ad-mi šu-pa-a na-ram {d}ma#-mi\n"+
-            "&Q002770 = SB Anzu 2\n"+
-            "#project: cams/gkab\n"+
+            "1.   bi#-in šar da-ad-mi šu-pa-a na-ram {d}ma#-mi\n" +
+            "&Q002770 = SB Anzu 2\n" +
+            "#project: cams/gkab\n" +
             "1.   bi-riq ur-ha šuk-na a-dan-na\n"
         )
         assert_is_instance(composite, Composite)
@@ -415,11 +459,11 @@ class testParser(TestCase):
             "@tablet\n" +
             "1. Some text\n"
         )
-        link=text.links[0]
+        link = text.links[0]
         assert_is_instance(link, Link)
-        assert_equal(link.label,"A")
-        assert_equal(link.code,"P363716")
-        assert_equal(link.description,"TCL 06, 44")
+        assert_equal(link.label, "A")
+        assert_equal(link.code, "P363716")
+        assert_equal(link.description, "TCL 06, 44")
 
     def test_link_reference_simple(self):
         text = self.try_parse(
@@ -428,11 +472,11 @@ class testParser(TestCase):
             "|| A o ii 10\n" +
             "2. Some more text\n"
         )
-        link=text.children[0].children[0].links[0]
-        assert_is_instance(link,LinkReference)
-        assert_equal(link.target,"A")
-        assert_equal(link.operator,"||")
-        assert_equal(link.label,["o","ii","10"])
+        link = text.children[0].children[0].links[0]
+        assert_is_instance(link, LinkReference)
+        assert_equal(link.target, "A")
+        assert_equal(link.operator, "||")
+        assert_equal(link.label, ["o", "ii", "10"])
 
     def test_link_reference_range(self):
         text = self.try_parse(
@@ -441,8 +485,8 @@ class testParser(TestCase):
             ">> A o ii 10 - o ii 15\n" +
             "2. Some more text\n"
         )
-        link=text.children[0].children[0].links[0]
-        assert_equal(link.target,"A")
-        assert_equal(link.operator,">>")
-        assert_equal(link.label,["o","ii","10"])
-        assert_equal(link.rangelabel,["o","ii","15"])
+        link = text.children[0].children[0].links[0]
+        assert_equal(link.target, "A")
+        assert_equal(link.operator, ">>")
+        assert_equal(link.label, ["o", "ii", "10"])
+        assert_equal(link.rangelabel, ["o", "ii", "15"])
