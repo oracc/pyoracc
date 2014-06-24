@@ -148,7 +148,6 @@ class testLexer(TestCase):
              'Then it will be taken for the rites and rituals.', None]
         )
 
-
     def test_translation_range_label_prime(self):
         self.compare_tokens(
             "@translation labeled en project\n" +
@@ -156,7 +155,7 @@ class testLexer(TestCase):
             ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
              "LABEL", "ID", "ID", "MINUS", "ID", "ID", "NEWLINE"],
             [None, "labeled", "en", "project", None,
-             None, "r","1'",None,"r","2'",None]
+             None, "r", "1'", None, "r", "2'", None]
         )
 
     def test_translation_range_label_prime(self):
@@ -166,7 +165,7 @@ class testLexer(TestCase):
             ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
              "LABEL", "ID", "ID", "NEWLINE"],
             [None, "labeled", "en", "project", None,
-             None, "t.e.","1"])
+             None, "t.e.", "1"])
 
     def test_note_internalflag(self):
         self.compare_tokens(
@@ -215,12 +214,13 @@ class testLexer(TestCase):
 
     def test_open_text_with_dots(self):
         # This must not come out as a linelabel of Hello.
-        self.compare_tokens("@translation labeled en project\n@label o 1\nHello. World",
-            ["TRANSLATION","LABELED","ID","PROJECT","NEWLINE",
+        self.compare_tokens(
+            "@translation labeled en project\n" +
+            "@label o 1\nHello. World",
+            ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
             "LABEL", "ID", "ID", "NEWLINE",
             "ID"]
         )
-
 
     def test_flagged_object(self):
         self.compare_tokens("@object which is remarkable and broken!#\n",

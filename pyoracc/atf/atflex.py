@@ -103,8 +103,8 @@ class AtfLexer(object):
         'absorb',
         'text',
         'lemmatize',
-        'parallel', #translation
-        'labeled', #translation
+        'parallel',  # translation
+        'labeled',   # translation
         'transctrl'
     ]
 

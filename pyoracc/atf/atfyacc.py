@@ -351,7 +351,7 @@ class AtfParser(object):
 
     def p_plural_state_range_description(self, p):
         """plural_state_description : ID MINUS ID plural_scope state"""
-        p[0] = State(p[5], p[4], p[1]+"-"+p[3])
+        p[0] = State(p[5], p[4], p[1] + "-" + p[3])
 
     def p_qualified_state_description(self, p):
         "plural_state_description : qualification plural_state_description"
