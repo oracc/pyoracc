@@ -236,7 +236,6 @@ class AtfLexer(object):
     def t_absorb_labeled_parallel_ID(self, t):
         # Discard leading whitespace, token is not flag or newline
         # And has at least one non-whitespace character
-        print t.lexer.lexmatch.groups()
         t.value = t.value.strip()
         return t
 

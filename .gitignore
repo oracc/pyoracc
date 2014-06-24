@@ -2,6 +2,8 @@ parser.out
 parsetab.py
 .DS_Store
 
+test_corpus
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
