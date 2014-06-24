@@ -1,0 +1,122 @@
+&X002003 = AfO 14, Taf. VI
+#project: cams/gkab
+
+#atf: use unicode
+#atf: lang akk-x-stdbab
+
+# VAT 7825, EAE 20 comm (ABCD, 20k; Kolophone 91)
+@tablet
+@obverse
+1.	[... GAR]-ma#	DINGIR ina KAN₅-šu₂ A₂ {tu₁₅}U₁₈.LU AN!#.TA# [KAN₅]-ma
+#lem: u; +šakānu[put//take place]V$iššakinma; ilu[god]N; ina[during]PRP; +adāru[be(come) dark//be(com)ing eclipsed]V'N$nandurišu; idi[side]N; šūti[south]N; eliš[above]AV; +adru[dark//eclipsed]AJ$adirma
+
+2.	[... ik]-zu : ana UGU re-eš ši-kin qa-bi taš-ri-tu₄
+#lem: u; +zakû[be(come) clear]V$izku +.; ana[to]PRP; muhhi[accordance]N; rēš[start]N; +šiknu[act of putting//appearance]N$šikin; +qabû[say//saying]V'N$qabî; +tašrītu[beginning]N$ +.
+
+3.	[...] NU LU₂ ina šu-ri#-in#-ni#-šu₂# dele-bat
+#lem: u; ul[not]MOD; amēlu[man]N +.; ina[in]PRP; +šurīnu[(divine) emblem//(a phenomenon of the eclipsed moon)]N$šurinnišu; +Delebat[Venus]CN$
+
+4.	[...] EN?#.NUN?# NU ana ŠA₃# [...] x x x $NUMUN
+#lem: u; maṣṣarti[watch]N; ul[not]MOD; ana[to]PRP; libbi[interior]N; u; u; u; u; X
+
+$ rest of obverse broken
+@reverse
+$ start of reverse broken
+1'.	[...] x x x [...]
+#lem: u; u; u; u; u
+
+2'.	[...] x KUR₂ GIŠGAL KUR-ma [...] $DU [...]
+#lem: u; u; +nakāru[change]V$ikkir; +mazzāzu[position]N$mazzāza; ippuhma[rise]V; u; u; u
+
+3'.	[...] AN.GE₆ EN.NUN.U₄#.ZAL.LA u₂-gam-mir AN.GE₆# x [...]
+#lem: u; attallû[eclipse]N; +šāt[who(m)]DET$&+urru[daytime]N$urri; +gamāru[complete//last]V$ugammir; attallû[eclipse]N; u; u
+
+# šāt urri [third watch of the night]
+
+4'.	[...] AN.GE₆ U₄ 7-KAM₂# U₄# 14-KAM₂ U₄ 21-KAM₂ ana UGU IGI-šu₂ u BE U₄ [...] x-ME EN#.NUN# [...]
+#lem: u; attallû[eclipse]N; ūm[day]N; n; ūm[day]N; n; ūm[day]N; n; ana[on]PRP; muhhi[account]N; tāmartišu[appearance]N; ū[or]CNJ; +šumma[if]MOD$; ūm[day]N; u; u; maṣṣarti[watch]N; u
+
+5'.	[...] x x $LU x $KA : MUL : ša₂ ina ITI EN.NUN a-na {d#}30 TE{+u₂} u DIB{+u₂}
+#lem: u; u; u; u; u; u +.; kakkabu[star]N +.; ša[which]REL; ina[in]PRP; arah[month]N; maṣṣarti[watch]N; ana[to]PRP; Sin[1]DN; +ṭehû[approach]V$iṭhû; u[and]CNJ; +etēqu[proceed//pass by]V$itqû +.
+
+6'.	[...] MUL#-MEŠ ziq-pi ša₂ ina UGU AN.GE₆ {d}30 GAR{+an}
+#lem: u; kakkabū[star]N; ziqpi[culmination]N; ša[that]REL; ina[on]PRP; muhhi[top]N; attallê[eclipse]N; Sin[1]DN; +šakānu[put//place]V$iššakkanū +.
+
+7'.	[...] x $SAR# a-na ŠA₃ ta-qab-bi
+#lem: u; u; u; ana[to]PRP; libbi[interior]N; +qabû[say//predict]V$taqabbi +.
+
+$ double ruling
+
+@colophon
+8'.	[* {mul}ni]-i#-ri ša₂ A.AB.BA a-dir {d}e₂-a a-dir : AN.GE₆ ina {mulₓ(AB₂)}GU.LA GAR-ma
+#lem: +Niru[Yoke]CN$; ša[of]DET; +tiāmtu[sea]N$tâmti; adir[dark]AJ; Ea[1]DN; adir[dark]AJ +.; attallû[eclipse]N; ina[in]PRP; X; iššakkanma[take place]V +.
+
+# Niru Ša Tâmti [Yoke of the Sea] CN
+
+9'.	[...] u₃# šu-ut KA# mal₂-su-ut EŠ₂.GAR₃# ša₂# * {d}60 {d}EN.LIL₂.LA₂  ša₂ ŠA₃ * ina {iti}BARA₂ U₄ 14#-KAM₂
+#lem: u; u[and]CNJ; šūt[who(m)]DET; pî[mouth]N; +massûtu[call//reading out]N$malsût; iškāri[series]N; ša[of]DET; Anu[1]DN; Ellil[]DN; !ša[of]DET; libbi[middle]N; ina[in]PRP; Nisannu[1]MN; ūm[day]N; n
+
+10'.	AN.GE₆ GAR-ma DINGIR ina KAN₅-šu₂ AL.TIL
+#lem: attallû[eclipse]N; iššakinma[take place]V; ilu[god]N; ina[in]PRP; nandurišu[be(com)ing eclipsed]V'N +.; qati[completed]AJ +.
+
+11'.	IM# {m}{d}60--DIN#-su--E gi#-nu-u₂ {m}{d}60--ŠEŠ--MU{+nu} A {m}ŠEŠ-ʾ-u₂-tu₂ qat₃ {m}ta-ni₃-tu₂--{d}60
+#lem: ṭuppi[tablet]N; Anu-balassu-iqbi[1]PN; +ginû[child]N$; Anu-ah-ittannu[1]PN; apil[descendant]N; Ahʾutu[1]LN +.; qāt[hand]N; +Tanittu-Anu[]PN$
+
+12'.	DUMU-A.NI a-na a-ha-zi-šu₂ GID₂.DA U₄-MEŠ-šu₂ DIN ZI{+ti₃}-šu₂ kun-nu SUHUŠ-MEŠ-šu la₃ GAL₂{+e}
+#lem: +māru[son]N$mārišu +.; ana[for]PRP; ahāzišu[learning]V'N; arāk[be(com)ing long]V'N; ūmīšu[day]N; balāṭ[living]V'N; napištišu[life]N; kunnu[securing]V'N; +išdu[foundation//position]N$išdātišu; lā[not]MOD; +bašû[existing]AJ$bašê
+
+13'.	GIG-šu₂ u MUD EN{+u₂-ti}-šu₂ SAR-ma ina UNUG{ki} u {e₂}re-eš u₂-kin MUD {d}60 u U.MU.UN
+#lem: murṣišu[illness]N; u[and]CNJ; +palāhu[fear//revering]V'N$palāh; bēlūtišu[lordship]N; išṭurma[write]V; ina[in]PRP; Uruk[1]SN; u[and]CNJ; Reš[1]TN; ukīn[permanently deposit]V +.; +pālihu[reverent one]N$pālih; Anu[1]DN; u[and]CNJ; +Antu[]DN$
+
+14'.	la₃ TUM₃-šu₂ ina me-reš-ti-šu₂ la₃ u₂-šam-ki-šu₂ ina AB₂-šu₂ ana maš-tak-ku EN-šu₂ HE₂.GUR-šu₂ ša₂ {+i}TUM₃-šu₂
+#lem: lā[not]MOD; itabbalšu[carry off]V +.; ina[in]PRP; +mēreštu[wish//intention]N$mēreštišu; lā[not]MOD; +mekû[neglect]V$ušamkišu +.; ina[in]PRP; +ūmu[day]N$ūmišu; ana[for]PRP; +maštaku[chamber//room]N$maštakku; bēlšu[owner]N; +târu[turn//return]V$litēršu +.; ša[who]REL; +tabālu[take away//carry off]V$itbalšu
+
+15'.	{d}ŠUR u {d}ŠA.LA {+lit}TUM₃-šu₂ MU ki-sit₂-ti u qe₂-bir la₃ TUKU
+#lem: +Adad[]DN$; u[and]CNJ; +Šala[]DN$; +tabālu[take away//carry off]V$litbalūšu +.; +šumu[name//son]N$šuma; +kisittu[branches//descendant]N$kisitti; u[and]CNJ; +qēbiru[burier]N$qēbir; lā[not]MOD; irašši[acquire]V +.
+
+16'.	UNUG{ki} {iti}GU₄ U₄ 3-KAM MU 1.20-KAM {m}si-lu-ku LUGAL
+#lem: Uruk[1]SN; Ayyaru[1]MN; ūm[day]N; n; šanat[year]N; n; Seleucus[1]RN; šarru[king]N +.
+
+@translation labeled en project
+
+@label o 1 - o 2
+[...] took place and the god during its eclipsing darkened on the south side above and cleared [...] : concerning the start of the event: beginning.
+
+@label o 3 - o 4
+[...] @?not a man?@. In its @šurīnu Venus [...] watch @?not?@ towards [...] ....
+
+@label r 1' - r 2'
+[...] ... [...] ... @?changes position?@ (and) rises and [...] ... [...]
+
+@label r 3'
+[...] the eclipse lasts for the dawn watch (and) the eclipse ... [...].
+
+@label r 4'
+[...] eclipse on the 7th day, the 14th day, (or) the 21st day @?concerning its appearance?@ or if the [nth] day [...] ... watch [...]
+
+@label r 5'
+[...] ... : star : That which in the month of the watch approaches the Moon and passes by.
+
+@label r 6'
+[...] the culminating stars that are positioned above the eclipse of the Moon.
+
+@label r 7'
+[...] you predict ... towards [...].
+
+@label r 8'
+"(If) the Yoke of the Sea is dark (and) Ea is dark" (means): an eclipse takes place in the Great One.
+
+@label r 9' - r 10'
+[...] and reading out of the Series of 'When Anu, Ellil' from the middle of '(If) an eclipse takes place in Nisannu (I) on the 14th day and the god in its eclipsing'. Completed.
+
+@label r 11' - r 12'
+Tablet of Anu-balassu-iqbi, child of Anu-ah-ittannu, descendant of Ahʾutu. Hand of Tanittu-Anu, his son.
+
+@label r 12' - r 13'
+For his learning, for his days being long, for living his life, for securing his position, for illness not existing for him and for revering his lordship, he wrote and permanently deposited (it) in Uruk and the Reš temple.
+
+@label r 13' - r 15'
+He who reveres Anu and Antu shall not carry it off. He shall not intentionally let it be lost. He should return it to its owner's room on the (same) day. May Adad and Šala carry off he who carries it off. May he not acquire a son, a descendant, someone to bury him.
+
+@label r 16'
+Uruk, Ayyaru (II), 3rd day, year 1 20, Seleucus was king.

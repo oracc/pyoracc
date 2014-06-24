@@ -134,11 +134,6 @@ class AtfParser(object):
         p[0] = p[1]
         p[0].remarkable = True
 
-    def p_object_flag_prime(self, p):
-        "object_specifier : object_specifier PRIME"
-        p[0] = p[1]
-        p[0].prime = True
-
     def p_object_flag_query(self, p):
         "object_specifier : object_specifier QUERY"
         p[0] = p[1]
@@ -195,11 +190,6 @@ class AtfParser(object):
         p[0] = p[1]
         p[0].remarkable = True
 
-    def p_surface_flag_prime(self, p):
-        "surface_specifier : surface_specifier PRIME"
-        p[0] = p[1]
-        p[0].prime = True
-
     def p_surface_flag_query(self, p):
         "surface_specifier : surface_specifier QUERY"
         p[0] = p[1]
@@ -227,12 +217,12 @@ class AtfParser(object):
         p[0] = OraccObject(p[1])
 
     def p_surface_label(self, p):
-        '''surface_specifier : FACE SINGLEID
+        '''surface_specifier : FACE ID
                              | SURFACE ID
                              | EDGE ID
-                             | COLUMN NUMBER
-                             | SEAL NUMBER
-                             | H NUMBER'''
+                             | COLUMN ID
+                             | SEAL ID
+                             | H ID'''
         p[0] = OraccNamedObject(p[1], p[2])
 
     def p_surface(self, p):
@@ -339,7 +329,7 @@ class AtfParser(object):
 
     def p_newline(self, p):
         """newline : NEWLINE
-                            | newline NEWLINE"""
+                   | newline NEWLINE"""
 
     def p_loose_dollar(self, p):
         "loose_dollar_statement : DOLLAR PARENTHETICALID newline"
@@ -356,9 +346,12 @@ class AtfParser(object):
 
     def p_plural_state_description(self, p):
         """plural_state_description : plural_quantifier plural_scope state
-                                    | NUMBER plural_scope state
-                                    | RANGE plural_scope state"""
+                                    | ID plural_scope state"""
         p[0] = State(p[3], p[2], p[1])
+
+    def p_plural_state_range_description(self, p):
+        """plural_state_description : ID MINUS ID plural_scope state"""
+        p[0] = State(p[5], p[4], p[1]+"-"+p[3])
 
     def p_qualified_state_description(self, p):
         "plural_state_description : qualification plural_state_description"
@@ -368,8 +361,7 @@ class AtfParser(object):
     def p_singular_state_desc(self, p):
         """singular_state_desc : singular_scope state
                                | REFERENCE state
-                               | REFERENCE ID state
-                               | REFERENCE NUMBER state"""
+                               | REFERENCE ID state"""
         text = list(p)
         p[0] = State(text[-1], " ".join(text[1:-1]))
 
@@ -447,9 +439,7 @@ class AtfParser(object):
         p[0] = LinkReference("||", None)
 
     def p_translationlabel_id(self, p):
-        """translationlabel : translationlabel ID
-                            | translationlabel NUMBER
-                            | translationlabel LETTER"""
+        """translationlabel : translationlabel ID"""
         p[0] = p[1]
         p[0].label.append(p[2])
 
@@ -458,9 +448,7 @@ class AtfParser(object):
         p[0] = p[1]
 
     def p_translationrangelabel_id(self, p):
-        """translationrangelabel : translationrangelabel ID
-                                 | translationrangelabel NUMBER
-                                 | translationrangelabel LETTER"""
+        """translationrangelabel : translationrangelabel ID"""
         p[0] = p[1]
         p[0].rangelabel.append(p[2])
 
@@ -486,14 +474,12 @@ class AtfParser(object):
         p[0] = LinkReference(p[1], p[2])
 
     def p_linkreference_label(self, p):
-        """link_reference : link_reference ID
-                          | link_reference NUMBER """
+        """link_reference : link_reference ID"""
         p[0] = p[1]
         p[0].label.append(p[2])
 
     def p_link_range_reference_label(self, p):
-        """link_range_reference : link_range_reference ID
-                                | link_range_reference NUMBER """
+        """link_range_reference : link_range_reference ID"""
         p[0] = p[1]
         p[0].rangelabel.append(p[2])
 
@@ -538,7 +524,7 @@ class AtfParser(object):
         ('nonassoc', 'OBVERSE', 'REVERSE', 'LEFT', 'RIGHT', 'TOP', 'BOTTOM',
             'CATCHLINE', 'COLOPHON', 'DATE', 'SIGNATURES',
             'SIGNATURE', 'SUMMARY',
-            'WITNESSES', 'FACE', 'SINGLEID',
+            'WITNESSES', 'FACE',
             'SURFACE', 'EDGE', 'COLUMN', 'SEAL'),
         ('nonassoc', "LINELABEL", "DOLLAR", "LEM"),
         # HIGH precedence

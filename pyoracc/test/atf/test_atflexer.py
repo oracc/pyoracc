@@ -69,14 +69,21 @@ class testLexer(TestCase):
     def test_link_reference(self):
         self.compare_tokens(
             "|| A o ii 10\n",
-            ["PARBAR", "ID", "ID", "ID", "NUMBER", "NEWLINE"]
+            ["PARBAR", "ID", "ID", "ID", "ID", "NEWLINE"]
         )
 
     def test_link_reference_range(self):
         self.compare_tokens(
             "|| A o ii 10 -  o ii 12 \n",
-            ["PARBAR", "ID", "ID", "ID", "NUMBER", "MINUS",
-            "ID", "ID", "NUMBER", "NEWLINE"]
+            ["PARBAR", "ID", "ID", "ID", "ID", "MINUS",
+            "ID", "ID", "ID", "NEWLINE"]
+        )
+
+    def test_link_reference_prime_range(self):
+        self.compare_tokens(
+            "|| A o ii 10' -  o ii' 12 \n",
+            ["PARBAR", "ID", "ID", "ID", "ID", "MINUS",
+            "ID", "ID", "ID", "NEWLINE"]
         )
 
     def test_division_tablet(self):
@@ -134,12 +141,32 @@ class testLexer(TestCase):
             "@label o 4\n" +
             "Then it will be taken for the rites and rituals.\n",
             ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
-             "LABEL", "ID", "NUMBER", "NEWLINE",
+             "LABEL", "ID", "ID", "NEWLINE",
              "ID", "NEWLINE"],
             [None, "labeled", "en", "project", None,
              None, "o", "4", None,
              'Then it will be taken for the rites and rituals.', None]
         )
+
+
+    def test_translation_range_label_prime(self):
+        self.compare_tokens(
+            "@translation labeled en project\n" +
+            "@label r 1' - r 2'\n",
+            ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
+             "LABEL", "ID", "ID", "MINUS", "ID", "ID", "NEWLINE"],
+            [None, "labeled", "en", "project", None,
+             None, "r","1'",None,"r","2'",None]
+        )
+
+    def test_translation_range_label_prime(self):
+        self.compare_tokens(
+            "@translation labeled en project\n" +
+            "@label t.e. 1\n",
+            ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
+             "LABEL", "ID", "ID", "NEWLINE"],
+            [None, "labeled", "en", "project", None,
+             None, "t.e.","1"])
 
     def test_note_internalflag(self):
         self.compare_tokens(
@@ -190,7 +217,7 @@ class testLexer(TestCase):
         # This must not come out as a linelabel of Hello.
         self.compare_tokens("@translation labeled en project\n@label o 1\nHello. World",
             ["TRANSLATION","LABELED","ID","PROJECT","NEWLINE",
-            "LABEL", "ID", "NUMBER", "NEWLINE",
+            "LABEL", "ID", "ID", "NEWLINE",
             "ID"]
         )
 

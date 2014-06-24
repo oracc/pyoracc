@@ -66,10 +66,8 @@ class AtfLexer(object):
         'AMPERSAND',
         'LINELABEL',
         'ID',
-        'SINGLEID',
         'DOLLAR',
         'PARENTHETICALID',
-        'NUMBER',
         'HAT',
         'SEMICOLON',
         'EQUALS',
@@ -78,9 +76,7 @@ class AtfLexer(object):
         'EXCLAIM',
         'QUERY',
         'STAR',
-        'PRIME',
         'RANGE',
-        'LETTER',
         'HASH',
         'NEWLINE',
         'REFERENCE',
@@ -114,17 +110,16 @@ class AtfLexer(object):
 
     states = [(state, 'exclusive') for state in state_names]
 
-    t_INITIAL_transctrl_AMPERSAND = "\&"
-    t_INITIAL_transctrl_HASH = "\#"
-    t_INITIAL_transctrl_EXCLAIM = "\!"
-    t_INITIAL_transctrl_QUERY = "\?"
-    t_INITIAL_transctrl_STAR = "\*"
-    t_INITIAL_transctrl_PRIME = r'\''
-    t_INITIAL_transctrl_DOLLAR = "\$"
+    t_AMPERSAND = "\&"
+    t_HASH = "\#"
+    t_EXCLAIM = "\!"
+    t_QUERY = "\?"
+    t_STAR = "\*"
+    t_DOLLAR = "\$"
     t_INITIAL_transctrl_MINUS = "\-"
-    t_INITIAL_transctrl_FROM = "\<\<"
-    t_INITIAL_transctrl_TO = "\>\>"
-    t_INITIAL_transctrl_PARBAR = "\|\|"
+    t_FROM = "\<\<"
+    t_TO = "\>\>"
+    t_PARBAR = "\|\|"
 
     t_PARENTHETICALID = "\([^\)\n\r]*\)"
 
@@ -132,7 +127,7 @@ class AtfLexer(object):
         r'[\t ]+'
         # NO TOKEN
 
-    def t_INITIAL_transctrl_EQUALS(self, t):
+    def t_EQUALS(self, t):
         "\="
         t.lexer.push_state('absorb')
         return t
@@ -174,8 +169,14 @@ class AtfLexer(object):
             t.lexer.push_state('absorb')
         return t
 
+    def t_LINELABEL(self, t):
+        r'^[^.\ \t]*\.'
+        t.value = t.value[:-1]
+        t.lexer.push_state('text')
+        return t
+
     def t_INITIAL_transctrl_ID(self, t):
-        '[a-zA-Z][a-zA-Z0-9\[\]]*'
+        '[a-zA-Z0-9][a-zA-Z\'\.0-9\[\]]*'
 
         t.type = self.resolve_keyword(t.value,
                                       AtfLexer.protocol_keywords +
@@ -201,12 +202,6 @@ class AtfLexer(object):
             t.type = "REFERENCE"
         return t
 
-    def t_LINELABEL(self, t):
-        r'^[^.\ \t]*\.'
-        t.value = t.value[:-1]
-        t.lexer.push_state('text')
-        return t
-
     # In the absorb, text, transctrl and lemmatize states,
     # a newline returns to the base state
     def t_absorb_text_lemmatize_transctrl_NEWLINE(self, t):
@@ -214,11 +209,6 @@ class AtfLexer(object):
         t.lexer.lineno += 1
         t.lexer.pop_state()
         return t
-
-    t_RANGE = "[1-9][0-9]*\-[1-9][0-9]*"
-    t_INITIAL_transctrl_NUMBER = "[1-9][0-9]*"
-
-    t_INITIAL_transctrl_LETTER = "[a-z]"
 
     #--- RULES FOR THE TRANSLATION STATES ---
     # In this state, the base state is free text
@@ -233,9 +223,9 @@ class AtfLexer(object):
     #--- RULES FOR THE ABSORB STATE ---
 
     white = r'[\ \t]'
-    nonflagnonwhite = r'[^\ \t\#\!\^\*\'\?\n\r\=]'
+    nonflagnonwhite = r'[^\ \t\#\!\^\*\?\n\r\=]'
     internalonly = r'[^\n\^\r\=]'
-    nonflag = r'[^\ \t\#\!\^\*\'\?\n\r\=]'
+    nonflag = r'[^\ \t\#\!\^\*\?\n\r\=]'
     many_int_then_nonflag = '(' + internalonly + '*' + nonflag + '+' + ')'
     many_nonflag = nonflag + '*'
     intern_or_nonflg = '(' + many_int_then_nonflag + '|' + many_nonflag + ')'
@@ -254,7 +244,6 @@ class AtfLexer(object):
     t_absorb_EXCLAIM = "\!"
     t_absorb_QUERY = "\?"
     t_absorb_STAR = "\*"
-    t_absorb_PRIME = "'"
     t_absorb_parallel_labeled_HAT = "[\ \t]*\^[\ \t]*"
     t_absorb_EQUALS = "\="
 
@@ -272,6 +261,7 @@ class AtfLexer(object):
     # Error handling rule
     def t_ANY_error(self, t):
         print "Illegal character '%s'" % t.value[0]
+        raise SyntaxError
         t.lexer.skip(1)
 
     def __init__(self):

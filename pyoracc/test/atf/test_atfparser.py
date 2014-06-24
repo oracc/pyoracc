@@ -92,9 +92,8 @@ class testParser(TestCase):
         )
         assert_is_instance(obj.children[0], OraccNamedObject)
         assert_equal(obj.children[0].objecttype, "column")
-        assert_equal(obj.children[0].name, "2")
+        assert_equal(obj.children[0].name, "2'")
         assert(obj.children[0].collated)
-        assert(obj.children[0].prime)
         assert(not obj.children[0].broken)
 
     def test_substructure(self):
