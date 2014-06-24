@@ -139,7 +139,7 @@ class AtfLexer(object):
 
         # In the multi-line base states, a newline doesn't change state
     def t_INITIAL_parallel_labeled_NEWLINE(self, t):
-        r'\n'
+        r'\s*\n'
         t.lexer.lineno += 1
         return t
 
