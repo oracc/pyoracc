@@ -15,12 +15,13 @@ class testLexer(TestCase):
             expected_values = repeat(None)
         for expected_type, expected_value, token in izip_longest(
                 expected_types, expected_values, self.lexer):
+            #print token, expected_type
             if token is None and expected_type is None:
                 break  # The end-condition on the
                        # self.lexer iterable seems broken
             assert_equal(token.type, expected_type)
             if expected_value:
-                print token.value, expected_value
+                #print token.value, expected_value
                 assert_equal(token.value, expected_value)
 
     def test_code(self):
@@ -184,6 +185,15 @@ class testLexer(TestCase):
             ["TABLET", "NEWLINE", "OBVERSE", "NEWLINE",
              "LINELABEL"] + ["ID"] * 6 + ["NEWLINE", "NOTE", "ID", "NEWLINE"]
         )
+
+    def test_open_text_with_dots(self):
+        # This must not come out as a linelabel of Hello.
+        self.compare_tokens("@translation labeled en project\n@label o 1\nHello. World",
+            ["TRANSLATION","LABELED","ID","PROJECT","NEWLINE",
+            "LABEL", "ID", "NUMBER", "NEWLINE",
+            "ID"]
+        )
+
 
     def test_flagged_object(self):
         self.compare_tokens("@object which is remarkable and broken!#\n",

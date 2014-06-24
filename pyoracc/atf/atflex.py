@@ -107,7 +107,8 @@ class AtfLexer(object):
         'absorb',
         'text',
         'lemmatize',
-        'translation',
+        'parallel', #translation
+        'labeled', #translation
         'transctrl'
     ]
 
@@ -136,28 +137,27 @@ class AtfLexer(object):
         t.lexer.push_state('absorb')
         return t
 
-    def t_INITIAL_translation_COMMENT(self, t):
+    def t_INITIAL_parallel_labeled_COMMENT(self, t):
         "^\#[\ \t][^\n\r]*"
 
         # No token
 
         # In the multi-line base states, a newline doesn't change state
-    def t_INITIAL_translation_NEWLINE(self, t):
+    def t_INITIAL_parallel_labeled_NEWLINE(self, t):
         r'\n'
         t.lexer.lineno += 1
         return t
 
-    def t_INITIAL_translation_ATID(self, t):
+    def t_INITIAL_parallel_labeled_ATID(self, t):
         '\@[a-zA-Z][a-zA-Z0-9\[\]]+'
         t.value = t.value[1:]
         t.type = self.resolve_keyword(t.value,
                                       AtfLexer.structures +
                                       AtfLexer.long_argument_structures)
-        if t.type == "TRANSLATION":
-            t.lexer.push_state('translation')
-            t.lexer.push_state('transctrl')
+
         if t.type == "LABEL":
-            t.lexer.push_state('transctrl')
+            t.lexer.push_state("transctrl")
+
         if t.type in AtfLexer.long_argument_structures + ["NOTE"]:
             t.lexer.push_state('absorb')
         return t
@@ -168,10 +168,9 @@ class AtfLexer(object):
         t.value = t.value[1:-1]
         t.type = self.resolve_keyword(t.value,
                                       AtfLexer.protocols)
-
         if t.type == "LEM":
             t.lexer.push_state('lemmatize')
-        if t.type in ['PROJECT', 'NOTE']:
+        if t.type in ['NOTE', 'PROJECT']:
             t.lexer.push_state('absorb')
         return t
 
@@ -187,6 +186,12 @@ class AtfLexer(object):
 
         if t.type in ['LANG']:
             t.lexer.push_state('absorb')
+        if t.type == "LABELED":
+            t.lexer.push_state('labeled')
+            t.lexer.push_state('transctrl')
+        if t.type == "PARALLEL":
+            t.lexer.push_state('parallel')
+            t.lexer.push_state('transctrl')
 
         if t.type in set(AtfLexer.structures +
                          AtfLexer.long_argument_structures) - set(["NOTE"]):
@@ -197,7 +202,7 @@ class AtfLexer(object):
         return t
 
     def t_LINELABEL(self, t):
-        r'^[1-9][0-9]*[a-z]*\.'
+        r'^[^.\ \t]*\.'
         t.value = t.value[:-1]
         t.lexer.push_state('text')
         return t
@@ -215,14 +220,14 @@ class AtfLexer(object):
 
     t_INITIAL_transctrl_LETTER = "[a-z]"
 
-    #--- RULES FOR THE TRANSLATION STATE ---
+    #--- RULES FOR THE TRANSLATION STATES ---
     # In this state, the base state is free text
     # And certain tokens deviate from that, rather
     # than the other way round as for base state
 
-    def t_translation_LINELABEL(self, t):
-        r'^([1-9][0-9]*[a-z]*)\.[\ \t]*'
-        t.value = t.lexer.lexmatch.groups()[4]
+    def t_parallel_LINELABEL(self, t):
+        r'^([^\.\ \t]*)\.[\ \t]*'
+        t.value = t.value.strip(" \t.")
         return t
 
     #--- RULES FOR THE ABSORB STATE ---
@@ -238,10 +243,11 @@ class AtfLexer(object):
                     ')' + white + '*')
 
     @lex.TOKEN(absorb_regex)
-    def t_absorb_translation_ID(self, t):
+    def t_absorb_labeled_parallel_ID(self, t):
         # Discard leading whitespace, token is not flag or newline
         # And has at least one non-whitespace character
-        t.value = t.lexer.lexmatch.groups()[2] or t.lexer.lexmatch.groups()[6]
+        print t.lexer.lexmatch.groups()
+        t.value = t.value.strip()
         return t
 
     t_absorb_HASH = "\#"
@@ -249,7 +255,7 @@ class AtfLexer(object):
     t_absorb_QUERY = "\?"
     t_absorb_STAR = "\*"
     t_absorb_PRIME = "'"
-    t_absorb_translation_HAT = "[\ \t]*\^[\ \t]*"
+    t_absorb_parallel_labeled_HAT = "[\ \t]*\^[\ \t]*"
     t_absorb_EQUALS = "\="
 
     #--- RULES FOR THE text STATE ----
