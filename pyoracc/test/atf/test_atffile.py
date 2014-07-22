@@ -23,6 +23,11 @@ def test_bb_2():
     assert_equal(afile.text.code, "X002002")
     assert_equal(afile.text.description, "BagM Beih. 02, 005")
 
+def test_bb_2_6():
+    afile = AtfFile(sample_file("bb_2_6"))
+    assert_equal(afile.text.code, "X002004")
+    assert_equal(afile.text.description, "BagM Beih. 02, 006")
+
 
 def test_afo():
     afile = AtfFile(sample_file("afo"))

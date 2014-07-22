@@ -1,0 +1,283 @@
+&X002004 = BagM Beih. 02, 006
+#project: cams/gkab
+#atf: lang sux
+#atf: use unicode
+#link: def A = P363716 = TCL 06, 44
+
+# The Sumerian in this seems to be back-formed from the Akkadian
+# Don't really know what to do with Sumerian mu-lu in o 6, r 1 and r 2. Broadly, mu-lu ...-za/zu seems to correspond to Akkadian -kun(u)
+
+@tablet
+@top
+1. %sb ina a-mat {d#}[60 ...]
+#lem: ina[at]PRP; amāt[command]N; Anu[1]DN; u +.
+
+@obverse
+1. dim₃#-me-er# [...]
+#lem: diŋir[deity]N; u
+
+== %sb DINGIR-MEŠ GAL#-MEŠ# [...]
+#lem: ilū[god]N; rabûtu[great]AJ; u
+
+# ES dim₃-me-er = diŋir
+|| A o ii 15
+
+2. sug mu-un-gin₆# [...]
+#lem: sug[shrine]N; +gin[establish]V/gin₆#~; u
+
+== %sb mu-kin-nu eš#-re#-[e]-ti# [...]
+#lem: +mukinnu[witness//establisher]N$mukinnū; ešrēti[shrine]N; u
+
+3. na-aŋ₂ tar-tar-re#-e?#-ne?# [...]
+#lem: nam[fate]N; +tar[cut]V/i/tar; u
+
+== %sb mu-šim-mu ši-ma-tu₄ mu-uṣ?#-[ṣi?-ru? ...]
+#lem: +mušimmu[one who decrees]N$mušimmū; +šīmtu[fate]N$šīmātu; +muṣṣiru[designer]N$muṣṣirū; u
+
+# nam tar[decree fate]
+# ES na-aŋ₂ = nam
+
+4. mar-za mu-un-si-sa₂ a₂-aŋ₂#-ŋa₂# x [x x] x x [x]
+#lem: ŋarza[rites]N; +sisa[straighten//put in order]V/si-sa₂#~; a'aŋa[assignment]N; u; u; u; u; u; u
+
+== %sb muš-te-ši-ru par-ṣi u₃?# [te]-ret ša₂ kul#-lat# ma-ha-[zi]
+#lem: +muštēširu[one who puts in order]N$muštēširū; parṣī[rite]N; u[and]CNJ; +têrtu[instruction//assignment]N$têrēt; ša[of]DET; kullat[totality]N; +māhāzu[shrine//cult centre]N$māhāzī
+
+# ES mar-za = ŋarza
+
+5. zi ugu₄-ra mu-un-ši-ma-al x x mud x x [x] x
+#lem: zi[life]N; +ugu[bear]V/ugu₄; +ziŋal[provide life]V/ši-ma-al#mu.n:~; u; u; +mud[create]V/mud; u; u; u; u
+
+== %sb ba-nu-u₂ nap-har šik-na-at na#-piš#-ti gi-mir# x [x]-ti₃#
+#lem: +bānû[creator]N$; naphar[all]N; +šiknu[act of putting]N$šiknat; +napištu[throat]N$napišti; gimir[all]N; u; u
+
+# ES ši-mal = zi-ŋal₂
+# šiknat napišti[(things endowed with life=) living things]
+
+6. e-ne-eš₂ ba-an-gi mu-un-kiŋ₂-zu-e-ne-ne mu-lu ša₃#-ab# ; šeg₉-bi#?-ta ki-za# an-kiŋ₂-kiŋ₂-ŋe₂₆
+#lem: ineš[now]MA; +gibil[new]V/gi; +kiŋ[work]N'V/kiŋ₂; lu[person]N; šag[centre]; +šeg₉[animal//waters]N/šeg₉#~; ki[place]N; +kiŋ[seek]V/kiŋ₂ +.
+
+== %sb i-{d}nanna ana ud-du-uš šip-ri-ku-nu ana qe₂-reb ap-si#-i ; a-še-ʾe aš₂-ra#-ku-un
+#lem: +inanna[now]AV$; ana[for]PRP; +edēšu[be(come) new//renewing]V'N$udduš; +šipru[sending//artefact]N$šiprikunu; ana[at]PRP; qereb[centre]N; Apsi[1]GN; +šeʾû[seek]V$ašeʾʾe; +ašru[place]N$ašrakun +.
+
+# ES mu-lu = lu₂, ša₃-ab = šag
+
+7. keš₂-da i-lu mu-un-keš₂-da-e-ne#
+#lem: +kešda[binding//ritual assemblage]N/keš₂-da#~; +ilu[pure]V/i/i-lu; +kešed[bind//set out]V/keš₂  +.
+
+== %sb rik-si el-li₃ aš₂-ku-su-ku-nu-[ši]
+#lem: +riksu[binding//ritual assemblage]N$riksi; elli[pure]AJ; +rakāsu[bind//set out]V$aškussukunūši +.
+
+# i-lu =  loan from ellu (or syllabic sikil, but cf. next line)?
+
+8. ne-saŋ sikil-la# mu-un-bal-bal-e-ne#
+#lem: nesaŋ[offering]N; +sikil[pure]V/sikil; +bala[turn//make a libation]V/i/bal#~ +.
+
+== %sb ni-qu-u₂ eb-ba aq-qi₂-ku-nu-ši
+#lem: +nīqu[offering]N$niqû; +ebbu[bright//pure]AJ$ebba; +naqû[pour (a libation)]V$aqqikunūši +.
+
+9. ki kug-ga-ta hul₂-le-eš gub-ba-e-ne
+#lem: ki[place]N; +kug[pure]V/kug; +hul[rejoice]V/hul₂; +gub[to stand]V/i/gub
+
+== %sb ina aš₂-ri el-li₃ ha-diš iz-zi-za-ma
+#lem: ina[in]PRP; ašri[place]N; elli[pure]AJ; hadîš[joyfully]AV; +izuzzu[stand]V$izzizāma
+
+#note: izizzāma rather than izizzāma expected
+# +gub[stand]V/gub: doesn't validate
+
+10. niŋ₂-na# mu-un-dadag-ga i-bi₂-e-ne-ne
+#lem: niŋna[incense]; dadag[bright]; igi[face] +.
+
+== %sb qut#-rin-nu el-li₃ mu-uh₂-ra
+#lem: +qutrēnu[incense (offering)]N$qutrinnu; elli[pure]AJ; +mahāru[face//receive]V$muhrā +.
+
+# ES i-bi₂ = igi
+# +igi[face//receive]N'V/i-bi₂: doesn't validate
+
+11. gud-gal gud-mah a₂#-ur₂ gur₄-gur₄-ra su#-bi mu-un-šu-du₇
+#lem: +gudgal[big ox]N/gud-gal#~; +gudmah[prize bull]N/gud-mah; a'ur[limbs]N; +gur[thick]V/gur₄; su[body]N; +šudu[complete//perfect]V/t/šu-du₇#~
+
+== %sb MIN<(GU₄.GAL)> MIN<(GU₄.MAH)> ša₂ meš-re-e#-ti pu-ug-gu-lu zu-mur-šu₂ šuk-lu-lu
+#lem: +gugallu[big ox]N$gugalla; +gumāhu[prize bull]N$gumāha; ša[whose]REL; +mešrêtu[limbs]N$mešrêti; +puggulu[very strong]AJ$puggulū; zumuršu[body]N; šuklulū[perfect]AJ
+
+# šu du[complete]
+
+12. {d}nanna amaš kug-ga#-ta# mi₂ zid-de₃-eš dug₄-ga
+#lem: Nanna[]DN; amaš[sheepfold]N; kug[pure]; mi[cvne]N; +zid[right]V/zid#~; +dug[speak//do]V/t/dug₄
+
+== %sb <ina su>-pu-ri {d}30 ki-niš iʾ-al-du
+#lem: ina[in]PRP; +supūru[sheepfold]N$supūri; Sin[1]DN; +kīniš[reliably//righteously]AV$; iʾʾaldu[give birth (to)]V
+
+# mi dug[care for]
+
+13. ga zid in#-na₈-na₈ me-te nam-diŋir-ra# tum₃-ma
+#lem: ga[milk]N; +zid[right]V/zid#~; +naŋ[drink]V/na₈-na₈; mete[appropriate thing]N; namdiŋir[divinity]N; +tum[bring//appropriate]V/i/tum₃
+
+== %sb ši-iz-bi ki-ni₇ i-ni₇#-qu# šu-lu-uk ana si-mat DINGIR{+ti}
+#lem: +šizbu[milk]N$šizbi; +kīnu[permanent//righteous]AJ$kīni; +enēqu[suck]V$inniqu; +šūluku[brought to readiness//appropriate]AJ$šūluk; ana[to]PRP; +simtu[appropriate symbol//characteristic]N$simāt; +ilūtu[godhead//divinity]N$ilūti
+
+# +kīnu[permanent//righteous]AJ$kīni: glossary also has separate entry kīnu[true]AJ
+# +tum[bring//appropriate]V/tum₃: follows Akkadian idiom (Š alāku, cf. r 3)
+
+14. {d}gašan-amaš-kug-ga buluŋ₃-ŋa₂ ki kug-ga-ta mu-un-dim₂-ma
+#lem: Ninamaškuga[]DN; +buluŋ[to grow//nurture]V/i/buluŋ₃; ki[place]N; +kug[pure]V/kug; +dim[create]V/dim₂
+
+== %sb <tar>-bit {d}MIN<(GAŠAN.AMAŠ.KU₃.GA)> ša₂ ina aš₂-ri el-li₃ ib-ba-nu-u₂
+#lem: +tarbītu[enlargement//nurturing]N$tarbīt; +Ninamaškuga[]DN$; ša[which]REL; ina[in]PRP; ašri[place]N; elli[pure]AJ; ibbanû[create]V
+
+# ES Gašan-amaš-kuga = Ninamaškuga
+# +buluŋ[grow//nurture]V/buluŋ₃: doesn't lemmatise
+
+@reverse
+1. inim kug-ga mah-zu-e-ne i-bi₂ mu-lu gub-ba-zu
+#lem: inim[word//command]N; +kug[pure]V/kug; mah[exalted]; igi[front]N; lu[person]N; +gub[stand]V/gub#~ +.
+
+== %sb ina qi₂-biti-ku-nu ṣir-ti uš-ziz ma-har-kun
+#lem: ina[at]PRP; +qibītu[speech//command]N$qibītikunu; ṣīrti[exalted]AJ; ušzīz[stand]V; +mahru[front//before]N'PRP$maharkun +.
+
+# ES i-bi₂ = igi, mu-lu = lu₂
+
+2. mu-lu kiŋ₂-kiŋ₂-zu kid₃-kid₃-bi-še₃ šag₄ engur-ra-ta mu-un-gin₆
+#lem: lu[person]N; +kiŋ[work]N/kiŋ₂; +kidkid[ritual procedures]N/kid₃-kid₃#~; +šag[heart//centre]N/šag₄; engur[waters]N; gin[establish]
+
+== %sb ana šip-ri ep-še-ti-ku#-nu ša₂ ina qe₂-reb ap-si-[i] kun-nu
+#lem: ana[for]PRP; +šipru[sending//work]N$šiprī; +epištu[deed//ritual]N$epšētikunu; ša[which]REL; ina[in]PRP; qereb[centre]N; Apsi[1]GN; +kunnu[fixed//established]AJ$kunnū
+
+# ES mu-lu = lu₂
+
+3. inim-ma-zu-e-ne-ne lu₂# nu-mu-un-bal-e he₂ me-te# nam-diŋir-ra tum₂-ma
+#lem: inim[word]N; lu[which]N; +bala[turn//change]V/bala#~; +he[whether//may]CNJ'MA/he₂#~; mete[appropriate thing]N; namdiŋir[divinity]N; +tum[suitable]V/i/tum₂ +.
+
+== %sb ina e#-peš# pi-i-ku#-nu ša₂ la in-nen-nu-u₂ lu-u šu-lu-uk <ana> si-mat DINGIR{+ti}
+#lem: ina[by]PRP; +epēšu[do//doing]V'N$epēš; +pû[mouth]N$pîkunu; ša[which]REL; lā[not]MOD; +enû[change]V$innennû; lū[may]MOD; +šūluku[brought to readiness//appropriate]AJ$šūluk; ana[to]PRP; +simtu[appropriate symbol//characteristic]N$simāt; +ilūtu[godhead//divinity]N$ilūti +.
+
+# +tum[suitable]V/tum₂: follows Sumerian idiom (cf. o 13)
+
+4. dim₃#-me#-er#-bi# {d}nanna-gin₇ še-er-zid mu₂-mu₂-da-ke₄
+#lem: diŋir[deity]N; Nanna[]DN; šerzid[radiance]N; +mu[grow]V/mu₂ +.
+
+== %sb DINGIR šu-u₂ ki-ma {d}na#-an-na-ri li-<di>-iš ša₂-ru-ru
+#lem: ilu[god]N; šū[that]IP; kīma[like]PRP; +nannāru[light of the sky//moon]N$nannāri; +edēšu[be(come) new//renew]V$liddiš; šarūru[brilliance]N +.
+
+# ES dim₃-me-er = diŋir
+
+5. {d}utu-gin₇ pa e₃-a ud da-ri₂-še₃
+#lem: Utu[1]DN; pa[branch]N; +e[leave]V/e₃; ud[day]N; +dari[eternal]V/da-ri₂ +.
+
+== %sb ki-ma {d}UTU liš-te-pi ana u₄#-me da-ru-u₂-ti
+#lem: kīma[like]PRP; Šamaš[1]DN; +wapû[be(come) visible]V$lištēpi; ana[for]PRP; ūmē[day]N; +dārû[lasting//eternal]AJ$dārûti +.
+
+# pa e[appear]
+
+6. barag gil-sa-ka# ki ni₂ dub₂-bu-da ŋar-ra-ab
+#lem: barag[dais]N; +gilsa[treasure//eternity]N/gil-sa#~; ki[place]N; ni[self]RP; +dub[tremble]V/dub₂; +ŋar[place]V/ŋar +.
+
+== %sb ina šub-ti-šu₂ ša₂ da!(AŠ₂)-ra-a-tu₂ šub-ti ne₂-eh#-tu₂# li?#-šib?#
+#lem: ina[on]PRP; šubtišu[seat]N; ša[of]DET; +dārītu[perpetuity//eternity]N$dārâti; šubti[seat]N; +nēhtu[calm]N$; līšib[sit]V +.
+
+# ni dub[relax]
+
+$ single ruling
+
+@catchline
+
+7. %sb ŠU.IL₂.LA₂ ša₂ GU₄!(GA).MAH ša₂ E₂ mu-um-mu
+#lem: +šuʾillakku[(prayer of) raised hands]N$; ša[of]DET; +gumāhu[prize bull]N$gumāhi; ša[of]DET; bīt[temple]N; mummu[life-giving force?]N +.
+
+$ single ruling
+
+@colophon
+
+8. %sb ṭup-pi {m}{d}60--PAP--GUR ma-ru₃ ša₂ {m}{d}60--EN-šu₂-nu ma-ru₃# {m#}{d#}30--le-eq--ER₂
+#lem: ṭuppi[tablet]N; +Anu-ab-uter[1]PN; +māru[son]N$; ša[of]DET; Anu-belšunu[1]PN; +māru[son//descendant]N$; +Sin-leqi-unninni[1]LN$ +.
+
+9. %sb qat₃# {m}{d}60--DIN-su--E A ša₂ {m}NIG₂.SUM.MU--{d}60 A ša₂ {m}{d}60--EN-šu₂-nu
+#lem: qāt[hand]N; Anu-balassu-iqbi[1]PN; apli[son]N; ša[of]DET; Nidintu-Anu[1]PN; apli[son]N; ša[of]DET; Anu-belšunu[1]PN
+
+10. %sb DUMU [{m}]{d}30--le-eq--ER₂ UNUG{ki}{+u₂} UNUG{ki} {iti}KIN.{d}INNIN.NA
+#lem: mār[descendant]N; +Sin-leqi-unninni[1]LN$; Urukayu[Urukean]EN +.; Uruk[1]SN; +Ululu[1]MN$
+
+11. %sb U₄# 21#-KAM MU 1 ME 36-KAM {m}si-lu-ku LUGAL
+#lem: ūm[day]N; n; šanat[year]N; n; mē[hundred]NU; n; Seleucus[1]RN; šarru[king]N +.
+
+#note: 36 written over an erasure of 56
+
+@translation labeled en project
+@label t.e. 1
+At the command of Anu [...].
+
+@label o 1
+1. O gods [...] (Akkadian: O great gods [...]),
+
+@label o 2
+who establish shrines, [...],
+
+@label o 3
+who decree fates, [...] (Akkadian: who decree fates, who @?design?@ [...]),
+
+@label o 4
+who put in order the rites (and) assignments ... [...] ... [...] (Akkadian: who put in order the rites @?and?@ assignments of all the cult centres),
+
+@label o 5
+who provide life to living things (and) ... creation ... [...] ... (Akkadian: who create all living things (and) the whole of ... [...] ...),
+
+@label o 6
+now for the renewing of your artefact I seek out your place at the centre of the underground waters.
+
+@label o 7
+I have set out a pure ritual assemblage for you.
+
+@label o 8
+I have libated a pure offering for you.
+
+@label o 9
+Stand joyously in the pure place and
+
+@label o 10
+receive the purified (Akkadian: pure) incense.
+
+@label o 11
+A great bull, a prize bull, whose immensely strong limbs (and) body are perfect,
+
+@label o 12
+cared for righteously by Nanna in the pure fold (Akkadian: (which) was born righteously in the fold of Sin),
+
+@label o 13
+(which) used to drink (Akkadian: suck) righteous milk appropriate to the characteristics of divinity,
+
+@label o 14
+the nurturing of Ninamaškuga which was created in a pure place --
+
+@label r 1
+I have stood (it) before you at your pure (and) exalted command (Akkadian: at your exalted command).
+
+@label r 2
+For your ritual procedures which are established in the centre of the underground waters,
+
+@label r 3
+by your words which cannot be changed may it be appropriate to the characteristics of divinity.
+
+@label r 4
+Let that god (the kettledrum) renew (its) brilliance like the Moon.
+
+@label r 5
+Let it be made visible like the Sun for eternal days.
+
+@label r 6
+Place it on a dais of eternity, a place of relaxation (Akkadian: @?Let it sit?@ on its seat of eternity, a seat of calm).
+
+$ single ruling
+
+@label r 7
+A @šuʾillakku-prayer of the prize bull of the temple-workshop.
+
+$ single ruling
+
+@label r 8
+Tablet of Anu-ab-uter, son of Anu-belšunu, descendant of Sin-leqe-unnini.
+
+@label r 9 - r 10
+Hand of Anu-balassu-iqbi, son of Nidintu-Anu, son of Anu-belšunu, descendant of Sin-leqe-unnini, Urukean.
+
+@label r 10 - r 11
+Uruk, (month of) Ululu, 21st day, 1 hundred 36th year, Seleucus, king.
