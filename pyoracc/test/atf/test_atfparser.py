@@ -355,6 +355,19 @@ class testParser(TestCase):
         assert_equal(art.children[0].children[0].words[0],
                      "an expert will carefully inspect an ungelded bull.")
 
+    def test_translation_labeled_dashlabel(self):
+        art = self.try_parse(
+            "@tablet\n" +
+            "@translation labeled en project\n" +
+            "@label o 14-15 - o 20\n" +
+            "You strew all (kinds of) seed.\n",
+        )
+        assert_is_instance(art.children[0], Translation)
+        assert_equal(art.children[0].children[0].label.label, ['o', '14-15'])
+        assert_equal(art.children[0].children[0].label.rangelabel, ['o', '20'])
+        assert_equal(art.children[0].children[0].words[0],
+                     "You strew all (kinds of) seed.")
+
     def test_translation_labeled_noted_text(self):
         art = self.try_parse(
             "@tablet\n" +

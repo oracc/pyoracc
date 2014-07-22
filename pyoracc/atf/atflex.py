@@ -116,8 +116,8 @@ class AtfLexer(object):
     t_EXCLAIM = "\!"
     t_QUERY = "\?"
     t_STAR = "\*"
-    t_INITIAL_DOLLAR = "\$"
-    t_INITIAL_transctrl_MINUS = "\-"
+    t_DOLLAR = "\$"
+    t_MINUS = "\-"
     t_FROM = "\<\<"
     t_TO = "\>\>"
     t_PARBAR = "\|\|"
@@ -190,7 +190,7 @@ class AtfLexer(object):
         return t
 
     def t_INITIAL_transctrl_ID(self, t):
-        '[a-zA-Z0-9][a-zA-Z\'\.0-9\[\]]*'
+        '[a-zA-Z0-9][a-zA-Z\'\.0-9\-\[\]]*'
 
         t.type = self.resolve_keyword(t.value,
                                       AtfLexer.protocol_keywords +
@@ -233,6 +233,9 @@ class AtfLexer(object):
         r'^([^\.\ \t]*)\.[\ \t]*'
         t.value = t.value.strip(" \t.")
         return t
+
+
+    t_transctrl_MINUS = "\-\ "
 
     #--- RULES FOR THE ABSORB STATE ---
 

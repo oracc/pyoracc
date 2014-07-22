@@ -148,6 +148,18 @@ class testLexer(TestCase):
              'Then it will be taken for the rites and rituals.', None]
         )
 
+    def test_translation_labeled_dashlabel(self):
+        self.compare_tokens(
+            "@translation labeled en project\n" +
+            "@label o 14-15 - o 20\n" +
+            "You strew all (kinds of) seed.\n",
+            ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
+             "LABEL", "ID", "ID",  "MINUS", "ID", "ID", "NEWLINE", 
+             "ID", "NEWLINE"],
+            [None, "labeled", "en", "project", None,
+             None, "o", "14-15", None, "o", "20", None]
+        )
+
     def test_translation_range_label_prime(self):
         self.compare_tokens(
             "@translation labeled en project\n" +
