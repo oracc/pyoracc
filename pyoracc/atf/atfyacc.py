@@ -11,6 +11,7 @@ from ..model.link_reference import LinkReference
 from ..model.state import State
 from ..model.translation import Translation
 from ..model.composite import Composite
+from ..model.multilingual import Multilingual
 
 
 class AtfParser(object):
@@ -271,12 +272,56 @@ class AtfParser(object):
         p[0].lemmas = p[2]
 
     def p_line_note(self, p):
-        "line : line note_statement "
+        "line : line note_statement"
         p[0] = p[1]
         p[0].notes.append(p[2])
 
     def p_line_link(self, p):
-        "line : line link_reference_statement "
+        "line : line link_reference_statement"
+        p[0] = p[1]
+        p[0].links.append(p[2])
+
+    def p_line_multilingual(self,p):
+        "line : line multilingual %prec MULTI"
+        p[0] = Multilingual()
+        p[0].lines[None]=p[1]
+        p[0].lines[p[2].label]=p[2] # Use the language, temporarily stored in the label, as the key.
+        p[0].lines[p[2].label].label=p[1].label # The actual label is the same as the main line
+
+    def p_multilingual_sequence(self,p):
+        "multilingual_sequence : MULTILINGUAL ID "
+        p[0] = Line(p[2][1:]) # Slice off the percent
+
+    def p_multilingual_id(self,p):
+        "multilingual_sequence : multilingual_sequence ID"
+        p[0] = p[1]
+        p[0].words.append(p[2])
+
+    def p_multilingual_reference(self, p):
+        "multilingual_sequence : multilingual_sequence reference"
+        p[0] = p[1]
+        p[0].references.append(p[2])
+
+    def p_multilingual_statement(self, p):
+        "multilingual_statement : multilingual_sequence newline"
+        p[0] = p[1]
+
+    def p_multilingual(self, p):
+        "multilingual : multilingual_statement"
+        p[0] = p[1]
+
+    def p_multilingual_lemmas(self, p):
+        "multilingual : multilingual lemma_statement "
+        p[0] = p[1]
+        p[0].lemmas = p[2]
+
+    def p_multilingual_note(self, p):
+        "multilingual : multilingual note_statement "
+        p[0] = p[1]
+        p[0].notes.append(p[2])
+
+    def p_multilingual_link(self, p):
+        "multilingual : multilingual link_reference_statement "
         p[0] = p[1]
         p[0].links.append(p[2])
 
@@ -520,13 +565,13 @@ class AtfParser(object):
         # LOW precedence
         ('nonassoc', 'TRANSLATIONEND'),
         ('nonassoc', 'TABLET', 'ENVELOPE', 'PRISM', 'BULLA', 'FRAGMENT',
-            'OBJECT'),
+            'OBJECT', 'MULTI'),
         ('nonassoc', 'OBVERSE', 'REVERSE', 'LEFT', 'RIGHT', 'TOP', 'BOTTOM',
             'CATCHLINE', 'COLOPHON', 'DATE', 'SIGNATURES',
             'SIGNATURE', 'SUMMARY',
             'WITNESSES', 'FACE',
-            'SURFACE', 'EDGE', 'COLUMN', 'SEAL'),
-        ('nonassoc', "LINELABEL", "DOLLAR", "LEM"),
+            'SURFACE', 'EDGE', 'COLUMN', 'SEAL', ),
+        ('nonassoc', "LINELABEL", "DOLLAR", "LEM", "NOTE", "PARBAR", "TO", "FROM"),
         # HIGH precedence
     )
 

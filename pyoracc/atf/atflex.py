@@ -71,6 +71,7 @@ class AtfLexer(object):
         'HAT',
         'SEMICOLON',
         'EQUALS',
+        'MULTILINGUAL',
         'LSQUARE',
         'RSQUARE',
         'EXCLAIM',
@@ -121,16 +122,24 @@ class AtfLexer(object):
     t_TO = "\>\>"
     t_PARBAR = "\|\|"
 
+
     t_PARENTHETICALID = "\([^\)\n\r]*\)"
 
     def t_INITIAL_transctrl_WHITESPACE(self, t):
         r'[\t ]+'
         # NO TOKEN
 
+    def  t_MULTILINGUAL(self,t):
+        "\=\="
+        t.lexer.push_state("text")
+        return t
+
     def t_EQUALS(self, t):
         "\="
         t.lexer.push_state('absorb')
         return t
+
+
 
     def t_INITIAL_parallel_labeled_COMMENT(self, t):
         "^\#[\ \t][^\n\r]*"

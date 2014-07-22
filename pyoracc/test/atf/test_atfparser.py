@@ -489,3 +489,20 @@ class testParser(TestCase):
         assert_equal(link.operator, ">>")
         assert_equal(link.label, ["o", "ii", "10"])
         assert_equal(link.rangelabel, ["o", "ii", "15"])
+
+    def test_multilingual_interlinear(self):
+        text=self.try_parse(
+            "@tablet\n" +
+            "@obverse\n" +
+            "1. dim₃#-me-er# [...]\n" +
+            "#lem: diŋir[deity]N; u\n" +
+            "== %sb DINGIR-MEŠ GAL#-MEŠ# [...]\n" +
+            "#lem: ilū[god]N; rabûtu[great]AJ; u\n" +
+            "# ES dim₃-me-er = diŋir\n" +
+            "|| A o ii 15\n")
+        multilingual=text.children[0].children[0]
+        assert_equal(len(multilingual.lines),2)
+        assert_equal(len(multilingual.lines[None].words),2)
+        assert_equal(len(multilingual.lines[None].lemmas),2)
+        assert_equal(len(multilingual.lines["sb"].words),3)
+        assert_equal(len(multilingual.lines["sb"].lemmas),3)

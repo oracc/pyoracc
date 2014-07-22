@@ -282,3 +282,23 @@ class testLexer(TestCase):
             ["PROJECT", "ID", "NEWLINE"] +
             ["LINELABEL"] + ['ID'] * 4 + ["NEWLINE"]
         )
+
+    def test_multilingual_interlinear(self):
+        self.compare_tokens(
+            "@tablet\n" +
+            "@obverse\n" +
+            "1. dim₃#-me-er# [...]\n" +
+            "#lem: diŋir[deity]N; u\n" +
+            "== %sb DINGIR-MEŠ GAL#-MEŠ# [...]\n" +
+            "#lem: ilū[god]N; rabûtu[great]AJ; u\n" +
+            "# ES dim₃-me-er = diŋir\n" +
+            "|| A o ii 15\n",
+            ['TABLET',"NEWLINE"] +
+            ["OBVERSE","NEWLINE"] +
+            ["LINELABEL"] + ['ID']*2 + ["NEWLINE"] +
+            ["LEM"] + ["ID","SEMICOLON"] + ["ID"] + ["NEWLINE"] +
+            ["MULTILINGUAL","ID"]+["ID"]*3 + ["NEWLINE"] +
+            ["LEM"] + ["ID","SEMICOLON"]*2 + ["ID"] + ["NEWLINE"] +
+            ["NEWLINE"] +
+            ["PARBAR", "ID", "ID", "ID", "ID", "NEWLINE"]
+        )
