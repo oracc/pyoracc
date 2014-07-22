@@ -410,6 +410,12 @@ class AtfParser(object):
         text = list(p)
         p[0] = State(text[-1], " ".join(text[1:-1]))
 
+
+    def p_singular_state_desc_brief(self,p):
+        """singular_state_desc : brief_quantifier state"""
+        text = list(p)
+        p[0] = State(text[-1], None, text[1])
+
     def p_partial_state_description(self, p):
         """singular_state_desc : partial_quantifier singular_state_desc"""
         p[0] = p[2]
@@ -439,12 +445,16 @@ class AtfParser(object):
                         | CASES"""
         p[0] = p[1]
 
+    def p_brief_quantifier(self,p):
+        """brief_quantifier : REST
+                            | START
+                            | BEGINNING
+                            | MIDDLE
+                            | END"""
+        p[0] = p[1]
+
     def p_partial_quantifier(self, p):
-        """partial_quantifier : REST OF
-                              | START OF
-                              | BEGINNING OF
-                              | MIDDLE OF
-                              | END OF"""
+        """partial_quantifier : brief_quantifier OF"""
         p[0] = " ".join(p[1:])
 
     def p_qualification(self, p):

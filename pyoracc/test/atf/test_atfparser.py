@@ -10,6 +10,7 @@ from ...model.link import Link
 from ...model.link_reference import LinkReference
 from ...model.oraccobject import OraccObject
 from ...model.oraccnamedobject import OraccNamedObject
+from ...model.multilingual import Multilingual
 from ...model.composite import Composite
 from ...atf.atfyacc import AtfParser
 from ...atf.atflex import AtfLexer
@@ -301,6 +302,16 @@ class testParser(TestCase):
         assert_equal(art.children[0].children[0].scope, "column 1")
         assert_equal(art.children[0].children[0].extent, "rest of")
 
+    def test_strict_dollar_no_scope(self):
+        art = self.try_parse(
+            "@tablet\n" +
+            "@obverse\n" +
+            "$rest blank\n"
+        )
+        assert_equal(art.children[0].children[0].state, "blank")
+        assert_equal(art.children[0].children[0].scope, None)
+        assert_equal(art.children[0].children[0].extent, "rest")
+
     def test_translation_intro(self):
         art = self.try_parse(
             "@tablet\n" +
@@ -501,6 +512,7 @@ class testParser(TestCase):
             "# ES dim₃-me-er = diŋir\n" +
             "|| A o ii 15\n")
         multilingual=text.children[0].children[0]
+        assert_is_instance(multilingual, Multilingual)
         assert_equal(len(multilingual.lines),2)
         assert_equal(len(multilingual.lines[None].words),2)
         assert_equal(len(multilingual.lines[None].lemmas),2)
