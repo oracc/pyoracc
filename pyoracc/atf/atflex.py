@@ -116,7 +116,7 @@ class AtfLexer(object):
     t_EXCLAIM = "\!"
     t_QUERY = "\?"
     t_STAR = "\*"
-    t_DOLLAR = "\$"
+    t_INITIAL_DOLLAR = "\$"
     t_INITIAL_transctrl_MINUS = "\-"
     t_FROM = "\<\<"
     t_TO = "\>\>"
@@ -184,6 +184,11 @@ class AtfLexer(object):
         t.lexer.push_state('text')
         return t
 
+    def t_parallel_DOLLAR(self,t):
+        "^\$"
+        t.lexer.push_state("transctrl")
+        return t
+
     def t_INITIAL_transctrl_ID(self, t):
         '[a-zA-Z0-9][a-zA-Z\'\.0-9\[\]]*'
 
@@ -231,21 +236,31 @@ class AtfLexer(object):
 
     #--- RULES FOR THE ABSORB STATE ---
 
-    white = r'[\ \t]'
+    white = r'[\ \t]*'
     nonflagnonwhite = r'[^\ \t\#\!\^\*\?\n\r\=]'
     internalonly = r'[^\n\^\r\=]'
     nonflag = r'[^\ \t\#\!\^\*\?\n\r\=]'
     many_int_then_nonflag = '(' + internalonly + '*' + nonflag + '+' + ')'
     many_nonflag = nonflag + '*'
     intern_or_nonflg = '(' + many_int_then_nonflag + '|' + many_nonflag + ')'
-    absorb_regex = (white + '*' + '(' + nonflagnonwhite + intern_or_nonflg +
-                    ')' + white + '*')
+    absorb_regex = (white + '(' + nonflagnonwhite + intern_or_nonflg +
+                    ')' + white )
 
     @lex.TOKEN(absorb_regex)
-    def t_absorb_labeled_parallel_ID(self, t):
+    def t_absorb_labeled_ID(self, t):
         # Discard leading whitespace, token is not flag or newline
         # And has at least one non-whitespace character
         t.value = t.value.strip()
+        return t
+
+
+    # Flag characters (#! etc ) don't apply in translations
+    # But reference anchors ^1^ etc do.
+    translation_regex = white + "[^\^\n\r]+" + white
+
+    @lex.TOKEN(translation_regex)
+    def t_parallel_ID(self,t):
+        #t.value = t.value.strip()
         return t
 
     t_absorb_HASH = "\#"

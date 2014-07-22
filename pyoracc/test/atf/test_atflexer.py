@@ -302,3 +302,21 @@ class testLexer(TestCase):
             ["NEWLINE"] +
             ["PARBAR", "ID", "ID", "ID", "ID", "NEWLINE"]
         )
+
+    def test_strict_in_parallel(self):
+        self.compare_tokens(
+            "@translation parallel en project\n" +
+            "$ reverse blank",
+             ["TRANSLATION", "PARALLEL", "ID", "PROJECT", "NEWLINE"]+
+             ["DOLLAR", "REFERENCE", "BLANK"]
+        )
+
+    def test_punctuated_translation(self):
+        self.compare_tokens(
+            "@translation parallel en project\n" +
+            "1. 'What is going on?', said the King!\n",
+             ["TRANSLATION", "PARALLEL", "ID", "PROJECT", "NEWLINE"] +
+             ["LINELABEL","ID","NEWLINE"],
+             [None, None, "en", None, None] +
+             ["1","'What is going on?', said the King!",None]
+        )
