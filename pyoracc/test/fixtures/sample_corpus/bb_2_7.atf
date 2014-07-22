@@ -1,0 +1,97 @@
+&X002005 = BagM Beih. 02, 007
+#project: cams/gkab
+#atf: lang akk-x-stdbab
+#atf: use unicode
+@tablet
+@obverse
+$ start broken
+1'. [...] x [...]
+#lem: u; u; u
+
+2'. [x {sig₂}]GA.RIG₂.AK.[A ...]
+#lem: u; +pušikku[combed wool]N$; u
+
+3'. [...] x $NA $U₃ $NIG₂ $UD x [...]
+#lem: u; u; u; u; u; u; u; u
+
+4'. [...] LI.LI.IZ₃ ZABAR# [...]
+#lem: u; +lilissu[kettledrum]N$lilis; siparri[bronze]N; u +.
+
+5'. [...] ŠE.GA tam-mar-ma NIG₂.DIM₂#.[DIM₂.MA ...]
+#lem: u; +šemû[hear//accepting (prayer)]V'N$šemê; +amāru[see//look for]V$tammarma; +epištu[deed//action]N$epšēti; u +.
+
+6'. [...] UZU# GU₄ ša₂-a-šu₂ <GALA₆>.MAH# [...]
+#lem: u; +šīru[flesh//meat]N$šīr; +alpu[ox//bull]N$alpi; +šuāšim[to him//of that]IP$šâšu; +galamāhu[chief lamentation-priest]N$; u +.
+
+7'. [...] x la₃ ZU{+u₂} la₃# [...]
+#lem: u; u +.; +lā[not]MOD$; +mūdû[knower//initiate]N$; lā[not]MOD; u +.
+
+8'. [...] LI#.LI.IZ₃# [...] 
+#lem: u; lilis[kettledrum]N; u
+
+9'. [...] GU₄ [...]
+#lem: u; alpi[bull]N; u
+
+$ end broken
+@reverse
+$ start broken
+1'. %s [...] x-me-en %sb : [...]
+#lem: u; u; u
+
+2'. %s [...] x hul₂-la-me#-[en]
+#lem: u; u; hul[rejoice]
+
+3'. %s [...] x-me-en %sb : $AN x [...]
+#lem: u; u; u; u; u
+
+4'. %s [...] hul₂#-la#-[me-en]
+#lem: u; hul[rejoice]
+
+5'. %s [... lugal-zu]-še₃#? i₃-duh# ma#-[ra-ab]
+#lem: u; lugal[king]; duh[release]; +ŋar[place//recite]V/ŋar#~$
+
+$ single ruling
+6'. [...] x ana LI#.LI.IZ₃# ta#-[...]
+#lem: u; u; +ana[to//into]PRP$; +lilissu[kettledrum]N$lilissi; u +.
+
+$ single ruling
+7'. [...] ana E₂ mu-um-mu tu#-[šer₃-re-ba]
+#lem: u; ana[into]PRP; +bītu[house]N$bīt; +mummu[life-giving force?]N$; +erēbu[enter]V$tušerreba
+
+# mummu is in online glossary with GW of life-giving-force?, but the second hyphen now looks like an error to me
+
+8'. [...] x ina {iti}SIG₄# [...]
+#lem: u; u; ina[in]PRP; Simanu[1]MN; u
+
+9'.  [...] x [...]
+#lem: u; u; u
+
+$ end broken
+
+@translation parallel en project
+@obverse
+$ start broken
+1'. [...] ... [...]
+2'. [...] combed wool [...]
+3'. [...] ... [...]
+4'. [...] the bronze kettledrum [...].
+5'. You look for a propitious [...] and then [...] the actions.
+6'. The chief @kalû-priest [...] the meat of that bull.
+7'. [...]. An uninitiated person (should) not [...].
+8'. [...] the kettledrum [...]
+9'. [...] the bull [...] 
+$ end broken
+@reverse
+$ start broken
+1'. [...] ... [...]
+2'. [...] rejoice over you!
+3'. [...] ... [...]
+4'. [...] rejoice over you!
+5'. ... recite 'you are released' for your king!
+$ single ruling
+6'. You [...] into the kettledrum.
+$ single ruling
+7'. [...] you are to bring the [...] into the temple workshop,
+8'. [...] in the (month) Simanu [...]
+9'. [...] ... [...]
+$ end broken
