@@ -311,6 +311,17 @@ class testParser(TestCase):
         assert_equal(art.children[0].children[0].state, "blank")
         assert_equal(art.children[0].children[0].scope, None)
         assert_equal(art.children[0].children[0].extent, "rest")
+   
+    def test_strict_dollar_singular_exception(self):
+        art = self.try_parse(
+            "@tablet\n" +
+            "@obverse\n" +
+            "$ 1 line traces\n"
+        )
+        dollar=art.children[0].children[0]
+        assert_equal(dollar.state, "traces")
+        assert_equal(dollar.scope, "line")
+        assert_equal(dollar.extent, "1")
 
     def test_translation_intro(self):
         art = self.try_parse(

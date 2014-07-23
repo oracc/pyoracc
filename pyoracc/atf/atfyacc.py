@@ -386,12 +386,17 @@ class AtfParser(object):
 
     def p_state_description(self, p):
         """state_description : plural_state_description
-                             | singular_state_desc"""
+                             | singular_state_desc
+                             | brief_state_desc"""
         p[0] = p[1]
 
     def p_plural_state_description(self, p):
         """plural_state_description : plural_quantifier plural_scope state
-                                    | ID plural_scope state"""
+                                    | ID plural_scope state
+                                    | ID singular_scope state
+                                    | ID REFERENCE state"""
+        # The singular case is an exception: "1 line broken" is semantically the same as
+        # "2 lines broken"
         p[0] = State(p[3], p[2], p[1])
 
     def p_plural_state_range_description(self, p):
@@ -412,7 +417,7 @@ class AtfParser(object):
 
 
     def p_singular_state_desc_brief(self,p):
-        """singular_state_desc : brief_quantifier state"""
+        """brief_state_desc : brief_quantifier state"""
         text = list(p)
         p[0] = State(text[-1], None, text[1])
 

@@ -1,0 +1,45 @@
+&X002013 = BagM Beih. 02, 013
+#project: cams/gkab
+#atf: lang akk-x-stdbab
+#atf: use unicode
+@tablet
+@obverse
+$ start broken
+1'. [...] x [x x] $UŠ x x [...]
+#lem: u; u; u; u; u; u; u; u
+
+2'. [...] {d}na#-na#-a [...]
+#lem: u; Nanaya[1]DN; u
+
+3'. [...] {d#}ŠA#.LA u₃ {d}DUMU#.MUNUS#-MEŠ--{d}60 [...]
+#lem: u; +Šala[]DN$; u[and]CNJ; +Marat-Anu[]DN$; u
+
+4'. [... {d}]ba-ba₆ u₃ {d}NIN.EŠ₃#.GAL [...]
+#lem: u; +Baba[]DN$; u[and]CNJ; +Ninešgal[]DN$; u
+
+5'. [... {d}]SA.DAR₃.NUN.NA {d}aš-rat u {d}šar-[rat--AN{+e} ...]
+#lem: u; +Sadarnuna[]DN$; +Ašrat[]DN$; u[and]CNJ; +Šarrat-šame[]DN$; u
+
+6'. [...] {d#}NIN.IGI.ZI#.BAR#.RA u₃ {d#}<i>-šar#-tu₄?# [...]
+#lem: u; +Ninigizibara[]DN$; u[and]CNJ; +Išartu[]DN$; u
+
+7'. [... {d}]AB₂#.E₂.TUR₃.RA#? u {d#}ŠA₃#.GE#.PA₃#.[DA ...]
+#lem: u; +Abetura[]DN$; u[and]CNJ; +Šagepada[]DN$; u
+
+$ end broken
+@reverse
+$ reverse missing
+
+@translation parallel en project
+@obverse
+$ start broken
+$ 1 line traces
+2'. [...] Nanaya [...]
+3'. [...] Šala and Marat-Anu [...]
+4'. [...] Bau and Ninešgal [...]
+5'. [...] Sadarnuna, Ašrat and Šarrat-šame [...]
+6'. [...] Ninigizibara and Išartu [...]
+7'. [...] Abetura and Šagepada [...]
+$ end broken
+@reverse
+$ reverse missing
