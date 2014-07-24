@@ -164,8 +164,9 @@ class AtfLexer(object):
         return t
 
         # In the multi-line base states, a newline doesn't change state
+        # A newline followed by a space gives continuation
     def t_INITIAL_parallel_labeled_NEWLINE(self, t):
-        r'\s*[\n\r]'
+        r'\s*[\n\r](?![ \t])'
         t.lexer.lineno += 1
         return t
 
@@ -306,11 +307,16 @@ class AtfLexer(object):
 
     # Flag characters (#! etc ) don't apply in translations
     # But reference anchors ^1^ etc do.
-    translation_regex = white + "[^\^\n\r]+" + white
+    # lines beginning with a space are continuations
+    translation_regex = white + "([^\^\n\r]|([\n\r](?=[ \t])))+" + white
 
     @lex.TOKEN(translation_regex)
     def t_parallel_interlinear_ID(self,t):
         t.value = t.value.strip()
+        t.value = t.value.replace("\r ","\r")
+        t.value = t.value.replace("\n ","\n")
+        t.value = t.value.replace("\n","")
+        t.value = t.value.replace("\r","")
         return t
 
 

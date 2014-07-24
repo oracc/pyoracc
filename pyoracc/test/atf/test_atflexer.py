@@ -176,6 +176,17 @@ class testLexer(TestCase):
              None, '1', None]
         )
 
+    def test_translation_multiline_text(self):
+        self.compare_tokens(
+            "@translation parallel en project\n" +
+            "1.    Year 63, Ṭebetu (Month X)\n" +
+            " , night of day 2\n",
+            ["TRANSLATION", "PARALLEL", "ID", "PROJECT", "NEWLINE",
+             "LINELABEL", "ID","NEWLINE"],
+            [None, "parallel", "en", "project", None,
+             "1", "Year 63, Ṭebetu (Month X), night of day 2", None]
+        )
+
     def test_translation_labeled_text(self):
         self.compare_tokens(
             "@translation labeled en project\n" +
@@ -302,6 +313,16 @@ class testLexer(TestCase):
             "@tablet\n" + 
             "1'. ⸢x⸣\n" +
             "#tr: English\n",
+            ["TABLET", "NEWLINE",
+             "LINELABEL", "ID", "NEWLINE",
+             "TR", "ID", "NEWLINE"])
+
+    def test_multilineinterlinear_translation(self):
+        self.compare_tokens(
+            "@tablet\n" + 
+            "1'. ⸢x⸣\n" +
+            "#tr: English\n" +
+            " on multiple lines\n",
             ["TABLET", "NEWLINE",
              "LINELABEL", "ID", "NEWLINE",
              "TR", "ID", "NEWLINE"])
