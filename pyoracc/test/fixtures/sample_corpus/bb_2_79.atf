@@ -1,0 +1,83 @@
+&X002079 = BagM Beih. 02, 079
+#project: cams/gkab
+
+#atf: lang akk-x-stdbab
+#atf: use unicode
+
+# restorations and readings from Weidner, Gerstirndarstellungen.
+
+@tablet
+@obverse
+$ start of obverse missing
+1'.	& 2# & 28# & 2 & [4] & [...]
+#lem: n; n; n; n; u
+
+2'.	&   &     &   &     & [...]
+#lem: u +.
+
+$ single ruling
+3'.	& 12# & 5 & 2 & 5 & {giš!#}[...]
+#lem: n; n; n; n; u
+
+4'.	 &   &   &   &   & {giš!}x [...]
+#lem: u; u +.
+
+$ single ruling
+5'.	& [9] & 12 & 2 & 6 & {giš}x [...]
+#lem: n; n; n; n; u; u
+
+6'.	 &   &    &   &   & {na₄}AN.NA {na₄#}[...]
+#lem: +annaku[tin]N$; u
+
+7'.	&    &	 &   &	 & GAL{+u₂} {d}MAŠ $DIŠ $TAR [...]
+#lem: rabû[great]AJ; Ninurta[1]DN +.; u; u; u +.
+
+$ single ruling
+8'.	& [6] & 19# & 2 & 7 & {giš}ESI {u₂}kur-ka-nu {u₂}x [...]
+#lem: n; n; n; n; +ušû[ebony]N$; +kurkanû[(a medicinal plant)]N$; u; u
+
+9'.	&    &     &   &   & GAL{+u} {d}MAŠ : $BE $EDIN $NI x [...]
+#lem: +rabû[big//great]AJ$; Ninurta[1]DN +.; u; u; u; u; u +.
+
+$ single ruling
+10'.	& [3] & 26 & 2 & 8 & {giš}x-NUN {u₂}IGI.20 {u₂#}[...]
+#lem: n; n; n; n; u; imhur-ešrā[(a climbing plant)]N; u
+
+$ rest of obverse missing
+
+@reverse
+$ start of obverse missing
+1'.  &5 [...] x {m}{d}[...]
+#lem: u; u; u
+
+$ single ruling
+2'. &5 [... {m}]{d}60--{d}EN-šu₂-nu [...]
+#lem: u; +Anu-belšunu[]PN$; u
+
+$ rest of reverse missing
+
+@translation parallel en project
+@obverse
+@h1 @& Sign @& Degree @& Month @& Day @& Materia Medica
+1'. @&	2 @& 28 @& 2 @& [4] @& [...]
+2'. @&	  @&    @&   @&     @& [...].
+$ single ruling
+3'. @&	12 @& 5 @& 2 @& 5 @& [...]-tree, [...]
+4'. @&	   @&   @&   @&   @& [...]-tree, [...].
+$ single ruling
+5'. @&	[9] @& 12 @& 2 @& 6 @& [...]-tree, [...]
+6'. @&	    @&    @&   @&   @& tin, [...]-metal, [...]
+7'. @&	    @&	  @&   @&   @& the great one, Ninurta. ... [...].
+$ single ruling
+8'. @&	[6] @& 19 @& 2 @& 7 @& Ebony, @kurkanû-plant, [...]-plant, [...]
+9'. @&	    @&    @&   @&   @& the great one, Ninurta. : ... [...].
+$ single ruling
+10'. @&	 [3] @& 26 @& 2 @& 8 @& ...-tree, @imhur-@ešrā-plant, [...]-plant, [...]
+$ rest of obverse missing
+
+@reverse
+$ start of reverse missing
+1'.  @&5	[...] ... [...]
+$ single ruling
+2'.	@&5 [...] Anu-belšunu [...]
+$rest of reverse missing

@@ -24,7 +24,7 @@ class testParser(TestCase):
 
     def try_parse(self, content):
         self.parser = AtfParser().parser
-        return self.parser.parse(content, lexer=self.lexer)
+        return self.parser.parse(content, lexer=self.lexer, debug=1)
 
     def test_code(self):
         text = self.try_parse("&X001001 = JCS 48, 089\n")
@@ -542,3 +542,20 @@ class testParser(TestCase):
         assert_equal(len(multilingual.lines[None].lemmas),2)
         assert_equal(len(multilingual.lines["sb"].words),3)
         assert_equal(len(multilingual.lines["sb"].lemmas),3)
+
+
+    def test_translation_heading(self):
+        text=self.try_parse(
+            "@tablet\n" +
+            "@translation parallel en project\n" +
+            "@h1 A translation heading\n"
+        )
+        assert_equal(len(text.children[0].children),1)
+        assert_equal(text.children[0].children[0].objecttype,'h1')
+
+    def test_heading(self):
+        text=self.try_parse(
+            "@tablet\n" +
+            "@h1 A heading\n"
+        )
+        assert_equal(text.children[0].objecttype,'h1')

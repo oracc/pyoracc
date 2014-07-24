@@ -38,7 +38,6 @@ class AtfLexer(object):
         'TRANSLATION',
         'NOTE',
         'M',
-        'H',
         'COMPOSITE',
         'LABEL'
     ]
@@ -84,7 +83,8 @@ class AtfLexer(object):
         'MINUS',
         'FROM',
         'TO',
-        'PARBAR'
+        'PARBAR',
+        'HEADING'
     ]
 
     keyword_tokens = list(set(
@@ -157,9 +157,16 @@ class AtfLexer(object):
     def t_INITIAL_parallel_labeled_ATID(self, t):
         '\@[a-zA-Z][a-zA-Z0-9\[\]]+'
         t.value = t.value[1:]
+
+        if t.value in ["h1","h2","h3"]:
+            t.type = "HEADING"
+            t.lexer.push_state('absorb')
+            return t
+
         t.type = self.resolve_keyword(t.value,
                                       AtfLexer.structures +
                                       AtfLexer.long_argument_structures)
+
 
         if t.type == "LABEL":
             t.lexer.push_state("transctrl")

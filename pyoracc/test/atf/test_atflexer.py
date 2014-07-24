@@ -244,6 +244,22 @@ class testLexer(TestCase):
             ['NEWLINE']
         )
 
+    def test_translation_heading(self):
+        self.compare_tokens(
+            "@translation parallel en project\n" +
+            "@h1 A translation heading\n",
+            ["TRANSLATION", "PARALLEL", "ID", "PROJECT", "NEWLINE"] + 
+            ["HEADING","ID","NEWLINE"]
+        )
+
+    def test_heading(self):
+        self.compare_tokens(
+            "@obverse\n" +
+            "@h1 A heading\n",
+            ["OBVERSE", "NEWLINE"] + 
+            ["HEADING","ID","NEWLINE"] 
+    )
+
     def test_double_comment(self):
         """Not sure if this is correct; but can't find 
         anything in structure or lemmatization doc"""

@@ -223,7 +223,7 @@ class AtfParser(object):
                              | EDGE ID
                              | COLUMN ID
                              | SEAL ID
-                             | H ID'''
+                             | HEADING ID'''
         p[0] = OraccNamedObject(p[1], p[2])
 
     def p_surface(self, p):
@@ -585,7 +585,7 @@ class AtfParser(object):
             'CATCHLINE', 'COLOPHON', 'DATE', 'SIGNATURES',
             'SIGNATURE', 'SUMMARY',
             'WITNESSES', 'FACE',
-            'SURFACE', 'EDGE', 'COLUMN', 'SEAL', ),
+            'SURFACE', 'EDGE', 'COLUMN', 'SEAL', 'HEADING'),
         ('nonassoc', "LINELABEL", "DOLLAR", "LEM", "NOTE", "PARBAR", "TO", "FROM"),
         # HIGH precedence
     )
