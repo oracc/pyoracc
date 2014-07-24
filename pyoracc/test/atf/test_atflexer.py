@@ -244,6 +244,14 @@ class testLexer(TestCase):
             ['NEWLINE']
         )
 
+    def test_double_comment(self):
+        """Not sure if this is correct; but can't find 
+        anything in structure or lemmatization doc"""
+        self.compare_tokens(
+            "## papān libbi[belly] (already in gloss, same spelling)\n",
+            ['NEWLINE']
+        )
+
     def test_ruling(self):
         self.compare_tokens(
             "$ single ruling",

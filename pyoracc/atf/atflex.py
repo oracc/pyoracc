@@ -142,7 +142,9 @@ class AtfLexer(object):
 
 
     def t_INITIAL_parallel_labeled_COMMENT(self, t):
-        "^\#[\ \t][^\n\r]*"
+        r'^\#[^\n\r\:]*([\ \t][^\n\r]*)?\n'
+        t.type = "NEWLINE"
+        return t
 
         # No token
 
