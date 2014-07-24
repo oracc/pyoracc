@@ -231,8 +231,9 @@ class AtfParser(object):
         p[0] = p[1]
 
     def p_surface_element_line(self, p):
-        """surface_element : line
-                           | dollar"""
+        """surface_element : line %prec LINE
+                           | dollar
+                           | note_statement"""
         p[0] = p[1]
 
     def p_dollar(self, p):
@@ -488,7 +489,7 @@ class AtfParser(object):
         p[0].children.append(p[2])
 
     def p_translation_labeledline(self, p):
-        "translation : translation translationlabeledline"
+        "translation : translation translationlabeledline %prec LINE"
         p[0] = p[1]
         p[0].children.append(p[2])
 
@@ -594,7 +595,7 @@ class AtfParser(object):
             'CATCHLINE', 'COLOPHON', 'DATE', 'SIGNATURES',
             'SIGNATURE', 'SUMMARY',
             'WITNESSES', 'FACE',
-            'SURFACE', 'EDGE', 'COLUMN', 'SEAL', 'HEADING'),
+            'SURFACE', 'EDGE', 'COLUMN', 'SEAL', 'HEADING', 'LINE'),
         ('nonassoc', "LINELABEL", "DOLLAR", "LEM", "NOTE", "PARBAR", "TO", "FROM"),
         # HIGH precedence
     )

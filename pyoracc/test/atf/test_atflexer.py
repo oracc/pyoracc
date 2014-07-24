@@ -365,3 +365,13 @@ class testLexer(TestCase):
              [None, None, "en", None, None] +
              ["1","'What is going on?', said the King!",None]
         )
+
+    def test_translation_note(self):
+        self.compare_tokens(
+            "@translation parallel en project\n" +
+            "@reverse\n" +
+            "#note: reverse uninscribed\n",
+            ["TRANSLATION", "PARALLEL", "ID", "PROJECT", "NEWLINE"] +
+            ["REVERSE","NEWLINE"] +
+            ["NOTE","ID","NEWLINE"]
+        )

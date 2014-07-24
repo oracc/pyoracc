@@ -1,0 +1,41 @@
+&X002096 = BagM Beih. 02, 096
+#project: cams/gkab
+#atf: lang akk-x-stdbab
+#atf: use unicode
+@tablet
+@obverse
+1. {e₂}pa-pa-hi ša₂ {e₂}SAG
+#lem: +papāhu[cella]N$papāhi; ša[of]DET; +Reš[]TN$
+
+#note: SAG followed by erasure
+2. 1 ME 50 KUŠ₃ US₂-šu₂ SAG.KI-su 2 ME ŠU KUŠ₃
+#lem: n; mē[hundred]NU; n; ammat[unit]N; +šiddu[length]N$šiddišu; +pūtu[forehead//width]N$pūssu; n; mē[hundred]NU; šūši[sixty]NU; ammat[unit]N
+
+3. ŠE.NUMUN-šu₂ 1(BARIG) 2(BAN₂) 1 SILA₃
+#lem: zērišu[seed-measure]N; n; n; n; qû[unit]N +.
+
+$ single ruling
+4. {e₂}pa-pa-hi ša₂ {e₂}IRI₁₂.GAL
+#lem: papāhi[cella]N; ša[of]DET; +Irigal[]TN$
+
+5. US₂-šu₂ 2 ME ŠU KUŠ₃ SAG.KI-su 2 ME ŠU KUŠ₃
+#lem: šiddišu[length]N; n; mē[hundred]NU; šūši[sixty]NU; ammat[unit]N; pūssu[width]N; n; mē[hundred]NU; šūši[sixty]NU; ammat[unit]N
+
+6. ŠE.NUMUN-šu₂# 3(BARIG) PI 4 1/2 SILA₃
+#lem: zērišu[seed-measure]N; n; pānu[unit]N; n; n; qû[unit]N +.
+
+#note: 3 written over erasure
+@reverse
+$ reverse blank	
+
+@translation parallel en project
+@obverse
+1. The shrine of Reš:
+2. its length (is) 1 hundred, 50 cubits; its width (is) 2 hundred, sixty cubits;
+3. its seed-measure (is) 1 @pānu, 2 @sūtu (and) 1 @qû.
+$ single ruling
+4. The shrine of Irigal:
+5. its length (is) 2 hundred, sixty cubits; its width (is) 2 hundred, sixty cubits;
+6. its acreage (is) 3 @pānu (and) 4 (and) a 1/2 @qû.
+@reverse
+#note: reverse uninscribed

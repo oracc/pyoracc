@@ -246,6 +246,15 @@ class testParser(TestCase):
                      "Note to line."
                      )
 
+    def test_surface_note(self):
+        art = self.try_parse(
+            "@tablet\n" +
+            "@obverse\n" +
+            "#note: Note to surface.\n"
+        )
+        assert_equal(art.children[0].children[0].content,
+                     "Note to surface.")
+
     def test_loose_dollar(self):
         art = self.try_parse(
             "@tablet\n" +
@@ -446,6 +455,18 @@ class testParser(TestCase):
         assert_equal(art.children[0].children[0]
                         .children[0].notes[0].references[0],
                      "1")
+
+    def test_translation_poundnote(self):
+        art = self.try_parse(
+            "@tablet\n" +
+            "@translation parallel en project\n" +
+            "@obverse\n"
+            "1.    Year 63, Ṭebetu (Month X), night of day 2\n"
+            "#note: A note to the translation.\n"
+        )
+        assert_equal(art.children[0].children[0]
+                        .children[0].notes[0].content,
+                     "A note to the translation.")
 
     def test_default_surface(self):
         text = self.try_parse(

@@ -175,7 +175,7 @@ class AtfLexer(object):
             t.lexer.push_state('absorb')
         return t
 
-    def t_HASHID(self, t):
+    def t_INITIAL_parallel_labeled_HASHID(self, t):
         '\#[a-zA-Z][a-zA-Z0-9\[\]]+\:'
         # Note that \:? absorbs a trailing colon in protocol keywords
         t.value = t.value[1:-1]
