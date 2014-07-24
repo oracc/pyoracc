@@ -284,6 +284,15 @@ class AtfParser(object):
         p[0] = p[1]
         p[0].notes.append(p[2])
 
+    def p_line_interlinear_translation(self, p):
+        "line : line interlinear"
+        p[0] = p[1]
+        p[0].translation = p[2]
+
+    def p_interlinear(self, p):
+        "interlinear : TR ID newline"
+        p[0] = p[2]
+
     def p_line_link(self, p):
         "line : line link_reference_statement"
         p[0] = p[1]

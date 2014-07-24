@@ -53,7 +53,7 @@ class AtfLexer(object):
         'HEADING'
     ]
 
-    protocols = ['ATF', 'LEM', 'PROJECT', 'NOTE', "LINK", "KEY", "BIB"]
+    protocols = ['ATF', 'LEM', 'PROJECT', 'NOTE', "LINK", "KEY", "BIB", "TR"]
 
     protocol_keywords = ['LANG', 'USE', 'MATH', 'LEGACY', 'MYLINES', 'LEXICAL','UNICODE', 'DEF']
 
@@ -114,6 +114,7 @@ class AtfLexer(object):
         'key',
         'parallel',  # translation
         'labeled',   # translation
+        'interlinear', #translation
         'transctrl',
         'transpara'
     ]
@@ -212,6 +213,8 @@ class AtfLexer(object):
             t.lexer.push_state('key')
         if t.type == "LEM":
             t.lexer.push_state('lemmatize')
+        if t.type == "TR":
+            t.lexer.push_state('interlinear')
         if t.type in ['NOTE', 'PROJECT', "BIB"]:
             t.lexer.push_state('absorb')
         return t
@@ -257,7 +260,7 @@ class AtfLexer(object):
 
     # In the absorb, text, transctrl and lemmatize states,
     # a newline returns to the base state
-    def t_absorb_text_lemmatize_transctrl_key_NEWLINE(self, t):
+    def t_absorb_text_lemmatize_transctrl_interlinear_key_NEWLINE(self, t):
         r'[\n\r]'
         t.lexer.lineno += 1
         t.lexer.pop_state()
@@ -306,7 +309,7 @@ class AtfLexer(object):
     translation_regex = white + "[^\^\n\r]+" + white
 
     @lex.TOKEN(translation_regex)
-    def t_parallel_ID(self,t):
+    def t_parallel_interlinear_ID(self,t):
         t.value = t.value.strip()
         return t
 

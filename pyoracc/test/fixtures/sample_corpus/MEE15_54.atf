@@ -1,0 +1,82 @@
+&P244115 = MEE 15, 054
+#project: dcclt/ebla
+#atf: use unicode
+#atf: use legacy
+#bib: 	MEE 15 54
+#Edition	PICCHIONI 1997a:134
+#Field number	TM.75.G.5280
+#Findspot	Tell Mardīh / Ebla - Palace G, L.2769
+#part of P242427 and P244115
+@reverse
+@column 1'
+$ beginning of column broken
+1'. ⸢x⸣
+#tr: ...
+#(1')
+2'. ⸢x⸣
+#tr: ...
+#(2')
+3'. ⸢x⸣
+#tr: ...
+#(3')
+4'. ⸢x⸣
+#tr: ...
+#(4')
+$ rest of column broken
+@column 2'
+$ beginning of column broken
+
+$ (section di)
+1'. sag₇-di
+#tr: ...
+#(5') = EBK A 768, EBL-810
+2'. {+sá}sag₇-sag₇!(DI)
+#tr: the act of striking with a stick; the act of shooting, throwing
+#(6') = EBK A 766, EBL-808
+3'. di-di 
+#tr: move (or the like)
+#(7') = EBK A 763, EBL-805
+4'. ŋeštug-ŋeštug{sar} 
+#tr: (a kind of plant)
+#(8')
+5'. al₆-GURUŠ(LAK709b)? 
+#tr: ...
+#note: v.II':5': PICCHIONI 1997a:134: al₆-kal.
+
+#(9')
+$ rest of column broken
+@column 3'
+$ beginning of column broken
+
+$ (section na)
+1'. na-ri 
+#tr: to muster, take care of
+#(10') = EBK A 832, EBL-877
+2'. na-ri-ga 
+#tr: ...
+#(11')
+$ (section kinsmen)
+3'. dumu-mu 
+#tr: son
+#(12')
+4'. a-mu
+#tr: father; ancestor
+#(13') = EBK A 578, EBL-603
+5'. ama-mu 
+#tr: mother
+#(14') = EBK A 970, EBL-1015
+$ rest of column broken
+@column 4'
+$ beginning of column broken
+
+$ (section kaskal)
+1'. ⸢kas₄?⸣-di 
+#tr: probably to travel with the caravan
+#(15')
+2'. za-gir₅ 
+#tr: (a kind of insect)
+#note: v.IV':1'-2': reconstruction based on MEE 15 34 r.V':3', 5' (PICCHIONI 1997a:134: ⸢x⸣-di / [...]-a-kas₄).
+
+#(16') = EBK A 1027, EBL-1073
+
+$ rest of column broken

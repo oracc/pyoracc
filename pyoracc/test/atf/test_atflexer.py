@@ -297,6 +297,15 @@ class testLexer(TestCase):
             [None, "labeled", "en", "project", None,
              None, "t.e.", "1"])
 
+    def test_interlinear_translation(self):
+        self.compare_tokens(
+            "@tablet\n" + 
+            "1'. ⸢x⸣\n" +
+            "#tr: English\n",
+            ["TABLET", "NEWLINE",
+             "LINELABEL", "ID", "NEWLINE",
+             "TR", "ID", "NEWLINE"])
+
     def test_note_internalflag(self):
         self.compare_tokens(
             "@note Hello James's World",

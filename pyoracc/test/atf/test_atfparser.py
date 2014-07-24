@@ -760,6 +760,14 @@ class testParser(TestCase):
         assert_equal(len(multilingual.lines["sb"].words),3)
         assert_equal(len(multilingual.lines["sb"].lemmas),3)
 
+    def test_interlinear_translation(self):
+        text=self.try_parse(
+            "@tablet\n" + 
+            "1'. ⸢x⸣\n" +
+            "#tr: English\n"
+        )
+        line=text.children[0].children[0]
+        assert_equal(line.translation, "English")
 
     def test_translation_heading(self):
         text=self.try_parse(
