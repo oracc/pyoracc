@@ -171,7 +171,7 @@ class AtfLexer(object):
         return t
 
     def t_INITIAL_parallel_labeled_ATID(self, t):
-        '\@[a-zA-Z][a-zA-Z0-9\[\]]+\+?'
+        '\@[a-zA-Z][a-zA-Z0-9\[\]]*\+?'
         t.value = t.value[1:]
 
         t.type = self.resolve_keyword(t.value,
@@ -240,6 +240,7 @@ class AtfLexer(object):
                                       AtfLexer.structures +
                                       AtfLexer.translation_keywords +
                                       AtfLexer.long_argument_structures, 'ID',
+                                      extra={'fragments':"FRAGMENT"}
                                       )
 
         if t.type in ['LANG']:

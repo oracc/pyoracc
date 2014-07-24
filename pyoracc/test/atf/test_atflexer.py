@@ -562,3 +562,15 @@ class testLexer(TestCase):
             ["REVERSE","NEWLINE"] +
             ["NOTE","ID","NEWLINE"]
         )
+
+    def test_milestone(self):
+        self.compare_tokens(
+            "@tablet\n" +
+            "@obverse\n" +
+            "@m=locator catchline\n" +
+            "16'. si-i-ia-a-a-ku\n",
+            ["TABLET","NEWLINE",
+             "OBVERSE","NEWLINE",
+             "M", "EQUALS", "ID", "NEWLINE",
+             "LINELABEL", "ID", "NEWLINE"]
+        )

@@ -12,8 +12,10 @@ from ...model.oraccobject import OraccObject
 from ...model.oraccnamedobject import OraccNamedObject
 from ...model.multilingual import Multilingual
 from ...model.composite import Composite
+from ...model.milestone import Milestone
 from ...atf.atfyacc import AtfParser
 from ...atf.atflex import AtfLexer
+from ...model.ruling import Ruling
 from nose.tools import assert_in, assert_equal, assert_is_instance
 from itertools import izip, repeat
 
@@ -295,6 +297,18 @@ class testParser(TestCase):
         # Should default to an obverse surface
         assert_equal(art.children[0].objecttype,"obverse")
         assert_equal(art.children[0].children[0].count, 1)
+
+    def test_link_on_surface_not_line(self):
+        art = self.try_parse(
+            "@tablet\n" + 
+            "4'. zal-bi a-ri-[a]\n" +
+            "$single ruling\n" +
+            ">> A Seg.2, 33\n"
+        )
+        obverse=art.children[0]
+        assert_is_instance(obverse.children[0],Line)
+        assert_is_instance(obverse.children[1],Ruling)
+        assert_is_instance(obverse.children[2],LinkReference)
 
     def test_ruling_on_labeled_translation(self):
         art = self.try_parse(
@@ -736,7 +750,9 @@ class testParser(TestCase):
             ">> A o ii 10 - o ii 15\n" +
             "2. Some more text\n"
         )
-        link = text.children[0].children[0].links[0]
+        line = text.children[0].children[0]
+        assert_is_instance(line, Line)
+        link = line.links[0]
         assert_equal(link.target, "A")
         assert_equal(link.operator, ">>")
         assert_equal(link.label, ["o", "ii", "10"])
@@ -784,3 +800,23 @@ class testParser(TestCase):
             "@h1 A heading\n"
         )
         assert_equal(text.children[0].objecttype,'h1')
+
+    def test_milestone(self):
+        text=self.try_parse(
+            "@tablet\n" +
+            "@obverse\n" +
+            "@m=locator catchline\n" +
+            "16'. si-i-ia-a-a-ku\n",
+        )
+        assert_is_instance(text.children[0].children[0],Milestone)
+        assert_is_instance(text.children[0].children[1],Line)
+
+    def test_colophon(self):
+        text=self.try_parse(
+            "@tablet\n" +
+            "@obverse\n" +
+            "@colophon\n" +
+            "16'. si-i-ia-a-a-ku\n",
+        )
+        assert_is_instance(text.children[0].children[0],Milestone)
+        assert_is_instance(text.children[0].children[1],Line)

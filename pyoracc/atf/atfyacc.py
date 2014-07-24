@@ -12,7 +12,7 @@ from ..model.state import State
 from ..model.translation import Translation
 from ..model.composite import Composite
 from ..model.multilingual import Multilingual
-
+from ..model.milestone import Milestone
 
 class AtfParser(object):
     tokens = AtfLexer.tokens
@@ -160,7 +160,8 @@ class AtfParser(object):
 
     def p_object_label(self, p):
         '''object_specifier : FRAGMENT ID
-                            | OBJECT ID'''
+                            | OBJECT ID
+                            | TABLET REFERENCE'''
         p[0] = OraccNamedObject(p[1], p[2])
 
     def p_object(self, p):
@@ -210,15 +211,7 @@ class AtfParser(object):
                               | LEFT
                               | RIGHT
                               | TOP
-                              | BOTTOM
-                              | CATCHLINE
-                              | COLOPHON
-                              | DATE
-                              | EDGE
-                              | SIGNATURES
-                              | SIGNATURE
-                              | SUMMARY
-                              | WITNESSES'''
+                              | BOTTOM'''
         p[0] = OraccObject(p[1])
 
     def p_surface_label(self, p):
@@ -236,7 +229,9 @@ class AtfParser(object):
     def p_surface_element_line(self, p):
         """surface_element : line %prec LINE
                            | dollar
-                           | note_statement"""
+                           | note_statement
+                           | link_reference_statement %prec LINE
+                           | milestone"""
         p[0] = p[1]
 
     def p_dollar(self, p):
@@ -346,6 +341,26 @@ class AtfParser(object):
         "lemma_list : LEM ID"
         p[0] = [p[2]]
 
+
+    def p_milestone(self, p):
+        "milestone : milestone_name newline"
+        p[0] = p[1]
+
+    def p_milestone_name(self, p):
+        "milestone_name : M EQUALS ID"
+        p[0] = Milestone(p[3])
+
+    def p_milestone_brief(self,p):
+        """milestone_name : CATCHLINE
+                          | COLOPHON
+                          | DATE
+                          | EDGE
+                          | SIGNATURES
+                          | SIGNATURE
+                          | SUMMARY
+                          | WITNESSES"""
+        p[0] = Milestone(p[1])
+
     def p_lemma_id(self, p):
         "lemma_list : lemma_list SEMICOLON ID"
         p[0] = p[1]
@@ -416,7 +431,7 @@ class AtfParser(object):
 
     def p_single_strict(self, p):
         """state_description : LACUNA
-                             | TRACES """
+                             | state"""
 
         p[0]=State(p[1])
 
@@ -629,11 +644,12 @@ class AtfParser(object):
         ('nonassoc', 'TABLET', 'ENVELOPE', 'PRISM', 'BULLA', 'FRAGMENT',
             'OBJECT', 'MULTI'),
         ('nonassoc', 'OBVERSE', 'REVERSE', 'LEFT', 'RIGHT', 'TOP', 'BOTTOM',
-            'CATCHLINE', 'COLOPHON', 'DATE', 'SIGNATURES',
-            'SIGNATURE', 'SUMMARY',
-            'WITNESSES', 'FACE',
+            'FACE',
             'SURFACE', 'EDGE', 'COLUMN', 'SEAL', 'HEADING', 'LINE'),
-        ('nonassoc', "LINELABEL", "DOLLAR", "LEM", "NOTE", "PARBAR", "TO", "FROM"),
+        ('nonassoc', "LINELABEL", "DOLLAR", "LEM", "NOTE",  'CATCHLINE',
+            'COLOPHON', 'DATE', 'SIGNATURES',
+            'SIGNATURE', 'SUMMARY',
+            'WITNESSES',"PARBAR", "TO", "FROM"),
         # HIGH precedence
     )
 
