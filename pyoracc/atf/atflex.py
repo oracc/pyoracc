@@ -6,6 +6,8 @@ class AtfLexer(object):
 
     def _keyword_dict(self, tokens, extra):
         keywords= {token.lower(): token for token in tokens}
+        firstcap= {token.title(): token for token in tokens}
+        keywords.update(firstcap)
         keywords.update(extra)
         return keywords
 
@@ -42,7 +44,6 @@ class AtfLexer(object):
         'M',
         'COMPOSITE',
         'LABEL',
-        'END'
     ]
 
     long_argument_structures = [
@@ -54,7 +55,7 @@ class AtfLexer(object):
 
     protocols = ['ATF', 'LEM', 'PROJECT', 'NOTE', "LINK", "KEY"]
 
-    protocol_keywords = ['LANG', 'USE', 'MATH', 'LEGACY', 'UNICODE', 'DEF']
+    protocol_keywords = ['LANG', 'USE', 'MATH', 'LEGACY', 'MYLINES', 'LEXICAL','UNICODE', 'DEF']
 
     translation_keywords = ['PARALLEL', 'PROJECT', "LABELED"]
 
@@ -89,7 +90,8 @@ class AtfLexer(object):
         'TO',
         'PARBAR',
         'OPENR',
-        'CLOSER'
+        'CLOSER',
+        'COMMA'
     ]
 
     keyword_tokens = list(set(
@@ -127,6 +129,7 @@ class AtfLexer(object):
     t_MINUS = "\-"
     t_FROM = "\<\<"
     t_TO = "\>\>"
+    t_COMMA = "\,"
     t_PARBAR = "\|\|"
 
 
@@ -177,6 +180,7 @@ class AtfLexer(object):
                                         "h2":"HEADING",
                                         "h3":"HEADING",
                                         "label+":"LABEL",
+                                        "end":"END"
                                       },
                                       )
 
@@ -232,7 +236,7 @@ class AtfLexer(object):
                                       AtfLexer.structures +
                                       AtfLexer.translation_keywords +
                                       AtfLexer.long_argument_structures, 'ID',
-                                      extra={'Lacuna':'LACUNA'})
+                                      )
 
         if t.type in ['LANG']:
             t.lexer.push_state('absorb')

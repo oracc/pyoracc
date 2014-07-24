@@ -1,0 +1,105 @@
+&P363326 = BagM Beih. 02, 062
+#project: cams/gkab
+
+#atf:lang akk-x-stdbab
+#atf: use unicode
+
+@tablet
+
+@surface flake
+
+$  start of surface missing
+
+1'. [...] x [...]
+#lem: u; u; u
+
+2'. [...] E₂?#.GAL?# UŠ $KA?# [...]
+#lem: u; ēkallu[palace]N; +redû[accompany//appropriate]V$ireddi +.; u; u +.
+
+3'. [...] ša₂# 15 UGU ša₂ 2.30 U₅ [...] x [...]
+#lem: u; ša[of]DET; imitti[right]N; eli[over]PRP; ša[of]DET; šumēli[left]N; +rakbu[riding//superimposed]AJ$rakib; u; u; u
+
+4'. [...] LUGAL# AŠ#.TE# AD-šu₂ DAB{+bat} E₂.[GAL] NUN BIR{+ah}
+#lem: u; šarru[king]N; kussi[throne]N; abišu[father]N; iṣabbat[seize]V +.; ēkal[palace]N; rubê[prince]N; issappah[scatter]V +.
+
+5'. [...] GUB₃# UGU <ša₂> ZA₃ U₅-ma 4? GIR₃-ME-šu₂
+#lem: u; šumēli[left]N; eli[over]PRP; ša[of]DET; imitti[right]N; +rakbu[riding//superimposed]AJ$rakibma; n; šēpētušu[foot]N
+
+6'. [...] x AŠ.TE DAB{+bat}
+#lem: u; u; kussâ[throne]N; iṣabbat[seize]V +.
+
+7'. [...] DUMU# LUGAL AŠ.TE DAB{+bat}
+#lem: u; mār[son]N; šarri[king]N; kussâ[throne]N; iṣabbat[seize]V +.
+
+8'. [...] x DUMU LUGAL DUMU-ME-šu AŠ.TE# DAB{+bat}
+#lem: u; u; mār[son]N; šarri[king]N; +māru[son]N$mārūšu; kussâ[throne]N; iṣabbat[seize]V +.
+
+## Because of the phonetic complement, verb is singular
+
+9'. [...] x [...] LUGAL ia-a-bi-šu₂ ŠU-su KUR{+ad₂?#}
+#lem: u; u; u; šarru[king]N; +ayyābu[enemy]N$yābīšu; qāssu[hand]N; ikaššad[conquer]V +.
+
+10'. [...] $AN? [...] x INIM-su AŠ.TE [...]
+#lem: u; u; u; u; +awātu[word//affair(s)]N$amāssu; kussâ[throne]N; u +.
+
+11'. [...] SAG#.DU-su# x [x x (x)] DUMU DUMU.MUNUS AŠ.TE [...]
+#lem: u; qaqqassu[head]N; u; u; u; u; mār[son]N; +mārtu[daughter//(young) girl]N$mārti; kussâ[throne]N; u +.
+
+12'. [...] SAG#.DU#-su bu-di-šu₂ IGI LUGAL DUMU-ME?-šu₂ x [...]
+#lem: u; qaqqassu[head]N; +būdu[shoulder]N$būdišu; inaṭṭal[face]V; šarru[king]N; +māru[son]N$mārūšu; u; u +.
+
+13'. [...] KUN-su ne₂-kel-mu LUGAL DUMU#-[šu₂ ...]
+#lem: u; zibbassu[tail]N; nekelmû[frowning]AJ; šarru[king]N; māršu[son]N; u +.
+
+14'. [...] ŠA₃?#-ME E₃ lum-nu GAL₂ [...]
+#lem: u; +qerbu[centre//intestines]N$qerbū; ūṣi[emerge]V; lumnu[evil]N; ibašši[exist]V; u +.
+
+15'. [...] x $AD? $ŠU $MIN? NUN KUR DAB? [...]
+#lem: u; u; u; u; u; rubû[prince]N; māta[land]N; iṣabbat[seize]V; u +.
+
+16'. [...] $PA?# $GAL?# [...]
+#lem: u; u; u; u
+
+17'. [...] MURGU-ME-šu₂ [...]
+	
+#lem: u; +būdu[shoulder]N$būdūšu; u +.
+
+$ end of surface missing
+
+
+@translation labeled en project
+
+@label flake 1'
+[...] ... [...]
+@label flake 2'
+[...] the palace will appropriate [...]; [...].
+@label flake 3'
+[...] the right [...] is superimposed on the left [...] ... [...].
+@label flake 4'
+[...]  the king will seize his father's throne; the prince's palace will be scattered.
+@label flake 5' - flake 6'
+[... of] the left [...] is superimposed on (the one) of the right and his @?4?@ feet [...] ... will seize the throne.
+@label flake 7'
+[...] the king's son will seize the throne.
+@label flake 8'
+[...] as for the king's son, his sons will seize the throne.
+@label flake 9'
+[...] his affair [...] the king (lit. his hand) will conquer his enemies.
+@label flake 10'
+[...] ... his affair [...] the throne [...]
+@label flake 11'
+[...] @?its?@ head ... [...] a young girl's son will [...] the throne.
+@label flake 12'
+[...] @?its?@ head faces @?its?@ shoulder: as for the king, his sons ... [...].
+@label flake 13'
+[...] is frowning at its tail: as for the king, his son [...].
+@label flake 14'
+[...] the intestines emerge: there will be evil [...].
+@label flake 15'
+[...] ... the prince will seize the land [...].
+@label flake 16'
+[...] ... [...]
+@label flake 17'
+[...] @?its shoulders?@.
+
+$ end of surface missing

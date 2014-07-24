@@ -21,4 +21,4 @@ def anzu():
 def sample_file(name):
     return codecs.open(os.path.join(
                        os.path.dirname(here), 'sample_corpus', name + ".atf"),
-                       encoding='utf-8').read()
+                       encoding='utf-8-sig').read()

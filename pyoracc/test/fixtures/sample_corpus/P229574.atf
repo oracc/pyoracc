@@ -1,0 +1,42 @@
+﻿&P229574 = MSL 13, 14 Q1
+#project: dcclt/obale
+#atf: use lexical
+#atf: use legacy
+#atf: use unicode
+#link: def A = dcclt/obale:Q000050 = OB Nippur Izi
+#Note: CBS 14149; Type II tablet; Teacher's copy has glosses; student copy effaced, possibly uninscribed (traces from previous exercise?)
+
+@tablet
+@obverse
+@column 1
+
+1.	{{%a ⸢ka⸣-ba-tum}} %s ur₅
+>>A Tab.I, 102
+2.	{{%a ⸢x⸣-⸢da⸣-⸢tum⸣}} %s ur₅
+>>A Tab.I, 103
+3.	{{%a [...]-⸢x⸣-⸢tum?⸣}} %s mur
+>>A Tab.I, 104
+4.	{{%a [...]-⸢x⸣}} %s ur₅
+>>A Tab.I, 105
+5.	{{%a [...]-⸢x⸣}} %s ⸢ur₅⸣
+>>A Tab.I, 109b
+6.	{{%a ⸢x⸣-[...]-⸢x⸣}} %s kin₂
+>>A Tab.I, 106
+7.	{{%a pi-⸢e?⸣-ṣu}} %s ara₃
+>>A Tab.I, 107
+8.	{{%a ha-ma-šum}} %s |HIxAŠ₂|
+>>A Tab.I, 108
+9.	{{%a ru?-⸢x⸣}} %s ur₅
+>>A Tab.I, 109c
+10.	⸢ur₅⸣-gin₇
+>>A Tab.I, 111
+11.	[...]-gin₇-nam
+>>A Tab.I, 113
+$ double line ruling
+
+@column 2
+$ traces
+# lined
+
+@reverse
+$ (metrology to be edited)

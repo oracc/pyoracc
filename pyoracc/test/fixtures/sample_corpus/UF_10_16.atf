@@ -1,0 +1,48 @@
+&P405422 = UF 10, 16
+#project: rimanum
+#atf: use mylines
+#atf: lang akk-x-oldbab
+#atf: use math
+#atf: use unicode
+@tablet
+@obverse
+1. 2(BARIG)  3(BAN₂) ZI₃ US₂ / a-na GEŠBUN
+#lem: n; n; qēmu[flour]N; US₂[lesser quality]AJ; ana[to//for]PRP'PRP$ana; tākulti[allocation]N
+
+2. LU₂ I₃.SI.IN{ki}
+#lem: awīl[man]N; Isin[1]SN
+
+3. LU₂ mu-ti-a-bal{ki}
+#lem: awīl[man]N; Mutiabalu[1//1]SN'SN$Mutiabalum
+
+4. u₃ a-hi-a-tim
+#lem: u[and]CNJ; ahītu[outside//other]N'N$ahiātim
+
+5. ZI.GA
+#lem: ṣītu[expenditure]N
+
+@reverse
+1. ŠA₃ E₂ A.SI.RUM
+#lem: libbu[inner body//inside]N$libbu; bīt[house]N; asīrī[prisoner of war]N
+
+2. NIG₂.ŠU {d}EN.ZU-še-mi
+#lem: ša[of]DET$ša&qātu[authority]N$qāt; Sîn-šeme[00]PN
+
+3. {iti}ZIZ₂.A U₄ 22-KAM
+#lem: Šabātu[1]MN; ūmu[day]N$ūmu; n
+
+4. %sux mu ri-im-{d}a-nu-um lugal-e
+#lem: mu[year]N; Rīm-Anum[1]RN; lugal[king]N
+
+@translation labeled en project
+@label o 1 - o 4
+150 liters of lesser-quality flour for the ŋešbun-allocation of the man of Isin, the man of Mutiabalum, and dependents.
+@label o 5 - r 1
+Issued at the house of prisoners of war.
+@label r 2
+Under the authority of Sîn-šeme.
+@label r 3 - r 4
+RīA 1/xi/22.
+
+
+

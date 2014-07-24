@@ -50,16 +50,22 @@ class AtfParser(object):
         p[0] = p[1]
 
     def p_unicode(self, p):
-        "unicode : ATF USE UNICODE newline"
+        "skipped_protocol : ATF USE UNICODE newline"
 
     def p_math(self, p):
-        "math : ATF USE MATH newline"
+        "skipped_protocol : ATF USE MATH newline"
 
     def p_legacy(self, p):
-        "math : ATF USE LEGACY newline"
+        "skipped_protocol : ATF USE LEGACY newline"
+
+    def p_mylines(self, p):
+        "skipped_protocol : ATF USE MYLINES newline"
+
+    def p_lexical(self, p):
+        "skipped_protocol : ATF USE LEXICAL newline"
 
     def p_key(self, p):
-        "key : KEY ID EQUALS ID newline"
+        "skipped_protocol : KEY ID EQUALS ID newline"
 
     def p_link(self, p):
         "link : LINK DEF ID EQUALS ID EQUALS ID newline"
@@ -70,15 +76,7 @@ class AtfParser(object):
         p[0] = p[3]
 
     def p_text_math(self, p):
-        "text : text math"
-        p[0] = p[1]
-
-    def p_text_key(self,p):
-        "text : text key"
-        p[0] = p[1]
-
-    def p_text_unicode(self, p):
-        "text : text unicode"
+        "text : text skipped_protocol"
         p[0] = p[1]
 
     def p_text_link(self, p):
@@ -360,7 +358,10 @@ class AtfParser(object):
     def p_ruling(self, p):
         """ruling : DOLLAR SINGLE RULING newline
                   | DOLLAR DOUBLE RULING newline
-                  | DOLLAR TRIPLE RULING newline """
+                  | DOLLAR TRIPLE RULING newline 
+                  | DOLLAR SINGLE LINE RULING newline
+                  | DOLLAR DOUBLE LINE RULING newline
+                  | DOLLAR TRIPLE LINE RULING newline"""
 
         counts = {
             'single': 1,
@@ -413,8 +414,10 @@ class AtfParser(object):
                              | brief_state_desc"""
         p[0] = p[1]
 
-    def p_lacuna(self, p):
-        "state_description : LACUNA"
+    def p_single_strict(self, p):
+        """state_description : LACUNA
+                             | TRACES """
+
         p[0]=State(p[1])
 
     def p_plural_state_description(self, p):
@@ -576,14 +579,16 @@ class AtfParser(object):
         p[0] = LinkReference(p[1], p[2])
 
     def p_linkreference_label(self, p):
-        """link_reference : link_reference ID"""
+        """link_reference : link_reference ID
+                          | link_reference COMMA ID"""
         p[0] = p[1]
-        p[0].label.append(p[2])
+        p[0].label.append(list(p)[-1])
 
     def p_link_range_reference_label(self, p):
-        """link_range_reference : link_range_reference ID"""
+        """link_range_reference : link_range_reference ID
+                                | link_range_reference COMMA ID"""
         p[0] = p[1]
-        p[0].rangelabel.append(p[2])
+        p[0].rangelabel.append(list(p)[-1])
 
     def p_link_range_reference(self, p):
         """link_range_reference : link_reference MINUS"""

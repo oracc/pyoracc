@@ -59,6 +59,24 @@ class testParser(TestCase):
         # No assertion, we're not parsing keys yet
         assert False
 
+    @skip("No support for mylines protocol")
+    def test_mylines_protocol(self):
+        text = self.try_parse(
+            "&X001001 = JCS 48, 089\n" +
+            "#atf: use mylines\n"
+        )
+        # No assertion, we're not parsing mylines yet
+        assert False
+
+    @skip("No support for lexical protocol")
+    def test_lexical_protocol(self):
+        text = self.try_parse(
+            "&X001001 = JCS 48, 089\n" +
+            "#atf: use lexical\n"
+        )
+        # No assertion, we're not parsing keys yet
+        assert False
+
     def test_text_protocol_language(self):
         text = self.try_parse(
             "&X001001 = JCS 48, 089\n" +
@@ -260,6 +278,14 @@ class testParser(TestCase):
             "$ ruling\n"
         )
         assert_equal(art.children[0].children[0].count, 1)
+
+    def test_line_ruling(self):
+        art = self.try_parse(
+            "@tablet\n" +
+            "@obverse\n" +
+            "$ double line ruling\n"
+        )
+        assert_equal(art.children[0].children[0].count, 2)
 
     def test_ruling_on_object_no_surface(self):
         art = self.try_parse(
@@ -678,6 +704,19 @@ class testParser(TestCase):
         assert_equal(link.description, "TCL 06, 44")
 
     def test_link_reference_simple(self):
+        text = self.try_parse(
+            "@tablet\n" +
+            "1. Some text\n" +
+            ">>A Tab.I, 102\n" +
+            "2. Some more text\n"
+        )
+        link = text.children[0].children[0].links[0]
+        assert_is_instance(link, LinkReference)
+        assert_equal(link.target, "A")
+        assert_equal(link.operator, ">>")
+        assert_equal(link.label, ["Tab.I", "102"])
+
+    def test_link_reference_comma(self):
         text = self.try_parse(
             "@tablet\n" +
             "1. Some text\n" +
