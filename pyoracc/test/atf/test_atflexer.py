@@ -177,6 +177,19 @@ class testLexer(TestCase):
              None, "o", "14-15", None, "o", "20", None]
         )
 
+    def test_translation_labeled_atlabel(self):
+        self.compare_tokens(
+            "@translation labeled en project\n" +
+            "@(o 20) You strew all (kinds of) seed.\n" +
+            "@(o i 2) No-one will occupy the king of Akkad's throne.\n\n",
+            ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
+             "OPENR","ID", "ID", "CLOSER","ID","NEWLINE", 
+             "OPENR","ID", "ID","ID","CLOSER","ID","NEWLINE",],
+            [None, "labeled", "en", "project", None,
+             None, "o", "20", None, "You strew all (kinds of) seed.", None,
+             None, "o", "i", "2", None, "No-one will occupy the king of Akkad's throne.", None,]
+        )
+
     def test_translation_range_label_prime(self):
         self.compare_tokens(
             "@translation labeled en project\n" +
@@ -215,7 +228,6 @@ class testLexer(TestCase):
              "ID","NEWLINE"]
         )
 
-    @skip("Disabled as docs say should not work.")
     def test_translation_no_blank_line_in_labeled_translation(self):
         # This functionality is expressly forbidden at 
         # http://build.oracc.org/doc2/help/editinginatf/translations/index.html

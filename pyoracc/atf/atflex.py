@@ -86,7 +86,9 @@ class AtfLexer(object):
         'MINUS',
         'FROM',
         'TO',
-        'PARBAR'
+        'PARBAR',
+        'OPENR',
+        'CLOSER'
     ]
 
     keyword_tokens = list(set(
@@ -176,13 +178,18 @@ class AtfLexer(object):
                                       },
                                       )
 
-
         if t.type == "LABEL":
             t.lexer.push_state("transpara")
             t.lexer.push_state("transctrl")
 
         if t.type in AtfLexer.long_argument_structures + ["NOTE"]:
             t.lexer.push_state('absorb')
+        return t
+
+    def t_labeled_OPENR(self, t):
+        "\@\("
+        t.lexer.push_state("transpara")
+        t.lexer.push_state("transctrl")
         return t
 
     def t_INITIAL_parallel_labeled_HASHID(self, t):
@@ -255,6 +262,11 @@ class AtfLexer(object):
 
 
     t_transctrl_MINUS = "\-\ "
+    
+    def t_transctrl_CLOSER(self,t):
+        "\)"
+        t.lexer.pop_state()
+        return t
 
     #--- RULES FOR THE ABSORB STATE ---
 
@@ -286,14 +298,25 @@ class AtfLexer(object):
         return t
 
     def t_transpara_ID(self,t):
-        r'([^\^\n\r]|([\n\r](?!\s*[\n\r])))+'
+        r'([^\^\n\r]|([\n\r](?!\s*[\n\r])(?!(\@label|\@\())))+'
         t.value = t.value.strip()
         return t
     
+    # Translation paragraph state is ended by a double newline
     def t_transpara_NEWLINE(self,t):
         r'[\n\r]\s*[\n\r]+'    
         t.lexer.lineno += t.value.count("\n")
         t.lexer.pop_state()
+        return t
+
+    # BUT, exceptionally to fix existing bugs in active members of corpus,
+    # it is ended by an @label or an @(), and these tokens are not absorbed by this token
+    # Translation paragraph state is ended by a double newline
+    def t_transpara_MAGICNEWLINE(self,t):
+        r'[\n\r](?=(\@label|\@\())'    
+        t.lexer.lineno += 1
+        t.lexer.pop_state()
+        t.type = "NEWLINE"
         return t
 
 

@@ -476,6 +476,21 @@ class testParser(TestCase):
                         .children[0].notes[0].content,
                      "A note to the translation.")
 
+    def test_translation_labeled_atlabel(self):
+        art = self.try_parse(
+            "@tablet\n" +
+            "@translation labeled en project\n" +
+            "@(o 20) You strew all (kinds of) seed.\n" +
+            "@(o i 2) No-one will occupy the king of Akkad's throne.\n")
+        l1= art.children[0].children[0]
+        assert_equal(l1.label.label,["o","20"])
+        assert_equal(l1.words[0],
+                     "You strew all (kinds of) seed.")
+        l2= art.children[0].children[1]
+        assert_equal(l2.label.label,["o","i","2"])
+        assert_equal(l2.words[0],
+                     "No-one will occupy the king of Akkad's throne.")
+
     def test_default_surface(self):
         text = self.try_parse(
             "&Q002769 = SB Anzu 1\n" +

@@ -36,7 +36,8 @@ texts=[
     ['afo','X002003','AfO 14, Taf. VI'],
     ['brm_4_6','P363407','BRM 4, 06'],
     ['brm_4_19','P363411','BRM 4, 19'], 
-    #['cm_31_139','P415763','CM 31, 139'] - Skipped because of double-blank issue
+    ['cm_31_139','P415763','CM 31, 139'],
+    ['ctn_4_006','P363421','CTN 4, 006']
     ]
 
 def test_texts():

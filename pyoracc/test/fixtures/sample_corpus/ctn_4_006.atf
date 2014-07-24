@@ -1,0 +1,147 @@
+&P363421 = CTN 4, 006
+#project: cams/gkab
+#atf: use unicode
+#atf: lang akk-x-stdbab
+@tablet
+@obverse
+@column 1
+1. [* ina] {iti#}AB U₄ 1-[KAM₂ 20] KAN₅ LUGAL ARAD#-MEŠ-šu₂ GAZ#-MEŠ#-šu₂
+#lem: ina[in]PRP; Ṭebetu[1]MN; ūm[day]N; n; šamšu[sun]N; adir[eclipsed]AJ; šarru[king]N; ardūšu[slave]N; idukkūšu[kill]V +.
+
+2. [* U₄] 9@v#-KAM₂# AŠ#.TE? LUGAL URI{ki#} mam-ma TUŠ{+ab}
+#lem: ūm[day]N; n; kussi[throne]N; šar[king]N; Akkad[1]SN; mamma[nobody]XP; uššab[sit (down)]V +.
+
+3. [* U₄] 11-KAM₂ NUN# KUR# BI BAL{+su}
+#lem: ūm[day]N; n; rubû[prince]N; mātu[land]N; šī[that]IP; ibbalakkassu[revolt]V +.
+
+4. [*] U₄ 13-KAM₂ LUGAL URI{ki} UŠ₂
+#lem: ūm[day]N; n; šar[king]N; Akkad[1]SN; imât[die]V +.
+
+5. *# U₄ 14-KAM₂ BAL# GAR-ma LUGAL URI{ki} UŠ₂
+#lem: ūm[day]N; n; +nabalkattu[crossing//uprising]N$; iššakkanma[take place]V; šar[king]N; Akkad[1]SN; imât[die]V +.
+
+6. x {giš}GU.ZA# x x KI.MIN LUGAL URI{ki} KI.MIN LUGAL ELAM.MA{ki} UŠ₂
+#lem: u; kussû[throne]N; u; u; šanîš[alternatively]AV; šar[king]N; Akkad[1]SN; šanîš[alternatively]AV; šar[king]N; Elam[1]GN; imât[die]V +.
+
+7. * U₄ 15#-KAM₂ LUGAL# URI#{ki#} ina HI!(U).GAR ŠUB{+ut} <<x>> KI.MIN LUGAL SU.BIR₄#{ki#} UŠ₂
+#lem: ūm[day]N; n; šar[king]N; Akkad[1]SN; ina[in]PRP; bārti[rebellion]N; imaqqut[fall]V +.; šanîš[alternatively]AV; šar[king]N; Subartu[1]GN; imât[die]V +.
+
+8. * [U₄ 16]-KAM₂# LUGAL# SU.BIR₄{ki} UŠ₂
+#lem: ūm[day]N; n; šar[king]N; Subartu[1]GN; imât[die]V +.
+
+9. * U₄# [18-KAM] LUGAL# SU#.BIR₄#{ki} UŠ₂ KUR!(MAN) NINDA nap-ša₂ GU₇ KI.MIN ŠEG₃-MEŠ ILLU-MEŠ LA₂-MEŠ
+#lem: ūm[day]N; n; šar[king]N; Subartu[1]GN; imât[die]V +.; mātu[land]N; akala[food]N; napša[plentiful]AJ; ikkal[eat]V +.; šanîš[alternatively]AV; zunnū[rain]N; mīlū[flood]N; imaṭṭû[decrease]V +.
+
+10. BURU₁₄# KUR TUR KI.<MIN> LUGAL# MAR.TU{ki} UŠ₂
+#lem: ebūr[harvest]N; māti[land]N; iṣehher[diminish]V +.; šanîš[alternatively]AV; šar[king]N; Amurru[1]GN; imât[die]V +.
+
+11. [...] X u $E x SI#.SA₂#?-MEŠ ŠEG₃-MEŠ
+#lem: u; X; u[and]CNJ; u; u; +ešēru[go well//thrive]V$išširū +.; zunnū[rain]N
+
+12. [...]-ME LA₂-MEŠ {giš}ŠE#.[GIŠ].I₃#? KI.MIN BURU₁₄ TUR
+#lem: u; imaṭṭû[decrease]V +.; šamaššammū[sesame]N; šanîš[alternatively]AV; ebūru[harvest]N; iṣehher[diminish]V +.
+
+13. * U₄# 20-KAM₂ bi-bil A#-ME# KUR TUM₃
+#lem: ūm[day]N; n; bibil[influx]N; mê[water]N; māta[land]N; +wabālu[bring//sweep away]V$ubbal +.
+
+14. * U₄ 21-KAM₂ LUGAL MAR.<TU>{ki#} UŠ₂-ma AN#*.[GE₆] 20 GAR
+#lem: ūm[day]N; n; šar[king]N; Amurru[1]GN; imâtma[die]V; attalli[eclipse]N; Šamaš[1]DN; iššakkan[take place]V +.
+
+$ several lines illegible
+$ rest of column missing
+@column 2
+1. * ina {iti}ZIZ₂ U₄ 1-KAM₂ 20 KAN₅ GAN₂.BA DU₈ LUGAL UŠ₂
+#lem: ina[in]PRP; Šabaṭu[1]MN; ūm[day]N; n; šamšu[sun]N; adir[eclipsed]AJ; mahīru[business]N; +paṭāru[loosen//discontinue]V$ippaṭṭar +.; šarru[king]N; imât[die]V +.
+
+2. * U₄ 9-KAM₂ GAN₂.BA DU₈ LUGAL UŠ₂
+#lem: ūm[day]N; n; mahīru[business]N; ippaṭṭar[discontinue]V +.; šarru[king]N; imât[die]V +.
+
+3. * U₄ 11-KAM₂ IDIM ina E₂.GAL-šu₂ HI.GAR DU₃ SU.GU₇ ina KUR GAL₂
+#lem: ūm[day]N; n; kabtu[nobleman]N; ina[in]PRP; ēkallišu[palace]N; bārta[rebellion]N; +epēšu[do//make]V$ippeš +.; bubâtu[famine]N; ina[in]PRP; māti[land]N; ibašši[exist]V +.
+
+4. * U₄ 13-KAM₂ IDIM DAM LUGAL it-ta-na-a-a-ak
+#lem: ūm[day]N; n; kabtu[nobleman]N; aššat[wife]N; šarri[king]N; +niāku[have sexual intercourse with]V$ittanayyak +.
+
+5. {(hi-pi₂)} it-ta-nam-dar KI.MIN DUMU LUGAL AŠ.TE DAB{+bat}
+#lem: hīpi[broken place]N; +nadāru[be(come) wild//rampage]V$ittanamdar +.; šanîš[alternatively]AV; mār[son]N; šarri[king]N; kussâ[throne]N; iṣabbat[seize]V +.
+
+6. * U₄ 14-KAM₂ DAM LUGAL HI.GAR DU₃ ŠEG₃-MEŠ KI.MIN ILLU-MEŠ LA₂#-MEŠ
+#lem: ūm[day]N; n; aššat[wife]N; šarri[king]N; bārta[rebellion]N; ippeš[make]V +.; zunnū[rain]N; šanîš[alternatively]AV; mīlū[flood]N; imaṭṭû[decrease]V +.
+
+7. * U₄ 15-KAM₂ BURU₁₄ KUR SI.SA₂
+#lem: ūm[day]N; n; ebūr[harvest]N; māti[land]N; iššir[thrive]V +.
+
+8. * U₄ 16-KAM₂ LUGAL URI{ki#} [ina] AŠ.TE-šu# NU ub-ba-ku-šu₂ KI.MIN AŠ.TE NU DAB
+#lem: ūm[day]N; n; šar[king]N; Akkad[1]SN; ina[from]PRP; +kussû[chair//throne]N$kussišu; ul[not]MOD; +abāku[overturn]V$ubbakūšu +.; šanîš[alternatively]AV; kussâ[throne]N; ul[not]MOD; iṣabbat[seize]V +.
+
+9. * U₄ 18-KAM₂ LUGAL-MEŠ KI LUGAL GAL KUR₂-MEŠ-ma KUR KAR{+tu₂} DU-MEŠ
+#lem: ūm[day]N; n; šarrū[king]N; itti[against]PRP; šarri[king]N; rabî[great]AJ; ittanakkirma[be(come) hostile]V; māta[land]N; +arbūtu[desolation+=lay waste]N$; +alāku[go]V$uštallakū +.
+
+10. * U₄ 20-KAM₂ KUR a-bur-riš TUŠ{+ab}
+#lem: ūm[day]N; n; mātu[land]N; aburriš[in a green pasture]AV; uššab[dwell]V +.
+
+11. * U₄ 21-KAM₂ LUGAL ina {giš}TUKUL ŠUB{+ut}
+#lem: ūm[day]N; n; šarru[king]N; ina[by]PRP; kakkī[weapon]N; imaqqut[fall]V +.
+
+12. * U₄# 28#-KAM IRI LUGAL u UN-MEŠ-šu₂ SILIM-MEŠ ina IGI MU
+#lem: ūm[day]N; n; ālu[city]N; šarru[king]N; u[and]CNJ; nišūšu[people]N; isallimū[reconcile]V +.; ina[at]PRP; pān[front+=spring]N; šatti[year]N
+
+13. {tu₁₅}MAR# ZI#-ma BURU₁₄ TUR me-ser₃-tu₄ ina KUR GAL₂
+#lem: amurru[west (wind)]N; itebbema[arise]V; ebūru[harvest]N; iṣehher[diminish]V +.; +mēsertu[confinement//siege]N$; ina[in]PRP; māti[land]N; ibašši[exist]V +.
+
+14. KI.MIN bi-bil A-MEŠ KUR ub#-bal!
+#lem: šanîš[alternatively]AV; bibil[influx]N; mê[water]N; māta[land]N; ubbal[sweep away]V +.
+
+15. * U₄ 29@v-KAM₂ DUMU LUGAL ina TI AD-šu₂ ina HI.GAR AŠ.TE DAB-ma KUR EN{+el}
+#lem: ūm[day]N; n; mār[son]N; šarri[king]N; ina[during]PRP; balāṭ[life]N; abišu[father]N; ina[in]PRP; bārti[rebellion]N; kussâ[throne]N; iṣabbatma[seize]V; māta[land]N; ibêl[rule (over)]V +.
+
+16. * U₄ 30-KAM₂ LUGAL KI.MIN DUMU# [LUGAL] UŠ₂#-ma GANBA nap-ša₂ KUR GU₇
+#lem: ūm[day]N; n; šarru[king]N; šanîš[alternatively]AV; mār[son]N; šarri[king]N; imâtma[die]V; mahīra[business]N; napša[plentiful]AJ; mātu[land]N; ikkal[enjoy]V +.
+
+17. * TA# U₄ 1-KAM₂# [EN U₄ 30-KAM₂] KA.MU ina KUR GAL₂
+#lem: ina[from]PRP; ūm[day]N; n; adi[until]PRP; ūm[day]N; n; bikītu[weeping]N; ina[in]PRP; māti[land]N; ibašši[exist]V +.
+
+18. * U₄ [...] x [...]-MEŠ ana LUGAL  KI#.MIN# KUR SU.GU₇# [IGI]
+#lem: ūm[day]N; u; u; u; ana[for]PRP; šarri[king]N +.; šanîš[alternatively]AV; mātu[land]N; bubâti[famine]N; immar[experience]V +.
+
+19. * ina {iti#}[ŠE U₄ 1-KAM₂ ...] $KU#? $PI $NI#
+#lem: ina[in]PRP; Addaru[1]MN; ūm[day]N; n; u; u; u; u
+
+20. KI.MIN [...] IRI E₂
+#lem: šanîš[alternatively]AV; u; ālu[city]N; bītu[house]N
+
+$ rest of column missing
+$ reverse missing
+@translation labeled en project
+@(o i 1) (If) [in] Ṭebetu (X) on the 1st day [the sun] is eclipsed: the king - his slaves will kill him.
+@(o i 2) (If) on the 9th [day]: no-one will occupy the king of Akkad's throne.
+@(o i 3) (If) on the 11th [day]: the prince - that land will revolt against him.
+@(o i 4) (If) on the 13th day: the king of Akkad will die.
+@(o i 5 - i 6) (If) on the 14th day: an uprising will take place and the king of Akkad will die; ... the throne ...; alternatively, the king of Akkad; alternatively, the king of Elam will die.
+@(o i 7) (If) on the 15th day: the king of Akkad will fall in a rebellion; alternatively, the king of Subartu will die.
+@(o i 8) (If) on the [16th] day: the king of Subartu will die.
+@(o i 9 - o i 12) (If) on the [18th] day: the king of Subartu will die; the land will eat abundant food; alternatively, the rains and floods will diminish; the harvest of the land will diminish; alternatively, the king of Amurru will die; [...] and ... will thrive; rains [and ...] will decrease; @?sesame?@, alternatively the harvest, will diminish.
+@(o i 13) (If) on the 20th day: an influx of water will sweep away the land.
+@(o i 14) (If) on the 21st day: the king of Amurru will die and a solar eclipse will take place.
+
+$ several lines illegible
+$ rest of column missing
+@(o ii 1) (If) in Šabatu (month XI) on the 1st day the sun is eclipsed: business will discontinue; the king will die.
+@(o ii 2) (If) on the 9th day:  business will be discontinued; the king will die.
+@(o ii 3) (If) on the 11th day: a nobleman will foment revolt in his palace; there will be famine in the land.
+@(o ii 4 - o ii 5) (If) on the 13th day: a noble will have frequent sex with the king's wife; (gloss: break) will rampage; alternatively, the king's son will seize the throne.
+@(o ii 6) (If) on the 14th day: the king's wife will foment revolt; rain, alternatively floods, will decrease.
+@(o ii 7) (If) on the 15th day: the harvest of the land will thrive.
+@(o ii 8) (If) on the 16th day: they will not overturn the king of Akkad's throne; alternatively he will not seize the throne.
+@(o ii 9) (If) on the 18th day: kings will turn hostile against a great king and they will lay waste to the land.
+@(o ii 10) (If) on the 20th day: the land will dwell in green pastures.
+@(o ii 11) (If) on the 21st day: the king will fall to weapons.
+@(o ii 12 - o ii 14) (If) on the 28th day: city, king and his people will be at peace; in the spring the west wind will arise and the harvest will be small; there will be a siege in the land; alternatively, an influx of water will sweep away the land.
+@(o ii 15) (If) on the 29th day: the king's son will seize the throne in a revolt during his father's lifetime and rule the land.
+@(o ii 16) (If) on the 30th day: the king, alternatively ... [...], will die and the land will enjoy plentiful business.
+@(o ii 17) (If) from the 1st day [to the 30th day]: there will be weeping in the land.
+@(o ii 18) (If) on day [...] for the king; alternatively, the land will experience famine.
+@(o ii 19 - o ii 20) (If) in [Addaru (month XI) on the 1st day ...] ...; alternatively [...] city, @?house?@ [...].
+
+$ rest of column missing
+$ reverse missing

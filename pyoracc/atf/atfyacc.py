@@ -501,11 +501,14 @@ class AtfParser(object):
     def p_translationlabelledline(self, p):
         """translationlabeledline : translationlabel NEWLINE
                                   | translationrangelabel NEWLINE
+                                  | translationlabel CLOSER
+                                  | translationrangelabel CLOSER
         """
         p[0] = Line(p[1])
 
     def p_translationlabel(self, p):
-        "translationlabel : LABEL"
+        """translationlabel : LABEL
+                            | OPENR"""
         p[0] = LinkReference("||", None)
         if p[1][-1] == "+":
             p[0].plus=True
