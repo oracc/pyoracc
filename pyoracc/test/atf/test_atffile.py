@@ -17,6 +17,10 @@ def test_composite():
     assert_equal(afile.text.texts[1].code, "Q002770")
     assert_equal(afile.text.texts[1].description, "SB Anzu 2")
 
+def test_SAA_19():
+    afile= AtfFile(sample_file('SAA19_13'))
+    assert_equal(afile.text.texts[0].code, 'P393708')
+
 
 def consider_file(name,code,description):
     afile = AtfFile(sample_file(name))
@@ -37,7 +41,7 @@ texts=[
     ['brm_4_6','P363407','BRM 4, 06'],
     ['brm_4_19','P363411','BRM 4, 19'], 
     ['cm_31_139','P415763','CM 31, 139'],
-    ['ctn_4_006','P363421','CTN 4, 006']
+    ['ctn_4_006','P363421','CTN 4, 006'],
     ]
 
 def test_texts():

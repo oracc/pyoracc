@@ -55,6 +55,9 @@ class AtfParser(object):
     def p_math(self, p):
         "math : ATF USE MATH newline"
 
+    def p_key(self, p):
+        "key : KEY ID EQUALS ID newline"
+
     def p_link(self, p):
         "link : LINK DEF ID EQUALS ID EQUALS ID newline"
         p[0] = Link(p[3], p[5], p[7])
@@ -65,6 +68,10 @@ class AtfParser(object):
 
     def p_text_math(self, p):
         "text : text math"
+        p[0] = p[1]
+
+    def p_text_key(self,p):
+        "text : text key"
         p[0] = p[1]
 
     def p_text_unicode(self, p):
@@ -87,10 +94,13 @@ class AtfParser(object):
         p[0].children.append(p[2])
 
     def p_text_surface(self, p):
-        """text : text surface %prec OBJECT"""
+        """text : text surface %prec OBJECT
+                | text translation %prec TRANSLATIONEND"""
         p[0] = p[1]
         # Default to a tablet
-        p[0].children.append(OraccObject("tablet"))
+        # Has a default already been added?
+        if  len(p[0].children) == 0:
+            p[0].children.append(OraccObject("tablet"))
         p[0].children[0].children.append(p[2])
 
     def p_text_surface_element(self, p):
@@ -111,7 +121,8 @@ class AtfParser(object):
         # Text must be a composite
         p[0] = Composite()
         if not p[1].composite:
-            raise SyntaxError("Attempt to compose non-composite texts")
+            # An implicit composite
+            pass
         p[0].texts.append(p[1])
         p[0].texts.append(p[2])
 
@@ -211,6 +222,7 @@ class AtfParser(object):
                               | CATCHLINE
                               | COLOPHON
                               | DATE
+                              | EDGE
                               | SIGNATURES
                               | SIGNATURE
                               | SUMMARY
@@ -220,7 +232,6 @@ class AtfParser(object):
     def p_surface_label(self, p):
         '''surface_specifier : FACE ID
                              | SURFACE ID
-                             | EDGE ID
                              | COLUMN ID
                              | SEAL ID
                              | HEADING ID'''
@@ -354,6 +365,10 @@ class AtfParser(object):
             'triple': 3,
         }
         p[0] = Ruling(counts[p[2]])
+
+    def p_uncounted_ruling(self, p):
+        "ruling : DOLLAR RULING newline"
+        p[0] = Ruling(1)
 
     def p_note(self, p):
         """note_statement : note_sequence newline"""

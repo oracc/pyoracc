@@ -38,6 +38,13 @@ class testLexer(TestCase):
             [None, "cams/gkab", None]
         )
 
+    def test_key(self):
+        self.compare_tokens(
+            "#key: cdli=ND 02688\n",
+            ["KEY", "ID","EQUALS","ID","NEWLINE"],
+            [None, "cdli",None,"ND 02688",None]
+        )
+
     def test_language_protocol(self):
         self.compare_tokens(
             "#atf: lang akk-x-stdbab\n",
@@ -110,6 +117,20 @@ class testLexer(TestCase):
             "$ (a loose dollar line)",
             ["DOLLAR", "PARENTHETICALID"],
             [None, "(a loose dollar line)"]
+        )
+
+    def test_loose_nested_dollar(self):
+        self.compare_tokens(
+            "$ (a (very) loose dollar line)",
+            ["DOLLAR", "PARENTHETICALID"],
+            [None, "(a (very) loose dollar line)"]
+        )
+
+    def test_loose_end_nested_dollar(self):
+        self.compare_tokens(
+            "$ (a loose dollar line (wow))",
+            ["DOLLAR", "PARENTHETICALID"],
+            [None, "(a loose dollar line (wow))"]
         )
 
     def test_strict_dollar(self):
@@ -402,6 +423,29 @@ class testLexer(TestCase):
             ["LINELABEL"] + ['ID'] * 4 + ["NEWLINE"]
         )
 
+    def test_translated_composite(self):
+        self.compare_tokens(
+            "&Q002769 = SB Anzu 1\n" +
+            "@composite\n" +
+            "#project: cams/gkab\n" +
+            "1.   bi#-in šar da-ad-mi šu-pa-a na-ram {d}ma#-mi\n" +
+            "@translation labeled en project\n" +
+            "@(1) English\n"
+            "&Q002770 = SB Anzu 2\n" +
+            "#project: cams/gkab\n" +
+            "1.   bi-riq ur-ha šuk-na a-dan-na\n",
+            ["AMPERSAND", "ID", "EQUALS", "ID", "NEWLINE"] +
+            ['COMPOSITE', 'NEWLINE'] +
+            ["PROJECT", "ID", "NEWLINE"] +
+            ["LINELABEL"] + ['ID'] * 6 + ['NEWLINE'] +
+            ["TRANSLATION","LABELED","ID","PROJECT","NEWLINE"] +
+            ["OPENR","ID","CLOSER","ID","NEWLINE"] +
+            ["AMPERSAND", "ID", "EQUALS", "ID", "NEWLINE"] +
+            ["PROJECT", "ID", "NEWLINE"] +
+            ["LINELABEL"] + ['ID'] * 4 + ["NEWLINE"]
+        )
+
+
     def test_multilingual_interlinear(self):
         self.compare_tokens(
             "@tablet\n" +
@@ -428,6 +472,16 @@ class testLexer(TestCase):
             "$ reverse blank",
              ["TRANSLATION", "PARALLEL", "ID", "PROJECT", "NEWLINE"]+
              ["DOLLAR", "REFERENCE", "BLANK"]
+        )
+
+    def test_loose_in_labeled(self):
+        self.compare_tokens(
+            "@translation labeled en project\n" +
+            "$ (Break)\n" +
+            "@(r 2) I am\n\n",
+            ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE"]+
+            ["DOLLAR", "PARENTHETICALID", "NEWLINE"]+
+            ["OPENR", "ID", "ID", "CLOSER", "ID", "NEWLINE"]
         )
 
 

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from unittest import TestCase
+from unittest import TestCase, skip
 
 from ...model.text import Text
 from ...model.line import Line
@@ -49,6 +49,15 @@ class testParser(TestCase):
         assert_is_instance(text, Text)
         assert_equal(text.code, "X001001")
         assert_equal(text.language, "akk-x-stdbab")
+
+    @skip("No support for key protocol")
+    def test_key_protocol(self):
+        text = self.try_parse(
+            "&X001001 = JCS 48, 089\n" +
+            "#key: cdli=ND 02688\n"
+        )
+        # No assertion, we're not parsing keys yet
+        assert False
 
     def test_text_protocol_language(self):
         text = self.try_parse(
@@ -180,6 +189,43 @@ class testParser(TestCase):
         assert_equal(lines[1].lemmas[1], "two")
         assert_equal(lines[2].notes[0].content, "Note to line three")
 
+
+    def test_complex_substructure_2(self):
+        art = self.try_parse(
+            "&X001001 = My Text\n" +
+            "@obverse\n" +
+            "1. Line one\n" +
+            "2. Line two\n" +
+            "#lem: line; two\n" +
+            "@bottom\n" + 
+            "3. Line three)\n" +
+            "@reverse\n" +
+            "4. Line four\n" +
+            "#lem: line; three\n" +
+            "#note: Note to line four\n" +
+            "@translation labeled en project\n" +
+            "@(1) Line one\n\n" 
+        )
+        assert_is_instance(art, Text)
+        tablet = art.children[0]
+        assert_is_instance(tablet, OraccObject)
+        assert_equal(len(art.children), 1)
+        obverse = tablet.children[0]
+        assert_is_instance(obverse, OraccObject)
+        reverse = tablet.children[2]
+        assert_equal(len(tablet.children), 4)
+        bottom = tablet.children[1] 
+        # Is this wrong -- should tops and bottoms 
+        # really be a lower nesting level?
+        translation = tablet.children[3]
+        lines = (obverse.children[:] +
+                 bottom.children[:] +
+                 reverse.children[:])
+        assert_equal(len(lines), 4)
+        assert_equal(lines[1].lemmas[1], "two")
+        assert_equal(lines[3].notes[0].content, "Note to line four")
+        assert_is_instance(translation,Translation)
+
     def test_line(self):
         art = self.try_parse(
             "@tablet\n" +
@@ -206,6 +252,14 @@ class testParser(TestCase):
             "$ triple ruling\n"
         )
         assert_equal(art.children[0].children[0].count, 3)
+
+    def test_uncounted_ruling(self):
+        art = self.try_parse(
+            "@tablet\n" +
+            "@obverse\n" +
+            "$ ruling\n"
+        )
+        assert_equal(art.children[0].children[0].count, 1)
 
     def test_ruling_on_object_no_surface(self):
         art = self.try_parse(
@@ -552,6 +606,34 @@ class testParser(TestCase):
             "@composite\n" +
             "#project: cams/gkab\n" +
             "1.   bi#-in šar da-ad-mi šu-pa-a na-ram {d}ma#-mi\n" +
+            "&Q002770 = SB Anzu 2\n" +
+            "#project: cams/gkab\n" +
+            "1.   bi-riq ur-ha šuk-na a-dan-na\n"
+        )
+        assert_is_instance(composite, Composite)
+        assert_is_instance(composite.texts[0], Text)
+        assert_is_instance(composite.texts[1], Text)
+
+    def test_implicit_composite(self):
+        composite = self.try_parse(
+            "&Q002769 = SB Anzu 1\n" +
+            "#project: cams/gkab\n" +
+            "1.   bi#-in šar da-ad-mi šu-pa-a na-ram {d}ma#-mi\n" +
+            "&Q002770 = SB Anzu 2\n" +
+            "#project: cams/gkab\n" +
+            "1.   bi-riq ur-ha šuk-na a-dan-na\n"
+        )
+        assert_is_instance(composite, Composite)
+        assert_is_instance(composite.texts[0], Text)
+        assert_is_instance(composite.texts[1], Text)
+
+    def test_translated_composite(self):
+        composite = self.try_parse(
+            "&Q002769 = SB Anzu 1\n" +
+            "#project: cams/gkab\n" +
+            "1.   bi#-in šar da-ad-mi šu-pa-a na-ram {d}ma#-mi\n" +
+            "@translation labeled en project\n"
+            "@(1) This is English\n\n\n"
             "&Q002770 = SB Anzu 2\n" +
             "#project: cams/gkab\n" +
             "1.   bi-riq ur-ha šuk-na a-dan-na\n"

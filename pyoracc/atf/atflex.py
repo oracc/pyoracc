@@ -51,7 +51,7 @@ class AtfLexer(object):
         'HEADING'
     ]
 
-    protocols = ['ATF', 'LEM', 'PROJECT', 'NOTE', "LINK"]
+    protocols = ['ATF', 'LEM', 'PROJECT', 'NOTE', "LINK", "KEY"]
 
     protocol_keywords = ['LANG', 'USE', 'MATH', 'UNICODE', 'DEF']
 
@@ -128,7 +128,7 @@ class AtfLexer(object):
     t_PARBAR = "\|\|"
 
 
-    t_PARENTHETICALID = "\([^\)\n\r]*\)"
+    t_INITIAL_transctrl_PARENTHETICALID = "\([^\n\r]*\)"
 
     def t_INITIAL_transctrl_WHITESPACE(self, t):
         r'[\t ]+'
@@ -298,7 +298,7 @@ class AtfLexer(object):
         return t
 
     def t_transpara_ID(self,t):
-        r'([^\^\n\r]|([\n\r](?!\s*[\n\r])(?!(\@label|\@\())))+'
+        r'([^\^\n\r]|([\n\r](?!\s*[\n\r])(?!(\@label|\@\(|\&))))+'
         t.value = t.value.strip()
         return t
     
@@ -310,15 +310,20 @@ class AtfLexer(object):
         return t
 
     # BUT, exceptionally to fix existing bugs in active members of corpus,
-    # it is ended by an @label or an @(), and these tokens are not absorbed by this token
+    # it is also ended by an @label or an @(), or a new document, and these tokens are not absorbed by this token
     # Translation paragraph state is ended by a double newline
     def t_transpara_MAGICNEWLINE(self,t):
-        r'[\n\r](?=(\@label|\@\())'    
+        r'[\n\r](?=(\@label|\@\(|\&))'    
         t.lexer.lineno += 1
         t.lexer.pop_state()
         t.type = "NEWLINE"
         return t
 
+    def t_parallel_labeled_AMPERSAND(self,t):
+        r'\&'
+        # New document, so leave translation state
+        t.lexer.pop_state()
+        return t
 
     t_absorb_HASH = "\#"
     t_absorb_EXCLAIM = "\!"
