@@ -18,52 +18,24 @@ def test_composite():
     assert_equal(afile.text.texts[1].description, "SB Anzu 2")
 
 
-def test_bb_2():
-    afile = AtfFile(sample_file("bb"))
-    assert_equal(afile.text.code, "X002002")
-    assert_equal(afile.text.description, "BagM Beih. 02, 005")
+def consider_file(name,code,description):
+    afile = AtfFile(sample_file(name))
+    assert_equal(afile.text.code, code)
+    assert_equal(afile.text.description,description)
 
-def test_bb_2_6():
-    afile = AtfFile(sample_file("bb_2_6"))
-    assert_equal(afile.text.code, "X002004")
-    assert_equal(afile.text.description, "BagM Beih. 02, 006")
+texts=[
+    ['bb','X002002',"BagM Beih. 02, 005"],
+    ['bb_2_6','X002004',"BagM Beih. 02, 006"],
+    ['bb_2_7','X002005',"BagM Beih. 02, 007"],
+    ['bb_2_10','X002006',"BagM Beih. 02, 010"],
+    ['bb_2_13','X002013',"BagM Beih. 02, 013"],
+    ['bb_2_61','X002061',"BagM Beih. 02, 061"],
+    ['bb_2_79','X002079',"BagM Beih. 02, 079"],
+    ['bb_2_83','X002083',"Bagm Beih. 02, 083"],
+    ['bb_2_96','X002096',"BagM Beih. 02, 096"],
+    ['afo','X002003','AfO 14, Taf. VI']        
+    ]
 
-def test_bb_2_7():
-    afile = AtfFile(sample_file("bb_2_7"))
-    assert_equal(afile.text.code, "X002005")
-    assert_equal(afile.text.description, "BagM Beih. 02, 007")
-
-def test_bb_2_10():
-    afile = AtfFile(sample_file("bb_2_10"))
-    assert_equal(afile.text.code, "X002006")
-    assert_equal(afile.text.description, "BagM Beih. 02, 010")
-
-def test_bb_2_13():
-    afile = AtfFile(sample_file("bb_2_13"))
-    assert_equal(afile.text.code, "X002013")
-    assert_equal(afile.text.description, "BagM Beih. 02, 013")
-
-def test_bb_2_61():
-    afile = AtfFile(sample_file("bb_2_61"))
-    assert_equal(afile.text.code, "X002061")
-    assert_equal(afile.text.description, "BagM Beih. 02, 061")
-
-def test_bb_2_79():
-    afile = AtfFile(sample_file("bb_2_79"))
-    assert_equal(afile.text.code, "X002079")
-    assert_equal(afile.text.description, "BagM Beih. 02, 079")
-
-def test_bb_2_83():
-    afile = AtfFile(sample_file("bb_2_83"))
-    assert_equal(afile.text.code, "X002083")
-    assert_equal(afile.text.description, "Bagm Beih. 02, 083")
-    # Note bagm not bagM
-
-def test_bb_2_96():
-    afile = AtfFile(sample_file("bb_2_96"))
-    assert_equal(afile.text.code, "X002096")
-    assert_equal(afile.text.description, "BagM Beih. 02, 096")
-
-def test_afo():
-    afile = AtfFile(sample_file("afo"))
-    assert_equal(afile.text.code, "X002003")
+def test_texts():
+    for text in texts:
+        consider_file(*text)
