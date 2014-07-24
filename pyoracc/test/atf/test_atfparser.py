@@ -24,7 +24,7 @@ class testParser(TestCase):
 
     def try_parse(self, content):
         self.parser = AtfParser().parser
-        return self.parser.parse(content, lexer=self.lexer, debug=1)
+        return self.parser.parse(content, lexer=self.lexer)
 
     def test_code(self):
         text = self.try_parse("&X001001 = JCS 48, 089\n")
@@ -222,7 +222,7 @@ class testParser(TestCase):
             "@translation labeled en project\n" +
             "$ single ruling\n" +
             "@label 1\n" +
-            "Some content\n"
+            "Some content\n\n"
         )
         # Should default to an obverse surface
         assert_equal(art.children[0].children[0].count, 1)
@@ -386,7 +386,7 @@ class testParser(TestCase):
             "@tablet\n" +
             "@translation labeled en project\n" +
             "@label o 4\n"
-            "Then it will be taken for the rites and rituals.\n"
+            "Then it will be taken for the rites and rituals.\n\n"
         )
         assert_is_instance(art.children[0], Translation)
         assert_equal(art.children[0].children[0].label, 'o 4')
@@ -398,7 +398,7 @@ class testParser(TestCase):
             "@tablet\n" +
             "@translation labeled en project\n" +
             "@label o 2 - o 3\n" +
-            "an expert will carefully inspect an ungelded bull.")
+            "an expert will carefully inspect an ungelded bull.\n\n")
         assert_is_instance(art.children[0], Translation)
         assert_equal(art.children[0].children[0].label.label, ['o', '2'])
         assert_equal(art.children[0].children[0].label.rangelabel, ['o', '3'])
@@ -410,7 +410,7 @@ class testParser(TestCase):
             "@tablet\n" +
             "@translation labeled en project\n" +
             "@label+ o 28\n" +
-            "You extinguish the fire on the altar with beer\n"
+            "You extinguish the fire on the altar with beer\n\n"
         )
         assert(art.children[0].children[0].label.plus)
 
@@ -419,7 +419,7 @@ class testParser(TestCase):
             "@tablet\n" +
             "@translation labeled en project\n" +
             "@label o 14-15 - o 20\n" +
-            "You strew all (kinds of) seed.\n",
+            "You strew all (kinds of) seed.\n\n",
         )
         assert_is_instance(art.children[0], Translation)
         assert_equal(art.children[0].children[0].label.label, ['o', '14-15'])
@@ -432,8 +432,7 @@ class testParser(TestCase):
             "@tablet\n" +
             "@translation labeled en project\n" +
             "@label r 8\n" +
-            "The priest says the gods have performed these actions. ^1^\n" +
-            "\n" +
+            "The priest says the gods have performed these actions. ^1^\n\n" +
             "@note ^1^ Parenthesised text follows Neo-Assyrian source\n"
         )
         assert_is_instance(art.children[0], Translation)

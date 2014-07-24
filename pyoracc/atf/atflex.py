@@ -108,7 +108,8 @@ class AtfLexer(object):
         'lemmatize',
         'parallel',  # translation
         'labeled',   # translation
-        'transctrl'
+        'transctrl',
+        'transpara'
     ]
 
     states = [(state, 'exclusive') for state in state_names]
@@ -172,11 +173,12 @@ class AtfLexer(object):
                                         "h2":"HEADING",
                                         "h3":"HEADING",
                                         "label+":"LABEL",
-                                      }
+                                      },
                                       )
 
 
         if t.type == "LABEL":
+            t.lexer.push_state("transpara")
             t.lexer.push_state("transctrl")
 
         if t.type in AtfLexer.long_argument_structures + ["NOTE"]:
@@ -279,15 +281,27 @@ class AtfLexer(object):
     translation_regex = white + "[^\^\n\r]+" + white
 
     @lex.TOKEN(translation_regex)
-    def t_parallel_labeled_ID(self,t):
+    def t_parallel_ID(self,t):
         t.value = t.value.strip()
         return t
+
+    def t_transpara_ID(self,t):
+        r'([^\^\n\r]|([\n\r](?!\s*[\n\r])))+'
+        t.value = t.value.strip()
+        return t
+    
+    def t_transpara_NEWLINE(self,t):
+        r'[\n\r]\s*[\n\r]+'    
+        t.lexer.lineno += t.value.count("\n")
+        t.lexer.pop_state()
+        return t
+
 
     t_absorb_HASH = "\#"
     t_absorb_EXCLAIM = "\!"
     t_absorb_QUERY = "\?"
     t_absorb_STAR = "\*"
-    t_absorb_parallel_labeled_HAT = "[\ \t]*\^[\ \t]*"
+    t_absorb_parallel_transpara_HAT = "[\ \t]*\^[\ \t]*"
     t_absorb_EQUALS = "\="
 
     #--- RULES FOR THE text STATE ----

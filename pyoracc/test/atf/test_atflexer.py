@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from unittest import TestCase
+from unittest import TestCase, skip
 from ...atf.atflex import AtfLexer
 from nose.tools import assert_in, assert_equal
 from itertools import izip_longest, repeat
@@ -139,7 +139,7 @@ class testLexer(TestCase):
         self.compare_tokens(
             "@translation labeled en project\n" +
             "@label o 4\n" +
-            "Then it will be taken for the rites and rituals.\n",
+            "Then it will be taken for the rites and rituals.\n\n",
             ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
              "LABEL", "ID", "ID", "NEWLINE",
              "ID", "NEWLINE"],
@@ -148,11 +148,28 @@ class testLexer(TestCase):
              'Then it will be taken for the rites and rituals.', None]
         )
 
+    def test_translation_labeled_noted_text(self):
+        self.compare_tokens(
+            "@translation labeled en project\n" +
+            "@label r 8\n" +
+            "The priest says the gods have performed these actions. ^1^\n\n" +
+            "@note ^1^ Parenthesised text follows Neo-Assyrian source\n",
+            ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
+             "LABEL", "ID", "ID", "NEWLINE",
+             "ID", "HAT","ID","HAT", "NEWLINE",
+             "NOTE","HAT","ID","HAT","ID",'NEWLINE'],
+            [None, "labeled", "en", "project", None,
+             None, "r", "8", None,
+             'The priest says the gods have performed these actions.', None, "1", None,None,
+             None, None, "1", None, "Parenthesised text follows Neo-Assyrian source"]
+
+        )
+
     def test_translation_labeled_dashlabel(self):
         self.compare_tokens(
             "@translation labeled en project\n" +
             "@label o 14-15 - o 20\n" +
-            "You strew all (kinds of) seed.\n",
+            "You strew all (kinds of) seed.\n\n",
             ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
              "LABEL", "ID", "ID",  "MINUS", "ID", "ID", "NEWLINE", 
              "ID", "NEWLINE"],
@@ -182,9 +199,39 @@ class testLexer(TestCase):
         self.compare_tokens(
             "@translation labeled en project\n" +
             "@label o 1'\n" +
-            "[...] ... (zodiacal sign) 8, 10° = (sign) 12, 10°\n",
+            "[...] ... (zodiacal sign) 8, 10° = (sign) 12, 10°\n\n",
             ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
              "LABEL", "ID", "ID", "NEWLINE",
+             "ID","NEWLINE"]
+        )
+
+    def test_translation_ats_in_translation(self):
+        self.compare_tokens(
+            "@translation labeled en project\n" +
+            "@label o 1'\n" +
+            "@kupputu (means): affliction (@? and) reduction?@; they are ... like cisterns.\n\n",
+            ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
+             "LABEL", "ID", "ID", "NEWLINE",
+             "ID","NEWLINE"]
+        )
+
+    @skip("Disabled as docs say should not work.")
+    def test_translation_no_blank_line_in_labeled_translation(self):
+        # This functionality is expressly forbidden at 
+        # http://build.oracc.org/doc2/help/editinginatf/translations/index.html
+        # But appears is in cm_31_139 anyway
+        self.compare_tokens(
+            "@translation labeled en project\n" +
+            "@label o 13\n" +
+            "@al-@ŋa₂-@ŋa₂ @al-@ŋa₂-@ŋa₂ @šag₄-@ba-@ni @nu-@sed-@da (means) he will" +
+            "remove (... and) he will place (...); his heart will not rest"+
+            "It is said in the textual corpus of the lamentation-priests.\n"+
+            "@label o 15\n"+
+            "Text\n\n",
+            ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
+             "LABEL", "ID", "ID", "NEWLINE",
+             "ID","NEWLINE",
+             "LABEL","ID","ID","NEWLINE",
              "ID","NEWLINE"]
         )
 
@@ -227,12 +274,12 @@ class testLexer(TestCase):
 
     def test_division_note(self):
         self.compare_tokens(
-            "@note ^1^ A note to the translation.",
+            "@note ^1^ A note to the translation.\n",
             ["NOTE", "HAT", "ID", "HAT", "ID", "NEWLINE"],
-            [None, "1", None, "A note to the translation."]
+            [None, None, "1", None, "A note to the translation.", None]
         )
 
-    def test_division_note(self):
+    def test_hash_note(self):
         self.compare_tokens(
             "@tablet\n" +
             "@obverse\n" +
@@ -246,10 +293,10 @@ class testLexer(TestCase):
         # This must not come out as a linelabel of Hello.
         self.compare_tokens(
             "@translation labeled en project\n" +
-            "@label o 1\nHello. World",
+            "@label o 1\nHello. World\n\n",
             ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
             "LABEL", "ID", "ID", "NEWLINE",
-            "ID"]
+            "ID", "NEWLINE"]
         )
 
     def test_flagged_object(self):
