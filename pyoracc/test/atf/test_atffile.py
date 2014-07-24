@@ -21,6 +21,10 @@ def test_SAA_19():
     afile= AtfFile(sample_file('SAA19_13'))
     assert_equal(afile.text.texts[0].code, 'P393708')
 
+def test_SAA_19_11():
+    afile= AtfFile(sample_file('SAA19_11'))
+    assert_equal(afile.text.texts[0].code, 'P224439')
+
 
 def consider_file(name,code,description):
     afile = AtfFile(sample_file(name))

@@ -108,6 +108,7 @@ class AtfLexer(object):
         'absorb',
         'text',
         'lemmatize',
+        'key',
         'parallel',  # translation
         'labeled',   # translation
         'transctrl',
@@ -198,6 +199,8 @@ class AtfLexer(object):
         t.value = t.value[1:-1]
         t.type = self.resolve_keyword(t.value,
                                       AtfLexer.protocols)
+        if t.type == "KEY":
+            t.lexer.push_state('key')
         if t.type == "LEM":
             t.lexer.push_state('lemmatize')
         if t.type in ['NOTE', 'PROJECT']:
@@ -244,7 +247,7 @@ class AtfLexer(object):
 
     # In the absorb, text, transctrl and lemmatize states,
     # a newline returns to the base state
-    def t_absorb_text_lemmatize_transctrl_NEWLINE(self, t):
+    def t_absorb_text_lemmatize_transctrl_key_NEWLINE(self, t):
         r'\n'
         t.lexer.lineno += 1
         t.lexer.pop_state()
@@ -331,6 +334,16 @@ class AtfLexer(object):
     t_absorb_STAR = "\*"
     t_absorb_parallel_transpara_HAT = "[\ \t]*\^[\ \t]*"
     t_absorb_EQUALS = "\="
+
+    #--- RULES FOR THE key STATE -----
+
+    def t_key_ID(self,t):
+        "[^\=\n\r]+"
+        t.value=t.value.strip()
+        return t
+
+    t_key_EQUALS = "\="
+
 
     #--- RULES FOR THE text STATE ----
     t_text_ID = "[^\ \t \n\r]+"
