@@ -178,6 +178,16 @@ class testLexer(TestCase):
              "LABEL", "ID", "ID", "NEWLINE"]
         )
 
+    def test_translation_symbols_in_translation(self):
+        self.compare_tokens(
+            "@translation labeled en project\n" +
+            "@label o 1'\n" +
+            "[...] ... (zodiacal sign) 8, 10° = (sign) 12, 10°\n",
+            ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
+             "LABEL", "ID", "ID", "NEWLINE",
+             "ID","NEWLINE"]
+        )
+
     def test_translation_range_label_periods(self):
         self.compare_tokens(
             "@translation labeled en project\n" +

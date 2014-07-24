@@ -263,7 +263,7 @@ class AtfLexer(object):
                     ')' + white )
 
     @lex.TOKEN(absorb_regex)
-    def t_absorb_labeled_ID(self, t):
+    def t_absorb_ID(self, t):
         # Discard leading whitespace, token is not flag or newline
         # And has at least one non-whitespace character
         t.value = t.value.strip()
@@ -275,8 +275,8 @@ class AtfLexer(object):
     translation_regex = white + "[^\^\n\r]+" + white
 
     @lex.TOKEN(translation_regex)
-    def t_parallel_ID(self,t):
-        #t.value = t.value.strip()
+    def t_parallel_labeled_ID(self,t):
+        t.value = t.value.strip()
         return t
 
     t_absorb_HASH = "\#"
