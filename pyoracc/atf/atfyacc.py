@@ -507,6 +507,8 @@ class AtfParser(object):
     def p_translationlabel(self, p):
         "translationlabel : LABEL"
         p[0] = LinkReference("||", None)
+        if p[1][-1] == "+":
+            p[0].plus=True
 
     def p_translationlabel_id(self, p):
         """translationlabel : translationlabel ID"""

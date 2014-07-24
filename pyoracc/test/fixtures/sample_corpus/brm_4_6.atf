@@ -1,0 +1,320 @@
+&P363407 = BRM 4, 06
+#project: cams/gkab
+
+#atf: lang akk-x-stdbab
+#atf: use unicode
+@tablet	
+@obverse
+$ start of obverse missing
+1'. [...] x $U₃# $RA# [...]
+#lem: u; u; u; u; u
+
+2'. [...] ne₂-peš ša₂ ŠU-MIN {lu₂}GALA ša₂ $DAR? x [...]
+#lem: u; +nēpešu[activity//procedure]N$nēpeš; ša[of]DET; +qātu[hand//domain]N$qātī; kalê[lamentation priest]N; ša[of]DET; u; u; u
+
+3'. [x x] it?#-ta?#-ṣi rim-tu₂ TA bi-it {d}NIN.GAL sin-niš-tu₄ ša x [...]	
+#lem: u; u; +waṣû[go out]V$ittaṣi; +rīmtu[wild cow]N$; ultu[from]PRP; +bītu[house//temple]N$bīt; Ningal[1]DN; +sinništu[woman]N$; ša[of]DET; u; u
+
+4'. [sin-niš]-tu₄ um-mu {d}NIN.GAL ina a-lu it-ta-ṣi
+#lem: sinništu[woman]N; ummu[mother]N; Ningal[1]DN; ina[from]PRP; +ālu[city]N$; ittaṣi[go out]V +.
+
+5'. [{lu₂?}EN?]-ka ša₂ i-dul-lu-ma la i-ṣa-al-lal ana-ku
+#lem: +bēlu[lord]N$bēlka; ša[who]REL; +dâlu[move//roam around]V$idulluma; lā[not]MOD; +ṣalālu[lie (down)//sleep]V$iṣallal; anāku[I]IP +.
+
+6'. [x x] ma#-na-ah-ti-šu₂ a-kal la i-kul ana-ku ša₂ ina ma-na-ah-ti-šu₂ me-e la iš-tu-u₂ ana-ku
+#lem: u; u; +mānahtu[weariness]N$mānahtišu; akal[bread]N; lā[not]MOD; īkul[eat]V; anāku[I]IP +.; ša[who]REL; ina[in]PRP; mānahtišu[weariness]N; +mû[water]N$mê; lā[not]MOD; +šatû[drink]V$ištû; anāku[I]IP +.
+
+7'. [x E₂]-ia# ba-aṣ it-taš-pak i-pi-ir it-ta-<at>-bak kab-tu ša₂ di-im-ma-at da-ma-ma ul i-kal-lu
+#lem: u; +bītu[house]N$bītiya; +bāṣu[sand]N$bāṣ; +šapāku[heap up]V$ittašpak +.; +eperu[earth//dust]N$ipir; +tabāku[pour (out)//pile up]V$ittatbak +.; +kabtu[important one//dignitary]N$kabtu; +ša[of]DET$; +dimmatu[wailing]N$dimmat; +damāmu[wail//wailing]V'N$damāma; ul[not]MOD; +kalû[hold (back)//restrain]V$ikallu +.
+
+8'. [x ṣer]-hi IRI-šu₂ ru-bu-u₂ ina qaq-qar na-pal-si-ih me-hu-u₂ it-ba-am i-pi-ir pa-ni ik-tu-mu
+#lem: u; +ṣerhu[shout//lamentation]N$ṣerhi; +ālu[city]N$ālišu; +rubû[prince]N$; ina[on]PRP; qaqqar[ground]N; +napalsuhu[fallen to the ground//squatting]AJ$napalsih +.; mehû[storm wind]N; +tebû[arise]V$itbâm +.; ipir[dust]N; pānī[face]N; +katāmu[cover]V$iktumu +.
+
+9'. [u₄]-mu# a-mat {d}60 u₄-mu a-mat {d}EN.LIL₂ u₄-mu ug-ga-at lib₃-bi ša₂ {d}60 ra-bi-i
+#lem: +ūmu[storm(-demon)]N$; amāt[word]N; Anu[1]DN +.; ūmu[storm(-demon)]N; amāt[word]N; Ellil[1]DN +.; ūmu[storm(-demon)]N; +uggatu[rage]N$uggat; libbi[heart]N; ša[of]DET; Anu[1]DN; +rabû[big]AJ$rabî +.
+
+10'. dil#-mun-nu-u₂ ša₂ ina ṣu-ṣe-e e-lep-šu₂ iṭ-bu-u₂ ana-ku	
+#lem: +Dilmunnu[Dilmunite]EN$; ša[whose]REL; ina[in]PRP; +ṣuṣû[reed-thicket]N$ṣuṣê; +eleppu[ship]N$elepšu; +ṭebû[sink]V$iṭbû; anāku[I]IP +.
+
+11'. ša₂# lib₃-bi i-šu-u₂ u e-mu-qu la i-šu-u₂ ana-ku : u₂-a lib₃-bi u₂-a ka-bat-ta
+#lem: ša[who]REL; libbi[heart]N; +išû[have]V$īšû; u[and]CNJ; +emūqu[strength]N$; lā[not]MOD; īšû[have]V; anāku[I]IP; +ūʾa[woe!]J$; libbī[heart]N; ūʾa[woe!]J; +kabattu[liver//mood]N$kabatta +.
+
+12'. ma-kur-ru ša₂ nin-da-bu-u₂ iz-bil ta-ne₂-eh iz-za-bil
+#lem: +makūru[(processional) boat]N$makurru; ša[which]REL; +nindabû[(food) offering]N$; +zabālu[carry//deliver]V$izbil; +tānēhu[moaning//distress]N$tānēh; +zabālu[carry//deliver]V$izzabil +.
+
+13'. ša₂ nin-da-be₂-e nin-da-be₂-e ul u₂-še-rib : ša₂ ni-qa-a ni-qa-a ul u₂-še-rib
+#lem: ša[of]DET; nindabê[(food) offering]N; nindabê[(food) offering]N; ul[not]MOD; +erēbu[enter//bring in]V$ušērib; ša[of]DET; +nīqu[offering//libation]N$niqâ; niqâ[libation]N; ul[not]MOD; ušērib[bring in]V +.
+
+14'. an-na-a ša₂ a-na {d}30 ina AN.GE₆ iz-za-mi-ir : ina KA₂ E₂ DINGIR-MEŠ u SILA.DAGAL.LA ga-rak-ku ŠUB{+di}
+#lem: annâ[this]DP; ša[what]REL; ana[to]PRP; Sin[1]DN; ina[at]PRP; +antallû[eclipse]N$attallî; +zamāru[sing (of)]V$izzamir +.; ina[at]PRP; bāb[gate]N; bīt[temple]N; ilī[god]N; u[and]CNJ; +rebītu[square]N$rebīti; +garakku[(small brick altar)]N$; +nadû[throw//lay out]V$tanaddi +.
+
+15'. {giš}EREN {giš}ŠUR.MIN₃ {šim}GIR₂ GI DU₁₀.GA {giš}ŠINIG KUR.RA u lu-te-e {giš}MA.NU ina muh-hi ga-rak-ku te-ṣe-en	
+#lem: erēna[cedar]N; +šurmēnu[cypress]N$šurmēna; +asu[myrtle]N$asa; +qanû[reed]N$qanâ; ṭāba[sweet]AJ; +bīnu[tamarisk]N$bīn; +šadû[mountain]N$šadî; u[and]CNJ; +lutû[twig]N$lutê; ēri[(a tree)]N; ina[in]PRP; muhhi[skull]N; garakku[(small brick altar)]N; +ṣênu[load (up)//pile]V$teṣên +.
+
+16'. ki-ma AN.GE₆ u₂-ša₂-ru-u₂ {lu₂}KU₄.E₂ GI.IZI.LA₂ i-qa-da-ma it-ti ga!(TA)-rak-ku u₂-ša₂-aṣ-ba-at
+#lem: kīma[as]PRP'SBJ; attallû[eclipse]N; +šurrû[begin]V$ušarrû; ērib[enterer]N&bīti[temple]N; gizillâ[torch]N; +qâdu[ignite//light]V$iqaddamma; itti[at]PRP; garakku[(small brick altar)]N; +ṣabātu[seize//kindle]V$ušaṣbat +.
+
+17'. {lu₂}GALA TUŠ{+ab}-ma ne₂-peš ša₂ ŠU-MIN {lu₂}GALA a-di AN.GE₆ u₂-nam-mir DU₃{+uš}
+#lem: kalû[lamentation priest]N; +wašābu[sit (down)]V$uššabma; nēpeš[procedure]N; ša[of]DET; qātī[domain]N; kalê[lamentation priest]N; adi[until]PRP'SBJ; attallû[eclipse]N; +nawāru[be(come) bright//be(come) light]V$unammir; ippuš[perform]V +.
+
+18'. a-di AN.GE₆ u₂-nam-mar IZI ina muh-hi ga-rak-ku la te-bel-<le>
+#lem: adi[until]PRP'SBJ; attallû[eclipse]N; +nawāru[be(come) bright//be(come) light]V$unammar; +išātu[fire]N$; ina[in]PRP; muhhi[skull]N; garakku[(small brick altar)]N; lā[not]MOD; +belû[be(come) extinguished]V$tebelle +.
+
+19'. ki!(DI)-is-pi a-na A.GAR₃ ŠUB-MEŠ ta-kas₃-sip₄ ki-is-pi a-na ID₂-MEŠ ša₂ me-e la ub-bal |KI.MIN|<(ta-kas₃-sip₄)>
+#lem: +kispu[funerary offering]N$kispī; ana[for]PRP; +ugāru[(communally controlled) meadow]N$ugārī; +nadû[placed//fallow]AJ$nadûti; +kasāpu[make funerary offering]V$takassip +.; kispī[funerary offering]N; ana[for]PRP; +nāru[river//watercourse]N$nārāti; ša[which]REL; mê[water]N; lā[not]MOD; +wabālu[bring//carry]V$ubbal; takassip[make funerary offering]V +.
+
+20'. ki!(DI)-is-pi a-na {d}A.NUN.NA.KI ta-kas₃-sip₄
+#lem: kispī[funerary offering]N; ana[to]PRP; Anunnaku[1]DN; takassip[make funerary offering]V +.
+
+# Anunnaku[1]DN: follows glossary but CDA has Anunnakku
+
+21'. a-di AN.GE₆ u₂-nam-mar UN-MEŠ KUR ṣu-bat SAG.DU-šu₂-nu ša₂-ah!(GU₄)-ṭu ina lu-bar-ra-šu₂-nu SAG.DU-su-nu kat₂-mu
+#lem: adi[until]PRP'SBJ; attallû[eclipse]N; unammar[be(come) light]V; nišū[people]N; māti[land]N; +ṣubātu[textile//garment]N$ṣubāt; +qaqqadu[head]N$qaqqadišunu; +šahṭu[stripped?//taken off]AJ$šahṭū; ina[with]PRP; +lubāru[garment//piece of cloth]N$lubarrašunu; +qaqqadu[head]N$qaqqassunu; +katmu[covered]AJ$katmū
+
+22'. me-ser₂ ner-ti bar-tu₄ u AN.GE₆ a-a iṭ-hu-u₂ a-na UNUG{ki} {e₂}re-eš IRI₁₂.GAL BARA₂.MAH E₂.AN.NA
+#lem: +mēseru[confinement]N$mēser; +nērtu[murder]N$nērti; +bārtu[rebellion]N$; u[and]CNJ; attallû[eclipse]N; ai[not]MOD; iṭhû[approach]V; ana[to]PRP; Uruk[1]SN; Reš[1]TN; Irigal[1]TN; Baramah[1]TN; Eana[1]TN
+
+23'. u₃ E₂-MEŠ DINGIR-MEŠ {d}TIR.AN.NA{ki} i-ša₂-as-su-u₂ a-na ṣi-ri-ih-ti ri-gim-šu₂-nu i-nam-du-u₂
+#lem: u[and]CNJ; bītāt[temple]N; ilī[god]N; Tirana[1]SN; +šasû[shout//cry out]V$išassû +.; +ana[to//on account of]PRP$; +ṣirihtu[lamentation]N$ṣirihti; +rigmu[voice]N$rigimšunu; +nadû[throw//raise]V$inamdû +.
+
+24'. 7 {lu₂}EREN₂{+ni} UN-MEŠ ma-a-tu₂ {im}ṭe!(KI)-ru-ut ID₂ IGI-MEŠ-šu₂-nu ŠU-MIN-MEŠ-šu₂-nu u GIR₃-MEŠ-šu₂-nu pa-aš₂-šu₂
+#lem: n; +ummānu[army//soldier]N$ummānī; nišū[people]N; +mātu[land]N$; +ṭerītu[mud]N$ṭerût; +nāru[river//watercourse]N$nāri; +pānu[face]N$pānūšunu; +qātu[hand]N$qātāšunu; u[and]CNJ; +šēpu[foot]N$šēpūšunu; +paššu[anointed//smeared]AJ$paššū
+
+25'. GIR₂ ina ker-ri 15-šu₂-nu ta-al-lal
+#lem: +patru[sword]N$patra; ina[on]PRP; +kerru[(area of) collarbone]N$kerrī; +imittu[right]N$imittišunu; +alālu[hang up]V$tallal
+
+26'. me-ser₂ ner-ti bar-tu₄ u AN.GE₆ a-a iṭ-hu-u₂ a-na UNUG{ki} {e₂}re-eš IRI₁₂.GAL BARA₂.MAH E₂.AN.NA
+#lem: mēser[confinement]N; nērti[murder]N; bārtu[rebellion]N; u[and]CNJ; attallû[eclipse]N; ai[not]MOD; iṭhû[approach]V; ana[to]PRP; Uruk[1]SN; Reš[1]TN; Irigal[1]TN; Baramah[1]TN; Eana[1]TN
+
+27'. u₃ E₂-MEŠ DINGIR-MEŠ {d}TIR.AN.NA{ki} i-ša₂-as-su-u₂ a-na ṣi-ri-ih-ti ri-gim-šu₂-nu i-nam-du-u₂
+#lem: u[and]CNJ; bītāt[temple]N; ilī[god]N; Tirana[1]SN; išassû[cry out]V +.; ana[on account of]PRP; ṣirihti[lamentation]N; rigimšunu[voice]N; inamdû[raise]V +.
+
+28'. a-di AN.GE₆ i-zak-ku-u₂ i-ša₂-as-su-u₂ : ki-ma ša₂ {d}30 AN.GE₆ u₂-nam-mar
+#lem: adi[until]PRP'SBJ; attallû[eclipse]N; +zakû[be(come) clear]V$izakkû; išassû[cry out]V +.; kīma[as]PRP'SBJ; ša[that]REL; Sin[1]DN; +antallû[eclipse]N$attallâ; +nawāru[be(come) bright//lighten]V$unammar
+
+29'. IZI ina muh-hi ga-rak-ku ina KURUN.NAM tu-kab-bat
+#lem: +išātu[fire]N$išāta; ina[in]PRP; muhhi[skull]N; garakku[(small brick altar)]N; ina[with]PRP; +kurunu[(a kind of beer)]N$kuruni; +kabātu[be(come) heavy//extinguish]V$tukabbat +.
+
+30'. ina 2{+i} u₄-mu {lu₂}ŠITIM ga-rak-ku a-di ṭi-ik-me-en-šu₂ IL₂{+ši}-ma a-na ID₂ ŠUB{+di}
+#lem: ina[on]PRP; n; ūmu[day]N; +itinnu[builder]N$; garakku[(small brick altar)]N; adi[together with]PRP; +ṭikmēnu[ashes]N$ṭikmēnšu; inaššima[lift]V; ana[into]PRP; nāri[watercourse]N; inaddi[throw]V +.
+
+$ single ruling	
+@reverse
+1. ina 2{+i} u₄-mu la-am {d}UTU KUR{+ha} KA₂-MEŠ ša₂# tu#-kan-nik₅ BAD{+te} {gi}URI₃.GAL ZI₃.SUR.RA{+a}	
+#lem: ina[on]PRP; n; ūmu[day]N; lām[before]SBJ; Šamaš[1]DN; inappaha[rise]V; bābāti[gate]N; ša[which]REL; +kanāku[seal]V$tukannik; +petû[open]V$tepette +.; +urigallu[standard]N$urigalla; +zisurrû[magic circle]N$zisurrâ
+
+
+2. {tug₂}U₂.LI.IN BABBAR{+u₂} u GE₆ tu-rab-ba a-na ID₂ ŠUB{+di} tak-pe-ra-at E₂-MEŠ DINGIR-MEŠ DU₃.A.BI
+#lem: +ulinnu[coloured twine]N$ulinna; +peṣû[white]AJ$; u[and]CNJ; +ṣalmu[black]AJ$ṣalma; +rabû[be(come) big//(meaning unknown)]V$turabba +.; ana[into]PRP; nāri[watercourse]N; tanaddi[throw]V +.; +takpertu[purification (ceremony)]N$takperāt; bītāt[temple]N; ilī[god]N; kalāma[all (of it)]N
+
+3. u₃ E₂.DUMU.NUN.NA E₂ {d}30 tu-kap-par {d}30 MU₄.MU₄ {dug}A.GUB₂.BA uk-tan-nu
+#lem: u[and]CNJ; +Edumununa[]TN$; bīt[temple]N; Sin[1]DN; tukappar[wipe (clean)]V +.; Sin[1]DN; +litbušu[clothed]AJ$litbuš +.; agubbû[holy water vessel]N; +kânu[be(come) permanent//set up correctly]V$uktannū +.
+
+4. %s zi {d}60 {d}en-lil₂-la₂#-bi he₂-pad₃-da-eš %sb : niš {d}a-nu₃ u {d}EN.LIL₂ <lu> tum₃-mu-šu₂-nu-ti
+#lem: zi[life]N; An[]DN; Enlil[]DN; +pad[find//adjure]V/pad#~$; +nīšu[life]N$nīš; Anu[1]DN; u[and]CNJ; Ellil[1]DN; +lū[may]MOD; +tummû[adjuring]AJ$tummušunūti +.
+
+5. 1{+en} {lu₂}MAŠ.MAŠ 15 E₂ u₃ ša₂-nu-u₂ GUB₃ E₂ EN₂ %s ud du₇-du₇-a-meš %sb ŠID{+nu-u₂}	
+#lem: n; mašmaššu[incantation priest]N; imitta[on the right]AV; bīti[temple]N; u[and]CNJ; šanû[second]NU; šumēla[on the left]AV; bīti[temple]N; šipta[incantation]N; ud[storm]; +du[push//butt]V/du#~$; imannû[recite]V
+
+6. u₃ šit-ti {lu₂}MAŠ.MAŠ-MEŠ EN₂ %s udug hul-meš %sb ŠID{+nu-u₂} zi-pa-de-e-MEŠ u₂-ta-am-mu-u₂-šu₂-nu-ti
+#lem: u[and]CNJ; šitti[rest]N; mašmaššī[incantation priest]N; šipta[incantation]N; udug[demon]; hulu[bad]; imannû[recite]V +.; +zipadû[incantation formula]N$zipadê; +tamû[swear//adjure]V$utammûšunūti +.
+
+7. ina 2{+i} u₄-mu ZI₃.SUR.RA{+a} tak-pe-rat u₃ ga-rak-ku ana ID₂ ŠUB{+di}
+#lem: ina[on]PRP; n; ūmu[day]N; zisurrâ[magic circle]N; +takpertu[purification (ceremony)//purification wiping]N$takperāt; u[and]CNJ; garakku[(small brick altar)]N; ana[into]PRP; nāri[watercourse]N; tanaddi[throw]V +.
+
+$ single ruling
+8. ša₂-niš ina u₄-mu AN.GE₆ {d}30 {lu₂}SANGA-MEŠ ša₂ E₂-MEŠ DINGIR-MEŠ TIR.AN.NA{ki} ina KA₂ E₂ DINGIR-MEŠ-šu₂-nu ga-rak-ku ŠUB{+di-u₂}
+#lem: šanîš[alternatively]AV; ina[on]PRP; ūmu[day]N; +antallû[eclipse]N$attalli; Sin[1]DN; šangû[priest]N; ša[of]DET; bītāt[temple]N; ilī[god]N; Tirana[1]SN; ina[at]PRP; bāb[gate]N; bīt[temple]N; ilīšunu[god]N; garakku[(small brick altar)]N; +nadû[throw//lay out]V$inaddû +.
+
+9. nu-ur u₂-ša₂-aṣ-bat me-ser₂ ner-ti bar-tu₄ u AN.GE₆ a-a iṭ-hu-u₂ a-na UNUG{ki} {e₂}re-eš IRI₁₂.GAL
+#lem: +nūru[light]N$nūr; +ṣabātu[seize//kindle]V$ušaṣbat +.; mēser[confinement]N; nērti[murder]N; bārtu[rebellion]N; u[and]CNJ; attallû[eclipse]N; ai[not]MOD; iṭhû[approach]V; ana[to]PRP; Uruk[1]SN; Reš[1]TN; Irigal[1]TN
+
+10. BARA₂.MAH E₂.AN.NA u₃ E₂-MEŠ DINGIR-MEŠ TIR.AN.NA{ki} i-ša₂-as-su-u₂
+#lem: Baramah[1]TN; Eana[1]TN; u[and]CNJ; bītāt[temple]N; ilī[god]N; Tirana[1]SN; išassû[cry out]V +.
+
+11. a-na ṣi-ri-ih-ti ri-gim-šu₂-nu i-nam-du-u₂ a-di AN.GE₆ i-zak-ku-u₂ i-ša₂-as-su-u₂
+#lem: ana[on account of]PRP; ṣirihti[lamentation]N; rigimšunu[voice]N; inamdû[raise]V +.; adi[until]PRP'SBJ; attallû[eclipse]N; izakkû[be(come) clear]V; išassû[cry out]V +.
+
+$ single ruling	
+12. u₄-mu AN.GE₆ {d}30 hal-hal-lat ZABAR MEZE ZABAR LI.LI.IZ₃ ZABAR TA E₂ am-mu-uš-mu IL₂-nim-ma	
+#lem: +ūmu[day//on the day]N'PRP$; attalli[eclipse]N; Sin[1]DN; +halhallatu[(a kind of) drum]N$halhallat; siparri[bronze]N; manzi[(a type of drum)]N; siparri[bronze]N; lilis[kettledrum]N; siparri[bronze]N; ultu[from]PRP; bīt[house]N; +ammušmu[(meaning unknown)]N$; +našû[lift//carry]V$inaššûnimma
+
+# bīt ammušmu[storehouse?]
+
+13. it-ti BARA₂{+ki} BALAG GAR{+an} ki-ma ša₂ AN.GE₆ {d}30 TAB{+u₂} {lu₂}GALA-MEŠ TUG₂ GADA MU₄.MU₄	
+#lem: itti[at]PRP; +parakku[cult dais]N$parakki; +balangu[(a large drum)]N$balangi; išakkan[place]V +.; kīma[as]PRP'SBJ; ša[that]REL; attalli[eclipse]N; Sin[1]DN; +šurrû[begin]V$ušarrû; kalû[lamentation priest]N; ṣubāt[garment]N; kitê[linen]N; +litbušu[clothed]AJ$litbušū
+
+14. ina lu-bar-šu₂-nu nu-uk-<ku>-su-tu SAG.DU-su-<<šu₂>>-nu kat₂-mu ṣi-ri-ih-tu₂ ni-is-sa-ti u bi-ki-ti
+#lem: ina[with]PRP; +lubāru[garment//piece of cloth]N$lubāršunu; +nukkusu[cut (in pieces)]AJ$nukkusūtu; qaqqassunu[head]N; katmū[covered]AJ; +ṣirihtu[lamentation]N$; +nissatu[wailing]N$nissati; u[and]CNJ; +bikītu[weeping]N$bikīti
+
+15. a-na {d}30 ina AN.GE₆ na-šu-u₂ 3 ZI₃.DUB.DUB.BU a-na me₂-eh-rat LI!.LI!.IZ₃ ina ZI₃.SUR.RA{+a} ŠUB{+di}
+#lem: ana[to]PRP; Sin[1]DN; ina[during]PRP; attallî[eclipse]N; +našû[lifted//raising]AJ$ +.; n; +zidubdubbû[(small heap of flour)]N$zidubdubbî; ana[to]PRP; +mehretu[opposite side]N$mehrat; lilissi[kettledrum]N; +ina[in//inside]PRP$; +zisurrû[magic circle]N$zisurrâ; tanaddi[lay down]V +.
+
+16. 1{+en} ku-uk-ku-bu di-im-ti ša₂ ŠINIG qu-ud-du-uš u₃ me-e ina ZA₃ ZI₃.DUB.DUB.BU 3-šu₂-nu
+#lem: n; +kukkubu[offering vessel]N$; +dimtu[tear]N$dimtī; ša[of]DET; +bīnu[tamarisk]N$bīni; +quddušu[purified]AJ$qudduš; u[and]CNJ; mê[water]N; ina[on]PRP; +imittu[right]N$imitti; zidubdubbî[(small heap of flour)]N; n
+
+17. ina ZI₃.SUR.RA{+a} a-na kun-nu ŠU-MIN a-na {lu₂}GALA-MEŠ a-na me₂-eh-rat {d}30 ina AN.GE₆ GUB{+an}
+#lem: ina[inside]PRP; zisurrâ[magic circle]N; ana[for]PRP; +kūnu[firmness]N$kunnu; qātī[hand]N; ana[to]PRP; kalê[lamentation priest]N; ana[to]PRP; mehrat[opposite side]N; Sin[1]DN; ina[during]PRP; attallî[eclipse]N; tukān[set up correctly]V +.
+
+# kūn qātī[fixed procedure]
+
+18. ki-i šal-šu₂ hap-rat ši-kin AN.GE₆ %s am amaš-na %sb GAR{+an} %s me-er-me-er zi gu₇!(NAG)-e %sb a-na lib₃-bi i-ru-bu
+#lem: +kī[like//if]PRP'MOD$; +šalšu[third]NU$; +haprātu[visible surface]N$haprāt; +šiknu[act of putting//extent]N$šikin; attallî[eclipse]N; +am[bull//wild bull]N/am#~; +amaš[sheepfold//fold]N/amaš#~; iššakkan[perform]V +.; +im[rain//rain storm]N/mer#~; zi[life]N; gu[eat//consume]; ana[into]PRP; libbi[heart]N; +erēbu[enter//penetrate]V$irrubu +.
+	
+19. %s a abzu-ŋu₁₀ mu-un-hul-am₃ %sb ER₂.ŠEM₄.MA : ki-i 2{+ta#} ŠU#-MIN# hap-rat ši-kin AN.GE₆ %s am amaš-na
+#lem: aya[cry]; Abzu[]GN; hulu[bad]; +eršemmakku[(an Emesal cult lament)]N$ +.; kī[if]PRP'MOD; n; +qātu[hand//equal part]N$qātā; haprāt[visible surface]N; šikin[extent]N; attallî[eclipse]N; +am[bull//wild bull]N/am#~; +amaš[sheepfold//fold]N/amaš#~
+
+20. %s u₈-u₂ a-a šag₄-zu %sb GAR{+an} u₃ %s a abzu-ŋu₁₀ mu-un-hul#-[am₃ me]-er-me-er zi gu₇!(NAG)-e %sb ana ŠA₃ KU₄{+bu}
+#lem: ua[oh!]; aya[cry]; šag[heart]; iššakkan[perform]V; u[and]CNJ; aya[cry]; Abzu[]GN; hulu[bad]; +im[rain//rain storm]N/mer#~; zi[life]N; gu[consume]; ana[into]PRP; libbi[heart]N; +erēbu[enter//penetrate]V$irrubu +.
+
+21. ki-i gam!(BAD)-mar-tu₄ TUR{+tu₄#} ši#-kin# AN#.GE₆ %s am amaš#-[na %sb ...] GAR#{+an}
+#lem: kī[if]PRP'MOD; +gammartu[totality]N$gammartu; +ṣehru[small]AJ$ṣehertu; šikin[extent]N; attallî[eclipse]N; +am[bull//wild bull]N/am#~; +amaš[sheepfold//fold]N/amaš#~; u; iššakkan[perform]V +.
+
+22. %s u₈-u₂ a#-a# šag₄#-[zu ...] amaš#-na
+#lem: ua[oh!]; aya[cry]; šag[heart]; u; +amaš[sheepfold//fold]N/amaš#~
+
+23. %s an-na %sb [...]	
+#lem: +an[sky//heaven]N/an#~; u +.
+
+24. ki#-ma# [...]
+#lem: kīma[as]PRP'SBJ; u
+
+$ rest of reverse missing
+
+@translation labeled en project
+
+$ start of obverse missing
+
+@label o 1'
+[...] ... [...]
+
+@label o 2'
+[...] the ritual procedure in the domain of the @kalû-priest of ... [...]
+
+@label o 3'
+[...] 'She @?has gone out?@, the wild cow from the temple of Ningal, the woman of ... [...],
+
+@label o 4'
+'the woman, the mother, Ningal, has gone out from the city.
+
+@label o 5'
+'I (am) your @?lord?@ who roams around and does not sleep.
+
+@label o 6'
+'I (am) [...] did not eat bread [...] his weariness. I (am) one who did not drink water in his weariness.
+
+@label o 7'
+'Sand has been heaped up [...] my house. Dust has been piled up. O dignitary, the one of wailing does not restrain wailing.
+
+@label o 8'
+'The prince squats on the ground [...] lamentation for his city. The tempest arose. It covered dust over the face.
+
+@label o 9'
+'The storm (is) the word of Anu. The storm (is) the word of Ellil. The storm (is) the rage in the heart of great Anu.
+
+@label o 10' 
+'I (am) a Dilmunite whose ship sank in the reed-thickets.
+
+@label o 11'
+'I (am) one who has a heart but does not have strength : woe, my heart, woe, (my) emotions.
+
+@label o 12'
+'The processional boat which delivered food offerings has delivered distress (instead).
+
+@label o 13'
+'The one (in charge) of the food offerings did not bring in the food offerings : the one (in charge) of the libations did not bring in the libations.'  
+
+@label o 14'
+This (is) what was sung to Sin at the eclipse. : You lay out an altar at the gate of the temple of the gods and (in) the square.
+
+@label o 15'
+You pile cedar, cypress, myrtle, sweet reed, tamarisk of the mountain and twigs of @ēru-tree on the altar.
+
+@label o 16'
+As the eclipse begins, a temple-enterer lights a torch and kindles (fire) at the altar.
+
+@label o 17'
+A @kalû-priest sits and performs the ritual procedure in the domain of the @kalû-priest until the eclipse has become light. 
+
+@label o 18'
+Until the eclipse becomes light, the fire on the altar must not be extinguished.
+
+@label o 19'
+You make funerary offerings for the fallow meadows. Ditto funerary offerings for the watercourses which do not carry water.
+
+@label o 20'
+You make funerary offerings to the Anunnakku.
+
+@label o 21' - o 23'
+Until the eclipse becomes light, the people of the land, their head garments taken off, their heads covered with (just) their pieces of cloth, cry out 'May confinement, murder, rebellion and the eclipse not come close to Uruk, Reš, Irigal, Baramah, Eana and the temples of the gods of Tirana'.
+
+@label o 23'
+They raise their voice on account of lamentation.
+
+@label o 24' - o 27'
+7 soldiers, people of the land, their faces, their hands and their feet smeared with mud from the watercourse -- you hang a sword on their right collarbones -- cry out 'May confinement, murder, rebellion and the eclipse not come close to Uruk, Reš, Irigal, Baramah, Eana and the temples of the gods of Tirana'.
+
+@label o 27'
+They raise their voice on account of lamentation.
+
+@label o 28'
+Until the eclipse becomes clear they cry out.
+
+@label+ o 28' - o 29'
+As soon as Sin lightens the eclipse, you extinguish the fire on the altar with beer.
+
+@label o 30'
+On the next day a builder lifts up the altar together with its ash and throws (it) into a watercourse.
+
+$ single ruling
+
+@label r 1 - r 3
+On the next day, before Šamaš rises, you open the gates which you have sealed. You ... the standard, magic circle (and) white and black twine. You throw (them) into a watercourse. You wipe clean with purification ceremonies all the temples of the gods, and (in particular) the Edumununa, the temple of Sin. Sin is clothed. The holy water vessels are set up.
+
+@label r 4
+(You say, written in Sumerian and then Akkadian:) 'Adjure them by the life of Anu and Ellil.'
+
+@label r 5 - r 6
+One @mašmaššu-priest on the right of the temple and a second on the left of the temple recite the incantation 'Butting storms' and the rest of the @mašmaššu-priests recite the incantation 'Evil @udug-demons'. They adjure them with incantation formulas.
+
+@label r 7
+On the next day you throw the magic circle, purification wipings and altar into a watercourse.
+
+$ single ruling
+
+@label r 8
+Alternatively, on the day of the eclipse of the moon the @šangû-priests of the temples of the gods of Tirana lay out an altar at the gate of the temple of their gods.
+
+@label r 9 - r 10 
+They kindle a light. They cry out 'May confinement, murder, rebellion and the eclipse not come close to Uruk, Reš, Irigal, Baramah, Eana and the temples of the gods of Tirana'.
+
+@label r 11
+They raise their voice on account of lamentation. Until the eclipse becomes clear they cry out.
+
+$ single ruling
+
+@label r 12 - r 15
+On the day of the eclipse of the moon they carry the bronze @halhallatu-drum, the bronze @manzû-drum (and) the bronze kettledrum from the @?storehouse?@ and place (them) at the dais of the @balangu-drum. As soon as the eclipse of the moon begins, @kalû-priests, clothed in a linen garment, their heads covered with their torn pieces of cloth, raise lamentation, wailing and weeping to Sin during the eclipse. You lay down 3 heaps of flour opposite the kettledrum inside a magic circle.
+
+@label r 16 - r 17
+You set up one offering vessel (full) of tears from a purified tamarisk and water on the right side of the 3 heaps of flour inside the magic circle, for the fixed procedure (relating) to the @kalû-priests opposite Sin during the eclipse.
+
+@label r 18
+If a third visible surface (is) the extent of the eclipse, 'The wild bull in his fold' is performed. 'Rain-storms consuming life' penetrates into the heart.
+
+@label r 19	
+The Emesal cult lament (is) 'Alas, he is the one who has destroyed my Abzu'. :
+
+@label+ r 19 - r 20
+If two-thirds of the visible surface (is) the extent of the eclipse, 'The wild bull in his fold' (and) 'Woe, alas, your heart' are performed, and 'Alas, he is the one who has destroyed my Abzu' (and) 'Rain-storms consuming life' penetrate into the heart.
+
+@label r 21
+If a small totality (is) the extent of the eclipse, 'The wild bull in his fold' (and) [...] are performed.
+
+@label r 22 - r 23
+'Woe, alas, your heart' [...]. [...], '[...] in his fold' (and) 'Of heaven [...]' [...].
+
+@label r 24
+As [...]
+
+$ rest of reverse missing

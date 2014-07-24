@@ -4,11 +4,13 @@ import re
 
 class AtfLexer(object):
 
-    def _keyword_dict(self, tokens):
-        return {token.lower(): token for token in tokens}
+    def _keyword_dict(self, tokens, extra):
+        keywords= {token.lower(): token for token in tokens}
+        keywords.update(extra)
+        return keywords
 
-    def resolve_keyword(self, value, source, fallback=None):
-        source = self._keyword_dict(source)
+    def resolve_keyword(self, value, source, fallback=None, extra={}):
+        source = self._keyword_dict(source, extra)
         if not fallback:
             return source[value]
         return source.get(value, fallback)
@@ -45,7 +47,8 @@ class AtfLexer(object):
     long_argument_structures = [
         'OBJECT',
         'SURFACE',
-        'FRAGMENT'
+        'FRAGMENT',
+        'HEADING'
     ]
 
     protocols = ['ATF', 'LEM', 'PROJECT', 'NOTE', "LINK"]
@@ -83,8 +86,7 @@ class AtfLexer(object):
         'MINUS',
         'FROM',
         'TO',
-        'PARBAR',
-        'HEADING'
+        'PARBAR'
     ]
 
     keyword_tokens = list(set(
@@ -155,17 +157,19 @@ class AtfLexer(object):
         return t
 
     def t_INITIAL_parallel_labeled_ATID(self, t):
-        '\@[a-zA-Z][a-zA-Z0-9\[\]]+'
+        '\@[a-zA-Z][a-zA-Z0-9\[\]]+\+?'
         t.value = t.value[1:]
-
-        if t.value in ["h1","h2","h3"]:
-            t.type = "HEADING"
-            t.lexer.push_state('absorb')
-            return t
 
         t.type = self.resolve_keyword(t.value,
                                       AtfLexer.structures +
-                                      AtfLexer.long_argument_structures)
+                                      AtfLexer.long_argument_structures,
+                                      extra={
+                                        "h1":"HEADING",
+                                        "h2":"HEADING",
+                                        "h3":"HEADING",
+                                        "label+":"LABEL",
+                                      }
+                                      )
 
 
         if t.type == "LABEL":

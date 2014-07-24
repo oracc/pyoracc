@@ -405,6 +405,15 @@ class testParser(TestCase):
         assert_equal(art.children[0].children[0].words[0],
                      "an expert will carefully inspect an ungelded bull.")
 
+    def test_translation_label_plus(self):
+        art = self.try_parse(
+            "@tablet\n" +
+            "@translation labeled en project\n" +
+            "@label+ o 28\n" +
+            "You extinguish the fire on the altar with beer\n"
+        )
+        assert(art.children[0].children[0].label.plus)
+
     def test_translation_labeled_dashlabel(self):
         art = self.try_parse(
             "@tablet\n" +

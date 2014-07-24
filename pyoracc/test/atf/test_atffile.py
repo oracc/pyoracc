@@ -33,7 +33,8 @@ texts=[
     ['bb_2_79','X002079',"BagM Beih. 02, 079"],
     ['bb_2_83','X002083',"Bagm Beih. 02, 083"],
     ['bb_2_96','X002096',"BagM Beih. 02, 096"],
-    ['afo','X002003','AfO 14, Taf. VI']        
+    ['afo','X002003','AfO 14, Taf. VI'],
+    ['brm_4_6','P363407','BRM 4, 06']        
     ]
 
 def test_texts():

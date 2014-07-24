@@ -170,7 +170,15 @@ class testLexer(TestCase):
              None, "r", "1'", None, "r", "2'", None]
         )
 
-    def test_translation_range_label_prime(self):
+    def test_translation_range_label_plus(self):
+        self.compare_tokens(
+            "@translation labeled en project\n" +
+            "@label+ o 28\n",
+            ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
+             "LABEL", "ID", "ID", "NEWLINE"]
+        )
+
+    def test_translation_range_label_periods(self):
         self.compare_tokens(
             "@translation labeled en project\n" +
             "@label t.e. 1\n",
