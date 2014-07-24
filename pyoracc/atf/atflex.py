@@ -41,7 +41,8 @@ class AtfLexer(object):
         'NOTE',
         'M',
         'COMPOSITE',
-        'LABEL'
+        'LABEL',
+        'END'
     ]
 
     long_argument_structures = [
@@ -62,7 +63,7 @@ class AtfLexer(object):
         'SEVERAL', 'SOME', 'REST', 'OF', 'START', 'BEGINNING', 'MIDDLE', 'END',
         'COLUMNS', 'LINE', 'LINES', 'CASE', 'CASES', 'SURFACE',
         'BLANK', 'BROKEN', 'EFFACED', 'ILLEGIBLE', 'MISSING', 'TRACES',
-        'RULING', 'SINGLE', 'DOUBLE', 'TRIPLE', 'AT']
+        'RULING', 'SINGLE', 'DOUBLE', 'TRIPLE', 'AT', 'LACUNA']
 
     base_tokens = [
         'AMPERSAND',
@@ -179,6 +180,10 @@ class AtfLexer(object):
                                       },
                                       )
 
+        if t.type == "END":
+            t.lexer.pop_state()
+            t.lexer.push_state('transctrl')
+
         if t.type == "LABEL":
             t.lexer.push_state("transpara")
             t.lexer.push_state("transctrl")
@@ -226,7 +231,8 @@ class AtfLexer(object):
                                       AtfLexer.dollar_keywords +
                                       AtfLexer.structures +
                                       AtfLexer.translation_keywords +
-                                      AtfLexer.long_argument_structures, 'ID')
+                                      AtfLexer.long_argument_structures, 'ID',
+                                      extra={'Lacuna':'LACUNA'})
 
         if t.type in ['LANG']:
             t.lexer.push_state('absorb')
@@ -300,8 +306,11 @@ class AtfLexer(object):
         t.value = t.value.strip()
         return t
 
+
+    terminates_paragraph="(\@label|\@end|\@\(|\&)"
+
+    @lex.TOKEN(r'([^\^\n\r]|([\n\r](?!\s*[\n\r])(?!'+terminates_paragraph+')))+')
     def t_transpara_ID(self,t):
-        r'([^\^\n\r]|([\n\r](?!\s*[\n\r])(?!(\@label|\@\(|\&))))+'
         t.value = t.value.strip()
         return t
     
@@ -315,8 +324,8 @@ class AtfLexer(object):
     # BUT, exceptionally to fix existing bugs in active members of corpus,
     # it is also ended by an @label or an @(), or a new document, and these tokens are not absorbed by this token
     # Translation paragraph state is ended by a double newline
+    @lex.TOKEN(r'[\n\r](?='+terminates_paragraph+')')
     def t_transpara_MAGICNEWLINE(self,t):
-        r'[\n\r](?=(\@label|\@\(|\&))'    
         t.lexer.lineno += 1
         t.lexer.pop_state()
         t.type = "NEWLINE"

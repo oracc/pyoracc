@@ -1,0 +1,56 @@
+&Q003386 = Esarhaddon 1014
+#project: rinap/rinap4
+#atf: use unicode
+#atf: lang akk
+#atf: use math
+#atf: use legacy
+@obverse
+1.	[... {KUR}]ELAM.MA{KI} [...]
+#lem: u; Elamti[1]GN; u
+
+2.	[...] x-ad NUN ḫi-[...]
+#lem: u; u; rubû[ruler]N; u
+
+3.	[...]-man šá-at-pi ka-[...]
+#lem: u; šatpu[excavation]N$šatpi; u
+
+4.	[...] ri-šá-ni x x AD.MEŠ [...]
+#lem: u; u; u; u; abu[father//ancestor]N$abbī; u
+
+5.	[...]-e ma-ku-tu [...]
+#lem: u; makûtu[destitution?]N$; u
+
+6.	[...] ra-a-na ni-i-ti [...]
+#lem: u; u; nītu[encirclement]N$nīti; u
+
+7.	[...] sap-lu šá ka-[...]
+#lem: u; u; ša[of]DET; u +.
+
+$ (Lacuna)
+@reverse
+$ (Lacuna)
+1'.	[...]-ka
+#lem: u
+
+2'.	[...]-nu-ú-si
+#lem: u
+
+3'.	[...]-pi
+#lem: u
+
+4'.	[...]
+#lem: u
+
+5'.	[...] x x
+#lem: u; u; u +.
+
+$ (Lacuna)
+@translation labeled en project
+@(1 - 7) (No translation warranted)
+
+$ Lacuna
+$ Lacuna
+@(r 1' - r 5') (No translation possible)
+
+$ Lacuna
+@end translation

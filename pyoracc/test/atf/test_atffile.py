@@ -46,7 +46,8 @@ texts=[
     ['brm_4_19','P363411','BRM 4, 19'], 
     ['cm_31_139','P415763','CM 31, 139'],
     ['ctn_4_006','P363421','CTN 4, 006'],
-    ['Senn2002','Q004089','Sennacherib 2002']
+    ['Senn2002','Q004089','Sennacherib 2002'],
+    ['Esar1014','Q003386','Esarhaddon 1014'],
     ]
 
 def test_texts():

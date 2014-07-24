@@ -416,6 +416,16 @@ class testParser(TestCase):
         assert_equal(art.children[0].children[0].scope, "column")
         assert_equal(art.children[0].children[0].extent, "start of")
 
+    def test_strict_dollar_start_of_exception(self):
+        art = self.try_parse(
+            "@tablet\n" +
+            "@obverse\n" +
+            "$ Lacuna\n",
+        )
+        assert_equal(art.children[0].children[0].state, "Lacuna")
+        assert_equal(art.children[0].children[0].scope, None)
+        assert_equal(art.children[0].children[0].extent, None)
+
     def test_translation_intro(self):
         art = self.try_parse(
             "@tablet\n" +
@@ -435,6 +445,18 @@ class testParser(TestCase):
         assert_equal(art.children[0].children[0].children[0].words[0],
                      "Year 63, Ṭebetu (Month X), night of day 2")
 
+    def test_translation_eneded(self):
+        art = self.try_parse(
+            "@tablet\n" +
+            "@translation labeled en project\n" +
+            "@(1) Year 63, Ṭebetu (Month X), night of day 2\n" +
+            "@end translation\n"
+        )
+        assert_is_instance(art.children[0], Translation)
+        assert_equal(art.children[0].children[0].label.label, ['1'])
+        assert_equal(art.children[0].children[0].words[0],
+                     "Year 63, Ṭebetu (Month X), night of day 2")
+
     def test_translation_labeled_text(self):
         art = self.try_parse(
             "@tablet\n" +
@@ -443,11 +465,11 @@ class testParser(TestCase):
             "Then it will be taken for the rites and rituals.\n\n"
         )
         assert_is_instance(art.children[0], Translation)
-        assert_equal(art.children[0].children[0].label, 'o 4')
+        assert_equal(art.children[0].children[0].label.label, ['o','4'])
         assert_equal(art.children[0].children[0].words[0],
                      "Then it will be taken for the rites and rituals.")
 
-    def test_translation_labeled_text(self):
+    def test_translation_labeled_text2(self):
         art = self.try_parse(
             "@tablet\n" +
             "@translation labeled en project\n" +

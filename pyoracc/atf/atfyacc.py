@@ -413,6 +413,10 @@ class AtfParser(object):
                              | brief_state_desc"""
         p[0] = p[1]
 
+    def p_lacuna(self, p):
+        "state_description : LACUNA"
+        p[0]=State(p[1])
+
     def p_plural_state_description(self, p):
         """plural_state_description : plural_quantifier plural_scope state
                                     | ID plural_scope state
@@ -500,6 +504,11 @@ class AtfParser(object):
     def p_translation(self, p):
         "translation : translation_statement"
         p[0] = p[1]
+
+    def p_translation_end(self, p):
+        "translation : translation END REFERENCE newline"
+        p[0] = p[1]
+        # Nothing to do; this is a legacy ATF feature
 
     def p_translation_surface(self, p):
         "translation : translation surface %prec SURFACE"
