@@ -55,6 +55,9 @@ class AtfParser(object):
     def p_math(self, p):
         "math : ATF USE MATH newline"
 
+    def p_legacy(self, p):
+        "math : ATF USE LEGACY newline"
+
     def p_key(self, p):
         "key : KEY ID EQUALS ID newline"
 

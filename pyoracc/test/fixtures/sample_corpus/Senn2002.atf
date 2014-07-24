@@ -1,0 +1,13 @@
+&Q004089 = Sennacherib 2002
+#project: rinap/senn2
+#atf: use unicode
+#atf: lang akk
+#atf: use math
+#atf: use legacy
+1.	šá {f}{d}taš-me-tum-šar-rat MUNUS.É.GAL šá {m}{d}30-PAP.MEŠ-SU MAN KUR aš-šur
+#lem: ša[of]DET; Tašmetu-šarrat[]PN$; ša[of]DET$&ēkallu[palace//palace]N$ēkalli; ša[of]DET; Sin-ahhe-eriba[1]RN; šar[king]N; māt[land]N; Aššur[1]GN
+
+
+@translation labeled en project
+
+@(1) Property of Tašmētu-šarrat, palace woman of Sennacherib, king of Assyria.

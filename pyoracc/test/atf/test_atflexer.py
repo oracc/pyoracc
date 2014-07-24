@@ -64,6 +64,12 @@ class testLexer(TestCase):
             ["ATF", "USE", "MATH", "NEWLINE"]
         )
 
+    def test_use_legacy(self):
+        self.compare_tokens(
+            "#atf: use legacy\n",
+            ["ATF", "USE", "LEGACY", "NEWLINE"]
+        )
+
     def test_link(self):
         self.compare_tokens(
             "#link: def A = P363716 = TCL 06, 44\n" +
