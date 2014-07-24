@@ -1,0 +1,67 @@
+&X002083 = Bagm Beih. 02, 083
+#project: cams/gkab
+
+#atf: lang akk-x-stdbab
+#atf: use unicode
+
+@tablet
+@obverse
+$ start of column missing
+$ 1 line traces
+$ single ruling
+2'. KIN 1 13 NA! 30 5 $A# x [...]
+#lem: Ululu[1]MN; n +.; n; X +.; Sin[1]DN; n; u; u; u +.
+
+### NA and KUR are technical terms whose Akkadian names are not known.
+
+$ single ruling
+3'. DU₆ 30 5 dele-bat ABSIN KUR 13 AN.GE₆ 30 ša₂ DIB 14 NA
+#lem: Tašritu[1]MN; n +.; n; Delebat[Venus]CN; Šerʾu[Furrow]CN; +kašādu[reach]V$ikšud +.; n; attalli[eclipse]N; Sin[1]DN; ša[that]REL; +etēqu[proceed//pass by]V$ītiqu +.; n; X +.
+
+4'. 22 GU₄.U₄ ina KUR ina RIN₂ IGI 27 KUR <<GE₆>> 29 AN.GE₆ 20
+#lem: n; Šihṭu[Mercury]CN; ina[in]PRP; šadî[east]N; ina[in]PRP; Zibanitu[Scales]CN; innamir[appear]V +.; n; X +.; n; attalli[eclipse]N; Šamaš[1]DN
+
+5'. ina GIR₂.TAB ša₂ DIB <<27 KUR>> 30!(20) MUL₂.MUL₂ ŠU₂
+#lem: ina[in]PRP; Zuqaqipu[Scorpion]CN; ša[that]REL; +etēqu[proceed//pass by]V$ītiqu +.; n; Zappu[Bristle]CN; irbi[set]V +.
+
+@reverse
+1. APIN 1 5 dele-bat RIN₂ KUR 8 AN x KUR 13 NA
+#lem: Arahsamnu[1]MN; n +.; n; Delebat[Venus]CN; Zibanitu[Scales]CN; +kašādu[reach]V$ikšud +.; n; Ṣalbatanu[Mars]CN; u; +kašādu[reach]V$ikšud +.; n; X +.
+
+2. 27 KUR 28 GENNA ina GIR₂.<TAB> IGI 29@v {mul₂}BABBAR PA KUR
+#lem: n; X +.; n; Kayyamanu[Saturn]CN; ina[in]PRP; Zuqaqipu[Scorpion]CN; innamir[appear]V +.; n; Peṣu[White Star]CN; Pabilsag[1]CN; +kašādu[reach]V$ikšud +.
+
+$ single ruling
+3. GAN 30 1 dele-bat! GIR₂#.TAB KUR U₄ BI GU₄.U₄ ina KUR ina GIR₂.TAB ŠU₂
+#lem: Kislimu[1]MN; n +.; n; Delebat[Venus]CN; Zuqaqipu[Scorpion]CN; +kašādu[reach]V$ikšud +.; ūmu[day]N; šū[that]IP; Šihṭu[Mercury]CN; ina[in]PRP; šadî[east]N; ina[in]PRP; Zuqaqipu[Scorpion]CN; irbi[set]V +.
+
+$ 1 line traces
+$ rest of reverse missing
+
+@translation labeled en project
+$ start of column missing
+$ 1 line traces
+$ single ruling
+
+@label o 2'
+Ululu (Month VI), the 1st (of which follows the 30th of the preceding month). The 13th, moonset-after-sunrise. @?The Moon@?, 5 ... [...].
+
+$ single ruling
+@label o 3'
+Tašritu (Month VII), (the 1st of which is identical with) the 30th (day of the preceding month). The 5th, Venus reaches the Furrow. The 13th, eclipse of the Moon that passes by. The 14th, moonset-after-sunrise.
+
+@label o 4' - o 5'
+The 22nd, Mercury appears in the east in the Scales. The 27th, last-visibility-of-the-Moon. The 29th, eclipse of the Sun in the Scorpion, that passes by. <<The 27th, last-visibility-of-the-Moon.>> The 30th, the Bristle sets.
+
+@label r 1
+Arahsamnu (Month VIII), the 1st (of which follows the 30th of the preceding month). The 5th, Venus reaches the Scales. The 8th, Mars reaches .... The 13th, moonrise-before-sunset.
+
+@label r 2
+The 27th, last-visibility-of-the-Moon. The 28th, Saturn appears in Scorpio. The 29th, the White Star (Jupiter) reaches Pabilsag.
+
+$ single ruling
+@label r 3
+Kislimu (Month IX), (the 1st of which is identical with) the 30th (day of the preceding month). The 1st, Venus reaches the Scorpion. That day, Mercury sets in the east (sic.) in the Scorpion.
+
+$ 1 line traces
+$ rest of reverse missing

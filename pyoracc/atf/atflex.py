@@ -193,7 +193,7 @@ class AtfLexer(object):
         t.lexer.push_state('text')
         return t
 
-    def t_parallel_DOLLAR(self,t):
+    def t_parallel_labeled_DOLLAR(self,t):
         "^\$"
         t.lexer.push_state("transctrl")
         return t

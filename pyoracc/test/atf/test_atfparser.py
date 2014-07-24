@@ -207,6 +207,26 @@ class testParser(TestCase):
         )
         assert_equal(art.children[0].children[0].count, 3)
 
+    def test_ruling_on_object_no_surface(self):
+        art = self.try_parse(
+            "@tablet\n" +
+            "$ single ruling\n",
+        )
+        # Should default to an obverse surface
+        assert_equal(art.children[0].objecttype,"obverse")
+        assert_equal(art.children[0].children[0].count, 1)
+
+    def test_ruling_on_labeled_translation(self):
+        art = self.try_parse(
+            "@tablet\n" +
+            "@translation labeled en project\n" +
+            "$ single ruling\n" +
+            "@label 1\n" +
+            "Some content\n"
+        )
+        # Should default to an obverse surface
+        assert_equal(art.children[0].children[0].count, 1)
+
     def test_comment(self):
         art = self.try_parse(
             "@tablet\n" +
@@ -322,6 +342,16 @@ class testParser(TestCase):
         assert_equal(dollar.state, "traces")
         assert_equal(dollar.scope, "line")
         assert_equal(dollar.extent, "1")
+
+    def test_strict_dollar_start_of_exception(self):
+        art = self.try_parse(
+            "@tablet\n" +
+            "@obverse\n" +
+            "$ start of column missing\n",
+        )
+        assert_equal(art.children[0].children[0].state, "missing")
+        assert_equal(art.children[0].children[0].scope, "column")
+        assert_equal(art.children[0].children[0].extent, "start of")
 
     def test_translation_intro(self):
         art = self.try_parse(

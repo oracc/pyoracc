@@ -232,7 +232,11 @@ class AtfParser(object):
 
     def p_surface_element_line(self, p):
         """surface_element : line
-                           | ruling
+                           | dollar"""
+        p[0] = p[1]
+
+    def p_dollar(self, p):
+        """dollar          : ruling
                            | loose_dollar_statement
                            | strict_dollar_statement"""
         p[0] = p[1]
@@ -485,6 +489,11 @@ class AtfParser(object):
 
     def p_translation_labeledline(self, p):
         "translation : translation translationlabeledline"
+        p[0] = p[1]
+        p[0].children.append(p[2])
+
+    def p_translation_dollar(self, p):
+        "translation : translation dollar"
         p[0] = p[1]
         p[0].children.append(p[2])
 

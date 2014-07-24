@@ -347,6 +347,15 @@ class testLexer(TestCase):
              ["DOLLAR", "REFERENCE", "BLANK"]
         )
 
+
+    def test_strict_in_labelled_parallel(self):
+        self.compare_tokens(
+            "@translation labeled en project\n" +
+            "$ reverse blank",
+             ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE"]+
+             ["DOLLAR", "REFERENCE", "BLANK"]
+    )
+
     def test_punctuated_translation(self):
         self.compare_tokens(
             "@translation parallel en project\n" +
