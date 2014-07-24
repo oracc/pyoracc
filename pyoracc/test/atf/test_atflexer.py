@@ -262,6 +262,12 @@ class testLexer(TestCase):
             ['NEWLINE']
         )
 
+    def test_dotline(self):
+        self.compare_tokens(
+            ". \n",
+            ['NEWLINE']
+        )
+
     def test_translation_heading(self):
         self.compare_tokens(
             "@translation parallel en project\n" +

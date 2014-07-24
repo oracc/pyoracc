@@ -1,0 +1,277 @@
+&P363411 = BRM 4, 19
+#project: cams/gkab
+
+#atf: lang akk-x-stdbab
+#atf: use unicode
+
+@tablet
+@obverse
+$ start of obverse broken
+1'.	[...] x 8# 10# 12# 10# 1(IKU){gana₂} ša₂ GIR₂.TAB# ZI#
+#lem: u; u; n; n; n; n; Iku[Field]CN; ša[of]DET; Zuqaqipu[Scorpion]CN; +nishu[extraction//celestial distance]N$ +.
+
+$ single ruling
+2'.	8 21# U₄#.[DA]-KAM a-mir-ka ana IGI-ka ha-de-e : ra-a-ši# 
+#lem: n; n; +adānu[fixed date]N$adān; +āmiru[seer]N$āmirka; ana[to]PRP; pānika[front]N; +hadû[be(come) joyful//be(com)ing joyful]V'N$hadê; +riāšu[rejoice//rejoicing]V'N$râši +.
+
+
+3'.	8 21 5 3 UR.A ša₂ GIR₂.TAB ZI#
+#lem: n; n; n; n; Nešu[Lion]CN; ša[of]DET; Zuqaqipu[Scorpion]CN; nishu[celestial distance]N +.
+
+$ single ruling
+4'.	 9@v 10 U₄.DA-KAM MUNUS šu-ud-bu-bu 9@v 10 1 10 LU ša₂ PA#.BIL#.<SAG> ZI#
+#lem: n; n; adān[fixed date]N; +sinništu[woman]N$sinništa; +dabābu[speak//speaking]V'N$šudbubu +.; n; n; n; n; +Agru[Hireling]CN$; ša[of]DET; Pabilsag[1]CN; nishu[celestial distance]N +.
+
+$ single ruling
+5'.	9@v 21 U₄.DA-KAM a-mir-ka ŠU.SI-šu₂ ana SIG₅{+ti₃} ana [...]
+#lem: n; n; adān[fixed date]N; āmirka[seer]N; +ubānu[finger]N$ubānšu; ana[in]PRP; +damiqtu[good//kindness]N$damiqti; ana[to]PRP; u
+
+6'.	ta-ra-aṣ 9@v 21 6 3 ABSIN ša₂ PA.[BIL.SAG x]
+#lem: +tarāṣu[stretch out//pointing]V'N$tarāṣ +.; n; n; n; n; Šerʾu[Furrow]CN; ša[of]DET; Pabilsag[1]CN; u +.
+
+$ single ruling
+7'.	10 10 U₄.DA-KAM ši-kin KU₃.BABBAR 10 10 2 10 MUL₂.MUL₂ ša₂# [...]
+#lem: n; n; adān[fixed date]N; +šiknu[act of putting//deposit]N$šikin; kaspi[silver]N +.; n; n; n; n; Zappu[Bristle]CN; ša[of]DET; u +.
+
+$ single ruling
+
+8'.	10 21 U₄.DA-KAM ARAD LU₂ la₃ ZAH₂ ŠA₃ ARAD u GEME₂# [...] 
+#lem: n; n; adān[fixed date]N; +wardu[slave]N$arad; amēli[man]N; lā[not]MOD; +halāqu[be(come) lost//disappearing]V'N$halāqi +.; libbi[heart]N; +wardu[slave]N$ardi; ū[or]CNJ; +amtu[maid//female slave]N$amti; u +.
+
+9'.	DU₃-ma SILIM 10 21 7 3 RIN₂ ša₂ MAŠ₂# [x]
+#lem: teppešma[perform]V; +šalāmu[be(come) healthy//be(come) favourable]V$išallim +.; n; n; n; n; Zibanitu[Scales]CN; ša[of]DET; Suhurmašu[Goatfish]CN; u +.
+
+$ single ruling
+10'.	11 10 U₄.DA-KAM MUNUS-ka ana NITA IGI la₃ IL₂{+e} 11 10 3 10 MAŠ.MAŠ ša₂ GU# ZI#
+#lem: n; n; adān[fixed date]N; +sinništu[woman//wife]N$sinništika; ana[to]PRP; zikari[male]N; +īnu[eye]N$īna; lā[not]MOD; +našû[raise//raising]V'N$našê +.; n; n; n; n; Tuʾamu[Twins]CN; ša[of]DET; +Gula[]DN'CN$; nishu[celestial distance]N +.
+
+$ single ruling
+11'.	11 21 U₄.DA-KAM HUL.GIG 11 21 8 3 GIR₂.TAB ša₂ GU ZI
+#lem: n; n; adān[fixed date]N; zīri[hate]N +.; n; n; n; n; Zuqaqipu[Scorpion]CN; ša[of]DET; Gula[1]'CN; nishu[celestial distance]N +.
+
+
+$ single ruling
+12'.	12 27 U₄.DA-KAM UŠ₁₁.BUR₂.RU.DA 12 27 11 21 GU ša₂ GU ZI
+#lem: n; n; adān[fixed date]N; +ušburrudû[ritual to dispel sorcery]N$ušburrudê +.; n; n; n; n; Gula[1]'CN; ša[of]DET; Gula[1]'CN; nishu[celestial distance]N +.
+
+#note: 1(IKU){gana₂} is expected here instead of the final GU.
+
+$ single ruling
+13'.	12 28 U₄.DA-KAM GIR₃ HUL{+ti₃} ina E₂ NA KU₅{+si} 12 28 12 4 GU ša₂ 1(IKU){gana₂} ZI
+#lem: n; n; adān[fixed date]N; šēp[foot]N; lemutti[evil]N; ina[from]PRP; bīt[house]N; amēli[man]N; parāsi[blocking]'N +.; n; n; n; n; Gula[1]'CN; ša[of]DET; Iku[Field]CN; nishu[celestial distance]N +.
+
+#note: 1(IKU){gana₂} is expected here instead of the GU.
+
+$ single ruling
+14'.	12 29@v U₄.DA-KAM iš-di-ih {lu₂}KURUN₂.NA {+šu}KAR
+#lem: n; n; adān[fixed date]N; +išdihu[profit(able business)]N$išdih; +sābû[brewer]N$sābî; +ezēbu[leave//rescuing]V'N$šūzubi +.
+
+15'.	u AN.TA.LU₃ 12 29@v!(19@v) 12 17 GU.LA ša₂ 1(IKU){gana₂} ZI
+#lem: u[and]CNJ; +antallû[eclipse]N$attallî +.; n; n; n; n; +Gula[]DN'CN$; ša[of]DET; Iku[Field]CN; nishu[celestial distance]N +.
+
+#note: 1(IKU){gana₂} is expected here instead of GU.LA.
+
+$ single ruling
+16'.	1 21 UŠ₁₁.ZU BUR₂.RU.DA ana  LU₂ GIG la₃ TE{+e}
+#lem: n; n; +kišpu[sorcery]N$kišpa; +pašāru[release//undoing]V'N$pašāri +.; ana[to]PRP; amēli[man]N; murṣu[illness]N; lā[not]MOD; ṭehê[approaching]'N +.
+
+17'.	SAG.DU TI.LA ra-i-ib-šu a-na šu-ṣi-i
+#lem: qaqqada[head]N; bulluṭu[healing]'N +.; +raʾību[shivering]N$raʾībšu; ana[to]PRP; +waṣû[go out//driving out]V'N$šūṣî +.
+
+18'.	si#-im-ma a-na TI.LA UŠ₂ MUNUS ana KU₅{+si} HUL ana E₂ LU₂ la₃ TE
+#lem: +simmu[wound]N$simma; ana[to]PRP; bulluṭi[healing]'N +.; dām[blood]N; sinništi[woman]N; ana[to]PRP; parāsi[blocking]'N +.; lemuttu[evil]N; ana[to]PRP; bīt[house]N; amēli[man]N; lā[not]MOD; +ṭehû[approach//approaching]V'N$ +.
+
+19'.	DIM₂#-ma AL.SILIM 1 21 10 3 MAŠ₂ ša₂ LU ZI
+#lem: +epēšu[do//perform]V$teppešma; +šalāmu[be(come) healthy//be(come) favourable]V$išallim +.; n; n; n; n; Suhurmašu[Goatfish]CN; ša[of]DET; +Agru[Hireling]CN$; nishu[celestial distance]N +.
+
+@reverse
+1.	2 12 LIL₂.LA₂#.EN#.NA# KI.SIKIL.LIL₂.LA₂.EN#.NA ZI{+hi}
+#lem: n; n; +lilû[(a demon)]N$lilâ; ardat[girl]N&lilî[(a demon)]; nasāhi[expelling]'N +.
+
+2.	DIM₂-ma AL.SILIM 2!(4) 12 7 6 RIN₂ ša₂ MUL₂.MUL₂ ZI
+#lem: teppešma[perform]V; išallim[be(come) favourable]V +.; n; n; n; n; Zibanitu[Scales]CN; ša[of]DET; Zappu[Bristle]CN; nishu[celestial distance]N +.
+
+$ single ruling
+3.	4# 12# LIL₂#.LA₂.EN.NA KI.SIKIL.LIL₂.LA₂.EN.NA# ZI{+hi}
+#lem: n; n; +lilû[(a demon)]N$lilâ; ardat[girl]N&lilî[(a demon)]N; nasāhi[expelling]'N +.
+
+4.	DIM₂-ma AL.SILIM 4 12 9@v 6 PA.BIL#.<SAG> [x] ALLA# ZI#
+#lem: teppešma[perform]V; išallim[be(come) favourable]V +.; n; n; n; n; Pabilsag[1]CN; u; Alluttu[Crab]CN; nishu[celestial distance]N +.
+
+$ single ruling
+5.	5!(2) 29@v AN.TA.ŠUB.BA  be-en-na {d}LUGAL--UR₃.RA ŠU DINGIR.RA [...]
+#lem: n; n; miqit[fall]N&šamû[heaven]N$šamê; +bennu[epilepsy]N$benna; +Bel-uri[]DN$; qāt[hand]N; ili[god]N; u
+
+6.	ZI{+hi} DIM₂-ma AL.SILIM 5 29@v 5 17 ABSIN ša₂ UR!#.A# ZI#
+#lem: nasāhi[expelling]'N +.; teppešma[perform]V; išallim[be(come) favourable]V +.; n; n; n; n; Šerʾu[Furrow]CN; ša[of]DET; Nešu[Lion]CN; nishu[celestial distance]N +.
+
+$ single ruling
+7.	6 24 GIDIM DAB{+bat} KI LU₂ ana KEŠ₂ NU LU₂ ana UŠ₂ pa-qa₂-du#! ana GIDIM# [x]
+#lem: n; n; +eṭemmu[ghost]N$eṭemma; +ṣabātu[seize//seizing]V'N$ṣabāt; itti[to]PRP; amēli[man]N; ana[to]PRP; +rakāsu[bind//attaching]V'N$rakāsi +.; +ṣalmu[effigy]N$ṣalam; amēli[man]N; ana[to]PRP; mūti[death]N; +paqādu[entrust//consigning]V'N$ +.; ana[to]PRP; eṭemmi[ghost]N; u
+
+8.	ana NAG.NAG{+e} hi-bil-tu₄ E₃{+i} DIM₂-ma AL.SILIM 6 24 4 12 [...] ZI
+#lem: ana[to]PRP; +šaqû[give to drink//giving to drink]V'N$šitaqqê +.; +hibiltu[wrongdoing]N$; +waṣû[go out//driving out]V'N$šūṣî +.; teppešma[perform]V; išallim[be(come) favourable]V +.; n; n; n; n; u; nishu[celestial distance]N +.
+
+$ single ruling
+9.	7 11 MUNUS GEN.NA DIM₂-ma hi-ṭa₄ la₃ TUKU DIM₂-ma AL.SILIM 7 11 11 23!(12) GU# ša₂# RIN₂# ZI#
+#lem: n; n; sinništa[woman]N; +alāku[go//having sex with]V'N$alāka; +epēšu[do//performing]V'N$epēšumma; +hīṭu[error//sin]N$hīṭa; lā[not]MOD; +rašû[acquire//acquiring]V'N$rašê +.; teppešma[perform]V; išallim[be(come) favourable]V +.; n; n; n; n; Gula[1]'CN; ša[of]DET; Zibanitu[Scales]CN; nishu[celestial distance]N +.
+
+$ single ruling
+10.	7 16 DINGIR ana qe₂-re-e iš₈-tar₂ ana qe₂-re-e sa-gal-la ana TI.LA
+#lem: n; n; ila[god]N; ana[to]PRP; +qerû[call//inviting]V'N$qerê +.; +ištaru[goddess]N$ištar; ana[to]PRP; +qerû[call//inviting]V'N$qerê +.; +sagallu[(a muscle)//(an illness)]N$sagalla; ana[to]PRP; bulluṭi[curing]'N +.
+
+11.	E₂ ana hu-up-pi₂ GIG ana e-se-ri ŠU GIG ana TI.LA
+#lem: bīta[temple]N; ana[to]PRP; +hiāpu[cleanse//purifying]V'N$huppi +.; murṣa[illness]N; ana[to]PRP; +esēru[confine//blocking]V'N$esēri +.; +qātu[hand]N$qāta; +marṣu[sick//sore]AJ$marṣa; ana[to]PRP; bulluṭu[healing]'N +.
+
+12.	NA₄ ana TI.LA ŠA₃.SI.SI ana ka-le-e DIM₂-ma AL#.[SILIM]
+#lem: +abnu[stone//stone (in the body)]N$abna; ana[to]PRP; bulluṭi[healing]'N +.; +nišhu[diarrhoea]N$nišha; ana[to]PRP; kalê[holding (back)]'N +.; teppešma[perform]V; išallim[be(come) favourable]V +.
+
+13.	7 16 1 28 LU ša₂ RIN₂ ZI#
+#lem: n; n; n; n; +Agru[Hireling]CN$; ša[of]DET; Zibanitu[Scales]CN; nishu[celestial distance]N +.
+
+$ single ruling
+14.	8 18 IDIM u NUN EME.SIG la₃ GU₇ : GABA.RI 8 18 3 24 MAŠ.MAŠ ša₂ GIR₂#.[TAB x]
+#lem: n; n; kabtu[nobleman]N; ū[or]CNJ; rubû[king]N; +karṣu[slander]N$karṣa; -lā[not]MOD; +akālu[eat//eating]V'N$akāli; +mahāru[face//receiving]V'N$mahāri +.; n; n; n; n; Tuʾamu[Twins]CN; ša[of]DET; Zuqaqipu[Scorpion]CN; u +.
+
+### karṣa akālu [slander] V
+
+$ single ruling
+15.	8 21 la₃ ši-il-la-ti ana TUKU LU₂ ina IGI LU₂ ša₂-ka-nu ŠUR₂.HUN#.[GA₂]
+#lem: n; n; lā[not]MOD; +šillatu[impudence//iniquity]N$šillati; ana[to]PRP; +rašû[acquire//acquiring]V'N$rašî +.; amēla[man]N; ina[in]PRP; pān[front]N; amēli[man]N; +šakānu[put//appointing]V'N$ +.; +šurhungû[appeasement of anger//(a ritual)]N$ +.
+
+16.	ana kar-ṣi la₃ IGI{+ri} lu UŠ₂ DU₃ lu {lu₂}<<LU>>.UŠ₁₁.ZU lu {munus}UŠ₁₁#.[ZU] 
+#lem: ana[to]PRP; +karṣu[slander]N$karṣi; lā[not]MOD; +mahāru[face//receiving]V'N$mahāri +.; lū[either]CNJ; +mītu[dead man]N$mīta; +kalû[hold back//holding (back)]V'N$; lū[or]CNJ; +kaššāpu[sorceror]N$kaššāpa; lū[or]CNJ; +kaššaptu[sorceress]N$kaššapta
+
+17.	lu {munus}DINGIR šu-ud-bu-bi lu UŠ₂  ina E₂.GAL ana ZI{+hi} lu ana ŠA₃ DAB [x]
+#lem: lū[or]CNJ; +entu[high priestess]N$enta; +dabābu[speak//speaking]V'N$šudbubi; lū[or]CNJ; +mītu[dead man]N$mīta; ina[from]PRP; ēkalli[palace]N; ana[to]PRP; +nasāhu[tear out//removing]V'N$nasāhi; lū[or]CNJ; ana[to]PRP; libba[heart]N; +ṣabātu[seize//seizing]V'N$ṣabāti; u +.
+
+18.	ana SAG.DU LU₂ ana DAB{+ti₃} {lu₂}KI:AG₂ LUGAL ana KU₅{+si} {munus}<KI>.AG₂ ana KU₅{+si} 8 21 5 3 [...]
+#lem: ana[to]PRP; qaqqad[head]N; amēli[man]N; ana[to]PRP; +ṣabātu[seize//seizing]V'N$ṣabāti +.; +narāmu[loved one]N$narām; šarri[king]N; ana[to]PRP; parāsi[blocking]'N +.; +narāmtu[loved one]N$narāmta; ana[to]PRP; parāsi[blocking]'N +.; n; n; n; n; u +.
+
+$ single ruling
+19.	[x] 12 KA.DAB.BE₂.DA DU₃-ma i-šal-lim 9@v 12 2 6 MUL₂.MUL₂ ša₂ PA.<<PA>>.BIL.<SAG> ZI#
+#lem: u; n; +kadabbedû[oral paralysis//(a ritual)]N$kadabbedî +.; teppešma[perform]V; +šalāmu[be(come) healthy//be(come) favourable]V$išallim +.; n; n; n; n; Zappu[Bristle]CN; ša[of]DET; Pabilsag[1]CN; nishu[celestial distance]N +.
+
+$ single ruling
+20.	[...] DINGIR# IGI.BAR DINGIR.ŠA₃.DIB.BA BUR₂{+ri} DIM₂-ma AL.[SILIM]
+#lem: u; ila[god]N; +amāru[see//seeing]V'N$amāri +.; +kimiltu[wrath]N$kimilta; +pašāru[release//undoing]V'N$pašāri +.; teppešma[perform]V; išallim[be(come) favourable]V +.
+
+21.	[...] 2 23 MUL₂.MUL₂ ša₂ MAŠ₂! [x]
+#lem: u; n; n; Zappu[Bristle]CN; ša[of]DET; Suhurmašu[Goatfish]CN; u +.
+
+$ single ruling
+22.	[... pur]-ru#-da DIM₂-ma AL#.SILIM# [...]
+#lem: u; +parādu[be(come) scared//terrifying]V'N$purruda; teppešma[perform]V; išallim[be(come) favourable]V +.; u
+
+$ rest of reverse broken
+
+@translation labeled en project
+
+$ start of obverse broken
+@label o 1'
+[...] ... (zodiacal sign) 8, 10° = (sign) 12, 10°: the Field (sign 12) is the distance of the Scorpion (sign 8).
+
+$ single ruling
+
+@label o 2'
+(Sign) 8, 12°: fixed date for whoever sees you to become joyful (or): rejoice in front of you.
+
+@label o 3'
+(Sign) 8, 21° = (sign) 5, 3°: the Lion (sign 5) is the distance of the Scorpion.
+
+$ single ruling
+
+@label o 4'
+(Sign) 9, 10°: fixed date for making a woman speak. (Sign) 9, 10° = (sign) 1, 10°: the Hireling (sign 1) is the distance of Pabilsag (sign 9).
+
+$ single ruling
+
+@label o 5' - o 6'
+(Sign) 9, 21°: fixed date for whoever sees you to point his finger in kindness to [...]. (Sign) 9, 21° = (Sign) 6, 3°: the Furrow (sign 6) is the [...] of Pabilsag (sign 9).
+
+$ single ruling
+
+@label o 7'
+(Sign) 10, 10°: fixed date for deposit of silver. (Sign) 10, 10° = (sign) 2, 10°: the Bristle (sign 2) is the [...] of [...].
+
+$ single ruling
+@label o 8' - o 9'
+(Sign) 10, 21°: fixed date for a man's slave not to disappear; the @?heart?@ of a slave or slave-woman [...]. You perform (it) and it will be favourable. (Sign) 10, 21° = (sign) 7, 3°: the Scales (sign 7) is the [...] of the Goatfish (sign 10).
+
+$ single ruling
+@label o 10'
+(Sign) 11, 10°: fixed date for your wife not to raise her eye to (another) man. (Sign) 11, 10° = (sign) 3, 10°: the Twins (sign 3) are the distance of Gula (sign 11).
+
+$ single ruling
+@label o 11'
+(Sign) 11, 21°: fixed date for hate. (Sign) 11, 21° = (month) 8, 3°: the Scorpion (sign 8) is the distance of Gula (sign 11).
+
+$ single ruling
+@label o 12'
+(Sign) 12, 27°: fixed date for the ritual to dispel sorcery. (Sign) 12, 27° = (sign) 11, 21°: Gula (sign 11) is the distance of Gula (sic, for the Field, sign 12). 
+
+$ single ruling
+@label o 13'
+(Sign) 12, 28°: fixed date for blocking the foot of evil from a man's house. (Sign) 12, 28° = (sign) 12, 4°: Gula (sic, for the Field, sign 12) is the distance of the Field (sign 12).
+
+$ single ruling
+@label o 14' - o 15'
+(Sign) 12, 29°: fixed date for rescuing the brewer's profit; and (for) an eclipse. (Sign) 12, 29° = (sign) 12, 17°: Gula (sic, for the Field, sign 12) is the distance of the Field (sign 12).
+
+$ single ruling
+@label o 16' - o 19'
+(Sign) 1, 21°: (fixed date for) undoing sorcery; (for) illness not to approach a man; (for) healing the head; to drive out his shivering; to heal a wound;  (for) evil not to approach a man's house. You perform (these) and it will be favourable. (Sign) 1, 21° = (sign) 10, 3°: the Goatfish (sign 10) is the  distance of the Hireling (sign 1).
+
+@label r 1 - r 2
+(Sign) 2, 12°: (fixed date for) expelling the @lilû-demon (or) the @ardat-@lilî demon. You perform (it) and it will be favourable. (Sign) 2, 12° = (sign) 7, 6°: the Scales (sign 7) is the  distance of the Bristle.
+
+$ single ruling
+@label r 3 - r 4
+(Sign) 4, 12°: (fixed date for) expelling the @lilû-demon (or) the @ardat-@lilî demon. You perform (it) and it will be favourable. (Sign) 4, 12° = (sign) 9, 6°: Pabilsag (sign 9) is the distance [...] the Crab.
+
+$ single ruling
+@label r 5 - r 6
+(Sign) 5, 29°: (fixed date for) expelling falling sickness, epilepsy, Bel-uri, the hand of a god, [...]. You perform (them) and it will be favourable. (Sign) 5, 29° = (sign) 5, 17°: the Furrow (sign 5) is the distance of the Lion.
+
+$ single ruling
+@label r 7 - r 8
+(Sign) 6, 24°: (fixed date for) seizing a ghost (and) attaching to a man; to consign a man's effigy to death; to keep giving [...] to a ghost to drink; to drive out wrongdoing. You perform (these) and it will be favourable. (Sign) 6, 24° = (sign) 4, 12°: [...] is the distance [...].
+
+$ single ruling
+@label r 9
+(Sign) 7, 11°: (fixed date for) performing (the ritual) "having sex with a woman" so as not to acquire sin. You perform (it) and it will be favourable. (Sign) 7 11° = (sign) 11, 12°: Gula (sign 11) is the distance of the Scales (sign 7).
+
+$ single ruling
+@label r 10 - r 13
+(Sign) 7, 15°: (fixed date for) inviting a god; inviting a goddess; curing @sagallu-illness; purifing a temple; blocking an illness; healing a sore hand; healing a stone (in the body); holding back diarrhoea. You perform (these) and it will be favourable. (Sign) 7, 16° = (sign) 1, 29°: the Hireling (sign 1) is the distance of the Scales. 
+
+$ single ruling
+@label r 14
+(Sign) 8, 18°: (fixed date for) a nobleman or prince not to give (or) receive slander. (Sign) 8, 18° = (sign) 3, 24°: the Twins (sign 3) are the [...] of the Scorpion (sign 8).
+
+$ single ruling
+@label r 15 - r 18
+(Sign) 8, 21°: (fixed date for) acquiring lack of iniquity; appointing a man in front of (another) man; appeasement of anger; not receiving slander; either holding back a dead man, or making a sorceror or sorceress or high priestess speak, or removing a dead man from the palace, or seizing the heart, [...] seizing a man's head; to block the king's beloved; to block a beloved woman. (Sign) 8, 21° = (sign) 5, 3°: [...].
+
+$ single ruling
+@label r 19
+[...], 12°: (fixed date for rituals against) oral paralysis. You perform (it) and it will be favourable. (Sign) 9, 12° = (sign) 2, 6°: the Bristle (sign 2) is the distance of Pabilsag (sign 9).
+
+$ single ruling
+@label r 20 - r 21
+[...]: (fixed date for) seeing a god; undoing divine wrath. You perform (these) and it will be favourable. [...] = (sign) 2, 23°: the Bristle (sign 2) is the distance of the Goatfish (sign 10).
+
+$ single ruling
+@label r 22
+[...] terrifying a [...]. You perform (it) and it will be favourable. [...].
+
+$ rest of reverse broken
+
+
+
+
+.  
+.  
+.  
+
+

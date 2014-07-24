@@ -148,7 +148,11 @@ class AtfLexer(object):
         t.type = "NEWLINE"
         return t
 
-        # No token
+    def t_INITIAL_parallel_labeled_DOTLINE(self,t):
+        r'^\s*\.\s*\n'
+        # A line with just a dot, occurs in brm_4_19 at the end
+        t.type = "NEWLINE"
+        return t
 
         # In the multi-line base states, a newline doesn't change state
     def t_INITIAL_parallel_labeled_NEWLINE(self, t):
