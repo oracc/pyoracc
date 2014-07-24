@@ -31,6 +31,14 @@ class testLexer(TestCase):
             [None, "X001001", None, "JCS 48, 089"]
         )
 
+    def test_crlf(self):
+        self.compare_tokens(
+            "&X001001 = JCS 48, 089\r\n" +
+            "#project: cams/gkab\n\r",
+            ["AMPERSAND", "ID", "EQUALS", "ID", "NEWLINE", "NEWLINE"] +
+            ["PROJECT", "ID", "NEWLINE", "NEWLINE"]
+        )
+
     def test_project(self):
         self.compare_tokens(
             "#project: cams/gkab\n",
@@ -68,6 +76,12 @@ class testLexer(TestCase):
         self.compare_tokens(
             "#atf: use legacy\n",
             ["ATF", "USE", "LEGACY", "NEWLINE"]
+        )
+
+    def test_bib(self):
+        self.compare_tokens(
+            "#bib:  MEE 15 54\n",
+            ["BIB", "ID", "NEWLINE"]
         )
 
     def test_link(self):

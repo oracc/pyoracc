@@ -53,7 +53,7 @@ class AtfLexer(object):
         'HEADING'
     ]
 
-    protocols = ['ATF', 'LEM', 'PROJECT', 'NOTE', "LINK", "KEY"]
+    protocols = ['ATF', 'LEM', 'PROJECT', 'NOTE', "LINK", "KEY", "BIB"]
 
     protocol_keywords = ['LANG', 'USE', 'MATH', 'LEGACY', 'MYLINES', 'LEXICAL','UNICODE', 'DEF']
 
@@ -152,19 +152,19 @@ class AtfLexer(object):
 
 
     def t_INITIAL_parallel_labeled_COMMENT(self, t):
-        r'^\#[^\n\r\:]*([\ \t][^\n\r]*)?\n'
+        r'^\#[^\n\r\:]*([\ \t][^\n\r]*)?[\n\r]'
         t.type = "NEWLINE"
         return t
 
     def t_INITIAL_parallel_labeled_DOTLINE(self,t):
-        r'^\s*\.\s*\n'
+        r'^\s*\.\s*[\n\r]'
         # A line with just a dot, occurs in brm_4_19 at the end
         t.type = "NEWLINE"
         return t
 
         # In the multi-line base states, a newline doesn't change state
     def t_INITIAL_parallel_labeled_NEWLINE(self, t):
-        r'\s*\n'
+        r'\s*[\n\r]'
         t.lexer.lineno += 1
         return t
 
@@ -212,7 +212,7 @@ class AtfLexer(object):
             t.lexer.push_state('key')
         if t.type == "LEM":
             t.lexer.push_state('lemmatize')
-        if t.type in ['NOTE', 'PROJECT']:
+        if t.type in ['NOTE', 'PROJECT', "BIB"]:
             t.lexer.push_state('absorb')
         return t
 
@@ -258,7 +258,7 @@ class AtfLexer(object):
     # In the absorb, text, transctrl and lemmatize states,
     # a newline returns to the base state
     def t_absorb_text_lemmatize_transctrl_key_NEWLINE(self, t):
-        r'\n'
+        r'[\n\r]'
         t.lexer.lineno += 1
         t.lexer.pop_state()
         return t

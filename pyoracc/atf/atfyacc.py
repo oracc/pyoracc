@@ -50,22 +50,13 @@ class AtfParser(object):
         p[0] = p[1]
 
     def p_unicode(self, p):
-        "skipped_protocol : ATF USE UNICODE newline"
-
-    def p_math(self, p):
-        "skipped_protocol : ATF USE MATH newline"
-
-    def p_legacy(self, p):
-        "skipped_protocol : ATF USE LEGACY newline"
-
-    def p_mylines(self, p):
-        "skipped_protocol : ATF USE MYLINES newline"
-
-    def p_lexical(self, p):
-        "skipped_protocol : ATF USE LEXICAL newline"
-
-    def p_key(self, p):
-        "skipped_protocol : KEY ID EQUALS ID newline"
+        """skipped_protocol : ATF USE UNICODE newline
+                            | ATF USE MATH newline
+                            | ATF USE LEGACY newline
+                            | ATF USE MYLINES newline
+                            | ATF USE LEXICAL newline
+                            | KEY ID EQUALS ID newline
+                            | BIB ID newline"""
 
     def p_link(self, p):
         "link : LINK DEF ID EQUALS ID EQUALS ID newline"
