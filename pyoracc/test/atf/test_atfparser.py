@@ -217,14 +217,14 @@ class testParser(TestCase):
             "1. Line one\n" +
             "2. Line two\n" +
             "#lem: line; two\n" +
-            "@bottom\n" + 
+            "@bottom\n" +
             "3. Line three)\n" +
             "@reverse\n" +
             "4. Line four\n" +
             "#lem: line; three\n" +
             "#note: Note to line four\n" +
             "@translation labeled en project\n" +
-            "@(1) Line one\n\n" 
+            "@(1) Line one\n\n"
         )
         assert_is_instance(art, Text)
         tablet = art.children[0]
@@ -234,8 +234,8 @@ class testParser(TestCase):
         assert_is_instance(obverse, OraccObject)
         reverse = tablet.children[2]
         assert_equal(len(tablet.children), 4)
-        bottom = tablet.children[1] 
-        # Is this wrong -- should tops and bottoms 
+        bottom = tablet.children[1]
+        # Is this wrong -- should tops and bottoms
         # really be a lower nesting level?
         translation = tablet.children[3]
         lines = (obverse.children[:] +
@@ -300,7 +300,7 @@ class testParser(TestCase):
 
     def test_link_on_surface_not_line(self):
         art = self.try_parse(
-            "@tablet\n" + 
+            "@tablet\n" +
             "4'. zal-bi a-ri-[a]\n" +
             "$single ruling\n" +
             ">> A Seg.2, 33\n"
@@ -434,7 +434,7 @@ class testParser(TestCase):
         assert_equal(art.children[0].children[0].state, "blank")
         assert_equal(art.children[0].children[0].scope, None)
         assert_equal(art.children[0].children[0].extent, "rest")
-   
+
     def test_strict_dollar_singular_exception(self):
         art = self.try_parse(
             "@tablet\n" +
@@ -778,7 +778,7 @@ class testParser(TestCase):
 
     def test_interlinear_translation(self):
         text=self.try_parse(
-            "@tablet\n" + 
+            "@tablet\n" +
             "1'. ⸢x⸣\n" +
             "#tr: English\n"
         )

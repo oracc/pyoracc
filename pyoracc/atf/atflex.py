@@ -116,7 +116,7 @@ class AtfLexer(object):
         'labeled',   # translation
         'interlinear', #translation
         'transctrl',
-        'transpara'
+        'para'
     ]
 
     states = [(state, 'exclusive') for state in state_names]
@@ -191,7 +191,7 @@ class AtfLexer(object):
             t.lexer.push_state('transctrl')
 
         if t.type == "LABEL":
-            t.lexer.push_state("transpara")
+            t.lexer.push_state("para")
             t.lexer.push_state("transctrl")
 
         if t.type in AtfLexer.long_argument_structures + ["NOTE"]:
@@ -200,7 +200,7 @@ class AtfLexer(object):
 
     def t_labeled_OPENR(self, t):
         "\@\("
-        t.lexer.push_state("transpara")
+        t.lexer.push_state("para")
         t.lexer.push_state("transctrl")
         return t
 
@@ -216,8 +216,10 @@ class AtfLexer(object):
             t.lexer.push_state('lemmatize')
         if t.type == "TR":
             t.lexer.push_state('interlinear')
-        if t.type in ['NOTE', 'PROJECT', "BIB"]:
+        if t.type in ['PROJECT', "BIB"]:
             t.lexer.push_state('absorb')
+        if t.type == "NOTE":
+            t.lexer.push_state('para')
         return t
 
     def t_LINELABEL(self, t):
@@ -261,10 +263,10 @@ class AtfLexer(object):
         return t
 
     # In the absorb, text, transctrl and lemmatize states,
-    # a newline returns to the base state
+    # one or more newlines returns to the base state
     def t_absorb_text_lemmatize_transctrl_interlinear_key_NEWLINE(self, t):
-        r'[\n\r]'
-        t.lexer.lineno += 1
+        r'[\n\r]+'
+        t.lexer.lineno += len(t.value)
         t.lexer.pop_state()
         return t
 
@@ -280,15 +282,37 @@ class AtfLexer(object):
 
 
     t_transctrl_MINUS = "\-\ "
-    
+
     def t_transctrl_CLOSER(self,t):
         "\)"
         t.lexer.pop_state()
         return t
 
-    #--- RULES FOR THE ABSORB STATE ---
-
+    # Flag characters (#! etc ) don't apply in translations
+    # But reference anchors ^1^ etc do.
+    # lines beginning with a space are continuations
     white = r'[\ \t]*'
+    translation_regex = white + "([^\^\n\r]|([\n\r](?=[ \t])))+" + white
+
+    @lex.TOKEN(translation_regex)
+    def t_parallel_interlinear_ID(self,t):
+        t.value = t.value.strip()
+        t.value = t.value.replace("\r ","\r")
+        t.value = t.value.replace("\n ","\n")
+        t.value = t.value.replace("\n","")
+        t.value = t.value.replace("\r","")
+        return t
+
+    def t_parallel_labeled_AMPERSAND(self,t):
+        r'\&'
+        # New document, so leave translation state
+        t.lexer.pop_state()
+        return t
+
+    #--- RULES FOR THE ABSORB STATE ---
+    # Used for states where only flag# characters! and ^1^ references
+    # Are separately tokenised
+
     nonflagnonwhite = r'[^\ \t\#\!\^\*\?\n\r\=]'
     internalonly = r'[^\n\^\r\=]'
     nonflag = r'[^\ \t\#\!\^\*\?\n\r\=]'
@@ -305,58 +329,41 @@ class AtfLexer(object):
         t.value = t.value.strip()
         return t
 
+    t_absorb_HASH = "\#"
+    t_absorb_EXCLAIM = "\!"
+    t_absorb_QUERY = "\?"
+    t_absorb_STAR = "\*"
+    t_absorb_parallel_para_HAT = "[\ \t]*\^[\ \t]*"
+    t_absorb_EQUALS = "\="
 
-    # Flag characters (#! etc ) don't apply in translations
-    # But reference anchors ^1^ etc do.
-    # lines beginning with a space are continuations
-    translation_regex = white + "([^\^\n\r]|([\n\r](?=[ \t])))+" + white
+    #--- Rules for paragaph state----------------------------------
+    # Free text, ended by double new line
 
-    @lex.TOKEN(translation_regex)
-    def t_parallel_interlinear_ID(self,t):
-        t.value = t.value.strip()
-        t.value = t.value.replace("\r ","\r")
-        t.value = t.value.replace("\n ","\n")
-        t.value = t.value.replace("\n","")
-        t.value = t.value.replace("\r","")
-        return t
-
-
-    terminates_paragraph="(\@label|\@end|\@\(|\&)"
+    terminates_paragraph="(\#|\@|\&|\Z|(^[^.\ \t]*\.))"
 
     @lex.TOKEN(r'([^\^\n\r]|([\n\r](?!\s*[\n\r])(?!'+terminates_paragraph+')))+')
-    def t_transpara_ID(self,t):
+    def t_para_ID(self,t):
         t.value = t.value.strip()
         return t
-    
-    # Translation paragraph state is ended by a double newline
-    def t_transpara_NEWLINE(self,t):
-        r'[\n\r]\s*[\n\r]+'    
+
+    # Paragraph state is ended by a double newline
+    def t_para_NEWLINE(self,t):
+        r'[\n\r]\s*[\n\r]+'
         t.lexer.lineno += t.value.count("\n")
         t.lexer.pop_state()
         return t
 
     # BUT, exceptionally to fix existing bugs in active members of corpus,
-    # it is also ended by an @label or an @(), or a new document, and these tokens are not absorbed by this token
+    # it is also ended by an @label or an @(), or a new document,
+    # Or a linelabel, or the end of the stream.
+    # and these tokens are not absorbed by this token
     # Translation paragraph state is ended by a double newline
     @lex.TOKEN(r'[\n\r](?='+terminates_paragraph+')')
-    def t_transpara_MAGICNEWLINE(self,t):
+    def t_para_MAGICNEWLINE(self,t):
         t.lexer.lineno += 1
         t.lexer.pop_state()
         t.type = "NEWLINE"
         return t
-
-    def t_parallel_labeled_AMPERSAND(self,t):
-        r'\&'
-        # New document, so leave translation state
-        t.lexer.pop_state()
-        return t
-
-    t_absorb_HASH = "\#"
-    t_absorb_EXCLAIM = "\!"
-    t_absorb_QUERY = "\?"
-    t_absorb_STAR = "\*"
-    t_absorb_parallel_transpara_HAT = "[\ \t]*\^[\ \t]*"
-    t_absorb_EQUALS = "\="
 
     #--- RULES FOR THE key STATE -----
 

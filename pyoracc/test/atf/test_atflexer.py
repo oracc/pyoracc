@@ -15,7 +15,7 @@ class testLexer(TestCase):
             expected_values = repeat(None)
         for expected_type, expected_value, token in izip_longest(
                 expected_types, expected_values, self.lexer):
-            #print token, expected_type
+            print token, expected_type
             if token is None and expected_type is None:
                 break  # The end-condition on the
                        # self.lexer iterable seems broken
@@ -35,8 +35,8 @@ class testLexer(TestCase):
         self.compare_tokens(
             "&X001001 = JCS 48, 089\r\n" +
             "#project: cams/gkab\n\r",
-            ["AMPERSAND", "ID", "EQUALS", "ID", "NEWLINE", "NEWLINE"] +
-            ["PROJECT", "ID", "NEWLINE", "NEWLINE"]
+            ["AMPERSAND", "ID", "EQUALS", "ID", "NEWLINE"] +
+            ["PROJECT", "ID", "NEWLINE"]
         )
 
     def test_project(self):
@@ -223,7 +223,7 @@ class testLexer(TestCase):
             "@label o 14-15 - o 20\n" +
             "You strew all (kinds of) seed.\n\n",
             ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
-             "LABEL", "ID", "ID",  "MINUS", "ID", "ID", "NEWLINE", 
+             "LABEL", "ID", "ID",  "MINUS", "ID", "ID", "NEWLINE",
              "ID", "NEWLINE"],
             [None, "labeled", "en", "project", None,
              None, "o", "14-15", None, "o", "20", None]
@@ -235,7 +235,7 @@ class testLexer(TestCase):
             "@(o 20) You strew all (kinds of) seed.\n" +
             "@(o i 2) No-one will occupy the king of Akkad's throne.\n\n",
             ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
-             "OPENR","ID", "ID", "CLOSER","ID","NEWLINE", 
+             "OPENR","ID", "ID", "CLOSER","ID","NEWLINE",
              "OPENR","ID", "ID","ID","CLOSER","ID","NEWLINE",],
             [None, "labeled", "en", "project", None,
              None, "o", "20", None, "You strew all (kinds of) seed.", None,
@@ -280,8 +280,23 @@ class testLexer(TestCase):
              "ID","NEWLINE"]
         )
 
+    def test_translation_blank_line_begins_translation(self):
+        # A double newline normally ends a translation paragraph
+        # But this is NOT the case at the beginning of a section,
+        # Apparently.
+        self.compare_tokens(
+        "@translation labeled en project\n" +
+        "@label o 16\n" +
+        "\n" +
+        "@šipir @ṭuhdu @DU means: a message of abundance" +
+        " will come triumphantly.\n",
+        ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
+         "LABEL", "ID", "ID", "NEWLINE",
+         "ID","NEWLINE"]
+        )
+
     def test_translation_no_blank_line_in_labeled_translation(self):
-        # This functionality is expressly forbidden at 
+        # This functionality is expressly forbidden at
         # http://build.oracc.org/doc2/help/editinginatf/translations/index.html
         # But appears is in cm_31_139 anyway
         self.compare_tokens(
@@ -310,7 +325,7 @@ class testLexer(TestCase):
 
     def test_interlinear_translation(self):
         self.compare_tokens(
-            "@tablet\n" + 
+            "@tablet\n" +
             "1'. ⸢x⸣\n" +
             "#tr: English\n",
             ["TABLET", "NEWLINE",
@@ -319,7 +334,7 @@ class testLexer(TestCase):
 
     def test_multilineinterlinear_translation(self):
         self.compare_tokens(
-            "@tablet\n" + 
+            "@tablet\n" +
             "1'. ⸢x⸣\n" +
             "#tr: English\n" +
             " on multiple lines\n",
@@ -402,7 +417,7 @@ class testLexer(TestCase):
         self.compare_tokens(
             "@translation parallel en project\n" +
             "@h1 A translation heading\n",
-            ["TRANSLATION", "PARALLEL", "ID", "PROJECT", "NEWLINE"] + 
+            ["TRANSLATION", "PARALLEL", "ID", "PROJECT", "NEWLINE"] +
             ["HEADING","ID","NEWLINE"]
         )
 
@@ -410,12 +425,12 @@ class testLexer(TestCase):
         self.compare_tokens(
             "@obverse\n" +
             "@h1 A heading\n",
-            ["OBVERSE", "NEWLINE"] + 
-            ["HEADING","ID","NEWLINE"] 
+            ["OBVERSE", "NEWLINE"] +
+            ["HEADING","ID","NEWLINE"]
     )
 
     def test_double_comment(self):
-        """Not sure if this is correct; but can't find 
+        """Not sure if this is correct; but can't find
         anything in structure or lemmatization doc"""
         self.compare_tokens(
             "## papān libbi[belly] (already in gloss, same spelling)\n",
@@ -561,6 +576,28 @@ class testLexer(TestCase):
             ["TRANSLATION", "PARALLEL", "ID", "PROJECT", "NEWLINE"] +
             ["REVERSE","NEWLINE"] +
             ["NOTE","ID","NEWLINE"]
+        )
+
+    def test_equals_in_translation_note(self):
+        self.compare_tokens(
+            "@translation parallel en project\n" +
+            "@reverse\n" +
+            '#note: The CAD translation šarriru = "humble",\n',
+            ["TRANSLATION", "PARALLEL", "ID", "PROJECT", "NEWLINE"] +
+            ["REVERSE","NEWLINE"] +
+            ["NOTE","ID","NEWLINE"]
+            )
+
+    def test_note_ended_by_strucuture(self):
+        self.compare_tokens(
+            "@translation parallel en project\n" +
+            "@obverse\n" +
+            '#note: The CAD translation šarriru = "humble",\n' +
+            '@reverse',
+            ["TRANSLATION", "PARALLEL", "ID", "PROJECT", "NEWLINE"] +
+            ["OBVERSE","NEWLINE"] +
+            ["NOTE","ID","NEWLINE"] +
+            ["REVERSE"]
         )
 
     def test_milestone(self):
