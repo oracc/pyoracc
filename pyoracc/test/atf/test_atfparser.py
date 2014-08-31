@@ -466,6 +466,19 @@ class testParser(TestCase):
         assert_equal(art.children[0].children[0].scope, None)
         assert_equal(art.children[0].children[0].extent, None)
 
+    @skip("No support for recovery yet")
+    def test_loose_recovery(self):
+        # Users often put a loose dollar without the brackets
+        # We should define a parser fallback to accommodate this
+        # And recover.
+        art = self.try_parse(
+            "@tablet\n" +
+            "@obverse\n" +
+            "$ traces of 2 erased lines\n" +
+            "1. Hello\n",
+        )
+        assert_equal(art.children[0].children[0].label, '1')
+
     def test_translation_intro(self):
         art = self.try_parse(
             "@tablet\n" +
