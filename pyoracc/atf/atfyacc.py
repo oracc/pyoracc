@@ -373,7 +373,7 @@ class AtfParser(object):
     def p_ruling(self, p):
         """ruling : DOLLAR SINGLE RULING newline
                   | DOLLAR DOUBLE RULING newline
-                  | DOLLAR TRIPLE RULING newline 
+                  | DOLLAR TRIPLE RULING newline
                   | DOLLAR SINGLE LINE RULING newline
                   | DOLLAR DOUBLE LINE RULING newline
                   | DOLLAR TRIPLE LINE RULING newline"""

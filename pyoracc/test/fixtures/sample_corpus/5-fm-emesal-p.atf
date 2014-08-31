@@ -1,0 +1,535 @@
+&P228608 = UM 29-15-134
+#project: dcclt
+#atf: use unicode
+#bib: 1996 N. Veldhuis, ASJ 18, 229-234
+@tablet
+@obverse
+@column 1
+1'. %e gašan#-[...] = %sux [...] = %a [...]
+#lem: u; u; u
+
+2'. %e gašan-amaš#-[kug-ga] = %sux [...] = %a [...]
+#lem: Gašanamaškuga[]DN; u; u
+
+#tr: Gašanamaškuga = [Ninamaškuga]
+3'. %e dim₃-bi-er-mah# = %sux [...] = %a [...]
+#lem: Dimermah[]DN; u; u
+
+#tr: Dimermah = [Diŋirmah]
+4'. %e gašan-[mah] = %sux [...] = %a [...]
+#lem: Gašanmah[]DN; u; u
+
+#tr: Gašanmah = [Ninmah]
+5'. %e gašan-hur#-[saŋ-ŋa₂] = %sux [...] = %a [...]
+#lem: Gašanhursaŋak[]DN; u; u
+
+#tr: Gašanhursaŋa = [Ninhursaŋa]
+6'. %e še#-[en-tu] = %sux [...] = %a [...]
+#lem: Šentur[]DN; u; u
+
+#tr: Šentur = [Nintur]
+$ rest of column broken
+@reverse
+@column 1
+1'. %e e-ze₂ = %sux [...] = %a [...]
+#lem: eze[sheep]; u; u
+
+#tr: sheep
+2'. *(u) %e MIN<(e-ze₂)> aŋ₂-ŋa₂ = %sux [...] = %a [...]
+#lem: eze[sheep]N; aŋguʾa[fattened]; u; u
+
+#tr: fattened sheep
+3'. %e im-ma-al# = %sux [...] = %a [...]
+#lem: immal[cow]; u; u
+
+#tr: cow
+4'. %e ab₂ mu uš bal# = %sux [...] = %a [...]
+#lem: ab[cow]N/ab₂$ab#~; mu[year]N/mu$mu#~; uš[three]NU/uš$uš#~; X ; u; u
+
+#tr: three year old cow
+# am₃-mu-uš (Schretter no.53) is "third," not three.
+@column 2
+1'. %e gu₃#-di# = %sux {ŋeš}gu₃-[de₂] = %a [...]
+#lem: gudi[lute]N/gu₃-di$gudi#~; gude[lute]; u
+
+#tr: lute
+2'. %e ga-šim-bi = %sux {ŋeš}gazinbu = %a [...]
+#lem: gašimbi[pole]N/ga-šim-bi$gašimbi; gazinbu[pole]; u
+
+#tr: pole
+3'. %e mu#-uš-kiŋ₂-ti = %sux ŋeš-kiŋ₂-ti = %a kiš#-[kat₃-tu-u₂]
+#lem: muškiŋti[craftsman//furnace]N/mu-uš-kiŋ₂-ti$muškiŋti#~; ŋeškiŋti[craftsman//furnace]N/ŋeš-kiŋ₂-ti#~; kiškattû[(industrial) kiln]N$
+
+#tr: kiln
+4'. %e mu-uš u = %sux ŋeš ban₂ = %a ši-[ir-mu]
+#lem: muš[tree//wooden vessel]N/mu-uš$muš#~; u[ten]NU/u$u#~; ŋeš[tree//wooden vessel]N; ban[unit]; širmu[(vessel with the capacity of 1 sūtu)]N$
+
+#tr: measuring vessel with a capacity of one @sūtu (= 10 @sila)
+5'. %e mu-uš ia₂ = %sux ŋeš ia₂ = %a nam#-[ma-ad-du]
+#lem: muš[wooden vessel]; ya[five]; ŋeš[wooden vessel]; ya[five]; namaddu[measuring vessel]N$
+
+#tr: measuring vessel with a capacity of 5 @sila
+# nam-ma-ad-du is an odd spelling for namaddu, but the word fits the context well. 
+6'. %e šu-še-er = %sux {ŋeš}šu-nir = %a šu-[ri-nu]
+#lem: šušer[emblem]N/šu-še-er$šušer#~; šunir[emblem]; šurīnu[(divine) emblem]N$
+
+#tr: divine emblem
+7'. %e MIN<(šu-še-er)> = %sux {ŋeš}šu-nir = %a kak-[ku]
+#lem: šušer[emblem]N; šunir[emblem]; kakku[weapon]N
+
+#tr: divine weapon
+8'. *(u) %e aŋ₂-ki-luh = %sux {ŋeš}niŋ₂-ki-luh = %a mu#-še#-[še-er-tu]
+#lem: aŋkiluh[broom]N/aŋ₂-ki-luh$aŋkiluh#~; niŋkiluh[broom]; mušēšertu[palm broom]N$
+
+#tr: broom
+9'. %e aŋ₂-šu-luh = %sux {ŋeš}niŋ₂-šu-luh = %a [MIN<(mu-še-še-er-tu)>]
+#lem: aŋšuluh[cleaning equipment//broom]N/aŋ₂-šu-luh$aŋšuluh#~; niŋšuluh[cleaning equipment//broom]; mušēšertu[palm broom]N
+
+#tr: broom
+10'. %e mu zu-lum₂ = %sux ŋeš zu₂-lum = %a NA₄ ZU₂.[LUM.MA]
+#lem: muš[tree//kernel]; zulum[date]N/zu₂-lum$zulum; ŋeš[tree//kernel]N; zulum[date]; abnu[stone//kernel]N$aban; suluppi[date]N
+
+#tr: date kernel
+11'. %e {mu}gi = %sux {ŋeš}gi = %a a-[pu]
+#lem: gi[thicket]N/{mu}gi$gi#~; gi[thicket]; apu[reed-bed]N$
+
+#tr: reed thicket
+12'. %e eš₂ ma-ze₂-eb = %sux eš₂ ma₂-gid₂ = %a ma-as-sa-ku#
+#lem: eš[rope]N/eš₂$eš#~; mazeb[boat]N/ma-ze₂-eb$mazeb#~; eš[rope]; magid[boat]; massaku[tow-rope]N$
+
+#tr: rope for towing a boat
+13'. %e aŋ₂ = %sux niŋ₂ = %a ip-šu
+#lem: aŋ[thing]N/aŋ₂$aŋ#~; niŋ[thing]; ipšu[deed]N$
+
+#tr: thing
+14'. %e [pap]-še#-[er] = %sux pap#-nir = %a qa-pa-tum
+#lem: X; X; qappatu[(palm-leaf) basket]N$qappatum
+
+#tr: ...
+15'. %e [...] = %sux numun₂# = %a el-pi₂-tum
+#lem: u; numun[grass]N; elpetu[alfalfa grass]N$elpitum
+
+#tr: alfalfa grass
+16'. %e [...] = %sux [...] = %a me#-e#-bur#-ki#
+#lem: u; u; meburku[halfa grass]N$meburki
+
+#tr: halfa grass
+&P283548 = VAT 10527
+#project: dcclt
+#atf: use unicode
+@tablet fragment
+# note: possible disconnected join with VAT 10117; MA Emesal Vocabulary 02 (MSL 4)
+@obverse
+@column 1
+$ (beginning broken)
+1'. %e [...] = %sux [...] = %a [...]-x#
+#lem: u; u; u
+
+2'. %e [...] = %sux [...] = %a [...]-x#
+#lem: u; u; u
+
+$ (single ruling?)
+3'. %e [...] = %sux [...] = %a [x]
+#lem: u; u; u
+
+4'. %e [...] = %sux [...] = %a [...]-x#
+#lem: u; u; u
+
+5'. %e [...] = %sux [...] = %a [...]-x#
+#lem: u; u; u
+
+$ single ruling
+6'. %e [...] = %sux [...] = %a [re-ʾe]-u₂#
+#lem: u; u; rēʾû[shepherd]N$
+
+#tr: shepherd
+7'. %e [...] = %sux [...] = %a [x]
+#lem: u; u; u
+
+8'. %e [...] = %sux [...] = %a [x]
+#lem: u; u; u
+
+9'. %e [...] = %sux [...] = %a [u₂-tul]-lu#
+#lem: u; u; utullu[chief herdsman]N$
+
+#tr: chief herdsman
+$ single ruling
+10'. %e [...] = %sux [...] = %a [ik-ka]-ru#
+#lem: u; u; ikkaru[farmer]N
+
+#tr: plowman
+11'. %e [...] = %sux [...] = %a [x]
+#lem: u; u; u
+
+12'. %e [...] = %sux [...] = %a [gu]-gal#-lu
+#lem: u; u; gugallu[irrigation controller]N$
+
+#tr: irrigation controller
+13'. %e [...] = %sux [...] = %a [ša₂-ru]-u₂#
+#lem: u; u; šarû[rich one]N$
+
+#tr: rich person
+14'. %e [...] = %sux [...] = %a [mu-ʾe-er]-ru
+#lem: u; u; muʾerru[leader (of an assembly)]N$
+
+#tr: leader
+$ single ruling
+15'. %e [...] = %sux [...] = %a [e-te-el]-lu#
+#lem: u; u; etellu[preeminent one]N$
+
+#tr: preeminent person
+16'. %e [...] = %sux [...] = %a [x]
+#lem: u; u; u
+
+17'. %e [...] = %sux [...] = %a [kab]-tu#
+#lem: u; u; kabtu[nobleman]N
+
+#tr: nobleman
+$ (remainder broken)
+@column 2
+$ (beginning broken)
+1'. %e mu#-[...] = %sux [...] = %a [...]
+#lem: u; u; u
+
+2'. %e mi-[...] = %sux [...] = %a [...]
+#lem: u; u; u
+
+$ single ruling
+3'. %e mir-du-na = %sux [...] = %a [...]
+#lem: X; u; u
+
+4'. %e saŋ ir-ir = %sux saŋ# [...] = %a [...]
+#lem: saŋ[head]; ir[bring]; saŋ[head]; u; u
+
+#tr: to discredit
+5'. %e la-bar = %sux arad# = %a [...]
+#lem: labar[slave]N/la-bar$labar#~; arad[slave]; u
+
+#tr: slave
+6'. %e e!-re = %sux arad# = %a [...]
+#lem: ere[slave]N/e-re$ere#~; arad[slave]; u
+
+#tr: slave
+$ single ruling
+7'. %e nu-nuz# = %sux munus# = %a [...]
+#lem: nunuz[woman]; munus[woman]; u
+
+#tr: woman
+8'. %e du₅-mu nu-nuz = %sux dumu?# [...] = %a [...]
+#lem: dumu[child]; nunuz[woman]; dumu[child]; u; u
+
+#tr: daughter
+9'. %e še-em = %sux [...] = %a [...]
+#lem: šem[sister]N/še-em$šem#~; u; u
+
+#tr: sister
+10'. %e ge-e = %sux ki?#-[sikil?] = %a [...]
+#lem: gin[worker]; kisikil[woman]; u
+
+#tr: female servant
+11'. %e mu-tin = %sux [...] = %a [...]
+#lem: mutin[woman]N/mu-tin$mutin#~; u; u
+
+#tr: woman
+12'. %e mu-ud-na = %sux [...] = %a [...]
+#lem: mudna[spouse]N/mu-ud-na$mudna#~; u; u
+
+#tr: spouse
+$ single ruling
+13'. %e ga-ša-an = %sux [...] = %a [...]
+#lem: gašan[lady]N/ga-ša-an$gašan#~; u; u
+
+#tr: lady
+14'. %e gašan = %sux [...] = %a [...]
+#lem: gašan[lady]N/gašan$gašan#~; u; u
+
+#tr: lady
+15'. %e gašan-dim₃-[me-er] = %sux [...] = %a [...]
+#lem: gašandimer[priestess]N/gašan-dim₃-me-er$gašandimer#~; u; u
+
+#tr: a kind of priestess
+16'. %e gašan-dim₃#-[me-er] = %sux [...] = %a [...]
+#lem: gašandimer[priestess]; u; u
+
+#tr: a kind of priestess
+$ single ruling
+17'. %e mu#-[gib₃] = %sux [...] = %a [...]
+#lem: mugib[priestess]N/mu-gib₃$mugib#~; u; u
+
+#tr: a female profession
+$ (remainder broken)
+@reverse
+$ broken
+&P282491 = LTBA 1 92
+#project: dcclt
+#atf: use unicode
+@tablet fragment
+#note: = VAT 10117; possible disconnected join with VAT 10527; MA Emesal Vocabulary 02 (MSL 4)
+@obverse
+$ (beginning broken)
+$ single ruling
+1'. %e [...] = %sux [...] = %a am-[tu]
+#lem: u; u; amtu[maid]N$
+
+#tr: female servant
+2'. %e [še]-er?# nu#-[ma-al] = %sux nir# nu#-ŋal₂# = %a ki-na-a-tu#
+#lem: šer[lordly]; mal[be]; nir[lordly]; ŋal[be]; kinattu[employee]N$kinātu
+
+#tr: servants
+3'. %e e-ze₂ = %sux udu{+u₂-du} = %a im-me-ru#
+#lem: eze[sheep]N; udu[sheep]; immeru[sheep]N
+
+#tr: sheep
+4'. %e e#-ze₂ aŋ₂-gu₇-a = %sux udu niga = %a |KI.MIN|<(im-me-ru)> ma-ru-u
+#lem: eze[sheep]N; aŋguʾa[fattened]; udu[sheep]; niga[fattened]; immeru[sheep]N; X
+
+#tr: fattened sheep
+5'. %e [...]-x# mu# uš# bal# = %sux ab₂ mu eš₆ = %a šu-lu-ši-tu
+#lem: u; mu[year]; uš[three]; X; ab[cow]; mu[year]; eš[three]; šulušīu[three-year-old]AJ$šulušītu
+
+#tr: three year old cow
+$ single ruling
+6'. %e [...] = %sux anše# = %a i-me-ru
+#lem: u; anše[equid]; imēru[donkey]N
+
+#tr: donkey
+7'. %e [...] = %sux šah?# = %a ša₂-hu-u₂
+#lem: u; šah[pig]; šahû[pig]N$
+
+#tr: pig
+8'. %e [...] = %sux [...] = %a MIN<(ša₂-hu-u₂)>
+#lem: u; u; šahû[pig]N
+
+#tr: pig
+9'. %e [...] = %sux [...] = %a ši#-ik-ku-u₂
+#lem: u; u; šikkû[mongoose]N$
+
+#tr: mongoose
+$ single ruling
+10'. %e [...] = %sux [...] = %a [zu-qa]-qi₂?#-pu#
+#lem: u; u; zuqiqīpu[scorpion]N$zuqaqīpu
+
+#tr: scorpion
+$ (remainder broken)
+@reverse
+$ broken
+&P381834 =  MSL 04, 011 C₂
+#project: dcclt
+#atf: use unicode
+@tablet fragment
+# note: = VAT 12926; MA Emesal Vocabulary 02 (MSL 4)
+@obverse
+@column 1
+$ broken
+@column 2
+$ (beginning broken)
+1'. %e [...] = %sux [ereš]-diŋir# = %a ug#-[bab-tu]
+#lem: u; erešdiŋir[priestess]; ugbabtu[(kind of) priestess]N$
+
+#tr: a kind of priestess
+2'. %e [...] = %sux [ereš]-diŋir# = %a e#!-nu-[tu?]
+#lem: u; erešdiŋir[priestess]; enūtu[lordship//office of high priestess]N$
+
+#tr: a kind of priestess
+# note: in 3rd col.: rdg uncertain; perhaps read: e!-nu-[tu?]
+3'. %e [...] = %sux nu#-gig# = %a  qa-aš₂-da?#-[tu]
+#lem: u; nugig[priestess]; qadištu[(a type of priestess)]N$qašdatu
+
+#tr: a female profession; a kind of priestess
+4'. %e [...] = %sux nu#-gig = %a iš-ta-ri#-[tu]
+#lem: u; nugig[priestess]; ištarītu[(a priestess)]N$
+
+#tr: a priestess
+5'. %e [...] = %sux [...] {d#}inanna = %a MIN<(iš-ta-ri-tu)>
+#lem: u; u; Inana[1]; ištarītu[(a priestess)]N
+
+#tr: a priestess
+6'. %e [...] = %sux amalu# = %a a-ma#-lu#
+#lem: u; X; amalītu[(a cultic functionary)]N$amalu
+
+#tr: a female cultic functionary
+$ single ruling
+7'. %e [...] = %sux nu#-bar = %a kul-[ma-ši-tu]
+#lem: u; nubar[profession]; kulmašītu[(a cultic prostitute)]N$
+
+#tr: a female cultic profession
+8'. %e [...] = %sux lukur# = %a šu?#-[gi-tu]
+#lem: u; lukur[priestess]; šugītu[(a class of women)]N$
+
+#tr: a class of women
+9'. %e [...] = %sux i₃?#-du₈# = %a [...]
+#lem: u; idu[doorkeeper]; u
+
+#tr: doorkeeper
+10'. %e [...] = %sux [x]-tu = %a [...]
+#lem: u; u; u
+
+$ (remainder broken)
+@reverse
+$ broken
+&P347124 = VS 24, 004
+#project: dcclt
+#atf: use unicode
+#bib: MSL 4, 11 text B
+@obverse
+@column 1
+$ about 4 lines broken
+5. %e [i-ri-gal]	    = %s irigal#		= %a [qab-ru]
+#lem: irigal[underworld]; irigal[underworld]; qabru[grave]N$
+#tr: netherworld
+6. %e [mu]-lu		    = %s lu₂			= %a [a-mi-lu]
+#lem: mulu[person]N/mu-lu$mulu#~; lu[person]; amīlu[man]N
+#tr: man
+7. %e [umun]		    = %s lugal			= %a [...]
+#lem: umun[lord]N/umun$umun#~; lugal[king]; u
+#tr: lord = king
+8. %e [u-mu]-un		    = %s lugal			= %a [...]
+#lem: umun[lord]N/u-mu-un$umun#~; lugal[king]; u
+#tr: lord = king
+9. %e [u-mu]-un		    = %s lugal#			= %a šar#-[ru]
+#lem: umun[lord]N; lugal[king]; šarru[king]N$
+#tr: lord = king
+10. %e [u]-mu#-un-si	    = %s ensi₂			= %a iš-[šak-ku]
+#lem: umunsik[ruler]; ensik[ruler]; iššakku[city-ruler]N
+#tr: city ruler
+11. %e [me]-a-am	    = %s sipad			= %a re-ia-[u₂]
+#lem: meʾam[dear//beloved]N/me-a-am$meʾam#~; sipad[shepherd]; rēʾû[shepherd]N$rēyû
+#tr: beloved
+#note: The reconstruction [me]-a-am was first proposed by Wilcke AS 20, 303, suggesting that the Emesal word means "shepherd" (see also Volk FAOS 18, 171)  BE 31, 46 i 2 (CAD R, 304 and Kramer JAOS 60, 251; see also Sefati Love Songs 76) has the gloss ra-i-ma = "beloved" (correct CAD R). The ES Vocabulary entry may have confused two similar Akkadian words, or "shepherd" (in the Sumerian and Akkadian columns) is to be taken as a metaphoric expression.
+#check me'am; see Volk Balaŋ
+12. %e [su₈]-ba		    = %s sipad			= %a MIN<(re-ia-u₂)>
+#lem: subad[shepherd]; sipad[shepherd]; rēyû[shepherd]N
+#tr: shepherd
+13. %e [mu]{+mu#}-{+nu}nu₁₀ = %s unudₓ(|AB₂×KU|)		= %a MIN<(re-ia-u₂)>
+#lem: munud[cowherd]; unud[cowherd]; rēyû[shepherd]N
+#tr: cowherd
+14. %e [mu]{+mu#}-{+nu}nu₁₀ = %s unudₓ(|AB₂×KU|)		= %a u₂-tul#-lu
+#lem: munud[cowherd]N; unud[cowherd]; utullu[chief herdsman]N
+#tr: chief herdsman
+15. %e [...]-ar		    = %s engar{+en-gar}		= %a ik-ka#-[ru]
+#lem: u; engar[farmer]; ikkaru[farmer]N
+#tr: farmer
+16. %e [mu]-un#-ga-ar	    = %s engar{+MIN<(en-gar)>}	= %a MIN<(ik-ka-ru)>
+#lem: mungar[farmer]N/mu-un-ga-ar$mungar#~; engar[farmer]; ikkaru[farmer]N
+#tr: farmer
+17. %e [ku₆]-ma-al	    = %s gu₂-gal		= %a gu-[gal-lu]
+#lem: kumal[inspector]N/ku₆-ma-al$kumal#~; gugal[inspector]; gugallu[irrigation controller]N
+#tr: canal inspector
+18. %e [a₂ ma]-al	    = %s a₂ ŋal₂		= %a ša₂-[ru-u₂]
+#lem: a[arm]; mal[be]; a[arm]; ŋal[be]; šarû[rich one]N
+#tr: rich person
+19. %e [a₂ ma]-al	    = %s a₂ ŋal₂		= %a mu#-[ʾe-er-ru]
+#lem: a[arm]N; mal[be]; a[arm]; ŋal[be]; muʾerru[leader (of an assembly)]N
+#tr: powerful person; leader
+20. %e [še-er]		    = %s nir			= %a [...]
+#lem: šer[lordly]N; nir[lordly]; u
+#tr: lordship
+21. %e [še-er]-ma-al	    = %s nir-ŋal₂#		= %a [...]
+#lem: šermal[authoritative]AJ/še-er-ma-al$šermal#~; nirŋal[authoritative]; u
+#tr: authoritative
+22. %e [ze₂]-bi-da	    = %s dugud			= %a [...]
+#lem: zebid[heavy]; dugud[heavy]; u
+#tr: heavy
+23. %e [e]-lum		    = %s alim			= %a [...]
+#lem: elum[bison//important]N'AJ/e-lum$elum#~; alim[bison//important]N'AJ; u
+#tr: important
+24. %e [i]-bi₂#-eš-du	    = %s igištu			= %a [...]
+#lem: ibiʾešdu[foremost]; igištu[foremost]; u
+#tr: foremost
+25. %e [kišib]-ma-al	    = %s kišib-[ŋal₂]		= %a [...]
+#lem: kišibmal[seal bearer]N/kišib-ma-al$kišibmal#~; kišibŋal[seal bearer]; u
+#tr: seal bearer
+26. %e [mu]-un-kud	    = %s enkud#	= %a [...]
+#lem: munkud[tax-collector]; enkud[tax-collector]; u
+#tr: tax collector
+27. %e [mar]-mah	    = %s gudug			= %a [...]
+#lem: marmah[priest]; gudug[priest]; u
+#tr: a priest
+28. %e [...]-mar	    = %s x-[...]		= %a [...]
+#lem: u; u; u
+#tr: 
+$ 1 line traces
+$ rest of obverse broken
+@reverse
+@column 1
+$ broken
+@column 2
+$ 1 line traces
+2'. %e [...]		    = %s [{ŋeš}niŋ₂-šu]-luh	= %a nim-su-[u₂]
+#lem: u; niŋšuluh[cleaning equipment//washbowl]N; nemsû[wash-basin]N$nimsû
+#tr: washbowl
+3'. %e [{mu}]gi# 	    = %s {ŋeš}[gi ...] 		= %a [...]
+#lem: gi[thicket]N; gi[thicket]; u; u
+#tr: reed thicket
+$ single ruling
+4'. %e [eš₂ ma-ze₂]-eb	    = %s eš₂ ma₂!-[gid₂]	= %a [...]
+#lem: eš[rope]N; mazeb[boat]N; eš[rope]; magid[boat]; u
+#tr: rope for a tow boat
+5a'. %e [...]		    = %s [...]-x		= %a eb-lum
+#lem: u; u; eblu[rope]N$eblum
+#tr: rope
+5b'. %e PAP-še-er	    = %s PAP-nir		= %a [...]
+#lem: X; X; u
+
+6a'. %e [šu-mu-un]-bur₂     = %s {u₂}numun₂-bur₂	= %a MIN me-[e-bur-ki]
+#lem: šumunbur[rushes]; numunbur[rushes]; u; meburki[halfa grass]N
+#tr: halfa grass
+6b-7a'. %e [...]	    = %s [...]	    		= %a MIN
+#lem: u; u; u
+
+7b'. %e aŋ₂-la₂		    = %s {tug₂}niŋ₂-la₂		= %a ṣi-in-[du]	    	
+#lem: aŋla[clothing//bandage]N/aŋ₂-la₂$aŋla#~; niŋla[clothing//bandage]N; ṣimdu[binding//bandage]N$ṣindu
+#tr: bandage
+8a'. %e [...]		    = %s siki sar		= %a šar-tum
+#lem: u; siki[hair//wool]; sar[shave]; šārtu[hair]N$šārtum
+#tr: shaven hair = hair
+8b'. %e siki sar	    = %s siki sar		= %a x-[...]
+#lem: siki[hair]N/siki$siki#~; sar[shave]V/sar$sar#~; siki[hair]; sar[shave]; u
+#tr: shaven hair
+8c-9a'. %e [u₅]		    = %s [i₃] 			= %a [šam-nu]
+#lem: u[oil]N/u₅$u#~; i[oil]; šamnu[oil]N
+#tr: oil
+9b'. %e [u₅ ze₂-eb]	    = %s i₃ dug₃-ga		= %a MIN<(šam-nu)> ṭa-a-bu
+#lem: u[oil]N/u₅$u#~; zeb[good]V/ze₂-eb$zeb#~; i[oil]; dug[good]; šamnu[oil]N; ṭābu[good]AJ
+#tr: good oil
+9c'. %e u₅-mu#		    = %s [...]			= %a [...]
+#lem: umuš[oil]; u; u
+#tr: sesame oil
+10a'.	%e [...]	    = %s i₃ li			= %a u₂-lu šam-ni
+#lem: u; i[oil]; li[rich]; ulû[the best oil/butter]N$; šamnu[oil]N$šamni
+#tr: high quality oil
+10b'.	%e aŋ₂-na	    = %s [...]			= %a [...]
+#lem: aŋna[metal//tin]N/aŋ₂-na$aŋna#~; u; u
+#tr: tin
+11a'.	%e [...]	    = %s [...]			= %a pat-ri
+#lem: u; u; patru[sword]N$patri
+#tr: sword
+11b'.	%e še-en!	    = %s saŋ			= %a qaq-[qa-du]
+#lem: šen[head]N/še-en$šen#~; saŋ[head]; qaqqadu[head]N
+#tr: head
+12'.	%e muštug₂  = %s ŋeštug₂		= %a [...]
+#lem: muštug[ear]N/muštug₂$muštug#~; ŋeštug[ear]; u
+#tr: ear
+13'.	%e [...]	    = %s ŋizzal			= %a [...]
+#lem: u; ŋizzal[ear]; u
+#tr: wisdom
+$ 2 lines traces
+16a'.	%e [...]	    = %s [...]			= %a [...]
+#lem: u; u; u
+
+16b'.	%e ši{+si-i}	    = %s zi			= %a [...]
+#lem: ši[life]N/ši$ši#~; zi[life]; u
+#tr: life
+17a'.	%e [...]	    = %s [...]			= %a [...]
+#lem: u; u; u
+
+17b'.	%e [...]	    = %s [zi-pa]-aŋ₂#?		= %a nap-ša-a-tum
+#lem: u; zipaŋ[breath]; napištu[throat//breath]N$napšātum
+#tr: breath
+17c'.	%e ša₃-[ab]	    = %s [šag₄]			= %a [lib₃-bu]
+#lem: šab[heart]N/ša₃-ab$šab#~; šag[heart]; libbu[heart]N
+
+$ 3 lines traces
+21b'.	%e [ši-in-gi]	    = %s [zi-in]-gi		= %a [ki-ṣal-lu]
+#lem: X; zingi[ankle bone]N/zi-in-gi#~; kiṣallu[ankle]N$
+#tr: ankle

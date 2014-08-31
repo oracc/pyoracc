@@ -25,6 +25,8 @@ class testParser(TestCase):
         self.lexer = AtfLexer().lexer
 
     def try_parse(self, content):
+        if content[-1] != '\n':
+            content+="\n"
         self.parser = AtfParser().parser
         return self.parser.parse(content, lexer=self.lexer)
 
@@ -794,6 +796,15 @@ class testParser(TestCase):
             "@tablet\n" +
             "1'. ⸢x⸣\n" +
             "#tr: English\n"
+        )
+        line=text.children[0].children[0]
+        assert_equal(line.translation, "English")
+
+    def test_interlinear_ends_document(self):
+        text=self.try_parse(
+            "@tablet\n" +
+            "1'. ⸢x⸣\n" +
+            "#tr: English"
         )
         line=text.children[0].children[0]
         assert_equal(line.translation, "English")

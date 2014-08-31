@@ -29,6 +29,10 @@ def test_5_fm_erimh():
     afile= AtfFile(sample_file('5-fm-erimh-p'))
     assert_equal(afile.text.texts[0].code,'P346083')
 
+def test_5_fm_emesal():
+    afile= AtfFile(sample_file('5-fm-emesal-p'))
+    assert_equal(afile.text.texts[0].code,'P228608')
+
 def consider_file(name,code,description):
     afile = AtfFile(sample_file(name))
     assert_equal(afile.text.code, code)
@@ -47,7 +51,7 @@ texts=[
     ['bb_2_96','X002096',"BagM Beih. 02, 096"],
     ['afo','X002003','AfO 14, Taf. VI'],
     ['brm_4_6','P363407','BRM 4, 06'],
-    ['brm_4_19','P363411','BRM 4, 19'], 
+    ['brm_4_19','P363411','BRM 4, 19'],
     ['cm_31_139','P415763','CM 31, 139'],
     ['ctn_4_006','P363421','CTN 4, 006'],
     ['Senn2002','Q004089','Sennacherib 2002'],
