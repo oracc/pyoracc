@@ -1,0 +1,32 @@
+&P405130 = BagM 27 217
+#project: rimanum
+#atf: use mylines
+#atf: lang akk-x-oldbab
+#atf: use math
+#atf: use unicode
+@tablet
+@obverse
+1. [...] x#
+#lem: u; u
+
+$(Rest of the obverse missing)
+@reverse
+1’. %sux [mu ma-da] e#-mu-ut-ba#-lum
+#lem: mu[year]N; mada[land]N; Emutbalum[1]GN
+
+@seal 1
+1. [...]-DINGIR#
+#lem: u
+
+2. [...] x# [...]
+#lem: u; u; u
+
+3. [...]
+#lem: u
+@translation labeled en project
+@label o 1
+[...]
+@label r 1’
+RīA 3/[...]/[...].
+@label seal 1 1 - seal 1 3
+[...]-ilum, [...], [...].

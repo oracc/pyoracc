@@ -524,6 +524,18 @@ class testParser(TestCase):
         assert_equal(art.children[0].children[0].words[0],
                      "Then it will be taken for the rites and rituals.")
 
+    def test_translation_labeled_long(self):
+        art = self.try_parse(
+            "@tablet\n" +
+            "@translation labeled en project\n" +
+            "@label obverse 4\n"
+            "Then it will be taken for the rites and rituals.\n\n"
+        )
+        assert_is_instance(art.children[0], Translation)
+        assert_equal(art.children[0].children[0].label.label, ['obverse','4'])
+        assert_equal(art.children[0].children[0].words[0],
+                     "Then it will be taken for the rites and rituals.")
+
     def test_translation_labeled_text2(self):
         art = self.try_parse(
             "@tablet\n" +

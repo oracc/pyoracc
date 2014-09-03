@@ -559,7 +559,8 @@ class AtfParser(object):
             p[0].plus=True
 
     def p_translationlabel_id(self, p):
-        """translationlabel : translationlabel ID"""
+        """translationlabel : translationlabel ID
+                            | translationlabel REFERENCE"""
         p[0] = p[1]
         p[0].label.append(p[2])
 
@@ -568,7 +569,8 @@ class AtfParser(object):
         p[0] = p[1]
 
     def p_translationrangelabel_id(self, p):
-        """translationrangelabel : translationrangelabel ID"""
+        """translationrangelabel : translationrangelabel ID
+                                 | translationrangelabel REFERENCE"""
         p[0] = p[1]
         p[0].rangelabel.append(p[2])
 

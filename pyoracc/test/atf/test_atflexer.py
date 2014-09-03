@@ -270,6 +270,15 @@ class testLexer(TestCase):
              "LABEL", "ID", "ID", "NEWLINE"]
         )
 
+    def test_translation_label_long_reference(self):
+        "Translations can have full surface names rather than single letter"
+        self.compare_tokens(
+            "@translation labeled en project\n" +
+            "@label obverse 28\n",
+            ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
+             "LABEL", "REFERENCE", "ID", "NEWLINE"]
+        )
+
     def test_translation_symbols_in_translation(self):
         self.compare_tokens(
             "@translation labeled en project\n" +
