@@ -651,3 +651,13 @@ class testLexer(TestCase):
              "M", "EQUALS", "ID", "NEWLINE",
              "LINELABEL", "ID", "NEWLINE"]
         )
+
+    def test_include(self):
+        self.compare_tokens(
+            "@tablet\n" +
+            "@obverse\n" +
+            "@include dcclt:P229061 = MSL 07, 197 V02, 210 V11\n",
+            ["TABLET","NEWLINE",
+             "OBVERSE","NEWLINE",
+             "INCLUDE","ID",'EQUALS','ID',"NEWLINE"]
+        )

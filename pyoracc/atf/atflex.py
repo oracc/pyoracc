@@ -44,6 +44,7 @@ class AtfLexer(object):
         'M',
         'COMPOSITE',
         'LABEL',
+        'INCLUDE'
     ]
 
     long_argument_structures = [
@@ -189,6 +190,9 @@ class AtfLexer(object):
                                         "end":"END"
                                       },
                                       )
+
+        if t.type == "INCLUDE":
+            t.lexer.push_state('nonequals')
 
         if t.type == "END":
             t.lexer.pop_state()

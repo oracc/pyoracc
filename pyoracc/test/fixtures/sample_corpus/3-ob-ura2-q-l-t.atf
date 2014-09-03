@@ -1,0 +1,2973 @@
+&Q000040 = OB Nippur Ura 2
+@composite
+#project: dcclt
+#atf: use unicode
+#link: parallel dcclt:P230258 = A 07896
+#link: parallel dcclt:P249388 = AUCT 5, 181
+#link: parallel dcclt:P249379 = AUCT 5, 190
+#link: parallel dcclt:P297196 = BIN 02, 057
+#link: parallel dcclt:P297186 = BIN 02, 067
+#link: parallel dcclt:P332832 = BBVOT 03, 80
+#link: parallel dcclt:P247857 = BM 085983
+#link: parallel dcclt:P247858 = CBS 01864
+#link: parallel dcclt:P247864 = CM 22, Pl. 35-36
+#link: parallel dcclt:P250736 = CUSAS 12, 3.2.01
+#link: parallel dcclt:P253231 = CUSAS 12, 3.2.02
+#link: parallel dcclt:P253242 = CUSAS 12, 3.2.03
+#link: parallel dcclt:P251417 = CUSAS 12, 3.2.04
+#link: parallel dcclt:P251496 = CUSAS 12, 3.2.05
+#link: parallel dcclt:P253237 = CUSAS 12, 3.2.06
+#link: parallel dcclt:P253257 = CUSAS 12, 3.2.07
+#link: parallel dcclt:P274468 = CUSAS 12, 3.2.08
+#link: parallel dcclt:P253862 = CUSAS 12, 3.2.09
+#link: parallel dcclt:P253919 = CUSAS 12, 3.2.10
+#link: parallel dcclt:P253906 = CUSAS 12, 3.2.11
+#link: parallel dcclt:P253860 = CUSAS 12, 3.2.12
+#link: parallel dcclt:P251494 = CUSAS 12, 3.2.13
+#link: parallel dcclt:P251888 = CUSAS 12, 3.2.14
+#link: parallel dcclt:P427591 = CUSAS 13, 190
+#link: parallel dcclt:P414652 = DCS 150
+#link: parallel dcclt:P349876 = DoCu 604
+#link: parallel dcclt:P388578 = Education in the Earliest Schools no. 117
+#link: parallel dcclt:P247526 = FAOS 02/1, 215
+#link: parallel dcclt:P247865 = IB 1517
+#link: parallel dcclt:P247862 = IB 1532
+#link: parallel dcclt:P247861 = IB 1612b
+#link: parallel dcclt:P332826 = IB 1622a 1546 
+#link: parallel dcclt:P247856 = K 10506
+#link: parallel dcclt:P272530 = LoC 001
+#link: parallel dcclt:P272531 = LoC 002
+#link: parallel dcclt:P272565 = LoC 033
+#link: parallel dcclt:P332865 = MHET 1/2, 023
+#link: parallel dcclt:P332875 = MHET 1/2, 033
+#link: parallel dcclt:P247854 = MSL SS 1, 099
+#link: parallel dcclt:P388232 = MVAG 21, pl. 4, VAT 08371
+#link: parallel dcclt:P117394 = MVN 13, 621
+#link: parallel dcclt:P145550 = OLZ 17, 305 P371
+#link: parallel dcclt:P247525 = OBTI 284
+#link: parallel dcclt:P209818 = Ontario 2, 502
+#link: parallel dcclt:P209775 = Ontario 2, 505
+#link: parallel dcclt:P247860 = PRAK 1 B 173
+#link: parallel dcclt:P416953 = ROM 910x209.074
+#link: parallel dcclt:P247855 = RT 56
+#link: parallel dcclt:P225031 = TIM 10, 054
+#link: parallel dcclt:P225034 = TIM 10, 057
+#link: parallel dcclt:P225046 = TIM 10, 070
+#link: parallel dcclt:P225051 = TIM 10, 075
+#link: parallel dcclt:P225053 = TIM 10, 077
+#link: parallel dcclt:P247852 = UET 6, 0826
+#link: parallel dcclt:P346864 = UET 6, 0827
+#link: parallel dcclt:P346877 = UET 6, 0840
+#link: parallel dcclt:P346886 = UET 6, 0849
+#link: parallel dcclt:P247851 = UET 7, 092
+#link: parallel dcclt:P304558 = YBC 01995
+#link: parallel dcclt:P247859 = YBC 06703
+#link: parallel dcclt:P387609 = YRL SC 1813-BxX-X
+#link: parallel dcclt:P247853 = ZA 10, 214 Sch. 8
+# YBC 9948 (zabar)
+# MDP 27 188
+# MDP 27 189
+# MDP 18 19
+# YBC 9948
+
+1. {gi}gašam
+#lem: gašam[reed]
+
+#tr.en: craftsmen's reed
+2. gi-šul-hi
+#lem: gišulhi[reed]
+
+#tr.en: (cultivated) reed
+3. gi-zi
+#lem: gizi[reed]
+
+#tr.en: grown reed used as fodder
+#note: Civil, FS. Reiner, 44-45
+4. gi-NE
+#lem: GI.NE[reed]
+
+#tr.en: unsorted reeds
+#note: Waetzold, BSA 6: 134-135
+5. gi bar₇
+#lem: gi[reed]; bar[burn]
+
+#tr.en: reeds used as fuel
+6. gi-izi-la₂
+#lem: giʾizila[torch]
+
+#tr.en: torch
+7. gi-sal-la
+#lem: gisal[screen]
+
+#tr.en: reed screen
+8. gi-sal-la
+#lem: gisal[screen]
+
+#tr.en: eaves
+8a. [gi-(x)]-ig
+#lem: u
+
+#tr.en: ...
+9. {gi}ig sal-la
+#lem: ig[door]; sal[thin]
+
+#tr.en: thin reed door
+10. {gi}ig guru₅-uš
+#lem: ig[door]; guruš[cut]
+
+#tr.en: door made from a reed mat
+#note: Akk. hurdu
+11. {gi}ig šah₃
+#lem: ig[door]; sah[mat]
+
+#tr.en: reed mat used for door
+#note: CAD S 347 s. v. suhhu
+11a. [{gi}]ig# ak
+#lem: ig[door]; ak[do]
+
+#tr.en: ... reed door
+12. {gi}kid
+#lem: kid[mat]
+
+#tr.en: reed mat
+13. {gi}muruₓ(|KID.MAH|)
+#lem: muru[mat]
+
+#tr.en: reed mat (for covering boats)
+#note: Civil, Studies Oppenheim 80 
+14. {gi}kid-ma₂-šuš₂-a
+#lem: kidmašua[mat]
+
+#tr.en: mat covering boats
+15. {gi}kid ma₂ šag₄-ga
+#lem: kid[mat]; ma[ship]; šag[heart]
+
+#tr.en: reed mat for the boat's interior
+16. {gi}kid ma₂ šag₄ niŋin₂-na
+#lem: kid[mat]; ma[ship]; šag[heart]; niŋin[encircle]
+
+#tr.en: mat for enclosing a boat's interior
+17. {gi}kid si ma₂
+#lem: kid[mat]; si[horn]; ma[ship]
+
+#tr.en: mat for the bow of a boat
+18. {gi}kid URU-DI 
+#lem: kid[mat]; X
+
+#tr.en: mat ...
+19. {gi}kid DI-URU
+#lem: kid[mat]; X
+
+#tr.en: mat ...
+20. {gi}kid aš-rin-na
+#lem: kid[mat]; ašrinna[wooden object]
+
+#tr.en: mat on a wooden structure
+#note: Akkadian ašrinnu
+21. {gi}kid an-dul₃
+#lem: kid[mat]; andul[shade]
+
+#tr.en: mat for providing shade
+22. {gi}kid an-ta-dul
+#lem: kid[mat]; antadul[cloak]N
+
+#tr.en: mat for providing cover
+23. {gi}kid titab₂
+#lem: kid[mat]; titab[~beer]
+
+#tr.en: reed mat for malted barley
+24. {gi}kid kuš sig₉-ga
+#lem: kid[mat]; kuš[skin]; sig[put]
+
+#tr.en: reed mat trimmed in leather 
+#note: Hh VIII 317 {gi}kid kuš si-ga = ša maška uhhuzu
+25. {gi}kid kaš-a
+#lem: kid[mat]; kaš[beer]
+
+#tr.en: mat for beer
+26. {gi}kid {dug}didaₓ(|U₂.SA|) hi-a
+#lem: kid[mat]; dida[wort]; hi[mix]
+
+#tr.en: mat for assorted beer jugs
+27. gi-gur
+#lem: gigur[container]
+
+#tr.en: measuring container
+28. gi-gur-da
+#lem: gigurda[basket]
+
+#tr.en: carrying basket
+29. gi-gur-da
+#lem: gigurda[basket]
+
+#tr.en: carrying basket
+30. gi-gur ur₃-ra
+#lem: gigur[container]; ur[roof]
+
+#tr.en: a measuring container to be put on the roof
+31. gi-gur sahar-ra
+#lem: gigur[container]; sahar[dust]
+
+#tr.en: container for carrying dirt
+32. gi-gur nisig
+#lem: gigur[container]; nisig[greenery]
+
+#tr.en: container for greenery
+33. gi-gur šag₄-ha
+#lem: gigur[container]; šagha[cloth]
+
+#tr.en: container for cloth
+#note: šahhu, CAD Š/I p. 96.
+34. gi-gur šag₄ ra-ah
+#lem: gigur[container]; šag[heart]; rah[beat]
+
+#tr.en: container which is lined inside
+35. gi-gur [x]
+#lem: gigur[container]; u
+
+#tr.en: container for ...
+35a. gi-gur degₓ(RI)-[ga]
+#lem: gigur[container]; deg[collect]
+
+#tr.en: collecting container
+35b. gi-gur siki [x]
+#lem: gigur[container]; siki[hair]; u
+
+#tr.en: container for ... wool
+35c. gi-gur KA [x]
+#lem: gigur[container]; X; u
+
+#tr.en: container for ... 
+35d. gi-gur a [x]
+#lem: gigur[container]; a[water]; u
+
+#tr.en: container for ... water
+35e. gi-gur [x]
+#lem: gigur[container]; u
+
+#tr.en: container for ...
+35f. gi-gur mah#
+#lem: gigur[container]; mah[great]
+
+#tr.en: large container
+36. gi-gur-DU
+#lem: gi.gur.DU[basket]
+
+#tr.en: basket
+37. gi-gur {dug}utul₂
+#lem: gigur[container]; utul[tureen]
+
+#tr.en: container shaped like a tureen
+38. gi-gur su₁₁ sig₁₀-ga
+#lem: gigur[container]; su[fibers]; sig[line]
+
+#tr.en: container lined with fibers
+
+39. gi-gur ku-ud-da
+#lem: gigur[container]; X
+
+#tr.en: container for ...
+40. gi-gur zid₂-da
+#lem: gigur[container]; zid[flour]
+
+#tr.en: container for flour
+41. gi-gur a bala-a
+#lem: gigur[container]; a[water]; bala[turn]
+
+#tr.en: container for water libations
+42. gi-gur igi-esir-ra
+#lem: gigur[container]; IGI.ESIR₂[~bitumen]
+
+#tr.en: container for bitumen
+#note: Civil, NABU 1989/62 
+43. gi-gur šu-niŋin
+#lem: gigur[container]; šuniŋin[total]
+
+#tr.en: container for anything
+44. gi-gur sal-la
+#lem: gigur[container]; sal[thin]
+
+#tr.en: fine container
+45. gi-gur pisaŋ
+#lem: gigur[container]; bisaŋ[basket]
+
+#tr.en: a capacity measure container for a basket
+46. {gi}pisaŋ
+#lem: bisaŋ[basket]
+
+#tr.en: reed basket
+47. {gi}pisaŋ šu
+#lem: bisaŋ[basket]; šu[hand]
+
+#tr.en: reed basket for supplies
+#note: see line 61
+48. {gi}pisaŋ ninda
+#lem: bisaŋ[basket]; ninda[bread]
+
+#tr.en: reed basket for bread
+49. {gi}pisaŋ ninda sag₁₀
+#lem: bisaŋ[basket]; ninda[bread]; sag[good]
+
+#tr.en: reed basket for good quality bread
+50. {gi}pisaŋ kug
+#lem: bisaŋ[basket]; kug[metal]
+
+#tr.en: reed basket for metal
+51. {gi}pisaŋ kug-an-na
+#lem: bisaŋ[basket]; kugan[metal]
+
+#tr.en: reed basket for @?meteoric iron?@
+52. {gi}pisaŋ nu-eš₃
+#lem: bisaŋ[basket]; nuʾešak[priest]
+
+#tr.en: reed basket for the @nueš priest
+53. {gi}pisaŋ nu-us-hu
+#lem: bisaŋ[basket]; nushu[container]
+
+#tr.en: reed basket for bread or flour
+
+53a. {gi}pisaŋ sar-ra 
+#lem: bisaŋ[basket]; sar[write]
+
+#tr.en: reed basket for tablets
+#note: Hh. IX 53: {gi}pisaŋ im-sar-ra = pi-sa-an-nu ṭup-pi
+54. {gi}pisaŋ ninda lukur-ra
+#lem: bisaŋ[basket]; ninda[bread]; lukur[priestess]
+
+#tr.en: reed basket for the lukur-priestess's offerings
+55. {gi}pisaŋ ninda gur₄-ra
+#lem: bisaŋ[basket]; ninda[bread]; gur[thick]
+
+#tr.en: reed basket for thick bread
+56. {gi}pisaŋ dim₃-ma 
+#lem: bisaŋ[basket]; dima[object]
+
+#tr.en: reed basket for small objects
+57. {gi}pisaŋ niŋ₂-sa-ha
+#lem: bisaŋ[basket]; niŋsaha[fruit]
+
+#tr.en: reed basket for garden products
+58. {gi}pisaŋ eša
+#lem: bisaŋ[basket]; eša[flour]
+
+#tr.en: reed basket for fine flour
+59. {gi}pisaŋ zid₂-da
+#lem: bisaŋ[basket]; zid[flour]
+
+#tr.en: reed basket for zid-flour
+59a. {gi}pisaŋ ga
+#lem: bisaŋ[basket]; ga[milk]
+
+#tr.en: reed basket for milk
+60. {gi}pisaŋ ku-rum
+#lem: bisaŋ[basket]; kurum[ration]
+
+#tr.en: reed basket for food rations
+61. {gi}pisaŋ šu-kam-ma
+#lem: bisaŋ[basket]; šu[hand]
+
+#tr.en: reed basket for (childbirth) supplies
+#note: Stol CM 14, 172
+# Emar {gi}pisaŋ šu-kam-ma = ša me-ri-il-ti
+61a. {gi}pisaŋ im-babbar₂ 
+#lem: bisaŋ[basket]; imbabbar[gypsum]
+
+#tr.en: reed basket for gypsum
+61b. {gi}pisaŋ im su₄-a
+#lem: bisaŋ[basket]; im[clay]; su[red]
+
+#tr.en: reed basket for red clay
+61c. {gi}pisaŋ im sar 
+#lem: bisaŋ[basket]; im[clay]; sar[write]
+
+#tr.en: reed basket for writing clay
+62. {gi}pisaŋ {u₂}bur₂
+#lem: bisaŋ[basket]; bur[grass]
+
+#tr.en: reed basket for grass
+63. {gi}pisaŋ {u₂}ninni₅
+#lem: bisaŋ[basket]; ninni[reeds]
+
+#tr.en: reed basket for reeds
+64. {gi}pisaŋ šag₄-ga
+#lem: bisaŋ[basket]; šag[heart]
+
+#tr.en: reed basket for inside use
+65. {gi}pisaŋ šag₄ ra-ah
+#lem: bisaŋ[basket]; šag[heart]; rah[beat]
+
+#tr.en: reed basket which is lined inside
+66. {gi}pisaŋ igi-du₈-a
+#lem: bisaŋ[basket]; igidu[gift]
+
+#tr.en: reed basket for (carrying) gifts
+67. {gi}pisaŋ kuš sig₉-ga 
+#lem: bisaŋ[basket]; kuš[skin]; sig[line]
+
+#tr.en: reed basket lined with leather
+68. {gi}pisaŋ gi-dub-ba 
+#lem: bisaŋ[basket]; gidubak[stylus]
+
+#tr.en: reed basket for styli
+69. {gi}pisaŋ gid₂-da
+#lem: bisaŋ[basket]; gid[long]
+
+#tr.en: elongated reed basket
+70. {gi}pisaŋ gud-da
+#lem: bisaŋ[basket]; lugud[short]
+
+#tr.en: short reed basket
+71. {gi}pisaŋ gana₂ kud-da
+#lem: bisaŋ[basket]; gana[field]; kud[cut]
+
+#tr.en: reed basket for weeding a field
+72. {gi}pisaŋ sa₂-a
+#lem: bisaŋ[basket]; sig[tie]
+
+#tr.en: tied reed basket
+#note: CAD R s.v. raksu, tied, lexical section (sa₂-a = raksu)
+73. {gi}ma-sa₂-ab
+#lem: masab[basket]
+
+#tr.en: (cultic) basket
+74. {gi}ma-sa₂-ab šu
+#lem: masab[basket]; šu[hand]
+
+#tr.en: basket for @?supplies?@
+#note: see line 61
+75. {gi}ma-sa₂-ab ninda
+#lem: masab[basket]; ninda[bread]
+
+#tr.en: basket for bread
+76. {gi}ma-sa₂-ab ninda sag₁₀
+#lem: masab[basket]; ninda[bread]; sag[good]
+
+#tr.en: basket for good quality bread
+77. {gi}ma-sa₂-ab kug
+#lem: masab[basket]; kug[metal]
+
+#tr.en: basket for metal
+78. {gi}ma-sa₂-ab za-na-x
+#lem: masab[basket]; u
+
+#tr.en: basket for ...
+79. {gi}ma-sa₂-ab kug-an
+#lem: masab[basket]; kugan[metal]
+
+#tr.en: basket for @?meteoric iron?@
+80. {gi}ma-sa₂-ab šu-u
+#lem: masab[basket]; šuʾi[barber]
+
+#tr.en: barber's basket
+81. {gi}ma-sa₂-ab mah
+#lem: masab[basket]; mah[great]
+
+#tr.en: large basket
+82. {gi}ma-sa₂-ab zid₂-da
+#lem: masab[basket]; zid[flour]
+
+#tr.en: basket for zid-flour
+83. {gi}ma-sa₂-ab gid₂-da
+#lem: masab[basket]; gid[long]
+
+#tr.en: elongated basket
+84. {gi}ma-sa₂-ab gana₂ kud-da
+#lem: masab[basket]; gana[field]; kud[cut]
+
+#tr.en: basket for weeding a field
+85. {gi}ma-sa₂-ab esir šub-ba
+#lem: masab[basket]; esir[bitumen]; šub[fall]
+
+#tr.en: basket smeared with bitumen
+86. {gi}ma-an-sim
+#lem: mansim[sieve]
+
+#tr.en: sieve
+87. {gi}ma-an-sim diŋir
+#lem: mansim[sieve]; diŋir[deity]
+
+#tr.en: divine sieve
+88. ($vacat$) 
+#the entry {gi}ma-an-sim dim₃ does not appear in the sources
+89. {gi}ma-an-sim si-ga
+#lem: mansim[sieve]; sig[weak]
+
+#tr.en: narrow sieve
+90. {gi}ma-an-sim šu ŋal₂
+#lem: mansim[sieve]; šu[hand]; ŋal[to have]
+
+#tr.en: a type of hand sieve
+#note: Akk. mekkû
+91. {gi}ma-an-sim niŋ₂-ar₃-ra
+#lem: mansim[sieve]; niŋara[groats]
+
+#tr.en:  sieve for groats
+92. {gi}ma-an-sim niŋ₂-mur-gud
+#lem: mansim[sieve]; niŋmurgu[fodder]
+
+#tr.en: sieve for fodder
+93. {gi}ma-an-sim il₂
+#lem: mansim[sieve]; il[raise]
+
+#tr.en: portable sieve
+94. {gi}šem₃ ak
+#lem: šem[drum]; ak[do]
+
+#tr.en: ...
+95. {gi}hal
+#lem: hal[basket]
+
+#tr.en: reed basket
+96. {gi}hal-zi-ig
+#lem: halzig[container]
+
+#tr.en: reed container
+#Akkadian halziqqu, cf. AHw 315
+97. {gi}hal ku₆
+#lem: hal[basket]; kud[fish]
+
+#tr.en: reed basket for fish
+98. {gi}hal mušen
+#lem: hal[basket]; mušen[bird]
+
+#tr.en: reed basket for birds
+99. {gi}hal uzu
+#lem: hal[basket]; uzu[flesh]
+
+#tr.en: reed basket for meat
+100. gi-ha-an
+#lem: gihan[basket]
+
+#tr.en: basket
+#see Civil, Sigrist AV (2008), 42-43
+101. gi-ha-an siki
+#lem: gihan[basket]; siki[hair]
+
+#tr.en: basket for wool
+101a. gi-ha-an mušen
+#lem: gihan[basket]; mušen[bird]
+
+#tr.en: basket for birds
+101b. gi-ha-an ku₆
+#lem: gihan[basket]; kud[fish]
+
+#tr.en: basket for fish
+101c. gi-ha-an gud?
+#lem: gihan[basket]; gud[ox]
+
+#tr.en: basket for an ox(?)
+102. {gi}gum₂-gum₂-šu₂
+#lem: guhšu[altar]
+
+#tr.en: reed altar
+103. {gi}niŋ₂-esir₂-ra
+#lem: niŋesir[wash-basin]
+
+#tr.en: wash-basin
+#note: Hh. IX 208: {gi}niŋ₂-esir₂-ra = nam-su-u₂
+104. {gi}niŋ₂ kuš sig₉-ga
+#lem: niŋ[thing]; kuš[skin]; sig[line]
+
+#tr.en: reed basin lined with leather
+105. {gi}buniŋₓ(|A.LAGABxA|)
+#lem: buniŋ[trough]
+
+#tr.en: trough
+106. {gi}buniŋₓ(|A.LAGABxA|) saŋ-ŋa₂
+#lem: buniŋ[trough]; saŋ[head]
+
+#tr.en: ... trough
+107. {gi}buniŋₓ(|A.LAGABxA|) pisaŋ
+#lem: buniŋ[trough]; bisaŋ[basket]
+
+#tr.en: a reed basket-like trough
+108. {gi}buniŋₓ(|A.LAGABxA|) zu₂-lum
+#lem: buniŋ[trough]; zulum[date]
+
+#tr.en: bowl for dates
+109. {gi}buniŋₓ(|A.LAGABxA|) lu₂-im₂
+#lem: buniŋ[trough]; lu₂.IM[criminal]
+
+#tr.en: @"false"@ trough
+#note: Sjöberg JCS 25, 133. CAD S s.v. 180 fl.
+109a. {gi}buniŋₓ(|A.LAGABxA|) LU₂ RA
+#lem: buniŋ[trough]; X; X
+
+#tr.en: ... trough
+110. {gi}buniŋₓ(|A.LAGABxA|) pe-el-la₂
+#lem: buniŋ[trough]; pel[defile]
+
+#tr.en: dirty trough
+111. {gi}buniŋₓ(|A.LAGABxA|) igi-du₈-a
+#lem: buniŋ[trough]; igidu[gift]
+
+#tr.en: bowl for gifts
+112. {gi}buniŋₓ(|A.LAGABxA|) {u₂}bur₂
+#lem: buniŋ[trough]; bur[grass]
+
+#tr.en: trough for grass
+113. {gi}ba-an-du
+#lem: bandudu[basket]
+
+#tr.en: seeding bucket
+114. {gi}ba-an-du [...]
+#lem: bandudu[basket]; u
+
+#tr.en: ... seeding bucket 
+115. {gi}ba-an-du [...]
+#lem: bandudu[basket]; u
+
+#tr.en: ... seeding bucket
+116. {gi}ba-an-du [...]
+#lem: bandudu[basket]; u
+
+#tr.en:  ... seeding bucket
+117. gi-x#-[x]
+#lem: u
+
+#tr.en: ...
+118. gi-[x]
+#lem: u
+
+#tr.en: ...
+119. gi-[x]
+#lem: u
+
+#tr.en: ...
+120. gi-x#-[...]
+#lem: u
+
+#tr.en: ...
+121. gi gid₂-da
+#lem: gi[reed]; gid[long]
+
+#tr.en: long reed
+122. {gi}am-ma-am
+#lem: amam[jar]
+
+#tr.en: beer jar
+123. {gi}am-ma-am-ma-um
+#lem: amamaʾum[jar]
+
+#tr.en: type of jar
+#note: hapax legomenon
+124. {gi}gakkul
+#lem: gakkul[mash-tub]
+
+#tr.en: mash-tub/ fermenting vat
+125. {gi}gakkul ab-ba
+#lem: gakkul[mash-tub]; abba[father]
+
+#tr.en: fermenting mash-tub
+126. {gi}gakkul kaš
+#lem: gakkul[mash-tub]; kaš[beer]
+
+#tr.en: mash-tub for beer
+127. gi-dub-ba
+#lem: gidubak[stylus]
+
+#tr.en: stylus
+128. gi gir-gi₄
+#lem: gi[reed]; girgi[reed strip]
+
+#tr.en: reed strip
+#note: Akkadian girrigu; see Emar 6/4 86 text H: [gi gir]-gi(₄) = gir-gi-u.
+129. gi diš nindan
+#lem: gi[reed]; diš[one]; nindan[pole]
+
+#tr.en: measuring reed of one nindan
+130. gi diš kuš₃
+#lem: gi[reed]; diš[one]; kuš[unit]
+
+#tr.en: measuring reed of one cubit
+131. gi sa₉ kuš₃
+#lem: gi[reed]; sa[half]; kuš[unit]
+
+#tr.en: measuring reed of half a cubit
+132. gi šušana kuš₃
+#lem: gi[reed]; šušana[fraction]; kuš[unit]
+
+#tr.en: measuring reed of one-third a cubit
+133. gi šanabi kuš₃
+#lem: gi[reed]; šanabi[two-thirds]; kuš[unit]
+
+#tr.en: measuring reed of two-thirds a cubit
+134. {gi}dur₁₀-tab-ba
+#lem: durtaba[ax]
+
+#tr.en: double axe
+#CHECK: AuOR 5 22-23
+135. {gi}dur₁₀ bar
+#lem: dur[ax]; bar[outside]
+
+#tr.en: splitting axe
+136. {gi}dur₁₀-gag šibir
+#lem: durgag[ax]; šibir[staff]
+
+#tr.en: ax and staff
+137. gi šuš₂
+#lem: gi[reed]; šuš[cover]
+
+#tr.en: reed coil
+#note: gi-šu₂ = hi-i-šu₂
+138. {gi}šu₂-a
+#lem: šuʾa[stool]
+
+#tr.en: stool made of reed
+139. {gi}e
+#lem: X
+
+#tr.en: ...
+139a. gi-x
+#lem: u
+
+#tr.en: ...
+140. {gi}urin
+#lem: urin[standard]
+
+#tr.en: reed standard
+141. {gi}en₃-bar
+#lem: enbar[reed]
+
+#tr.en: young reed
+#note: Civil, Fs. Reiner 44 and Fable of Heron and Turtle, line 13
+142. {gi}en₃-bar dug₃-ga
+#lem: enbar[reed]; dug[good]
+
+#tr.en: good quality young reed
+143. {gi}en₃-bar {u₂}numun₂
+#lem: enbar[reed]; numun[grass]
+
+#tr.en: young reed (which looks like) alfalfa-grass
+144. {gi}{u₂}gug₄(|ZI&ZI.LAGAB|)
+#lem: gug[grass]
+
+#tr.en: a rush
+145. {gi}kun gug₄(|ZI&ZI.LAGAB|)
+#lem: kun[tail]; gug[grass]
+
+#tr.en: the reedy bottom part of a rush
+146. gi dirig 
+#lem: gi[reed]; dirig[stand]
+
+#tr.en: standing reed
+#note: see Diri Ugarit 1: 17 and parallels diri = i-zu-uz ša GI.MEŠ.
+147. gi pe-el-la₂
+#lem: gi[reed]; pela[reed]
+
+#tr.en: poor quality reed
+148. gi kalag
+#lem: gi[reed]; kalag[strong]
+
+#tr.en: strong reed
+149. {gi}al-PI-na
+#lem: al.PI.na[reed fence]
+
+#tr.en: a reed fence
+#note: PSD A/III s.v. al B
+150. gi pad-pad-ra₂
+#lem: gi[reed]; pad[break]
+
+#tr.en: broken reeds
+151. gi ša₅-ša₅
+#lem: gi[reed]; ša[snap]
+
+#tr.en: snapped reeds
+152. gi a-ak
+#lem: gi[reed]; ak[make]
+
+#tr.en: ... reeds
+153. gi šu a-ak
+#lem: gi[reed]; šu[hand]; ak[make]
+
+#tr.en: prepared the reeds
+154. {gi}gibil₂ a-ak
+#lem: gibil[firewood]; ak[make]
+
+#tr.en: reed for burning 
+155. {gi}a-gir₅
+#lem: agir[reed]
+
+#tr.en: young reed sprout
+#note: see line 156 
+156. {gi}a-gir₅-gir₅
+#lem: agirgir[reed]
+
+#tr.en: young reeds sprouts
+#note: Civil, Fs Reiner 44
+157. {gi}a-da-gir₅
+#lem: adagir[container]
+
+#tr.en: ritual vessel
+#note: Hh. VIII Emar {gi}a-da-gir₅ = GI a-da-kur (see CAD adagurru) 
+158. gi gal
+#lem: gi[reed]; gal[big]
+
+#tr.en: big reed
+159. gi gal-gal
+#lem: gi[reed]; gal[big]
+
+#tr.en: big reeds
+160. gi niŋ₂ gal-gal
+#lem: gi[reed]; niŋ[thing]; gal[big]
+
+#tr.en: very big reeds
+161. gi tur
+#lem: gi[reed]; tur[small]
+
+#tr.en: small reed
+162. gi tur-tur
+#lem: gi[reed]; tur[small]
+
+#tr.en: small reeds
+163. gi niŋ₂ tur-tur
+#lem: gi[reed]; niŋ[thing]; tur[small]
+
+#tr.en: very small reeds
+164. {gi}saŋ gal
+#lem: saŋ[head]; gal[big]
+
+#tr.en: large reed bed
+#note: Hh VIII 15 {gi}saŋ = apparu
+165. {gi}saŋ-kud
+#lem: saŋkud[reed pipe]
+
+#tr.en: reed pipe
+#note Hh. VIII 67 {gi}saŋ-kud = sa-ak-kut-tum
+166. {gi}da-buru₃
+#lem: X
+
+#tr.en: ...
+167. {gi}aŋarin₄ sa₂-a
+#lem: aŋarin[matrix]; sig[tie]
+
+#tr.en: @?tied?@ reed-matrix 
+168. {gi}a-dag
+#lem: adag[raft]
+
+#tr.en: reed raft
+169. gi nam-sipad-da
+#lem: gi[reed]; namsipad[shepherdship]
+
+#tr.en: reed (staff) of shepherdship
+170. {gi}šutug# šub-ba
+#lem: šutug[reed-hut]; šub[fall]
+
+#tr.en: fallen reed-hut
+171. {gi}anzalub
+#lem: anzalub[pith]
+
+#tr.en: reed pith
+172. {gi}pa gi
+#lem: pa[branch]; gi[reed]
+
+#tr.en: branch of the reed
+173. {gi}ur₂ gi
+#lem: ur[root]; gi[reed]
+
+#tr.en: root of the reed
+174. {gi}suhuš gi
+#lem: suhuš[foundation]; gi[reed]
+
+#tr.en: root of the reed
+175. [gi]-x#-DU
+#lem: u
+
+#tr.en: ...
+176. [gi]-x#-gi₄#-en#
+#lem: u
+
+#tr.en: ...
+177. [gi-x]-ga
+#lem: u
+
+#tr.en: ...
+178. [gi]-x#-ga
+#lem: u
+
+#tr.en: ...
+179. [gi niŋ₂]-sig-ga
+#lem: gi[reed]; niŋsiga[weak]
+
+#tr.en: poor quality reed
+180. {gi}ma₂-lal
+#lem: mala[boat]
+
+#tr.en: freight boat
+181. {gi}ma₂ zil-la₂
+#lem: ma[boat]; sil[split]
+
+#tr.en: ... boat
+182. {gi}ub-zal
+#lem: ubzal[reeds]
+
+#tr.en: young reed offshoots
+#note: Civil, Fs Reiner 44
+183. {gi}ub-zal
+#lem: ubzal[reeds]
+
+#tr.en: young reed offshoots
+184. {gi}zid-DU
+#lem: zi.DU[~levee]
+
+#tr.en: type of embankment made of reed
+185. {gi}ŋeš-zu₂-keš₂-da
+#lem: ŋešzukešda[dam]
+
+#tr.en: dam made of reeds
+186. {gi}kun-zid-da
+#lem: kunzida[weir]
+
+#tr.en: weir made of reeds
+187. {gi}ŋeš gi₄-gi₄
+#lem: ŋeš[barrage]; gi[turn]
+
+#tr.en: barrage
+#See George CUSAS 10, 138.
+188. {gi}dur
+#lem: dur[bond]
+
+#tr.en: reed-fiber rope
+188a. {gi}[dur] su
+#lem: dur[bond]; X
+
+#tr.en: ...
+189. {gi}dur gal
+#lem: dur[bond]; gal[big]
+
+#tr.en: big reed-fiber rope 
+190. {gi}dur sig
+#lem: dur[bond]; sig[weak]
+
+#tr.en: weak reed-fiber rope
+191. [{gi}niŋ₂]-gilim-ma
+#lem: niŋgilima[rope]
+
+#tr.en: reed rope
+192. [...] gilim#-DU
+#lem: u; X
+
+#tr.en: ... 
+193. gi hi-a
+#lem: gi[reed]; hi[mix]
+
+#tr.en: mixed reeds
+194. {gi}niŋ₂ hi-[a]
+#lem: niŋ[thing]; hi[mix]
+
+#tr.en: mixture of reeds
+195. gi dug₃
+#lem: gi[reed]; dug[good]
+
+#tr.en: good reed
+196. gi zid? 
+#lem: gi[reed]; zid[right]
+
+#tr.en: ... reed
+197. gi NE@s-[...]
+#lem: gi[reed]; X
+
+#tr.en: ... reed
+198. {gi}x-[...]
+#lem: u
+
+#tr.en: ...
+$ 5 lines broken
+203. {gi}bun₂
+#lem: bun[bellows]
+
+#tr.en: reed bellows
+204. {gi}bun₂ šu
+#lem: bun[bellows]; šu[hand]
+
+#tr.en: hand (operated) bellows
+205. {gi}gab₂-il₂
+#lem: gabil[basket]
+
+#tr.en: reed basket
+206. {gi}zu₂
+#lem: zu[tooth]
+
+#tr.en: reed blade
+207. {gi}umbin-na
+#lem: umbin[cutting]
+
+#tr.en: (reed) cutting implement
+208. {gi}sun umbin-na
+#lem: sun[reed shoot]; umbin[cutting]
+
+#tr.en: reed shoot used for cutting
+209. gi-sab
+#lem: gisab[basket]
+
+#tr.en: type of basket
+#Akk. gisappu
+# see AHw 291, "basket with wooden handle"
+210. {gi}sun(BAD)
+#lem: sun[reed shoot]
+
+#tr.en: reed shoot
+#Akk. habasillatu
+#Hh. VIII 36a {gi}{su-un}BAD = ha-ba-sil-la-tu. AHw 303 s. v.
+211. {gi}sun(BAD)
+#lem: sun[reed shoot]
+
+#tr.en: reed shoot
+212. {gi}uš₂(BAD)
+#lem: uš[reed]
+
+#tr.en: dead reed
+213. {gi}u₃-šub
+#lem: ušub[part of reed]
+
+#tr.en: succulent part of reed/ reed used as fodder
+#CAD A/I 110 s.v. adattu, "succulent part of reed" and lexical references
+214. {gi}henbur(KAK)
+#lem: henbur[stalk]
+
+#tr.en: reed stalk
+215. {gi}lugal
+#lem: lugal[plant]
+
+#tr.en: type of reed-plant
+#ASJ 03, 055 04 (Rev. col. i, 4) and MVN 06, 300 (obv. col. 1 lines 7 and 13) 
+#from Girsu have a-ša₃ {gi}lugal
+216. {dug}lahtan(|NUNUZ.AB₂xLA|)
+#lem: lahtan[vat]
+
+#tr.en: beer vat
+217. {dug}lahtan(|NUNUZ.AB₂xLA|) gid₂-da
+#lem: lahtan[vat]; gid[long]
+
+#tr.en: elongated beer vat
+218. {dug}ku-kur-du₃
+#lem: kurkudu[container]
+
+#tr.en: pithos
+#note: MHEM III 75-76 and 102
+219. {dug}dur₂ lahtan
+#lem: dur[buttocks]; lahtan[vat]
+
+#tr.en: base of a beer vat
+220. {dug}dur₂ lahtan
+#lem: dur[buttocks]; lahtan[vat]
+
+#tr.en: base of a beer vat
+221. {dug}mud₄#
+#lem: mud[jar]
+
+#tr.en: beer jar
+222. [dug] a naŋ
+#lem: dug[pot]; a[water]; naŋ[drink]
+
+#tr.en: pot for drinking-water
+223. [dug a naŋ] mah 
+#lem: dug[pot]; a[water]; naŋ[drink]; mah[great]
+
+#tr.en: wine cup
+#note: see CAD anakmahhu
+$ 10 lines broken
+234. dug [x-x]
+#lem: dug[pot]; u
+
+#tr.en: pot
+235. dug [x-x]
+#lem: dug[pot]; u
+
+#tr.en: ... pot
+236. dug [x-x]
+#lem: dug[pot]; u
+
+#tr.en: ... pot
+237. dug niŋ₂-[x-x]
+#lem: dug[pot]; X
+
+#tr.en: ... pot
+238. dug niŋ₂-[x-x]
+#lem: dug[pot]; X
+
+#tr.en: vessel ...
+239. {dug}ubur [maš-tab-ba]
+#lem: ubur[breast]; maštab[twin]
+
+#tr.en: vessel with twin teats
+240. {dug}ubur imin-bi 
+#lem: ubur[breast]; imin[seven]
+
+#tr.en: vessel with seven teats
+241. {dug}niŋ₂-dur₂-buru₃
+#lem: niŋdurburu[fermenting]
+
+#tr.en: perforated fermenting vat (used in beer production)
+242. {dug}niŋ₂-dur₂-buru₃-buru₃
+#lem: niŋdurburu[fermenting]
+
+#tr.en: perforated fermenting vat (used in beer production)
+243. dug titab₂
+#lem: dug[pot]; titab[~beer]
+
+#tr.en: vessel for beer-mash 
+244. {dug}sumun₂
+#lem: sumun[vessel]
+
+#tr.en: soaking vessel
+245. {dug}dida(|BI.U₂.SA|)!
+#lem: dida[wort]
+
+#tr.en: vessel for wort
+246. dug a kum₂-ma
+#lem: dug[pot]; a[water]; kum[hot]
+
+#tr.en: hot-water bottle
+247. dug a šed₁₀(|MUŠ₃.DI|)-da
+#lem: dug[pot]; a[water]; sed[cool]
+
+#tr.en: cold-water bottle
+248. dug gal
+#lem: dug[pot]; gal[big]
+
+#tr.en: large vessel
+249. {dug}sahar
+#lem: sahar[vessel]
+
+#tr.en: porous vessel
+250. {dug}zag-še₃-la₂
+#lem: zagšela[container]
+
+#tr.en: vessel hanging from one's shoulder
+251. {dug}ban₂
+#lem: ban[unit]
+
+#tr.en: one-seah capacity vessel
+252. {dug}banmin
+#lem: banmin[vessel]
+
+#tr.en: two-seah capacity vessel
+#note: MHEM III 98
+253. {dug}baneš 
+#lem: baneš[container]
+
+#tr.en: three-seah capacity vessel
+254. {dug}ka daŋal
+#lem: kag[mouth]; daŋal[wide]
+
+#tr.en: wide-mouthed vessel
+#note: MHEM III 102
+254a. {dug}ZA-SU-LAGAB
+#lem: X
+
+254b. {dug}kun-ri
+#lem: kunrim[vessel]
+
+#tr.en: libation vessel
+254c. {dug}kun-du₃
+#lem: kunrim[vessel]
+
+#tr.en: libation vessel
+#@isslp 1996 W. Sallaberger, MHEM 3 102
+255. {dug}ti-lim-da
+#lem: tilima[cup]
+
+#tr.en: drinking cup
+256. {dug}gir₁₆
+#lem: gir[jar]
+
+#tr.en: vessel for liquid
+257. {dug}gir₁₆ ga
+#lem: gir[jar]; ga[milk]
+
+#tr.en: jar for milk
+258. {dug}gir₁₆ šag₄ sig
+#lem: gir[jar]; šag[heart]; sig[weak]
+
+#tr.en: jar whose inside is fragile
+259. {dug}za-hu-um
+#lem: zahum[basin]
+
+#tr.en: basin
+260. {dug}la-ha-nu-um
+#lem: lahan[flask]
+
+#tr.en: flask
+#note: Akkadian lahannu
+261. {dug}za-ad-ru-um
+#lem: zandara[object]
+
+#tr.en: drainage tile
+262. dug ŋeštin-na
+#lem: dug[pot]; ŋeštin[vine]
+
+#tr.en: vessel for wine
+263. dug gibil-la₂
+#lem: dug[pot]; gibil[new]
+
+#tr.en: new pot
+264. {dug}sab
+#lem: sab[jar]
+
+#tr.en: jar
+265. {dug}sab lal₃
+#lem: sab[jar]; lal[syrup]
+
+#tr.en: jar for syrup
+266. {dug}sab i₃-ŋeš
+#lem: sab[jar]; iŋeš[oil]
+
+#tr.en: jar for sesame oil
+267. {dug}sab i₃-nun
+#lem: sab[jar]; inun[ghee]
+
+#tr.en: jar for ghee
+268. {dug}sab i₃ [saŋ]
+#lem: sab[jar]; i[oil]; saŋ[head]
+
+#tr.en: jar for first-quality oil
+269. {dug}sab i₃ [šah]
+#lem: sab[jar]; i[oil]; šah[pig]
+
+#tr.en: jar for lard
+270. {dug}sab i₃ dug₃-ga
+#lem: sab[jar]; i[oil]; dug[good]
+
+#tr.en: jar for good-quality oil
+271. {dug}gur₄-gur₄
+#lem: gurgur[vessel]
+
+#tr.en: vessel
+272. {dug}gur₄-gur₄ lal₃
+#lem: gurgur[vessel]; lal[syrup]
+
+#tr.en: vessel for syrup
+273. {dug}gur₄-gur₄ i₃-ŋeš
+#lem: gurgur[vessel]; iŋeš[oil]
+
+#tr.en: vessel for sesame oil
+274. {dug}gur₄-gur₄ i₃-nun
+#lem: gurgur[vessel]; inun[ghee]
+
+#tr.en: vessel for ghee
+275. {dug}gur₄-gur₄ i₃ saŋ
+#lem: gurgur[vessel]; i[oil]; saŋ[head]
+
+#tr.en: vessel for first-quality oil
+276. {dug}gur₄-gur₄ i₃ šah
+#lem: gurgur[vessel]; i[oil]; šah[pig]
+
+#tr.en: vessel for lard
+277. {dug}gur₄-gur₄ i₃ dug₃-ga
+#lem: gurgur[vessel]; i[oil]; dug[good]
+
+#tr.en: vessel for good-quality oil
+278. {dug}šaŋan
+#lem: šaŋan[flask]
+
+#tr.en: flask
+279. {dug}šaŋan kuš sig₉-ga
+#lem: šaŋan[flask]; kuš[skin]; sig[line]
+
+#tr.en: flask wrapped in leather
+280. {dug}ti-sar
+#lem: X
+
+#tr.en: ...
+281. dug gaz-za
+#lem: dug[pot]; gaz[kill]
+
+#tr.en: broken pot
+282. {dug}ga-ba-ba sal-la
+#lem: X; sal[thin]
+
+#tr.en:  thin ...-pot
+283. {dug}bar-sud
+#lem: barsud[pot]
+
+#tr.en: pot
+#note: PSD B s. v. bar-su₃ B
+284. {dug}x-im-TAR
+#lem: X
+
+#tr.en: ...
+285. dug ne-mur-ra
+#lem: dug[pot]; nimur[ashes]
+
+#tr.en: container for ashes
+286. {dug}utul₂
+#lem: utul[tureen]
+
+#tr.en: tureen
+287. {dug}utul₂ gal
+#lem: utul[tureen]; gal[big]
+
+#tr.en: large tureen
+288. {dug}utul₂!# x
+#lem: utul[tureen]; u
+
+#tr.en: ... tureen
+$ 4 lines broken
+293. {dug}bur-zi
+#lem: burzi[bowl]
+
+#tr.en: bowl
+293a. {dug}bur-zi še
+#lem: burzi[bowl]; še[barley]
+
+#tr.en: bowl for barley
+294. {dug}bur-zi gal
+#lem: burzi[bowl]; gal[big]
+
+#tr.en: large bowl
+295. {dug}bur-zi tur
+#lem: burzi[bowl]; tur[small]
+
+#tr.en: small bowl
+296. {dug}bur-zi sila₃ ban₃-da
+#lem: burzi[bowl]; sila[unit]; banda[junior]
+
+#tr.en: bowl of one small @sila capacity
+297. {dug}bur-zi mud
+#lem: burzi[bowl]; mud[blood]
+
+#tr.en: bowl for blood
+297a. {dug}bur-zi utu₂
+#lem: burzi[bowl]; utu[~cereal]
+
+#tr.en: bowl for cereal
+298. {dug}bur-zi niŋ₂-na
+#lem: burzi[bowl]; niŋna[incense]
+
+#tr.en: bowl for incense
+299. {dug}bur-zi ninda-i₃-de₂-a
+#lem: burzi[bowl]; nindaʾidea[bread]
+
+#tr.en: bowl for oil-sprinkled bread
+300. {dug}epigₓ(|A.SIG|)
+#lem: epig[vessel]
+
+#tr.en: drinking vessel
+301. {dug}epigₓ(|A.SIG|) gud
+#lem: epig[vessel]; gud[ox]
+
+#tr.en: ox trough
+302. {dug}epigₓ(|A.SIG|) udu
+#lem: epig[vessel]; udu[sheep]
+
+#tr.en: sheep trough
+303. {dug}epigₓ(|A.SIG|) šah₂
+#lem: epig[vessel]; šah[pig]
+
+#tr.en: pig trough
+304. {dug}a-ra-an-du₇ 
+#lem: arandu[pipe]
+
+#tr.en: type of pipe
+305. {dug}a-ru-tum
+#lem: arutum[pipe]
+
+#tr.en: type of pipe
+306. {dug}a-pap hal 
+#lem: apap[pipe]; hal[divide]
+
+#tr.en: ... libation pipe for the dead
+307. {dug}a-pap
+#lem: apap[pipe]
+
+#tr.en: libation pipe for the dead
+308. {dug}ugur₂ bala
+#lem: ugur[pot]; bala[turn]
+
+#tr.en: pot used in beer production
+309. {dug}lum₃
+#lem: lum[vessel]
+
+#tr.en: drinking vessel
+310. {dug}lud
+#lem: lud[tableware]
+
+#tr.en: a type of tableware
+311. {dug}šikin₂
+#lem: sikin[container]
+
+#tr.en: a flask (for oil)
+312. {dug}urrub(KAL)
+#lem: urrub[vessel]
+
+#tr.en: a type of vessel
+313. {dug}zurzub₂(KAL)
+#lem: zurzub[vessel]
+
+#tr.en: a vessel with knobs
+314. {dug}silim₂
+#lem: silim[vessel]
+
+#tr.en: a pottery vessel
+#note: Akkadian ṣurṣuppum
+315. {dug}sila₃ GAR
+#lem: sila[unit]; X
+
+#tr.en: one-liter capacity ... pot
+#note: MHEM III 106
+316. {dug}sila₃ gaz
+#lem: sila[unit]; gaz[kill]
+
+#tr.en: broken pot of one-liter capacity
+317. udun(|U.MU|)
+#lem: udun[kiln]
+
+#tr.en: kiln
+318. udun še sa-a
+#lem: udun[kiln]; še[barley]; sa[roast]
+
+#tr.en: oven for roasting barley
+319. udun bappir
+#lem: udun[kiln]; bappir[~beer]
+
+#tr.en: oven for baking beer-bread
+320. udun mah
+#lem: udun[kiln]; mah[great]
+
+#tr.en: large kiln
+321. udun titab₂#
+#lem: udun[kiln]; titab[~beer]
+
+#tr.en: oven for beer-mash
+322. udun bahar₂#
+#lem: udun[kiln]; bahar[potter]
+
+#tr.en: potter's kiln
+323. udun i₃ [sur]
+#lem: udun[kiln]; i[oil]; sur[press]
+
+#tr.en: oven for the preparer of oil
+324. {dug}gir₄
+#lem: gir[oven]
+
+#tr.en: oven
+324a. {dug}gir₄ ma₂-lah₅
+#lem: gir[oven]; malah[sailor]
+
+#tr.en: sailor's oven
+324b. {dug}gir₄ ad-KID
+#lem: gir[oven]; ad.KID[weaver]
+
+#tr.en: weaver's oven
+324c. {dug}ne
+#lem: ne[brazier]
+
+#tr.en: brazier
+324d. NE-DU-DU
+#lem: NE.DU.DU[crucible]
+
+#tr.en: portable crucible
+#Hh. X 338 KI.NE.DU.DU = muttalliku "portable crucible"
+325. {im}šu-GAR-rin-na 
+#lem: šurin[oven]
+
+#tr.en: oven
+326. ka-tab {im}šu-GAR-rin-na 
+#lem: katab[lid]; šurin[oven]
+
+#tr.en: cover for the oven OR oven's lid
+326a. ka-du₃ GAR{im}
+#lem: kadu[cover]; X
+
+#tr.en: cover for ...
+326b. niŋ₂-tab udun
+#lem: niŋtab[fire-box]; udun[kiln]
+
+#tr.en: kiln's fire-box
+326c. [...] KID
+#lem: u; u
+
+#tr.en: ...
+326d. [...] im#
+#lem: u; im[clay]
+
+#tr.en: ... clay
+327. im
+#lem: im[clay]
+
+#tr.en: clay
+328. im su₄-a
+#lem: im[clay]; su[red]
+
+#tr.en: reddish clay
+329. im sig₇-sig₇
+#lem: im[clay]; sissig[green]
+
+#tr.en: greenish clay
+330. im zid-da
+#lem: im[clay]; zid[right]
+
+#tr.en: true clay 
+331. im babbar
+#lem: im[clay]; babbar[white]
+
+#tr.en: white clay
+332. im giggi
+#lem: im[clay]; giggi[black]
+
+#tr.en: black clay
+333. im kal
+#lem: im[clay]; kal[rare]
+
+#tr.en: yellow clay
+#note: Akk. kalû; Wiggermann CM 1, 54
+334. im kalag
+#lem: im[clay]; kalag[strong]
+
+#tr.en: orange clay
+#note: Akk. kalgukku; Wiggermann CM 1, 54
+
+335. im dug
+#lem: im[clay]; dug[pot]
+
+#tr.en: clay for pots
+335a. im-dug
+#lem: imdug[shot]
+
+#tr.en: clay for pots
+336. im-dugud
+#lem: imdug[shot]N
+
+#tr.en: heavy clay
+337. im gu₂-en-na
+#lem: im[clay]; guʾena[silt]
+
+#tr.en: silty clay
+338. im gu₂ niŋ₂ ŋar-ŋar
+#lem: im[clay]; gu[neck]; niŋ[thing]; ŋar[place\t]
+
+#tr.en: clay piling on the bank (of a river)
+338a. im hab₂
+#lem: im[clay]; hab[malodorous]
+
+#tr.en: malodorous clay
+338b. im lu₃-a
+#lem: im[clay]; lu[mix]
+
+#tr.en: mixed clay
+339. kuš
+#lem: kuš[skin]
+
+#tr.en: skin
+340. kuš gud
+#lem: kuš[skin]; gud[ox]
+
+#tr.en: ox skin
+341. kuš udu
+#lem: kuš[skin]; udu[sheep]
+
+#tr.en: sheep skin
+342. kuš gukkal(|LU.HUL₂|)
+#lem: kuš[skin]; gukkal[sheep]
+
+#tr.en: fat-tailed sheep skin
+343. kuš maš₂
+#lem: kuš[skin]; maš[goat]
+
+#tr.en: male goat skin
+344. kuš uzud
+#lem: kuš[skin]; uzud[goat]
+
+#tr.en: female goat skin
+345. kuš {munus}aš₂-gar₃
+#lem: kuš[skin]; ašgar[kid]
+
+#tr.en: kid skin
+346. kuš am
+#lem: kuš[skin]; am[bull]
+
+#tr.en: wild bull skin
+347. kuš am-si
+#lem: kuš[skin]; amsi[elephant]
+
+#tr.en: elephant skin
+348. kuš am-si kur-ra
+#lem: kuš[skin]; amsi[elephant]; kur[mountain]
+
+#tr.en: camel skin
+349. kuš sumun₂
+#lem: kuš[skin]; sumun[cow]
+
+#tr.en: cow skin
+350. kuš kir₄
+#lem: kuš[skin]; kir[hyena]
+
+#tr.en: hyena skin
+350a. kuš {+ugu}ugu₄-bi
+#lem: kuš[skin]; ugubi[monkey]
+
+#tr.en: monkey skin
+351. kuš durah
+#lem: kuš[skin]; durah[goat]
+
+#tr.en: wild-goat skin
+352. kuš durah-maš
+#lem: kuš[skin]; durahmaš[ram]
+
+#tr.en: wild-ram skin
+353. kuš šeg₉
+#lem: kuš[skin]; šeg[animal]
+
+#tr.en: mountain-goat skin
+354. kuš šeg₉-bar
+#lem: kuš[skin]; šeŋbar[animal]
+
+#tr.en: fallow-deer skin
+355. kuš lu-lim
+#lem: kuš[skin]; lulim[stag]
+
+#tr.en: stag skin
+356. kuš udu-til
+#lem: kuš[skin]; udutil[sheep]
+
+#tr.en: wild-sheep skin
+357. kuš maš-da₃
+#lem: kuš[skin]; mašda[gazelle]
+
+#tr.en: gazelle skin
+358. kuš amar maš-da₃
+#lem: kuš[skin]; amar[young]; mašda[gazelle]
+
+#tr.en: young gazelle's skin
+359. kuš su-a
+#lem: kuš[skin]; sua[cat]
+
+#tr.en: cat skin
+360. kuš su-a-ri
+#lem: kuš[skin]; suari[cat]
+
+#tr.en: wild-cat skin
+361. kuš ka₅-a
+#lem: kuš[skin]; kaʾa[fox]
+
+#tr.en: fox skin
+362. kuš kud-da
+#lem: kuš[skin]; kuda[animal]
+
+#tr.en: @kuda skin
+363. kuš ban₂-HU-nu
+#lem: kuš[skin]; ban₂.HU[animal]
+
+#tr.en: chameleon skin
+364. kuš ur-mah
+#lem: kuš[skin]; urmah[lion]
+
+#tr.en: lion skin
+365. kuš ur-nig
+#lem: kuš[skin]; urnig[lioness]
+
+#tr.en: lioness skin
+366. kuš ur-bar-ra
+#lem: kuš[skin]; urbara[wolf]
+
+#tr.en: wolf skin
+367. kuš ur-gi₇
+#lem: kuš[skin]; urgir[dog]
+
+#tr.en: dog skin
+368. kuš ur-ki
+#lem: kuš[skin]; urki[dog]
+
+#tr.en: dog skin
+#MSL 8/2, 13 ur-ki = MIN(ka-lab) ur-s,i
+369. kuš ur-dib
+#lem: kuš[skin]; urdib[cub]
+
+#tr.en: lion-cub's skin
+#note: Heimpel, Tierbilder 369 
+370. kuš ur-tur
+#lem: kuš[skin]; urtur[puppy]
+
+#tr.en: puppy skin
+371. kuš ur-šub₅
+#lem: kuš[skin]; uršub[tiger]
+
+#tr.en: tiger skin
+372. kuš ur-šub₅-kud-da
+#lem: kuš[skin]; uršubkuda[wild animal]
+
+#tr.en: @?jackal?@ skin
+#note: Akkadian dumāmu; written ur-šur₄-gud in YBC 11118
+373. kuš peš₂
+#lem: kuš[skin]; peš[mouse]
+
+#tr.en: mouse skin
+374. kuš peš₂-{ŋeš}gi-e
+#lem: kuš[skin]; pešgi[rodent]
+
+#tr.en: skin of a reed-thicket rodent
+375. kuš peš₂-{ŋeš}gi-e-gu₇-a
+#lem: kuš[skin]; pešgigua[rodent]
+
+#tr.en: skin of a thicket-eating rodent
+376. kuš peš₂-a-šag₄-ga
+#lem: kuš[skin]; pešašaga[rodent]N
+
+#tr.en: field mouse skin
+377. kuš peš₂-igi-gun₃
+#lem: kuš[skin]; pešigigunu[rodent]N
+
+#tr.en: skin of the speckled-face mouse
+378. kuš peš₂-niŋ₂-gilim-ma
+#lem: kuš[skin]; pešniŋgilima[rodent]N
+
+#tr.en: @pešniŋgilima rodent skin
+379. kuš peš₂-niŋ₂-{gil}gilim-ma
+#lem: kuš[skin]; pešniŋgilima[rodent]N
+
+#tr.en: @pešniŋgilima rodent skin
+380. kuš peš₂-{dug}sila₃-gaz-gaz
+#lem: kuš[skin]; pešsilagaz[rodent]N
+
+#tr.en: shrew skin
+381. kuš {d}nin-ka₆
+#lem: kuš[skin]; ninka[mongoose]
+
+#tr.en: mongoose skin
+382. kuš {d}nin-ka₆-maš-maš
+#lem: kuš[skin]; ninkamašmaš[rodent]
+
+#tr.en: mongoose-like rodent skin
+383. {kuš}la₂-la₂
+#lem: lala[straps]
+
+#tr.en: straps
+384. {kuš}har la₂-la₂
+#lem: har[ring]; lala[straps]
+
+#tr.en: ring for straps
+385. {kuš}murub₄ la₂-la₂
+#lem: murub[middle]N; lala[straps]
+
+#tr.en: leather straps
+385a. {kuš}šir₃-šir₃
+#lem: šeršer[chain]
+
+#tr.en: leather chain
+#Akkadian šeršerru
+385b. [{kuš}]har šir₃-šir₃
+#lem: har[ring]; šeršer[chain]
+
+#tr.en: link of a leather chain
+385c. [{kuš}murub₄] šir₃-šir₃ 
+#lem: murub[middle]N; šeršer[chain]
+
+#tr.en: middle section of the chain
+386. {kuš}a-ŋa₂-la₂
+#lem: aŋala[sack]
+
+#tr.en: leather sack
+387. {kuš}ummud
+#lem: ummud[waterskin]
+
+#tr.en: leather water-skin
+388. {kuš}lu-ub₂
+#lem: lub[bag]
+
+#tr.en: leather bag
+389. {kuš}lu-ub₂ {dug}sumun₂
+#lem: lub[bag]; sumun[vessel]
+
+#tr.en: leather bag for the soaking vessel
+390. {kuš}lu-ub₂ i₃-ŋeš
+#lem: lub[bag]; iŋeš[oil]
+
+#tr.en: leather bag for sesame oil
+391. {kuš}maš-lum
+#lem: mašlum[bucket]
+
+#tr.en: leather bucket
+391a. {kuš}PA-NAM? [...]
+#lem: X; u
+
+#tr.en: ...
+392. {kuš}dug₃-gan
+#lem: duggan[bag]
+
+#tr.en: leather bag
+393. {kuš}dug₃-gan kug
+#lem: duggan[bag]; kug[metal]
+
+#tr.en: leather bag for metal
+394. {kuš}dug₃-gan kug-an
+#lem: duggan[bag]; kugan[metal]
+
+#tr.en: leather bag for @?meteoric iron?@
+395. {kuš}dug₃-gan mun
+#lem: duggan[bag]; mun[salt]
+
+#tr.en: leather bag for salt
+396. {kuš}dug₃-gan naŋa
+#lem: duggan[bag]; naŋa[potash]
+
+#tr.en: leather bag for potash
+397. {kuš}dug₃-gan gazi
+#lem: duggan[bag]; gazi[condiment]
+
+#tr.en: leather bag for @gazi condiment/spice
+398. {kuš}dug₃-gan zid₂-da
+#lem: duggan[bag]; zid[flour]
+
+#tr.en: leather bag for flour
+399. {kuš}dug₃-gan gi-dub-ba
+#lem: duggan[bag]; gidubak[stylus]
+
+#tr.en: leather bag for holding styli
+400. {kuš}niŋ₂-na₄
+#lem: niŋna[bag]
+
+#tr.en: money-bag
+#Hh. XI 170 {kuš}niŋ₂-na₄ = kisu, "money bag"
+401. {kuš}ka-dug₃ niŋ₂-na₄
+#lem: kadu[cover]; niŋna[bag]
+
+#tr.en: leather cover for the money bag
+402. {kuš}ka-dug₃
+#lem: kadu[cover]
+
+#tr.en: leather lid
+403. {kuš}tun₃
+#lem: tun[container]
+
+#tr.en: leather toolbag
+404. {kuš}tun₃ šu-i
+#lem: tun[container]; šuʾi[barber]
+
+#tr.en: leather sheath for a barber
+405. {kuš}tun₃ muhaldim
+#lem: tun[container]; muhaldim[cook]
+
+#tr.en: leather sheath for a cook
+406. {kuš}tun₃ a-zu
+#lem: tun[container]; azu[doctor]
+
+#tr.en: leather sheath for a physician
+407. {kuš}tun₃ gi-dub-ba
+#lem: tun[container]; gidubak[stylus]
+
+#tr.en: leather sheath for styli
+408. {kuš}suhub₂
+#lem: suhub[boots]
+
+#tr.en: boots
+409. {kuš}suhub₂ munus-e-[ne]
+#lem: suhub[boots]; munus[woman]
+
+#tr.en: woman's boots
+410. {kuš}suhub₂ e-pa-na 
+#lem: suhub[boots]; eban[pair]
+
+#tr.en: pair of boots
+411. {kuš}e-sir₂
+#lem: esir[shoe]
+
+#tr.en: sandals
+412. {kuš}e-sir₂ munus-e-ne
+#lem: esir[shoe]; munus[woman]
+
+#tr.en: woman's sandals
+413. {kuš}e-sir₂ duh
+#lem: esir[shoe]; duh[loosen]
+
+#tr.en: unfastened sandals
+414. {kuš}e-sir₂ e-pa-na
+#lem: esir[shoe]; eban[pair]
+
+#tr.en: pair of sandals
+415. {kuš}gur₂₁(|E.TUM|)
+#lem: guru[shield]
+
+#tr.en: shield
+416. {kuš}gur₂₁ da-GUD
+#lem: guru[shield]; X
+
+#tr.en: ... shield
+417. {kuš}gur₂₁ kun
+#lem: guru[shield]; kun[tail]
+
+#tr.en: leather shield for @?the rear?@
+418. {kuš}gur₂₁ huduš(TU)
+#lem: guru[shield]; huduš[status]
+
+#tr.en: shield belonging to @huduš people
+419. {kuš}gur₂₁ siki zid-da
+#lem: guru[shield]; siki[hair]; zid[right]
+
+#tr.en: leather shield ... with wool
+420. {kuš}gur₂₁ ur₃-ra
+#lem: guru[shield]; ur[roof]
+
+#tr.en: roof's leather covering
+421. {kuš}ši-kum kuš su₁₃ sig₉-ga
+#lem: šikum[leather object]; kuš[skin]; su[red]; sig[line]
+
+#tr.en: leather object wrapped in red leather
+#note: ši-kum probably derives from Akkadian šipku (CAD šipku A mng 3).
+422. {kuš}ši-kum kuš du₈-ši-a sig₉-ga
+#lem: šikum[leather object]; kuš[skin]; dušia[stone]; sig[line]
+
+#tr.en: leather object wrapped in turquoise leather
+#note: dušia green, turquoise. See Van de Mieroop, Craft 31 and Dalley JSS 45 2000, 1-19; Steinkeller JMS 1 (http://www.etana.org/abzu/abzu-displayentry.pl?RC=20248).
+423. {kuš}ma-ri-nu-um
+#lem: marinum[screen]
+
+#tr.en: leather screen
+#note: Groneberg, NABU 1990/23
+424. {kuš}ga-rig₂
+#lem: garig[comb]
+
+#tr.en: comb
+425. {kuš}bar-anše
+#lem: baranše[goad]
+
+#tr.en: goad
+#Akk. makkaru
+426. {kuš}zag-bar
+#lem: zagbar[scraps]
+
+#tr.en: leather scraps
+427. {kuš}ib₂-la₂
+#lem: ibla[belt]
+
+#tr.en: leather belt
+428. {kuš}ib₂-la₂ su₄-a
+#lem: ibla[belt]; su[red]
+
+#tr.en: red leather belt
+429. {kuš}ib₂-la₂ gun₃-a
+#lem: ibla[belt]; gunu[speckled]
+
+#tr.en: speckled leather belt
+430. {kuš}x gun₃-a
+#lem: u; gunu[speckled]
+
+#tr.en: speckled leather ...
+431. {kuš}da-lu-uš₂
+#lem: dalu[sling]
+
+#tr.en: sling
+432. {kuš}e₂ da-lu-uš₂
+#lem: e[box]; dalu[sling]
+
+#tr.en: box of the sling
+433. {kuš}dabašin
+#lem: dabašin[tarpaulin]
+
+#tr.en: tarpaulin
+434. {kuš}e₂ dabašin
+#lem: e[box]; dabašin[tarpaulin]
+
+#tr.en: box for the tarpaulin
+435. {kuš}hu-lu-lu-um
+#lem: hululum[body armor]N
+
+#tr.en: leather object
+#the sense "body armor" is based on Emar Msk 74103b {kuš}ul-lu-lum = maška širʾam 
+436. {kuš}e₂ hu-lu-lu-um
+#lem: e[box]; hululum[armor]
+
+#tr.en: storage box for the @hululum body armor
+437. {kuš}ka-ba-bu-um
+#lem: kababum[shield]
+
+#tr.en: type of shield
+438. {kuš}e₂ ka-ba-bu-um
+#lem: e[box]; kababum[shield]
+
+#tr.en: storage box for the shield
+439. {kuš}ka-tab anše
+#lem: katab[lid//halter]N; anše[equid]
+
+#tr.en: donkey halter
+440. {kuš}gu₂-tab anše
+#lem: gutab[collar]; anše[equid]
+
+#tr.en: donkey collar 
+#note: Crawford, Leather 100
+441. {kuš}igi-tab anše
+#lem: igitab[blinkers]; anše[equid]
+
+#tr.en: donkey blinkers
+#Crawford, Leather 100 fl. "donkey blinkers"
+442. {kuš}kiri₃-tab anše
+#lem: kiritab[bridle]; anše[equid]
+
+#tr.en: donkey bridle
+# Akk. app=atu š=itu; aššatu š=itu
+#Hg. 166-167 to Hh. XI [{kuš}]kir₄-tab-ba anše = ap-pa-a-tum ši-i-[tum] 
+# and aš₂-ša₂-a-tum ši-i-tum#
+443. {kuš}usan₃
+#lem: usan[whip]
+
+#tr.en: whip
+444. {kuš}usan₃ la₂
+#lem: usan[whip]; la[hang]
+
+#tr.en: ... whip
+445. {kuš}KA-usan₃
+#lem: KA.usan₃[~whip]
+
+#tr.en: thong of the whip
+#Akk. tamšarum; dirratum
+446. {kuš}ama-usan₃
+#lem: amaʾusan[~whip]
+
+#tr.en: leather part of the whip
+#Cf. Veldhuis, EEN 114
+447. {kuš}heš₅(|LU₂xGAN₂@t|) de₆(DU)
+#lem: heše[oppressed]; de[bring]
+
+#tr.en: @?that brings the captives?@
+448. {kuš}im-kid₂
+#lem: imkid[piece]N
+
+#tr.en: leather cuttings
+#CAD šitqu
+449. {kuš}sa ur₃
+#lem: +sa[binding]N/{kuš}sa#~; +ur[root//base]N'N/ur₃#~
+
+#tr.en: lower binding (of a yoke)
+#note: 2008 Miguel Civil, ARES 4, 121.
+
+#Cf. MSL 12, 196: lu₂ sa-ur₃-ra = ša še-e-še#-[e]
+450. {kuš}sa ab
+#lem: sa[binding]; +pa[branch//top]N'N/ab#~
+
+#tr.en: leather part of a net
+451. {kuš}saŋ-keš₂
+#lem: saŋkešed[strap]
+
+#tr.en: leather strap
+452. {kuš}bar-ed₃-de₃
+#lem: bareda[strap]
+
+#tr.en: leather strap
+453. {kuš}da-ba
+#lem: daba[strap]
+
+#tr.en: leather strap
+454. {kuš}a₂-si
+#lem: asi[strap]
+
+#tr.en: leather strap
+455. {kuš}a₂-si gal
+#lem: asi[strap]; gal[big]
+
+#tr.en: large leather strap
+456. kuš-|AB₂xŠE|?
+#lem: u
+
+#tr.en: ...
+457. {kuš}ub
+#lem: ub[drum]
+
+#tr.en: leather part of the drum
+458. {kuš}bar-sim(NAM)
+#lem: X
+
+#tr.en: ...
+459. {kuš}nunuz
+#lem: nunuz[egg]
+
+#tr.en: egg-shaped leather object
+459a. [{kuš}x] la₂
+#lem: u; la[hang]
+
+#tr.en: ...
+460. kuš arinaₓ(|I.LU₂@s.NA|) gu₇-a
+#lem: kuš[skin]; arina[madder]; gu[eat]
+
+#tr.en: leather treated with the @arina root
+461. kuš arinaₓ(|I.LU₂@s.NA|) nu-gu₇-a
+#lem: kuš[skin]; arina[madder]; gu[eat]
+
+#tr.en: leather not treated with the @arina root
+462. kuš ŋar gu₇-a
+#lem: kuš[skin]; aŋarak[fluid]; gu[eat]
+
+#tr.en: skin treated with depilation fluid
+463. kuš ŋar nu-gu₇-a
+#lem: kuš[skin]; aŋarak[fluid]; gu[eat]
+
+#tr.en: skin not treated with depilation fluid
+464. kuš al-hi-a
+#lem: kuš[skin]; hi[process]
+
+#tr.en: leather cut to strips (for writing)
+#note: M. Civil, Lambert Anniversary Volume (2000), 114
+
+# Hh XIX 15 = MSL 10 128 siki-al-hi-a = ma-az-ra-a-tu₄, 
+# describing some type of treatment of wool. 
+465. kuš nu-al-hi-a
+#lem: kuš[skin]; hi[process]
+
+#tr.en: leather not cut to strips
+#Hh XIX 16 = MSL 10 128 siki-nu-al-hi-a = la ma-az-ra-a-tu₄
+466. {kuš}niŋ₂-ŋal₂-la
+#lem: niŋŋala[possessions//leather object]N
+
+#tr.en: a leather object
+467. kuš siki mu₂-a
+#lem: kuš[skin]; siki[hair]; mu[grow]
+
+#tr.en: hairy skin
+#note: Van de Mieroop, Craft 146
+468. {kuš}balaŋ
+#lem: balaŋ[a large drum]
+
+#tr.en: musical instrument (drum)
+469. {kuš}balaŋ-balaŋ-di
+#lem: balaŋdi[instrument]
+
+#tr.en: musical instrument
+470. {kuš}a₂-la₂
+#lem: ala[drum]
+
+#tr.en: drum
+471. {kuš}zag-mi₂
+#lem: zamin[lyre]
+
+#tr.en: lyre's leather part
+472. {kuš}zi-ma-ha-ru
+#lem: zimaharu[leather object]
+
+#tr.en: leather object
+#note: Akkadian zinbuharu
+473. {kuš}sim
+#lem: sim[swallow]
+
+#tr.en: ...
+474. {kuš}bar-sim
+#lem: X
+
+#tr.en: ...
+475. {kuš}ellaŋ₂(|HIxŠE|) kuš
+#lem: ellaŋ[bead]; kuš[skin]
+
+#tr.en: bead-shaped leather object
+476. an
+#lem: anna[metal]
+
+#tr.en: tin
+477. an-na
+#lem: anna[metal]
+
+#tr.en: tin
+478. an-zah(NE)
+#lem: anzah[glass]
+
+#tr.en: glass
+479. an-zah giggi
+#lem: anzah[glass]; giggi[black]
+
+#tr.en: dark glass
+480. an-zah babbar
+#lem: anzah[glass]; babbar[white]
+
+#tr.en: transparent glass
+481. sud-ra₂-aŋ₂
+#lem: sudaŋ[metal]
+
+#tr.en: type of precious metal
+482. sud-ra₂-aŋ₂
+#lem: sudaŋ[metal]
+
+#tr.en: type of precious metal
+483. šim-bi-zid-da
+#lem: šembizida[kohl]
+
+#tr.en: kohl
+484. šim kug-sig₁₇
+#lem: šim[aromatic substance]; kugsig[gold]
+
+#tr.en: golden aromatic substance
+485. šim arinaₓ(|I.LU₂@s.NA|)
+#lem: šim[aromatic substance]; arina[madder]
+
+#tr.en: aromatic part of the arina-root
+485a. [...] x-x-x
+#lem: u; u
+
+#tr.en: ...
+486. [šim] sig₇-sig₇
+#lem: šim[aromatic substance]; sissig[green]
+
+#tr.en: green aromatic substance
+487. [šim {na₄}]sahar
+#lem: šim[aromatic substance]; sahar[dust]
+
+#tr.en: dusty-colored aromatic substance
+488. [piš₁₀ id₂-lu₂]-ru!-gu₂
+#lem: piš[bank]; idlurugu[ordeal river]
+
+#tr.en: sulphur
+489. a-gar₅
+#lem: agar[lead]
+
+#tr.en: lead
+490. [x] a-gar₅
+#lem: u; agar[lead]
+
+#tr.en: lead
+490a. im sahar giggi kur-ra
+#lem: im[clay]; sahar[dust]; giggi[black]; kur[mountain]
+
+#tr.en: black paste used in the tanning process
+#note: Sigrist, JCS 33 157
+490b. im sahar babbar kur-ra
+#lem: im[clay]; sahar[dust]; babbar[white]; kur[mountain]
+
+#tr.en: white paste used in the tanning process
+#note: Sigrist, JCS 33 157
+491. urud
+#lem: urud[copper]
+
+#tr.en: copper
+492. [urud niŋ₂]-kalag-ga
+#lem: urud[copper]; niŋkalaga[strong]
+
+#tr.en: high-quality copper
+493. urud za-ri₂-in
+#lem: urud[copper]; zarin[low quality]
+
+#tr.en: low-quality copper
+494. urud luh-ha
+#lem: urud[copper]; luh[clean]
+
+#tr.en: refined copper 
+495. {urud}šen
+#lem: šen[cauldron]
+
+#tr.en: copper cauldron
+496. {urud}šen kug
+#lem: šen[cauldron]; kug[metal]
+
+#tr.en: shiny cauldron
+497. {urud}šen-dilim₂
+#lem: šendili[ewer]
+
+#tr.en: ewer
+498. {urud}šen utul₂
+#lem: šen[cauldron]; utul[tureen]
+
+#tr.en: tureen-like cauldron
+499. {urud}šen za-hu-um
+#lem: šen[cauldron]; zahum[basin]
+
+#tr.en: basin-like cauldron
+500. {urud}šen zi-ir
+#lem: šen[cauldron]; zir[slip]
+
+#tr.en: plastered cauldron
+#urud šen zi-ir ak-a = seru ša ruq-qi, "to apply slip to a cauldron"
+501. {urud}zi-ir ŋar
+#lem: zir[slip]; ŋar[place\t]
+
+#tr.en: plastered copper
+501a. {urud}šen da-hum
+#lem: šen[cauldron]; X
+
+#tr.en: ... cauldron
+502. {urud}lib-bi-da
+#lem: lubi[ax]
+
+#tr.en: ax
+503. {urud}ha-bu-da
+#lem: habuda[hoe]
+
+#tr.en: hoe
+504. {urud}igi-mar
+#lem: igiŋal[kind of hoe]
+#tr.en: a small spade-formed hoe
+#note: The entry is identical with {ŋeš}igi-ŋal₂ in OB Ura 1 564 (see Veldhuis EEN, 115); see also BM 85983 o v 4 {uruda}igi-mar = e-hi-iz MAR-i.
+
+505. {urud}tun₃
+#lem: tun[ax]
+
+#tr.en: ax
+506. {urud}tun₃ sal
+#lem: tun[ax]; sal[thin]
+
+#tr.en: light ax
+506a. {urud}tun₃ eme sal
+#lem: tun[ax]; eme[tongue]; sal[thin]
+
+#tr.en: ax with a thin blade
+507. {urud}aga
+#lem: aga[ax]
+
+#tr.en: ax
+508. {urud}aga-DUN₃@g-ma
+#lem: aga.DUN₃@g.ma[ax]
+
+#tr.en: a type of ax
+509. {urud}aga-silig-ga
+#lem: agasilig[ax]
+
+#tr.en: a type of ax
+510. {urud}aga a₂-aš-ŋar
+#lem: aga[ax]; aʾašŋar[ax]
+
+#tr.en: a type of ax
+511. {urud}kuš₃-e-dim₂
+#lem: kušedim[tool]
+
+#tr.en: a type of tool 
+512. {urud}gi₂-dim
+#lem: gidim[fork]
+
+#tr.en: hay fork
+513. {urud}gi₂-dim tur
+#lem: gidim[fork]; tur[small]
+
+#tr.en: small hay fork
+514. {urud}kin
+#lem: kin[sickle]
+
+#tr.en: sickle
+515. {urud}kin gal
+#lem: kin[sickle]; gal[big]
+
+#tr.en: big sickle
+515a. {urud}kin aš-ŋar
+#lem: kin[sickle]; aʾašŋar[ax]
+
+#tr.en: an ax-like sickle
+516. {urud}niŋ₂-de₂-a
+#lem: niŋdea[mould]
+
+#tr.en: copper mould
+#Hh XI 345 pit₂-[qu] 
+517. {urud}niŋ₂-sud-a
+#lem: niŋsua[object]
+
+#tr.en: copper ingot
+#Copper object with an oblong shape
+# ingot?
+518. {urud}niŋ₂-hi-a
+#lem: niŋhia[alloy?]
+
+#tr.en: @?alloy?@
+519. {urud}niŋ₂-gid₂-da
+#lem: niŋgida[rod?]
+
+#tr.en: copper bar
+#Akk. ur=aku
+#Hh. XI 344 {urud}niŋ₂-gid₂-da = u₂-ra-ku
+#see Reiter AOAT 249, 301.
+520. {urud}niŋ₂-ul tag-ga
+#lem: niŋul[everlasting]; tag[touch]
+
+#tr.en: corroded copper
+521. {urud}niŋ₂-dim₂
+#lem: niŋdim[object]
+
+#tr.en: copper product
+#Akk. billatu, epšētu
+# Hh. XI 348-350 {urud}niŋ₂-dim₂ = bil₂-la-a-tu₂ and ip-še-e-[tu] 
+522. {urud}niŋ₂-dim₂-dim₂-ma
+#lem: niŋdimdima[form]
+
+#tr.en: copper handiwork
+523. {urud}niŋ₂-dim₂ gul
+#lem: niŋdim[object]; gul[destroy]
+
+#tr.en: recycled copper implements
+
+#note: Limet, Metal 259
+524. {urud}niŋ₂ izi sig₉-ge
+#lem: niŋ[thing]; izi[fire]; sig[cast]
+
+#tr.en: copper object cast in fire 
+524a. [urud-x]-NE
+#lem: u
+
+#tr.en: ...
+524b. [urud-x]-NE-KIN
+#lem: u
+
+#tr.en: ...
+525. {urud}šir₃-šir₃
+#lem: šeršer[chain]
+
+#tr.en: copper chain
+526. {urud}har šir₃-šir₃
+#lem: har[ring]; šeršer[chain]
+
+#tr.en: copper ring of a chain
+527. {urud}murub₄ šir₃-šir₃
+#lem: murub[middle]N; šeršer[chain]
+
+#tr.en: middle part of a copper chain (foot cuffs)
+527a. [{urud}]he₂#-me-gin₆-na
+#lem: +hemegina[fetters]N/{urud}he₂-me-gin₆-na
+
+#tr.en: fetters
+#the word is translated maškanu in BM 85983 and is always found in connection with šer₃-šer₃
+527b. [{urud}]x-gi-na
+#lem: u
+
+#tr.en: ...
+528. {urud}nam-za-qum
+#lem: namzaqum[key]
+
+#tr.en: key
+#Akkadian namzaqu
+529. {urud}gag nam-za-qum
+#lem: gag[nail]; namzaqum[key]
+
+#tr.en: peg of a key
+529a. {urud}mud
+#lem: mud[stump]
+
+#tr.en: copper handle
+529b. {urud}gag mud
+#lem: gag[nail]; mud[stump]
+
+#tr.en: peg of a copper handle
+530. {urud}gag-MUŠ₃@g
+#lem: gag.SUH[nail]
+
+#tr.en: copper nail
+#note: Limet, Metal 259
+531. {urud}KI-LUGAL-DU
+#lem: KI.LUGAL.DU[locus]
+
+#tr.en: copper royal stand
+#note: Ellis, Mountains and Rivers, 30
+532. {urud}ki-gal
+#lem: kigal[platform]
+
+#tr.en: platform
+532a. [{urud}niŋ₂]-dim₂-dim₂
+#lem: niŋdimdima[form]
+
+#tr.en: [copper] object
+533. {urud}ki-en-DU
+#lem: ki.en.DU[watercourse]
+
+#tr.en: copper pipe
+534. zabar
+#lem: zabar[bronze]
+
+#tr.en: bronze
+535. zabar-šu
+#lem: zabaršu[mirror]
+
+#tr.en: mirror
+536. {zabar}dug
+#lem: dug[pot]
+
+#tr.en: bronze pot
+536a. zabar ga
+#lem: zabar[bronze]; ga[milk]
+
+#tr.en: bronze milk jar
+537. {zabar}{dug}mud₃(|NUNUZ.AB₂xBI|)
+#lem: mud[jar]
+
+#tr.en: bronze jar
+538. {zabar}ma₂-gur₈
+#lem: magur[barge]
+
+#tr.en: bronze processional barge
+539. zabar hi-a
+#lem: zabar[bronze]; hi[mix]
+
+#tr.en: assorted pieces of bronze
+540. ša-u₁₉(URU)-ša{zabar}
+#lem: šaʾuša[scraper]
+
+#tr.en: bronze bowl
+541. šu₂-uš-ŋar{zabar}
+#lem: šušŋar[vessel]
+
+#tr.en: bronze vessel
+542. šu-IM-ba{zabar}
+#lem: X
+
+#tr.en: ...
+543. am-ma-am{zabar}
+#lem: amam[jar]
+
+#tr.en: bronze jar
+544. an-za-am{zabar}
+#lem: anzam[vessel]
+
+#tr.en: bronze vessel
+545. ubₓ(|AB₂.ŠA₃|){zabar}
+#lem: ub[drum]
+
+#tr.en: drum
+546. ubₓ(|AB₂.ŠA₃|) ama₅{zabar}
+#lem: ub[drum]; ama[chamber]
+
+#tr.en: bronze drum of the women's quarters
+547. ha-zi-in{zabar}
+#lem: hazin[ax]
+
+#tr.en: type of axe
+548. ha-zi-in arhuš{zabar}
+#lem: hazin[ax]; arhuš[womb]
+
+#tr.en: ax of compassion
+#note: BM 085983 obv. v 31-32
+549. ha-zi-in gu₂ tum₁₂{mušen}-ma{zabar}
+#lem: hazin[ax]; gu[neck]; tum[dove]
+
+#tr.en: ax made of bluish bronze
+550. ha-zi-in gu₂ bir₅(NAM)-ra{mušen}{zabar}
+#lem: hazin[ax]; gu[neck]; bir[locust]
+
+#tr.en: ax made of greenish bronze
+551. ma-aq-ta-ru-um{zabar}
+#lem: maqtarum[object]
+
+#tr.en: censer
+552. za-ha-da{zabar}
+#lem: zahada[ax]
+
+#tr.en: a type of ax
+553. šum-me{zabar}
+#lem: šumme[saw]
+
+#tr.en: bronze saw
+554. šum-me tur{zabar}
+#lem: šumme[saw]; tur[small]
+
+#tr.en: little bronze saw
+555. bulug{zabar}
+#lem: bulug[needle]
+
+#tr.en: bronze needle
+556. bulug šu{zabar}
+#lem: bulug[needle]; šu[hand]
+
+#tr.en: seal pin with a bronze handle
+557. bulug-KIN-gur₄{zabar}
+#lem: bulug.KIN.gur₄[lancet]
+
+#tr.en: lancet
+558. bulug har-ra-an{zabar}
+#lem: bulug[needle]; harran[tool]
+
+#tr.en: a carpenter's tool
+559. bulug {ŋeš}gigir{zabar}
+#lem: bulug[needle]; gigir[chariot]
+
+#tr.en: chariot's peg
+560. bulug šu SUD₂-a{zabar}
+#lem: bulug[needle]; šu[hand]; X
+
+#tr.en: ... needle
+561. niŋ₂ {u₂}bur₂{zabar}
+#lem: niŋ[thing]; bur[grass]
+
+#tr.en: ...
+# See Notes
+562. ir{zabar}
+#lem: ir[peg]
+
+#tr.en: bronze peg
+563. nun{zabar}
+#lem: nun[object]
+
+#tr.en: bronze object or instrument
+564. dim{zabar}
+#lem: dim[post]
+
+#tr.en: bronze "post" (a musical instrument)
+565. šem₅{zabar}
+#lem: šem[cymbals]
+
+#tr.en: bronze cymbals
+#note: For si-im, šem₅, šem₃, and me-ze₂, see Gabbay in ICONEA 2008 and Sam Mirelman in NABU 2010/33.
+566. me-ze₂{zabar}
+#lem: meze[drum//rattle]N
+
+#tr.en: bronze rattle
+567. li-li-is₃{zabar}
+#lem: lilis[instrument]
+
+#tr.en: kettledrum
+568. ŋir₂{zabar}
+#lem: ŋiri[dagger]
+
+#tr.en: knife
+569. ŋir₂ šu-i{zabar}
+#lem: ŋiri[dagger]; šuʾi[barber]
+
+#tr.en: barber's razor
+569a. ŋir₂ ad-KID{zabar}
+#lem: ŋiri[dagger]; ad.KID[weaver]
+
+#tr.en: weaver's knife
+570. ŋir₂ ašgab{zabar}
+#lem: ŋiri[dagger]; ašgab[leatherworker]
+
+#tr.en: leatherworker's knife
+571. ŋir₂ gi zu₂{zabar}
+#lem: ŋiri[dagger]; gi[reed]; zu[tooth]
+
+#tr.en: knife for cutting down reed
+#collation needed. Emar (Syrian) has gu₇ instead of zu₂.
+572. ŋir₂ sumun{zabar}
+#lem: ŋiri[dagger]; sumun[old]
+
+#tr.en: old bronze knife
+573. ŋir₂ ur₃-ra{zabar}
+#lem: ŋiri[dagger]; ur[root]
+
+#tr.en: belt dagger
+#appears in Lugalbanda 1 and Inana C (ur₃-ra and ur₂-ra). See MSL 9 204.
+574. ŋir₂ gud gaz{zabar}
+#lem: ŋiri[dagger]; gud[ox]; gaz[kill]
+
+#tr.en: butchering knife
+574a. ŋir₂ zu₂# [x]{zabar}
+#lem: ŋiri[dagger]; zu[tooth]; X
+
+#tr.en: knife ... edge 
+575. tu-di-tum{zabar}
+#lem: tuditum[toggle pin]
+
+#tr.en: bronze toggle pin
+576. kam-kam-ma-tum{zabar}
+#lem: kamkammatum[earring]
+
+#tr.en: bronze earrings
+577. aš-me{zabar}
+#lem: ašme[sun disk]
+
+#tr.en: bronze sun-disk
+578. u-gun₃{zabar}
+#lem: ugunu[decorative inlay]
+
+#tr.en: bronze decoration
+579. ubur u-gun₃{zabar}
+#lem: ubur[breast]; ugunu[decorative inlay]
+
+#tr.en: bronze pectoral
+580. {d}lamma{zabar}
+#lem: lammar[figurine]
+
+#tr.en: bronze image of a lamassu-deity
+581. alan{zabar}
+#lem: alan[statue]
+
+#tr.en: bronze statuette
+582. šukur{zabar}
+#lem: šukur[lance]
+
+#tr.en: lance
+583. dala₂(|IGI.NI|){zabar}
+#lem: dala[thorn]
+
+#tr.en: bronze pin
+584. šu-gur{zabar}
+#lem: šugur[ring]
+
+#tr.en: bronze ring
+585. eš-gur{zabar}
+#lem: ešgur[ring]
+
+#tr.en: bronze ring
+#Hh. XII 98-99
+586. har{zabar}
+#lem: har[ring]
+
+#tr.en: bronze ring
+587. har šu{zabar}
+#lem: har[ring]; šu[hand]
+
+#tr.en: bronze bracelet
+588. har ŋiri₃{zabar}
+#lem: har[ring]; ŋiri[foot]
+
+#tr.en: bronze anklet
+589. har gal{zabar}
+#lem: har[ring]; gal[big]
+
+#tr.en: large bronze ring
+590. har ib₂-ba{zabar}
+#lem: har[ring]; ib[hips]
+
+#tr.en: bronze belt
+591. hub₂-du-um{zabar}
+#lem: hubdum[object]
+
+#tr.en: bronze object
+592. kug-babbar
+#lem: kugbabbar[silver]
+
+#tr.en: silver
+593. kug-babbar kalag-ga
+#lem: kugbabbar[silver]; kalag[strong]
+
+#tr.en: high-quality silver
+594. kug-babbar a-gar₅
+#lem: kugbabbar[silver]; agar[lead]
+
+#tr.en: @?galena?@
+595. kug-babbar u₃-tud
+#lem: kugbabbar[silver]; utud[bear]
+
+#tr.en: ... silver
+596. kug-babbar gurum₂ ak
+#lem: kugbabbar[silver]; gurum[inspection]; ak[do]
+
+#tr.en: inspected silver
+597. kug-babbar pad-ra₂
+#lem: kugbabbar[silver]; pad[break]
+
+#tr.en: bits and pieces of silver
+598. tu-di-tum kug-babbar
+#lem: tuditum[toggle pin]; kugbabbar[silver]
+
+#tr.en: silver toggle pin
+599. kam-kam-ma-tum kug-babbar
+#lem: kamkammatum[earring]; kugbabbar[silver]
+
+#tr.en: silver earrings
+600. aš-me kug-babbar
+#lem: ašme[sun disk]; kugbabbar[silver]
+
+#tr.en: silver sun-disk ornament
+601. u₄-sakar kug-babbar
+#lem: usakar[crescent]; kugbabbar[silver]
+
+#tr.en: silver crescent moon ornament
+602. u-gun₃ kug-babbar
+#lem: ugunu[decorative inlay]; kugbabbar[silver]
+
+#tr.en: silver decoration
+603. ubur u-gun₃ kug-babbar
+#lem: ubur[breast]; ugunu[decorative inlay]; kugbabbar[silver]
+
+#tr.en: silver pectoral
+604. {d}lamma kug-babbar
+#lem: lammar[figurine]; kugbabbar[silver]
+
+#tr.en: silver image of a lamassu-deity
+605. alan kug-babbar
+#lem: alan[statue]; kugbabbar[silver]
+
+#tr.en: silver statuette
+606. šu-gur kug-babbar
+#lem: šugur[ring]; kugbabbar[silver]
+
+#tr.en: silver ring
+607. eš-gur kug-babbar
+#lem: ešgur[ring]; kugbabbar[silver]
+
+#tr.en: silver ring
+608. šukur kug-babbar
+#lem: šukur[lance]; kugbabbar[silver]
+
+#tr.en: silver lance
+609. dala₂(|IGI.NI|) kug-babbar
+#lem: dala[thorn]; kugbabbar[silver]
+
+#tr.en: silver pin
+610. har kug-babbar
+#lem: har[ring]; kugbabbar[silver]
+
+#tr.en: silver ring
+611. har šu kug-babbar
+#lem: har[ring]; šu[hand]; kugbabbar[silver]
+
+#tr.en: silver bracelet
+612. har ŋiri₃ kug-babbar
+#lem: har[ring]; ŋiri[foot]; kugbabbar[silver]
+
+#tr.en: silver anklet
+613. har gal kug-babbar
+#lem: har[ring]; gal[big]; kugbabbar[silver]
+
+#tr.en: big silver ring 
+614. hub₂-du-um kug-babbar
+#lem: hubdum[object]; kugbabbar[silver]
+
+#tr.en: silver object
+615. šita kug-babbar
+#lem: šita[figurine]; kugbabbar[silver]
+
+#tr.en: silver figurine in the likeness of a priest
+616. niŋ₂-luh kug-babbar
+#lem: niŋluh[wash-basin]; kugbabbar[silver]
+
+#tr.en: silver wash-basin
+#note: Limet, Metal 222
+617. kug-sig₁₇
+#lem: kugsig[gold]
+
+#tr.en: gold
+618. kug-sig₁₇ huš-a
+#lem: kugsig[gold]; huš[reddish]
+
+#tr.en: red gold
+619. kug-sig₁₇ si-sa₂
+#lem: kugsig[gold]; sisa[fair]
+
+#tr.en: regular gold
+#note: 1997 K. Reiter, AOAT 249 52-53
+620. kug-sig₁₇ sahar-ba
+#lem: kugsig[gold]; sahar[dust]
+
+#tr.en: pulverized gold
+621. kug-sig₁₇ sahar-ba kur-ra
+#lem: kugsig[gold]; sahar[dust]; kur[mountain]
+
+#tr.en: pulverized gold from the mountain
+622. kug-sig₁₇ lu-ub₂ SAR-da
+#lem: kugsig[gold]; lub[bag]; šar[mix]
+
+#tr.en: mixed bag(s) of gold
+#note: Limet, Metal 44-45; Reiter, AOAT 249 91 and 204.
+623. kug-sig₁₇ u-ta-am₃ 
+#lem: kugsig[gold]; u[ten]
+
+#tr.en: gold worth ten times its weight (in silver)
+624. kug-sig₁₇ ilimmu-ta-am₃ 
+#lem: kugsig[gold]; ilimmu[nine]
+
+#tr.en: gold worth nine times its weight (in silver)
+625. kug-sig₁₇ ussu-ta-am₃ 
+#lem: kugsig[gold]; ussu[eight]
+
+#tr.en: gold worth eight times its weight (in silver)
+626. kug-sig₁₇ imin-ta-am₃
+#lem: kugsig[gold]; imin[seven]
+
+#tr.en: gold worth seven times its weight (in silver)
+627. kug-sig₁₇ aš₃-ta-am₃
+#lem: kugsig[gold]; aš[six]
+
+#tr.en: gold worth six times its weight (in silver)
+628. kug-sig₁₇ ia₂-ta-am₃ 
+#lem: kugsig[gold]; ya[five]
+
+#tr.en: gold worth five times its weight (in silver)
+629. kug-sig₁₇ limmu₅-ta-am₃ 
+#lem: kugsig[gold]; limmu[four]
+
+#tr.en: gold worth four times its weight (in silver)
+630. kug-sig₁₇ eš₅-ta-am₃
+#lem: kugsig[gold]; eš[three]
+
+#tr.en: gold worth three times its weight (in silver)
+631. kug-sig₁₇ min-ta-am₃
+#lem: kugsig[gold]; min[two]
+
+#tr.en: gold worth two times its weight (in silver)
+632. tu-di-tum kug-sig₁₇
+#lem: tuditum[toggle pin]; kugsig[gold]
+
+#tr.en: gold toggle-pin
+633. kam-kam-ma-tum kug-sig₁₇
+#lem: kamkammatum[earring]; kugsig[gold]
+
+#tr.en: gold earrings
+634. aš-me kug-sig₁₇
+#lem: ašme[sun disk]; kugsig[gold]
+
+#tr.en: gold sun-disk ornament
+635. u-gun₃ kug-sig₁₇
+#lem: ugunu[decorative inlay]; kugsig[gold]
+
+#tr.en: gold decoration
+636. ubur u-gun₃ kug-sig₁₇
+#lem: ubur[breast]; ugunu[decorative inlay]; kugsig[gold]
+
+#tr.en: gold pectoral
+637. šu-gur kug-sig₁₇
+#lem: šugur[ring]; kugsig[gold]
+
+#tr.en: gold ring
+638. eš-gur kug-sig₁₇
+#lem: ešgur[ring]; kugsig[gold]
+
+#tr.en: gold ring
+639. har kug-sig₁₇
+#lem: har[ring]; kugsig[gold]
+
+#tr.en: gold ring
+640. har šu kug-sig₁₇
+#lem: har[ring]; šu[hand]; kugsig[gold]
+
+#tr.en: gold bracelet
+641. har ŋiri₃ kug-sig₁₇
+#lem: har[ring]; ŋiri[foot]; kugsig[gold]
+
+#tr.en: gold anklet
+642. har gal kug-sig₁₇
+#lem: har[ring]; gal[big]; kugsig[gold]
+
+#tr.en: big gold ring 
+643. har ib₂ kug-sig₁₇
+#lem: har[ring]; ib[hips]; kugsig[gold]
+
+#tr.en: gold ring for the hips 
+644. hub₂-du-um kug-sig₁₇
+#lem: hubdum[object]; kugsig[gold]
+
+#tr.en: gold object
+645. {d}lamma kug-sig₁₇
+#lem: lammar[figurine]; kugsig[gold]
+
+#tr.en: gold image of a lamassu-deity
+645a. [gud]-alim kug-sig₁₇
+#lem: gudalim[bovid]; kugsig[gold]
+
+#tr.en: gold figurine of a bison
+646. alan kug-sig₁₇
+#lem: alan[statue]; kugsig[gold]
+
+#tr.en: gold statuette
+647. hu-wa-wa kug-sig₁₇
+#lem: huwawa[figurine]; kugsig[gold]
+
+#tr.en: gold figurine of Huwawa
+648. bi₂-za-za kug-sig₁₇
+#lem: bizaza[figurine]; kugsig[gold]
+
+#tr.en: gold figurine of a frog
+649. ab₂-za-[za kug-sig₁₇]
+#lem: abzaza[figurine]; kugsig[gold]
+
+#tr.en: gold figurine of a zebu
+650. {d}udug kug-sig₁₇
+#lem: udug[figurine]; kugsig[gold]
+
+#tr.en: gold figurine of an @udug demon
+651. an-za-ab-tum kug-sig₁₇
+#lem: anzabtum[ring]; kugsig[gold]
+
+#tr.en: gold ring
+652. niŋ₂-ŋeštug₂(PI) kug-sig₁₇
+#lem: niŋŋeštug[earrings]; kugsig[gold]
+
+#tr.en: gold earrings
+653. gurun kug-sig₁₇
+#lem: gurun[figurine]; kugsig[gold]
+
+#tr.en: gold figurine in the likeness of a fruit
+654. en₃-dur kug-sig₁₇
+#lem: endur[navel, belly button?]; kugsig[gold]
+
+#tr.en: gold decoration for the navel
+655. [x]-LI!-[x kug-sig₁₇]
+#lem: u; kugsig[gold]
+
+#tr.en: gold ...
+$ 1 line broken
+657. [x]-x#-[x]
+#lem: u
+
+#tr.en: ...
+658. [{d}nisaba za₃-mi₂]
+#lem: DN; zamin[lyre]
+
+#tr.en: Praise be to Nisaba 
+@include dcclt:P229061 = MSL 07, 197 V02, 210 V11

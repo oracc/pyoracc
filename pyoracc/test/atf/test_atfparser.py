@@ -880,3 +880,13 @@ class testParser(TestCase):
         )
         assert_is_instance(text.children[0].children[0],Milestone)
         assert_is_instance(text.children[0].children[1],Line)
+
+    def test_include(self):
+        text=self.try_parse(
+            "&X001001 = My Text\n" +
+            "@include dcclt:P229061 = MSL 07, 197 V02, 210 V11\n"
+        )
+        assert_equal(text.links[0].label,"Include")
+        assert_equal(text.links[0].code,"dcclt:P229061")
+        assert_equal(text.links[0].description,
+            "MSL 07, 197 V02, 210 V11")

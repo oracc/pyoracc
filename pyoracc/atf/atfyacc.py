@@ -67,6 +67,10 @@ class AtfParser(object):
         "link : LINK PARALLEL ID EQUALS ID newline"
         p[0] = Link(None, p[3], p[5])
 
+    def p_include(self, p):
+        "link : INCLUDE ID EQUALS ID newline"
+        p[0] = Link("Include", p[2], p[4])
+
     def p_language_protoocol(self, p):
         "language_protocol : ATF LANG ID newline"
         p[0] = p[3]
