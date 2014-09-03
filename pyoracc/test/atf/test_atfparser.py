@@ -13,6 +13,7 @@ from ...model.oraccnamedobject import OraccNamedObject
 from ...model.multilingual import Multilingual
 from ...model.composite import Composite
 from ...model.milestone import Milestone
+from ...model.comment import Comment
 from ...atf.atfyacc import AtfParser
 from ...atf.atflex import AtfLexer
 from ...model.ruling import Ruling
@@ -329,7 +330,17 @@ class testParser(TestCase):
             "@obverse\n" +
             "# A comment\n"
         )
-        assert_equal(len(art.children[0].children), 0)
+        assert_is_instance(art.children[0].children[0],Comment)
+
+    def test_check(self):
+        art = self.try_parse(
+            "@tablet\n" +
+            "@obverse\n" +
+            "#CHECK: A worry\n"
+        )
+        comment=art.children[0].children[0]
+        assert_is_instance(comment,Comment)
+        assert_equal(comment.check,True)
 
     def test_note(self):
         art = self.try_parse(
@@ -742,6 +753,19 @@ class testParser(TestCase):
         assert_is_instance(link, Link)
         assert_equal(link.label, "A")
         assert_equal(link.code, "P363716")
+        assert_equal(link.description, "TCL 06, 44")
+
+    def test_link_declaration_parallel(self):
+        text = self.try_parse(
+            "&Q002769 = SB Anzu 1\n" +
+            "#link: parallel abcd:P363716 = TCL 06, 44\n" +
+            "@tablet\n" +
+            "1. Some text\n"
+        )
+        link = text.links[0]
+        assert_is_instance(link, Link)
+        assert_equal(link.label, None)
+        assert_equal(link.code, "abcd:P363716")
         assert_equal(link.description, "TCL 06, 44")
 
     def test_link_reference_simple(self):

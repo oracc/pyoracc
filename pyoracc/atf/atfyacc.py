@@ -13,6 +13,7 @@ from ..model.translation import Translation
 from ..model.composite import Composite
 from ..model.multilingual import Multilingual
 from ..model.milestone import Milestone
+from ..model.comment import Comment
 
 class AtfParser(object):
     tokens = AtfLexer.tokens
@@ -62,6 +63,10 @@ class AtfParser(object):
         "link : LINK DEF ID EQUALS ID EQUALS ID newline"
         p[0] = Link(p[3], p[5], p[7])
 
+    def p_link_parallel(self, p):
+        "link : LINK PARALLEL ID EQUALS ID newline"
+        p[0] = Link(None, p[3], p[5])
+
     def p_language_protoocol(self, p):
         "language_protocol : ATF LANG ID newline"
         p[0] = p[3]
@@ -89,19 +94,23 @@ class AtfParser(object):
         """text : text surface %prec OBJECT
                 | text translation %prec TRANSLATIONEND"""
         p[0] = p[1]
+        # Find the last object in the text
+        # If there is none, append a tablet and use that
         # Default to a tablet
+
         # Has a default already been added?
-        if  len(p[0].children) == 0:
+        if  len(p[0].objects()) == 0:
             p[0].children.append(OraccObject("tablet"))
-        p[0].children[0].children.append(p[2])
+        p[0].objects()[-1].children.append(p[2])
 
     def p_text_surface_element(self, p):
         """text : text surface_element %prec OBJECT"""
         p[0] = p[1]
-        # Default to obverse of a  tablet
-        p[0].children.append(OraccObject("tablet"))
-        p[0].children[0].children.append(OraccObject("obverse"))
-        p[0].children[0].children[0].children.append(p[2])
+        if  len(p[0].objects()) == 0:
+            p[0].children.append(OraccObject("tablet"))
+        # Default to obverse of a tablet
+        p[0].objects()[-1].children.append(OraccObject("obverse"))
+        p[0].objects()[-1].children[0].children.append(p[2])
 
     def p_text_composite(self, p):
         """text : text COMPOSITE newline"""
@@ -623,6 +632,45 @@ class AtfParser(object):
                          | FROM """
         p[0] = p[1]
 
+    def p_comment(self, p):
+        "comment : COMMENT ID NEWLINE"
+        p[0]=Comment(p[2])
+
+    def p_check(self, p):
+        "comment : CHECK ID NEWLINE"
+        p[0]=Comment(p[2])
+        p[0].check=True
+
+    def p_surface_comment(self,p):
+        "surface : surface comment %prec LINE"
+        p[0]=p[1]
+        p[0].children.append(p[2])
+
+    def p_translationline_comment(self,p):
+        "translationlabeledline : translationlabeledline comment"
+        p[0]=p[1]
+        p[0].notes.append(p[2])
+
+    def p_translation_comment(self,p):
+        "translation : translation comment %prec LINE"
+        p[0]=p[1]
+        p[0].children.append(p[2])
+
+    def p_text_comment(self,p):
+        "text : text comment %prec SURFACE"
+        p[0]=p[1]
+        p[0].children.append(p[2])
+
+    def p_line_comment(self,p):
+        "line : line comment"
+        p[0]=p[1]
+        p[0].notes.append(p[2])
+
+    def p_multilingual_comment(self,p):
+        "multilingual : multilingual comment"
+        p[0]=p[1]
+        p[0].notes.append(p[2])
+
     # There is a potential shift-reduce conflict in the following sample:
     """
       @tablet
@@ -648,7 +696,8 @@ class AtfParser(object):
         ('nonassoc', 'OBVERSE', 'REVERSE', 'LEFT', 'RIGHT', 'TOP', 'BOTTOM',
             'FACE',
             'SURFACE', 'EDGE', 'COLUMN', 'SEAL', 'HEADING', 'LINE'),
-        ('nonassoc', "LINELABEL", "DOLLAR", "LEM", "NOTE",  'CATCHLINE',
+        ('nonassoc', "LINELABEL", "DOLLAR", "LEM", "NOTE", 'COMMENT',
+            'CATCHLINE', 'CHECK',
             'COLOPHON', 'DATE', 'SIGNATURES',
             'SIGNATURE', 'SUMMARY',
             'WITNESSES',"PARBAR", "TO", "FROM"),

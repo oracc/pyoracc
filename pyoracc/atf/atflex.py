@@ -53,9 +53,11 @@ class AtfLexer(object):
         'HEADING'
     ]
 
-    protocols = ['ATF', 'LEM', 'PROJECT', 'NOTE', "LINK", "KEY", "BIB", "TR"]
+    protocols = ['ATF', 'LEM', 'PROJECT', 'NOTE', "LINK",
+                 "KEY", "BIB", "TR", 'CHECK']
 
-    protocol_keywords = ['LANG', 'USE', 'MATH', 'LEGACY', 'MYLINES', 'LEXICAL','UNICODE', 'DEF']
+    protocol_keywords = ['LANG', 'USE', 'MATH', 'LEGACY', 'MYLINES',
+                         'LEXICAL','UNICODE', 'DEF']
 
     translation_keywords = ['PARALLEL', 'PROJECT', "LABELED"]
 
@@ -91,7 +93,8 @@ class AtfLexer(object):
         'PARBAR',
         'OPENR',
         'CLOSER',
-        'COMMA'
+        'COMMA',
+        'COMMENT',
     ]
 
     keyword_tokens = list(set(
@@ -108,15 +111,16 @@ class AtfLexer(object):
         base_tokens))
 
     state_names = [
-        'absorb',
+        'flagged',
         'text',
         'lemmatize',
-        'key',
+        'nonequals',
         'parallel',  # translation
         'labeled',   # translation
         'interlinear', #translation
         'transctrl',
-        'para'
+        'para',
+        'absorb'
     ]
 
     states = [(state, 'exclusive') for state in state_names]
@@ -147,14 +151,14 @@ class AtfLexer(object):
 
     def t_EQUALS(self, t):
         "\="
-        t.lexer.push_state('absorb')
+        t.lexer.push_state('flagged')
         return t
 
 
 
     def t_INITIAL_parallel_labeled_COMMENT(self, t):
-        r'^\#[^\n\r\:]*([\ \t][^\n\r]*)?[\n\r]'
-        t.type = "NEWLINE"
+        r'^\#+(?![a-zA-Z]+\:)' #Negative lookahead to veto protocols as comments
+        t.lexer.push_state('absorb')
         return t
 
     def t_INITIAL_parallel_labeled_DOTLINE(self,t):
@@ -194,8 +198,11 @@ class AtfLexer(object):
             t.lexer.push_state("para")
             t.lexer.push_state("transctrl")
 
+        if t.type == "TRANSLATION":
+            t.lexer.push_state("transctrl")
+
         if t.type in AtfLexer.long_argument_structures + ["NOTE"]:
-            t.lexer.push_state('absorb')
+            t.lexer.push_state('flagged')
         return t
 
     def t_labeled_OPENR(self, t):
@@ -209,14 +216,17 @@ class AtfLexer(object):
         # Note that \:? absorbs a trailing colon in protocol keywords
         t.value = t.value[1:-1]
         t.type = self.resolve_keyword(t.value,
-                                      AtfLexer.protocols)
+                                      AtfLexer.protocols,
+                                      extra={'CHECK':'CHECK'})
         if t.type == "KEY":
-            t.lexer.push_state('key')
+            t.lexer.push_state('nonequals')
         if t.type == "LEM":
             t.lexer.push_state('lemmatize')
         if t.type == "TR":
             t.lexer.push_state('interlinear')
         if t.type in ['PROJECT', "BIB"]:
+            t.lexer.push_state('flagged')
+        if t.type in ['CHECK']:
             t.lexer.push_state('absorb')
         if t.type == "NOTE":
             t.lexer.push_state('para')
@@ -228,14 +238,47 @@ class AtfLexer(object):
         t.lexer.push_state('text')
         return t
 
-    def t_parallel_labeled_DOLLAR(self,t):
-        "^\$"
-        t.lexer.push_state("transctrl")
+    def t_ID(self, t):
+        u'[a-zA-Z0-9][a-zA-Z\'\u2019\.0-9\:\-\[\]]*'
+        t.value=t.value.replace(u'\u2019',"'")
+        t.type = self.resolve_keyword(t.value,
+                                      AtfLexer.protocol_keywords +
+                                      AtfLexer.dollar_keywords +
+                                      AtfLexer.structures +
+                                      AtfLexer.long_argument_structures, 'ID',
+                                      extra={
+                                          'fragments':"FRAGMENT",
+                                          "parallel":"PARALLEL"
+                                      },
+                                      )
+
+        if t.type in ['LANG']:
+            t.lexer.push_state('flagged')
+
+        if t.type in set(AtfLexer.structures +
+                         AtfLexer.long_argument_structures) - set(["NOTE"]):
+            # Since @structure tokens are so important to the grammar,
+            # the keywords refering to structural elements in strict dollar
+            # lines must be DIFFERENT TOKENS IN THE LEXER
+            t.type = "REFERENCE"
         return t
 
+    # In the flagged, text, transctrl and lemmatize states,
+    # one or more newlines returns to the base state
+    def t_flagged_text_lemmatize_transctrl_interlinear_nonequals_absorb_NEWLINE(self, t):
+        r'[\n\r]+'
+        t.lexer.lineno += len(t.value)
+        t.lexer.pop_state()
+        return t
+
+    #--- RULES FOR THE TRANSLATION STATES ---
+    # In this state, the base state is free text
+    # And certain tokens deviate from that, rather
+    # than the other way round as for base state
+
     # Unicode 2019 is right single quotation -- some files use as prime.
-    def t_INITIAL_transctrl_ID(self, t):
-        u'[a-zA-Z0-9][a-zA-Z\'\u2019\.0-9\-\[\]]*'
+    def t_transctrl_ID(self, t):
+        u'[a-zA-Z0-9][a-zA-Z\'\u2019\.0-9\:\-\[\]]*'
         t.value=t.value.replace(u'\u2019',"'")
         t.type = self.resolve_keyword(t.value,
                                       AtfLexer.protocol_keywords +
@@ -246,12 +289,12 @@ class AtfLexer(object):
                                       extra={'fragments':"FRAGMENT"}
                                       )
 
-        if t.type in ['LANG']:
-            t.lexer.push_state('absorb')
         if t.type == "LABELED":
+            t.lexer.pop_state()
             t.lexer.push_state('labeled')
             t.lexer.push_state('transctrl')
         if t.type == "PARALLEL":
+            t.lexer.pop_state()
             t.lexer.push_state('parallel')
             t.lexer.push_state('transctrl')
 
@@ -263,24 +306,15 @@ class AtfLexer(object):
             t.type = "REFERENCE"
         return t
 
-    # In the absorb, text, transctrl and lemmatize states,
-    # one or more newlines returns to the base state
-    def t_absorb_text_lemmatize_transctrl_interlinear_key_NEWLINE(self, t):
-        r'[\n\r]+'
-        t.lexer.lineno += len(t.value)
-        t.lexer.pop_state()
-        return t
-
-    #--- RULES FOR THE TRANSLATION STATES ---
-    # In this state, the base state is free text
-    # And certain tokens deviate from that, rather
-    # than the other way round as for base state
-
     def t_parallel_LINELABEL(self, t):
         r'^([^\.\ \t]*)\.[\ \t]*'
         t.value = t.value.strip(" \t.")
         return t
 
+    def t_parallel_labeled_DOLLAR(self,t):
+        "^\$"
+        t.lexer.push_state("transctrl")
+        return t
 
     t_transctrl_MINUS = "\-\ "
 
@@ -320,22 +354,22 @@ class AtfLexer(object):
     many_int_then_nonflag = '(' + internalonly + '*' + nonflag + '+' + ')'
     many_nonflag = nonflag + '*'
     intern_or_nonflg = '(' + many_int_then_nonflag + '|' + many_nonflag + ')'
-    absorb_regex = (white + '(' + nonflagnonwhite + intern_or_nonflg +
+    flagged_regex = (white + '(' + nonflagnonwhite + intern_or_nonflg +
                     ')' + white )
 
-    @lex.TOKEN(absorb_regex)
-    def t_absorb_ID(self, t):
+    @lex.TOKEN(flagged_regex)
+    def t_flagged_ID(self, t):
         # Discard leading whitespace, token is not flag or newline
         # And has at least one non-whitespace character
         t.value = t.value.strip()
         return t
 
-    t_absorb_HASH = "\#"
-    t_absorb_EXCLAIM = "\!"
-    t_absorb_QUERY = "\?"
-    t_absorb_STAR = "\*"
-    t_absorb_parallel_para_HAT = "[\ \t]*\^[\ \t]*"
-    t_absorb_EQUALS = "\="
+    t_flagged_HASH = "\#"
+    t_flagged_EXCLAIM = "\!"
+    t_flagged_QUERY = "\?"
+    t_flagged_STAR = "\*"
+    t_flagged_parallel_para_HAT = "[\ \t]*\^[\ \t]*"
+    t_flagged_EQUALS = "\="
 
     #--- Rules for paragaph state----------------------------------
     # Free text, ended by double new line
@@ -366,15 +400,21 @@ class AtfLexer(object):
         t.type = "NEWLINE"
         return t
 
-    #--- RULES FOR THE key STATE -----
-
-    def t_key_ID(self,t):
+    #--- RULES FOR THE nonequals STATE -----
+    # Absorb everything except an equals
+    def t_nonequals_ID(self,t):
         "[^\=\n\r]+"
         t.value=t.value.strip()
         return t
 
-    t_key_EQUALS = "\="
+    t_nonequals_EQUALS = "\="
 
+    #--- RULES FOR THE absorb STATE -----
+    # Absorb everything
+    def t_absorb_ID(self,t):
+        "[^\n\r]+"
+        t.value=t.value.strip()
+        return t
 
     #--- RULES FOR THE text STATE ----
     t_text_ID = "[^\ \t \n\r]+"

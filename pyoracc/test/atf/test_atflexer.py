@@ -93,6 +93,15 @@ class testLexer(TestCase):
             [None, None, "A", None, "P363716", None, "TCL 06, 44"]
         )
 
+    def test_link_parallel(self):
+        self.compare_tokens(
+            "#link: parallel abcd:P363716 = TCL 06, 44\n" +
+            "@tablet\n",
+            ["LINK", "PARALLEL", "ID", "EQUALS", "ID", "NEWLINE",
+            "TABLET", "NEWLINE"],
+            [None, None, "abcd:P363716", None, "TCL 06, 44"]
+        )
+
     def test_link_reference(self):
         self.compare_tokens(
             "|| A o ii 10\n",
@@ -423,7 +432,19 @@ class testLexer(TestCase):
     def test_comment(self):
         self.compare_tokens(
             "# I've added various things for test purposes\n",
-            ['NEWLINE']
+            ['COMMENT',"ID","NEWLINE"]
+        )
+
+    def test_nospace_comment(self):
+        self.compare_tokens(
+            "#I've added various things for test purposes\n",
+            ['COMMENT',"ID","NEWLINE"]
+        )
+
+    def test_check_comment(self):
+        self.compare_tokens(
+            "#CHECK: I've added various things for test purposes\n",
+            ['CHECK',"ID","NEWLINE"]
         )
 
     def test_dotline(self):
@@ -453,7 +474,7 @@ class testLexer(TestCase):
         anything in structure or lemmatization doc"""
         self.compare_tokens(
             "## papān libbi[belly] (already in gloss, same spelling)\n",
-            ['NEWLINE']
+            ['COMMENT', 'ID','NEWLINE']
         )
 
     def test_ruling(self):
@@ -546,7 +567,7 @@ class testLexer(TestCase):
             ["LEM"] + ["ID","SEMICOLON"] + ["ID"] + ["NEWLINE"] +
             ["MULTILINGUAL","ID"]+["ID"]*3 + ["NEWLINE"] +
             ["LEM"] + ["ID","SEMICOLON"]*2 + ["ID"] + ["NEWLINE"] +
-            ["NEWLINE"] +
+            ["COMMENT","ID","NEWLINE"] +
             ["PARBAR", "ID", "ID", "ID", "ID", "NEWLINE"]
         )
 
