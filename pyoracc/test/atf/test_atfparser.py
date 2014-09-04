@@ -645,6 +645,17 @@ class testParser(TestCase):
         assert_equal(l2.words[0],
                      "No-one will occupy the king of Akkad's throne.")
 
+    def test_translation_labeled_multiline_atlabel(self):
+        art = self.try_parse(
+            "@tablet\n" +
+            "@translation labeled en project\n" +
+            "@(o 20) He fled like a fox to the land\n" +
+            "Elam.\n")
+        l1= art.children[0].children[0]
+        assert_equal(l1.label.label,["o","20"])
+        assert_equal("\n".join(l1.words),
+                     "He fled like a fox to the land\nElam.")
+
     def test_default_surface(self):
         text = self.try_parse(
             "&Q002769 = SB Anzu 1\n" +

@@ -348,6 +348,15 @@ class AtfLexer(object):
         t.lexer.pop_state()
         return t
 
+    # This next rule should be unnecessary, as
+    # paragraphs absorb multiple lines anyway
+    # But because some malformed texts terminate translation blocks
+    # with the next label, not a double-newline, fake labels, lines
+    # which look like
+    # labels, can cause apparent terminations of blocks
+    # So we add this rule to accommodate these
+    t_labeled_ID="^[^\n\r]+"
+
     #--- RULES FOR THE ABSORB STATE ---
     # Used for states where only flag# characters! and ^1^ references
     # Are separately tokenised

@@ -1,0 +1,74 @@
+&Q003261 = Esarhaddon 32
+#project: rinap/rinap4
+#atf: use unicode
+#atf: lang akk
+#atf: use math
+#atf: use legacy
+@column 1'
+$ (Lacuna)
+1'.	[...] 4 ME [...] x [...] šá KUR-i
+#lem: u; n; mē[(one) hundred]NU; u; u; u; ša[of]DET; šadî[mountain]N
+
+2'.	[...]-⸢šu ki⸣-[...] U [...]
+#lem: u; u; u; u
+
+3'.	[...] x GAL-ia {d}UTU-ši
+#lem: u; u; u; šamši[sun]N
+
+4'.	[...]-u-ni x x ina x NÍTA
+#lem: u; u; u; ina[in]PRP; u; u
+
+5'.	[...]-šú-nu x x RU x
+#lem: u; u; u; u; u
+
+6'.	[...] a-mat-⸢su⸣ [...]
+#lem: u; amātsu[word]N; u
+
+7'.	[...]-ri šá [...]
+#lem: u; ša[of]DET; u +.
+
+$ (Lacuna)
+@column 2'
+$ (Lacuna)
+1'.	a-na {KUR}ELAM.[MA{KI}]
+#lem: ana[to]PRP; Elamti[1]GN
+
+2'.	še-la-biš in-[na-bit]
+#lem: šēlabiš[like a fox]AV; innabit[run away]V
+
+3'.	[áš-šú ma-mit] DINGIR.MEŠ GAL.[MEŠ]
+#lem: aššu[because]PRP; māmīt[oath]N; ilāni[god]N; rabûti[great]AJ
+
+4'.	AN.ŠÁR {d}UTU an-[nu kab-tu]
+#lem: Aššur[1]DN; Šamaš[1]DN; annu[punishment]N; kabtu[heavy]AJ
+
+5'.	i-mì-du-[šú-ma]
+#lem: emēdu[lean on//impose]V$īmidūšuma
+
+6'.	qé-reb {KUR}ELAM.[MA{KI}]
+#lem: qereb[interior]N; Elamti[1]GN
+
+7'.	i-na-ru-šú [ina {GIŠ}TUKUL]
+#lem: inārūšu[kill]V; ina[with]PRP; kakki[weapon]N
+
+8'.	{m}I-{d}mar-duk [ŠEŠ-šú]
+#lem: Naʾid-Marduk[1]PN; ahušu[brother]N
+
+9'.	[ep-šet] {KUR}[ELAM.MA{KI}]
+#lem: epšēt[deed]N; Elamti[1]GN +.
+
+$ (Lacuna)
+@translation labeled en project
+$ Lacuna
+@(i' 1' - i' 7') (No translation possible)
+
+$ Lacuna
+$ Lacuna
+@(ii' 1' - ii' 9') He (Nabû-zēr-kitti-līšir) [fled] like a fox to the land
+Elam. [Because of the oath of] the great gods (which he had transgressed), the
+gods Aššur (and) Šamaš imposed a [grievous] punish[ment on him and] they
+killed him [with the sword] in the midst of the land Elam. Naʾid-Marduk,
+[his brother, saw the deeds that they had done to his brother in Elam].
+
+$ Lacuna
+@end translation
