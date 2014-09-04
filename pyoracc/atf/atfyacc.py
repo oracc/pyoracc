@@ -250,7 +250,8 @@ class AtfParser(object):
     def p_dollar(self, p):
         """dollar          : ruling
                            | loose_dollar_statement
-                           | strict_dollar_statement"""
+                           | strict_dollar_statement
+                           | simple_dollar_statement"""
         p[0] = p[1]
 
     def p_surface_line(self, p):
@@ -442,11 +443,10 @@ class AtfParser(object):
                              | brief_state_desc"""
         p[0] = p[1]
 
-    def p_single_strict(self, p):
-        """state_description : LACUNA
-                             | state"""
-
-        p[0]=State(p[1])
+    def p_simple_dollar(self, p):
+        """simple_dollar_statement : DOLLAR ID newline
+                                   | DOLLAR state newline"""
+        p[0]=State(p[2])
 
     def p_plural_state_description(self, p):
         """plural_state_description : plural_quantifier plural_scope state

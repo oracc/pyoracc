@@ -67,7 +67,7 @@ class AtfLexer(object):
         'SEVERAL', 'SOME', 'REST', 'OF', 'START', 'BEGINNING', 'MIDDLE', 'END',
         'COLUMNS', 'LINE', 'LINES', 'CASE', 'CASES', 'SURFACE',
         'BLANK', 'BROKEN', 'EFFACED', 'ILLEGIBLE', 'MISSING', 'TRACES',
-        'RULING', 'SINGLE', 'DOUBLE', 'TRIPLE', 'AT', 'LACUNA']
+        'RULING', 'SINGLE', 'DOUBLE', 'TRIPLE', 'AT']
 
     base_tokens = [
         'AMPERSAND',
@@ -317,7 +317,7 @@ class AtfLexer(object):
 
     def t_parallel_labeled_DOLLAR(self,t):
         "^\$"
-        t.lexer.push_state("transctrl")
+        t.lexer.push_state("absorb")
         return t
 
     t_transctrl_MINUS = "\-\ "

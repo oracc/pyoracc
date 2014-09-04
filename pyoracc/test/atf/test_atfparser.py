@@ -322,7 +322,7 @@ class testParser(TestCase):
             "Some content\n\n"
         )
         # Should default to an obverse surface
-        assert_equal(art.children[0].children[0].count, 1)
+        assert_is_instance(art.children[0].children[0], State)
 
     def test_comment(self):
         art = self.try_parse(
@@ -469,13 +469,23 @@ class testParser(TestCase):
         assert_equal(art.children[0].children[0].scope, "column")
         assert_equal(art.children[0].children[0].extent, "start of")
 
-    def test_strict_dollar_start_of_exception(self):
+    def test_strict_dollar_lacuna_exception(self):
         art = self.try_parse(
             "@tablet\n" +
             "@obverse\n" +
             "$ Lacuna\n",
         )
         assert_equal(art.children[0].children[0].state, "Lacuna")
+        assert_equal(art.children[0].children[0].scope, None)
+        assert_equal(art.children[0].children[0].extent, None)
+
+    def test_strict_dollar_simple_exception(self):
+        art = self.try_parse(
+            "@tablet\n" +
+            "@obverse\n" +
+            "$ broken\n",
+        )
+        assert_equal(art.children[0].children[0].state, "broken")
         assert_equal(art.children[0].children[0].scope, None)
         assert_equal(art.children[0].children[0].extent, None)
 
@@ -491,6 +501,14 @@ class testParser(TestCase):
             "1. Hello\n",
         )
         assert_equal(art.children[0].children[0].label, '1')
+
+    def test_strict_as_loose_in_translation(self):
+        art = self.try_parse(
+            "@tablet\n" +
+            "@translation parallel en project\n" +
+            "$ Continued in text no. 2\n"
+        )
+        assert_is_instance(art.children[0].children[0],State)
 
     def test_translation_intro(self):
         art = self.try_parse(

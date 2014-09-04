@@ -1,0 +1,84 @@
+&Q003425 = Tiglath-pileser III 12
+#project: rinap/rinap1
+
+#atf: use unicode
+#atf: lang akk
+#atf: use math
+#atf: use legacy
+$ (After overlap, continued from text no. 11)
+$ (Lacuna)
+1'.	KUŠ AM.SI ZÚ AM.SI {SÍG}ZA.GÌN.SA₅ {SÍG}ZA.GÌN.MI lu-bul-ti bir-me {TÚG}⸢GADA⸣ [lu]-⸢bul⸣-[ti] KUR-šú-nu ma-ʾa-at-tu^1^
+#lem: mašak[skin]N; pīri[elephant]N; šinni[tooth]N; pīri[elephant]N; argamannu[purple]N; takiltu[(a precious blue-purple wool)]$; lubulti[clothing]N; birmē[multicoloured cloth]N; kitû[flax//linen]N$kitû; lubulti[clothing]N; mātišunu[land]N; maʾattu[many]AJ
+
+#note: ^1^ @notelabel{1´} The reading of this line is based on G. Smith’s draft b, which largely duplicates text no. 11 line 10´. 3 R pl. 9 no. 1 has only the last six signs of the line: @i{-šú-nu ma-ʾa-at-tu}. @akk{[lu]-⸢bul⸣-[ti]} “[ves]tments [of]”: The restoration was suggested by N. Naʾaman (@i{apud} Tadmor, Tigl. III p. 56).
+
+
+2'.	BI AM A AN GAR MA {GIŠ}til-li {GIŠ}BAL ḪI ÍA x RAD ina qé-reb {URU}ar-pad-da am-ḫur^2^
+#lem: u; u; u; u; u; u; tillu[(military) equipment]N$tillī; pilaqqu[spindle]N$; u; u; u; u; ina[in]PRP; qereb[interior]N; Arpad[]SN$Arpadda; amhur[receive]V +.
+
+#note: ^2^ @notelabel{2´} The reading of this line is based on G. Smith’s draft b; 3 R pl. 9 no. 1 has only @akk{[...]-pad-da [...]}. @akk{{GIŠ}til-li} “military equipment”: This reading follows Frahm, Sanherib p. 105; cf. Tadmor, Tigl. III p. 56, which has @i{be-li}. @akk{ḪI ÍA}: This should perhaps be emended to @akk{ḪI.A}.
+
+
+3'.	[{m}tu-ta-am-mu LUGAL {KUR}un-qi ina a-de-e DINGIR.MEŠ GAL].MEŠ iḫ-ṭi ⸢i⸣-šiṭ nap-šá-ti-šú ger-⸢ru⸣-a^3^
+#lem: Tutammu[]PN$; šar[king]N; Unqi[]GN$; ina[with respect to]PRP; adê[treaty]N; ilāni[god]N; rabûti[great]AJ; ihṭi[be neglectful]V; šiāṭu[be(come) neglectful]V$išīṭ; napištu[throat//life]N$napšātišu; gerru[way//campaign]N$gerrūʾa
+
+#note: ^3^ @notelabel{3´} The restoration of damaged text at the beginning of the line follows G. Smith, Zeitschrift für ägyptische Sprache 7 (1869) p. 92, and G. Smith, Assyrian Disc. p. 274 line 18. @akk{[...].MEŠ iḫ-ṭi ⸢i⸣}-: So G. Smith’s draft a; this section of text is omitted in 3 R pl. 9 no. 1. @akk{⸢i⸣-šiṭ} “he neglected”: This reading follows AHw p. 1222 and Frahm, AfO 44/45 (1997–98) p. 401; cf. Tadmor, Tigl. III p. 56, which has @akk{⸢i⸣-miš}. @akk{ger-⸢ru⸣-a} “@i{on my campaign}”: Only in 3 R pl. 9 no. 1; G. Smith’s draft b ends with @akk{nap-šá-ti-šú} (“his life”). It is uncertain how @i{ger-ru-a} should be interpreted because the text is damaged and has no known parallels. The authors have tentatively taken the word as @i{gerru} (“campaign”) with the locative-terminative ending, although it is unusual.  Alternatively, following Tadmor, Tigl. III, @i{ger-ru-a} could be an uncommon spelling of @i{gērû} “enemy”; cf. the attestations in CAD G pp. 62–63 sub @i{gērû} and AHw pp. 286–287 sub @i{gērû}.
+
+4'.	[... la im]-ta-li-ka it-te-ia i-na uz-zi ⸢ŠÀ*-ia*⸣^4^
+#lem: u; lā[not]MOD; malāku[discuss]V$imtalika; itti[with]PRP$itteya; ina[in]PRP; uzzu[anger]N$uzzi; libbiya[heart]N
+
+#note: ^4^ @notelabel{4´} @akk{⸢ŠÀ*-ia*⸣} “my heart”: Or @i{–ia*}, a conjectural reading of the @akk{⸢ŠE⸣ A} of G. Smith’s draft a (the @akk{⸢e⸣} of 3 R pl. 9 no. 1).
+
+5'.	[...] ša {m}tu-ta-am-mu-ú a-di {LÚ}GAL.MEŠ-[šú]^5^
+#lem: u; ša[of]DET; Tutammu[]PN$; adi[with]PRP; rabû[great//noble]AJ'N$rabûtišu
+
+#note: ^5^ @notelabel{12 line 5´} G. Smith’s draft c contains sixteen additional signs in this line (text copied from a fragment of a squeeze): @akk{a-na KUR-e x {KUR}mu-⸢uṣ-ri⸣ KUR a-na GAR ... MAŠ šú uḫ}. The beginning of the line, the text preceding @akk{-⸢ri⸣ KUR a-na GAR} was not reproduced in Tadmor, Tigl. III pl. XXIV. This passage does not belong here, and it appears not to be part of any known text of Tiglath-pileser III. It was apparently placed in this line by G. Smith because of the reference to @akk{{KUR}mu-⸢uṣ-ri⸣} “Egypt.” At that stage of inquiry, G. Smith read @akk{{KUR}mu-ṣir} in line 6´ (see the next note), a reading he later abandoned; cf. G. Smith, Assyrian Disc. p. 274 line 20, where this passage is omitted. @akk{{LÚ}GAL.MEŠ-[šú]} “[his] nobles”: 3 R pl. 9 no. 1 has @akk{{LÚ}GAL.MEŠ}; and G. Smith’s draft c has @akk{{LÚ}GAL}. 
+
+
+6'.	[...] {URU}ki-na-li-a URU MAN-ti-šú* ⸢ak*⸣-šud* UN.MEŠ a-di mar-ši-ti-šú-nu^6^
+#lem: u; Kunalia[]SN$Kinalia; āl[city]N; šarrūtišu[kingship]N; akšud[conquer]V +.; nišī[people]N; adi[with]PRP; maršītišunu[property]N
+
+#note: ^6^ @notelabel{12 line 6´} -@akk{šú* ⸢ak*⸣-šud*}: This is probably the correct reading of the signs. 3 R pl. 9 no. 1 and G. Smith’s draft a both have @akk{{KUR}mu-ṣir}; cf. G. Smith’s draft c, which has @akk{{KUR}mu-šud}. Smith appears to have copied @i{šud} as if it was @i{ṣir}, which is similar in shape; as a result, he regarded the damaged @i{ak} as @i{mu} and the heavily damaged @i{šú} as @akk{KUR}. For details about this misreading of G. Smith, see Tadmor, Tigl. III p. 57, the note to his Ann. 25 line 6´.
+
+7'.	[... ANŠE].GÌR.NUN.NA.MEŠ ina qé-reb um-ma-ni-ia GIM ṣe-e-ni am-nu
+#lem: u; kūdanī[mule]N; ina[in]PRP; qereb[interior]N; ummānu[military force//army]N$ummāniya; kīma[like]PRP; ṣēnu[sheep and goats]N$ṣēnī; amnu[deliver]V
+
+8'.	[...] ina MURUB₄-ti É.GAL ša {m}tu-ta-mu-ú {GIŠ}GU.ZA-ú-a ad-di^8^
+#lem: u; ina[in]PRP; qabaltu[middle]N$qabalti; ēkalli[palace]N; ša[of]DET; Tutammu[]PN$; kussû[chair//throne]N$kussûya; addi[lay]V
+
+#note: ^8^ @notelabel{12 line 8´} @i{-ú-a}: So G. Smith’s draft a: 3 R pl. 9 no. 1 erroneously has @i{-ú-za}.
+9'.	[...] NA DU ⸢UD?⸣ 3 ME GUN KÙ.BABBAR ⸢ina KAL*⸣-te 1 ME GUN [...]^9^
+#lem: u; u; u; u; n; mē[(one) hundred]NU; bilat[talent]N; kaspu[silver]N; ina[with]PRP; dannate[heavy standard]'N; n; mē[(one) hundred]NU; bilat[talent]N; u
+
+#note: ^9^ @notelabel{12 line 9´} @akk{NA DU ⸢UD?⸣}: Following Rost, this passage should perhaps be emended to @akk{[i]-na KAL-⸢te⸣} “(measured) by the heavy (standard).” @akk{⸢ina KAL*⸣}: Layard, MS A has @akk{ina E}, with scratches over the signs; the traces in 3 R pl. 9 no. 1 are garbled. @akk{1 ME GUN} “100 talents”: Only in 3 R pl. 9 no. 1; G. Smith’s draft a ends with @akk{1} (Copy: @akk{ŠÚ}) @akk{ME}.
+
+10'.	[... ú-nu]-ut ta-⸢ḫa*⸣-zi lu-bul-ti bir-me {TÚG}GADA ŠIM.ḪI.A DÙ-a-ma NÍG.ŠU É.⸢GAL-šú⸣^10^
+#lem: u; unūt[equipment]N; tāhāzi[battle]N; lubulti[clothing]N; birmē[multicoloured cloth]N; kitû[linen]N; riqqī[aromatic substance]N; kalāma[all (of it)]N$kalāma; būši[goods]N; ēkallišu[palace]N
+
+#note: ^10^ @notelabel{12 line 10´} @i{-ut ta-}: So G. Smith’s draft a; the signs are omitted in 3 R pl. 9 no. 1. @akk{-⸢ha*⸣}-: G. Smith’s draft a and 3 R pl. 9 no. 1 have @akk{DIŠ}. @akk{{TÚG}GADA} “linen garments”: So 3 R pl. 9 no. 1; G. Smith’s draft a omits @akk{TÚG}. @akk{NÍG.ŠU É.⸢GAL-šú⸣} “furnishings of his palace”: So in 3 R pl. 9 no. 1; G. Smith’s draft a ends with @akk{NÍG.ŠA ⸢É⸣}.
+
+11'.	[... {URU}]ki-na-li-a a-na eš-šu-ti ⸢aṣ-bat⸣ {KUR}un-qi a-na paṭ gim-ri-šá ⸢ú⸣-[šak-niš]^11^
+#lem: u +.; Kunalia[]SN$Kinalia; ana[for]PRP; eššūti[newness]N; aṣbat[take]V; Unqi[1]GN; ana[to]PRP; pāṭ[border]N; gimru[totality//all]N$gimriša; kanāšu[bow down//make bow down]V$ušakniš
+
+#note: ^11^ @notelabel{12 line 11´} @akk{⸢ú⸣-[...]}: Only in 3 R pl. 9 no. 1. G. Smith’s draft a ends with @i{gim-ri-šá}.
+
+12'.	[... {LÚ}šu-ut SAG.MEŠ]-ia EN.NAM.⸢MEŠ⸣ UGU-šu-nu áš-ku-un^12^
+#lem: u; šūt[who(m)]DET$; rēšu[head]N$rēšīya; bēlu[lord]N$bēl&pīhātu[post//province]N'N$pīhāti; elišunu[over]PRP; šakānu[put//place]V$aškun +.
+
+#note: ^12^ @notelabel{12 line 12´} @akk{⸢MEŠ⸣}: So G. Smith’s draft a; the sign is omitted in 3 R pl. 9 no. 1.
+
+$ (Lacuna)
+$ (After gap, continued in text no. 13)
+@translation labeled en project
+$ After overlap, continued from text no. 11
+$ Lacuna
+@(1' - 2') elephant hides, ivory, red-purple (and) blue-purple wool, multi-colored garments, linen garment[s], numerous [ves]tments [of] their lands, ..., military equipment, a spindle, ..., (and) ... — I received (all of these things) in the city Arpad.
+
+@(3' - 6'a) [Tutammû, king of the land Unqi], neglected [the loyalty oath (sworn by) the great gods] (and thereby) disregarded his life. @i{On my campaign} [... he did not con]sult me. In my fury, (5´) [I ...] of Tutammû, together with [his] nobles, [...] I captured the city Kinalīa (Kunalīa), his royal city. 
+
+@(6'b - 11'a) I counted (his) people, together with their possessions, [... (and) m]ules as (if they were) sheep and goats, (distributing them) among my army. [...] I set up my throne in Tutammû’s palace. [I @i{brought out/carried off} ...] ..., 300 talents of silver (measured) by the heavy (standard), 100 talents of [... (10´) ...], battle [equip]ment, multi-colored garments, linen garments, all types of aromatics, the furnishings of his palace, [...].
+
+@(11'b - 12') I reorganized [the city] Kinalīa (Kunalīa), s[ubdued] the land Unqi to its full extent, [...], (and) placed [... eunuchs of] mine as provincial governors over them.
+
+$ Lacuna
+$ After gap, continued in text no. 13

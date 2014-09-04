@@ -576,7 +576,7 @@ class testLexer(TestCase):
             "@translation parallel en project\n" +
             "$ reverse blank",
              ["TRANSLATION", "PARALLEL", "ID", "PROJECT", "NEWLINE"]+
-             ["DOLLAR", "REFERENCE", "BLANK"]
+             ["DOLLAR", "ID"]
         )
 
     def test_loose_in_labeled(self):
@@ -585,7 +585,7 @@ class testLexer(TestCase):
             "$ (Break)\n" +
             "@(r 2) I am\n\n",
             ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE"]+
-            ["DOLLAR", "PARENTHETICALID", "NEWLINE"]+
+            ["DOLLAR", "ID", "NEWLINE"]+
             ["OPENR", "ID", "ID", "CLOSER", "ID", "NEWLINE"]
         )
 
@@ -595,8 +595,16 @@ class testLexer(TestCase):
             "@translation labeled en project\n" +
             "$ reverse blank",
              ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE"]+
-             ["DOLLAR", "REFERENCE", "BLANK"]
+             ["DOLLAR", "ID"]
     )
+
+    def test_strict_as_loose_in_translation(self):
+        self.compare_tokens(
+            "@translation parallel en project\n" +
+            "$ Continued in text no. 2\n",
+            ["TRANSLATION", "PARALLEL", "ID", "PROJECT", "NEWLINE"] +
+            ["DOLLAR", "ID", "NEWLINE"]
+        )
 
     def test_punctuated_translation(self):
         self.compare_tokens(
