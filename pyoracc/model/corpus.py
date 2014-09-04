@@ -32,7 +32,7 @@ class Corpus(object):
 if __name__ == '__main__':
     corpus = Corpus(source=sys.argv[1])
     print()
-    print("Succeeded with ", corpus.successes, " out of ",
+    print("Failed with ", corpus.failures, " out of ",
           corpus.failures + corpus.successes, "(",
-          corpus.successes * 100.0 / (corpus.failures + corpus.successes),
+          corpus.failures * 100.0 / (corpus.failures + corpus.successes),
           "%)")
