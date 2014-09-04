@@ -242,8 +242,9 @@ class AtfLexer(object):
         return t
 
     def t_ID(self, t):
-        u'[a-zA-Z0-9][a-zA-Z\'\u2019\/\.0-9\:\-\[\]]*'
+        u'[a-zA-Z0-9][a-zA-Z\'\u2019\xb4\/\.0-9\:\-\[\]]*'
         t.value=t.value.replace(u'\u2019',"'")
+        t.value=t.value.replace(u'\xb4',"'")
         t.type = self.resolve_keyword(t.value,
                                       AtfLexer.protocol_keywords +
                                       AtfLexer.dollar_keywords +
@@ -281,8 +282,9 @@ class AtfLexer(object):
 
     # Unicode 2019 is right single quotation -- some files use as prime.
     def t_transctrl_ID(self, t):
-        u'[a-zA-Z0-9][a-zA-Z\'\u2019\.0-9\:\-\[\]]*'
+        u'[a-zA-Z0-9][a-zA-Z\'\u2019\xb4\.0-9\:\-\[\]]*'
         t.value=t.value.replace(u'\u2019',"'")
+        t.value=t.value.replace(u'\xb4',"'")
         t.type = self.resolve_keyword(t.value,
                                       AtfLexer.protocol_keywords +
                                       AtfLexer.dollar_keywords +

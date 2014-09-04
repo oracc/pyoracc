@@ -1,0 +1,26 @@
+&Q003933 = Sennacherib 128
+#project: rinap/senn2
+#atf: use unicode
+#atf: lang akk
+#atf: use math
+#atf: use legacy
+$ (Lacuna)
+1´. 	[ana dul-li] ⸢šá DINGIR⸣ [LÚ-ti DÙ-šú]
+#lem: ana[for]PRP; dulli[work]N; ša[of]DET; ili[god]N; amīlūti[person]N; ippušu[use]V
+
+2´. 	[AN.ŠÁR] ⸢{d}⸣30 {d}[UTU {d}IŠKUR?]
+#lem: Aššur[1]DN; Sin[1]DN; Šamaš[1]DN; Adad[1]DN
+
+3´. 	[...] ⸢{d}⸣EN {d}[...]
+#lem: u; Bel[1]DN; u
+
+4´. 	[MU-šú NUMUN-šú lu-ḫal-li-qu] 
+#lem: šumšu[name]N; zēršu[seed]N; luhalliqū[destroy]V
+
+
+@translation labeled en project
+
+$ Lacuna
+
+@(1´ - 4´) [Whoever @i{places} (it) in the service] of a god [(or another) person, may the deities Aššur], Sîn, [Šamaš, @i{Adad}, ...], Bēl, [... make his name (and) his seed disappear].
+
