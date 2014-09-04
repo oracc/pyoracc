@@ -285,6 +285,14 @@ class testParser(TestCase):
         )
         assert_equal(art.children[0].children[0].count, 3)
 
+    def test_flagged_ruling(self):
+        art = self.try_parse(
+            "@tablet\n" +
+            "@obverse\n" +
+            "$ ruling!\n"
+        )
+        assert_equal(art.children[0].children[0].remarkable, True)
+
     def test_uncounted_ruling(self):
         art = self.try_parse(
             "@tablet\n" +

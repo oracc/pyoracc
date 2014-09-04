@@ -151,25 +151,28 @@ class AtfParser(object):
         """object_statement : object_specifier newline"""
         p[0] = p[1]
 
-    def p_object_flag_broken(self, p):
-        "object_specifier : object_specifier HASH"
+    def p_flag(self, p):
+        """ flag : HASH
+                 | EXCLAIM
+                 | QUERY
+                 | STAR """
         p[0] = p[1]
-        p[0].broken = True
 
-    def p_object_flag_remarkable(self, p):
-        "object_specifier : object_specifier EXCLAIM"
+    def p_object_flag(self, p):
+        "object_specifier : object_specifier flag"
         p[0] = p[1]
-        p[0].remarkable = True
+        AtfParser.flag(p[0], p[2])
 
-    def p_object_flag_query(self, p):
-        "object_specifier : object_specifier QUERY"
-        p[0] = p[1]
-        p[0].query = True
-
-    def p_object_flag_collated(self, p):
-        "object_specifier : object_specifier STAR"
-        p[0] = p[1]
-        p[0].collated = True
+    @staticmethod
+    def flag(target, flag):
+        if flag == "#":
+            target.broken = True
+        elif flag == "!":
+            target.remarkable = True
+        elif flag == "?":
+            target.query = True
+        elif flag == "*":
+            target.collated = True
 
     # These MUST be kept as a separate parse rule,
     # as the same keywords also occur
@@ -208,25 +211,10 @@ class AtfParser(object):
         "surface_statement : surface_specifier newline"
         p[0] = p[1]
 
-    def p_surface_flag_broken(self, p):
-        "surface_specifier : surface_specifier HASH"
+    def p_surface_flag(self, p):
+        "surface_specifier : surface_specifier flag"
         p[0] = p[1]
-        p[0].broken = True
-
-    def p_surface_flag_remarkable(self, p):
-        "surface_specifier : surface_specifier EXCLAIM"
-        p[0] = p[1]
-        p[0].remarkable = True
-
-    def p_surface_flag_query(self, p):
-        "surface_specifier : surface_specifier QUERY"
-        p[0] = p[1]
-        p[0].query = True
-
-    def p_surface_flag_collated(self, p):
-        "surface_specifier : surface_specifier STAR"
-        p[0] = p[1]
-        p[0].collated = True
+        AtfParser.flag(p[0], p[2])
 
     def p_surface_nolabel(self, p):
         '''surface_specifier  : OBVERSE
@@ -258,7 +246,7 @@ class AtfParser(object):
         p[0] = p[1]
 
     def p_dollar(self, p):
-        """dollar          : ruling
+        """dollar          : ruling_statement
                            | loose_dollar_statement
                            | strict_dollar_statement
                            | simple_dollar_statement"""
@@ -398,13 +386,17 @@ class AtfParser(object):
         "lemma_statement : lemma_list newline"
         p[0] = p[1]
 
+    def p_ruling_statement(self, p):
+        "ruling_statement : ruling newline"
+        p[0] = p[1]
+
     def p_ruling(self, p):
-        """ruling : DOLLAR SINGLE RULING newline
-                  | DOLLAR DOUBLE RULING newline
-                  | DOLLAR TRIPLE RULING newline
-                  | DOLLAR SINGLE LINE RULING newline
-                  | DOLLAR DOUBLE LINE RULING newline
-                  | DOLLAR TRIPLE LINE RULING newline"""
+        """ruling : DOLLAR SINGLE RULING
+                  | DOLLAR DOUBLE RULING
+                  | DOLLAR TRIPLE RULING
+                  | DOLLAR SINGLE LINE RULING
+                  | DOLLAR DOUBLE LINE RULING
+                  | DOLLAR TRIPLE LINE RULING"""
 
         counts = {
             'single': 1,
@@ -414,8 +406,13 @@ class AtfParser(object):
         p[0] = Ruling(counts[p[2]])
 
     def p_uncounted_ruling(self, p):
-        "ruling : DOLLAR RULING newline"
+        "ruling : DOLLAR RULING"
         p[0] = Ruling(1)
+
+    def p_flagged_ruling(self, p):
+        "ruling : ruling flag"
+        p[0] = p[1]
+        AtfParser.flag(p[0],p[2])
 
     def p_note(self, p):
         """note_statement : note_sequence newline"""
