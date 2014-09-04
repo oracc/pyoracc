@@ -57,7 +57,17 @@ class AtfParser(object):
                             | ATF USE MYLINES newline
                             | ATF USE LEXICAL newline
                             | KEY ID EQUALS ID newline
-                            | BIB ID newline"""
+                            | BIB ID newline
+                            | lemmatizer_statement"""
+
+    def p_lemmatizer(self, p):
+        "lemmatizer : LEMMATIZER"
+
+    def p_lemmatizer_id(self, p):
+        "lemmatizer : lemmatizer ID"
+
+    def p_lemmatizer_statement(self, p):
+        "lemmatizer_statement : lemmatizer newline "
 
     def p_link(self, p):
         "link : LINK DEF ID EQUALS ID EQUALS ID newline"

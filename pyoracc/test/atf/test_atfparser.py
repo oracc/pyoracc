@@ -82,6 +82,15 @@ class testParser(TestCase):
         # No assertion, we're not parsing keys yet
         assert False
 
+    @skip("No support for lemmatizer protocol")
+    def test_lemmatizer_protocol(self):
+        text = self.try_parse(
+            "&X001001 = JCS 48, 089\n" +
+            "#lemmatizer: sparse do sv sn eq tx\n"
+        )
+        # No assertion, we're not parsing keys yet
+        assert False
+
     def test_text_protocol_language(self):
         text = self.try_parse(
             "&X001001 = JCS 48, 089\n" +
