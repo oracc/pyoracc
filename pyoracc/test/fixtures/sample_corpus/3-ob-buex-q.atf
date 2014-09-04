@@ -1,0 +1,25 @@
+&Q000260 = OB Sippar Ura I-II
+@composite
+#project: dcclt/obale
+#atf: use lexical
+#link: parallel dcclt/obale:P274929 = IM 070209
+#link: parallel dcclt/obale:P388339 = Education in the Earliest Schools no. 132
+@include dcclt/obale:P142806 = AAICAB 1/1, pl. 058, 1924-0519
+@include dcclt/obale:P230219 = CBS 01862
+@include dcclt/obale:P332823 = BM 067389
+@include dcclt/obale:P332880 = MHET 1/2, 038
+@include dcclt/obale:P332926 = MSL SS 1, 106
+@include dcclt/obale:P332951 = VS 24, 011
+@include dcclt/obale:P224987 = TIM 10, 008
+@include dcclt/obale:P225015 = TIM 10, 038
+@include dcclt/obale:P225038 = TIM 10, 061
+@include dcclt/obale:P225048 = TIM 10, 072
+@include dcclt/obale:P225108 = TIM 10, 138
+@include dcclt/obale:P273708 = TCVC 778
+@include dcclt/obale:P369709 = OBTI 279
+@include dcclt/obale:P345895 = BBVOT 03, 34
+# AO 7012
+# AO 7796 = RA 33, 87-90
+# Ist Si 0207
+# Ist Si 0498
+# Ist Si 0659

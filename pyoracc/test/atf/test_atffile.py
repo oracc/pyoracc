@@ -67,7 +67,8 @@ texts=[
     ['BagM_27_217','P405130','BagM 27 217'],
     ['3-ob-ura2-q-l-t','Q000040','OB Nippur Ura 2'],
     ['TPIII0001','Q003414','Tiglath-pileser III 1'],
-    ['K_04145F','P382580','CT 11, pl. 33, K 04145F']
+    ['K_04145F','P382580','CT 11, pl. 33, K 04145F'],
+    ['3-ob-buex-q','Q000260','OB Sippar Ura I-II']
     ]
 
 def test_texts():

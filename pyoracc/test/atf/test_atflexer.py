@@ -93,6 +93,15 @@ class testLexer(TestCase):
             [None, None, "A", None, "P363716", None, "TCL 06, 44"]
         )
 
+    def test_link_parallel_slash(self):
+        self.compare_tokens(
+            "#link: parallel dcclt/obale:P274929 = IM 070209\n" +
+            "@tablet\n",
+            ["LINK", "PARALLEL", "ID", "EQUALS", "ID", "NEWLINE",
+            "TABLET", "NEWLINE"],
+            [None, None, "dcclt/obale:P274929", None, "IM 070209"]
+        )
+
     def test_link_parallel(self):
         self.compare_tokens(
             "#link: parallel abcd:P363716 = TCL 06, 44\n" +
