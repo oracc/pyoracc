@@ -168,10 +168,9 @@ class AtfLexer(object):
         t.type = "NEWLINE"
         return t
 
-        # In the multi-line base states, a newline doesn't change state
-        # A newline followed by a space gives continuation
-    def t_INITIAL_parallel_labeled_NEWLINE(self, t):
-        r'\s*[\n\r](?![ \t])'
+    # In the base state, a newline doesn't change state
+    def t_NEWLINE(self, t):
+        r'\s*[\n\r]'
         t.lexer.lineno += 1
         return t
 
@@ -269,7 +268,7 @@ class AtfLexer(object):
 
     # In the flagged, text, transctrl and lemmatize states,
     # one or more newlines returns to the base state
-    def t_flagged_text_lemmatize_transctrl_interlinear_nonequals_absorb_NEWLINE(self, t):
+    def t_flagged_text_lemmatize_transctrl_nonequals_absorb_NEWLINE(self, t):
         r'[\n\r]+'
         t.lexer.lineno += len(t.value)
         t.lexer.pop_state()
@@ -327,6 +326,28 @@ class AtfLexer(object):
         t.lexer.pop_state()
         return t
 
+    # In parallel states, a newline doesn't change state
+    # A newline followed by a space gives continuation
+    def t_parallel_NEWLINE(self, t):
+        r'\s*[\n\r](?![ \t])'
+        t.lexer.lineno += 1
+        return t
+
+    # In interlinear states, a newline which is not continuation leaves state
+    # A newline followed by a space gives continuation
+    def t_interlinear_NEWLINE(self, t):
+        r'\s*[\n\r](?![ \t])'
+        t.lexer.lineno += 1
+        t.lexer.pop_state()
+        return t
+
+    # In labeled translation, a newline doesn't change state
+    # A newline just passed through
+    def t_labeled_NEWLINE(self, t):
+        r'\s*[\n\r]'
+        t.lexer.lineno += 1
+        return t
+
     # Flag characters (#! etc ) don't apply in translations
     # But reference anchors ^1^ etc do.
     # lines beginning with a space are continuations
@@ -338,8 +359,8 @@ class AtfLexer(object):
         t.value = t.value.strip()
         t.value = t.value.replace("\r ","\r")
         t.value = t.value.replace("\n ","\n")
-        t.value = t.value.replace("\n","")
-        t.value = t.value.replace("\r","")
+        t.value = t.value.replace("\n"," ")
+        t.value = t.value.replace("\r"," ")
         return t
 
     def t_parallel_labeled_AMPERSAND(self,t):

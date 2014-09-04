@@ -312,6 +312,10 @@ class AtfParser(object):
         "interlinear : TR ID newline"
         p[0] = p[2]
 
+    def p_interlinear_empty(self, p):
+        "interlinear : TR newline"
+        p[0] = ""
+
     def p_line_link(self, p):
         "line : line link_reference_statement"
         p[0] = p[1]

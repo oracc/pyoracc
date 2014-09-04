@@ -193,7 +193,7 @@ class testLexer(TestCase):
             ["TRANSLATION", "PARALLEL", "ID", "PROJECT", "NEWLINE",
              "LINELABEL", "ID","NEWLINE"],
             [None, "parallel", "en", "project", None,
-             "1", "Year 63, Ṭebetu (Month X), night of day 2", None]
+             "1", "Year 63, Ṭebetu (Month X) , night of day 2", None]
         )
 
     def test_translation_labeled_text(self):
@@ -321,6 +321,22 @@ class testLexer(TestCase):
         ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
          "LABEL", "ID", "ID", "NEWLINE",
          "ID","NEWLINE"]
+        )
+
+    def test_translation_blank_line_amid_translation(self):
+        # A double newline normally ends a translation paragraph
+        # But this is NOT the case at the beginning of a section,
+        # Apparently.
+        self.compare_tokens(
+        "@translation labeled en project\n" +
+        "@(4) their [cri]mes [have been forgiven] by the king. (As to) all [the\n" +
+        "\n" +
+        "    libe]ls that [have been uttered against me in the palace, which] he has\n" +
+        "\n" +
+        "    heard, [I am not guilty of] any [of them! N]ow, should there be a\n",
+        ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
+         "OPENR", "ID", "CLOSER", "ID", "NEWLINE",
+         "ID","NEWLINE", "ID", "NEWLINE"]
         )
 
     def test_translation_no_blank_line_in_labeled_translation(self):

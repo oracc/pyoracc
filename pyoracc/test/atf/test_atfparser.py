@@ -874,6 +874,25 @@ class testParser(TestCase):
         line=text.children[0].children[0]
         assert_equal(line.translation, "English")
 
+    def test_interlinear_empty(self):
+        text=self.try_parse(
+            "@tablet\n" +
+            "1'. ⸢x⸣\n" +
+            "#tr: \n"
+        )
+        line=text.children[0].children[0]
+        assert_equal(line.translation, "")
+
+    def test_interlinear_multiline(self):
+        text=self.try_parse(
+            "@tablet\n" +
+            "1'. ⸢x⸣\n" +
+            "#tr: English\n" +
+            " more"
+        )
+        line=text.children[0].children[0]
+        assert_equal(line.translation, "English more")
+
     def test_interlinear_ends_document(self):
         text=self.try_parse(
             "@tablet\n" +
