@@ -96,6 +96,7 @@ class AtfLexer(object):
         'CLOSER',
         'COMMA',
         'COMMENT',
+        'EQUALBRACE'
     ]
 
     keyword_tokens = list(set(
@@ -148,6 +149,11 @@ class AtfLexer(object):
     def  t_MULTILINGUAL(self,t):
         "\=\="
         t.lexer.push_state("text")
+        return t
+
+    def t_EQUALBRACE(self, t):
+        "^\=\{"
+        t.lexer.push_state('text')
         return t
 
     def t_EQUALS(self, t):

@@ -585,6 +585,17 @@ class testLexer(TestCase):
             ["LINELABEL"] + ['ID'] * 4 + ["NEWLINE"]
         )
 
+    def test_equalbrace(self):
+        self.compare_tokens(
+            "@tablet\n" +
+            "@reverse\n" +
+            "2'.	ITI# an-ni-u2#\n" +
+            "={	ur-hu\n",
+            ['TABLET',"NEWLINE"] +
+            ["REVERSE","NEWLINE"] +
+            ["LINELABEL"] + ['ID']*2 + ["NEWLINE"] +
+            ["EQUALBRACE","ID","NEWLINE"]
+        )
 
     def test_multilingual_interlinear(self):
         self.compare_tokens(

@@ -319,6 +319,21 @@ class AtfParser(object):
         p[0] = p[1]
         p[0].links.append(p[2])
 
+    def p_line_equalbrace(self, p):
+        "line : line equalbrace_statement"
+        p[0] = p[1]
+        # Don't know what to do here
+
+    def p_equalbrace(self, p):
+        "equalbrace : EQUALBRACE"
+
+    def p_equalbrace_ID(self, p):
+        "equalbrace : equalbrace ID"
+
+    def p_equalbrace_statement(self, p):
+        "equalbrace_statement : equalbrace newline"
+
+
     def p_line_multilingual(self,p):
         "line : line multilingual %prec MULTI"
         p[0] = Multilingual()
