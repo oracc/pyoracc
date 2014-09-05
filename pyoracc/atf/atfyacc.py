@@ -62,7 +62,8 @@ class AtfParser(object):
 
     def p_key(self, p):
         """key_statement : KEY ID EQUALS ID newline
-                         | KEY ID EQUALS ID EQUALS ID newline"""
+                         | KEY ID EQUALS ID EQUALS ID newline
+                         | KEY ID EQUALS newline"""
 
     def p_lemmatizer(self, p):
         "lemmatizer : LEMMATIZER"

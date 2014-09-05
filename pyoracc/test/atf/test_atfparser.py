@@ -73,6 +73,15 @@ class testParser(TestCase):
         # No assertion, we're not parsing keys yet
         #assert False
 
+    #@skip("No support for key protocol")
+    def test_empty_key_in_key_protocol(self):
+        text = self.try_parse(
+            "&X001001 = JCS 48, 089\n" +
+            "#key: date=\n"
+        )
+        # No assertion, we're not parsing keys yet
+        #assert False
+
     #@skip("No support for mylines protocol")
     def test_mylines_protocol(self):
         text = self.try_parse(
