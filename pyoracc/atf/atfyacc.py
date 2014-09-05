@@ -381,10 +381,17 @@ class AtfParser(object):
                           | WITNESSES"""
         p[0] = Milestone(p[1])
 
-    def p_lemma_id(self, p):
-        "lemma_list : lemma_list SEMICOLON ID"
+    def p_lemma_list_lemma(self, p):
+        "lemma_list : lemma_list lemma"
         p[0] = p[1]
-        p[0].append(p[3])
+        p[0].append(p[2])
+
+    def p_lemma(self, p):
+        "lemma : SEMICOLON"
+
+    def p_lemma_id(self, p):
+        "lemma : lemma ID"
+        p[0]=p[2]
 
     def p_lemma_statement(self, p):
         "lemma_statement : lemma_list newline"

@@ -1,0 +1,1270 @@
+&P238121 = SAA 17 007
+#project: saao/saa17
+#atf: lang nb
+#key: file=SAA17/SAA17.saa
+#key: musno=K 01945
+#key: cdli=CT 54 042
+#key: date=Sg
+#key: writer=Nabu^-ahhe-lumur from Sippar to Sargon
+#key: L=b
+
+
+@obverse
+1.	[a-na] LUGAL# be-li2-ia
+#lem: ana[to]PRP; šarri[king]N; bēlīya[lord]N
+
+2.	[ARAD-ka {1}{d}AG?]--SZESZ#-MESZ--lu-mur
+#lem: ardu[slave//servant]N$aradka; Nabu-ahhe-lumur[1]PN$
+
+3.	[lu-u2 szul-mu a]-na# LUGAL be-li2-ia2
+#lem: lū[may]MOD; šulmu[health]N; ana[to]PRP; šarri[king]N; bēlīya[lord]N
+
+4.	[szul-mu a]-na# URU u EN.NUN
+#lem: šulmu[health]N; ana[to]PRP; āli[town]N; u[and]CNJ; maṣṣartu[observation//guard]N$maṣṣarti
+
+5.	[sza2 LUGAL be]-li2#-ia szul-mu
+#lem: ša[of]DET; šarri[king]N; bēlīya[lord]N; šulmu[health]N
+
+6.	[a-na] ERIM#-MESZ sza2 LUGAL be-li2-ia2
+#lem: ana[to]PRP; ṣābu[people//troops]N$ṣābē; ša[of]DET; šarri[king]N; bēlīya[lord]N
+
+7.	[min-de-e-ma] LUGAL be-li2 i-qab-bi
+#lem: minde[perhaps]AV$mindēma; šarru[king]N; bēlī[lord]N; iqabbi[say]V
+
+8.	[um-ma] mi#-nu-u2
+#lem: umma[saying]PRP; mīnu[what?]QP$minû
+
+9.	[t,e3-mu]-ma NINDA-HI#.A#
+#lem: ṭēmu[(fore)thought//report]N$ṭēmumma; akalu[bread]N$aklū
+
+10.	[{LU2}ha-mar]-na-a.a-a
+#lem: Hamranaya[Hamaranean]EN$Hamarnaya
+
+11.	{LU2#}li-hu-a-ta-a.a
+#lem: Lihuataya[Lihuatean]EN$
+
+12.	[{LU2}]ra-bi-la-a.a
+#lem: Rabilaya[Rabilean]EN$
+
+13.	[UN-MESZ]-szu2#-nu ki-i
+#lem: nišu[people]N$nišīšunu; kī[like//when]PRP'SBJ$kî
+
+14.	[o] ib#-ru-u2 a-na
+#lem: u; +berû[be(come) hungry]V$ibrû; ana[to]PRP
+
+
+@reverse
+1.	[x x x x x x]
+#lem: u; u; u; u; u; u
+
+2.	[x x x x x x]
+#lem: u; u; u; u; u; u
+
+3.	i-ter-bu [x x x]
+#lem: erēbu[enter]V$īterbū; u; u; u
+
+4.	um-ma LUGAL a-na#
+#lem: umma[saying]PRP; šarru[king]N; ana[to+=to]PRP$
+
+5.	UGU#-hi-in-ni# [NINDA-HI.A]
+#lem: muhhu[skull]N$muhhinni; aklū[bread]N
+
+6.	[lisz-pu]-ra-ma#
+#lem: šapāru[send]V$lišpuramma
+
+7.	[x x] it-ti
+#lem: u; u; itti[with]PRP$
+
+8.	[{LU2}ha]-tal#-la-a.a
+#lem: Hatallaya[1]EN
+
+9.	[x x x]-szu2-nu#-tu#
+#lem: u; u; u
+
+10.	[x x x] x#+[x x]
+#lem: u; u; u; u; u
+
+11.	[x x x x]-u2#
+#lem: u; u; u; u
+
+$ (SPACER)
+
+
+
+
+@translation labeled en project
+
+
+@(1) [To the kin]g, my lord: [your servant @i{Nabû}-a]hhe-lumur.
+    [Good health to] the king, my lord! The city and the guard [of the
+    king], my lord, are well. [The tro]ops of the king, my lord, are
+    well.
+
+@(7) [Perhaps] the king, my lord, [will] say: "What [news] is there?"
+
+@(10) When the [Hamaran]eans, [the] Lihuateans, [the] Rabileans
+    (and) their people were  starving for (lack of) bread, they entered
+    [...], saying: "[May] the king [sen]d [bread] to us and [...] them
+    with [the Hat]alleans
+
+$ (Rest destroyed)
+
+
+
+&P240149 = SAA 17 008
+#project: saao/saa17
+#atf: lang nb
+#key: file=SAA17/SAA17.saa
+#key: musno=Rm 0217
+#key: cdli=ABL 0468
+#key: date=Sg
+#key: writer=Nabu^-ahhe-lumur from Sippar
+#key: L=b
+
+
+@obverse
+1.	[a-na LUGAL be-li2-ni]
+#lem: ana[to]PRP; šarri[king]N; bēlīni[lord]N
+
+2.	[ARAD-MESZ-ka {1}{d}AG--SZESZ-MESZ--lu-mur]
+#lem: ardu[slave//servant]N$ardēka; Nabu-ahhe-lumur[1]PN
+
+3.	u3 {1}[x x x lu-u2 szul-mu]
+#lem: u[and]CNJ; u; u; u; lū[may]MOD; šulmu[health]N
+
+4.	a-na LUGAL be#-li2#*-ni#* szul#-mu
+#lem: ana[to]PRP; šarri[king]N; bēlīni[lord]N; šulmu[health]N
+
+5.	a-na URU u3 EN.NUN sza2 LUGAL be-li2-ni
+#lem: ana[to]PRP; āli[town]N; u[and]CNJ; maṣṣartu[observation//guard]N$maṣṣarti; ša[of]DET; šarri[king]N; bēlīni[lord]N
+
+6.	min-de-e-ma LUGAL i-qab-bi
+#lem: mindēma[perhaps]AV; šarru[king]N; iqabbi[say]V
+
+7.	um-ma mi-nam-ma t,e3-e-ma
+#lem: umma[saying]PRP; minamma[why?]QP; ṭēmu[(fore)thought//report]N$ṭēma
+
+8.	la tasz-pu-ra-a-ni
+#lem: lā[not]MOD; šapāru[send]V$tašpurāni
+
+9.	{1}hu-la-la {LU2}TU--E2
+#lem: Hulalu[1]PN$Hulala; ēribu[enterer]N$ērib&bītu[house]N$bīti
+
+# note compound
+
+10.	sza2 {d}UTU ki-i il-li-ku-u2
+#lem: ša[of]DET; Šamaš[1]DN; kī[like//when]PRP'SBJ$kî; alāku[go]V$illikū
+
+11.	AN-e sza2 KUG.GI ul-tu
+#lem: šamû[sky//heaven]N$šamê; ša[of]DET; hurāṣi[gold]N; ištu[from]PRP$ultu
+
+12.	{URU}TIN.TIR{KI} it-ta-sza2-a'*#
+#lem: Babili[Babylon]GN$; našû[lift//take]V$ittašaʾ
+
+13.	u3 {LU2}SANGA-MESZ sza2 {d}EN#
+#lem: u[and]CNJ; šangû[priest]N$šangî; ša[of]DET; Bel[1]DN
+
+14.	it#-ti#-szu2 i-x#+[x x x]
+#lem: itti[with]PRP$ittīšu; u; u; u
+
+$ (rest broken away)
+$ (beginning broken away)
+
+
+@reverse
+0'.	[x x x x x ti-ba]
+#lem: u; u; u; u; u; tību[arousal//attack]V$tība
+
+1'.	a#-na# UGU#-i-[ni ki-i]
+#lem: ana[to+=against]PRP$; muhhu[skull]N$muhhīni; kī[like//when]PRP'SBJ$kî
+
+# note SAA [having]
+
+2'.	u2-sze-te-bu-u2 AN#-[e sza2]
+#lem: tebû[arise//raise]V$ušetebû; šamê[heaven]N; ša[of]DET
+
+3'.	KUG.GI e-le-nu-usz#-[szu2]
+#lem: hurāṣi[gold]N; elēnu[above//in addition to]AV$elēnuššu
+
+# note SAA [on top of]
+
+4'.	is,-s,a-bat AN-e ul-tu
+#lem: iṣṣabat[seize]V; šamê[sky]N; ištu[from]PRP$ultu
+# note iṣṣabat instead of iṣṣabtu
+
+5'.	E2.SAG.IL2 it-ta-szu2-nu
+#lem: Esaggil[1]TN$; našû[lift//bring]V$ittašūnu
+
+6'.	{LU2}NUN-MESZ sza2 i-re-du-u2-nu
+#lem: rubû[prince]N$rubê; ša[of]DET; redû[accompany]V$ireddûnu
+
+7'.	KUR-MESZ ub-te-ru-u2 u3
+#lem: mātu[land]N$mātāti; berû[be(come) hungry//make starve]V$ubterrû; u[and]CNJ
+
+8'.	{LU2}li-hu-u2-a-ta-a.a u3
+#lem: Lihuataya[Lihuatean]EN$Lihuʾataya; u[and]CNJ
+
+9'.	{LU2}ha-ma-ra-na-a.a KUR gab-bi-szu2
+#lem: Hamranaya[Hamaranean]EN$Hamaranaya; mātu[land]N$; gabbu[totality]N'AJ$gabbīšu
+
+# note SAA [entire]
+
+10'.	i-dab-bu-bu-u2 um-ma
+#lem: dabābu[speak]V$idabbubū; umma[saying]PRP
+
+11'.	ul ni-se-li-mu um-ma
+#lem: ul[not]MOD$; salāmu[be(come) at peace//make peace]V$nisellimu; umma[saying]PRP
+
+12'.	a-ki {URU}ga-na-ta
+#lem: akī[as, like//until]PRP'SBJ$; Ganata[1]GN$
+
+13'.	ip-pu-szu2-na-szu2 um-ma
+#lem: epēšu[do]V$ippušūnāšu; umma[saying]PRP
+
+14'.	[x x x]+x# [x]+x# [x]-na#*-szu2
+#lem: u; u; u; u; u
+
+$ (rest broken away)
+
+
+
+
+@translation labeled en project
+
+
+@(1) [To the king, our lord: your servants @i{Nabû}-ahhe-lumur] and
+    [NN. Good health] to the king, our lord. The city and the guard of
+    the king, our lord, are well.
+
+@(6) Perhaps the king will say: "Why have you not sent me any news?"
+
+@(9) When Hulala, the 'temple-enterer' of Šamaš, went away, he
+    took with him the golden heaven from Babylon. The priests of Bel
+    have [...] with him ... [...]
+
+$ (SPACER)
+$ (SPACER)
+
+@(r 1) [Having] raised [an attack] against us, they seized the
+    golden heaven on top of it, and brought the heaven here from
+    Esaggil.
+
+@(r 6) The princes who lead us have made the lands starve, (so that)
+    the Lihuateans and the Hamaraneans, (and) the entire land now say:
+    "We shall not make peace until they make the town of Ganata ours!
+    [...] us [...]"
+
+$ (Rest destroyed)
+
+
+
+&P237933 = SAA 17 009
+#project: saao/saa17
+#atf: lang nb
+#key: file=SAA17/SAA17.saa
+#key: musno=K 00906
+#key: cdli=ABL 0560
+#key: date=Sg
+#key: writer=NN from Babylon? to Sargon
+#key: L=b
+
+
+@obverse
+$ (beginning broken away)
+1'.	[x x x x x x x x x]
+#lem: u; u; u; u; u; u; u; u; u
+
+2'.	szul-mu a-na URU# [o]
+#lem: šulmu[health]N; ana[to]PRP; āli[town]N; u
+
+3'.	u EN.NUN sza2 LUGAL be-li2-ia2#
+#lem: u[and]CNJ; maṣṣartu[observation//guard]N$maṣṣarti; ša[of]DET; šarri[king]N; bēlīya[lord]N
+
+4'.	a-na {1}DINGIR--ia2-a-da-a'
+#lem: ana[to]PRP; Il-yadaʾ[1]PN$
+
+# note SAA 17 Ilu-iada'
+
+5'.	ki-i asz2-pu-ru-u2 um-ma#
+#lem: kī[like//when]PRP'SBJ$kî; šapāru[send//write]V$ašpurū; umma[saying]PRP
+
+6'.	I3.GISZ u {SAR}sah-le#-[e]
+#lem: šamnu[oil]N$šamna; u[and]CNJ; sahliu[cress]N$sahlê
+
+# note NB sahlû
+
+7'.	szu-bi-lam-ma a-na
+#lem: wabālu[bring//send]V$šūbilamma; ana[to]PRP
+
+8'.	ARAD-MESZ sza2 LUGAL lud-din
+#lem: ardu[slave//servant]N$ardē; ša[of]DET; šarri[king]N; nadānu[give]V$luddin
+
+9'.	ul i-man-gur
+#lem: ul[not]MOD; magāru[consent//agree]V$imangur
+
+# note SAA [refuse]
+
+10'.	ul i-nam-din
+#lem: ul[not]MOD; nadānu[give]V$inamdin
+
+11'.	u3
+#lem: u[and]CNJ
+
+
+@reverse
+1.	{1}{d}AG--NI2.TUK
+#lem: Nabu-naʾid[1]PN$
+
+2.	{LU2}TU--E2 sza2 E2--DINGIR
+#lem: +ēribu[enterer]N$ērib&+bītu[house]N$bīti; ša[of]DET; bītu[house]N$bīt&ilu[god]N$ili
+
+3.	szu-up-ta a-na
+#lem: šuptu[crush]N$šupta; ana[to+=against]PRP$
+
+# note šuptu not in CDA, see Aram. in SAA 17 
+
+4.	UGU-hi URU
+#lem: muhhu[skull]N$muhhi; āli[town]N
+
+5.	i-ti-pu-usz
+#lem: epēšu[do//make]V$ītipuš
+
+# note SAA [planned]
+
+6.	um-ma URU a-na
+#lem: umma[saying]PRP; ālu[city//town]N$āla; ana[to]PRP
+
+7.	a*-ba-ta lud-din
+#lem: abātu[destroy//destruction]V'N$abāta; luddin[give]V
+
+8.	[x x]+x#-ti zi#*-[x]+x# [x]
+#lem: u; u; u; u
+
+9.	[x x x] ul# [x x x]
+#lem: u; u; u; ul[not]MOD; u; u; u
+
+$ (rest broken away)
+
+
+
+
+@translation labeled en project
+
+
+$ (Beginning destroyed)
+
+
+@(2) The ci[ty] and the guard of the king, my lord, are well.
+
+@(4) When I wrote to Il-iada', "Send oil and cress here so that
+    I can give to the king's servants," he refused to give them.
+    Furthermore:
+
+@(r 1) Nabû-na'id, a 'temple-enterer' of the temple, planned a crush
+    against the city, saying "I will have the city destroyed!"
+
+$ (Rest destroyed)
+
+
+
+&P237959 = SAA 17 010
+#project: saao/saa17
+#atf: lang nb
+#key: file=SAA17/SAA17.saa
+#key: musno=K 00982
+#key: cdli=ABL 0833
+#key: date=Sg
+#key: writer=Nabu^-bel-@umati from Ganata to Sargon
+#key: L=b
+
+1.	[ARAD]-ka# {1}{d}AG--EN--MU-MESZ
+#lem: ardu[slave//servant]N$aradka; Nabu-bel-šumati[1]PN$
+
+2.	a-na di-na-an LUGAL be-li2-ia#
+#lem: ana[to//for]PRP$; dinānu[substitution//substitute]N$dinān; šarri[king]N; bēlīya[lord]N
+
+# note SAA [I would gladly die for ...]
+
+3.	lul-lik um-ma#-[a]
+#lem: alāku[go]V$lullik; umma[saying]PRP$ummā
+
+4.	a-na LUGAL be-li2-ia-a-[ma]
+#lem: ana[to]PRP; šarri[king]N; bēlu[lord]N$bēlīyāma
+
+5.	{LU2}DUMU--KIN-ia a-na szul#-[mi LUGAL]
+#lem: māru[son]N$mār&šipru[sending]N$šiprīya; ana[to]PRP; šulmu[completeness//salutation]N$šulmi; šarri[king]N
+
+# note SAA [well-being]
+
+6.	{ANSZE}KUR.RA-MESZ u3 ERIM-MESZ# [al-tap-ra]
+#lem: sisû[horse]N$sīsê; u[and]CNJ; ; šapāru[send]V$altapra
+
+# note NB sīsû
+
+7.	{LU2}TIN.TIR{KI}-MESZ szu2-nu {LU2}gu-[zu-um-ma-ni]
+#lem: Babilaya[Babylonian]EN$; šunu[they]IP; Guzummanu[Guzummanean]EN$Guzummani
+
+# note SAA [certain]
+
+8.	ul-tu TIN.TIR{KI} a-na pa#-[ni-ia]
+#lem: ištu[from]PRP$ultu; Babili[Babylon]GN; ana[to+=to]PRP; pānīya[front]N
+
+9.	ki-i il-li-ku-ni i-qab#-[bu-u2]
+#lem: kī[like//when]PRP'SBJ$kî; illikūni[come]V; +qabû[say]V$iqabbû
+
+10. um-ma UD 11-KAM2 sza2 {ITI}APIN DUMU--{1*}[ia-ki-ni]
+#lem: umma[saying]PRP; ūm[day]N; n; ša[of]DET; Arahsamnu[Marchesvan]MN$Arahsamni; Mar-Yakini[1]PN
+
+11.	a-na UGU BAD3--sza2--E2--{1}ia#*-[ki-ni]
+#lem: ana[to+=to]PRP$; muhhu[skull]N$muhhi; +Dur-Yakin[1]GN$Duru-ša-bit-Yakini
+
+12.	ul-tu TIN.TIR{KI} it-ta#-[lak]
+#lem: ištu[from]PRP$ultu; Babili[Babylon]GN; alāku[go]V$ittalak
+
+13. UD 15-KAM2 t,e3-e-ma an-na-[a]
+#lem: ūm[day]N; n; ṭēma[report]N; annû[this]DP$annâ
+
+14.	al-te-mi ul-tu pa#*-[ni x x]
+#lem: šemû[hear]V$altemi; ištu[from+=because of]PRP$ultu; pānu[front]N$pāni; u; u
+
+15.	nu-bat-ta ul i-bit# [x x]
+#lem: nubattu[evening (rest)]N$nubatta; ul[not]MOD; biātu[spend the night]V$ibīt; u; u
+
+# note NB bâtu, SAA [without a night's rest]
+
+16.	a-na pa-an LUGAL be-li2-ia# [al-tap-ra]
+#lem: ana[to+=to]PRP; pān[front]N; šarri[king]N; bēlīya[lord]N; šapāru[send]V$altapra
+
+17.	min3-de-e-ma LUGAL i-[qab-bi]
+#lem: mindēma[perhaps]AV; šarru[king]N; iqabbi[say]V
+
+18.	um-ma mi-nam-[ma o]
+#lem: umma[saying]PRP; minamma[why?]QP; u
+
+
+@reverse
+1.	at#-tu-[nu x x x x x]
+#lem: attunu[you (pl.)]IP; u; u; u; u; u
+
+2.	i-na E2--[{1}ia-ki-ni la x x]
+#lem: ina[in]PRP; Bit-Yakin[1]GN$Bit-Yakini; lā[not]MOD; u; u
+
+3.	DINGIR-MESZ sza2 LUGAL#* [be-li2-ia ki-i]
+#lem: ilāni[god]N; ša[of]DET; šarri[king]N; bēlīya[lord]N; kī[like//that]PRP'SBJ$kî
+
+# note oath
+
+4.	a-di la [t,e3-e-ma an-na-a]
+#lem: adi[until]PRP; lā[not]MOD; ṭēma[report]N; annâ[this]DP
+
+# note PRP compound, SAA [even before]
+
+5.	a-szem-mu-u2 [x x x x x x]
+#lem: šemû[hear]V$ašemmû; u; u; u; u; u; u
+
+6. u3 02 ERIM-MESZ sza2 [x x x x x]
+#lem: u[and]CNJ; n; ṣābu[people//troops]N$ṣābē; ša[of]DET; u; u; u; u; u
+
+7.	sza2 {LU2}sza2-ak-ni ma-[la asz2-pu-ru]
+#lem: ša[of]DET; šaknu[appointee//prefect]N$šakni; mala[as much as]REL$; šapāru[send]V$ašpuru
+
+# note SAA [whom]
+
+8.	ul-tu i-ku-x#+[x x x x x]
+#lem: ištu[from]PRP$ultu; u; u; u; u; u
+
+9.	02-ma {ANSZE}KUR.[RA-MESZ x x x]
+#lem: šinīšu[twice]AV$šinīšūma; sisû[horse]N$sīsê; u; u; u
+
+# note SAA [a second time]
+
+10.	la asz2-pu-ru [x x x x x]
+#lem: lā[not]MOD; ašpuru[send]V; u; u; u; u; u
+
+11.	i-na SZA3-bi [x x x x x]
+#lem: ina[in+=there]PRP; libbi[interior]N; u; u; u; u; u
+
+12.	man-di-is-su-nu t,e3-[e-mu x x x]
+#lem: mandētu[(result of) reconnoitring//information]N$mandīssunu; ṭēmu[report]N; u; u; u
+
+# note SAA [This is the result of their service]
+
+13. sza2 asz2-mu-u2 02 ERIM-MESZ# [x x x]
+#lem: ša[that]REL; šemû[hear]V$ašmû; n; ṣābu[people//troops]N$ṣābē; u; u; u
+
+14.	al-ta-par um*-ma* [x x x x x]
+#lem: altapar[send]V; umma[saying]PRP; u; u; u; u; u
+
+15.	qer-ba-a-ma a-na# [x x x x]
+#lem: qerēbu[approach]V$qerbāma; ana[to]PRP; u; u; u; u
+
+# note SAA [get close]
+
+16.	a-ga-a E2 bu-[x x x x]
+#lem: agâ[this]DP$; bītu[house]N$; u; u; u; u
+
+17.	mi-nu-u2 [x x x x x x]
+#lem: minû[what?]QP; u; u; u; u; u; u
+
+18.	sza2 a-na [x x x x x x]
+#lem: ša[that]REL; ana[to]PRP; u; u; u; u; u; u
+
+$ (rest broken away)
+
+
+
+
+@translation labeled en project
+
+
+@(1) Yo[ur servant] Nabû-bel-šumate: I would gladly die for the king,
+    my lord! Say to the king, my lord: I have sent my messenger to (ask
+    for) the well-being of the king, the horses and the soldiers.
+
+@(7) Certain Babylonians, the Gu[zummaneans], have come from Babylon,
+    saying: "The son of Yakin has gone from Babylon to Dur-Y[akin] on the 11th
+    day of Marchesvan (VIII)." I heard these news on the 15th day.
+    Therefore [I sent them] to the presence of the king, my lord, without
+    a night's rest.
+
+@(17) Perhaps the king will [say]: "Wh[y did] you [@i{not} ...] in
+    Bit-[Yakin ...]?" By the king's gods, even before I heard [this news,
+    those ...] and those two soldiers of the [... (and)] of the prefect
+    who[m I have sent]
+
+@(r 8) from ... [...]
+
+@(r 9) I did not send hor[ses] a second time [...]
+
+@(r 11) there [...]
+
+@(r 12) This is the result of their service.
+
+@(r 13) (Now) that I heard the news, I sent two soldier[s ...], saying:
+    "Get close to th[e ...], and [...] a house to this [...]!"
+
+@(r 17) What [...]
+
+@(r 18) that to [...]
+
+$ (Rest destroyed)
+
+
+
+&P237946 = SAA 17 011
+#project: saao/saa17
+#atf: lang nb
+#key: file=SAA17/SAA17.saa
+#key: musno=K 00939b
+#key: cdli=ABL 0832
+#key: date=Sg
+#key: writer=Nabu^-bel-@umati from Ganata to Sargon
+#key: L=b
+
+
+@obverse
+1.	[ARAD-ka {1}d].AG#--EN--MU-MESZ
+#lem: ardu[slave//servant]N$aradka; Nabu-bel-šumati[1]PN$
+
+2.	a-na# [di-na]-an# LUGAL be-li2-ia
+#lem: ana[for]PRP; dinān[substitute]N; šarri[king]N; bēlīya[lord]N
+
+3.	lul#-[lik] um-ma-a
+#lem: lullik[go]V; umma[saying]PRP$ummā
+
+4.	a-na LUGAL be-li2-ia-a-ma
+#lem: ana[to]PRP; šarri[king]N; bēlīyāma[lord]N
+
+5.	{LU2}DUMU--KIN-ia a-na szul-mi
+#lem: māru[son]N$mār&šipru[sending]N$šiprīya; ana[to]PRP; šulmi[salutation]N
+
+6.	LUGAL {ANSZE}KUR.RA-MESZ
+#lem: šarri[king]N; sisû[horse]N$sīsê
+
+7.	u3# ERIM-MESZ al-tap-ra
+#lem: u[and]CNJ; ṣābu[people//troops]N$ṣābē; altapra[send]V
+
+8.	[asz2-szu2] {1#}ni#-ir-gi-i
+#lem: aššu[because (of)//concerning]SBJ'PRP$; Nargi[1]PN$Nirgi
+
+9.	[sza2 LUGAL] isz#-pu-ra
+#lem: ša[that//who]REL$; šarru[king]N; išpura[write]V
+
+10.	[a-du-u2 {1}ni-ir]-gi-i
+#lem: adû[now]AV; Nirgi[1]PN
+
+11.	[x x x x x x x]
+#lem: u; u; u; u; u; u; u
+
+12.	[x x x x x x x]
+#lem: u; u; u; u; u; u; u
+
+13.	[x x x x x x x]
+#lem: u; u; u; u; u; u; u
+
+14.	[x x x] LUGAL be-li2-[ia]
+#lem: u; u; u; šarri[king]N; bēlīya[lord]N
+
+15.	[x x x] mam-ma# [x]
+#lem: u; u; u; mamma[anybody]XP; u
+
+
+@bottom
+16.	[x x {1}{d}]U*.GUR*--[x x] DUMU#* {1*}a-na#*--[d.AG--tak-lak]
+#lem: u; u; u; u; mār[son]N; Ana-Nabu-taklak[1]PN$
+
+
+@reverse
+1.	[x x i]-le#-'u-u2-ma
+#lem: u; u; +leʾû[be able]V$ileʾʾûma
+
+2.	[i]-kam2#*-ma-du-szu2-nu-ti
+#lem: +kamādu[beat cloth(?)//weave]V'V$ikammadūšunūti
+
+3.	ki#-i LUGAL be-li2-a ha-du-u2
+#lem: kî[if]'MOD; šarru[king]N; bēlu[lord]N$bēlā; hadû[joyful//delighted]AJ$
+
+# note alternatively [acceptable]?
+
+4.	lisz-pu-ram-ma
+#lem: šapāru[send//write]V$lišpuramma
+
+5.	sza2 s,u-ba-a-ti
+#lem: ša[of]DET; ṣubātu[textile//cloth]N$ṣubāti
+
+6.	lik*-mu-du-u2-ma
+#lem: +kamādu[beat cloth(?)//weave]V'V$likmudūma
+
+7.	a-na pa-an LUGAL be-li2-ia
+#lem: ana[to+=to]PRP; pān[front]N; šarri[king]N; bēlīya[lord]N
+
+8.	lisz-szu-u2-ni
+#lem: našû[lift//bring]V$liššûni
+
+
+
+
+@translation labeled en project
+
+
+@(1) [Your servant Na]bû-bel-šumate: I would gladly die for the
+    king, my lord! Say to the king, my lord: I have sent my messenger to
+    (ask for) the well-being of the king, the horses and the soldiers.
+
+@(8) [Concerning N]irgî [about whom the king] wrote, [@i{I am now
+    sending} Nir]gî
+
+@(11) [...]
+
+@(12) [...]
+
+@(13) [...]
+
+@(14) [... of] the king, m[y] lord,
+
+@(15) [...] anybody [...]
+
+@(16) [...] Nergal-[...], son of An[a-Nabû-taklak]
+
+@(r 1) [... they will we]ave them competently.
+
+@(r 3) If the king, my lord, wishes, let him write to me, so they will
+    weave the gowns and bring them to the king, my lord.
+
+
+&P238437 = SAA 17 012
+#project: saao/saa17
+#atf: lang nb
+#key: file=SAA17/SAA17.saa
+#key: musno=K 05418b
+#key: cdli=ABL 0835
+#key: date=Sg
+#key: writer=Nabu^-bel-@umati from Ganata to Sargon
+#key: L=b
+
+
+@obverse
+1.	ARAD#-ka {1}{d}AG#--EN--MU-MESZ
+#lem: ardu[slave//servant]N$aradka; Nabu-bel-šumati[1]PN$
+
+2.	[a]-na# di-na-[an] LUGAL# be-li2-ia
+#lem: ana[for]PRP; dinān[substitute]N; šarri[king]N; bēlīya[lord]N
+
+3.	lul#-lik um-ma-a
+#lem: lullik[go]V; umma[saying]PRP$ummā
+
+4.	[a]-na LUGAL be-li2-ia-a-ma
+#lem: ana[to]PRP; šarri[king]N; bēlīyāma[lord]N
+
+5.	{LU2#}DUMU--KIN-ia a-na szul-mi
+#lem: māru[son]N$mār&šipru[sending]N$šiprīya; ana[to]PRP; šulmi[salutation]N
+
+6.	[LUGAL] {ANSZE}KUR#.[RA]-MESZ u3
+#lem: šarri[king]N; sisû[horse]N$sīsê; u[and]CNJ
+
+7.	[ERIM]-MESZ al#-tap#-ra
+#lem: ṣābu[people//troops]N$ṣābē; altapra[send]V
+
+8.	ul#-tu pa#-[an a]-na E2.GAL
+#lem: ištu[from+=ever since]PRP$ultu; pān[front]N; ana[to]PRP; ēkalli[palace]N
+
+# note SAA [after]
+
+9.	[a-na] pa#-an [LUGAL be]-li2-ia
+#lem: ana[to+=to]PRP; pān[front]N; šarri[king]N; bēlīya[lord]N
+
+10.	[al-li-ku] x#+[x x]-lu#?-mu
+#lem: alāku[go]V$alliku; u; u
+
+11.	[x x x]+x# [x x x]-a-ti
+#lem: u; u; u; u; u; u
+
+12. [x x x x x] 07 ERIM-MESZ
+#lem: u; u; u; u; u; n; ṣābu[people//troops]N$ṣābē
+
+13.	[x x x x x x] en-na
+#lem: u; u; u; u; u; u; enna[now]AV
+
+14.	[x x x x x x]-bu
+#lem: u; u; u; u; u; u
+
+$ (rest broken away)
+
+
+
+
+@translation labeled en project
+
+
+@(1) Your [ser]vant Nabû-bel-šumate: I would gladly die for the king,
+    my lord! Say to the king, my lord: I have s[en]t my messenger to
+    greet [the king], the hor[se]s and [the soldi]ers.
+
+@(8) After [@i{I went}] to the palace to the presence of the king, my lord,
+
+@(10) [...] ... [...]
+
+@(11) [...] ... [...]
+
+@(12) [...] 7 men
+
+@(13) [...] Now
+
+@(14) [...] ...
+
+$ (Rest destroyed)
+
+
+
+&P238439 = SAA 17 013
+#project: saao/saa17
+#atf: lang nb
+#key: file=SAA17/SAA17.saa
+#key: musno=K 05423c
+#key: cdli=ABL 0836
+#key: date=Sg
+#key: writer=Nabu^-bel-@umati from Ganata to Sargon
+#key: L=b
+
+1.	[ARAD-ka] {1}{d}AG--EN--MU-MESZ
+#lem: ardu[slave//servant]N$aradka; Nabu-bel-šumati[1]PN$
+
+2.	[a-na di]-na-an LUGAL be-li2-ia
+#lem: ana[for]PRP; dinān[substitute]N; šarri[king]N; bēlīya[lord]N
+
+3.	[lul]-lik# um-ma-a
+#lem: lullik[go]V; umma[saying]PRP$ummā
+
+4.	[a-na LUGAL be]-li2-ia-a-ma
+#lem: ana[to]PRP; šarri[king]N; bēlīyāma[lord]N
+
+5.	[{LU2}DUMU--KIN]-ia a-na szul-mi
+#lem: māru[son]N$mār&šipru[sending]N$šiprīya; ana[to]PRP; šulmi[salutation]N
+
+6.	[LUGAL {ANSZE}]KUR.RA-MESZ#
+#lem: šarri[king]N; sisû[horse]N$sīsê
+
+7.	[u3 ERIM-MESZ al-tap-ra]
+#lem: u[and]CNJ; ṣābu[people//troops]N$ṣābē; altapra[send]V
+
+$ (rest broken away)
+
+
+
+
+@translation labeled en project
+
+
+@(1) [Your servant] Nabû-bel-šumate: [I] would gladly die for the
+    king, my lord! Say [to the king], my [l]ord: I have sent my
+    [messenger] to greet [the king, the hor]ses and [the
+    soldiers].
+
+$ (Rest destroyed)
+
+
+
+&P238682 = SAA 17 014
+#project: saao/saa17
+#atf: lang nb
+#key: file=SAA17/SAA17.saa
+#key: musno=K 07526
+#key: cdli=ABL 0837
+#key: date=Sg
+#key: writer=Nabu^-bel-@umati from Ganata to Sargon
+#key: L=b
+
+1.	[ARAD-ka] {1}{d}AG--EN--MU-MESZ
+#lem: ardu[slave//servant]N$aradka; Nabu-bel-šumati[1]PN$
+
+2.	[a-na di-na-an] LUGAL# be-li2-ia#
+#lem: ana[for]PRP; dinān[substitute]N; šarri[king]N; bēlīya[lord]N
+
+3.	[lul-lik] um-ma-[a]
+#lem: lullik[go]V; umma[saying]PRP$ummā
+
+4.	[a-na LUGAL be]-li2-ia-a-ma
+#lem: ana[to]PRP; šarri[king]N; bēlīyāma[lord]N
+
+5.	[{LU2}DUMU--KIN]-ia# a-na szul-[mi]
+#lem: māru[son]N$mār&šipru[sending]N$šiprīya; ana[to]PRP; šulmi[salutation]N
+
+6.	[LUGAL {ANSZE}]KUR.RA-MESZ# [u3]
+#lem: šarri[king]N; sisû[horse]N$sīsê; u[and]CNJ
+
+7.	[ERIM-MESZ] al-tap-ra# [x x]
+#lem: ṣābu[people//troops]N$ṣābē; altapra[send]V; u; u
+
+8.	[x x x]-a sza2 a-na# [x x x]
+#lem: u; u; u; ša[who]REL; ana[to]PRP; u; u; u
+
+9.	[x x x x] E2--{1}{d}[x x x]
+#lem: u; u; u; u; u; u; u
+
+10.	[x x x x] qu#? [x x x x]
+#lem: u; u; u; u; u; u; u; u; u
+
+$ (rest broken away)
+
+
+
+
+@translation labeled en project
+
+
+@(1) [Your servant] Nabû-bel-šumate: [I would gladly die for the
+    k]ing, my lord! Say [to the king], my lord: I have sent my
+    [messenger] to greet [the king, the ho]rses [and the
+    soldiers].
+
+@(8) My [...], whom [...] to [...]
+
+@(9) [...] Bit-[PN]
+
+$ (Rest destroyed)
+
+
+
+&P239398 = SAA 17 015
+#project: saao/saa17
+#atf: lang nb
+#key: file=SAA17/SAA17.saa
+#key: musno=K 15708 + K 16592 + K 16607
+#key: cdli=CT 54 337
+#key: date=Sg
+#key: writer=Nabu^-bel-@umati from Ganata to the king
+#key: L=b
+
+$ (beginning broken away)
+
+1.	[ARAD-ka {1}{d}AG--EN--MU-MESZ]
+#lem: ardu[slave//servant]N$aradka; Nabu-bel-šumati[1]PN$
+
+2.	[a-na di-na-an LUGAL be-li2-ia]
+#lem: ana[for]PRP; dinān[substitute]N; šarri[king]N; bēlīya[lord]N
+
+3.	[lul-lik] um-ma#-[a]
+#lem: lullik[go]V; umma[saying]PRP$ummā
+
+4.	[a-na LUGAL be]-li2-ia-a-ma#
+#lem: ana[to]PRP; šarri[king]N; bēlīyāma[lord]N
+
+5.	[{LU2}DUMU--KIN]-ia# a-na szul-mi# [LUGAL]
+#lem: māru[son]N$mār&šipru[sending]N$šiprīya; ana[to]PRP; šulmi[salutation]N; šarri[king]N
+
+6.	[{ANSZE}KUR.RA]-MESZ u3 ERIM-MESZ# [al-tap-ra]
+#lem: sisû[horse]N$sīsê; u[and]CNJ; ṣābu[people//troops]N$ṣābē; altapra[send]V
+
+7.	[a-na {URU}BAD3?]--LUGAL#?-ki al-[x x x x x]
+#lem: ana[to]PRP; Dur-Šarrukku[1]GN$Dur-Šarrukki; u; u; u; u; u
+
+8.	[x x x x]+x# x# x# x# [x x x x x]
+#lem: u; u; u; u; u; u; u; u; u; u; u; u
+
+9.	[x x x ia]-'a-a-nu# {1}{d}a-num#--[x x x x x]
+#lem: u; u; u; yānu[(there) is not]V$yaʾānu; u; u; u; u; u
+
+10.	[x x {LU2}]ru-u2-a a-lik--pa-ni [x x x x x]
+#lem: u; u; Ruʾua[1]EN$; āliku[going]AJ$ālik&pānu[front]N$pāni; u; u; u; u; u
+
+# note compound [leader]
+
+11.	[x x x] il#?-lik-u2-ni# [x x x x x]
+#lem: u; u; u; alāku[go]V$illikūni; u; u; u; u; u
+
+# note or [come]
+
+12.	[x x x]-na ma-al-[x x x x x]
+#lem: u; u; u; u; u; u; u; u
+
+13.	[x x x]-ga#-a-ti x#+[x x x x x]
+#lem: u; u; u; u; u; u; u; u
+
+14.	[x x x] id#-di-i x#+[x x x x x]
+#lem: u; u; u; u; u; u; u; u; u
+
+15.	[x x x] pa#-an LUGAL ki-[i x x x x x]
+#lem: u; u; u; pānu[front//in the presence of]N'PRP$pān; šarri[king]N; kī[like//when]PRP'SBJ$kî; u; u; u; u; u
+
+# note the meaning of kî is uncertain
+
+16.	[x x x]-ab# um-ma mi-[nam-ma x x x]
+#lem: u; u; u; umma[saying]PRP; minamma[why?]QP; u; u; u
+
+17.	[x x x]-an#-na-a-szi [x x x x x]
+#lem: u; u; u; u; u; u; u; u
+
+18.	[x x x x] asz2-szu2 ra-[x x x x x]
+#lem: u; u; u; u; aššu[because (of)//concerning]SBJ'PRP$; u; u; u; u; u
+
+# note could also be -aššu?
+
+
+@bottom
+19.	[x x x x] x# x# [x x x x x x]
+#lem: u; u; u; u; u; u; u; u; u; u; u; u
+
+$ (SPACER)
+
+
+@translation labeled en project
+
+$ (SPACER)
+
+@(1) [Your servant Nabû-bel-šumate: I would gladly die for the
+    king, my lord]! Say [to the king], my [lo]rd: [I have sent m]y
+    [messenger] to gree[t the king, the hors]es and
+    the soldiers.
+
+@(5) @i{I was c[oming} to @i{Dur-Šar]rukku}
+
+@(6) [......]
+
+@(7) [... the]re was not; Anu-[...],
+
+@(8) [a ...] @i{my companion}, the leader [...]
+
+@(9) [...] went [...]
+
+@(10) [...] ... [...]
+
+@(11) [...] ... [...]
+
+@(12) [...] ... [...]
+
+@(13) [... in the pr]esence of the king [...]
+
+@(14) [...], saying: "W[hy ...]
+
+@(15) [...] us [...]
+
+$ (Rest destroyed)
+
+
+&P239161 = SAA 17 016
+#project: saao/saa17
+#atf: lang nb
+#key: file=SAA17/SAA17.saa
+#key: musno=K 12954
+#key: cdli=ABL 0838
+#key: date=Sg
+#key: writer=Nabu^-bel-@umati (and a co-author) from Ganata to Sargon
+#key: L=b
+
+
+@obverse
+1.	[t,up]-pi {1}{d}AG--EN--MU-MESZ [u3 {1}x x x x x]
+#lem: ṭuppi[tablet]N; Nabu-bel-šumati[1]PN$; u[and]CNJ; u; u; u; u; u
+
+2.	[a]-na# LUGAL be-li2-szu2-nu lu-u2 szul#-[mu a-na LUGAL be-li2-ni]
+#lem: ana[to]PRP; šarri[king]N; bēlišunu[lord]N; lū[may]MOD; šulmu[health]N; ana[to]PRP; šarri[king]N; bēlīni[lord]N
+
+3.	MUN# sza2 AD a-na DUMU la i-[pu-szu x x x x x]
+#lem: !+ṭābtu[goodness//favour]N$ṭābta; ša[that//which]REL$; abu[father]N$; ana[to]PRP; māru[son]N$mārišu; lā[not]MOD; epēšu[do]V$īpušu; u; u; u; u; u
+
+4.	LUGAL# be-li2-a-ni i-tep-sza2-an-na#-[szi ina pa-ni-ka]
+#lem: šarru[king]N; bēlu[lord]N$bēlāni; epēšu[do]V$ītepšannāši; ina[in+=to]PRP; pānīka[front]N
+
+5.	tu-ul-te-rib-an-na-szi# [x x MUN a-ga-a]
+#lem: erēbu[enter//bring in]V$tultēribannāši; u; u; ṭābtu[goodness//favour]N$ṭābta; agâ[this]DP
+
+# note SAA [made enter]
+
+6.	sza2 te-pu-sza2-an-na-szi {KUR}[x x x x x x]
+#lem: ša[of]DET; epēšu[do]V$tēpušannāši; u; u; u; u; u; u
+
+7.	ki-i isz-mu-u2 LUGAL be#-[li2-a-ni ik-ta-rab]
+#lem: kī[like//when]PRP'SBJ$kî; šemû[hear]V$išmû; šarru[king]N$; bēlu[lord]N$bēlāni; karābu[pray//bless]V$iktarab
+
+8.	en-na a-du-u2 ERIM-MESZ [x x x x x x]
+#lem: enna[now]AV; adû[now]AV; ṣābu[people//troops]N$ṣābē; u; u; u; u; u; u
+
+9.	sza2 it-ti {1}a-na--{d}AG--tak#-[lak x x x x x]
+#lem: ša[who]REL; itti[with]PRP; Ana-Nabu-taklak[1]PN$; u; u; u; u; u
+
+10.	t,e3-en-szu2-nu i-di {KUR}[x x x x x x x x]
+#lem: ṭēnšunu[report]N; wadû[know]V$īdī; u; u; u; u; u; u; u; u
+
+11.	szu#-[x] x#+[x] x#+[x x]+x# [x] a-na [x x x x x]
+#lem: u; u; u; u; u; ana[to]PRP; u; u; u; u; u
+
+12.	x#+[x x x x x x x x x x x x]
+#lem: u; u; u; u; u; u; u; u; u; u; u; u
+
+$ (rest broken away)
+
+
+@reverse
+$ (beginning broken away)
+1'.	szi-[x x x x x x x x x x x x]
+#lem: u; u; u; u; u; u; u; u; u; u; u; u
+
+$ (rest broken away)
+
+
+
+
+@translation labeled en project
+
+
+@(1) [Tab]let of Nabû-bel-šumate [and NN] to the king, their lord. Good
+    he[alth to the king, our lord]!
+
+@(3) The king, our lord, has done us a favour good deeds that not
+    (even) a father [has done] to his son [...]: you have made us
+    ent[er your entourage].
+
+@(6) When the land [...] heard about [this favour] that you
+    did to us, [it blessed] the king, [our lor]d.
+
+@(8) Now then, the men [...] who are with Ana-Nabû-ta[klak ...].
+
+@(10) He knows their news. The land [...]
+
+$ (Rest destroyed)
+$ (SPACER)
+$ (SPACER)
+
+
+
+&P237936 = SAA 17 017
+#project: saao/saa17
+#atf: lang nb
+#key: file=SAA17/SAA17.saa
+#key: musno=K 00912
+#key: cdli=ABL 0721
+#key: date=Sg
+#key: writer=Marduk-@um-iddina from Ganata to Sargon
+#key: L=b
+
+
+@obverse
+1.	[ARAD]-ka {1}{d}AMAR.UTU--MU--SUM-na
+#lem: ardu[slave//servant]N$aradka; Marduk-šumu-iddina[1]PN$
+
+2.	[a]-na di-na-an LUGAL be-li2-ia
+#lem: ana[for]PRP; dinān[substitute]N; šarri[king]N; bēlīya[lord]N
+
+3.	lul#-lik um-ma-a
+#lem: lullik[go]V; umma[saying]PRP$ummā
+
+4.	a-na LUGAL be-li2-ia-a-ma
+#lem: ana[to]PRP; šarri[king]N; bēlīyāma[lord]N
+
+5.	{LU2}DUMU--KIN-ia a-na szul-mi
+#lem: māru[son]N$mār&šipru[sending]N$šiprīya; ana[to]PRP; šulmi[salutation]N
+
+6.	LUGAL {ANSZE}KUR.RA-MESZ
+#lem: šarri[king]N; sisû[horse]N$sīsê
+
+7.	u3 ERIM-MESZ al-tap-ra
+#lem: u[and]CNJ; ; altapra[send]V
+
+8.	asz2-szu2 {1}ha-tal-la-a.a
+#lem: aššu[because (of)//concerning]SBJ'PRP$; Hatallaya[1]EN$
+
+9.	sza2 LUGAL isz-pu-ra
+#lem: ša[who]REL; šarru[king]N; išpura[write]V
+
+10.	um-ma szu-pur-ma
+#lem: umma[saying]PRP; šapāru[send]V$šupurma
+
+11. ERIM-MESZ 10 ina SZA3-bi-szu2-nu
+#lem: ṣābu[people//troops]N$ṣābē; n; ina[in+=from out of]PRP; libbišunu[interior]N
+
+12.	a-na pa-ni-ia
+#lem: ana[to+=to]PRP; pānīya[front]N
+
+13.	lil-lik-u2-ni
+#lem: lillikūni[come]V
+
+
+@reverse
+1.	{LU2}sza2--qur-ru-bu-ti
+#lem: ša-qurbūti[close follower//(royal) confidant]N$ša-qurrubūti
+
+2.	sza2 LUGAL a-na pa-ni-ia
+#lem: ša[of]DET; šarri[king]N; ana[to+=to]PRP; pānīya[front]N
+
+3.	it-tal-ka ki-i
+#lem: ittalka[come]V; kī[like//when]PRP'SBJ$kî
+
+4.	asz2-pu-ru {LU2}ha-tal-la-a.a
+#lem: ašpuru[send]V; Hatallaya[1]EN
+
+5.	a-na pa-ni-ia it-tal-ku-ni
+#lem: ana[to+=to]PRP; pānīya[front]N; ittalkūni[come]V
+
+6. 10 ERIM-MESZ
+#lem: n; ṣābu[people//troops]N$ṣābē
+
+7.	a-[na SZU.2] {LU2}sza2--qur-ru-bu-ti
+#lem: ana[to]PRP; qātē[hand]N; ša-qurrubūti[(royal) confidant]N
+
+8.	sza2 [x x x]  LUGAL be-li2-ia <at-ta-din>
+#lem: ša[of]DET; u; u; u; šarri[king]N; bēlīya[lord]N; nadānu[give]V$attadin
+
+$ (rest uninscribed)
+
+
+
+
+@translation labeled en project
+
+
+@(1) Your [servant] Marduk-šuma-iddina: I would gladly die for the king,
+    my lord! Say to the king, my lord: I have sent my messenger to greet
+    the king, the horses and the soldiers.
+
+@(8) Concerning the Hatalleans of whom the king wrote: "Send (word)
+    that 10 men from their midst should come to me" —
+
+@(r 1) the king's bodyguard having come to me, I sent (word) and the
+    Hatallaeans came to me. I have given 10 men to the hands of the
+    bodyguard of the king, my lord.
+
+$ (SPACER)
+
+
+&P239283 = SAA 17 018
+#project: saao/saa17
+#atf: lang nb
+#key: file=SAA17/SAA17.saa
+#key: musno=K 14603
+#key: cdli=CT 54 268
+#key: date=Sg
+#key: writer=Marduk-@um-iddina from Babylon to Sargon
+#key: L=b
+
+
+@obverse
+1.	[ARAD-ka {1}]{d}AMAR.UTU--MU--SUM-na
+#lem: ardu[slave//servant]N$aradka; Marduk-šumu-iddina[1]PN$
+
+2.	[a-na di-na]-an LUGAL
+#lem: ana[for]PRP; dinān[substitute]N; šarri[king]N
+
+3.	[be-li2-ia2] lul#-lik
+#lem: bēlīya[lord]N; lullik[go]V
+
+4.	[um-ma-a a]-na LUGAL
+#lem: umma[saying]PRP$ummā; ana[to]PRP; šarri[king]N
+
+5.	[be-li2-ia]-a-ma
+#lem: bēlīyāma[lord]N
+
+6.	[{LU2}DUMU--KIN]-ia
+#lem: māru[son]N$mār&šipru[sending]N$šiprīya
+
+$ (rest broken away)
+
+
+
+
+@translation labeled en project
+
+
+@(1) [Your servant] Marduk-šuma-iddina. [I would gladly die] for the
+    king, [my lord! Say t]o the king, [my] lord: [I have sent] my
+    [messenger]
+
+$ (Rest destroyed)
+
+
+
+&P239179 = SAA 17 019
+#project: saao/saa17
+#atf: lang nb
+#key: file=SAA17/SAA17.saa
+#key: musno=K 13090
+#key: cdli=ABL 0803
+#key: date=Sg
+#key: writer=Marduk-@um-iddina from Ganata to Sargon
+#key: L=b
+
+1.	[ARAD-ka {1}{d}]AMAR.UTU--MU--MU {LU2}EN.[NAM]
+#lem: ardu[slave//servant]N$aradka; Marduk-šumu-iddina[1]PN$; pīhātu[responsibility//governor]N$pīhatu
+
+# note NB pīhatu unless bēl pīhati?
+
+2.	[a-na] di#-na-ni LUGAL be-li2-ia
+#lem: ana[for]PRP; dinānu[substitution//substitute]N$dināni; šarri[king]N; bēlīya[lord]N
+
+3.	[lul-lik {d}AG u3 {d}]AMAR.UTU a-na <LUGAL> be-li2-ia2 lik#-[ru-bu]
+#lem: lullik[go]V; Nabu[1]DN; u[and]CNJ; Marduk[1]DN; ana[to]PRP; šarri[king]N; bēlīya[lord]N; karābu[pray//bless]V$likrubū
+
+4.	[um-ma-a a-na LUGAL] be#-li2-ia-a-ma
+#lem: umma[saying]PRP$ummā; ana[to]PRP; šarri[king]N; bēlīyāma[lord]N
+
+5.	[sza2 LUGAL isz-pu-ra] um#*-ma ra-man-ga u2-[s,ur]
+#lem: ša[that//what]REL$; šarru[king]N; išpura[write]V; umma[saying]PRP; +ramānu[self]N$ramanga; uṣur[keep guard]V
+
+6.	[x x x x x] hi#*-t,u-u2-a dan*-nu#* [o]
+#lem: u; u; u; u; u; hīṭu[error//crime]N$hīṭūwa; dannu[strong]AJ; u
+# note SAA [my grave misdemeanour]
+
+7.	[x x x x x x x]-gu* LUGAL [x x x x]
+#lem: u; u; u; u; u; u; u; šarru[king]N; u; u; u; u
+
+$ (rest broken away)
+
+
+
+
+@translation labeled en project
+
+
+@(1) [Your servant] Marduk-šuma-iddina, the governor. [I] would
+    gladly die for the king, my lord! May [Nabû and] Marduk bless (the
+    king), my lord! [Say to the king], my lord:
+
+@(5) [As to what the king wrote: "Gu]ard yourself!" —
+
+@(6) [...] my grave misdemeanour [...]
+
+@(7) [...] the king [...]
+
+$ (Rest destroyed)
+
+
+

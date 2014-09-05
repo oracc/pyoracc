@@ -286,6 +286,17 @@ class testParser(TestCase):
         assert_equal(len(art.children[0].children[0].words), 6)
         assert_equal(len(art.children[0].children[0].lemmas), 6)
 
+    def test_empty_lemma(self):
+        art = self.try_parse(
+            "@tablet\n" +
+            "@obverse\n" +
+            "1.    [MU] 1.03-KAM {iti}AB GE₆ U₄ 2-KAM\n"
+            "#lem: šatti[year]N; ; Ṭebetu[1]MN; " +
+            "mūša[at night]AV; ūm[day]N; n\n"
+        )
+        assert_equal(len(art.children[0].children[0].words), 6)
+        assert_equal(len(art.children[0].children[0].lemmas), 6)
+
     def test_ruling(self):
         art = self.try_parse(
             "@tablet\n" +
