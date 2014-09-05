@@ -294,6 +294,15 @@ class testParser(TestCase):
         )
         assert_equal(len(art.children[0].children[0].words), 6)
 
+    @skip("No idea what this means")
+    def test_line_equalsbrace(self):
+        art = self.try_parse(
+            "@tablet\n" +
+            "@reverse\n" +
+            "2'.	ITI# an-ni-u2#\n" +
+            "={	ur-hu\n"
+        )
+
     def test_line_lemmas(self):
         art = self.try_parse(
             "@tablet\n" +
