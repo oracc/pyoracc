@@ -60,10 +60,15 @@ class AtfParser(object):
                             | BIB ID newline
                             | lemmatizer_statement"""
 
+    def p_key_statement(self, p):
+        """key_statement : key newline
+                         | key EQUALS newline"""
+
     def p_key(self, p):
-        """key_statement : KEY ID EQUALS ID newline
-                         | KEY ID EQUALS ID EQUALS ID newline
-                         | KEY ID EQUALS newline"""
+        "key : KEY ID"
+
+    def p_key_addendum(self, p):
+        "key : key EQUALS ID"
 
     def p_lemmatizer(self, p):
         "lemmatizer : LEMMATIZER"
