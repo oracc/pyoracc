@@ -56,9 +56,13 @@ class AtfParser(object):
                             | ATF USE LEGACY newline
                             | ATF USE MYLINES newline
                             | ATF USE LEXICAL newline
-                            | KEY ID EQUALS ID newline
+                            | key_statement
                             | BIB ID newline
                             | lemmatizer_statement"""
+
+    def p_key(self, p):
+        """key_statement : KEY ID EQUALS ID newline
+                         | KEY ID EQUALS ID EQUALS ID newline"""
 
     def p_lemmatizer(self, p):
         "lemmatizer : LEMMATIZER"

@@ -29,6 +29,10 @@ def test_SAA_17_03():
     afile= AtfFile(sample_file('SAA17_03'))
     assert_equal(afile.text.texts[0].code, 'P237960')
 
+def test_SAA_18_01():
+    afile= AtfFile(sample_file('SAA18_01'))
+    assert_equal(afile.text.texts[0].code, 'P334274')
+
 def test_5_fm_erimh():
     afile= AtfFile(sample_file('5-fm-erimh-p'))
     assert_equal(afile.text.texts[0].code,'P346083')
