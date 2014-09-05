@@ -17,34 +17,14 @@ def test_composite():
     assert_equal(afile.text.texts[1].code, "Q002770")
     assert_equal(afile.text.texts[1].description, "SB Anzu 2")
 
-def test_SAA_19():
-    afile= AtfFile(sample_file('SAA19_13'))
-    assert_equal(afile.text.texts[0].code, 'P393708')
-
-def test_SAA_19_11():
-    afile= AtfFile(sample_file('SAA19_11'))
-    assert_equal(afile.text.texts[0].code, 'P224439')
-
-def test_SAA_17_03():
-    afile= AtfFile(sample_file('SAA17_03'))
-    assert_equal(afile.text.texts[0].code, 'P237960')
-
-def test_SAA_18_01():
-    afile= AtfFile(sample_file('SAA18_01'))
-    assert_equal(afile.text.texts[0].code, 'P334274')
-
-def test_5_fm_erimh():
-    afile= AtfFile(sample_file('5-fm-erimh-p'))
-    assert_equal(afile.text.texts[0].code,'P346083')
-
-def test_5_fm_emesal():
-    afile= AtfFile(sample_file('5-fm-emesal-p'))
-    assert_equal(afile.text.texts[0].code,'P228608')
-
-def consider_file(name,code,description):
-    afile = AtfFile(sample_file(name))
-    assert_equal(afile.text.code, code)
-    assert_equal(afile.text.description,description)
+composites = [
+    ['SAA19_13','P393708'],
+    ['SAA19_11','P224439'],
+    ['SAA17_03','P237960'],
+    ['SAA18_01','P334274'],
+    ['5-fm-erimh-p','P346083'],
+    ['5-fm-emesal-p','P228608'],
+]
 
 texts=[
     ['bb','X002002',"BagM Beih. 02, 005"],
@@ -76,6 +56,19 @@ texts=[
     ['3-ob-buex-q','Q000260','OB Sippar Ura I-II']
     ]
 
+def consider_composite(name, code):
+    afile= AtfFile(sample_file(name))
+    assert_equal(afile.text.texts[0].code, code)
+
+def consider_file(name,code,description):
+    afile = AtfFile(sample_file(name))
+    assert_equal(afile.text.code, code)
+    assert_equal(afile.text.description,description)
+
 def test_texts():
     for text in texts:
         yield [consider_file]+text
+
+def test_composites():
+    for composite in composites:
+        yield [consider_composite]+composite
