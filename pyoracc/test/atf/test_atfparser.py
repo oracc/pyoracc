@@ -130,6 +130,15 @@ class testParser(TestCase):
         assert_equal(text.project, "cams/gkab")
         assert_equal(text.language, "akk-x-stdbab")
 
+
+    def test_score(self):
+        obj = self.try_parse(
+            "&Q004184 = MB Boghazkoy Anti-witchcraft Text 1 [CMAwRo 1.1]\n" +
+            "@score matrix parsed word\n" +
+            "#project: cmawro\n"
+        )
+        assert_is_instance(obj, Text)
+
     def test_simple_object(self):
         obj = self.try_parse(
             "@tablet\n"

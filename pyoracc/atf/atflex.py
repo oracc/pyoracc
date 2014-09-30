@@ -44,7 +44,8 @@ class AtfLexer(object):
         'M',
         'COMPOSITE',
         'LABEL',
-        'INCLUDE'
+        'INCLUDE',
+        'SCORE'
     ]
 
     long_argument_structures = [

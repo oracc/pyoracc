@@ -14,6 +14,7 @@ from ..model.composite import Composite
 from ..model.multilingual import Multilingual
 from ..model.milestone import Milestone
 from ..model.comment import Comment
+from ..model.score import Score
 
 class AtfParser(object):
     tokens = AtfLexer.tokens
@@ -717,6 +718,19 @@ class AtfParser(object):
         "multilingual : multilingual comment"
         p[0]=p[1]
         p[0].notes.append(p[2])
+
+    def p_score(self, p):
+        "score : SCORE ID ID NEWLINE"
+        p[0]=Score(p[2],p[3])
+
+    def p_score_word(self, p):
+        "score : SCORE ID ID ID NEWLINE"
+        p[0]=Score(p[2],p[3],True)
+
+    def p_text_score(self, p):
+        "text : text score"
+        p[0]=p[1]
+        p[0].score=p[2]
 
     # There is a potential shift-reduce conflict in the following sample:
     """

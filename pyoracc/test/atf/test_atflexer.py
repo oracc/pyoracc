@@ -131,6 +131,12 @@ class testLexer(TestCase):
             "ID", "ID", "ID", "NEWLINE"]
         )
 
+    def test_score(self):
+        self.compare_tokens(
+            "@score matrix parsed word\n",
+            ["SCORE","ID","ID","ID","NEWLINE"]
+        )
+
     def test_division_tablet(self):
         self.compare_tokens(
             "@tablet",

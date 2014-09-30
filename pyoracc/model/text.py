@@ -8,6 +8,7 @@ class Text(object):
         self.children = []
         self.composite = False
         self.links = []
+        self.score = None
 
     def __str__(self):
         return Text.template.render(**vars(self))
