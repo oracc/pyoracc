@@ -560,6 +560,28 @@ class testLexer(TestCase):
             ['ID', 'SEMICOLON'] * 5 + ['ID', "NEWLINE"]
         )
 
+    def test_dot_in_linelabel(self):
+        self.compare_tokens(
+            "1.1.    [MU]\n",
+            ['LINELABEL','ID','NEWLINE']
+        )
+
+    def test_score_lines(self):
+        self.compare_tokens(
+            "1.4′. %n ḫašḫūr [api] lal[laga imḫur-līm?]\n" +
+            "#lem: ḫašḫūr[apple (tree)]N; api[reed-bed]N\n\n" +
+            "A₁_obv_i_4′: [x x x x x] {ú}la-al-[la-ga? {ú}im-ḫu-ur-lim?]\n" +
+            "#lem: u; u; u; u; u; +lalangu[(a leguminous vegetable)]N$lallaga\n\n" +
+            "e_obv_15′–16′: {giš}ḪAŠḪUR [GIŠ.GI] — // [{ú}IGI-lim]\n" +
+            "#lem: +hašhūru[apple (tree)]N$hašhūr; api[reed-bed]N; imhur-līm['heals-a-thousand'-plant]N\n\n",
+            ['LINELABEL']+['ID']*5+['NEWLINE'] +
+            ['LEM','ID','SEMICOLON','ID', 'NEWLINE'] +
+            ['SCORELABEL']+['ID']*7+['NEWLINE'] +
+            ['LEM']+['ID','SEMICOLON']*5 + ['ID', 'NEWLINE'] +
+            ['SCORELABEL']+['ID']*5+['NEWLINE'] +
+            ['LEM']+['ID','SEMICOLON']*2 + ['ID', 'NEWLINE']
+           )
+
     def test_composite(self):
         self.compare_tokens(
             "&Q002769 = SB Anzu 1\n" +

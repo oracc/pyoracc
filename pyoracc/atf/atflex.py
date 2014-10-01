@@ -73,6 +73,7 @@ class AtfLexer(object):
     base_tokens = [
         'AMPERSAND',
         'LINELABEL',
+        'SCORELABEL',
         'ID',
         'DOLLAR',
         'PARENTHETICALID',
@@ -243,7 +244,13 @@ class AtfLexer(object):
         return t
 
     def t_LINELABEL(self, t):
-        r'^[^.\ \t]*\.'
+        r'^[^\ \t\n]*\.'
+        t.value = t.value[:-1]
+        t.lexer.push_state('text')
+        return t
+
+    def t_SCORELABEL(self, t):
+        r'^[^.:\ \t]*\:'
         t.value = t.value[:-1]
         t.lexer.push_state('text')
         return t
