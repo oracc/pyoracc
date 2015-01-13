@@ -1,0 +1,37 @@
+&Q003414 = Tiglath-pileser III 1
+#project: rinap/rinap1
+
+#atf: use unicode
+#atf: lang akk
+#atf: use math
+#atf: use legacy
+$ (Beginning of the Annals missing)
+1.	NUNUZ bal-til{KI} šu-⸢qu-ru⸣ na-ram {d}[(...) {d}še]-ru-a AB? BA? x x
+#lem: perʾu[bud//offspring]N$perʾi; Baltil[Aššur]QN; šūquru[very valuable]AJ; narām[loved one]N; u; Šerua[]DN$; u; u; u; u
+
+2.	pi-tiq {d}nin-⸢men-na⸣ šá a-na be-lut ⸢KUR.KUR⸣ [(...)] AN / TI? AL / ŠID? x
+#lem: pitqu[brickwork//creation]N$pitiq; Ninmena[]DN$; ša[who]REL; ana[for]PRP; bēlūt[lordship]N; mātāti[land]N; u; u; u; u; u; u
+
+3.	ir-bu-ú a-na LUGAL-ú-ti GÌR.NÍTA x [(...)] x x x ma?
+#lem: rabû[be(come) big//grow up]V$irbû; ana[to]PRP; šarrūti[kingship]N; šakkanakku[(military) governor]N$; u; u; u; u; u; u
+
+4.	⸢mu-ṣib ŠÀ.IGI.GURU₆.MEŠ a-na⸣ x x x x x [x] x [(...)] šu-ri-⸢in?-ni?⸣
+#lem: muṣṣibu[one who increases]N$muṣṣib; šagigurrû[free-will offering]N$šagigurê; ana[for]PRP; u; u; u; u; u; u; u; u; šurīnu[(divine) emblem]N$šurinnī
+
+5.	zi-ka-ru dan-nu nu-ur kiš-šat UN.MEŠ-šu ⸢e-tel?⸣ [(...) kal?] mal-⸢ki⸣ x x ti 
+#lem: zikaru[male]AJ; dannu[strong]AJ; nūr[light]N; kiššat[totality]N; nišīšu[people]N; etellu[pre-eminent]N$etel; u; kalû[totaloity//all]N$kal; malkī[ruler]N; u; u; u
+
+6.	da-i-pu ga-re-e-šu GURUŠ qar-du sa-⸢pi-nu⸣ [(...)] na-ki-ri šá ḫur-sa-⸢a?-ni?⸣
+#lem: dāʾipu[one who pushes away]N$; gērû[opponent//enemy]N$gārêšu; eṭlu[manly//young man]AJ'N$; qardu[valiant]AJ; sāpinu[flattener]N; u; nakru[enemy]N$nakiri; ša[who]REL; huršānu[mountain(s)]N$hursānī
+
+7.	et-gu-ru-ti ki-ma qé-e ú-sal-li-tu-ma ⸢ú⸣-[...] ú x x x x
+#lem: etguru[crossed over//interlocking]AJ$etgurūti; kīma[like]PRP; qû[flax//thread]N$qê; salātu[slit//slice through]V$usallituma; u; u; u; u; u; u +.
+
+$ (Continued in text no. 2)
+
+@translation labeled en project
+$ Beginning of the Annals missing
+
+@(1 - 7) Precious scion of Baltil (Aššur), beloved of the god(dess) [(DN and) Šē]rūa, ..., creation of the goddess Ninmena, who [(...)] ... for the dominion of the lands, (...) who grew up to be king, ... [(...)] governor, [(...)] ..., the one who increases voluntary offerings for ..., ... [(...)] of @i{emblems}, (5) powerful male, light of all of his people, @i{lord of} [(...) @i{all}] rulers ..., the one who overwhelms his foes, valiant man, the one who destroys [(...)] enemies, who cuts (straight) through interlocking mountains like a (taut) string and ... [...] ...
+
+$ Continued in text no. 2

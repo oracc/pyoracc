@@ -1,0 +1,528 @@
+&P335225 = SAA 06 109
+#project: saao/saa06
+#atf: lang na
+#key: file=SAA06/LEGAL1A-NA.saa
+#key: musno=K 01856
+#key: cdli=ADD 0278
+#key: date=683
+
+
+@obverse
+1.	[{NA4}KISZIB {1}]ARAD#--{d}15
+#lem: kunukku[seal]N; Urdu-Issar[1]PN$
+
+2.	[EN UN-MESZ] SUM-ni
+#lem: bēl[owner]N; nišē[people]N; tadāni[giving]'N
+
+$ ruling
+$ (cylinder seal impression)
+$ ruling
+3.	{1}mar--ia-te-e' {1}se-e'--im-me#
+#lem: Mar-yateʾ[1]PN$; Seʾimme[1]PN$
+
+4. [{1}]mu-ra-a PAB 03 ZI-MESZ ARAD-MESZ
+#lem: Mura[1]PN$; gimru[total]N; n; nupšāti[person]N; urdāni[servant]N
+
+5.	[sza {1}]ARAD#--{d*}15 u2-pisz-ma#
+#lem: ša[of]DET; Urdu-Issar[1]PN$; uppišma[contract]V
+
+6.	[{1}se-e'*--ma]-'a*#-di {LU2~v}GAL--URU#-MESZ
+#lem: Seʾmadi[1]PN$; rabû[big one]N$rab&ālu[city]N$ālāni
+
+7. [sza DUMU--MAN ina] SZA3#-bi 50 GIN2-MESZ KUG#.UD#
+#lem: ša[of]DET; māru[son]N$mār&šarru[king]N$šarri; ina[in+=for]PRP; libbi[interior]N; n; šiqlī[a unit of weight]N; ṣarpi[silver]N
+
+8.	[TA@v {1}ARAD--{d}]15#* il-qi
+#lem: issu[from]PRP; Urdu-Issar[1]PN$; ilqi[purchase]V
+
+9.	[kas-pu gam-mur ta]-din#*-ni*
+#lem: kaspu[money]N; gammur[completed]AJ; tadnu[given//paid]AJ$tadinni
+
+$ (rest broken away)
+
+
+@reverse
+$ (beginning broken away)
+1'.	[x x x x x x x x x] x#
+#lem: u; u; u; u; u; u; u; u; u; u
+
+2'.	[x x x x x x x x x]
+#lem: u; u; u; u; u; u; u; u; u
+
+3'.	[IGI {1}x x x x x]-x#-MESZ
+#lem: šību[witness]N; u; u; u; u; u
+
+4'.	[IGI {1}x x x x x] {LU2~v*}A.BA
+#lem: šību[witness]N; u; u; u; u; u; ṭupšarru[scribe]N
+
+5'.	[IGI {1}x x x x x] {LU2~v*}ENGAR
+#lem: šību[witness]N; u; u; u; u; u; ikkāru[farmer]N
+
+6'.	[x x x x x] {URU}SZE--ra-bu
+#lem: u; u; u; u; u; Kaprabi[1]GN$Kaprabu
+
+7'.	[IGI {1}PAB?--ia]-ba-ba {LU2~v*}ENGAR
+#lem: šību[witness]N; Ahi-yababa[1]PN$; ikkāru[farmer]N
+
+8'. [{ITI}x UD] 07?#-KAM lim-me
+#lem: u; ūm[day]N; n; limme[eponym (of year)]N
+
+9'.	[{1}man-nu--ki--10 GAR.KUR {URU}]s,u-ba-te
+#lem: Mannu-ki-Adad[1]PN$; šaknu[appointee]N$šakin&mātu[land]N$māti; Ṣupat[1]PN$Ṣubate
+
+10'.	[IGI {1}{d}x]--PAB#--ASZ {LU2~v}A.BA
+#lem: šību[witness]N; u; ṭupšarru[scribe]N
+
+
+
+
+@translation labeled en project
+
+
+@(1) [Seal of U]rda-Issar, [owner of the people] being sold.
+
+$ ruling
+
+
+$ (cylinder seal impression)
+
+
+$ ruling
+
+
+@(3) Mar-yate', Se'-imme and Murâ, a total of 3 persons, servants [of]
+    Urda-Issar —
+
+@(6) [Se'-m]adi, village manager [of the crown prince], has contracted
+    and bought them [from Urda-Is]sar for 50 shekels of silver.
+
+@(9) [The money] is pai[d completely].
+
+$ (Break)
+
+
+$ (SPACER)
+
+@(r 3) [Witness NN]....
+
+@(r 4) [Witness NN], scribe.
+
+@(r 5) [Witness NN], farmer.
+
+@(r 6) [...... from] Kaprabu.
+
+@(r 7) [Witness @i{Ahi}-ya]baba, farmer.
+
+@(r 8) [Month...], 7th day, eponym year of [Mannu-ki-Adad, governor of] Ṣupat.
+
+@(r 10) [Witness ...]-ahu-iddina, scribe.
+
+
+&P335178 = SAA 06 110
+#project: saao/saa06
+#atf: lang na
+#key: file=SAA06/LEGAL1A-NA.saa
+#key: musno=81-2-4,150
+#key: cdli=ADD 0231
+#key: date=681-xii-16
+
+
+@obverse
+1.	{NA4}KISZIB {1}ARAD--{d}15
+#lem: kunukku[seal]N; Urdu-Issar[1]PN$
+
+2.	EN UN-MESZ ta-da-ni
+#lem: bēl[owner]N; nišē[people]N; tadāni[giving]'N
+
+$ ruling!
+$ (two circular stamp seal impressions)
+$ ruling!
+3.	{1}ha-am-nu-nu MI2-szu2 {MI2}AMA-szu2
+#lem: Hamnunu[1]PN$; issušu[woman]N; ummīšu[mother]N
+
+4.	{1}ad-da-a {1}DINGIR--su*-ri o* SZESZ-MESZ-szu2
+#lem: Adda[1]PN$; Il-suri[1]PN$; u; ahhēšu[brother]N
+
+5. 02 NIN-MESZ-szu2 PAB 07 ZI-MESZ
+#lem: n; ahātu[sister]N$ahhātīšu; gimru[total]N; n; nupšāti[person]N
+
+6.	ARAD-MESZ sza {1}ARAD--{d}15
+#lem: urdāni[servant]N; ša[of]DET; Urdu-Issar[1]PN$
+
+7.	u2-pisz-ma {1}se-e'--ma-a'#-du
+#lem: uppišma[contract]V; Seʾ-maʾadi[1]PN$
+
+8.	{LU2~v}GAL--URU-MESZ sza DUMU--MAN
+#lem: rabû[big one]N$rab&ālu[city]N$ālāni; ša[of]DET; māru[son]N$mār&šarru[king]N$šarri
+
+9. ina SZA3 02 MA.NA KUG.UD ina sza o* gar-ga-mis
+#lem: ina[in+=for]PRP; libbi[interior]N; n; manê[a unit of weight]N; ṣarpi[silver]N; ina[by]PRP; ša[of]DET; u; Gargamis[Carchemish]GN
+
+10.	il-qi kas2-pu ga-mur ta-din
+#lem: ilqi[purchase]V; kaspu[money]N; gammur[completed]AJ; tadin[paid]AJ
+
+11.	UN-MESZ szu-a-tu2 zar4-pu la-qi-u
+#lem: nišē[people]N; šuātu[that]'DP; zarpu[purchased]AJ$; laqiu[acquired]AJ
+
+12.	tu-a-ru de-nu DUG4.DUG4
+#lem: tuāru[revocation]'N; dēnu[lawsuit]N; dabābu[litigation]'N
+
+13.	la-asz2-szu2 man-nu sza2 ina ur-kisz
+#lem: laššu[(there) is not]V; mannu[whoever]'XP; ša[that]REL; ina[in+=in the future]PRP; urkiš[later]AV
+
+14.	ina ma-te-ma i-za-qu-pa-ni
+#lem: ina[in+=whenever]PRP$; matīma[ever]AV$matēma; izaqqupāni[complain]V
+
+
+@bottom
+15.	de-nu DUG4.DUG4 ub-ta-u-[ni]
+#lem: dēnu[lawsuit]N; dabābu[litigation]'N; ubtaʾʾūni[seek]V
+
+
+@reverse
+1. 10 MA.NA KUG.UD 01 MA.NA KUG.GI
+#lem: n; manê[a unit of weight]N; ṣarpi[silver]N; n; manê[a unit of weight]N; hurāṣi[gold]N
+
+2.	ina bur-ki {d}ISZ.TAR a-szi-bat
+#lem: ina[in]PRP; burki[lap]N; Ištar[1]DN; āšibāt[residing]AJ
+
+3.	{URU}NINA GAR-an kas-pu a-na 10-MESZ-te
+#lem: Ninua[Nineveh]GN; išakkan[place]V; kaspu[money]N; ana[to+=tenfold]PRP$; ešriātu[tenfold]AV$ešrāte
+
+4.	a-na EN-MESZ-szu2 u2-ta-ra
+#lem: ana[to]PRP; bēlēšu[owner]N; utâra[return]V
+
+5.	ina la de-ni#-szu2# DUG4.DUG4-ma
+#lem: ina[in]PRP; lā[not]MOD; dēnīšu[lawsuit]N; idabbubma[contest]V
+
+6.	la i-la*-qi
+#lem: lā[not]MOD; ilaqqi[succeed]V
+
+$ ruling!
+7.	IGI {1}10--ta-ka-a
+#lem: šību[witness]N; Adda-saka[1]PN$
+
+8.	IGI {1}DI-mu--EN {LU2~v*}GAL--URU-MESZ
+#lem: šību[witness]N; Šulmu-beli[1]PN$; rabû[big one]N$rab&ālu[city]N$ālāni
+
+9.	IGI {1}10--sa-na-ni {LU2~v*}03-szu2
+#lem: šību[witness]N; Adda-sannani[1]PN$; tašlīšu[third man on chariot]N
+
+10.	IGI {1}se-e'--hu-ut-ni {LU2~v*}{GISZ*}GIGIR*
+#lem: šību[witness]N; Seʾ-hutni[1]PN$; sūsānu[horse groom]N
+
+11.	IGI {1}{d}PA--I
+#lem: šību[witness]N; Nabu-naʾid[1]PN$
+
+12.	IGI {1}o*
+#lem: šību[witness]N; u
+
+$ blank space of 3 lines
+13.	{ITI}SZE UD-mu 16-KAM2
+#lem: Addari[Adar]MN; ūmu[day]N$; n
+
+14.	lim-mu {1}{d}PA--PAB--APIN-esz
+#lem: limmu[eponym (of year)]N; Nabu-ahu-ereš[1]PN$
+
+
+
+
+@translation labeled en project
+
+
+@(1) Seal of Urda-Issar, owner of the people being sold.
+
+$ ruling
+
+
+$ (two stamp seal impressions)
+
+
+$ ruling
+
+
+@(3) Hamnunu, his wife and mother, Addâ and Il-suri, his brothers,
+    and his two sisters, a total of 7 persons, servants of Urda-Issar —
+
+@(7) Se'-madi, village manager of the crown prince, has contracted and
+    bought them for two minas of silver by the (mina) of Carchemish.
+
+@(10) The money is paid completely. Those people are purchased
+    and acquired. Any revocation, lawsuit, or litigation is void.
+
+@(13) Whoever in the future, at any time, lodges a complaint and
+    se[eks] a lawsuit or litigation shall place 10 minas
+    of silver (and) one mina of gold in the lap of Ištar residing in
+    Nineveh. He shall return the money tenfold to its owners. He
+    shall contest in his lawsuit and not succeed.
+
+$ ruling
+
+
+@(r 7) Witness Adda-sakâ.
+
+@(r 8) Witness Šulmu-beli, village manager.
+
+@(r 9) Witness Adda-sannanī, 'third man.'
+
+@(r 10) Witness Se'-hutni, horse trainer.
+
+@(r 11) Witness Nabû-na'id.
+
+@(r 12) Witness (blank)
+
+$ (SPACER)
+
+@(r 13) Month Adar (XII), 16th day, eponym year of Nabû-ahu-ereš.
+
+
+&P335176 = SAA 06 111
+#project: saao/saa06
+#atf: lang na
+#key: file=SAA06/LEGAL1A-NA.saa
+#key: musno=K 00076
+#key: cdli=ADD 0229
+#key: date=680-vii
+
+
+@obverse
+1.	{NA4}KISZIB {1}ARAD--{d}15
+#lem: kunukku[seal]N; Urdu-Issar[1]PN$
+
+2.	EN UN-MESZ SUM-ni
+#lem: bēl[owner]N; nišē[people]N; tadāni[giving]'N
+
+$ ruling!
+$ (two circular stamp seal impressions)
+$ ruling!
+3. {1}u2-si-a' 02 MI2-MESZ-szu2
+#lem: Useaʾ[1]PN$; n; issātīšu[woman]N
+
+4.	{MI2}me-e'-sa-a {MI2}ba-di-a
+#lem: Meʾsa[1]PN$; Badia[1]PN$
+
+5.	{1}se--gab-a {1}EN--KASKAL--tak3-lak
+#lem: Seʾ-gaba[1]PN$; Bel-Harran-taklak[1]PN$
+
+6. 02 DUMU.MI2-MESZ pir-su
+#lem: n; marʾāti[daughter]N; pirsu[weaned]AJ$
+
+7. PAB 07 ZI-MESZ {LU2~v}ARAD-MESZ
+#lem: gimru[total]N; n; nupšāti[person]N; urdāni[servant]N
+
+8.	sza {1}ARAD--{d}15
+#lem: ša[of]DET; Urdu-Issar[1]PN$
+
+9.	u2-pisz-ma {1}se--ma-a-di
+#lem: uppišma[contract]V; Seʾ-maʾadi[1]PN$
+
+
+@bottom
+10. ina SZA3-bi 03 MA.NA KUG.UD
+#lem: ina[in+=for]PRP; libbi[interior]N; n; manê[a unit of weight]N; ṣarpi[silver]N
+
+11.	il-qi kas-pu
+#lem: ilqi[purchase]V; kaspu[money]N
+
+
+@reverse
+1.	ga-mur ta-ad-din
+#lem: gammur[completed]AJ; taddin[paid]AJ
+
+2.	tu-a-ru de-e-nu
+#lem: tuāru[revocation]'N; dēnu[lawsuit]N
+
+3.	DUG4.DUG4 la-a-szu2
+#lem: dabābu[litigation]'N; lāšu[(there) is not]V
+
+$ ruling!
+4.	IGI {1}EN--ZALAG2 {LU2~v}tam-QAR
+#lem: šību[witness]N; Bel-nuri[1]PN$; tamkāru[merchant]N$tamkār
+
+5.	IGI {1}am--ia-te-e'-u2
+#lem: šību[witness]N; Ammi-Yateʾu[1]PN$
+
+6.	IGI {1}sa-an-gi-i
+#lem: šību[witness]N; Sangi[1]PN$
+
+7.	IGI {1}ku*-i-sa-a
+#lem: šību[witness]N; Kuisa[1]PN$
+
+8.	IGI {1}se--BAD3
+#lem: šību[witness]N; Seʾ-duri[1]PN$
+
+9.	IGI {1}($blank$)
+#lem: šību[witness]N; u
+
+10.	{ITI}DUL lim-mu {1}da-na-nu
+#lem: Tašriti[Tishri]MN; limmu[eponym (of year)]N; Dananu[1]PN$
+
+
+@right
+11.	%arc dnt . hw$( w
+#lem: u; u; u; u
+
+12. %arc 06 g . )n$ 07 . zy )rd)$r#
+#lem: n; u; u; u; n; u; u; u
+
+
+
+
+@translation labeled en project
+
+
+@(1) Seal of Urda-Issar, owner of the people being sold.
+
+$ ruling
+
+
+$ (stamp seal impressions)
+
+
+$ ruling
+
+
+@(3) Hosea and his two wives, Me'sa and Badia; Se'-gabbâ and
+    Bel-Harran-taklak; two weaned daughters; a total of 7 persons, servants of
+    Urda-Issar —
+
+@(9) Se'-madi has contracted and bought them for 3 minas of silver.
+
+@(11) The money is paid completely. Any revocation, lawsuit, or
+    litigation is void.
+
+$ ruling
+
+
+@(r 4) Witness Bel-nuri, merchant.
+
+@(r 5) Witness Am-yate'u.
+
+@(r 6) Witness Sangî.
+
+@(r 7) Witness Kuisâ.
+
+@(r 8) Witness Se'-duri.
+
+@(r 9) Witness (blank)
+
+@(r 10) Month Tishri (VII), eponym year of Dananu.
+
+@(r.e. 11) Aramaic caption: Deed of Hosea and 6 @i{others}, 7 people of
+    Urda-Is[sar].
+
+&P335396 = SAA 06 112
+#project: saao/saa06
+#atf: lang na
+#key: file=SAA06/LEGAL1A-NA.saa
+#key: musno=Bu 89-4-26,128
+#key: cdli=ADD 0455
+#key: date=-
+
+@obverse
+$ (beginning broken away)
+$ (possibly space for seals)
+1'.	[x x x x x x x]+x# x#+[x x x]
+#lem: u; u; u; u; u; u; u; u; u; u
+
+2'.	[x x x x x x x] DUMU-szu2 x#+[x x x]
+#lem: u; u; u; u; u; u; u; māršu[son]N; u; u; u
+
+3'. [x x x DUMU] GA*# PAB 06# ZI-[MESZ ARAD-MESZ]
+#lem: u; u; u; mār[son]N; šizbu[milk//suckling]'AJ$zizibu; gimru[total]N; n; nupšāti[person]N; urdāni[servant]N
+
+4'.	[sza? {1}]bi--da*#-[di E2 x ANSZE A.SZA3]
+#lem: ša[of]DET; Bi-Dadi[1]PN$; bētu[plot of land]N; u; imārī[a unit of capacity]N; eqlu[land]N
+
+5'.	[x]-lim-06*-me* {GISZ*}til#*-[lit x x x]
+#lem: u; tillit[vine]N; u; u; u
+
+6'.	PU2# ina SZA3-bi {URU*}[x x x x x]
+#lem: būrtu[well]N; ina[in]PRP; libbi[interior]N; u; u; u; u; u
+
+7'.	u2-pisz-ma {1}se#-[e'--ma-a-di]
+#lem: uppišma[contract]V; Seʾ-maʾadi[1]PN$
+
+8'.	{LU2~v}GAL--URU-MESZ [sza DUMU--MAN]
+#lem: rabû[big one]N$rab&ālu[city]N$ālāni; ša[of]DET; māru[son]N$mār&šarru[king]N$šarri
+
+$ (rest broken away)
+
+@reverse
+1.	[a]-na#* [10]-MESZ*-te*# [a-na EN-MESZ-szu2 GUR]
+#lem: ana[to+=tenfold]PRP$; ešriātu[tenfold]AV$ešrāte; ana[to]PRP; bēlēšu[owner]N; itūar[return]V
+
+2.	[ina de]-ni-szu2 DUG4.DUG4#-[ma la i-laq-qi]
+#lem: ina[in]PRP; dēnīšu[lawsuit]N; idabbubma[contest]V; lā[not]MOD; ilaqqi[succeed]V
+
+$ ruling
+3.	[IGI {1}]mu-na*-se-e* [{LU2~v}x x x x]
+#lem: šību[witness]N; Menase[1]PN$Munase; u; u; u; u
+
+4.	[IGI {1}]sa-ni-i {LU2~v}GAL--[x x x]
+#lem: šību[witness]N; Sani[1]PN$; u; u; u
+
+5.	($____$) {URU}zi-[x x x]
+#lem: u; u; u
+
+6.	[IGI {1}]se-e--ZALAG2 [x x x]
+#lem: šību[witness]N; Seʾ-nuri[1]PN$; u; u; u
+
+7.	IGI {1}EN--mu*#-[x (x)] {LU2~v#*}{GISZ}GIGIR qur*-bu*-[ti]
+#lem: šību[witness]N; u; u; sūsānu[horse groom]N; ša-qurbūti[close follower]N$qurbūti
+
+8.	[IGI {1}]{d#}[x]+x#+[x x]
+#lem: šību[witness]N; u; u
+
+9.	[IGI {1}x]-ri-[x]--KUR--LAL
+#lem: šību[witness]N; u
+
+10.	[IGI {1}x]-ri-i-U* o*
+#lem: šību[witness]N; u; u
+
+11.	[IGI {1}x]+x#-la* {URU}a-mu*-x#+[x x]
+#lem: šību[witness]N; u; u; u
+
+$ (traces of 3 more lines, probably witnesses)
+
+@translation labeled en project
+
+$ (Beginning destroyed)
+$ (SPACER)
+
+@(2) [......] his son [...],
+
+@(3) [..., a] suckling [child], a total of 6 per[sons, servants of] Bi-D[adi];
+
+@(4) [an estate of x hectares of land, x] thousand 600 vines [...],
+    a well, in the town [...] —
+
+@(7) S[e'-madi], village manager [of the crown prince] has contracted
+
+$ (Break)
+
+@(r 1) [He shall return the money] tenfold t[o its owners]. He shall
+    contest [in] his lawsuit [and not succeed].
+
+$ ruling
+
+@(r 3) Witness Manasseh, [...].
+
+@(r 4) Witness Sanî, chief [...] of the town of Zi[...].
+
+@(r 6) Witness Se'-nuri, [...].
+
+@(r 7) Witness Bel-mu[...], horse trainer of @i{the royal bo[dyguard}].
+
+@(r 8) Witness [...].
+
+@(r 9) Witness [...]-matu-taqqin.
+
+@(r 10) Witness [...]...
+
+@(r 11) Witness [...]la [from] the town Amu[...].
+
+$ (Rest destroyed)
+
+
+

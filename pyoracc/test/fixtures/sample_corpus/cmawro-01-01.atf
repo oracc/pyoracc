@@ -1,0 +1,1250 @@
+&Q004184 = MB Boghazkoy Anti-witchcraft Text 1 [CMAwRo 1.1]
+@score matrix parsed word
+#project: cmawro
+#atf: lang akk
+#atf: use unicode
+#atf: use legacy
+#atf: use mylines
+#atf: use math
+#link: def A = cmawro:P445799 = KUB 37, 44-49
+#link: def B = cmawro:P445798 = KUB 37, 43
+
+@h1 cmawro:1.1 :: 1. A₁ (+) A₂ (+) A₃ (+) A₄ // B
+
+
+1.1′.	%n [...]  ...  [...] 
+#lem: u; u; u
+
+A₁_obv_i_1′:	[x x x x x] x x [...]
+#lem: u; u; u; u; u; u; u; u
+
+1.2′.	%n [... qa]nû ṭābu suādū  [...] 
+#lem: u; qanû[reed]N; ṭābu[sweet]AJ; +suādu[sedge(-tubers)//(an aromatic plant)]N'N$suādū; u
+
+A₁_obv_i_2′:	[x x x x x s]u-ʾa-a-d[i ...]
+#lem: u; u; u; u; u; +suādu[sedge(-tubers)//(an aromatic plant)]N'N$suʾādī; u
+
+e_obv_14′: [... G]I DU₁₀.GA ⸢{šim}⸣MAN.DU si x [...]
+#lem: u; qanû[reed]N; ṭābu[sweet]AJ; +suādu[sedge(-tubers)//(an aromatic plant)]N'N$suādū; u; u; u
+
+1.3′.	%n [...] murdudâ ardalilla 
+#lem: u; +murdudû[(a plant)//(a medicinal plant)]N'N$murdudâ; +ardadillu[(a plant)]N$ardalilla
+
+A₁_obv_i_3′:	[x x x x x m]u-ur-du-d[a-a ...]
+#lem: u; u; u; u; u; +murdudû[(a plant)//(a medicinal plant)]N'N$murdudâ; u
+
+e_obv_15′: [...] x {ú}MUR.DÙ.DÙ {ú}AŠ.TÁL.TÁL
+#lem: u; u; +murdudû[(a plant)//(a medicinal plant)]N'N$murdudâ; +ardadillu[(a plant)]N$ardalilla
+
+1.4′.	%n ḫašḫūr [api] lal[laga imḫur-līm?] 
+#lem: ḫašḫūr[apple (tree)]N; api[reed-bed]N; +lalangu[(a leguminous vegetable)]N$lallaga; +imhur-līm[(a medicinal plant)//'heals-a-thousand'-plant]N'N$
+
+A₁_obv_i_4′:	[x x x x x] {ú}la-al-[la-ga? {ú}im-ḫu-ur-lim?]
+#lem: u; u; u; u; u; +lalangu[(a leguminous vegetable)]N$lallaga; +imhur-līm[(a medicinal plant)//'heals-a-thousand'-plant]N'N$
+
+e_obv_15′–16′: {giš}ḪAŠḪUR [GIŠ.GI] — // [{ú}IGI-lim]
+#lem: +hašhūru[apple (tree)]N$hašhūr; api[reed-bed]N; imhur-līm['heals-a-thousand'-plant]N
+
+1.5′.	%n imḫur-[ašr]ā tarmuš tasâk-ma 
+#lem: +imhur-ešrā[(a climbing plant)//'heals-twenty'-plant]N'N$imhur-ašrā; tarmuš[lupine]N; tasâk-ma[pound]V
+
+A₁_obv_i_5′:	[{ú}]⸢im-ḫu-ur⸣-[áš-r]a {ú}ta-ar-m[u-uš %n tasâk-ma]
+#lem: +imhur-ešrā[(a climbing plant)//'heals-twenty'-plant]N'N$imhur-ašrā; +tarmuš[lupin//lupine]N'N$; tasâk-ma[pound]V
+
+e_obv_16′:  [{ú}IGI-NI]Š {ú}tar-muš ta-sàk-ma
+#lem: imhur-ešrā['heals-twenty'-plant]N; tarmuš[lupine]N; tasâkma[pound]V
+
+1.6′.	%n ina šikari ulušinni karāna [taba]llal? 
+#lem: ina[in]PRP; šikari[beer]N; +ulušinnu[date-sweetened emmer-beer]N$ulušinni; karāna[wine]N; taballal[mix (up)]V
+
+A₁_obv_i_6′:	[i-n]a KAŠ.SAG ÚLUŠIN ka-ra-na x [...]
+#lem: ina[in]PRP; šikari[beer]N; +ulušinnu[date-sweetened emmer-beer]N$ulušinni; +karānu[vine//wine]N'N$karāna; u; u
+
+e_obv_16′–17′:  ina KAŠ.SAG ÚLUŠ[IN GEŠTIN] // [ta?-ba]l?-la-⸢al⸣
+#lem: ina[in]PRP; šikari[beer]N; ulušinni[date-sweetened emmer-beer]N; +karānu[vine//wine]N'N$karāna; +balālu[mix (up)]V$taballal
+
+1.7′.	%n dišpa ḫimēta ruʾtīta 
+#lem: +dišpu[honey//syrup]N'N$dišpa; +himētu[butter//ghee]N'N$himēta; +ruʾtītu[sulphur]N$ruʾtīta
+
+A₁_obv_i_7′:	[d]i-iš-pa ḫi-mé-ta ru-uʾ-ti-t[a]
+#lem: +dišpu[honey//syrup]N'N$dišpa; +himētu[butter//ghee]N'N$himēta; +ruʾtītu[sulphur]N$ruʾtīta
+
+e_obv_17′:  LÀL Ì.NUN.NA ru-uʾ-ti-ÍD
+#lem: +dišpu[honey//syrup]N'N$dišpa; +himētu[butter//ghee]N'N$himēta; +ruʾtītu[sulphur]N$ruʾtīta
+
+1.8′.	%n imbuʾ tâmti ḫurāṣa kaspa parzilla 
+#lem: imbuʾ[fibre]N; tâmti[sea]N; +hurāṣu[gold]N$hurāṣa; kaspa[silver]N; parzilla[iron]N
+
+A₁_obv_i_8′:	[i]m-bu-uʾ ta-am-ti KÙ.SI₂₂ KÙ.BABBAR pa-ar-[zi-il-la]
+#lem: +imbû[fibre]N$imbuʾ; +tiāmtu[sea]N$tâmti; hurāṣa[gold]N; kaspa[silver]N; +parzillu[iron]N$parzilla
+
+e_obv_17′–18′:  K[A.A.AB.BA KÙ.SI₂₂] // [KÙ.BABBAR A]N.BAR
+#lem: imbuʾ[fibre]N&tâmti[sea]N; hurāṣa[gold]N; kaspa[silver]N; parzilla[iron]N
+
+1.9′.	%n sānta uqnâ balṭūssunu tar[assan] 
+#lem: sānta[carnelian]N; uqnâ[lapis lazuli]N; +balṭu[living//fresh]AJ'AJ$balṭūssunu; +rasānu[soak//steep]V'V$tarassan
+
+A₁_obv_i_9′:	sa-an-ta uq-na-a ba-al-ṭú-su-nu ta-r[a-as-sà-an]
+#lem: +sāmtu[redness//carnelian]N'N$sānta; +uqnû[lapis lazuli]N$uqnâ; +balṭu[living//fresh]AJ'AJ$balṭūssunu; +rasānu[soak//steep]V'V$tarassan
+
+e_obv_18′: 	{na₄}GUG {na₄}ZA.GÌN —	—
+#lem: +sāmtu[redness//carnelian]N'N$sānta; uqnâ[lapis lazuli]N
+
+1.10′.	%n [p]āna tukattam ina mūši šeššet ūmī m[aḫar kakkabi?] 
+#lem: pāna[front]N; +katāmu[cover]V$tukattam; ina[in]PRP; mūši[night]N; šeššet[six]NU; ūmī[day]N; +mahru[front//before]N'PRP$mahar; kakkabi[star]N
+
+A₁_obv_i_10′:	[p]a-na tu-ka-at-ta-am i-na mu-ši U₄ 6.KAM m[a-ḫar MUL?]
+#lem: pāna[front]N; +katāmu[cover]V$tukattam; ina[in]PRP; mūši[night]N; ūm[day]N; n; mahar[before]'PRP; +kakkabu[star]N$kakkabi
+
+e_obv_18′: 	—	— ina GE₆ šá U₄ 7.KAM [...]
+#lem: ina[in]PRP; mūši[night]N; ša[of]DET; ūm[day]N; n; u
+
+1.11′.	%n [t]ukān ina sebî ūmi balu patān 
+#lem: tukān[set up]V; ina[in]PRP; sebî[seventh]NU; ūmi[day]N; balu[without]PRP; patān[dining]'N
+
+A₁_obv_i_11′:	[t]u-ka-a-an i-na se-bi-i u₄-mi ba-lu [pa-tan]
+#lem: +kânu[be(come) permanent//set up]V'V$tukān; ina[in]PRP; +sebû[seventh]NU$sebî; ūmi[day]N; balu[without]PRP; patān[dining]'N
+
+e_obv_18′–19′: 	[(...)] // [ina U₄ 8.K]AM ba-lu pa-tan
+#lem: u; ina[in]PRP; ūm[day]N; n; balu[without]PRP; patān[dining]'N
+
+1.12′.	%n tašaqqīšu-ma iballuṭ
+#lem: tašaqqīšu-ma[give to drink]V; iballuṭ[recover]V
+
+A₁_obv_i_12′:	[NA]G-šu-ma i-ba-al-lu-uṭ
+#lem: tašaqqīšūma[give to drink]V; +balāṭu[live//recover]V'V$iballuṭ
+
+e_obv_19′: 	NAG-[šú-ma TI.LA]
+#lem: tašaqqīšūma[give to drink]V; iballuṭ[recover]V
+
+A:	($ruling$)
+
+$ruling
+
+1.13′.	%n [ana pi]šerti kišpī ša ina šikar[i šaqû] 
+#lem: ana[for]PRP; pišerti[release]N; kišpī[witchcraft]N; ša[which]REL; ina[in]PRP; šikari[beer]N; +šaqû[irrigated//given to drink]AJ'AJ$
+
+A₁_obv_i_13′:	[a-na pi]-⸢še₂₀⸣-[e]r-ti ki-iš-pi ša i-na ši-ka-r[i %n šaqû]
+#lem: ana[for]PRP; +pišertu[release]N$pišerti; kišpī[witchcraft]N; ša[which]REL; ina[in]PRP; +šikaru[beer]N$šikari; +šaqû[irrigated//given to drink]AJ'AJ$
+
+
+1.14′.	%n [... e]rkulla imbu[ʾ tâmti] 
+#lem: u; +elkulla[(a medicinal plant or plants)]N$erkulla; imbuʾ[fibre]N; tâmti[sea]N
+
+A₁_obv_i_14′:	[x x x x x (x) e]r-ku-ul-la	im-bu-u[ʾ ta-am-ti]
+#lem: u; u; u; u; u; u; +elkulla[(a medicinal plant or plants)]N$erkulla; imbuʾ[fibre]N; tâmti[sea]N
+
+B_obv_i_1′–2′:	[(x)] x x [...] //	[K]A.A.A[B.BA] →
+#lem: u; u; u; u; imbuʾ[fibre]N&tâmti[sea]N
+
+
+1.15′.	%n [...] ana libbi ša[mni] 
+#lem: u; ana[to+=in]PRP; libbi[interior]N; šamni[oil]N
+
+A₁_obv_i_15′:	[x x x x x (x)]	a-na li-ib-bi	[Ì.GIŠ]
+#lem: u; u; u; u; u; u; +ana[to+=in]PRP$; +libbu[interior]N$libbi; +šamnu[oil]N$šamni
+
+B_obv_i_2′–3′:	[...] //	⸢ana ŠÀ-bi?	Ì?.GIŠ?⸣	→
+#lem: u; +ana[to+=in]PRP$; +libbu[interior]N$libbi; +šamnu[oil]N$šamni
+
+
+1.16′.	%n [tuballal p]āna t[ukattam] 
+#lem: +balālu[mix (up)]V$tuballal; pāna[front]N; tukattam[cover]V
+
+A₁_obv_i_16′:	[tu-bal-lal p]a?-na t[u-ka-at-ta-am]
+#lem: +balālu[mix (up)]V$tuballal; pāna[front]N; tukattam[cover]V
+
+B_obv_i_3′:	[...]
+#lem: u
+
+
+1.17′.	%n ina kakkabi tušbāt 
+#lem: ina[under]PRP; kakkabi[star]N; tušbāt[let stand overnight]V
+
+A₁_obv_i_17′:	[ina	ka-ka]-⸢bi⸣	t[u-uš-bat]
+#lem: ina[under]PRP; +kakkabu[star]N$kakkabi; +biātu[spend the night//let stand overnight]V'V$tušbāt
+
+B_obv_i_4′:	ina	MUL	tuš-bat	→
+#lem: ina[under]PRP; kakkabi[star]N; tušbāt[let stand overnight]V
+
+
+1.18′.	%n ina š[ērt]i Šamaš l[ā immar šamna] 
+#lem: ina[in]PRP; šērti[morning]N; Šamaš[1]DN; lā[not]MOD; +amāru[see]V$immar; šamna[oil]N
+
+A₁_obv_i_18′:	[ina	šèr-t]i {d}UTU l[a i-im-mar Ì.GIŠ]
+#lem: ina[in]PRP; +šērtu[morning]N$šērti; Šamaš[1]DN; lā[not]MOD; +amāru[see]V$immar; +šamnu[oil]N$šamna
+
+B_obv_i_4′:	ina	š[èr-ti]
+#lem: ina[in]PRP; šērti[morning]N
+
+
+1.19′.	%n tušelle šammī ku[llassunu?] 
+#lem: +elû[go up//take up]V'V$tušelle; šammī[herb]N; +kullatu[totality//all (of)]N'N$kullassunu
+
+A₁_obv_i_19′:	[tu-še-e]l-le	ša-am-mi	ku-u[l?-la-as-su-nu?]
+#lem: +elû[go up//take up]V'V$tušelle; +šammu[plant(s)//herb]N'N$šammī; +kullatu[totality//all (of)]N'N$kullassunu
+
+B_obv_i_5′:	tu-še-el-le	ša-⸢am⸣-[mi]
+#lem: tušelle[take up]V; šammī[herb]N
+
+
+1.20′.	%n u karāna [tašaqqi(šu)]
+#lem: u[and]CNJ; karāna[wine]N; +šaqû[give to drink]V$tašaqqīšu
+
+A₁_obv_i_20′:	[ù	ka]-ra-a-na	[...]
+#lem: u[and]CNJ; +karānu[vine//wine]N'N$karāna; u
+
+B_obv_i_6′:	ù	KAŠ.GEŠTIN	[NAG-(šu)]
+#lem: u[and]CNJ; +karānu[vine//wine]N'N$karāna; +šaqû[give to drink]V$tašaqqīšu
+
+A:	($ruling$)
+B:	($ruling$)
+
+$ruling
+
+1.21′.	%n ana p[i]šerti kišpī ša ina šūmī šūkul(u) 
+#lem: ana[for]PRP; pišerti[release]N; kišpī[witchcraft]N; ša[which]REL; ina[with]PRP; +šūmū[garlic]N$šūmī; +šūkulu[fed//given to eat]AJ'AJ$
+
+A₁_obv_i_21′:	[a-na	pi-š]e₂₀-er-ti	ki-iš-pi	ša	i-na	š[u-mi]
+#lem: ana[for]PRP; pišerti[release]N; kišpī[witchcraft]N; ša[which]REL; ina[with]PRP; +šūmū[garlic]N$šūmī
+
+B_obv_i_7′:	a-na	p[i]-še-er-ti	kiš-pi	ša	ina	SUM{sar} šu-⸢kúl⸣
+#lem: ana[for]PRP; pišerti[release]N; kišpī[witchcraft]N; ša[which]REL; ina[with]PRP; +šūmū[garlic]N$šūmī; +šūkulu[fed//given to eat]AJ'AJ$šūkul
+
+
+1.22′.	%n ḫašê tīyata atāʾišī inib ka[raši?] 
+#lem: +hašû[thyme?//(a medicinal plant)]N'N$hašê; +tīyatu[(a medicinal plant)]N$tīyata; +atāʾišu[(a plant)]N$atāʾišī; +inbu[fruit//bulb]N'N$inib; +karašu[leek]N$karaši
+
+A₁_obv_i_22′:	[ḫa-še]-⸢e⸣	ti-ia-ta	a-ta-i-ši	[...]
+#lem: +hašû[thyme?//(a medicinal plant)]N'N$hašê; +tīyatu[(a medicinal plant)]N$tīyata; +atāʾišu[(a plant)]N$atāʾišī; u
+
+B_obv_i_8′–9′:	{ú}ḪAR.ḪAR	NU.LUḪ.ḪA{sar}	Ú.KUR.KUR.RA	// GURUN G[A?.RAŠ?]{sar}	→
+#lem: hašê[(a medicinal plant)]N; +nuhurtu[(a variety of asafoetida)]N$nuhurta; +atāʾišu[(a plant)]N$atāʾišī; +inbu[fruit//bulb]N'N$inib; +karašu[leek]N$karaši
+
+
+1.23′.	%n nīnê šibburrata bīna maštakal 
+#lem: nīnê[(a medicinal plant)]N; +šibburratu[rue (Ruta)//(a medicinal plant)]N'N$šibburrata; bīna[tamarisk]N; +maštakal[(an alkaline plant)//(a soapwort)]N'N$
+
+A₁_obv_i_23′:	[ni-né]-⸢e⸣	ši-ib-bu-ur-ra-ta	[...]
+#lem: +nīnû[Ammi?//(a medicinal plant)]N'N$nīnê; +šibburratu[rue (Ruta)//(a medicinal plant)]N'N$šibburrata; u
+
+B_obv_i_9′–10′:	Ú.KUR.RA	{ú}si-ib-bu-ra-ta	// {giš}ŠINIG {ú}IN.NU.UŠ →
+#lem: nīnê[(a medicinal plant)]N; +šibburratu[rue (Ruta)//(a medicinal plant)]N'N$sibburrata; bīna[tamarisk]N; +maštakal[(an alkaline plant)//(a soapwort)]N'N$
+
+
+1.24′.	%n sikilla šakirê qan appāri qan-šalāli gišimmara
+#lem: sikilla[(a plant)]N; +šakirû[henbane?]N$šakirê; qan[reed]N; +appāru[reed-bed//marsh]N'N$appāri; +qanû[reed]N$qan&+šalālu[(a type of reed)]N$šalāli; gišimmara[date palm]N
+
+A₁_obv_i_24′:	[si-ki-i]l-la	ša-ki-re-e	qa-an [...]
+#lem: +sikillu[(a plant)]N$sikilla; +šakirû[henbane?]N$šakirê; +qanû[reed]N$qan; u
+
+B_obv_i_10′–12′:	{ú}SIKIL //	{ú}ŠAKIR.RA	GI	ap-pa-ri GI.ŠUL.ḪI.A // {giš}GIŠIMMAR	→
+#lem: +sikillu[(a plant)]N$sikilla; +šakirû[henbane?]N$šakirê; +qanû[reed]N$qan; +appāru[reed-bed//marsh]N'N$appāri; +qanû[reed]N$qan&+šalālu[(a type of reed)]N$šalāli; gišimmara[date palm]N
+
+
+1.25′.	%n arti balti arti ašāgi 
+#lem: arti[leaves]N; balti[(a spiny plant)]N; arti[leaves]N; +ašāgu[camelthorn]N$ašāgi
+
+A₁_obv_i_25′:	[a-a]r-ti	ba-al-ti	a-[ar-ti]
+#lem: +artu[branches//leaves]N'N$arti; +baltu[(a spiny plant)]N$balti; arti[leaves]N
+
+B_obv_i_12′:	PA	{giš}DÌḪ	PA	{giš}KIŠI₁₆
+#lem: arti[leaves]N; balti[(a spiny plant)]N; arti[leaves]N; +ašāgu[camelthorn]N$ašāgi
+
+
+1.26′.	%n pillâ šūša lapat eqli 
+#lem: +pillû[mandragora//(a medicinal plant)]N'N$pillâ; +šūšu[liquorice]N$šūša; lapat[turnip]N; eqli[field]N
+
+A₁_obv_i_26′:	[šu]-⸢ú⸣-ša [...]
+#lem: +šūšu[liquorice]N$šūša; u
+
+B_obv_i_13′:	{giš}NAM.TAR	šu-ú-ša	la-a-pa-at A.ŠÀ
+#lem: +pillû[mandragora//(a medicinal plant)]N'N$pillâ; šūša[liquorice]N; +laptu[turnip]N$lapat; eqli[field]N
+
+
+1.27′.	%n ḫurrata murdudâ artatilla 
+#lem: +murrutu[(a plant)//madder]N'N$hurrata; murdudâ[(a medicinal plant)]N; +ardadillu[(a plant)]N$artatilla
+
+A₁_obv_i_27′:	[x x x x x] x [...]
+#lem: u; u; u; u; u; u; u
+
+B_obv_i_14′:	{ú}ḫu-ur-ra-ta mu-ur-du-da-a ar-ta-tìl-la
+#lem: +murrutu[(a plant)//madder]N'N$hurrata; murdudâ[(a medicinal plant)]N; +ardadillu[(a plant)]N$artatilla
+
+A₁: ($obv i breaks$)
+
+1.28′.	%n ḫašḫūrakka ašqulāla merruta 
+#lem: +hašhūrakku['apple' bush//'apple'-bush]N'N$hašhūrakka; +ašqulālu[(a marine plant)]N$ašqulāla; +merrutu[(a medicinal plant)]N$merruta
+
+B_obv_i_15′:	ḫa-aš-ḫu-ra-ka {ú}LAL mé-er-ru-ta
+#lem: +hašhūrakku['apple' bush//'apple'-bush]N'N$hašhūrakka; +ašqulālu[(a marine plant)]N$ašqulāla; +merrutu[(a medicinal plant)]N$merruta
+
+1.29′.	%n lišān-kalbi arti ḫuluppi imḫur-līm 
+#lem: +lišānu[tongue]N$lišān&+kalbu[dog]N$kalbi; arti[leaves]N; +haluppu[(a tree)]N$huluppi; +imhur-līm[(a medicinal plant)//'heals-a-thousand'-plant]N'N$
+
+B_obv_i_16′:	{ú}EME-UR.GI₇ PA ḫu-lu-up-pí {ú}im-ḫur-lim
+#lem: +lišānu[tongue]N$lišān&+kalbu[dog]N$kalbi; arti[leaves]N; +haluppu[(a tree)]N$huluppi; imhur-līm['heals-a-thousand'-plant]N
+
+1.30′.	%n imḫur-ašna tarmuš sīḫa 
+#lem: +imhur-ešrā[(a climbing plant)//'heals-twenty'-plant]N'N$imhur-ašna; tarmuš[lupine]N; +sīhu[wormwood (Artemisia)?//(an aromatic plant and its resin)]N'N$sīha
+
+B_obv_i_17′:	{ú}im-ḫur-áš-na {ú}tar-muš {ú}si-i-ḫa
+#lem: +imhur-ešrā[(a climbing plant)//'heals-twenty'-plant]N'N$imhur-ašna; tarmuš[lupine]N; +sīhu[wormwood (Artemisia)?//(an aromatic plant and its resin)]N'N$sīha
+
+1.31′.	%n arganna barīrāt[a]  ... 
+#lem: +argānu[(a conifer and its resin)//(an aromatic plant and its resin)]N'N$arganna; +barīrātu[sagapenum]N$barīrāta; u
+
+B_obv_i_18′:	{ú}ar-ga-an-na {ú}ba-ri-ra-⸢ta ti⸣-[x-(x)]
+#lem: +argānu[(a conifer and its resin)//(an aromatic plant and its resin)]N'N$arganna; +barīrātu[sagapenum]N$barīrāta; u
+
+1.32′.	%n aḫê tušakkalšu [(...)]
+#lem: +ahê[separately]AV$; +akālu[eat//have someone eat]V'V$tušakkalšu; u
+
+B_obv_i_19′:	⸢a⸣-ḫe-e GU₇-šu	[(x x x x)]
+#lem: +ahê[separately]AV$; +akālu[eat//have someone eat]V'V$tušakkalšu; u; u; u; u
+
+A:	($ruling$)
+B:	($ruling$)
+
+B: ($end of obv i$)
+
+$ruling
+
+$ (break)
+
+1.33′′.	%n [...]  ...  
+#lem: u; u
+
+A₄_obv_ii_1′:	[...] x ⸢ri⸣
+#lem: u; u; u
+
+1.34′′.	%n [...  in]a šērti 
+#lem: u; ina[in]PRP; šērti[morning]N
+
+A₄_obv_ii_2′:	[i-n]a še-er-ti
+#lem: ina[in]PRP; +šērtu[morning]N$šērti
+
+1.35′′.	%n [...  tuš]akkalšu
+#lem: u; +akālu[eat//have someone eat]V'V$tušakkalšu
+
+A₄_obv_ii_3′:	[tu-ša]-ak-ka-al-šú
+#lem: +akālu[eat//have someone eat]V'V$tušakkalšu
+
+A₄:	($ruling$)
+
+$ruling
+
+1.36′′.	%n [...  ina m]ê ramku
+#lem: u; ina[in]PRP; mê[water]N; +ramku[bathed//soaked]AJ'AJ$
+
+A₄_obv_ii_4′:	[ina m]e-e ra-am-ku
+#lem: ina[in]PRP; mê[water]N; +ramku[bathed//soaked]AJ'AJ$
+
+1.37′′.	%n [...] mê nāri 
+#lem: u; mê[water]N; nāri[river]N
+
+A₄_obv_ii_5′:	[...] me-e na-a-ri
+#lem: u; mê[water]N; +nāru[river]N$nāri
+
+1.38′′.	%n [...] ... teḫebbu 
+#lem: u; u; +habû[draw (water)]V$tehebbu
+
+A₄_obv_ii_6′:	[...]-x-ti te-ḫe-eb-bu
+#lem: u; +habû[draw (water)]V$tehebbu
+
+1.39′′.	%n [...] qan-ašlall[i] 
+#lem: u; +qanû[reed]N$qan&+šalālu[(a type of reed)]N$ašlalli
+
+A₄_obv_ii_7′:	[...] qa-an aš-la-al-l[i]
+#lem: u; +qanû[reed]N$qan; +šalālu[(a type of reed)]N$ašlalli
+
+1.40′′.	%n [...  šam]ni šaman rūšti šaman? [...] 
+#lem: u; šamni[oil]N; šaman[oil]N; +rūštu[top quality]AJ$rūšti; šaman[oil]N; u
+
+A₄_obv_ii_8′:	[Ì].GIŠ Ì.SAG Ì.GIŠ x [(x)]
+#lem: +šamnu[oil]N$šamni; +šamnu[oil]N$šaman&+rūštu[top quality]AJ$rūšti; šaman[oil]N; u; u
+
+1.41′′.	%n [...  ina šik]ari? tanamdi 
+#lem: u; ina[in]PRP; šikari[beer]N; +nadû[throw (down)//put]V'V$tanamdi
+
+A₄_obv_ii_9′:	[ina KA]Š? ta-nam-di
+#lem: ina[in]PRP; šikari[beer]N; +nadû[throw (down)//put]V'V$tanamdi
+
+1.42′′.	%n [...  pāna] tukattam 
+#lem: u; pāna[front]N; tukattam[cover]V
+
+A₄_obv_ii_10′:	[pa-na] tu-ka-at-ta-am
+#lem: pāna[front]N; tukattam[cover]V
+
+1.43′′.	%n [...]  ...  
+#lem: u; u
+
+A₄_obv_ii_11′:	[n]i-ik-<$ku$>
+#lem: u
+
+1.44′′.	%n [...  ana li]bbi tanamdi 
+#lem: u; ana[to+=into]PRP; libbi[interior]N; tanamdi[put]V
+
+A₄_obv_ii_12′:	[ana li-i]b-bi ta-nam-di
+#lem: ana[to+=into]PRP; libbi[interior]N; tanamdi[put]V
+
+1.45′′.	%n [...  itti a]ḫāmiš 
+#lem: u; +itti[with]PRP$; +ahāmiš[each other//one another]AV'AV$
+
+A₄_obv_ii_13′:	[it-ti a]-ḫa-mi-iš
+#lem: itti[with]PRP; +ahāmiš[each other//one another]AV'AV$
+
+1.46′′.	%n [...  p]ān ...
+#lem: u; pān[before]'PRP; u
+
+A₄_obv_ii_14′:	[p]a-an <$x$>
+#lem: pān[before]'PRP; u
+
+A₄:	($ruling$)
+
+$ruling
+
+1.47′′.	%n [...] turâ 
+#lem: u; +turû[(a kind of) garlic]N$turâ
+
+A₄_obv_ii_15′:	[...] tu-ra-a
+#lem: u; +turû[(a kind of) garlic]N$turâ
+
+1.48′′.	%n [...  ḫa]šḫūrakk[a]
+#lem: u; +hašhūrakku['apple' bush//'apple'-bush]N'N$hašhūrakka
+
+A₄_obv_ii_16′:	[ḫa-a]š-ḫu-ra-ak-k[a]
+#lem: +hašhūrakku['apple' bush//'apple'-bush]N'N$hašhūrakka
+
+1.49′′.	%n [... s]upāla 
+#lem: u; supāla[(a) juniper]N
+
+A₄_obv_ii_17′:	[s]ú-pa-la
+#lem: +supālu[(a) juniper]N$supāla
+
+1.50′′.	%n [...] ana? 
+#lem: u; ana[to]PRP
+
+A₄_obv_ii_18′:	[...] ⸢a?⸣-na
+#lem: u; ana[to]PRP
+
+1.51′′.	%n [...] ... suād[ī] 
+#lem: u; u; +suādu[sedge(-tubers)//(an aromatic plant)]N'N$suādī
+
+A₄_obv_ii_19′:	[...] x su-ʾa-a-d[i]
+#lem: u; u; suʾādī[(an aromatic plant)]N
+
+1.52′′.	%n [...] ... [... ...]
+#lem: u; u; u; u
+
+A₄_obv_ii_20′:	[...] x x [...]
+#lem: u; u; u; u
+
+A₄: ($obv ii breaks$) 
+B: ($obv ii for the most part lost$)
+
+$ (break)
+
+1.53′′′.	%n  ... [...] 
+#lem: u; u
+
+B_obv_ii_1′:	⸢É⸣ [...]
+#lem: bīt[house]N; u
+
+1.54′′′.	%n šammī ... [...] 
+#lem: šammī[herb]N; u; u
+
+B_obv_ii_2′:	Ú.ḪI.A ⸢ki⸣-[...]
+#lem: +šammu[plant(s)//herb]N'N$šammī; u
+
+1.55′′′.	%n ina tinūr[i  ...] 
+#lem: ina[in]PRP; tinūri[furnace]N; u
+
+B_obv_ii_3′:	ina {im}ŠU.GAR.⸢LAGAB⸣.N[A ...]
+#lem: ina[in]PRP; +tinūru[oven//furnace]N'N$tinūri; u
+
+1.56′′′.	%n itti aḫām[iš  ...]
+#lem: +itti[with]PRP$; +ahāmiš[each other//one another]AV'AV$; u
+
+B_obv_ii_4′:	it-ti a-ḫa-m[iš ...]
+#lem: itti[with]PRP; +ahāmiš[each other//one another]AV'AV$; u
+
+B:	($ruling$)
+
+$ruling
+
+1.57′′′.	%n maštakal [...] 
+#lem: maštakal[(a soapwort)]N; u
+
+B_obv_ii_5′:	{ú}IN.NU.UŠ ⸢{ú}⸣[...]
+#lem: maštakal[(a soapwort)]N; u
+
+1.58′′′.	%n murdudâ a[rtatilla] 
+#lem: murdudâ[(a medicinal plant)]N; artatilla[(a plant)]N
+
+B_obv_ii_6′:	mu-ur-du-da a[r-ta-tìl-la]
+#lem: +murdudû[(a plant)//(a medicinal plant)]N'N$murdudâ; artatilla[(a plant)]N
+
+1.59′′′.	%n ḫašḫūrakka [...] 
+#lem: +hašhūrakku['apple' bush//'apple'-bush]N'N$hašhūrakka; u
+
+B_obv_ii_7′:	ḫa-aš-ḫu-ra-kà ⸢{ú}⸣[...]
+#lem: +hašhūrakku['apple' bush//'apple'-bush]N'N$hašhūrakka; u
+
+1.60′′′.	%n šurmēna sup[āla  ...] 
+#lem: šurmēna[cypress]N; supāla[(a) juniper]N; u
+
+B_obv_ii_8′:	{giš}ŠU.ÚR.MÌN sú-p[a-la ...]
+#lem: +šurmēnu[cypress]N$šurmēna; supāla[(a) juniper]N; u
+
+1.61′′′.	%n burāša lib[āra ...]
+#lem: burāša[(species of) juniper]N; +libāru[(a fruit (tree))]N$libāra; u
+
+B_obv_ii_9′:	⸢{šim}⸣LI li-b[a-a-ra ...]
+#lem: +burāšu[(species of) juniper]N$burāša; +libāru[(a fruit (tree))]N$libāra; u
+
+1.62′′′.	x [...] x [...]
+#lem: u; u; u; u
+
+B_obv_ii_10′:	x [...] x [...]
+#lem: u; u; u; u
+
+1.63′′′.	x [...]
+#lem: u; u
+
+B_obv_ii_11′:	x [...]
+#lem: u; u
+
+B: ($three lines missing to the end of obv ii$)
+
+$ (break)
+
+1.64′′′′.	%n ana pišerti kiš[p]ī ša ina š[ammī šūkul?] 
+#lem: ana[for]PRP; pišerti[release]N; kišpī[witchcraft]N; ša[which]REL; ina[with]PRP; šammī[herb]N; +šūkulu[fed//given to eat]AJ'AJ$šūkul
+
+A₂_rev_iii_1:	a-na pi-še₂₀-er-ti ki-iš-[p]i ša i-na ša-[am-mi šu-kúl?]
+#lem: ana[for]PRP; pišerti[release]N; kišpī[witchcraft]N; ša[which]REL; ina[with]PRP; šammī[herb]N; +šūkulu[fed//given to eat]AJ'AJ$šūkul
+
+1.65′′′′.	%n imbuʾ tâmti ruʾtī[ta   ...] 
+#lem: imbuʾ[fibre]N; tâmti[sea]N; ruʾtīta[sulphur]N; u
+
+A₂_rev_iii_2:	im-bu-uʾ ta-am-ti ru-uʾ-ti-i-[ta ...]
+#lem: imbuʾ[fibre]N; tâmti[sea]N; +ruʾtītu[sulphur]N$ruʾtīta; u
+
+1.66′′′′.	%n tasâk ana libbi šaman nūni [šaman ...] 
+#lem: tasâk[pound]V; ana[to+=in]PRP; libbi[interior]N; šaman[oil]N; nūni[fish]N; šaman[oil]N; u
+
+A₂_rev_iii_3:	ta-sa-a-ak a-na li-ib-bi Ì.GIŠ KU₆ [Ì.GIŠ x (x)]
+#lem: +sâku[pound]V$tasâk; +ana[to+=in]PRP$; +libbu[interior]N$libbi; šaman[oil]N; nūni[fish]N; šaman[oil]N; u; u
+
+1.67′′′′.	%n u šaman šurmēni taball[al] 
+#lem: u[and]CNJ; šaman[oil]N; šurmēni[cypress]N; taballal[mix (up)]V
+
+A₂_rev_iii_4:	ù Ì.GIŠ šu-ur-mé-ni ta-ba-al-l[a-al]
+#lem: u[and]CNJ; šaman[oil]N; +šurmēnu[cypress]N$šurmēni; +balālu[mix (up)]V$taballal
+
+1.68′′′′.	%n pāna tukattam itti mê taš[aqqīšu]
+#lem: pāna[front]N; tukattam[cover]V; itti[with]PRP; mê[water]N; tašaqqīšu[give to drink]V
+
+A₂_rev_iii_5:	pa-na tu-ka-at-ta-am it-ti me-e N[AG-šú]
+#lem: pāna[front]N; tukattam[cover]V; itti[with]PRP; mê[water]N; tašaqqīšu[give to drink]V
+
+A₂:	($ruling$)
+
+$ruling
+
+1.69′′′′.	%n ina sebî ūmi kīma Šamaš itta[pḫa] 
+#lem: ina[on]PRP; sebî[seventh]NU; ūmi[day]N; kīma[as soon as]'MOD; Šamaš[1]DN; +napāhu[blow//rise]V'V$ittapha
+
+A₂_rev_iii_6:	i-na	se-bi-i u₄-mi ki-ma {d}UTU it-ta-a[p-ḫa]
+#lem: ina[on]PRP; sebî[seventh]NU; ūmi[day]N; kīma[as soon as]'MOD; Šamaš[1]DN; +napāhu[blow//rise]V'V$ittapha
+
+B_rev_iii_1′:	⸢i?⸣-[na]
+#lem: ina[on]PRP
+
+
+1.70′′′′.	%n mê kakkabī u mê emmūti tat[abbak] 
+#lem: mê[water]N; kakkabī[star]N; u[and]CNJ; mê[water]N; emmūti[hot]AJ; tatabbak[pour (out)]V
+
+A₂_rev_iii_7:	me-e	MUL.MEŠ ù me-e em-mu-ti <$ta$>-t[a-ba-ak]
+#lem: mê[water]N; kakkabī[star]N; u[and]CNJ; mê[water]N; +emmu[hot]AJ$emmūti; +tabāku[pour (out)]V$tatabbak
+
+B_rev_iii_2′:	A.MEŠ	[...]
+#lem: mê[water]N; u
+
+
+1.71′′′′.	%n uḫulta tesêršu-[ma?] 
+#lem: +uhultu[soda//soda ash]N'N$uhulta; +sêru[plaster//smear]V'V$tesêršu-ma
+
+A₂_rev_iii_8:	ù-ḫu-ul-ta te-se-er-šu-[ma?]
+#lem: +uhultu[soda//soda ash]N'N$uhulta; +sêru[plaster//smear]V'V$tesêršūma
+
+B_rev_iii_3′:	ša x (x) [...]
+#lem: u; u; u; u
+
+
+1.72′′′′.	%n mê šunūti turamma[kšu] 
+#lem: mê[water]N; šunūti[these]'DP; +ramāku[bathe//wash]V'V$turammakšu
+
+A₂_rev_iii_9:	me-e	šu-nu-ti	tu-ra-am-ma-a[k-šu]
+#lem: mê[water]N; šunūti[these]'DP; +ramāku[bathe//wash]V'V$turammakšu
+
+B_rev_iii_4′:	A.MEŠ	šu-⸢nu-ti⸣	[...]
+#lem: mê[water]N; šunūti[these]'DP; u
+
+
+1.73′′′′.	%n šamna ($var.: šammī$) šâšu tapašša[ssu]
+#lem: šamna[oil]N; šâšu[that]'DP; +pašāšu[anoint]V$tapaššassu
+
+A₂_rev_iii_10:	ša-am-na	ša-a-šu ta-pa-aš-ša-a[s-su]
+#lem: +šamnu[oil]N$šamna; +šuāšu[to him//that]IP'DP$šâšu; +pašāšu[anoint]V$tapaššassu
+
+B_rev_iii_5′:	Ú.ḪI.A	ša-a-[šu]
+#lem: +šammu[plant(s)//herb]N'N$šammī; šâšu[that]'DP
+
+A₂:	($ruling$)
+B:	($ruling$)
+
+$ruling
+
+1.74′′′′.	%n ana pišerti kišpī ša ina akali [šūkul(u)  ...]
+#lem: ana[for]PRP; pišerti[release]N; kišpī[witchcraft]N; ša[which]REL; ina[with]PRP; akali[bread]N; +šūkulu[fed//given to eat]AJ'AJ$; u
+
+A₂_rev_iii_11:	a-na pi-še₂₀-er-ti ki-iš-pi ša i-na a-ka-li [šu-kúl]
+#lem: ana[for]PRP; pišerti[release]N; kišpī[witchcraft]N; ša[which]REL; ina[with]PRP; +akalu[bread]N$akali; +šūkulu[fed//given to eat]AJ'AJ$šūkul
+
+B_rev_iii_6′:	a-na pi-še-er-t[i]
+#lem: ana[for]PRP; pišerti[release]N
+
+1.75′′′′.	%n ina šikari šaqû ina sebî ūmi [...] 
+#lem: ina[in]PRP; šikari[beer]N; +šaqû[irrigated//given to drink]AJ'AJ$; ina[on]PRP; sebî[seventh]NU; ūmi[day]N; u
+
+A₂_rev_iii_12:	i-na	ši-ka-ri	<$ša$>-qu-ú i-na U₄ 7.KAM [...]
+#lem: ina[in]PRP; šikari[beer]N; +šaqû[irrigated//given to drink]AJ'AJ$; ina[on]PRP; ūm[day]N; n; u
+
+B_rev_iii_7′:	ina	KAŠ	ša-qú-⸢ú⸣ [...]
+#lem: ina[in]PRP; šikari[beer]N; +šaqû[irrigated//given to drink]AJ'AJ$; u
+
+1.76′′′′.	%n balu patān [...] 
+#lem: balu[without]PRP; patān[dining]'N; u
+
+A₂_rev_iii_13:	ba-lu	pa-ta-an [...]
+#lem: balu[without]PRP; +patānu[dine//dining]V'N$patān; u
+
+B_rev_iii_8′:	ba-lum	pa-tan{an} [...]
+#lem: balu[without]PRP; patān[dining]'N; u
+
+1.77′′′′.	%n ina kappi [...] 
+#lem: ina[in]PRP; +kappu[hand//bowl]N'N$kappi; u
+
+A₂_rev_iii_14:	⸢i-na⸣ [...]
+#lem: ina[in]PRP; u
+
+B_rev_iii_9′:	ina	ka-ap-⸢pi⸣ [...]
+#lem: ina[in]PRP; +kappu[hand//bowl]N'N$kappi; u
+
+A₂: ($rev iii breaks$)
+
+1.78′′′′.	%n rupul[tV  ...]
+#lem: u; u
+
+B_rev_iii_10′:	ru-pu-⸢ul⸣-[tu? ...]
+#lem: +rupuštu[phlegm]N$rupultu; u
+
+B: ($lower half of rev iii lost$)
+
+$ (break)
+
+1.79′′′′′.	%n   ...  [...] 
+#lem: u; u
+
+A₃_rev_iii_1′:	x x [...]
+#lem: u; u; u
+
+1.80′′′′′.	%n argan[na  ...] 
+#lem: arganna[(an aromatic plant and its resin)]N; u
+
+A₃_rev_iii_2′:	ar-ga-⸢an⸣-[na ...]
+#lem: +argānu[(a conifer and its resin)//(an aromatic plant and its resin)]N'N$arganna; u
+
+1.81′′′′′.	%n suādī [...] 
+#lem: +suādu[sedge(-tubers)//(an aromatic plant)]N'N$suādī; u
+
+A₃_rev_iii_3′:	su-ʾa-a-di [...]
+#lem: suʾādī[(an aromatic plant)]N; u
+
+1.82′′′′′.	%n ṣumlalê ni[kipta? ...] 
+#lem: +ṣumlalû[(a spice plant)]N$ṣumlalê; +nikiptu[spurge//(aromatic, gum-yielding plant)]N'N$nikipta; u
+
+A₃_rev_iii_4′:	ṣum-la-le-e ni-[ki-ip-ta? ...]
+#lem: +ṣumlalû[(a spice plant)]N$ṣumlalê; +nikiptu[spurge//(aromatic, gum-yielding plant)]N'N$nikipta; u
+
+1.83′′′′′.	%n ina šikari ta[namdī-ma?] 
+#lem: ina[in]PRP; šikari[beer]N; +nadû[throw (down)//put]V'V$tanamdī-ma
+
+A₃_rev_iii_5′:	i-na KAŠ.SAG ⸢ta⸣-[nam-di-ma?]
+#lem: ina[in]PRP; šikari[beer]N; +nadû[throw (down)//put]V'V$tanamdīma
+
+1.84′′′′′.	%n ana pān Gu[la  ...] 
+#lem: +ana[to+=before]PRP$; +pānu[front]N$pān; Gula[1]DN; u
+
+A₃_rev_iii_6′:	a-na pa-an {d}gu-[la ...]
+#lem: +ana[to+=before]PRP$; +pānu[front]N$pān; Gula[1]DN; u
+
+1.85′′′′′.	%n mušīta tušbā[t ina šēri] 
+#lem: mušīta[at night]'AV; tušbāt[let stand overnight]V; ina[in]PRP; šēri[morning]N
+
+A₃_rev_iii_7′:	mu-ši-ta tu-uš-⸢ba-a⸣-a[t i-na še-ri]
+#lem: mušīta[at night]'AV; +biātu[spend the night//let stand overnight]V'V$tušbāt; ina[in]PRP; šēri[morning]N
+
+1.86′′′′′.	%n Šamaš lā immar [...] 
+#lem: Šamaš[1]DN; lā[not]MOD; +amāru[see]V$immar; u
+
+A₃_rev_iii_8′:	{d}UTU la i-im-ma-ar [...]
+#lem: Šamaš[1]DN; lā[not]MOD; +amāru[see]V$immar; u
+
+1.87′′′′′.	%n tašaḫḫal-ma [...] 
+#lem: +hašālu[crush]V$tašahhal-ma; u
+
+A₃_rev_iii_9′:	ta-ša-aḫ-ḫa-al-ma [...]
+#lem: +hašālu[crush]V$tašahhalma; u
+
+1.88′′′′′.	%n lām šēpšu [ana qaqqari išakkanu] 
+#lem: +lāma[before]PRP$lām; +šēpu[foot]N$šēpšu; +ana[to//on]PRP'PRP$; qaqqari[ground]N; +šakānu[put]V$išakkanu
+
+A₃_rev_iii_10′:	la-a-am še-ep-šu [%n ana qaqqari išakkanu]
+#lem: +lāma[before]PRP$lām; +šēpu[foot]N$šēpšu; +ana[to//on]PRP'PRP$; qaqqari[ground]N; +šakānu[put]V$išakkanu
+
+1.89′′′′′.	%n tašaqqīšu-ma [iballuṭ]
+#lem: tašaqqīšu-ma[give to drink]V; iballuṭ[recover]V
+
+A₃_rev_iii_11′:	ta-ša-aq-qí-šu-ma [%n iballuṭ]
+#lem: +šaqû[give to drink]V$tašaqqīšūma; iballuṭ[recover]V
+
+A₃:	($ruling$)
+
+$ruling
+
+1.90′′′′′.	%n [...] ... ḫimēta [...] 
+#lem: u; u; +himētu[butter//ghee]N'N$himēta; u
+
+A₃_rev_iii_12′:	[x] x ba Ì.NUN [...]
+#lem: u; u; u; himēta[ghee]N; u
+
+1.91′′′′′.	%n [...]  ...  [... ...]
+#lem: u; u; u; u
+
+A₃_rev_iii_13′:	[x x] ḫa ⸢ú?⸣ x [...]
+#lem: u; u; u; u; u; u
+
+A₃: ($rev iii breaks$)
+
+$ (break)
+
+1.92′′′′′′.	%n [... t]ubbal taḫaššal 
+#lem: u; tubbal[dry (up)]V; +hašālu[crush]V$tahaššal
+
+A₂_rev_iv_1:	[t]u-⸢ub-bá⸣-al ⸢ta-ḫa-áš⸣-ša-al
+#lem: +abālu[dry (up)]V$tubbal; +hašālu[crush]V$tahaššal
+
+1.93′′′′′′.	%n [tanappi] ana libbi šikari tanamdi 
+#lem: tanappi[sieve]V; ana[to+=in]PRP; libbi[interior]N; šikari[beer]N; tanamdi[put]V
+
+A₂_rev_iv_2:	[ta-na-ap-pi] ⸢a⸣-na li-⸢ib⸣-bi KAŠ.⸢SAG⸣ ta-nam-di
+#lem: +napû[sieve]V$tanappi; ana[to+=in]PRP; libbi[interior]N; +šikaru[beer]N$šikari; tanamdi[put]V
+
+
+1.94′′′′′′.	%n [...] ... ana pān Gula 
+#lem: u; u; +ana[to+=before]PRP$; +pānu[front]N$pān; Gula[1]DN
+
+A₂_rev_iv_3:	[...] x bi	a-na	pa-an	{d}gu-la
+#lem: u; u; u; +ana[to+=before]PRP$; +pānu[front]N$pān; Gula[1]DN
+
+B_rev_iii_end–IV_1:	[...] //	[ana	I]GI	{d}gu-la
+#lem: u; +ana[to+=before]PRP$; +pānu[front]N$pān; Gula[1]DN
+
+
+1.95′′′′′′.	%n ana šutukki tašakkan mušīta tušbāt 
+#lem: ana[to]PRP; šutukki[reed hut]N; tašakkan[place]V; mušīta[at night]'AV; tušbāt[let stand overnight]V
+
+A₂_rev_iv_4:	[{é}šu]-⸢tùk-ki	GAR	mu-ši⸣-ta	tu-uš-ba-a-at
+#lem: +šutukku[reed-hut//reed hut]N'N$šutukki; tašakkan[place]V; mušīta[at night]'AV; tušbāt[let stand overnight]V
+
+B_rev_iv_1–2:	ana	{é}šu-tùk-ki	GAR-an //	[mu-š]i-ta	tuš-bat →
+#lem: ana[to]PRP; šutukki[reed hut]N; tašakkan[place]V; mušīta[at night]'AV; tušbāt[let stand overnight]V
+
+
+1.96′′′′′′.	%n ina šēri Šamaš lā immar 
+#lem: ina[in]PRP; šēri[morning]N; Šamaš[1]DN; lā[not]MOD; +amāru[see]V$immar
+
+A₂_rev_iv_5:	[...]	{d}UTU la	i-im-mar
+#lem: u; Šamaš[1]DN; lā[not]MOD; immar[see]V
+
+B_rev_iv_2:	ina še-ri	{d}UTU NU	i-mar
+#lem: ina[in]PRP; šēri[morning]N; Šamaš[1]DN; lā[not]MOD; +amāru[see]V$immar
+
+
+1.97′′′′′′.	%n balu patān tašaqqīšu ($var. adds -ma$)
+#lem: balu[without]PRP; patān[dining]'N; tašaqqīšu[give to drink]V
+
+A₂_rev_iv_6:	[...]	NAG-šú
+#lem: u; tašaqqīšu[give to drink]V
+
+B_rev_iv_3:	ba-lum pa-tan	NAG-ma
+#lem: balu[without]PRP; patān[dining]'N; +šaqû[give to drink]V$tašaqqīšūma
+
+A₂:	($ruling$)
+B:	($ruling$)
+
+$ruling
+
+1.98′′′′′′.	%n qaqqad erēbi peṣê supāla maštakal 
+#lem: qaqqad[head]N; +erēbu[rook//crow]N'N$erēbi; +peṣû[white]AJ$peṣê; supāla[(a) juniper]N; maštakal[(a soapwort)]N
+
+A₂_rev_iv_6–7:	[e-ri]-bi	pe-ṣe-e	su-pa-la //	[{ú}IN.NU.U]Š	→
+#lem: +erēbu[rook//crow]N'N$erēbi; +peṣû[white]AJ$peṣê; +supālu[(a) juniper]N$supāla; maštakal[(a soapwort)]N
+
+B_rev_iv_4:	SAG.DU	e-ri-bi	BABBAR	sú-pa-la	{ú}IN.NU.[UŠ]
+#lem: +qaqqadu[head]N$qaqqad; +erēbu[rook//crow]N'N$erēbi; +peṣû[white]AJ$peṣê; supāla[(a) juniper]N; maštakal[(a soapwort)]N
+
+
+1.99′′′′′′.	%n imḫur-līm imḫur-ašnan ($var.: -ašrā$) tarmuš 
+#lem: +imhur-līm[(a medicinal plant)//'heals-a-thousand'-plant]N'N$; +imhur-ešrā[(a climbing plant)//'heals-twenty'-plant]N'N$imhur-ašnan; tarmuš[lupine]N
+
+A₂_rev_iv_7–8:	im-ḫu-ur-li-i-mi	im-ḫur-aš-ra //	[ta-ar-mu-u]š	→
+#lem: +imhur-līm[(a medicinal plant)//'heals-a-thousand'-plant]N'N$imhur-līmi; +imhur-ešrā[(a climbing plant)//'heals-twenty'-plant]N'N$imhur-ašrā; +tarmuš[lupin//lupine]N'N$
+
+B_rev_iv_5:	{ú}im-ḫur-lim	{ú}im-ḫur-áš-na-an	 {ú}tar-m[uš]
+#lem: imhur-līm['heals-a-thousand'-plant]N; +imhur-ešrā[(a climbing plant)//'heals-twenty'-plant]N'N$imhur-ašnan; tarmuš[lupine]N
+
+
+1.100′′′′′′.	%n iltēniš tasâk ana libbi šaman 
+#lem: +ištēniš[together]AV$iltēniš; tasâk[pound]V; ana[to+=into]PRP; libbi[interior]N; šaman[oil]N
+
+A₂_rev_iv_9–10:	il-te-ni-iš t[a-s]a-a-ak //	[...]	→
+#lem: +ištēniš[together]AV$iltēniš; tasâk[pound]V; u
+
+B_rev_iv_6:	il-te-ni-iš ta-sa₁₅-ak	ana ŠÀ Ì.GIŠ
+#lem: iltēniš[together]AV; +sâku[pound]V$tasâk; ana[to+=into]PRP; libbi[interior]N; šaman[oil]N
+
+
+1.101′′′′′′.	%n šurmēni tanamdi ina šapatti ešrî 
+#lem: šurmēni[cypress]N; tanamdi[put]V; ina[on]PRP; šapatti[15th day of month]N; +ešrû[20th day (of month)]N$ešrî
+
+A₂_rev_iv_10–11:	[š]u-ur-mé-ni	ta-na-[a]m-di //	[...]	U₄ 20.KAM	→
+#lem: šurmēni[cypress]N; +nadû[throw (down)//put]V'V$tanamdi; u; ūm[day]N; n
+
+B_rev_iv_7:	{giš}ŠU.ÚR.MÌN	ŠUB-di	ina U₄ 15.KAM	U₄ 20.KAM
+#lem: +šurmēnu[cypress]N$šurmēni; +nadû[throw (down)//put]V'V$tanamdi; ina[on]PRP; ūm[day]N; n; ūm[day]N; n
+
+
+1.102′′′′′′.	%n u bibli taptanaššassu-ma 
+#lem: u[and]CNJ; +bibbulu[(day of the) New Moon]N$bibli; +pašāšu[anoint//rub repeatedly]V'V$taptanaššassu-ma
+
+A₂_rev_iv_11:	ù bi-ib-li	t[a-ap-t]a-na-ša-su-ma
+#lem: u[and]CNJ; +bibbulu[(day of the) New Moon]N$bibli; +pašāšu[anoint//rub repeatedly]V'V$taptanaššassūma
+
+B_rev_iv_8:	u <$U₄$>.NÁ.A	ŠÉŠ-sú-ma
+#lem: u[and]CNJ; +bibbulu[(day of the) New Moon]N$bibli; +pašāšu[anoint//rub repeatedly]V'V$taptanaššassūma
+
+
+1.103′′′′′′.	%n kišpū pašrū ana amēli lā iṭeḫḫû
+#lem: kišpū[witchcraft]N; pašrū[released]AJ; ana[to]PRP; amēli[man]N; lā[not]MOD; +ṭehû[be(come) near to]V$iṭehhû
+
+A₂_rev_iv_12:	[pa]-aš-ru	a-na	a-m[é-li		i-ṭ]e₄-eḫ-ḫu-u
+#lem: pašrū[released]AJ; ana[to]PRP; +awīlu[man]N$amēli; +ṭehû[be(come) near to]V$iṭehhû
+
+B_rev_iv_9:	kiš-pu	pa-aš-ru	ana	LÚ	NU	i-ṭe₄-eḫ-ḫu-u
+#lem: kišpū[witchcraft]N; pašrū[released]AJ; ana[to]PRP; amēli[man]N; lā[not]MOD; iṭehhû[be(come) near to]V
+
+A₂:	($ruling$)
+B:	($ruling$)
+
+$ruling
+
+1.104′′′′′′.	%n kabarti mīti ša šumēla 
+#lem: +kabartu[(part of foot)//ankle-bone]N'N$kabarti; mīti[dead person]'N; ša[of]DET; +šumēlu[left//left side]N'N$šumēla
+
+A₂_rev_iv_13:	[ka-ba-ar-t]i	⸢mi-i⸣-t[i		š]u-me-la
+#lem: +kabartu[(part of foot)//ankle-bone]N'N$kabarti; +mītu[dead//dead person]AJ'N$mīti; +šumēlu[left//left side]N'N$šumēla
+
+B_rev_iv_10:	ka-ba-ar-ti	mi-i-ti	ša	GÙB
+#lem: kabarti[ankle-bone]N; mīti[dead person]'N; ša[of]DET; +šumēlu[left//left side]N'N$šumēli
+
+
+1.105′′′′′′.	%n šamna tupaššassu paršigga 
+#lem: šamna[oil]N; +pašāšu[anoint//have someone anoint]V'V$tupaššassu; +paršīgu[headdress//headband]N'N$paršigga
+
+A₂_rev_iv_14:	[...] x [...]
+#lem: u; u; u
+
+B_rev_iv_11:	Ì.GIŠ tu-pa-ša-as-sú {túg}BAR.SI.IG
+#lem: +šamnu[oil]N$šamna; +pašāšu[anoint//have someone anoint]V'V$tupaššassu; +paršīgu[headdress//headband]N'N$paršigga
+
+A₂: ($rev iv breaks$)
+
+1.106′′′′′′.	%n tušarkassu amēl kišpū 
+#lem: +rakāsu[bind//have someone gird]V'V$tušarkassu; +awīlu[man]N$amēl; kišpū[witchcraft]N
+
+B_rev_iv_12:	tu-ša-ar-kà-as-sú LÚ kiš-pu
+#lem: +rakāsu[bind//have someone gird]V'V$tušarkassu; +awīlu[man]N$amēl; kišpū[witchcraft]N
+
+1.107′′′′′′.	%n kīam iqabbi umma šū-ma 
+#lem: kīam[thus]AV; +qabû[say]V$iqabbi; +umma[saying]PRP$; šū-ma[he]IP
+
+B_rev_iv_13:	ki-a-am i-qáb-bi um-ma šu-ú-ma
+#lem: kīam[thus]AV; +qabû[say]V$iqabbi; umma[saying]PRP; +šū[he]IP$šūma
+
+1.108′′′′′′.	%n šamna apšuški kabartaki 
+#lem: šamna[oil]N; +pašāšu[anoint]V$apšuški; +kabartu[(part of foot)//ankle-bone]N'N$kabartaki
+
+B_rev_iv_14:	Ì.GIŠ ap-šu-uš-ki ka-ba-ar-ta-ki
+#lem: +šamnu[oil]N$šamna; +pašāšu[anoint]V$apšuški; +kabartu[(part of foot)//ankle-bone]N'N$kabartaki
+
+1.109′′′′′′.	%n paršigga arkus ša kišpī ruḫê 
+#lem: paršigga[headband]N; +rakāsu[bind//gird]V'V$arkus; ša[who]REL; kišpī[witchcraft]N; +ruhû[sorcery//magic]N'N$ruhê
+
+B_rev_iv_15:	pár-ši-ig-ga ar-ku-us ša kiš-pi ru-ḫe-e
+#lem: +paršīgu[headdress//headband]N'N$paršigga; +rakāsu[bind//gird]V'V$arkus; ša[who]REL; kišpī[witchcraft]N; ruhê[magic]N
+
+1.110′′′′′′.	%n rusê upšāšê lā ṭābūti 
+#lem: rusê[sorcery]N; upšāšê[machinations]N; lā[not]MOD; ṭābūti[good]AJ
+
+B_rev_iv_16:	ru-se-e up-ša-še-e la ṭa-bu-ti
+#lem: rusê[sorcery]N; upšāšê[machinations]N; lā[not]MOD; +ṭābu[good]AJ$ṭābūti
+
+1.111′′′′′′.	%n isḫura išteʾʾâ ṣabtīšu-ma 
+#lem: +sahāru[go around//turn to]V'V$ishura; +šeʾû[seek (out)]V$išteʾʾâ; +ṣabātu[seize]V$ṣabtīšu-ma
+
+B_rev_iv_17:	is-ḫu-ra iš-te-a-a ṣa-ab-ti-šu-ma
+#lem: ishura[turn to]V; +šeʾû[seek (out)]V$išteʾʾâ; +ṣabātu[seize]V$ṣabtīšūma
+
+1.112′′′′′′.	%n lā tumaššarīšu mala īpušu 
+#lem: lā[not]MOD; +ašāru[sink down//release]V'V$tumaššarīšu; mala[whatever]'XP; +epēšu[do]V$īpušu
+
+B_rev_iv_18:	la tu-ma-aš-ša-ri-šu ma-la i-⸢pu-šu⸣
+#lem: lā[not]MOD; +ašāru[sink down//release]V'V$tumaššarīšu; mala[whatever]'XP; +epēšu[do]V$īpušu
+
+1.113′′′′′′.	%n ana muḫḫīšu terrī yâši tū[rī?] 
+#lem: +ana[to+=to]PRP$; +muhhu[skull]N$muhhīšu; +târu[turn//send back]V'V$terrī; yâši[to me]IP; +târu[turn//turn back]V'V$tūrī
+
+B_rev_iv_19:	a-na UGU-šú te-er-ri ia-a-ši tu-⸢ú?⸣-[ri?]
+#lem: +ana[to+=to]PRP$; +muhhu[skull]N$muhhīšu; +târu[turn//send back]V'V$terrī; yâši[to me]IP; +târu[turn//turn back]V'V$tūrī
+
+1.114′′′′′′.	%n šū lirbiṣ-ma anāk[u lutbi?] 
+#lem: +šū[he]IP$; +rabāṣu[sit//lie down]V'V$lirbiṣ-ma; anāku[I]IP; lutbi[rise]V
+
+B_rev_iv_20:	šu-ú li-ir-bi-iṣ-ma ⸢a-na⸣-k[u lu-ut-bi?]
+#lem: +šū[he]IP$; +rabāṣu[sit//lie down]V'V$lirbiṣma; anāku[I]IP; lutbi[rise]V
+
+1.115′′′′′′.	%n šū limūt-ma a[nāku lubluṭ] 
+#lem: +šū[he]IP$; limūt-ma[die]V; anāku[I]IP; lubluṭ[live]V
+
+B_rev_iv_21:	šu-ú li-mu-ut-ma ⸢a⸣-[na-ku %n lubluṭ]
+#lem: +šū[he]IP$; +mâtu[die]V$limūtma; anāku[I]IP; lubluṭ[live]V
+
+1.116′′′′′′.	%n annâ amēlu iqabbi ... [...]
+#lem: annâ[this]DP; amēlu[man]N; iqabbi[say]V; u; u
+
+B_rev_iv_22:	an-na-a LÚ DU₁₁.⸢GA⸣ x [...]
+#lem: annâ[this]DP; amēlu[man]N; +qabû[say]V$iqabbi; u; u
+
+B:	($ruling$)
+
+$ruling
+
+1.117′′′′′′.	%n iṣṣūr šamê [...]
+#lem: iṣṣūr[bird]N; šamê[heaven]N; u
+
+B_rev_iv_23:	MUŠEN AN-e [...]
+#lem: iṣṣūr[bird]N; šamê[heaven]N; u
+
+B: ($rev iv breaks$)
+
+$ (break)
+
+1.118′′′′′′′.	%n [...] ... 
+#lem: u; u
+
+A₃_rev_iv_1′:	[...] x
+#lem: u; u
+
+1.119′′′′′′′.	%n [...]  ...  tanamdi 
+#lem: u; u; tanamdi[put]V
+
+A₃_rev_iv_2′:	[...] x x x x ri ta-nam-di
+#lem: u; u; u; u; u; u; tanamdi[put]V
+
+1.120′′′′′′′.	%n [...] tušakkal
+#lem: u; +akālu[eat//have someone eat]V'V$tušakkal
+
+A₃_rev_iv_3′:	[...] x	tu-ša-kal
+#lem: u; u; +akālu[eat//have someone eat]V'V$tušakkal
+
+A₃:	($ruling$)
+
+$ruling
+
+1.121′′′′′′′.	%n [...] zalāqa asqiqâ 
+#lem: u; +zalāqu[(a shiny stone)]N$zalāqa; +ašgigû[arsenic]N$asqiqâ
+
+A₃_rev_iv_4′:	[...] za-la-qa as-qí-qá-a
+#lem: u; +zalāqu[(a shiny stone)]N$zalāqa; +ašgigû[arsenic]N$asqiqâ
+
+1.122′′′′′′′.	%n [...] ... ašnugalla 
+#lem: u; u; +ašnugallu[alabaster]N$ašnugalla
+
+A₃_rev_iv_5′:	[...] iš aš-nu-ga-al-la
+#lem: u; u; +ašnugallu[alabaster]N$ašnugalla
+
+1.123′′′′′′′.	%n [...] illāt tâmti 
+#lem: u; +illātu[saliva//spittle]N'N$illāt; tâmti[sea]N
+
+A₃_rev_iv_6′:	[...] il-la-at ta-am-ti
+#lem: u; +illātu[saliva//spittle]N'N$illāt; tâmti[sea]N
+
+1.124′′′′′′′.	%n [...] parzilla 
+#lem: u; parzilla[iron]N
+
+A₃_rev_iv_7′:	[...] pa-ar-zi-il-la
+#lem: u; parzilla[iron]N
+
+1.125′′′′′′′.	%n [...] imbuʾ tâmti 
+#lem: u; imbuʾ[fibre]N; tâmti[sea]N
+
+A₃_rev_iv_8′:	[...] im-bu-uʾ ta-am-ti
+#lem: u; imbuʾ[fibre]N; tâmti[sea]N
+
+1.126′′′′′′′.	%n [...] ... tašakkanšu
+#lem: u; u; tašakkanšu[place]V
+
+A₃_rev_iv_9′:	[...] x ⸢ta-ša-ak⸣-ka-an-šú
+#lem: u; u; +šakānu[put//place]V'V$tašakkanšu
+
+A₃:	($ruling$)
+
+$ruling
+
+1.127′′′′′′′.	%n [...] ...
+#lem: u; u
+
+A₃_rev_iv_10′:	[...] x ⸢me?⸣
+#lem: u; u; u
+
+
+@h1 cmawro:1.1 :: 2. A₅ (original position unknown)
+
+
+2.1′.	%n [...] ... [...] 
+#lem: u; u; u
+
+A₅_1′:	[...] x [...]
+#lem: u; u; u
+
+2.2′.	%n [...  qanni? ṣ]abīti [...] 
+#lem: u; +qarnu[horn]N$qanni; +ṣabītu[gazelle]N$ṣabīti; u
+
+A₅_2′:	[... %n qanni? %g M]AŠ.DÀ [...]
+#lem: u; +qarnu[horn]N$qanni; +ṣabītu[gazelle]N$ṣabīti; u
+
+2.3′.	%n [...] nuḫu[rta  ...] 
+#lem: u; +nuhurtu[(a variety of asafoetida)]N$nuhurta; u
+
+A₅_3′:	[...] nu-ḫu-u[r-ta ...]
+#lem: u; +nuhurtu[(a variety of asafoetida)]N$nuhurta; u
+
+2.4′.	%n [...] ... [...] 
+#lem: u; u; u
+
+A₅_4′:	[...]-⸢ri⸣-i-it [...]
+#lem: u; u
+
+2.5′.	%n [... iltēni]š tasâ[k  ...] 
+#lem: u; iltēniš[together]AV; tasâk[pound]V; u
+
+A₅_5′:	[... il-te-ni-i]š ta-sa-a-a[k ...]
+#lem: u; iltēniš[together]AV; tasâk[pound]V; u
+
+2.6′.	%n [...  ina k]akkabī tušbā[t  ...]
+#lem: u; ina[under]PRP; kakkabī[star]N; tušbāt[let stand overnight]V; u
+
+A₅_6′:	[... ina M]UL.MEŠ tu-uš-ba-a[t ...]
+#lem: u; ina[under]PRP; kakkabī[star]N; +biātu[spend the night//let stand overnight]V'V$tušbāt; u
+
+A₅:	($ruling$)
+
+$ruling
+
+2.7′.	%n [...]  ...  [...]
+#lem: u; u; u
+
+A₅_7′:	[...] x di (x) x x x [...]
+#lem: u; u; u; u; u; u; u; u
+
+
+@h1 cmawro:1.1 :: 3. A₆ (indirect join to A₁–5 doubtful; if part of the tablet, the fragment probably belongs to rev. III or IV)
+
+3.1′.	[...] x	[...]
+#lem: u; u; u
+
+A₆_1′:	[...] x	[...]
+#lem: u; u; u
+
+3.2′.	[...] x [a]m	[...]
+#lem: u; u; u; u
+
+A₆_2′:	[...] x [a]m	[...]
+#lem: u; u; u; u
+
+3.3′.	[...] x [...] šu	[...]
+#lem: u; u; u; u; u
+
+A₆_3′:	[...] x [...] šu	[...]
+#lem: u; u; u; u; u
+
+3.4′.	[x] ⸢i⸣ ú [...] am	[...]
+#lem: u; u; u; u; u; u
+
+A₆_4′:	[x] ⸢i⸣ ú [...] am	[...]
+#lem: u; u; u; u; u; u
+
+3.5′.   [...]	[x x x (x)] x šu	[...]
+#lem: u; u; u; u; u; u; u; u
+
+A₆_5′:	[...]	[x x x (x)] x šu	[...]
+#lem: u; u; u; u; u; u; u; u
+
+3.6′.	%n [ši]ptu ul yāʾuttun 
+#lem: +šiptu[incantation]N$; ul[not]MOD; yāʾuttun[mine]PP
+
+A₆_6′:	[ši-i]p-⸢tum⸣ ul ia-ut-tu-un
+#lem: +šiptu[incantation]N$; ul[not]MOD; yāʾuttun[mine]PP
+
+3.7′.	%n [šipat] Damu u Ninkarr[ak] 
+#lem: +šiptu[incantation]N$šipat; +Damu[1]DN$; u[and]CNJ; +Ninkarrak[1]DN$
+
+A₆_7′:	[%n šipat] %g ⸢{d}⸣da-mu ù {d}nin-kar-r[a-ak]
+#lem: +šiptu[incantation]N$šipat; +Damu[1]DN$; u[and]CNJ; +Ninkarrak[1]DN$
+
+3.8′.	%n [šipat ap]kal ilī Marduk [šunu] 
+#lem: +šiptu[incantation]N$šipat; apkal[sage]N; ilī[god]N; Marduk[1]DN; šunu[they]IP
+
+A₆_8′:	[%n šipat %g ap]-ka-al i-li {d}AMAR.UTU [šu-nu]
+#lem: +šiptu[incantation]N$šipat; +apkallu[wise man//sage]N'N$apkal; ilī[god]N; Marduk[1]DN; šunu[they]IP
+
+3.9′.	%n [iqbû-ma an]āku ušan[ni] 
+#lem: +qabû[say]V$iqbû-ma; anāku[I]IP; ušanni[repeat]V
+
+A₆_9′:	%n [iqbû-ma %g a-n]a-ku ú-ša-an-[ni]
+#lem: +qabû[say]V$iqbûma; anāku[I]IP; +šanû[do twice//repeat]V'V$ušanni
+
+3.10′.	%n [...] ... [...]
+#lem: u; u; u
+
+A₆_10′:	[...] x [...]
+#lem: u; u; u
+
+
+@translation labeled en project
+
+
+@(1.5′)	You pound @lab{1′}[...]  ...  [...] @lab{2′}[...], 'sweet' [re]ed, @su@ād@u-plant, ... [...] @lab{3′}[...], @murdudû-plant, @ardalillu-plant, @lab{4′}[‘marsh’]-apple, @lal[@lagu-pea, ‘@?heals-a-thousand’-plant?@], @lab{5′}‘heals-twenty’-plant, (and) @?lupine?@. Then @lab{6′}[you @mi]x (it) in beer (and) emmer beer and wine. @lab{9′}You s[teep] (therein) @lab{7′}honey, ghee, @ruʾtītu-sulphur, @lab{8′}@imbuʾ @tâmti-mineral, gold, silver, iron, @lab{9′}carnelian, (and) lapis lazuli, (all of) them fresh. @lab{10′}You cover the [o]pening (of the vessel); @lab{11′}you set it out @lab{10′}during the night be[fore the @star(@s)] for six days. @lab{11′}On the seventh day, @lab{12′}you have him drink (the potion) @lab{11′}on an empty stomach, @lab{12′}and he will recover.
+
+$ruling
+
+@(1.13′)	[For un]doing witchcraft which (the patient) [was given to drink] in bee[r]: @lab{16′}[You mix] @lab{14′}[...  @e]@rkulla-plant, @imbuʾ @tâ[@mti-mineral], @lab{15′}[...] in o[il]. @lab{16′}Y[ou cover the o]pening; @lab{17′}you leave (it) out overnight under the star(s). @lab{18′}It must n[ot be exposed to] the sun(-god) in the mo[rni]ng. @lab{19′}You take up @lab{18′}[the oil]. @lab{20′}[You have (him) drink] a[ll] the herbs and wine.
+
+$ruling
+
+@(1.21′)	For undoing w[i]tchcraft which (the patient) was given to eat with garlic: @lab{32′}You have him eat @lab{22′}@ḫašû-plant, @tīyatu-plant, @atāʾišu-plant, the bulb of a @l[@eek], @lab{23′}@nīnû-plant, @šibburratu-plant, tamarisk, @maštakal-soapwort, @lab{24′}@sikillu-plant, @šakirû-plant, ‘marsh’-reed, @šalālu-reed, date palm, @lab{25′}leaves of @baltu-thorn, leaves of @ašāgu-thorn, @lab{26′}@pillû-plant, licorice, ‘field’-turnip, @lab{27′}madder, @murdudû-plant, @artatillu-plant, @lab{28′}‘apple’-bush, @ašqulālu-plant, @merrutu-plant, @lab{29′}‘dog’s-tongue’, leaves of the @ḫuluppu-tree, ‘heals-a-thousand’-plant, @lab{30′}‘heals-twenty’-plant, @?lupine?@, @sīḫu-plant, @lab{31′}@argannu-plant, @barīrātu-plant, (and)  ...  , (all these herbs) @lab{32′}you have him eat separately. [(...)]
+
+$ruling
+
+$ (break)
+
+@(1.33′′)	[...]  ...  @lab{34′′}[...  i]n the morning @lab{35′′}[...   you] have him eat [...].
+
+$ruling
+
+@(1.36′′)	[...] soaked [in w]ater @lab{37′′}[...] river water @lab{38′′}You scoop [...]. @lab{39′′}[...] @šalālu-reed, @lab{40′′}[... o]il, fine oil, [...] @?oil?@, @lab{41′′}[(...)] you put [...  @?into be]er?@. @lab{42′′}[...]. You cover [the opening]. @lab{43′′}[...]  ...  @lab{44′′}You put [... in]to (it). @lab{45′′}[...  to]gether @lab{46′′}[...  b]efore ... [...].
+
+$ruling
+
+@(1.47′′)	[...] @turû-garlic @lab{48′′}[... ‘ap]ple’-bus[h] @lab{49′′}[... @s]@upālu-juniper @lab{50′′}[...] @for @lab{51′′}[...] ... @suād[@u-plant] @lab{52′′}[...] ... [...
+
+$ (break)
+
+@(1.53′′′)	  ...  [...] herbs  ... [...] @lab{55′′′}in an ove[n  ...] @lab{56′′′}togeth[er  ...]
+
+$ruling
+
+@(1.57′′′)	@maštakal-soapwort [...] @lab{58′′′}@murdudû-plant, @a[@rtatillu]-plant @lab{59′′′}‘apple’-bush [...] @lab{60′′′}cypress-(@?resin?@), @supālu-juni[per  ...] @lab{61′′′}@burāšu-juniper @lib[@āru-fruit  ...] 
+
+@(1.62′′′) (ll. 62′′′–63′′′: too fragmentary for translation)
+
+$ (break)
+
+@(1.64′′′′)	For undoing witchcr[a]ft which (the patient) [was given @?to eat?@] with @?he[rbs?@]: @lab{66′′′′}You pound @lab{65′′′′}@imbuʾ @tâmti-mineral, @ruʾtī[@tu]-sulphur, [and ...]. @lab{67′′′′}You mi[x] (it) @lab{66′′′′}in fish oil, [... oil], @lab{67′′′′}and cypress oil. @lab{68′′′′}You cover the opening. You have [him drink] (it) with water.
+
+$ruling
+
+@(1.69′′′′)	On the seventh day, at sunr[ise], @lab{70′′′′}you p[our] ‘water of the stars’ and warm water. @lab{71′′′′}You smear him with soda ash [@?and?@] @lab{72′′′′}was[h him] with those (two kinds of) water. @lab{73′′′′}You anoin[t him] with that oil.
+
+$ruling
+
+@(1.74′′′′)	For undoing witchcraft which (the patient) [was given to eat] with bread @lab{75′′′′}(and) to drink in beer: On the seventh day, [...] @lab{76′′′′}on an empty stomach [...] @lab{77′′′′}in a bowl [...] @lab{78′′′′}  phleg[m ...]
+
+$ (break)
+
+@(1.83′′′′′)	You [@?put?@] @lab{79′′′′′}  ...  [...] @lab{80′′′′′}@argan[@nu-plant,  ...], @lab{81′′′′′}@suādu-plant, [...], @lab{82′′′′′}@ṣumlalû-spice, @nik[@iptu-plant,  ...] @lab{83′′′′′}into beer; and @lab{84′′′′′}[you @place @it (...)] before Gu[la]. @lab{85′′′′′}You leave (it) out overnight. [In the morning], @lab{86′′′′′}it must not be exposed to the sun(-god). @lab{87′′′′′}You crush @lab{86′′′′′}[...], and [you ...]. @lab{88′′′′′}Before [he sets] his foot [on the floor], @lab{89′′′′′}you have him drink (it), and [he will recover].
+
+$ruling
+
+@(1.90′′′′′)	[...] ..., ghee, [...] @lab{91′′′′′}[...]  ...  [...
+
+$ (break)
+
+@(1.92′′′′′′)	[...  y]ou dry, crush, @lab{93′′′′′′}[(and) sieve]. You put (it) into beer. @lab{95′′′′′′}You place (it) @lab{94′′′′′′}[...] ... before Gula into the reed-hut. @lab{95′′′′′′}You leave (it) out overnight. @lab{96′′′′′′}In the morning, it must not be exposed to the sun(-god); @lab{97′′′′′′}you have him drink (it) on an empty stomach.
+
+$ruling
+
+@(1.100′′′′′′)	You pound together @lab{98′′′′′′}the head of a white crow, @supālu-juniper, @maštakal-soapwort, @lab{99′′′′′′}‘heals-a-thousand’-plant, ‘heals-twenty’-plant, (and) @?lupine?@. @lab{101′′′′′′}You put (it) @lab{100′′′′′′}into cypress oil. @lab{101′′′′′′}On the fifteenth day, on the twentieth day, @lab{102′′′′′′}and on (the day of) the new moon, you rub him each time, and then @lab{103′′′′′′}the witchcraft will be undone; it will not approach the man (any more).
+
+$ruling
+
+@(1.105′′′′′′)	You have him (the patient) anoint @lab{104′′′′′′}the ankle-bone from the left (foot) of a dead person @lab{105′′′′′′}with oil. @lab{106′′′′′′}You have him gird (it) @lab{105′′′′′′}with a headband. @lab{106′′′′′′}The man (whom) witchcraft (keeps hold of) @lab{107′′′′′′}speaks as follows: @lab{108′′′′′′}“Herewith I anoint you (fem.) with oil! Your ankle-bone @lab{109′′′′′′}I gird with a headband! @lab{111′′′′′′}Seize @lab{109′′′′′′}the one who @lab{111′′′′′}turned to (and) sought @lab{109′′′′′′}witchcraft, magic, @lab{110′′′′′′}sorcery (and) wicked machinations @lab{111′′′′′′}against me, and @lab{112′′′′′′}do not release him! Whatever he did @lab{113′′′′′′}send back to him! To me @?tu[rn in favour?@]! @lab{114′′′′′′}Let him lie down (on the sick-bed), but let me [@?arise?@ (from it)]! @lab{115′′′′′′}Let him die, but let me [live]!” @lab{116′′′′′′}The man says this. [...].
+
+$ruling
+
+@(1.117′′′′′′)	A wild bird [
+
+$ (break)
+
+@(1.118′′′′′′′)	[...]  ...  @lab{119′′′′′′′}You put  ...  [...] @lab{120′′′′′′′}You have (him) eat [...].
+
+$ruling
+
+@(1.121′′′′′′′)	[...] @zalāqu-stone, arsenic, @lab{122′′′′′′′}[...] ..., alabaster, @lab{123′′′′′′′}[...], ‘spittle-of-the-sea’, @lab{124′′′′′′′}[...], iron, @lab{125′′′′′′′}[...], @imbuʾ @tâmti-mineral. @lab{126′′′′′′′}You place it (or: for him) [...].
+
+$ruling
+
+@(1.127′′′′′′′)	[...] ...
+
+
+
+@(2.1′)	[...] ... [...] @lab{2′}[...  @?horn of a g]azelle?@ [...] @lab{3′}[...] @nuḫu[@rtu-plant  ...] @lab{4′}[...] ... [...] @lab{5′}You crus[h togethe]r [...] @lab{6′}You leave (it) out overni[ght under the s]tars. [...]
+
+$ruling
+
+@(2.7′)	[...]  ...  [...]
+
+@(3.1′) (ll. 1′–5′: only traces)
+
+@(3.6′)	The incantation is not mine! @lab{7′}[It is the incantation] of Damu and Ninkarr[ak], @lab{8′}[it is the incantation of the s]age of the gods, Marduk! [They] @lab{9′}[spoke (it), but] I did only repe[at (it)]! @lab{10′}[...] ... [...]
+
+
+
+
+
+
+
