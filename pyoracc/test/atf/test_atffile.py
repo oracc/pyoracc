@@ -69,8 +69,8 @@ def consider_file(name,code,description):
 
 def test_texts():
     for text in texts:
-        yield [consider_file]+text
+        yield consider_file, text[0], text[1], text[2]
 
 def test_composites():
     for composite in composites:
-        yield [consider_composite]+composite
+        yield consider_composite, composite[0], composite[1]
