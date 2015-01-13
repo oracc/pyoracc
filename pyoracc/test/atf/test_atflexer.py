@@ -17,11 +17,10 @@ class testLexer(TestCase):
                 expected_types, expected_values, self.lexer):
             print token, expected_type
             if token is None and expected_type is None:
-                break  # The end-condition on the
-                       # self.lexer iterable seems broken
+                break
             assert_equal(token.type, expected_type)
             if expected_value:
-                #print token.value, expected_value
+                # print token.value, expected_value
                 assert_equal(token.value, expected_value)
 
     def test_code(self):
@@ -89,7 +88,7 @@ class testLexer(TestCase):
             "#link: def A = P363716 = TCL 06, 44\n" +
             "@tablet\n",
             ["LINK", "DEF", "ID", "EQUALS", "ID", "EQUALS", "ID", "NEWLINE",
-            "TABLET", "NEWLINE"],
+             "TABLET", "NEWLINE"],
             [None, None, "A", None, "P363716", None, "TCL 06, 44"]
         )
 
@@ -98,7 +97,7 @@ class testLexer(TestCase):
             "#link: parallel dcclt/obale:P274929 = IM 070209\n" +
             "@tablet\n",
             ["LINK", "PARALLEL", "ID", "EQUALS", "ID", "NEWLINE",
-            "TABLET", "NEWLINE"],
+             "TABLET", "NEWLINE"],
             [None, None, "dcclt/obale:P274929", None, "IM 070209"]
         )
 
@@ -107,7 +106,7 @@ class testLexer(TestCase):
             "#link: parallel abcd:P363716 = TCL 06, 44\n" +
             "@tablet\n",
             ["LINK", "PARALLEL", "ID", "EQUALS", "ID", "NEWLINE",
-            "TABLET", "NEWLINE"],
+             "TABLET", "NEWLINE"],
             [None, None, "abcd:P363716", None, "TCL 06, 44"]
         )
 
@@ -121,14 +120,14 @@ class testLexer(TestCase):
         self.compare_tokens(
             "|| A o ii 10 -  o ii 12 \n",
             ["PARBAR", "ID", "ID", "ID", "ID", "MINUS",
-            "ID", "ID", "ID", "NEWLINE"]
+             "ID", "ID", "ID", "NEWLINE"]
         )
 
     def test_link_reference_prime_range(self):
         self.compare_tokens(
             "|| A o ii 10' -  o ii' 12 \n",
             ["PARBAR", "ID", "ID", "ID", "ID", "MINUS",
-            "ID", "ID", "ID", "NEWLINE"]
+             "ID", "ID", "ID", "NEWLINE"]
         )
 
     def test_score(self):
@@ -236,8 +235,10 @@ class testLexer(TestCase):
              "NOTE", "HAT", "ID", "HAT", "ID", 'NEWLINE'],
             [None, "labeled", "en", "project", None,
              None, "r", "8", None,
-             'The priest says the gods have performed these actions.', None, "1", None, None,
-             None, None, "1", None, "Parenthesised text follows Neo-Assyrian source"]
+             'The priest says the gods have performed these actions.',
+             None, "1", None, None,
+             None, None, "1", None,
+             "Parenthesised text follows Neo-Assyrian source"]
 
         )
 
@@ -263,7 +264,8 @@ class testLexer(TestCase):
              "OPENR", "ID", "ID", "ID", "CLOSER", "ID", "NEWLINE", ],
             [None, "labeled", "en", "project", None,
              None, "o", "20", None, "You strew all (kinds of) seed.", None,
-             None, "o", "i", "2", None, "No-one will occupy the king of Akkad's throne.", None, ]
+             None, "o", "i", "2", None,
+             "No-one will occupy the king of Akkad's throne.", None, ]
         )
 
     def test_translation_range_label_prime(self):
@@ -337,7 +339,8 @@ class testLexer(TestCase):
         self.compare_tokens(
             "@translation labeled en project\n" +
             "@label o 1'\n" +
-            "@kupputu (means): affliction (@? and) reduction?@; they are ... like cisterns.\n\n",
+            "@kupputu (means): affliction (@? and) reduction?@;" +
+            " they are ... like cisterns.\n\n",
             ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
              "LABEL", "ID", "ID", "NEWLINE",
              "ID", "NEWLINE"]
@@ -348,14 +351,14 @@ class testLexer(TestCase):
         # But this is NOT the case at the beginning of a section,
         # Apparently.
         self.compare_tokens(
-        "@translation labeled en project\n" +
-        "@label o 16\n" +
-        "\n" +
-        "@šipir @ṭuhdu @DU means: a message of abundance" +
-        " will come triumphantly.\n",
-        ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
-         "LABEL", "ID", "ID", "NEWLINE",
-         "ID", "NEWLINE"]
+            "@translation labeled en project\n" +
+            "@label o 16\n" +
+            "\n" +
+            "@šipir @ṭuhdu @DU means: a message of abundance" +
+            " will come triumphantly.\n",
+            ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
+             "LABEL", "ID", "ID", "NEWLINE",
+             "ID", "NEWLINE"]
         )
 
     def test_translation_blank_line_amid_translation(self):
@@ -363,15 +366,18 @@ class testLexer(TestCase):
         # But this is NOT the case at the beginning of a section,
         # Apparently.
         self.compare_tokens(
-        "@translation labeled en project\n" +
-        "@(4) their [cri]mes [have been forgiven] by the king. (As to) all [the\n" +
-        "\n" +
-        "    libe]ls that [have been uttered against me in the palace, which] he has\n" +
-        "\n" +
-        "    heard, [I am not guilty of] any [of them! N]ow, should there be a\n",
-        ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
-         "OPENR", "ID", "CLOSER", "ID", "NEWLINE",
-         "ID", "NEWLINE", "ID", "NEWLINE"]
+            "@translation labeled en project\n" +
+            "@(4) their [cri]mes [have been forgiven] by the king." +
+            " (As to) all [the\n" +
+            "\n" +
+            "    libe]ls that [have been uttered against me " +
+            "in the palace, which] he has\n" +
+            "\n" +
+            "    heard, [I am not guilty of] any [of them! " +
+            "N]ow, should there be a\n",
+            ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
+             "OPENR", "ID", "CLOSER", "ID", "NEWLINE",
+             "ID", "NEWLINE", "ID", "NEWLINE"]
         )
 
     def test_translation_no_blank_line_in_labeled_translation(self):
@@ -381,7 +387,8 @@ class testLexer(TestCase):
         self.compare_tokens(
             "@translation labeled en project\n" +
             "@label o 13\n" +
-            "@al-@ŋa₂-@ŋa₂ @al-@ŋa₂-@ŋa₂ @šag₄-@ba-@ni @nu-@sed-@da (means) he will" +
+            "@al-@ŋa₂-@ŋa₂ @al-@ŋa₂-@ŋa₂ @šag₄-@ba-@ni" +
+            " @nu-@sed-@da (means) he will" +
             "remove (... and) he will place (...); his heart will not rest" +
             "It is said in the textual corpus of the lamentation-priests.\n" +
             "@label o 15\n" +
@@ -472,8 +479,8 @@ class testLexer(TestCase):
             "@translation labeled en project\n" +
             "@label o 1\nHello. World\n\n",
             ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
-            "LABEL", "ID", "ID", "NEWLINE",
-            "ID", "NEWLINE"]
+             "LABEL", "ID", "ID", "NEWLINE",
+             "ID", "NEWLINE"]
         )
 
     def test_flagged_object(self):
@@ -572,16 +579,18 @@ class testLexer(TestCase):
             "1.4′. %n ḫašḫūr [api] lal[laga imḫur-līm?]\n" +
             "#lem: ḫašḫūr[apple (tree)]N; api[reed-bed]N\n\n" +
             "A₁_obv_i_4′: [x x x x x] {ú}la-al-[la-ga? {ú}im-ḫu-ur-lim?]\n" +
-            "#lem: u; u; u; u; u; +lalangu[(a leguminous vegetable)]N$lallaga\n\n" +
+            "#lem: u; u; u; u; u; " +
+            "+lalangu[(a leguminous vegetable)]N$lallaga\n\n" +
             "e_obv_15′–16′: {giš}ḪAŠḪUR [GIŠ.GI] — // [{ú}IGI-lim]\n" +
-            "#lem: +hašhūru[apple (tree)]N$hašhūr; api[reed-bed]N; imhur-līm['heals-a-thousand'-plant]N\n\n",
+            "#lem: +hašhūru[apple (tree)]N$hašhūr; api[reed-bed]N;" +
+            " imhur-līm['heals-a-thousand'-plant]N\n\n",
             ['LINELABEL'] + ['ID'] * 5 + ['NEWLINE'] +
             ['LEM', 'ID', 'SEMICOLON', 'ID', 'NEWLINE'] +
             ['SCORELABEL'] + ['ID'] * 7 + ['NEWLINE'] +
             ['LEM'] + ['ID', 'SEMICOLON'] * 5 + ['ID', 'NEWLINE'] +
             ['SCORELABEL'] + ['ID'] * 5 + ['NEWLINE'] +
             ['LEM'] + ['ID', 'SEMICOLON'] * 2 + ['ID', 'NEWLINE']
-           )
+        )
 
     def test_composite(self):
         self.compare_tokens(
@@ -659,8 +668,8 @@ class testLexer(TestCase):
         self.compare_tokens(
             "@translation parallel en project\n" +
             "$ reverse blank",
-             ["TRANSLATION", "PARALLEL", "ID", "PROJECT", "NEWLINE"] +
-             ["DOLLAR", "ID"]
+            ["TRANSLATION", "PARALLEL", "ID", "PROJECT", "NEWLINE"] +
+            ["DOLLAR", "ID"]
         )
 
     def test_loose_in_labeled(self):
@@ -677,8 +686,8 @@ class testLexer(TestCase):
         self.compare_tokens(
             "@translation labeled en project\n" +
             "$ reverse blank",
-             ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE"] +
-             ["DOLLAR", "ID"]
+            ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE"] +
+            ["DOLLAR", "ID"]
         )
 
     def test_strict_as_loose_in_translation(self):
@@ -693,10 +702,10 @@ class testLexer(TestCase):
         self.compare_tokens(
             "@translation parallel en project\n" +
             "1. 'What is going on?', said the King!\n",
-             ["TRANSLATION", "PARALLEL", "ID", "PROJECT", "NEWLINE"] +
-             ["LINELABEL", "ID", "NEWLINE"],
-             [None, None, "en", None, None] +
-             ["1", "'What is going on?', said the King!", None]
+            ["TRANSLATION", "PARALLEL", "ID", "PROJECT", "NEWLINE"] +
+            ["LINELABEL", "ID", "NEWLINE"],
+            [None, None, "en", None, None] +
+            ["1", "'What is going on?', said the King!", None]
         )
 
     def test_translation_note(self):

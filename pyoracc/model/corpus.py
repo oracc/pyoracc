@@ -17,7 +17,7 @@ class Corpus(object):
                         path = os.path.join(dirpath, file)
                         print("Parsing file", path, "... ", end="")
                         content = codecs.open(path,
-                                                  encoding='utf-8-sig').read()
+                                              encoding='utf-8-sig').read()
                         self.texts.append(AtfFile(content))
 
                         self.successes += 1
@@ -26,7 +26,6 @@ class Corpus(object):
                         self.texts.append(None)
                         self.failures += 1
                         print("Failed")
-                        #raise SyntaxError
 
 
 if __name__ == '__main__':

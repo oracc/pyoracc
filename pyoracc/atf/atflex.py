@@ -147,7 +147,7 @@ class AtfLexer(object):
         r'[\t ]+'
         # NO TOKEN
 
-    def  t_MULTILINGUAL(self, t):
+    def t_MULTILINGUAL(self, t):
         "\=\="
         t.lexer.push_state("text")
         return t
@@ -163,7 +163,8 @@ class AtfLexer(object):
         return t
 
     def t_INITIAL_parallel_labeled_COMMENT(self, t):
-        r'^\#+(?![a-zA-Z]+\:)'  # Negative lookahead to veto protocols as comments
+        r'^\#+(?![a-zA-Z]+\:)'
+        # Negative lookahead to veto protocols as comments
         t.lexer.push_state('absorb')
         return t
 
@@ -187,11 +188,11 @@ class AtfLexer(object):
                                       AtfLexer.structures +
                                       AtfLexer.long_argument_structures,
                                       extra={
-                                        "h1": "HEADING",
-                                        "h2": "HEADING",
-                                        "h3": "HEADING",
-                                        "label+": "LABEL",
-                                        "end": "END"
+                                          "h1": "HEADING",
+                                          "h2": "HEADING",
+                                          "h3": "HEADING",
+                                          "label+": "LABEL",
+                                          "end": "END"
                                       },
                                       )
 
@@ -286,7 +287,7 @@ class AtfLexer(object):
         t.lexer.pop_state()
         return t
 
-    #--- RULES FOR THE TRANSLATION STATES ---
+    # --- RULES FOR THE TRANSLATION STATES ---
     # In this state, the base state is free text
     # And certain tokens deviate from that, rather
     # than the other way round as for base state
@@ -390,7 +391,7 @@ class AtfLexer(object):
     # labels, can cause apparent terminations of blocks
     # So we add this rule to accommodate these
     t_labeled_ID = "^[^\n\r]+"
-    #--- RULES FOR THE ABSORB STATE ---
+    # --- RULES FOR THE ABSORB STATE ---
     # Used for states where only flag# characters! and ^1^ references
     # Are separately tokenised
 
@@ -401,7 +402,7 @@ class AtfLexer(object):
     many_nonflag = nonflag + '*'
     intern_or_nonflg = '(' + many_int_then_nonflag + '|' + many_nonflag + ')'
     flagged_regex = (white + '(' + nonflagnonwhite + intern_or_nonflg +
-                    ')' + white)
+                     ')' + white)
 
     @lex.TOKEN(flagged_regex)
     def t_flagged_ID(self, t):
@@ -416,12 +417,13 @@ class AtfLexer(object):
     t_flagged_STAR = "\*"
     t_flagged_parallel_para_HAT = "[\ \t]*\^[\ \t]*"
     t_flagged_EQUALS = "\="
-    #--- Rules for paragaph state----------------------------------
+    # --- Rules for paragaph state----------------------------------
     # Free text, ended by double new line
 
     terminates_paragraph = "(\#|\@|\&|\Z|(^[^.\ \t]*\.))"
 
-    @lex.TOKEN(r'([^\^\n\r]|([\n\r](?!\s*[\n\r])(?!' + terminates_paragraph + ')))+')
+    @lex.TOKEN(r'([^\^\n\r]|([\n\r](?!\s*[\n\r])(?!'
+               + terminates_paragraph + ')))+')
     def t_para_ID(self, t):
         t.value = t.value.strip()
         return t
@@ -445,7 +447,7 @@ class AtfLexer(object):
         t.type = "NEWLINE"
         return t
 
-    #--- RULES FOR THE nonequals STATE -----
+    # --- RULES FOR THE nonequals STATE -----
     # Absorb everything except an equals
     def t_nonequals_ID(self, t):
         "[^\=\n\r]+"
@@ -454,21 +456,21 @@ class AtfLexer(object):
 
     t_nonequals_EQUALS = "\="
 
-    #--- RULES FOR THE absorb STATE -----
+    # --- RULES FOR THE absorb STATE -----
     # Absorb everything
     def t_absorb_ID(self, t):
         "[^\n\r]+"
         t.value = t.value.strip()
         return t
 
-    #--- RULES FOR THE text STATE ----
+    # --- RULES FOR THE text STATE ----
     t_text_ID = "[^\ \t \n\r]+"
 
     def t_text_SPACE(self, t):
         r'[\ \t]'
         # No token generated
 
-        #--- RULES FOR THE lemmatize STATE
+    # --- RULES FOR THE lemmatize STATE
     t_lemmatize_ID = "[^\;\n\r]+"
     t_lemmatize_SEMICOLON = r'\;[\ \t]*'
 

@@ -55,75 +55,54 @@ class testParser(TestCase):
         assert_equal(text.code, "X001001")
         assert_equal(text.language, "akk-x-stdbab")
 
-    #@skip("No support for key protocol")
+    # @skip("No support for key protocol")
     def test_key_protocol(self):
         text = self.try_parse(
             "&X001001 = JCS 48, 089\n" +
             "#key: cdli=ND 02688\n"
         )
 
-        # No assertion, we're not parsing keys yet
-        #assert False
-
-        #@skip("No support for key protocol")
+    # @skip("No support for key protocol")
     def test_double_equals_in_key_protocol(self):
         text = self.try_parse(
             "&X001001 = JCS 48, 089\n" +
             "#key: musno=Ki 1904-10-9,049 = BM 099020\n"
         )
 
-        # No assertion, we're not parsing keys yet
-        #assert False
-
-
-        #@skip("No support for key protocol")
+    # @skip("No support for key protocol")
     def test_many_equals_in_key_protocol(self):
         text = self.try_parse(
             "&X001001 = JCS 48, 089\n" +
             "#key: musno=VAT 10433 (= Ass 04691 = NARGD 30)\n"
         )
 
-        # No assertion, we're not parsing keys yet
-        #assert False
-
-        #@skip("No support for key protocol")
+    # @skip("No support for key protocol")
     def test_empty_key_in_key_protocol(self):
         text = self.try_parse(
             "&X001001 = JCS 48, 089\n" +
             "#key: date=\n"
         )
 
-        # No assertion, we're not parsing keys yet
-        #assert False
-
-        #@skip("No support for mylines protocol")
+    # @skip("No support for mylines protocol")
     def test_mylines_protocol(self):
         text = self.try_parse(
             "&X001001 = JCS 48, 089\n" +
             "#atf: use mylines\n"
         )
 
-        # No assertion, we're not parsing mylines yet
-        #assert False
-
-        #@skip("No support for lexical protocol")
+    # @skip("No support for lexical protocol")
     def test_lexical_protocol(self):
         text = self.try_parse(
             "&X001001 = JCS 48, 089\n" +
             "#atf: use lexical\n"
         )
 
-        # No assertion, we're not parsing keys yet
-        #assert False
-
-        #@skip("No support for lemmatizer protocol")
+    # @skip("No support for lemmatizer protocol")
     def test_lemmatizer_protocol(self):
         text = self.try_parse(
             "&X001001 = JCS 48, 089\n" +
             "#lemmatizer: sparse do sv sn eq tx\n"
         )
-        # No assertion, we're not parsing keys yet
-        #assert False
 
     def test_text_protocol_language(self):
         text = self.try_parse(
@@ -307,7 +286,7 @@ class testParser(TestCase):
         )
         assert_equal(len(art.children[0].children[0].words), 6)
 
-    #@skip("No idea what this means")
+    # @skip("No idea what this means")
     def test_line_equalsbrace(self):
         art = self.try_parse(
             "@tablet\n" +
@@ -570,8 +549,8 @@ class testParser(TestCase):
     @skip("No support for recovery yet")
     def test_loose_recovery(self):
         # Users often put a loose dollar without the brackets
-        # We should define a parser fallback to accommodate this
-        # And recover.
+        # We should define a parser fallback to accommodate this
+        # And recover.
         art = self.try_parse(
             "@tablet\n" +
             "@obverse\n" +
@@ -1015,4 +994,4 @@ class testParser(TestCase):
         assert_equal(text.links[0].label, "Include")
         assert_equal(text.links[0].code, "dcclt:P229061")
         assert_equal(text.links[0].description,
-            "MSL 07, 197 V02, 210 V11")
+                     "MSL 07, 197 V02, 210 V11")

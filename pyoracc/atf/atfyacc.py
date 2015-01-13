@@ -125,14 +125,14 @@ class AtfParser(object):
         # Default to a tablet
 
         # Has a default already been added?
-        if  len(p[0].objects()) == 0:
+        if len(p[0].objects()) == 0:
             p[0].children.append(OraccObject("tablet"))
         p[0].objects()[-1].children.append(p[2])
 
     def p_text_surface_element(self, p):
         """text : text surface_element %prec OBJECT"""
         p[0] = p[1]
-        if  len(p[0].objects()) == 0:
+        if len(p[0].objects()) == 0:
             p[0].children.append(OraccObject("tablet"))
         # Default to obverse of a tablet
         p[0].objects()[-1].children.append(OraccObject("obverse"))
@@ -339,8 +339,10 @@ class AtfParser(object):
         "line : line multilingual %prec MULTI"
         p[0] = Multilingual()
         p[0].lines[None] = p[1]
-        p[0].lines[p[2].label] = p[2]  # Use the language, temporarily stored in the label, as the key.
-        p[0].lines[p[2].label].label = p[1].label  # The actual label is the same as the main line
+        p[0].lines[p[2].label] = p[2]
+        # Use the language, temporarily stored in the label, as the key.
+        p[0].lines[p[2].label].label = p[1].label
+        # The actual label is the same as the main line
 
     def p_multilingual_sequence(self, p):
         "multilingual_sequence : MULTILINGUAL ID "
@@ -496,8 +498,8 @@ class AtfParser(object):
                                     | ID plural_scope state
                                     | ID singular_scope state
                                     | ID REFERENCE state"""
-        # The singular case is an exception: "1 line broken" is semantically the same as
-        # "2 lines broken"
+        # The singular case is an exception: "1 line broken" is semantically
+        # the same as "2 lines broken"
         p[0] = State(p[3], p[2], p[1])
 
     def p_plural_state_range_description(self, p):
@@ -760,11 +762,10 @@ class AtfParser(object):
             'COLOPHON', 'DATE', 'SIGNATURES',
             'SIGNATURE', 'SUMMARY',
             'WITNESSES', "PARBAR", "TO", "FROM"),
-    # HIGH precedence
+        # HIGH precedence
     )
 
     def p_error(self, p):
         # All errors currently unrecoverable
         # So just throw
         raise SyntaxError
-        #pass
