@@ -49,8 +49,8 @@ class testLexer(TestCase):
     def test_key(self):
         self.compare_tokens(
             "#key: cdli=ND 02688\n",
-            ["KEY", "ID","EQUALS","ID","NEWLINE"],
-            [None, "cdli",None,"ND 02688",None]
+            ["KEY", "ID", "EQUALS", "ID", "NEWLINE"],
+            [None, "cdli", None, "ND 02688", None]
         )
 
     def test_language_protocol(self):
@@ -134,7 +134,7 @@ class testLexer(TestCase):
     def test_score(self):
         self.compare_tokens(
             "@score matrix parsed word\n",
-            ["SCORE","ID","ID","ID","NEWLINE"]
+            ["SCORE", "ID", "ID", "ID", "NEWLINE"]
         )
 
     def test_division_tablet(self):
@@ -206,7 +206,7 @@ class testLexer(TestCase):
             "1.    Year 63, Ṭebetu (Month X)\n" +
             " , night of day 2\n",
             ["TRANSLATION", "PARALLEL", "ID", "PROJECT", "NEWLINE",
-             "LINELABEL", "ID","NEWLINE"],
+             "LINELABEL", "ID", "NEWLINE"],
             [None, "parallel", "en", "project", None,
              "1", "Year 63, Ṭebetu (Month X) , night of day 2", None]
         )
@@ -232,11 +232,11 @@ class testLexer(TestCase):
             "@note ^1^ Parenthesised text follows Neo-Assyrian source\n",
             ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
              "LABEL", "ID", "ID", "NEWLINE",
-             "ID", "HAT","ID","HAT", "NEWLINE",
-             "NOTE","HAT","ID","HAT","ID",'NEWLINE'],
+             "ID", "HAT", "ID", "HAT", "NEWLINE",
+             "NOTE", "HAT", "ID", "HAT", "ID", 'NEWLINE'],
             [None, "labeled", "en", "project", None,
              None, "r", "8", None,
-             'The priest says the gods have performed these actions.', None, "1", None,None,
+             'The priest says the gods have performed these actions.', None, "1", None, None,
              None, None, "1", None, "Parenthesised text follows Neo-Assyrian source"]
 
         )
@@ -247,7 +247,7 @@ class testLexer(TestCase):
             "@label o 14-15 - o 20\n" +
             "You strew all (kinds of) seed.\n\n",
             ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
-             "LABEL", "ID", "ID",  "MINUS", "ID", "ID", "NEWLINE",
+             "LABEL", "ID", "ID", "MINUS", "ID", "ID", "NEWLINE",
              "ID", "NEWLINE"],
             [None, "labeled", "en", "project", None,
              None, "o", "14-15", None, "o", "20", None]
@@ -259,11 +259,11 @@ class testLexer(TestCase):
             "@(o 20) You strew all (kinds of) seed.\n" +
             "@(o i 2) No-one will occupy the king of Akkad's throne.\n\n",
             ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
-             "OPENR","ID", "ID", "CLOSER","ID","NEWLINE",
-             "OPENR","ID", "ID","ID","CLOSER","ID","NEWLINE",],
+             "OPENR", "ID", "ID", "CLOSER", "ID", "NEWLINE",
+             "OPENR", "ID", "ID", "ID", "CLOSER", "ID", "NEWLINE", ],
             [None, "labeled", "en", "project", None,
              None, "o", "20", None, "You strew all (kinds of) seed.", None,
-             None, "o", "i", "2", None, "No-one will occupy the king of Akkad's throne.", None,]
+             None, "o", "i", "2", None, "No-one will occupy the king of Akkad's throne.", None, ]
         )
 
     def test_translation_range_label_prime(self):
@@ -285,6 +285,7 @@ class testLexer(TestCase):
             [None, "labeled", "en", "project", None,
              None, "r", u"A\u2081"]
         )
+
     def test_translation_label_unicode_prime(self):
         self.compare_tokens(
             "@translation labeled en project\n" +
@@ -292,7 +293,7 @@ class testLexer(TestCase):
             ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
              "LABEL", "ID", "ID", "NEWLINE"],
             [None, "labeled", "en", "project", None,
-             None, "r", "1'",None]
+             None, "r", "1'", None]
         )
 
     def test_translation_label_unicode_prime2(self):
@@ -329,7 +330,7 @@ class testLexer(TestCase):
             "[...] ... (zodiacal sign) 8, 10° = (sign) 12, 10°\n\n",
             ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
              "LABEL", "ID", "ID", "NEWLINE",
-             "ID","NEWLINE"]
+             "ID", "NEWLINE"]
         )
 
     def test_translation_ats_in_translation(self):
@@ -339,7 +340,7 @@ class testLexer(TestCase):
             "@kupputu (means): affliction (@? and) reduction?@; they are ... like cisterns.\n\n",
             ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
              "LABEL", "ID", "ID", "NEWLINE",
-             "ID","NEWLINE"]
+             "ID", "NEWLINE"]
         )
 
     def test_translation_blank_line_begins_translation(self):
@@ -354,7 +355,7 @@ class testLexer(TestCase):
         " will come triumphantly.\n",
         ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
          "LABEL", "ID", "ID", "NEWLINE",
-         "ID","NEWLINE"]
+         "ID", "NEWLINE"]
         )
 
     def test_translation_blank_line_amid_translation(self):
@@ -370,7 +371,7 @@ class testLexer(TestCase):
         "    heard, [I am not guilty of] any [of them! N]ow, should there be a\n",
         ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
          "OPENR", "ID", "CLOSER", "ID", "NEWLINE",
-         "ID","NEWLINE", "ID", "NEWLINE"]
+         "ID", "NEWLINE", "ID", "NEWLINE"]
         )
 
     def test_translation_no_blank_line_in_labeled_translation(self):
@@ -381,15 +382,15 @@ class testLexer(TestCase):
             "@translation labeled en project\n" +
             "@label o 13\n" +
             "@al-@ŋa₂-@ŋa₂ @al-@ŋa₂-@ŋa₂ @šag₄-@ba-@ni @nu-@sed-@da (means) he will" +
-            "remove (... and) he will place (...); his heart will not rest"+
-            "It is said in the textual corpus of the lamentation-priests.\n"+
-            "@label o 15\n"+
+            "remove (... and) he will place (...); his heart will not rest" +
+            "It is said in the textual corpus of the lamentation-priests.\n" +
+            "@label o 15\n" +
             "Text\n\n",
             ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
              "LABEL", "ID", "ID", "NEWLINE",
-             "ID","NEWLINE",
-             "LABEL","ID","ID","NEWLINE",
-             "ID","NEWLINE"]
+             "ID", "NEWLINE",
+             "LABEL", "ID", "ID", "NEWLINE",
+             "ID", "NEWLINE"]
         )
 
     def test_translation_range_label_periods(self):
@@ -482,19 +483,19 @@ class testLexer(TestCase):
     def test_comment(self):
         self.compare_tokens(
             "# I've added various things for test purposes\n",
-            ['COMMENT',"ID","NEWLINE"]
+            ['COMMENT', "ID", "NEWLINE"]
         )
 
     def test_nospace_comment(self):
         self.compare_tokens(
             "#I've added various things for test purposes\n",
-            ['COMMENT',"ID","NEWLINE"]
+            ['COMMENT', "ID", "NEWLINE"]
         )
 
     def test_check_comment(self):
         self.compare_tokens(
             "#CHECK: I've added various things for test purposes\n",
-            ['CHECK',"ID","NEWLINE"]
+            ['CHECK', "ID", "NEWLINE"]
         )
 
     def test_dotline(self):
@@ -508,7 +509,7 @@ class testLexer(TestCase):
             "@translation parallel en project\n" +
             "@h1 A translation heading\n",
             ["TRANSLATION", "PARALLEL", "ID", "PROJECT", "NEWLINE"] +
-            ["HEADING","ID","NEWLINE"]
+            ["HEADING", "ID", "NEWLINE"]
         )
 
     def test_heading(self):
@@ -516,15 +517,15 @@ class testLexer(TestCase):
             "@obverse\n" +
             "@h1 A heading\n",
             ["OBVERSE", "NEWLINE"] +
-            ["HEADING","ID","NEWLINE"]
-    )
+            ["HEADING", "ID", "NEWLINE"]
+        )
 
     def test_double_comment(self):
         """Not sure if this is correct; but can't find
         anything in structure or lemmatization doc"""
         self.compare_tokens(
             "## papān libbi[belly] (already in gloss, same spelling)\n",
-            ['COMMENT', 'ID','NEWLINE']
+            ['COMMENT', 'ID', 'NEWLINE']
         )
 
     def test_ruling(self):
@@ -563,7 +564,7 @@ class testLexer(TestCase):
     def test_dot_in_linelabel(self):
         self.compare_tokens(
             "1.1.    [MU]\n",
-            ['LINELABEL','ID','NEWLINE']
+            ['LINELABEL', 'ID', 'NEWLINE']
         )
 
     def test_score_lines(self):
@@ -574,12 +575,12 @@ class testLexer(TestCase):
             "#lem: u; u; u; u; u; +lalangu[(a leguminous vegetable)]N$lallaga\n\n" +
             "e_obv_15′–16′: {giš}ḪAŠḪUR [GIŠ.GI] — // [{ú}IGI-lim]\n" +
             "#lem: +hašhūru[apple (tree)]N$hašhūr; api[reed-bed]N; imhur-līm['heals-a-thousand'-plant]N\n\n",
-            ['LINELABEL']+['ID']*5+['NEWLINE'] +
-            ['LEM','ID','SEMICOLON','ID', 'NEWLINE'] +
-            ['SCORELABEL']+['ID']*7+['NEWLINE'] +
-            ['LEM']+['ID','SEMICOLON']*5 + ['ID', 'NEWLINE'] +
-            ['SCORELABEL']+['ID']*5+['NEWLINE'] +
-            ['LEM']+['ID','SEMICOLON']*2 + ['ID', 'NEWLINE']
+            ['LINELABEL'] + ['ID'] * 5 + ['NEWLINE'] +
+            ['LEM', 'ID', 'SEMICOLON', 'ID', 'NEWLINE'] +
+            ['SCORELABEL'] + ['ID'] * 7 + ['NEWLINE'] +
+            ['LEM'] + ['ID', 'SEMICOLON'] * 5 + ['ID', 'NEWLINE'] +
+            ['SCORELABEL'] + ['ID'] * 5 + ['NEWLINE'] +
+            ['LEM'] + ['ID', 'SEMICOLON'] * 2 + ['ID', 'NEWLINE']
            )
 
     def test_composite(self):
@@ -615,8 +616,8 @@ class testLexer(TestCase):
             ['COMPOSITE', 'NEWLINE'] +
             ["PROJECT", "ID", "NEWLINE"] +
             ["LINELABEL"] + ['ID'] * 6 + ['NEWLINE'] +
-            ["TRANSLATION","LABELED","ID","PROJECT","NEWLINE"] +
-            ["OPENR","ID","CLOSER","ID","NEWLINE"] +
+            ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE"] +
+            ["OPENR", "ID", "CLOSER", "ID", "NEWLINE"] +
             ["AMPERSAND", "ID", "EQUALS", "ID", "NEWLINE"] +
             ["PROJECT", "ID", "NEWLINE"] +
             ["LINELABEL"] + ['ID'] * 4 + ["NEWLINE"]
@@ -626,12 +627,12 @@ class testLexer(TestCase):
         self.compare_tokens(
             "@tablet\n" +
             "@reverse\n" +
-            "2'.	ITI# an-ni-u2#\n" +
-            "={	ur-hu\n",
-            ['TABLET',"NEWLINE"] +
-            ["REVERSE","NEWLINE"] +
-            ["LINELABEL"] + ['ID']*2 + ["NEWLINE"] +
-            ["EQUALBRACE","ID","NEWLINE"]
+            "2'.    ITI# an-ni-u2#\n" +
+            "={    ur-hu\n",
+            ['TABLET', "NEWLINE"] +
+            ["REVERSE", "NEWLINE"] +
+            ["LINELABEL"] + ['ID'] * 2 + ["NEWLINE"] +
+            ["EQUALBRACE", "ID", "NEWLINE"]
         )
 
     def test_multilingual_interlinear(self):
@@ -644,13 +645,13 @@ class testLexer(TestCase):
             "#lem: ilū[god]N; rabûtu[great]AJ; u\n" +
             "# ES dim₃-me-er = diŋir\n" +
             "|| A o ii 15\n",
-            ['TABLET',"NEWLINE"] +
-            ["OBVERSE","NEWLINE"] +
-            ["LINELABEL"] + ['ID']*2 + ["NEWLINE"] +
-            ["LEM"] + ["ID","SEMICOLON"] + ["ID"] + ["NEWLINE"] +
-            ["MULTILINGUAL","ID"]+["ID"]*3 + ["NEWLINE"] +
-            ["LEM"] + ["ID","SEMICOLON"]*2 + ["ID"] + ["NEWLINE"] +
-            ["COMMENT","ID","NEWLINE"] +
+            ['TABLET', "NEWLINE"] +
+            ["OBVERSE", "NEWLINE"] +
+            ["LINELABEL"] + ['ID'] * 2 + ["NEWLINE"] +
+            ["LEM"] + ["ID", "SEMICOLON"] + ["ID"] + ["NEWLINE"] +
+            ["MULTILINGUAL", "ID"] + ["ID"] * 3 + ["NEWLINE"] +
+            ["LEM"] + ["ID", "SEMICOLON"] * 2 + ["ID"] + ["NEWLINE"] +
+            ["COMMENT", "ID", "NEWLINE"] +
             ["PARBAR", "ID", "ID", "ID", "ID", "NEWLINE"]
         )
 
@@ -658,7 +659,7 @@ class testLexer(TestCase):
         self.compare_tokens(
             "@translation parallel en project\n" +
             "$ reverse blank",
-             ["TRANSLATION", "PARALLEL", "ID", "PROJECT", "NEWLINE"]+
+             ["TRANSLATION", "PARALLEL", "ID", "PROJECT", "NEWLINE"] +
              ["DOLLAR", "ID"]
         )
 
@@ -667,19 +668,18 @@ class testLexer(TestCase):
             "@translation labeled en project\n" +
             "$ (Break)\n" +
             "@(r 2) I am\n\n",
-            ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE"]+
-            ["DOLLAR", "ID", "NEWLINE"]+
+            ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE"] +
+            ["DOLLAR", "ID", "NEWLINE"] +
             ["OPENR", "ID", "ID", "CLOSER", "ID", "NEWLINE"]
         )
-
 
     def test_strict_in_labelled_parallel(self):
         self.compare_tokens(
             "@translation labeled en project\n" +
             "$ reverse blank",
-             ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE"]+
+             ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE"] +
              ["DOLLAR", "ID"]
-    )
+        )
 
     def test_strict_as_loose_in_translation(self):
         self.compare_tokens(
@@ -694,9 +694,9 @@ class testLexer(TestCase):
             "@translation parallel en project\n" +
             "1. 'What is going on?', said the King!\n",
              ["TRANSLATION", "PARALLEL", "ID", "PROJECT", "NEWLINE"] +
-             ["LINELABEL","ID","NEWLINE"],
+             ["LINELABEL", "ID", "NEWLINE"],
              [None, None, "en", None, None] +
-             ["1","'What is going on?', said the King!",None]
+             ["1", "'What is going on?', said the King!", None]
         )
 
     def test_translation_note(self):
@@ -705,8 +705,8 @@ class testLexer(TestCase):
             "@reverse\n" +
             "#note: reverse uninscribed\n",
             ["TRANSLATION", "PARALLEL", "ID", "PROJECT", "NEWLINE"] +
-            ["REVERSE","NEWLINE"] +
-            ["NOTE","ID","NEWLINE"]
+            ["REVERSE", "NEWLINE"] +
+            ["NOTE", "ID", "NEWLINE"]
         )
 
     def test_equals_in_translation_note(self):
@@ -715,8 +715,8 @@ class testLexer(TestCase):
             "@reverse\n" +
             '#note: The CAD translation šarriru = "humble",\n',
             ["TRANSLATION", "PARALLEL", "ID", "PROJECT", "NEWLINE"] +
-            ["REVERSE","NEWLINE"] +
-            ["NOTE","ID","NEWLINE"]
+            ["REVERSE", "NEWLINE"] +
+            ["NOTE", "ID", "NEWLINE"]
             )
 
     def test_note_ended_by_strucuture(self):
@@ -726,8 +726,8 @@ class testLexer(TestCase):
             '#note: The CAD translation šarriru = "humble",\n' +
             '@reverse',
             ["TRANSLATION", "PARALLEL", "ID", "PROJECT", "NEWLINE"] +
-            ["OBVERSE","NEWLINE"] +
-            ["NOTE","ID","NEWLINE"] +
+            ["OBVERSE", "NEWLINE"] +
+            ["NOTE", "ID", "NEWLINE"] +
             ["REVERSE"]
         )
 
@@ -737,8 +737,8 @@ class testLexer(TestCase):
             "@obverse\n" +
             "@m=locator catchline\n" +
             "16'. si-i-ia-a-a-ku\n",
-            ["TABLET","NEWLINE",
-             "OBVERSE","NEWLINE",
+            ["TABLET", "NEWLINE",
+             "OBVERSE", "NEWLINE",
              "M", "EQUALS", "ID", "NEWLINE",
              "LINELABEL", "ID", "NEWLINE"]
         )
@@ -748,7 +748,7 @@ class testLexer(TestCase):
             "@tablet\n" +
             "@obverse\n" +
             "@include dcclt:P229061 = MSL 07, 197 V02, 210 V11\n",
-            ["TABLET","NEWLINE",
-             "OBVERSE","NEWLINE",
-             "INCLUDE","ID",'EQUALS','ID',"NEWLINE"]
+            ["TABLET", "NEWLINE",
+             "OBVERSE", "NEWLINE",
+             "INCLUDE", "ID", 'EQUALS', 'ID', "NEWLINE"]
         )

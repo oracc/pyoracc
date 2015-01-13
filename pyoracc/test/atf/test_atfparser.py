@@ -27,7 +27,7 @@ class testParser(TestCase):
 
     def try_parse(self, content):
         if content[-1] != '\n':
-            content+="\n"
+            content += "\n"
         self.parser = AtfParser().parser
         return self.parser.parse(content, lexer=self.lexer)
 
@@ -61,56 +61,62 @@ class testParser(TestCase):
             "&X001001 = JCS 48, 089\n" +
             "#key: cdli=ND 02688\n"
         )
+
         # No assertion, we're not parsing keys yet
         #assert False
 
-    #@skip("No support for key protocol")
+        #@skip("No support for key protocol")
     def test_double_equals_in_key_protocol(self):
         text = self.try_parse(
             "&X001001 = JCS 48, 089\n" +
             "#key: musno=Ki 1904-10-9,049 = BM 099020\n"
         )
+
         # No assertion, we're not parsing keys yet
         #assert False
 
 
-    #@skip("No support for key protocol")
+        #@skip("No support for key protocol")
     def test_many_equals_in_key_protocol(self):
         text = self.try_parse(
             "&X001001 = JCS 48, 089\n" +
             "#key: musno=VAT 10433 (= Ass 04691 = NARGD 30)\n"
         )
+
         # No assertion, we're not parsing keys yet
         #assert False
 
-    #@skip("No support for key protocol")
+        #@skip("No support for key protocol")
     def test_empty_key_in_key_protocol(self):
         text = self.try_parse(
             "&X001001 = JCS 48, 089\n" +
             "#key: date=\n"
         )
+
         # No assertion, we're not parsing keys yet
         #assert False
 
-    #@skip("No support for mylines protocol")
+        #@skip("No support for mylines protocol")
     def test_mylines_protocol(self):
         text = self.try_parse(
             "&X001001 = JCS 48, 089\n" +
             "#atf: use mylines\n"
         )
+
         # No assertion, we're not parsing mylines yet
         #assert False
 
-    #@skip("No support for lexical protocol")
+        #@skip("No support for lexical protocol")
     def test_lexical_protocol(self):
         text = self.try_parse(
             "&X001001 = JCS 48, 089\n" +
             "#atf: use lexical\n"
         )
+
         # No assertion, we're not parsing keys yet
         #assert False
 
-    #@skip("No support for lemmatizer protocol")
+        #@skip("No support for lemmatizer protocol")
     def test_lemmatizer_protocol(self):
         text = self.try_parse(
             "&X001001 = JCS 48, 089\n" +
@@ -129,7 +135,6 @@ class testParser(TestCase):
         assert_equal(text.code, "X001001")
         assert_equal(text.project, "cams/gkab")
         assert_equal(text.language, "akk-x-stdbab")
-
 
     def test_score(self):
         obj = self.try_parse(
@@ -258,7 +263,6 @@ class testParser(TestCase):
         assert_equal(lines[1].lemmas[1], "two")
         assert_equal(lines[2].notes[0].content, "Note to line three")
 
-
     def test_complex_substructure_2(self):
         art = self.try_parse(
             "&X001001 = My Text\n" +
@@ -293,7 +297,7 @@ class testParser(TestCase):
         assert_equal(len(lines), 4)
         assert_equal(lines[1].lemmas[1], "two")
         assert_equal(lines[3].notes[0].content, "Note to line four")
-        assert_is_instance(translation,Translation)
+        assert_is_instance(translation, Translation)
 
     def test_line(self):
         art = self.try_parse(
@@ -308,8 +312,8 @@ class testParser(TestCase):
         art = self.try_parse(
             "@tablet\n" +
             "@reverse\n" +
-            "2'.	ITI# an-ni-u2#\n" +
-            "={	ur-hu\n"
+            "2'.    ITI# an-ni-u2#\n" +
+            "={    ur-hu\n"
         )
 
     def test_line_lemmas(self):
@@ -372,7 +376,7 @@ class testParser(TestCase):
             "$ single ruling\n",
         )
         # Should default to an obverse surface
-        assert_equal(art.children[0].objecttype,"obverse")
+        assert_equal(art.children[0].objecttype, "obverse")
         assert_equal(art.children[0].children[0].count, 1)
 
     def test_link_on_surface_not_line(self):
@@ -382,10 +386,10 @@ class testParser(TestCase):
             "$single ruling\n" +
             ">> A Seg.2, 33\n"
         )
-        obverse=art.children[0]
-        assert_is_instance(obverse.children[0],Line)
-        assert_is_instance(obverse.children[1],Ruling)
-        assert_is_instance(obverse.children[2],LinkReference)
+        obverse = art.children[0]
+        assert_is_instance(obverse.children[0], Line)
+        assert_is_instance(obverse.children[1], Ruling)
+        assert_is_instance(obverse.children[2], LinkReference)
 
     def test_ruling_on_labeled_translation(self):
         art = self.try_parse(
@@ -404,7 +408,7 @@ class testParser(TestCase):
             "@obverse\n" +
             "# A comment\n"
         )
-        assert_is_instance(art.children[0].children[0],Comment)
+        assert_is_instance(art.children[0].children[0], Comment)
 
     def test_check(self):
         art = self.try_parse(
@@ -412,9 +416,9 @@ class testParser(TestCase):
             "@obverse\n" +
             "#CHECK: A worry\n"
         )
-        comment=art.children[0].children[0]
-        assert_is_instance(comment,Comment)
-        assert_equal(comment.check,True)
+        comment = art.children[0].children[0]
+        assert_is_instance(comment, Comment)
+        assert_equal(comment.check, True)
 
     def test_note(self):
         art = self.try_parse(
@@ -528,7 +532,7 @@ class testParser(TestCase):
             "@obverse\n" +
             "$ 1 line traces\n"
         )
-        dollar=art.children[0].children[0]
+        dollar = art.children[0].children[0]
         assert_equal(dollar.state, "traces")
         assert_equal(dollar.scope, "line")
         assert_equal(dollar.extent, "1")
@@ -582,7 +586,7 @@ class testParser(TestCase):
             "@translation parallel en project\n" +
             "$ Continued in text no. 2\n"
         )
-        assert_is_instance(art.children[0].children[0],State)
+        assert_is_instance(art.children[0].children[0], State)
 
     def test_translation_intro(self):
         art = self.try_parse(
@@ -623,7 +627,7 @@ class testParser(TestCase):
             "Then it will be taken for the rites and rituals.\n\n"
         )
         assert_is_instance(art.children[0], Translation)
-        assert_equal(art.children[0].children[0].label.label, ['o','4'])
+        assert_equal(art.children[0].children[0].label.label, ['o', '4'])
         assert_equal(art.children[0].children[0].words[0],
                      "Then it will be taken for the rites and rituals.")
 
@@ -635,7 +639,7 @@ class testParser(TestCase):
             "Then it will be taken for the rites and rituals.\n\n"
         )
         assert_is_instance(art.children[0], Translation)
-        assert_equal(art.children[0].children[0].label.label, ['obverse','4'])
+        assert_equal(art.children[0].children[0].label.label, ['obverse', '4'])
         assert_equal(art.children[0].children[0].words[0],
                      "Then it will be taken for the rites and rituals.")
 
@@ -728,12 +732,12 @@ class testParser(TestCase):
             "@translation labeled en project\n" +
             "@(o 20) You strew all (kinds of) seed.\n" +
             "@(o i 2) No-one will occupy the king of Akkad's throne.\n")
-        l1= art.children[0].children[0]
-        assert_equal(l1.label.label,["o","20"])
+        l1 = art.children[0].children[0]
+        assert_equal(l1.label.label, ["o", "20"])
         assert_equal(l1.words[0],
                      "You strew all (kinds of) seed.")
-        l2= art.children[0].children[1]
-        assert_equal(l2.label.label,["o","i","2"])
+        l2 = art.children[0].children[1]
+        assert_equal(l2.label.label, ["o", "i", "2"])
         assert_equal(l2.words[0],
                      "No-one will occupy the king of Akkad's throne.")
 
@@ -743,8 +747,8 @@ class testParser(TestCase):
             "@translation labeled en project\n" +
             "@(o 20) He fled like a fox to the land\n" +
             "Elam.\n")
-        l1= art.children[0].children[0]
-        assert_equal(l1.label.label,["o","20"])
+        l1 = art.children[0].children[0]
+        assert_equal(l1.label.label, ["o", "20"])
         assert_equal("\n".join(l1.words),
                      "He fled like a fox to the land\nElam.")
 
@@ -913,7 +917,7 @@ class testParser(TestCase):
         assert_equal(link.rangelabel, ["o", "ii", "15"])
 
     def test_multilingual_interlinear(self):
-        text=self.try_parse(
+        text = self.try_parse(
             "@tablet\n" +
             "@obverse\n" +
             "1. dim₃#-me-er# [...]\n" +
@@ -922,93 +926,93 @@ class testParser(TestCase):
             "#lem: ilū[god]N; rabûtu[great]AJ; u\n" +
             "# ES dim₃-me-er = diŋir\n" +
             "|| A o ii 15\n")
-        multilingual=text.children[0].children[0]
+        multilingual = text.children[0].children[0]
         assert_is_instance(multilingual, Multilingual)
-        assert_equal(len(multilingual.lines),2)
-        assert_equal(len(multilingual.lines[None].words),2)
-        assert_equal(len(multilingual.lines[None].lemmas),2)
-        assert_equal(len(multilingual.lines["sb"].words),3)
-        assert_equal(len(multilingual.lines["sb"].lemmas),3)
+        assert_equal(len(multilingual.lines), 2)
+        assert_equal(len(multilingual.lines[None].words), 2)
+        assert_equal(len(multilingual.lines[None].lemmas), 2)
+        assert_equal(len(multilingual.lines["sb"].words), 3)
+        assert_equal(len(multilingual.lines["sb"].lemmas), 3)
 
     def test_interlinear_translation(self):
-        text=self.try_parse(
+        text = self.try_parse(
             "@tablet\n" +
             "1'. ⸢x⸣\n" +
             "#tr: English\n"
         )
-        line=text.children[0].children[0]
+        line = text.children[0].children[0]
         assert_equal(line.translation, "English")
 
     def test_interlinear_empty(self):
-        text=self.try_parse(
+        text = self.try_parse(
             "@tablet\n" +
             "1'. ⸢x⸣\n" +
             "#tr: \n"
         )
-        line=text.children[0].children[0]
+        line = text.children[0].children[0]
         assert_equal(line.translation, "")
 
     def test_interlinear_multiline(self):
-        text=self.try_parse(
+        text = self.try_parse(
             "@tablet\n" +
             "1'. ⸢x⸣\n" +
             "#tr: English\n" +
             " more"
         )
-        line=text.children[0].children[0]
+        line = text.children[0].children[0]
         assert_equal(line.translation, "English more")
 
     def test_interlinear_ends_document(self):
-        text=self.try_parse(
+        text = self.try_parse(
             "@tablet\n" +
             "1'. ⸢x⸣\n" +
             "#tr: English"
         )
-        line=text.children[0].children[0]
+        line = text.children[0].children[0]
         assert_equal(line.translation, "English")
 
     def test_translation_heading(self):
-        text=self.try_parse(
+        text = self.try_parse(
             "@tablet\n" +
             "@translation parallel en project\n" +
             "@h1 A translation heading\n"
         )
-        assert_equal(len(text.children[0].children),1)
-        assert_equal(text.children[0].children[0].objecttype,'h1')
+        assert_equal(len(text.children[0].children), 1)
+        assert_equal(text.children[0].children[0].objecttype, 'h1')
 
     def test_heading(self):
-        text=self.try_parse(
+        text = self.try_parse(
             "@tablet\n" +
             "@h1 A heading\n"
         )
-        assert_equal(text.children[0].objecttype,'h1')
+        assert_equal(text.children[0].objecttype, 'h1')
 
     def test_milestone(self):
-        text=self.try_parse(
+        text = self.try_parse(
             "@tablet\n" +
             "@obverse\n" +
             "@m=locator catchline\n" +
             "16'. si-i-ia-a-a-ku\n",
         )
-        assert_is_instance(text.children[0].children[0],Milestone)
-        assert_is_instance(text.children[0].children[1],Line)
+        assert_is_instance(text.children[0].children[0], Milestone)
+        assert_is_instance(text.children[0].children[1], Line)
 
     def test_colophon(self):
-        text=self.try_parse(
+        text = self.try_parse(
             "@tablet\n" +
             "@obverse\n" +
             "@colophon\n" +
             "16'. si-i-ia-a-a-ku\n",
         )
-        assert_is_instance(text.children[0].children[0],Milestone)
-        assert_is_instance(text.children[0].children[1],Line)
+        assert_is_instance(text.children[0].children[0], Milestone)
+        assert_is_instance(text.children[0].children[1], Line)
 
     def test_include(self):
-        text=self.try_parse(
+        text = self.try_parse(
             "&X001001 = My Text\n" +
             "@include dcclt:P229061 = MSL 07, 197 V02, 210 V11\n"
         )
-        assert_equal(text.links[0].label,"Include")
-        assert_equal(text.links[0].code,"dcclt:P229061")
+        assert_equal(text.links[0].label, "Include")
+        assert_equal(text.links[0].code, "dcclt:P229061")
         assert_equal(text.links[0].description,
             "MSL 07, 197 V02, 210 V11")

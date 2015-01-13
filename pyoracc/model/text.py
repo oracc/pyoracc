@@ -1,6 +1,7 @@
 from mako.template import Template
 from oraccobject import OraccObject
 
+
 class Text(object):
     template = Template("&${code} = ${id}")
 
@@ -14,4 +15,4 @@ class Text(object):
         return Text.template.render(**vars(self))
 
     def objects(self):
-        return [x for x in self.children if isinstance(x,OraccObject)]
+        return [x for x in self.children if isinstance(x, OraccObject)]

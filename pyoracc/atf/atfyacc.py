@@ -16,6 +16,7 @@ from ..model.milestone import Milestone
 from ..model.comment import Comment
 from ..model.score import Score
 
+
 class AtfParser(object):
     tokens = AtfLexer.tokens
 
@@ -334,19 +335,18 @@ class AtfParser(object):
     def p_equalbrace_statement(self, p):
         "equalbrace_statement : equalbrace newline"
 
-
-    def p_line_multilingual(self,p):
+    def p_line_multilingual(self, p):
         "line : line multilingual %prec MULTI"
         p[0] = Multilingual()
-        p[0].lines[None]=p[1]
-        p[0].lines[p[2].label]=p[2] # Use the language, temporarily stored in the label, as the key.
-        p[0].lines[p[2].label].label=p[1].label # The actual label is the same as the main line
+        p[0].lines[None] = p[1]
+        p[0].lines[p[2].label] = p[2]  # Use the language, temporarily stored in the label, as the key.
+        p[0].lines[p[2].label].label = p[1].label  # The actual label is the same as the main line
 
-    def p_multilingual_sequence(self,p):
+    def p_multilingual_sequence(self, p):
         "multilingual_sequence : MULTILINGUAL ID "
-        p[0] = Line(p[2][1:]) # Slice off the percent
+        p[0] = Line(p[2][1:])  # Slice off the percent
 
-    def p_multilingual_id(self,p):
+    def p_multilingual_id(self, p):
         "multilingual_sequence : multilingual_sequence ID"
         p[0] = p[1]
         p[0].words.append(p[2])
@@ -383,7 +383,6 @@ class AtfParser(object):
         "lemma_list : LEM ID"
         p[0] = [p[2]]
 
-
     def p_milestone(self, p):
         "milestone : milestone_name newline"
         p[0] = p[1]
@@ -392,7 +391,7 @@ class AtfParser(object):
         "milestone_name : M EQUALS ID"
         p[0] = Milestone(p[3])
 
-    def p_milestone_brief(self,p):
+    def p_milestone_brief(self, p):
         """milestone_name : CATCHLINE
                           | COLOPHON
                           | DATE
@@ -413,7 +412,7 @@ class AtfParser(object):
 
     def p_lemma_id(self, p):
         "lemma : lemma ID"
-        p[0]=p[2]
+        p[0] = p[2]
 
     def p_lemma_statement(self, p):
         "lemma_statement : lemma_list newline"
@@ -445,7 +444,7 @@ class AtfParser(object):
     def p_flagged_ruling(self, p):
         "ruling : ruling flag"
         p[0] = p[1]
-        AtfParser.flag(p[0],p[2])
+        AtfParser.flag(p[0], p[2])
 
     def p_note(self, p):
         """note_statement : note_sequence newline"""
@@ -490,7 +489,7 @@ class AtfParser(object):
     def p_simple_dollar(self, p):
         """simple_dollar_statement : DOLLAR ID newline
                                    | DOLLAR state newline"""
-        p[0]=State(p[2])
+        p[0] = State(p[2])
 
     def p_plural_state_description(self, p):
         """plural_state_description : plural_quantifier plural_scope state
@@ -517,8 +516,7 @@ class AtfParser(object):
         text = list(p)
         p[0] = State(text[-1], " ".join(text[1:-1]))
 
-
-    def p_singular_state_desc_brief(self,p):
+    def p_singular_state_desc_brief(self, p):
         """brief_state_desc : brief_quantifier state"""
         text = list(p)
         p[0] = State(text[-1], None, text[1])
@@ -552,7 +550,7 @@ class AtfParser(object):
                         | CASES"""
         p[0] = p[1]
 
-    def p_brief_quantifier(self,p):
+    def p_brief_quantifier(self, p):
         """brief_quantifier : REST
                             | START
                             | BEGINNING
@@ -613,7 +611,7 @@ class AtfParser(object):
                             | OPENR"""
         p[0] = LinkReference("||", None)
         if p[1][-1] == "+":
-            p[0].plus=True
+            p[0].plus = True
 
     def p_translationlabel_id(self, p):
         """translationlabel : translationlabel ID
@@ -682,55 +680,55 @@ class AtfParser(object):
 
     def p_comment(self, p):
         "comment : COMMENT ID NEWLINE"
-        p[0]=Comment(p[2])
+        p[0] = Comment(p[2])
 
     def p_check(self, p):
         "comment : CHECK ID NEWLINE"
-        p[0]=Comment(p[2])
-        p[0].check=True
+        p[0] = Comment(p[2])
+        p[0].check = True
 
-    def p_surface_comment(self,p):
+    def p_surface_comment(self, p):
         "surface : surface comment %prec LINE"
-        p[0]=p[1]
+        p[0] = p[1]
         p[0].children.append(p[2])
 
-    def p_translationline_comment(self,p):
+    def p_translationline_comment(self, p):
         "translationlabeledline : translationlabeledline comment"
-        p[0]=p[1]
+        p[0] = p[1]
         p[0].notes.append(p[2])
 
-    def p_translation_comment(self,p):
+    def p_translation_comment(self, p):
         "translation : translation comment %prec LINE"
-        p[0]=p[1]
+        p[0] = p[1]
         p[0].children.append(p[2])
 
-    def p_text_comment(self,p):
+    def p_text_comment(self, p):
         "text : text comment %prec SURFACE"
-        p[0]=p[1]
+        p[0] = p[1]
         p[0].children.append(p[2])
 
-    def p_line_comment(self,p):
+    def p_line_comment(self, p):
         "line : line comment"
-        p[0]=p[1]
+        p[0] = p[1]
         p[0].notes.append(p[2])
 
-    def p_multilingual_comment(self,p):
+    def p_multilingual_comment(self, p):
         "multilingual : multilingual comment"
-        p[0]=p[1]
+        p[0] = p[1]
         p[0].notes.append(p[2])
 
     def p_score(self, p):
         "score : SCORE ID ID NEWLINE"
-        p[0]=Score(p[2],p[3])
+        p[0] = Score(p[2], p[3])
 
     def p_score_word(self, p):
         "score : SCORE ID ID ID NEWLINE"
-        p[0]=Score(p[2],p[3],True)
+        p[0] = Score(p[2], p[3], True)
 
     def p_text_score(self, p):
         "text : text score"
-        p[0]=p[1]
-        p[0].score=p[2]
+        p[0] = p[1]
+        p[0].score = p[2]
 
     # There is a potential shift-reduce conflict in the following sample:
     """
@@ -761,8 +759,8 @@ class AtfParser(object):
             'CATCHLINE', 'CHECK',
             'COLOPHON', 'DATE', 'SIGNATURES',
             'SIGNATURE', 'SUMMARY',
-            'WITNESSES',"PARBAR", "TO", "FROM"),
-        # HIGH precedence
+            'WITNESSES', "PARBAR", "TO", "FROM"),
+    # HIGH precedence
     )
 
     def p_error(self, p):

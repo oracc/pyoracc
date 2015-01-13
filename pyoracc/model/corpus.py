@@ -16,7 +16,7 @@ class Corpus(object):
                     try:
                         path = os.path.join(dirpath, file)
                         print("Parsing file", path, "... ", end="")
-                        content=codecs.open(path,
+                        content = codecs.open(path,
                                                   encoding='utf-8-sig').read()
                         self.texts.append(AtfFile(content))
 
