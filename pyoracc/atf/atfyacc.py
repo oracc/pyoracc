@@ -1,20 +1,21 @@
 import ply.yacc as yacc
 from atflex import AtfLexer
-from ..model.text import Text
-from ..model.oraccobject import OraccObject
-from ..model.oraccnamedobject import OraccNamedObject
+
+from ..model.comment import Comment
+from ..model.composite import Composite
 from ..model.line import Line
-from ..model.ruling import Ruling
-from ..model.note import Note
 from ..model.link import Link
 from ..model.link_reference import LinkReference
-from ..model.state import State
-from ..model.translation import Translation
-from ..model.composite import Composite
-from ..model.multilingual import Multilingual
 from ..model.milestone import Milestone
-from ..model.comment import Comment
+from ..model.multilingual import Multilingual
+from ..model.note import Note
+from ..model.oraccnamedobject import OraccNamedObject
+from ..model.oraccobject import OraccObject
+from ..model.ruling import Ruling
 from ..model.score import Score
+from ..model.state import State
+from ..model.text import Text
+from ..model.translation import Translation
 
 
 class AtfParser(object):

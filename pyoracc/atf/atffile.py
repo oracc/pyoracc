@@ -1,4 +1,3 @@
-import sys
 from atflex import AtfLexer
 from atfyacc import AtfParser
 

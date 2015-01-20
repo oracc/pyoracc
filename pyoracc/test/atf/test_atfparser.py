@@ -2,23 +2,23 @@
 
 from unittest import TestCase, skip
 
-from ...model.text import Text
+from nose.tools import assert_equal, assert_is_instance  # @UnresolvedImport
+
+from ...atf.atflex import AtfLexer
+from ...atf.atfyacc import AtfParser
+from ...model.comment import Comment
+from ...model.composite import Composite
 from ...model.line import Line
-from ...model.state import State
-from ...model.translation import Translation
 from ...model.link import Link
 from ...model.link_reference import LinkReference
-from ...model.oraccobject import OraccObject
-from ...model.oraccnamedobject import OraccNamedObject
-from ...model.multilingual import Multilingual
-from ...model.composite import Composite
 from ...model.milestone import Milestone
-from ...model.comment import Comment
-from ...atf.atfyacc import AtfParser
-from ...atf.atflex import AtfLexer
+from ...model.multilingual import Multilingual
+from ...model.oraccnamedobject import OraccNamedObject
+from ...model.oraccobject import OraccObject
 from ...model.ruling import Ruling
-from nose.tools import assert_in, assert_equal, assert_is_instance
-from itertools import izip, repeat
+from ...model.state import State
+from ...model.text import Text
+from ...model.translation import Translation
 
 
 class testParser(TestCase):
@@ -138,7 +138,7 @@ class testParser(TestCase):
         assert_equal(obj.objecttype, "object")
         assert_equal(obj.name, "That fits no other category")
 
-    def test_flagged_object(self):
+    def test_flagged_object_broken_remark(self):
         obj = self.try_parse(
             "@object which is remarkable and broken!#\n"
         )
@@ -149,7 +149,7 @@ class testParser(TestCase):
         assert(obj.remarkable)
         assert(not obj.collated)
 
-    def test_flagged_object(self):
+    def test_flagged_object_collated(self):
         obj = self.try_parse(
             "@tablet\n@column 2'*\n"
         )

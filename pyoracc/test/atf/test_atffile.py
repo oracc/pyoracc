@@ -1,15 +1,15 @@
+from nose.tools import assert_equal  # @UnresolvedImport
 from ...atf.atffile import AtfFile
-from nose.tools import assert_in, assert_equal
-
 from ..fixtures import anzu, belsunu, sample_file
 
 
+# Parse belsunu.atf and check &-line was parsed correctly
 def test_create():
     afile = AtfFile(belsunu())
     assert_equal(afile.text.code, "X001001")
     assert_equal(afile.text.description, "JCS 48, 089")
 
-
+# Parse anzu.atf (composite sample) and check separate text elements were parsed correctly
 def test_composite():
     afile = AtfFile(anzu())
     assert_equal(afile.text.texts[0].code, "X002001")
@@ -17,6 +17,7 @@ def test_composite():
     assert_equal(afile.text.texts[1].code, "Q002770")
     assert_equal(afile.text.texts[1].description, "SB Anzu 2")
 
+# Pairs of filenames and CDLI IDs - Note not all of them composites.
 composites = [
     ['SAA19_13', 'P393708'],
     ['SAA19_11', 'P224439'],
@@ -27,6 +28,7 @@ composites = [
     ['5-fm-emesal-p', 'P228608'],
 ]
 
+# Triples of filenames, CDLI ID and text designation
 texts = [
     ['bb', 'X002002', "BagM Beih. 02, 005"],
     ['bb_2_6', 'X002004', "BagM Beih. 02, 006"],
@@ -59,12 +61,12 @@ texts = [
     ['3-ob-buex-q', 'Q000260', 'OB Sippar Ura I-II']
     ]
 
-
+# Parses ATF and checks CDLI ID conincides
 def consider_composite(name, code):
     afile = AtfFile(sample_file(name))
     assert_equal(afile.text.texts[0].code, code)
 
-
+# Parses ATF and checks CDLI ID and text description coincide
 def consider_file(name, code, description):
     afile = AtfFile(sample_file(name))
     assert_equal(afile.text.code, code)
@@ -75,7 +77,7 @@ def test_texts():
     for text in texts:
         yield consider_file, text[0], text[1], text[2]
 
-
+# Parse a bunch of atf files
 def test_composites():
     for composite in composites:
         yield consider_composite, composite[0], composite[1]
