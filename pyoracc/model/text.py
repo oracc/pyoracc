@@ -3,7 +3,13 @@ from oraccobject import OraccObject
 
 
 class Text(object):
-    template = Template("&${code} = ${id}")
+    template = Template(
+    """
+    &${code} = ${id}
+    %for child in children:
+       {child}
+    %endfor
+    """)
 
     def __init__(self):
         self.children = []
