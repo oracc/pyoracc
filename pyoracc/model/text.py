@@ -5,17 +5,24 @@ from oraccobject import OraccObject
 class Text(object):
     template = Template(
     """
-    &${code} = ${id}
-    %for child in children:
-       {child}
-    %endfor
+    &${code} = ${description}
     """)
-
+#  template = Template(
+#     """
+#     &${code} = ${id}
+#     %for child in children:
+#        ${child}
+#     %endfor
+#     """)
+#  
+    
     def __init__(self):
         self.children = []
         self.composite = False
         self.links = []
         self.score = None
+        self.code = None
+        self.description = None
 
     def __str__(self):
         return Text.template.render(**vars(self))
