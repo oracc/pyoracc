@@ -23,6 +23,8 @@ class Text(object):
         self.score = None
         self.code = None
         self.description = None
+        self.project = None
+        self.language = None
 
     def __str__(self):
         return Text.template.render(**vars(self))
