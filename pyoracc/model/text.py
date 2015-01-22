@@ -4,8 +4,7 @@ from oraccobject import OraccObject
 
 class Text(object):
     template = Template(
-    """
-    &${code} = ${description}
+    """&${code} = ${description}
     """)
 #  template = Template(
 #     """
