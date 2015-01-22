@@ -24,13 +24,15 @@ class testSerializer(TestCase):
         """
         Parse input string, could be just a line or a whole file content.
         """
-        return AtfFile(any_str)
+        parsed = AtfFile(any_str)
+        return parsed
     
     def serialize(self, any_object):
         """
         Serialize input object, from a simple lemma to a whole AtfFile object.
         """
-        return any_object.__str__()
+        serialized = str(any_object)
+        return serialized
     
     def parse_then_serialize(self, any_str):
         """
@@ -59,18 +61,20 @@ class testSerializer(TestCase):
         The solution is to parse again the serialized file, serialize again, then compare the two serializations.
         """
         serialized_1 = self.parse_then_serialize(belsunu())
-        serialized_2 = self.parse_then_serialize(serialized_1)
         self.save_file(serialized_1, output_filepath("belsunu.atf"))
+        serialized_2 = self.parse_then_serialize(serialized_1)
         assert_equal(serialized_1, serialized_2)
-        
-    def test_text_code_and_description(self):
-        """
-        Check if serializing works for the code/description case - first line of ATF texts.
-        Note the parser always returns an AtfFile object, even when it's not ATF-compliant.
-        """
-        atf = self.parse("&X001001 = JCS 48, 089\n")
-        serialized = self.serialize(atf)
-        assert_equal(serialized.strip()+"\n", "&X001001 = JCS 48, 089\n")
+
+#TODO: Build list of atf files for testing and make a test to go through the list of test and try serializing each of them.
+
+#     def test_text_code_and_description(self):
+#         """
+#         Check if serializing works for the code/description case - first line of ATF texts.
+#         Note the parser always returns an AtfFile object, even when it's not ATF-compliant.
+#         """
+#         atf = self.parse("&X001001 = JCS 48, 089\n")
+#         serialized = self.serialize(atf)
+#         assert_equal(serialized.strip()+"\n", "&X001001 = JCS 48, 089\n")
         
 #     def test_text_project(self):
 #         """
