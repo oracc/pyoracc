@@ -9,5 +9,5 @@ ${child}
     def __init__(self):
         self.children = []
         
-#     def __str__(self):
-#         return self.template.render(**vars(self))
+    def __str__(self):
+        return self.template.render(**vars(self))
