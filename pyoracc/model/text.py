@@ -4,16 +4,12 @@ from oraccobject import OraccObject
 
 class Text(object):
     template = Template(
-    """&${code} = ${description}
-    """)
-#  template = Template(
-#     """
-#     &${code} = ${id}
-#     %for child in children:
-#        ${child}
-#     %endfor
-#     """)
-#  
+"""&${code} = ${description}
+#project: ${project}
+#atf: lang ${language}
+% for child in children:
+${child}
+% endfor""")
     
     def __init__(self):
         self.children = []
