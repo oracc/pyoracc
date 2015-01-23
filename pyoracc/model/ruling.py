@@ -11,4 +11,7 @@ class Ruling(object):
         self.collated = False
         
     def __str__(self):
-        return self.template.render(**vars(self))
+        return self.template.render_unicode(**vars(self))
+    
+    def serialize(self):
+        return self.template.render_unicode(**vars(self))

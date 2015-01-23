@@ -2,10 +2,10 @@ from mako.template import Template
 
 class OraccObject(object):
     
-    template = Template("""@${objecttype}\n
+    template = Template(r"""@${objecttype} 
 % for child in children:
-${child}
-% endfor""")
+${child.serialize()}
+% endfor""", output_encoding='utf-8')
     
     def __init__(self, objecttype):
         self.objecttype = objecttype
@@ -16,5 +16,8 @@ ${child}
         self.collated = False
         
     def __str__(self):
-        return OraccObject.template.render(**vars(self))
+        return OraccObject.template.render_unicode(**vars(self))
+    
+    def serialize(self):
+        return OraccObject.template.render_unicode(**vars(self))
     
