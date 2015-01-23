@@ -9,6 +9,7 @@ from pyoracc.test.fixtures import belsunu, output_filepath
 
 from ...atf.atflex import AtfLexer
 from ...atf.atfyacc import AtfParser
+from pyoracc.model.line import Line
 
 
 class testSerializer(TestCase):
@@ -31,7 +32,7 @@ class testSerializer(TestCase):
         """
         Serialize input object, from a simple lemma to a whole AtfFile object.
         """
-        serialized = str(any_object)
+        serialized = any_object.serialize()
         return serialized
     
     def parse_then_serialize(self, any_str):
@@ -64,6 +65,39 @@ class testSerializer(TestCase):
         self.save_file(serialized_1, output_filepath("belsunu.atf"))
         serialized_2 = self.parse_then_serialize(serialized_1)
         assert_equal(serialized_1, serialized_2)
+        
+    def test_line_word(self):
+        """
+        Get a sample word with unicode chars and check serialization is correct.
+        """
+        line=Line("1")
+        line.words.append(u"\u2086")
+        line_ser = line.serialize()
+        assert_equal(line_ser,"1. " + u"\u2086 ")
+        
+    
+    def test_line_words(self):
+        """
+        Get a sample word with unicode chars and check serialization is correct.
+        1. [MU] 1.03-KAM {iti}AB GE₆ U₄ 2-KAM
+        """
+        atf_file = AtfFile(belsunu())
+        uline = atf_file.text.children[0].children[0].children[0]
+        uwords = uline.words 
+        gold = [u'[MU]', u'1.03-KAM', u'{iti}AB', u'GE\u2086', u'U\u2084', u'2-KAM']
+        assert_equal(uwords, gold)
+    
+    def test_line_lemmas(self):
+        """
+        Get a sample word with unicode chars and check serialization is correct.
+        šatti[year]N; n; Ṭebetu[1]MN; mūša[at night]AV; ūm[day]N; n
+        """
+        atf_file = AtfFile(belsunu())
+        uline = atf_file.text.children[0].children[0].children[0]
+        ulemmas = uline.lemmas 
+        gold = [u'\u0161atti[year]N', u'n', u'\u1e6cebetu[1]MN', u'm\u016b\u0161a[at night]AV', u'\u016bm[day]N', u'n']
+        assert_equal(ulemmas, gold)
+        
 
 #TODO: Build list of atf files for testing and make a test to go through the list of test and try serializing each of them.
 
