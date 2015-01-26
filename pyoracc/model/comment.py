@@ -1,7 +1,7 @@
 from mako.template import Template
 
 class Comment(object):
-    template = Template("""#${content}""")
+    template = Template("""# ${content}""")
     
     def __init__(self, content):
         self.content = content
