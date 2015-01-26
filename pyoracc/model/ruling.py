@@ -24,6 +24,7 @@ class Ruling(object):
         except TypeError:
             print("Error: Ruling count " + self.count + " must be an integer.")
         except IndexError:
-            print("Error: Ruling count (" + self.count + ") is out of bounds (" + typeArr.__len__() + ").")
+            print("Error: Ruling count (" + self.count + ") is out of bounds (" 
+                  + typeArr.__len__() + ").")
             
       
