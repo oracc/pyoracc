@@ -34,4 +34,7 @@ def output_folder():
 
 def output_filepath(atf_filename):
     atf_without_ext = re.sub('.atf$', '', atf_filename)
-    return os.path.join(output_folder(), atf_without_ext + "_" + time.strftime("%Y%m%d%H%M%S")  + ".atf")
+    return os.path.join(output_folder(), atf_without_ext + "_" + 
+                        time.strftime("%Y%m%d%H%M%S")  + ".atf")
+#return os.path.join(output_folder(), atf_filename)
+
