@@ -57,9 +57,12 @@ class testSerializer(TestCase):
         
     def test_belsunu_serializer(self):
         """
-        Parse belsunu.atf, then serialize, parse again, serialize again, compare. 
-        Comparing serialized output with input file would bring up differences that might not be significant (white spaces, newlines, etc).
-        The solution is to parse again the serialized file, serialize again, then compare the two serializations.
+        Parse belsunu.atf, then serialize, parse again, serialize again, 
+        compare. 
+        Comparing serialized output with input file would bring up differences 
+        that might not be significant (white spaces, newlines, etc).
+        The solution is to parse again the serialized file, serialize again, 
+        then compare the two serializations.
         """
         serialized_1 = self.parse_then_serialize(belsunu())
         self.save_file(serialized_1, output_filepath("belsunu.atf"))
@@ -78,33 +81,38 @@ class testSerializer(TestCase):
     
     def test_line_words(self):
         """
-        Get a sample word with unicode chars and check serialization is correct.
+        Get a sample line of words with unicode chars and test serialization.
         1. [MU] 1.03-KAM {iti}AB GE₆ U₄ 2-KAM
         """
         atf_file = AtfFile(belsunu())
         uline = atf_file.text.children[0].children[0].children[0]
         uwords = uline.words 
-        gold = [u'[MU]', u'1.03-KAM', u'{iti}AB', u'GE\u2086', u'U\u2084', u'2-KAM']
+        gold = [u'[MU]', u'1.03-KAM', u'{iti}AB', u'GE\u2086', u'U\u2084', 
+                u'2-KAM']
         assert_equal(uwords, gold)
     
     def test_line_lemmas(self):
         """
-        Get a sample word with unicode chars and check serialization is correct.
+        Get a sample line of lemmas with unicode chars and test serialization.
         šatti[year]N; n; Ṭebetu[1]MN; mūša[at night]AV; ūm[day]N; n
         """
         atf_file = AtfFile(belsunu())
         uline = atf_file.text.children[0].children[0].children[0]
         ulemmas = uline.lemmas 
-        gold = [u' \u0161atti[year]N', u'n', u'\u1e6cebetu[1]MN', u'm\u016b\u0161a[at night]AV', u'\u016bm[day]N', u'n']
+        gold = [u' \u0161atti[year]N', u'n', u'\u1e6cebetu[1]MN', 
+                u'm\u016b\u0161a[at night]AV', u'\u016bm[day]N', u'n']
         assert_equal(ulemmas, gold)
         
 
-#TODO: Build list of atf files for testing and make a test to go through the list of test and try serializing each of them.
+#TODO: Build list of atf files for testing and make a test to go through the 
+#list of test and try serializing each of them.
 
 #     def test_text_code_and_description(self):
 #         """
-#         Check if serializing works for the code/description case - first line of ATF texts.
-#         Note the parser always returns an AtfFile object, even when it's not ATF-compliant.
+#         Check if serializing works for the code/description case - first line 
+#         of ATF texts.
+#         Note the parser always returns an AtfFile object, even when it's not 
+#         ATF-compliant.
 #         """
 #         atf = self.parse("&X001001 = JCS 48, 089\n")
 #         serialized = self.serialize(atf)
@@ -113,7 +121,8 @@ class testSerializer(TestCase):
 #     def test_text_project(self):
 #         """
 #         Check if serializing works for the project lines.
-#         Note the parser always returns an AtfFile object, even when it's not ATF-compliant.
+#         Note the parser always returns an AtfFile object, even when it's not 
+#         ATF-compliant.
 #         """
 #         serialized = self.parse_then_serialize("#project: cams/gkab\n")
 #         assert_equal(serialized.strip()+"\n", "#project: cams/gkab\n")
