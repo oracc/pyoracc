@@ -1,7 +1,22 @@
 from mako.template import Template
 
 class State(object):
-    template = Template("""$ ${loose}""")    
+    template = Template("""$ \\
+% if scope:
+${scope} \\
+% endif    
+% if state:
+${state}\\
+% elif scope:
+${scope}\\
+% elif extent:
+${extent}\\
+% elif qualification:
+${qualification}\\
+% elif loose:
+${loose}\\
+% endif
+""")    
     
     def __init__(self, state=None, scope=None, extent=None,
                  qualification=None, loose=None):
