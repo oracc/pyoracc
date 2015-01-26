@@ -1,16 +1,29 @@
 from mako.template import Template
 
 class Line(object):
-    template = Template("""${label}. \\
-% for word in words:
-${word} \\
-% endfor 
+    template = Template("""\n${label}.\t\\
+${' '.join(words)}\\
+% if references:
+% for reference in references:
+^${reference}^ 
+% endfor
+% endif
 % if lemmas:
-\n#lem: \\
-% for lemma in lemmas:
-${lemma}; \\
-% endfor \n
-%endif
+\n#lem:\\
+${'; '.join(lemmas)}\\
+% endif
+% if notes:
+\n
+% for note in notes:
+${note.serialize()}
+% endfor
+% endif
+% if links:
+\n#link: \\
+% for link in links:
+${link}; 
+% endfor
+% endif
 """, output_encoding='utf-8')
 
 
