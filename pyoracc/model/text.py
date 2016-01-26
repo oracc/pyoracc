@@ -10,7 +10,7 @@ class Text(object):
 % for child in children:
 ${child.serialize()}
 % endfor""")
-    
+
     def __init__(self):
         self.children = []
         self.composite = False
@@ -23,7 +23,7 @@ ${child.serialize()}
 
     def __str__(self):
         return Text.template.render_unicode(**vars(self))
-    
+
     def serialize(self):
         return Text.template.render_unicode(**vars(self))
 

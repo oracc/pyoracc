@@ -11,10 +11,11 @@ def test_create():
     assert_equal(afile.text.code, "X001001")
     assert_equal(afile.text.description, "JCS 48, 089")
 
-# 
+
 def test_composite():
     """
-    Parse anzu.atf (composite sample) and check separate text elements were parsed correctly
+    Parse anzu.atf (composite sample) and check separate text elements were
+    parsed correctly
     """
     afile = AtfFile(anzu())
     assert_equal(afile.text.texts[0].code, "X002001")
@@ -66,12 +67,14 @@ texts = [
     ['3-ob-buex-q', 'Q000260', 'OB Sippar Ura I-II']
     ]
 
+
 def consider_composite(name, code):
     """
     Parses ATF and checks CDLI ID coincides
     """
     afile = AtfFile(sample_file(name))
     assert_equal(afile.text.texts[0].code, code)
+
 
 def consider_file(name, code, description):
     """
@@ -81,16 +84,20 @@ def consider_file(name, code, description):
     assert_equal(afile.text.code, code)
     assert_equal(afile.text.description, description)
 
+
 def test_texts():
     """"
-    Go through list of selected filenames and check parser deals non-composite files. 
+    Go through list of selected filenames and check parser deals non-composite
+    files.
     """
     for text in texts:
         yield consider_file, text[0], text[1], text[2]
 
+
 def test_composites():
     """
-    Go through list of selected composites and check parser deals with composite files correctly
+    Go through list of selected composites and check parser deals with
+    composite files correctly
     """
     for composite in composites:
         yield consider_composite, composite[0], composite[1]
