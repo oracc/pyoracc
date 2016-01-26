@@ -3,8 +3,7 @@ from oraccobject import OraccObject
 
 
 class Text(object):
-    template = Template(
-"""&${code} = ${description}
+    template = Template("""&${code} = ${description}
 #project: ${project}
 #atf: lang ${language}
 % for child in children:
