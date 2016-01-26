@@ -3,9 +3,8 @@ from atfyacc import AtfParser
 from mako.template import Template
 
 
-
 class AtfFile(object):
-    
+
     template = Template("${text.serialize()}")
 
     def __init__(self, content):
@@ -15,10 +14,9 @@ class AtfFile(object):
         lexer = AtfLexer().lexer
         parser = AtfParser().parser
         self.text = parser.parse(content, lexer=lexer)
-           
+
     def __str__(self):
         return AtfFile.template.render_unicode(**vars(self))
-    
+
     def serialize(self):
         return AtfFile.template.render_unicode(**vars(self))
-    

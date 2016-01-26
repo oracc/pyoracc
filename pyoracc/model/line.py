@@ -1,11 +1,12 @@
 from mako.template import Template
 
+
 class Line(object):
     template = Template("""\n${label}.\t\\
 ${' '.join(words)}\\
 % if references:
 % for reference in references:
-^${reference}^ 
+^${reference}^
 % endfor
 % endif
 % if lemmas:
@@ -21,11 +22,10 @@ ${note.serialize()}
 % if links:
 \n#link: \\
 % for link in links:
-${link}; 
+${link};
 % endfor
 % endif
 """, output_encoding='utf-8')
-
 
     def __init__(self, label):
         self.label = label
@@ -36,9 +36,9 @@ ${link};
         self.notes = []
         self.references = []
         self.links = []
-        
+
     def __str__(self):
         return self.template.render_unicode(**vars(self))
-    
+
     def serialize(self):
         return self.template.render_unicode(**vars(self))
