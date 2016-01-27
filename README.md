@@ -2,3 +2,5 @@ pyoracc
 =======
 
 Python tools for working with ORACC
+
+Depends on PLY, Mako and Nose
