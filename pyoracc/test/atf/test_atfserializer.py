@@ -5,7 +5,7 @@ from unittest import TestCase
 from nose.tools import assert_equal  # @UnresolvedImport
 
 from pyoracc.atf.atffile import AtfFile
-from pyoracc.test.fixtures import belsunu, output_filepath
+from pyoracc.test.fixtures import belsunu, anzu, output_filepath
 
 from ...atf.atflex import AtfLexer
 from ...atf.atfyacc import AtfParser
@@ -27,6 +27,105 @@ class testSerializer(TestCase):
         """
         parsed = AtfFile(any_str)
         return parsed
+    
+    def test_parse_anzu(self):
+        parsed = AtfFile("""&X002001 = SB Anzu 1 
+@composite
+#project: cams/gkab
+#atf: lang akk-x-stdbab
+
+
+
+1.    bi#-in šar da-ad-mi šu-pa-a na-ram {d}ma#-mi
+
+2.    gaš-ru lu-u-za-mur DINGIR bu-kur₂ {d#}[EN].LIL₂
+
+3.    {d#}NIN.URTA šu-pa-a na-ram {d}ma-mi
+
+4.    [gaš]-ru lu-ut-ta-aʾ-id DINGIR bu-kur₂ {d}EN.LIL₂
+
+5.    i-lit-ti E₂.KUR a-ša₂-red {d}600 tu-kul-ti e₂-ninnu
+
+54.    an-za-a-ma ta-ta-mar [x x x]
+
+55.    li-iz-ziz ma-har-ka-ma a-a ip#-[par-šid-ka]
+
+56.    lip#-tar-rik ina at-ma-ni šu-bat ki#-[iṣ-ṣi]
+$ lines broken
+
+60.    ta#-[mit] iq#-bu-šu DINGIR an-[na i-pu-ul]
+
+61.    ma-ha-za i-ta-ha-az# [x x x x]
+
+213.    ŠU.NIGIN# 3 UŠ 3#.03-AM₃
+
+
+
+&Q002770 = SB Anzu 2
+@composite
+#project: cams/gkab
+#atf: lang akk-x-stdbab
+
+
+
+1.    bi-riq ur-ha šuk-na a-dan-na
+
+2.    ana DINGIR-MEŠ šu-ut ab-nu-u na-mir-ta šu-uṣ-ṣi
+
+153.    tam-ha-ru-šu i-[du-us-su i-qu-lu ziq-ziq-qu]
+
+154.    ṭup-pi 2-KAM₂.MA [bi-in šar da-ad₂-me]
+
+155.    ŠU.NIGIN# 2# UŠ# [53-AM₃]
+
+
+
+
+
+&Q002771 = SB Anzu 3
+@composite
+#project: cams/gkab
+#atf: lang akk-x-stdbab
+
+
+
+1.    x x x [x x x x x x x x x x x]
+
+2.    ša₂ ak# na x x ša₂# a#-na# x [x x x]
+
+3.    ap-lu#-ha-nu de-ke-e x [x x]
+
+75.    [x x x x]-ma# a-šak-kan# [x x x x x]
+
+76.    [x x x] x pa-ni-ia# [x x x]
+$ lines broken
+
+113.    [x x x x x x x x] a#.a# ib-ba#-ni#
+
+114.    [x x x x] x x x x an-zi-i ina E₂.KUR
+
+115.    [x x] x-it-ta-šu₂ ša₂ qar-ra-di
+
+168.    [x x x x x] ib-ba-nu-[u]
+
+169.    [x x x x x] x x [x x]
+$ lines broken
+
+175.    [x x x x x x x x] x
+
+176.    [x x x x x x x] ur-ha
+
+$ single ruling
+
+177.    [x x x x x] x ap#-lu#-ha#-nu-uš
+
+178.    [x x x x] x x x x ba#
+
+179.    [x x x x a]-ša₂?#-red qab-li
+
+180.    [x x x x] x-ni-tu₂
+
+181.    [x x x x] x-qa?-a-tu₂""")
     
     def serialize(self, any_object):
         """
@@ -69,6 +168,19 @@ class testSerializer(TestCase):
         serialized_2 = self.parse_then_serialize(serialized_1)
         assert_equal(serialized_1, serialized_2)
         
+    def test_anzu_serializer(self):
+        """
+        Parse anzu.atf, then serialize, parse again, serialize again, compare. 
+        Comparing serialized output with input file would bring up differences 
+        that might not be significant (white spaces, newlines, etc).
+        The solution is to parse again the serialized file, serialize again, 
+        then compare the two serializations.
+        """
+        serialized_1 = self.parse_then_serialize(anzu())
+        self.save_file(serialized_1, output_filepath("anzu.atf"))
+        serialized_2 = self.parse_then_serialize(serialized_1)
+        assert_equal(serialized_1, serialized_2)
+        
 #     def test_line_word(self):
 #         """
 #         Get a sample word with unicode chars and check serialization is correct.
@@ -105,7 +217,9 @@ class testSerializer(TestCase):
         
 
 #TODO: Build list of atf files for testing and make a test to go through the 
-#list of test and try serializing each of them.
+#list of texts and try serializing each of them.
+    def test_corpus(self):
+        
 
 #     def test_text_code_and_description(self):
 #         """

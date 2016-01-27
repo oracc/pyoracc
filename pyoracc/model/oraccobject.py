@@ -2,7 +2,10 @@ from mako.template import Template
 
 class OraccObject(object):
     
-    template = Template(r"""@${objecttype}
+    template = Template(
+"""% if len(objecttype):
+@${objecttype}
+% endif
 % for child in children:
 ${child.serialize()}
 % endfor""", output_encoding='utf-8')

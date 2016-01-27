@@ -15,6 +15,11 @@ def belsunu():
 def tiny_corpus():
     return os.path.join(os.path.dirname(here), 'tiny_corpus')
 
+def sample_corpus():
+    return os.path.join(os.path.dirname(here), 'sample_corpus')
+
+def whole_corpus():
+    return os.path.join(os.path.dirname(here), 'whole_corpus')
 
 def anzu():
     return sample_file("anzu")

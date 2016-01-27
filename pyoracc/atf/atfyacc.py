@@ -22,7 +22,7 @@ class AtfParser(object):
     tokens = AtfLexer.tokens
 
     def __init__(self):
-        self.parser = yacc.yacc(module=self)
+        self.parser = yacc.yacc(module=self, debug=0, write_tables=0)
 
     def p_document(self, p):
         """document : text
@@ -127,16 +127,16 @@ class AtfParser(object):
 
         # Has a default already been added?
         if len(p[0].objects()) == 0:
-            p[0].children.append(OraccObject("tablet"))
+            p[0].children.append(OraccObject(""))
         p[0].objects()[-1].children.append(p[2])
 
     def p_text_surface_element(self, p):
         """text : text surface_element %prec OBJECT"""
         p[0] = p[1]
         if len(p[0].objects()) == 0:
-            p[0].children.append(OraccObject("tablet"))
+            p[0].children.append(OraccObject(""))
         # Default to obverse of a tablet
-        p[0].objects()[-1].children.append(OraccObject("obverse"))
+        p[0].objects()[-1].children.append(OraccObject(""))
         p[0].objects()[-1].children[0].children.append(p[2])
 
     def p_text_composite(self, p):
@@ -217,7 +217,7 @@ class AtfParser(object):
         """object : object surface_element %prec SURFACE"""
         p[0] = p[1]
         # Default surface is obverse
-        p[0].children.append(OraccObject("obverse"))
+        p[0].children.append(OraccObject(""))
         p[0].children[0].children.append(p[2])
 
     def p_surface_statement(self, p):

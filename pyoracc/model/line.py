@@ -18,12 +18,6 @@ ${'; '.join(lemmas)}\\
 ${note.serialize()}
 % endfor
 % endif
-% if links:
-\n#link: \\
-% for link in links:
-${link}; 
-% endfor
-% endif
 """, output_encoding='utf-8')
 
 
