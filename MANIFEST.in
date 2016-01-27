@@ -1,0 +1,3 @@
+recursive-include pyoracc *.py
+recursive-include pyoracc/test/fixtures/sample_corpus *.atf
+recursive-include pyoracc/test/fixtures/tiny_corpus *.atf
