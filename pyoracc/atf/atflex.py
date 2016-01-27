@@ -422,8 +422,8 @@ class AtfLexer(object):
 
     terminates_paragraph = "(\#|\@|\&|\Z|(^[^.\ \t]*\.))"
 
-    @lex.TOKEN(r'([^\^\n\r]|([\n\r](?!\s*[\n\r])(?!'
-               + terminates_paragraph + ')))+')
+    @lex.TOKEN(r'([^\^\n\r]|([\n\r](?!\s*[\n\r])(?!' +
+               terminates_paragraph + ')))+')
     def t_para_ID(self, t):
         t.value = t.value.strip()
         return t

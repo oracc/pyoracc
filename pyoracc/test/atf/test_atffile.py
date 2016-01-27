@@ -1,22 +1,29 @@
+from nose.tools import assert_equal  # @UnresolvedImport
 from ...atf.atffile import AtfFile
-from nose.tools import assert_in, assert_equal
-
 from ..fixtures import anzu, belsunu, sample_file
 
 
 def test_create():
+    """
+    Parse belsunu.atf and check &-line was parsed correctly
+    """
     afile = AtfFile(belsunu())
     assert_equal(afile.text.code, "X001001")
     assert_equal(afile.text.description, "JCS 48, 089")
 
 
 def test_composite():
+    """
+    Parse anzu.atf (composite sample) and check separate text elements were
+    parsed correctly
+    """
     afile = AtfFile(anzu())
     assert_equal(afile.text.texts[0].code, "X002001")
     assert_equal(afile.text.texts[0].description, "SB Anzu 1")
     assert_equal(afile.text.texts[1].code, "Q002770")
     assert_equal(afile.text.texts[1].description, "SB Anzu 2")
 
+# Pairs of filenames and CDLI IDs chosen form composite files
 composites = [
     ['SAA19_13', 'P393708'],
     ['SAA19_11', 'P224439'],
@@ -27,6 +34,7 @@ composites = [
     ['5-fm-emesal-p', 'P228608'],
 ]
 
+# Triples of ATF filenames, CDLI ID and text designation
 texts = [
     ['bb', 'X002002', "BagM Beih. 02, 005"],
     ['bb_2_6', 'X002004', "BagM Beih. 02, 006"],
@@ -61,21 +69,35 @@ texts = [
 
 
 def consider_composite(name, code):
+    """
+    Parses ATF and checks CDLI ID coincides
+    """
     afile = AtfFile(sample_file(name))
     assert_equal(afile.text.texts[0].code, code)
 
 
 def consider_file(name, code, description):
+    """
+    Parses ATF and checks CDLI ID and text description coincide
+    """
     afile = AtfFile(sample_file(name))
     assert_equal(afile.text.code, code)
     assert_equal(afile.text.description, description)
 
 
 def test_texts():
+    """"
+    Go through list of selected filenames and check parser deals non-composite
+    files.
+    """
     for text in texts:
         yield consider_file, text[0], text[1], text[2]
 
 
 def test_composites():
+    """
+    Go through list of selected composites and check parser deals with
+    composite files correctly
+    """
     for composite in composites:
         yield consider_composite, composite[0], composite[1]

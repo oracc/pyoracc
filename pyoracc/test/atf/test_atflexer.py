@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-from unittest import TestCase, skip
-from ...atf.atflex import AtfLexer
-from nose.tools import assert_in, assert_equal
 from itertools import izip_longest, repeat
+from unittest import TestCase
+from nose.tools import assert_equal  # @UnresolvedImport
+from ...atf.atflex import AtfLexer
 
 
 class testLexer(TestCase):
