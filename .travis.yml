@@ -5,15 +5,35 @@ language: python
 matrix:
   include:
     - python: 2.7
+    - python: 2.7
+      env: JYTHON=true
     - python: 3.5
+env:
+  global:
+    - JYTHON_URL="http://search.maven.org/remotecontent?filepath=org/python/jython-installer/2.7.0/jython-installer-2.7.0.jar"
+    - JYTHON=false
+
+before_install:
+    - |
+        # Install jython
+        if [ "$JYTHON" == "true" ]; then
+          deactivate
+          wget $JYTHON_URL -O jython_installer.jar;
+          java -jar jython_installer.jar -s -d $HOME/jython;
+          export PATH=$HOME/jython/bin:$PATH;
+          jython -c "print ''";
+          jython -c "import sys; print sys.version"
+        fi
 
 install:
     - |
+        # Install dependencies
         pip install --upgrade pip
         pip install --upgrade wheel
         pip install --upgrade setuptools
         pip install nose ply pep8 mako
 
 script:
+
   - nosetests
   - pep8 --exclude=parsetab.py .
