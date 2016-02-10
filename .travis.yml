@@ -1,0 +1,19 @@
+sudo: false
+
+language: python
+
+matrix:
+  include:
+    - python: 2.7
+    - python: 3.5
+
+install:
+    - |
+        pip install --upgrade pip
+        pip install --upgrade wheel
+        pip install --upgrade setuptools
+        pip install nose ply pep8 mako
+
+script:
+  - nosetests
+  - pep8 --exclude=parsetab.py .

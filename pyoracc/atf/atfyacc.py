@@ -1,5 +1,5 @@
 import ply.yacc as yacc
-from atflex import AtfLexer
+from .atflex import AtfLexer
 
 from ..model.comment import Comment
 from ..model.composite import Composite

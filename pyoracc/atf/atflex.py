@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 import ply.lex as lex
 import re
 
@@ -476,7 +478,7 @@ class AtfLexer(object):
 
     # Error handling rule
     def t_ANY_error(self, t):
-        print "Illegal character '%s'" % t.value[0]
+        print("Illegal character '%s'" % t.value[0])
         raise SyntaxError
         t.lexer.skip(1)
 

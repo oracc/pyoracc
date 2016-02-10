@@ -1,5 +1,5 @@
 from mako.template import Template
-from oraccobject import OraccObject
+from .oraccobject import OraccObject
 
 
 class Text(object):

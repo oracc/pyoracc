@@ -1,4 +1,4 @@
-from oraccobject import OraccObject
+from .oraccobject import OraccObject
 
 
 class OraccNamedObject(OraccObject):
