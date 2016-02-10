@@ -1,5 +1,5 @@
-from atflex import AtfLexer
-from atfyacc import AtfParser
+from .atflex import AtfLexer
+from .atfyacc import AtfParser
 from mako.template import Template
 
 
