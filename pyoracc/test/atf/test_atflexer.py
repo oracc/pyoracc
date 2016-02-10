@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from itertools import izip_longest, repeat
+from __future__ import print_function
 from unittest import TestCase
 from nose.tools import assert_equal  # @UnresolvedImport
 from ...atf.atflex import AtfLexer
@@ -15,7 +15,7 @@ class testLexer(TestCase):
             expected_values = repeat(None)
         for expected_type, expected_value, token in izip_longest(
                 expected_types, expected_values, self.lexer):
-            print token, expected_type
+            print(token, expected_type)
             if token is None and expected_type is None:
                 break
             assert_equal(token.type, expected_type)
