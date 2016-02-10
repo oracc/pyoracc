@@ -1,8 +1,14 @@
 # -*- coding: utf-8 -*-
 from __future__ import print_function
+import sys
+from itertools import repeat
 from unittest import TestCase
 from nose.tools import assert_equal  # @UnresolvedImport
 from ...atf.atflex import AtfLexer
+if sys.version_info.major == 3:
+    from itertools import zip_longest
+else:
+    from itertools import izip_longest as zip_longest
 
 
 class testLexer(TestCase):
@@ -13,7 +19,7 @@ class testLexer(TestCase):
         self.lexer.input(content)
         if expected_values is None:
             expected_values = repeat(None)
-        for expected_type, expected_value, token in izip_longest(
+        for expected_type, expected_value, token in zip_longest(
                 expected_types, expected_values, self.lexer):
             print(token, expected_type)
             if token is None and expected_type is None:
