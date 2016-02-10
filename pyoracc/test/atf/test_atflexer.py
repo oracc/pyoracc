@@ -5,10 +5,12 @@ from itertools import repeat
 from unittest import TestCase
 from nose.tools import assert_equal  # @UnresolvedImport
 from ...atf.atflex import AtfLexer
-if sys.version_info.major == 3:
-    from itertools import zip_longest
-else:
+# Jython does not use a named touple here so we have to just take the first
+# element and not major as normal.
+if sys.version_info[0] == 2:
     from itertools import izip_longest as zip_longest
+else:
+    from itertools import zip_longest
 
 
 class testLexer(TestCase):
