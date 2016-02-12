@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import print_function
+import gc
 import sys
 from itertools import repeat
 from unittest import TestCase
@@ -16,6 +17,10 @@ else:
 class testLexer(TestCase):
     def setUp(self):
         self.lexer = AtfLexer().lexer
+
+    def tearDown(self):
+        del self.lexer
+        gc.collect()
 
     def compare_tokens(self, content, expected_types, expected_values=None):
         self.lexer.input(content)

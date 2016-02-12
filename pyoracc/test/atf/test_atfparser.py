@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from unittest import TestCase, skip
-
+import gc
 from nose.tools import assert_equal, assert_is_instance  # @UnresolvedImport
 
 from ...atf.atflex import AtfLexer
@@ -24,11 +24,16 @@ from ...model.translation import Translation
 class testParser(TestCase):
     def setUp(self):
         self.lexer = AtfLexer().lexer
+        self.parser = AtfParser().parser
+
+    def tearDown(self):
+        del self.parser
+        del self.lexer
+        gc.collect()
 
     def try_parse(self, content):
         if content[-1] != '\n':
             content += "\n"
-        self.parser = AtfParser().parser
         return self.parser.parse(content, lexer=self.lexer)
 
     def test_code(self):
