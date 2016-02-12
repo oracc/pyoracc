@@ -11,17 +11,24 @@ if sys.version_info[0] == 2:
 else:
     from itertools import zip_longest
 
+lexer = AtfLexer().lexer
+
 
 class testLexer(TestCase):
     def setUp(self):
-        self.lexer = AtfLexer().lexer
+        lexerstate = True
+        while lexerstate:
+            try:
+                lexer.pop_state()
+            except IndexError:
+                lexerstate = False
 
     def compare_tokens(self, content, expected_types, expected_values=None):
-        self.lexer.input(content)
+        lexer.input(content)
         if expected_values is None:
             expected_values = repeat(None)
         for expected_type, expected_value, token in zip_longest(
-                expected_types, expected_values, self.lexer):
+                expected_types, expected_values, lexer):
             print(token, expected_type)
             if token is None and expected_type is None:
                 break
