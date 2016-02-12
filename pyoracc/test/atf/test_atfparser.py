@@ -21,6 +21,8 @@ from ...model.translation import Translation
 
 
 lexer = AtfLexer().lexer
+parser = AtfParser().parser
+
 
 class testParser(TestCase):
     def setUp(self):
@@ -30,13 +32,11 @@ class testParser(TestCase):
                 lexer.pop_state()
             except IndexError:
                 lexerstate = False
-        self.parser = AtfParser().parser
 
     def try_parse(self, content):
         if content[-1] != '\n':
             content += "\n"
-        pass
-        return self.parser.parse(content, lexer=lexer)
+        return parser.parse(content, lexer=lexer)
 
     def test_code(self):
         text = self.try_parse("&X001001 = JCS 48, 089\n")
