@@ -6,8 +6,6 @@ import pytest
 from pyoracc.atf.atffile import AtfFile
 from pyoracc.test.fixtures import belsunu, output_filepath
 
-from ...atf.atflex import AtfLexer
-from ...atf.atfyacc import AtfParser
 from pyoracc.model.line import Line
 
 
@@ -17,8 +15,7 @@ class testSerializer(TestCase):
         """
         Initialize lexer and parser.
         """
-        self.lexer = AtfLexer().lexer
-        self.parser = AtfParser().parser
+        pass
 
     def parse(self, any_str):
         """
