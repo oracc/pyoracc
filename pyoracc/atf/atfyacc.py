@@ -21,8 +21,8 @@ from ..model.translation import Translation
 class AtfParser(object):
     tokens = AtfLexer.tokens
 
-    def __init__(self):
-        self.parser = yacc.yacc(module=self)
+    def __init__(self, tabmodule='pyoracc.atf.parsetab'):
+        self.parser = yacc.yacc(module=self, tabmodule=tabmodule)
 
     def p_document(self, p):
         """document : text
