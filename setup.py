@@ -1,4 +1,9 @@
 from distutils.core import setup
+
+# Generate the parsetab file so that we can install that too
+from pyoracc import _generate_parsetab
+_generate_parsetab()
+
 setup(name='pyoracc',
       version='0.0.1',
       author='James Hetherington',
