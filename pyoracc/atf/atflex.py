@@ -103,18 +103,18 @@ class AtfLexer(object):
         'EQUALBRACE'
     ]
 
-    keyword_tokens = list(set(
+    keyword_tokens = sorted(list(set(
         structures +
         long_argument_structures +
         protocols +
         protocol_keywords +
         dollar_keywords +
         translation_keywords
-    ))
+    )))
 
-    tokens = list(set(
+    tokens = sorted(list(set(
         keyword_tokens +
-        base_tokens))
+        base_tokens)))
 
     state_names = [
         'flagged',
