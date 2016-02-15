@@ -1,13 +1,10 @@
 from setuptools import setup
 from setuptools.command.build_py import build_py
 
-# Generate the parsetab file so that we can install that too
-# from pyoracc import _generate_parsetab
-# _generate_parsetab()
-
 
 class my_build_py(build_py):
     def run(self):
+        # Generate the parsetab file so that we can install that too
         from pyoracc import _generate_parsetab
         _generate_parsetab()
         build_py.run(self)
