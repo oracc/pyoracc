@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from unittest import TestCase, skip
+import pytest
 
 from ...atf.atflex import AtfLexer
 from ...atf.atfyacc import AtfParser
@@ -539,7 +540,7 @@ class testParser(TestCase):
         assert art.children[0].children[0].scope is None
         assert art.children[0].children[0].extent is None
 
-    @skip("No support for recovery yet")
+    @pytest.mark.xfail
     def test_loose_recovery(self):
         # Users often put a loose dollar without the brackets
         # We should define a parser fallback to accommodate this
