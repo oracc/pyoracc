@@ -36,5 +36,7 @@ install:
 
 script:
 
-  - nosetests
+  - |
+      python -c "from pyoracc import _generate_parsetab; _generate_parsetab()"
+      nosetests
   - pep8 --exclude=parsetab.py .
