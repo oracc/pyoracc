@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import codecs
-from unittest import TestCase
+from unittest import TestCase, skip
+import pytest
 
 from pyoracc.atf.atffile import AtfFile
 from pyoracc.test.fixtures import belsunu, output_filepath
@@ -67,15 +68,16 @@ class testSerializer(TestCase):
         serialized_2 = self.parse_then_serialize(serialized_1)
         assert serialized_1 == serialized_2
 
-#     def test_line_word(self):
-#         """
-#         Get a sample word with unicode chars and check serialization is
-#         correct.
-#         """
-#         line=Line("1")
-#         line.words.append(u"\u2086")
-#         line_ser = line.serialize()
-#         assert line_ser == "1.\t" + u"\u2086"
+    @pytest.mark.xfail
+    def test_line_word(self):
+        """
+        Get a sample word with unicode chars and check serialization is
+        correct.
+        """
+        line = Line("1")
+        line.words.append(u"\u2086")
+        line_ser = line.serialize()
+        assert line_ser == "1.\t" + u"\u2086"
 
     def test_line_words(self):
         """
@@ -104,27 +106,32 @@ class testSerializer(TestCase):
 
 # TODO: Build list of atf files for testing and make a test to go through the
 # list of test and try serializing each of them.
+    @pytest.mark.xfail
+    def test_text_code_and_description(self):
+        """
+        Check if serializing works for the code/description case - first line
+        of ATF texts.
+        Note the parser always returns an AtfFile object, even when it's not
+        ATF-compliant.
+        """
+        atf = self.parse("&X001001 = JCS 48, 089\n")
+        serialized = self.serialize(atf)
+        assert serialized.strip()+"\n" == "&X001001 = JCS 48, 089\n"
 
-#     def test_text_code_and_description(self):
-#         """
-#         Check if serializing works for the code/description case - first line
-#         of ATF texts.
-#         Note the parser always returns an AtfFile object, even when it's not
-#         ATF-compliant.
-#         """
-#         atf = self.parse("&X001001 = JCS 48, 089\n")
-#         serialized = self.serialize(atf)
-#         assert serialized.strip()+"\n" == "&X001001 = JCS 48, 089\n"
+    @pytest.mark.xfail
+    def test_text_project(self):
+        """
+        Check if serializing works for the project lines.
+        Note the parser always returns an AtfFile object, even when it's not
+        ATF-compliant.
+        """
+        serialized = self.parse_then_serialize("#project: cams/gkab\n")
+        assert serialized.strip()+"\n" == "#project: cams/gkab\n"
 
-#     def test_text_project(self):
-#         """
-#         Check if serializing works for the project lines.
-#         Note the parser always returns an AtfFile object, even when it's not
-#         ATF-compliant.
-#         """
-#         serialized = self.parse_then_serialize("#project: cams/gkab\n")
-#         assert serialized.strip()+"\n" == "#project: cams/gkab\n"
-#
-#     def test_text_language(self):
-#
-#     def test_text_protocols(self):
+    @skip("test_text_language is not implemented yet")
+    def test_text_language(self):
+        pass
+
+    @skip("test_text_protocols is not implemented yet")
+    def test_text_protocols(self):
+        pass
