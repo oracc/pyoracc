@@ -6,12 +6,13 @@ matrix:
   include:
     - python: 2.7
     - python: 2.7
-      env: JYTHON=true
+      env: JYTHON=true MYPYTHON=jython
     - python: 3.5
 env:
   global:
     - JYTHON_URL="http://search.maven.org/remotecontent?filepath=org/python/jython-installer/2.7.0/jython-installer-2.7.0.jar"
     - JYTHON=false
+    - MYPYTHON=python
 
 before_install:
     - |
@@ -36,6 +37,6 @@ install:
 script:
 
   - |
-      python -c "from pyoracc import _generate_parsetab; _generate_parsetab()"
+      $MYPYTHON -c "from pyoracc import _generate_parsetab; _generate_parsetab()"
       nosetests
   - pep8 --exclude=parsetab.py .
