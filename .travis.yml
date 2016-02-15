@@ -14,6 +14,10 @@ env:
     - JYTHON=false
     - MYPYTHON=python
 
+cache:
+  directories:
+    - $HOME/.cache/pip
+
 before_install:
     - |
         # Install jython
