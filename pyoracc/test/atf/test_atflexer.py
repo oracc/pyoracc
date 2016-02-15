@@ -3,7 +3,6 @@ from __future__ import print_function
 import sys
 from itertools import repeat
 from unittest import TestCase
-from nose.tools import assert_equal  # @UnresolvedImport
 from ...atf.atflex import AtfLexer
 # Jython does not use a named touple here so we have to just take the first
 # element and not major as normal.
@@ -26,10 +25,10 @@ class testLexer(TestCase):
             print(token, expected_type)
             if token is None and expected_type is None:
                 break
-            assert_equal(token.type, expected_type)
+            assert token.type == expected_type
             if expected_value:
                 # print token.value, expected_value
-                assert_equal(token.value, expected_value)
+                assert token.value == expected_value
 
     def test_code(self):
         self.compare_tokens(
