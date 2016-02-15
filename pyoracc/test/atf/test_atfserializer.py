@@ -2,8 +2,6 @@
 import codecs
 from unittest import TestCase
 
-from nose.tools import assert_equal  # @UnresolvedImport
-
 from pyoracc.atf.atffile import AtfFile
 from pyoracc.test.fixtures import belsunu, output_filepath
 
@@ -67,7 +65,7 @@ class testSerializer(TestCase):
         serialized_1 = self.parse_then_serialize(belsunu())
         self.save_file(serialized_1, output_filepath("belsunu.atf"))
         serialized_2 = self.parse_then_serialize(serialized_1)
-        assert_equal(serialized_1, serialized_2)
+        assert serialized_1 == serialized_2
 
 #     def test_line_word(self):
 #         """
@@ -77,7 +75,7 @@ class testSerializer(TestCase):
 #         line=Line("1")
 #         line.words.append(u"\u2086")
 #         line_ser = line.serialize()
-#         assert_equal(line_ser,"1.\t" + u"\u2086")
+#         assert line_ser == "1.\t" + u"\u2086"
 
     def test_line_words(self):
         """
@@ -89,7 +87,7 @@ class testSerializer(TestCase):
         uwords = uline.words
         gold = [u'[MU]', u'1.03-KAM', u'{iti}AB', u'GE\u2086', u'U\u2084',
                 u'2-KAM']
-        assert_equal(uwords, gold)
+        assert uwords == gold
 
     def test_line_lemmas(self):
         """
@@ -101,7 +99,7 @@ class testSerializer(TestCase):
         ulemmas = uline.lemmas
         gold = [u' \u0161atti[year]N', u'n', u'\u1e6cebetu[1]MN',
                 u'm\u016b\u0161a[at night]AV', u'\u016bm[day]N', u'n']
-        assert_equal(ulemmas, gold)
+        assert ulemmas == gold
 
 
 # TODO: Build list of atf files for testing and make a test to go through the
@@ -116,7 +114,7 @@ class testSerializer(TestCase):
 #         """
 #         atf = self.parse("&X001001 = JCS 48, 089\n")
 #         serialized = self.serialize(atf)
-#         assert_equal(serialized.strip()+"\n", "&X001001 = JCS 48, 089\n")
+#         assert serialized.strip()+"\n" == "&X001001 = JCS 48, 089\n"
 
 #     def test_text_project(self):
 #         """
@@ -125,7 +123,7 @@ class testSerializer(TestCase):
 #         ATF-compliant.
 #         """
 #         serialized = self.parse_then_serialize("#project: cams/gkab\n")
-#         assert_equal(serialized.strip()+"\n", "#project: cams/gkab\n")
+#         assert serialized.strip()+"\n" == "#project: cams/gkab\n"
 #
 #     def test_text_language(self):
 #
