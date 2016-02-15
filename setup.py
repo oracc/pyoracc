@@ -1,8 +1,13 @@
-from distutils.core import setup
+from setuptools import setup
+from setuptools.command.build_py import build_py
 
-# Generate the parsetab file so that we can install that too
-# from pyoracc import _generate_parsetab
-# _generate_parsetab()
+
+class my_build_py(build_py):
+    def run(self):
+        # Generate the parsetab file so that we can install that too
+        from pyoracc import _generate_parsetab
+        _generate_parsetab()
+        build_py.run(self)
 
 setup(name='pyoracc',
       version='0.0.1',
@@ -16,5 +21,9 @@ setup(name='pyoracc',
                 'pyoracc/test',
                 'pyoracc/test/atf',
                 'pyoracc/test/fixtures'],
-      package_data={'pyoracc': ['test/fixtures/*/*.atf']}
+      install_requires=['mako', 'ply'],
+      setup_requires=['mako', 'ply'],
+      package_data={'pyoracc': ['test/fixtures/*/*.atf']},
+      zip_safe=False,
+      cmdclass=dict(build_py=my_build_py)
       )
