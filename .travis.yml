@@ -37,6 +37,9 @@ install:
         pip install --upgrade wheel
         pip install --upgrade setuptools
         pip install ply pep8 mako pytest
+        if [ "$JYTHON" == "false" ]; then
+          pip install pytest-cov codecov
+        fi
 
 script:
 
@@ -44,5 +47,16 @@ script:
       # Build parsetab and run tests
       $MYPYTHON -c "from pyoracc import _generate_parsetab; _generate_parsetab()"
       echo "Running tests"
-      py.test
+      if [ "$JYTHON" == "true" ]; then
+        py.test
+      else
+        py.test --cov=pyoracc --cov-report xml
+      fi
+
   - pep8 --exclude=parsetab.py .
+  
+after_success:
+  - |
+      if [ "$JYTHON" == "false" ]; then
+        codecov
+      fi
