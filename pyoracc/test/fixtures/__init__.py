@@ -16,6 +16,23 @@ def tiny_corpus():
     return os.path.join(os.path.dirname(here), 'tiny_corpus')
 
 
+def sample_corpus():
+    return os.path.join(os.path.dirname(here), 'sample_corpus')
+
+
+def whole_corpus():
+    """
+    Return the path to the full oracc corpus. This is not bundled with
+    pyoracc and only works if the environmental variable oracc_corpus_path
+    is set to the correct directory.
+    """
+    try:
+        oracc_corpus_path = os.environ['oracc_corpus_path']
+    except KeyError:
+        oracc_corpus_path = None
+    return oracc_corpus_path
+
+
 def anzu():
     return sample_file("anzu")
 

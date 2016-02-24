@@ -50,7 +50,7 @@ script:
       if [ "$JYTHON" == "true" ]; then
         py.test
       else
-        py.test --cov=pyoracc --cov-report xml
+        py.test --cov=pyoracc --cov-report xml --runslow
       fi
 
   - pep8 --exclude=parsetab.py .
