@@ -178,7 +178,7 @@ class AtfLexer(object):
 
     # In the base state, a newline doesn't change state
     def t_NEWLINE(self, t):
-        r'\s*[\n\r]'
+        r'[ \t\f\v]*[\n\r]'
         t.lexer.lineno += 1
         return t
 

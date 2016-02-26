@@ -768,3 +768,13 @@ class testLexer(TestCase):
              "OBVERSE", "NEWLINE",
              "INCLUDE", "ID", 'EQUALS', 'ID', "NEWLINE"]
         )
+
+    def test_double_newline(self):
+        self.compare_tokens(
+            "@obverse\n" +
+            "\n" +
+            '#note: The CAD translation šarriru = "humble",\n',
+            ["OBVERSE", "NEWLINE"] +
+            ["NEWLINE"] +
+            ["NOTE", "ID", "NEWLINE"]
+            )
