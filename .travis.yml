@@ -6,11 +6,14 @@ matrix:
   include:
     - python: 2.7
     - python: 2.7
-      env: JYTHON=true MYPYTHON=jython
+      env: JYTHON=true MYPYTHON=jython - JYTHON_URL="http://search.maven.org/remotecontent?filepath=org/python/jython-installer/2.7.0/jython-installer-2.7.0.jar"
+    - python: 2.7
+      env: JYTHON=true MYPYTHON=jython - JYTHON_URL="http://search.maven.org/remotecontent?filepath=org/python/jython-installer/2.7.1b3/jython-installer-2.7.1b3.jar"
     - python: 3.5
 env:
   global:
-    - JYTHON_URL="http://search.maven.org/remotecontent?filepath=org/python/jython-installer/2.7.0/jython-installer-2.7.0.jar"
+    
+    
     - JYTHON=false
     - MYPYTHON=python
 
