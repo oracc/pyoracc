@@ -178,8 +178,8 @@ class AtfLexer(object):
 
     # In the base state, a newline doesn't change state
     def t_NEWLINE(self, t):
-        r'[ \t\f\v]*[\n\r]'
-        t.lexer.lineno += 1
+        r'\s*[\n\r]'
+        t.lexer.lineno += t.value.count("\n")
         return t
 
     def t_INITIAL_parallel_labeled_ATID(self, t):
@@ -346,14 +346,14 @@ class AtfLexer(object):
     # A newline followed by a space gives continuation
     def t_parallel_NEWLINE(self, t):
         r'\s*[\n\r](?![ \t])'
-        t.lexer.lineno += 1
+        t.lexer.lineno += t.value.count("\n")
         return t
 
     # In interlinear states, a newline which is not continuation leaves state
     # A newline followed by a space gives continuation
     def t_interlinear_NEWLINE(self, t):
         r'\s*[\n\r](?![ \t])'
-        t.lexer.lineno += 1
+        t.lexer.lineno += t.value.count("\n")
         t.lexer.pop_state()
         return t
 
@@ -361,7 +361,7 @@ class AtfLexer(object):
     # A newline just passed through
     def t_labeled_NEWLINE(self, t):
         r'\s*[\n\r]'
-        t.lexer.lineno += 1
+        t.lexer.lineno += t.value.count("\n")
         return t
 
     # Flag characters (#! etc ) don't apply in translations
@@ -444,7 +444,7 @@ class AtfLexer(object):
     # Translation paragraph state is ended by a double newline
     @lex.TOKEN(r'[\n\r](?=' + terminates_paragraph + ')')
     def t_para_MAGICNEWLINE(self, t):
-        t.lexer.lineno += 1
+        t.lexer.lineno += t.value.count("\n")
         t.lexer.pop_state()
         t.type = "NEWLINE"
         return t
