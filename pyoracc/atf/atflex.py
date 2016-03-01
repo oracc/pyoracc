@@ -213,7 +213,7 @@ class AtfLexer(object):
         if t.type in AtfLexer.long_argument_structures + ["NOTE"]:
             t.lexer.push_state('flagged')
         if t.type is None:
-            formatstring = "Illegal @STRING '{}'".format(t.value)
+            formatstring = u"Illegal @STRING '{}'".format(t.value)
             if self.skipinvalid:
                 print(formatstring)
                 return
@@ -247,7 +247,7 @@ class AtfLexer(object):
         if t.type == "NOTE":
             t.lexer.push_state('para')
         if t.type is None:
-            formatstring = "Illegal #STRING '{}'".format(t.value)
+            formatstring = u"Illegal #STRING '{}'".format(t.value)
             if self.skipinvalid:
                 print(formatstring)
                 return
@@ -293,7 +293,7 @@ class AtfLexer(object):
             t.type = "REFERENCE"
 
         if t.type is None:
-            formatstring = "ID '{}'".format(t.value)
+            formatstring = u"ID '{}'".format(t.value)
             if self.skipinvalid:
                 print(formatstring)
                 return
@@ -345,7 +345,7 @@ class AtfLexer(object):
             t.type = "REFERENCE"
 
         if t.type is None:
-            formatstring = "Invalid ID '{}'".format(t.value)
+            formatstring = u"Invalid ID '{}'".format(t.value)
             if self.skipinvalid:
                 print(formatstring)
                 return
@@ -506,7 +506,7 @@ class AtfLexer(object):
 
     # Error handling rule
     def t_ANY_error(self, t):
-        formatstring = "Illegal character '{}'".format(t.value[0])
+        formatstring = u"Illegal character '{}'".format(t.value[0])
         if skipinvalid:
             t.lexer.skip(1)
             print(formatstring)
