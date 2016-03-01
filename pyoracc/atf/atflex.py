@@ -507,7 +507,7 @@ class AtfLexer(object):
     # Error handling rule
     def t_ANY_error(self, t):
         formatstring = u"Illegal character '{}'".format(t.value[0])
-        if skipinvalid:
+        if self.skipinvalid:
             t.lexer.skip(1)
             print(formatstring)
         else:
