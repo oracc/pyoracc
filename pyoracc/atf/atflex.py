@@ -15,8 +15,6 @@ class AtfLexer(object):
 
     def resolve_keyword(self, value, source, fallback=None, extra={}):
         source = self._keyword_dict(source, extra)
-        if not fallback:
-            return source[value]
         return source.get(value, fallback)
 
     structures = [
@@ -214,6 +212,13 @@ class AtfLexer(object):
 
         if t.type in AtfLexer.long_argument_structures + ["NOTE"]:
             t.lexer.push_state('flagged')
+        if t.type is None:
+            formatstring = "Illegal @STRING '{}'".format(t.value)
+            if self.skipinvalid:
+                print(formatstring)
+                return
+            else:
+                raise SyntaxError(formatstring)
         return t
 
     def t_labeled_OPENR(self, t):
@@ -241,6 +246,13 @@ class AtfLexer(object):
             t.lexer.push_state('absorb')
         if t.type == "NOTE":
             t.lexer.push_state('para')
+        if t.type is None:
+            formatstring = "Illegal #STRING '{}'".format(t.value)
+            if self.skipinvalid:
+                print(formatstring)
+                return
+            else:
+                raise SyntaxError(formatstring)
         return t
 
     def t_LINELABEL(self, t):
@@ -279,6 +291,14 @@ class AtfLexer(object):
             # the keywords refering to structural elements in strict dollar
             # lines must be DIFFERENT TOKENS IN THE LEXER
             t.type = "REFERENCE"
+
+        if t.type is None:
+            formatstring = "ID '{}'".format(t.value)
+            if self.skipinvalid:
+                print(formatstring)
+                return
+            else:
+                raise SyntaxError(formatstring)
         return t
 
     # In the flagged, text, transctrl and lemmatize states,
@@ -323,6 +343,14 @@ class AtfLexer(object):
             # the keywords refering to structural elements in strict dollar
             # lines must be DIFFERENT TOKENS IN THE LEXER
             t.type = "REFERENCE"
+
+        if t.type is None:
+            formatstring = "Invalid ID '{}'".format(t.value)
+            if self.skipinvalid:
+                print(formatstring)
+                return
+            else:
+                raise SyntaxError(formatstring)
         return t
 
     def t_parallel_LINELABEL(self, t):
@@ -478,9 +506,13 @@ class AtfLexer(object):
 
     # Error handling rule
     def t_ANY_error(self, t):
-        print("Illegal character '%s'" % t.value[0])
-        raise SyntaxError
-        t.lexer.skip(1)
+        formatstring = "Illegal character '{}'".format(t.value[0])
+        if skipinvalid:
+            t.lexer.skip(1)
+            print(formatstring)
+        else:
+            raise SyntaxError(formatstring)
 
-    def __init__(self):
+    def __init__(self, skipinvalid=False):
+        self.skipinvalid = skipinvalid
         self.lexer = lex.lex(module=self, reflags=re.MULTILINE)
