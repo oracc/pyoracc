@@ -291,14 +291,6 @@ class AtfLexer(object):
             # the keywords refering to structural elements in strict dollar
             # lines must be DIFFERENT TOKENS IN THE LEXER
             t.type = "REFERENCE"
-
-        if t.type is None:
-            formatstring = u"ID '{}'".format(t.value)
-            if self.skipinvalid:
-                print(formatstring)
-                return
-            else:
-                raise SyntaxError(formatstring)
         return t
 
     # In the flagged, text, transctrl and lemmatize states,
