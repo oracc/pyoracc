@@ -798,7 +798,7 @@ class testLexer(TestCase):
             pass
 
     def test_invalid_hash_raises_syntax_error(self):
-        string = "#lems: Ṣalbatanu[Mars]CN\n"
+        string = u"#lems: Ṣalbatanu[Mars]CN\n"
         self.lexer.input(string)
         with pytest.raises(SyntaxError) as excinfo:
             for i in self.lexer:
