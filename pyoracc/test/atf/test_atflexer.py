@@ -3,6 +3,7 @@ from __future__ import print_function
 import sys
 from itertools import repeat
 from unittest import TestCase
+import pytest
 from ...atf.atflex import AtfLexer
 # Jython does not use a named touple here so we have to just take the first
 # element and not major as normal.
@@ -35,6 +36,17 @@ class testLexer(TestCase):
                 assert token.value == expected_value
             if expected_lineno:
                 assert token.lineno == expected_lineno
+
+    def ensure_raises_and_not(self, string):
+        self.lexer.input(string)
+        with pytest.raises(SyntaxError) as excinfo:
+            for i in self.lexer:
+                pass
+        # If we allow invalid syntax this should not raise
+        self.lexer = AtfLexer(skipinvalid=True).lexer
+        self.lexer.input(string)
+        for i in self.lexer:
+            pass
 
     def test_code(self):
         self.compare_tokens(
@@ -783,3 +795,15 @@ class testLexer(TestCase):
             ["OBVERSE", "NEWLINE", "NOTE", "NEWLINE"],
             ["obverse", "\n\n", "note", "\n"],
             [1, 1, 3, 3])
+
+    def test_invalid_at_raises_syntax_error(self):
+        string = "@obversel\n"
+        self.ensure_raises_and_not(string)
+
+    def test_invalid_hash_raises_syntax_error(self):
+        string = u"#lems: Ṣalbatanu[Mars]CN\n"
+        self.ensure_raises_and_not(string)
+
+    def test_invalid_id_syntax_error(self):
+        string = u"Ṣalbatanu[Mars]CN\n"
+        self.ensure_raises_and_not(string)
