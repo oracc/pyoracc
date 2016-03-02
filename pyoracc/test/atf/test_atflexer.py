@@ -37,6 +37,17 @@ class testLexer(TestCase):
             if expected_lineno:
                 assert token.lineno == expected_lineno
 
+    def ensure_raises_and_not(self, string):
+        self.lexer.input(string)
+        with pytest.raises(SyntaxError) as excinfo:
+            for i in self.lexer:
+                pass
+        # If we allow invalid syntax this should not raise
+        self.lexer = AtfLexer(skipinvalid=True).lexer
+        self.lexer.input(string)
+        for i in self.lexer:
+            pass
+
     def test_code(self):
         self.compare_tokens(
             "&X001001 = JCS 48, 089\n",
@@ -787,36 +798,12 @@ class testLexer(TestCase):
 
     def test_invalid_at_raises_syntax_error(self):
         string = "@obversel\n"
-        self.lexer.input(string)
-        with pytest.raises(SyntaxError) as excinfo:
-            for i in self.lexer:
-                pass
-        # If we allow invalid syntax this should not raise
-        self.lexer = AtfLexer(skipinvalid=True).lexer
-        self.lexer.input(string)
-        for i in self.lexer:
-            pass
+        self.ensure_raises_and_not(string)
 
     def test_invalid_hash_raises_syntax_error(self):
         string = u"#lems: Ṣalbatanu[Mars]CN\n"
-        self.lexer.input(string)
-        with pytest.raises(SyntaxError) as excinfo:
-            for i in self.lexer:
-                pass
-        # If we allow invalid syntax this should not raise
-        self.lexer = AtfLexer(skipinvalid=True).lexer
-        self.lexer.input(string)
-        for i in self.lexer:
-            pass
+        self.ensure_raises_and_not(string)
 
     def test_invalid_id_syntax_error(self):
         string = u"Ṣalbatanu[Mars]CN\n"
-        self.lexer.input(string)
-        with pytest.raises(SyntaxError) as excinfo:
-            for i in self.lexer:
-                pass
-        # If we allow invalid syntax this should not raise
-        self.lexer = AtfLexer(skipinvalid=True).lexer
-        self.lexer.input(string)
-        for i in self.lexer:
-            pass
+        self.ensure_raises_and_not(string)
