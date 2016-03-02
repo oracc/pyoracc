@@ -791,10 +791,20 @@ class testLexer(TestCase):
         with pytest.raises(SyntaxError) as excinfo:
             for i in self.lexer:
                 pass
+        # If we allow invalid syntax this should not raise
+        self.lexer = AtfLexer(skipinvalid=True).lexer
+        self.lexer.input(string)
+        for i in self.lexer:
+            pass
 
     def test_invalid_hash_raises_syntax_error(self):
-        string = "#lems:\n"
+        string = "#lems: Ṣalbatanu[Mars]CN\n"
         self.lexer.input(string)
         with pytest.raises(SyntaxError) as excinfo:
             for i in self.lexer:
                 pass
+        # If we allow invalid syntax this should not raise
+        self.lexer = AtfLexer(skipinvalid=True).lexer
+        self.lexer.input(string)
+        for i in self.lexer:
+            pass
