@@ -16,12 +16,16 @@ class testLexer(TestCase):
     def setUp(self):
         self.lexer = AtfLexer().lexer
 
-    def compare_tokens(self, content, expected_types, expected_values=None):
+    def compare_tokens(self, content, expected_types, expected_values=None,
+                       expected_lineno=None):
         self.lexer.input(content)
         if expected_values is None:
             expected_values = repeat(None)
-        for expected_type, expected_value, token in zip_longest(
-                expected_types, expected_values, self.lexer):
+        if expected_lineno is None:
+            expected_lineno = repeat(None)
+        for expected_type, expected_value, expected_lineno, token in \
+                zip_longest(expected_types, expected_values, expected_lineno,
+                            self.lexer):
             print(token, expected_type)
             if token is None and expected_type is None:
                 break
@@ -29,6 +33,8 @@ class testLexer(TestCase):
             if expected_value:
                 # print token.value, expected_value
                 assert token.value == expected_value
+            if expected_lineno:
+                assert token.lineno == expected_lineno
 
     def test_code(self):
         self.compare_tokens(
@@ -768,3 +774,12 @@ class testLexer(TestCase):
              "OBVERSE", "NEWLINE",
              "INCLUDE", "ID", 'EQUALS', 'ID', "NEWLINE"]
         )
+
+    def test_double_newline(self):
+        self.compare_tokens(
+            "@obverse\n" +
+            "\n" +
+            "#note:\n",
+            ["OBVERSE", "NEWLINE", "NOTE", "NEWLINE"],
+            ["obverse", "\n\n", "note", "\n"],
+            [1, 1, 3, 3])
