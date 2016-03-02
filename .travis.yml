@@ -57,6 +57,6 @@ script:
   
 after_success:
   - |
-      if [ "$JYTHON" == "false" ]; then
+      if [ "$MYPYTHON" == "python" ]; then
         codecov
       fi
