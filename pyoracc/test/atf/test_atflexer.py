@@ -3,6 +3,7 @@ from __future__ import print_function
 import sys
 from itertools import repeat
 from unittest import TestCase
+import pytest
 from ...atf.atflex import AtfLexer
 # Jython does not use a named touple here so we have to just take the first
 # element and not major as normal.
@@ -783,3 +784,17 @@ class testLexer(TestCase):
             ["OBVERSE", "NEWLINE", "NOTE", "NEWLINE"],
             ["obverse", "\n\n", "note", "\n"],
             [1, 1, 3, 3])
+
+    def test_invalid_at_raises_syntax_error(self):
+        string = "@obversel\n"
+        self.lexer.input(string)
+        with pytest.raises(SyntaxError) as excinfo:
+            for i in self.lexer:
+                pass
+
+    def test_invalid_hash_raises_syntax_error(self):
+        string = "#lems:\n"
+        self.lexer.input(string)
+        with pytest.raises(SyntaxError) as excinfo:
+            for i in self.lexer:
+                pass
