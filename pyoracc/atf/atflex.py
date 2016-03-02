@@ -183,7 +183,7 @@ class AtfLexer(object):
     def t_INITIAL_parallel_labeled_ATID(self, t):
         '\@[a-zA-Z][a-zA-Z0-9\[\]]*\+?'
         t.value = t.value[1:]
-
+        t.lexpos += 1
         t.type = self.resolve_keyword(t.value,
                                       AtfLexer.structures +
                                       AtfLexer.long_argument_structures,
@@ -231,6 +231,7 @@ class AtfLexer(object):
         '\#[a-zA-Z][a-zA-Z0-9\[\]]+\:'
         # Note that \:? absorbs a trailing colon in protocol keywords
         t.value = t.value[1:-1]
+        t.lexpos += 1
         t.type = self.resolve_keyword(t.value,
                                       AtfLexer.protocols,
                                       extra={'CHECK': 'CHECK'})
