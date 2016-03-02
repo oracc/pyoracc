@@ -808,3 +808,15 @@ class testLexer(TestCase):
         self.lexer.input(string)
         for i in self.lexer:
             pass
+
+    def test_invalid_id_syntax_error(self):
+        string = u"Ṣalbatanu[Mars]CN\n"
+        self.lexer.input(string)
+        with pytest.raises(SyntaxError) as excinfo:
+            for i in self.lexer:
+                pass
+        # If we allow invalid syntax this should not raise
+        self.lexer = AtfLexer(skipinvalid=True).lexer
+        self.lexer.input(string)
+        for i in self.lexer:
+            pass
