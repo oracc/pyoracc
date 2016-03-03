@@ -6,6 +6,7 @@ import re
 import warnings
 from pyoracc import _pyversion
 
+
 class AtfLexer(object):
 
     def _keyword_dict(self, tokens, extra):

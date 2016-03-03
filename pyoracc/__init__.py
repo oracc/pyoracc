@@ -1,5 +1,6 @@
 import sys
 
+
 def _generate_parsetab():
     """
     Simple function to generate a parsetab file. This is done by creating a
