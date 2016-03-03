@@ -32,7 +32,6 @@ class testLexer(TestCase):
                 expected_lineno,
                 expected_lexpos,
                 self.lexer):
-            print(token, e_type)
             if token is None and e_type is None:
                 break
             assert token.type == e_type
