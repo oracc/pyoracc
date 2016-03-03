@@ -18,24 +18,30 @@ class testLexer(TestCase):
         self.lexer = AtfLexer().lexer
 
     def compare_tokens(self, content, expected_types, expected_values=None,
-                       expected_lineno=None):
+                       expected_lineno=None, expected_lexpos=None):
         self.lexer.input(content)
         if expected_values is None:
             expected_values = repeat(None)
         if expected_lineno is None:
             expected_lineno = repeat(None)
-        for expected_type, expected_value, expected_lineno, token in \
-                zip_longest(expected_types, expected_values, expected_lineno,
+        if expected_lexpos is None:
+            expected_lexpos = repeat(None)
+        for e_type, e_value, e_lineno, e_lexpos, token in zip_longest(
+                            expected_types,
+                            expected_values,
+                            expected_lineno,
+                            expected_lexpos,
                             self.lexer):
-            print(token, expected_type)
-            if token is None and expected_type is None:
+            print(token, e_type)
+            if token is None and e_type is None:
                 break
-            assert token.type == expected_type
-            if expected_value:
-                # print token.value, expected_value
-                assert token.value == expected_value
-            if expected_lineno:
-                assert token.lineno == expected_lineno
+            assert token.type == e_type
+            if e_value:
+                assert token.value == e_value
+            if e_lineno:
+                assert token.lineno == e_lineno
+            if e_lexpos:
+                assert token.lexpos == e_lexpos
 
     def ensure_raises_and_not(self, string):
         self.lexer.input(string)
@@ -787,14 +793,15 @@ class testLexer(TestCase):
              "INCLUDE", "ID", 'EQUALS', 'ID', "NEWLINE"]
         )
 
-    def test_double_newline(self):
+    def test_double_newline_and_lexpos(self):
         self.compare_tokens(
             "@obverse\n" +
             "\n" +
             "#note:\n",
             ["OBVERSE", "NEWLINE", "NOTE", "NEWLINE"],
             ["obverse", "\n\n", "note", "\n"],
-            [1, 1, 3, 3])
+            [1, 1, 3, 3],
+            [1, 8, 11, 16])
 
     def test_invalid_at_raises_syntax_error(self):
         string = "@obversel\n"
