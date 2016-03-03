@@ -27,11 +27,11 @@ class testLexer(TestCase):
         if expected_lexpos is None:
             expected_lexpos = repeat(None)
         for e_type, e_value, e_lineno, e_lexpos, token in zip_longest(
-                            expected_types,
-                            expected_values,
-                            expected_lineno,
-                            expected_lexpos,
-                            self.lexer):
+                expected_types,
+                expected_values,
+                expected_lineno,
+                expected_lexpos,
+                self.lexer):
             print(token, e_type)
             if token is None and e_type is None:
                 break
