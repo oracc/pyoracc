@@ -1,8 +1,10 @@
+# -*- coding: utf-8 -*-
 from __future__ import print_function
 
 import ply.lex as lex
 import re
-
+import warnings
+from pyoracc import _pyversion
 
 class AtfLexer(object):
 
@@ -214,8 +216,10 @@ class AtfLexer(object):
             t.lexer.push_state('flagged')
         if t.type is None:
             formatstring = u"Illegal @STRING '{}'".format(t.value)
+            if _pyversion() == 2:
+                formatstring = formatstring.encode('UTF-8')
             if self.skipinvalid:
-                print(formatstring)
+                warnings.warn(formatstring, UserWarning)
                 return
             else:
                 raise SyntaxError(formatstring)
@@ -249,8 +253,10 @@ class AtfLexer(object):
             t.lexer.push_state('para')
         if t.type is None:
             formatstring = u"Illegal #STRING '{}'".format(t.value)
+            if _pyversion() == 2:
+                formatstring = formatstring.encode('UTF-8')
             if self.skipinvalid:
-                print(formatstring)
+                warnings.warn(formatstring, UserWarning)
                 return
             else:
                 raise SyntaxError(formatstring)
@@ -492,9 +498,11 @@ class AtfLexer(object):
     # Error handling rule
     def t_ANY_error(self, t):
         formatstring = u"Illegal character '{}'".format(t.value[0])
+        if _pyversion() == 2:
+            formatstring = formatstring.encode('UTF-8')
         if self.skipinvalid:
             t.lexer.skip(1)
-            print(formatstring)
+            warnings.warn(formatstring, UserWarning)
         else:
             raise SyntaxError(formatstring)
 

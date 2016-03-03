@@ -5,9 +5,11 @@ from itertools import repeat
 from unittest import TestCase
 import pytest
 from ...atf.atflex import AtfLexer
-# Jython does not use a named touple here so we have to just take the first
-# element and not major as normal.
-if sys.version_info[0] == 2:
+from pyoracc import _pyversion
+
+pyversion = _pyversion()
+
+if pyversion == 2:
     from itertools import izip_longest as zip_longest
 else:
     from itertools import zip_longest
@@ -42,7 +44,7 @@ class testLexer(TestCase):
             if e_lexpos:
                 assert token.lexpos == e_lexpos
 
-    def ensure_raises_and_not(self, string):
+    def ensure_raises_and_not(self, string, nwarnings):
         self.lexer.input(string)
         with pytest.raises(SyntaxError) as excinfo:
             for i in self.lexer:
@@ -50,8 +52,10 @@ class testLexer(TestCase):
         # If we allow invalid syntax this should not raise
         self.lexer = AtfLexer(skipinvalid=True).lexer
         self.lexer.input(string)
-        for i in self.lexer:
-            pass
+        with pytest.warns(UserWarning) as record:
+            for i in self.lexer:
+                pass
+        assert len(record) == nwarnings
 
     def test_code(self):
         self.compare_tokens(
@@ -803,13 +807,13 @@ class testLexer(TestCase):
             [1, 8, 11, 16])
 
     def test_invalid_at_raises_syntax_error(self):
-        string = "@obversel\n"
-        self.ensure_raises_and_not(string)
+        string = u"@obversel\n"
+        self.ensure_raises_and_not(string, 1)
 
     def test_invalid_hash_raises_syntax_error(self):
         string = u"#lems: Ṣalbatanu[Mars]CN\n"
-        self.ensure_raises_and_not(string)
+        self.ensure_raises_and_not(string, 2)
 
     def test_invalid_id_syntax_error(self):
         string = u"Ṣalbatanu[Mars]CN\n"
-        self.ensure_raises_and_not(string)
+        self.ensure_raises_and_not(string, 1)
