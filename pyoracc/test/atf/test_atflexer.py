@@ -6,10 +6,7 @@ from unittest import TestCase
 import pytest
 from ...atf.atflex import AtfLexer
 from pyoracc import _pyversion
-
-pyversion = _pyversion()
-
-if pyversion == 2:
+if _pyversion() == 2:
     from itertools import izip_longest as zip_longest
 else:
     from itertools import zip_longest
@@ -808,12 +805,12 @@ class testLexer(TestCase):
 
     def test_invalid_at_raises_syntax_error(self):
         string = u"@obversel\n"
-        self.ensure_raises_and_not(string, 1)
+        self.ensure_raises_and_not(string, nwarnings=1)
 
     def test_invalid_hash_raises_syntax_error(self):
         string = u"#lems: Ṣalbatanu[Mars]CN\n"
-        self.ensure_raises_and_not(string, 2)
+        self.ensure_raises_and_not(string, nwarnings=2)
 
     def test_invalid_id_syntax_error(self):
         string = u"Ṣalbatanu[Mars]CN\n"
-        self.ensure_raises_and_not(string, 1)
+        self.ensure_raises_and_not(string, nwarnings=1)
