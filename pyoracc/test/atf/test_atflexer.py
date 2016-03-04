@@ -5,9 +5,8 @@ from itertools import repeat
 from unittest import TestCase
 import pytest
 from ...atf.atflex import AtfLexer
-# Jython does not use a named touple here so we have to just take the first
-# element and not major as normal.
-if sys.version_info[0] == 2:
+from pyoracc import _pyversion
+if _pyversion() == 2:
     from itertools import izip_longest as zip_longest
 else:
     from itertools import zip_longest
@@ -18,26 +17,31 @@ class testLexer(TestCase):
         self.lexer = AtfLexer().lexer
 
     def compare_tokens(self, content, expected_types, expected_values=None,
-                       expected_lineno=None):
+                       expected_lineno=None, expected_lexpos=None):
         self.lexer.input(content)
         if expected_values is None:
             expected_values = repeat(None)
         if expected_lineno is None:
             expected_lineno = repeat(None)
-        for expected_type, expected_value, expected_lineno, token in \
-                zip_longest(expected_types, expected_values, expected_lineno,
-                            self.lexer):
-            print(token, expected_type)
-            if token is None and expected_type is None:
+        if expected_lexpos is None:
+            expected_lexpos = repeat(None)
+        for e_type, e_value, e_lineno, e_lexpos, token in zip_longest(
+                expected_types,
+                expected_values,
+                expected_lineno,
+                expected_lexpos,
+                self.lexer):
+            if token is None and e_type is None:
                 break
-            assert token.type == expected_type
-            if expected_value:
-                # print token.value, expected_value
-                assert token.value == expected_value
-            if expected_lineno:
-                assert token.lineno == expected_lineno
+            assert token.type == e_type
+            if e_value:
+                assert token.value == e_value
+            if e_lineno:
+                assert token.lineno == e_lineno
+            if e_lexpos:
+                assert token.lexpos == e_lexpos
 
-    def ensure_raises_and_not(self, string):
+    def ensure_raises_and_not(self, string, nwarnings):
         self.lexer.input(string)
         with pytest.raises(SyntaxError) as excinfo:
             for i in self.lexer:
@@ -45,8 +49,10 @@ class testLexer(TestCase):
         # If we allow invalid syntax this should not raise
         self.lexer = AtfLexer(skipinvalid=True).lexer
         self.lexer.input(string)
-        for i in self.lexer:
-            pass
+        with pytest.warns(UserWarning) as record:
+            for i in self.lexer:
+                pass
+        assert len(record) == nwarnings
 
     def test_code(self):
         self.compare_tokens(
@@ -787,23 +793,24 @@ class testLexer(TestCase):
              "INCLUDE", "ID", 'EQUALS', 'ID', "NEWLINE"]
         )
 
-    def test_double_newline(self):
+    def test_double_newline_and_lexpos(self):
         self.compare_tokens(
             "@obverse\n" +
             "\n" +
             "#note:\n",
             ["OBVERSE", "NEWLINE", "NOTE", "NEWLINE"],
             ["obverse", "\n\n", "note", "\n"],
-            [1, 1, 3, 3])
+            [1, 1, 3, 3],
+            [1, 8, 11, 16])
 
     def test_invalid_at_raises_syntax_error(self):
-        string = "@obversel\n"
-        self.ensure_raises_and_not(string)
+        string = u"@obversel\n"
+        self.ensure_raises_and_not(string, nwarnings=1)
 
     def test_invalid_hash_raises_syntax_error(self):
         string = u"#lems: Ṣalbatanu[Mars]CN\n"
-        self.ensure_raises_and_not(string)
+        self.ensure_raises_and_not(string, nwarnings=2)
 
     def test_invalid_id_syntax_error(self):
         string = u"Ṣalbatanu[Mars]CN\n"
-        self.ensure_raises_and_not(string)
+        self.ensure_raises_and_not(string, nwarnings=1)

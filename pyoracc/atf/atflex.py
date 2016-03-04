@@ -1,7 +1,10 @@
+# -*- coding: utf-8 -*-
 from __future__ import print_function
 
 import ply.lex as lex
 import re
+import warnings
+from pyoracc import _pyversion
 
 
 class AtfLexer(object):
@@ -183,7 +186,7 @@ class AtfLexer(object):
     def t_INITIAL_parallel_labeled_ATID(self, t):
         '\@[a-zA-Z][a-zA-Z0-9\[\]]*\+?'
         t.value = t.value[1:]
-
+        t.lexpos += 1
         t.type = self.resolve_keyword(t.value,
                                       AtfLexer.structures +
                                       AtfLexer.long_argument_structures,
@@ -214,8 +217,10 @@ class AtfLexer(object):
             t.lexer.push_state('flagged')
         if t.type is None:
             formatstring = u"Illegal @STRING '{}'".format(t.value)
+            if _pyversion() == 2:
+                formatstring = formatstring.encode('UTF-8')
             if self.skipinvalid:
-                print(formatstring)
+                warnings.warn(formatstring, UserWarning)
                 return
             else:
                 raise SyntaxError(formatstring)
@@ -231,6 +236,7 @@ class AtfLexer(object):
         '\#[a-zA-Z][a-zA-Z0-9\[\]]+\:'
         # Note that \:? absorbs a trailing colon in protocol keywords
         t.value = t.value[1:-1]
+        t.lexpos += 1
         t.type = self.resolve_keyword(t.value,
                                       AtfLexer.protocols,
                                       extra={'CHECK': 'CHECK'})
@@ -248,8 +254,10 @@ class AtfLexer(object):
             t.lexer.push_state('para')
         if t.type is None:
             formatstring = u"Illegal #STRING '{}'".format(t.value)
+            if _pyversion() == 2:
+                formatstring = formatstring.encode('UTF-8')
             if self.skipinvalid:
-                print(formatstring)
+                warnings.warn(formatstring, UserWarning)
                 return
             else:
                 raise SyntaxError(formatstring)
@@ -491,9 +499,11 @@ class AtfLexer(object):
     # Error handling rule
     def t_ANY_error(self, t):
         formatstring = u"Illegal character '{}'".format(t.value[0])
+        if _pyversion() == 2:
+            formatstring = formatstring.encode('UTF-8')
         if self.skipinvalid:
             t.lexer.skip(1)
-            print(formatstring)
+            warnings.warn(formatstring, UserWarning)
         else:
             raise SyntaxError(formatstring)
 
