@@ -2,12 +2,12 @@ from setuptools import setup
 from setuptools.command.build_py import build_py
 
 
-class my_build_py(build_py):
+class MyBuildPy(build_py):
     def run(self):
         # Generate the parsetab file so that we can install that too
         from pyoracc import _generate_parsetab
         _generate_parsetab()
-        build_py.run(self)
+        super(MyBuildPy, self).run()
 
 setup(name='pyoracc',
       version='0.0.1',
@@ -25,5 +25,5 @@ setup(name='pyoracc',
       setup_requires=['mako', 'ply'],
       package_data={'pyoracc': ['test/fixtures/*/*.atf']},
       zip_safe=False,
-      cmdclass=dict(build_py=my_build_py)
+      cmdclass=dict(build_py=MyBuildPy)
       )

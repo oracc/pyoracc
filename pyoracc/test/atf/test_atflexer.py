@@ -12,7 +12,7 @@ else:
     from itertools import zip_longest
 
 
-class testLexer(TestCase):
+class TestLexer(TestCase):
     def setUp(self):
         self.lexer = AtfLexer().lexer
 
@@ -816,7 +816,7 @@ class testLexer(TestCase):
         self.ensure_raises_and_not(string, nwarnings=1)
 
     @staticmethod
-    def test_resolve_keyword_no_extra(self):
+    def test_resolve_keyword_no_extra():
         '''Test that resolve_keyword works correcty when extra is not passes
         This never happes in actual code. Hench this test'''
         mylexer = AtfLexer()

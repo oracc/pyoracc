@@ -20,7 +20,7 @@ from ...model.text import Text
 from ...model.translation import Translation
 
 
-class testParser(TestCase):
+class TestParser(TestCase):
     def setUp(self):
         self.lexer = AtfLexer().lexer
 

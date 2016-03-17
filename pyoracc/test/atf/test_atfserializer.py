@@ -11,7 +11,7 @@ from ...atf.atfyacc import AtfParser
 from pyoracc.model.line import Line
 
 
-class testSerializer(TestCase):
+class TestSerializer(TestCase):
 
     def setUp(self):
         """
