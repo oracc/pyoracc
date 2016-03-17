@@ -818,5 +818,5 @@ class testLexer(TestCase):
     def test_resolve_keyword_no_extra(self):
         mylexer = AtfLexer()
         result = mylexer.resolve_keyword('obverse',
-                                    mylexer.structures)
+                                         mylexer.structures)
         assert result == 'OBVERSE'
