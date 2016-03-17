@@ -814,3 +814,9 @@ class testLexer(TestCase):
     def test_invalid_id_syntax_error(self):
         string = u"Ṣalbatanu[Mars]CN\n"
         self.ensure_raises_and_not(string, nwarnings=1)
+
+    def test_resolve_keyword_no_extra(self):
+        mylexer = AtfLexer()
+        result = mylexer.resolve_keyword('obverse',
+                                    mylexer.structures)
+        assert result == 'OBVERSE'
