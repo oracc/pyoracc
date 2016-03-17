@@ -815,7 +815,10 @@ class testLexer(TestCase):
         string = u"Ṣalbatanu[Mars]CN\n"
         self.ensure_raises_and_not(string, nwarnings=1)
 
+    @staticmethod
     def test_resolve_keyword_no_extra(self):
+        '''Test that resolve_keyword works correcty when extra is not passes
+        This never happes in actual code. Hench this test'''
         mylexer = AtfLexer()
         result = mylexer.resolve_keyword('obverse',
                                          mylexer.structures)
