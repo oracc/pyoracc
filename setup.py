@@ -6,7 +6,8 @@ class MyBuildPy(build_py):
     """We subclass build_py so that we can run _generate_parsetab after
        installing the dependencies (Ply and Mako)"""
     def run(self):
-        # Generate the parsetab file so that we can install that too
+        """Generate the parsetab file so that we can install that too before
+        calling the regular installer in the super class"""
         from pyoracc import _generate_parsetab
         _generate_parsetab()
         super(MyBuildPy, self).run()
