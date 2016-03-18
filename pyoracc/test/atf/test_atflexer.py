@@ -13,6 +13,7 @@ else:
 
 
 class TestLexer(TestCase):
+    """A class that contains all tests of the ATFLexer"""
     def setUp(self):
         self.lexer = AtfLexer().lexer
 

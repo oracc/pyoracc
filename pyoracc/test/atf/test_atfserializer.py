@@ -12,7 +12,7 @@ from pyoracc.model.line import Line
 
 
 class TestSerializer(TestCase):
-
+    """A class that contains all tests of the ATF Serializer"""
     def setUp(self):
         """
         Initialize lexer and parser.

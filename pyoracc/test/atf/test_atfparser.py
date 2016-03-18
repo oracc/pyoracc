@@ -21,6 +21,7 @@ from ...model.translation import Translation
 
 
 class TestParser(TestCase):
+    """A class that contains all tests of the ATFParser"""
     def setUp(self):
         self.lexer = AtfLexer().lexer
 

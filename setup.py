@@ -3,6 +3,8 @@ from setuptools.command.build_py import build_py
 
 
 class MyBuildPy(build_py):
+    """We subclass build_py so that we can run _generate_parsetab after
+       installing the dependencies (Ply and Mako)"""
     def run(self):
         # Generate the parsetab file so that we can install that too
         from pyoracc import _generate_parsetab
