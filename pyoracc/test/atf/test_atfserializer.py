@@ -11,8 +11,8 @@ from ...atf.atfyacc import AtfParser
 from pyoracc.model.line import Line
 
 
-class testSerializer(TestCase):
-
+class TestSerializer(TestCase):
+    """A class that contains all tests of the ATF Serializer"""
     def setUp(self):
         """
         Initialize lexer and parser.
@@ -20,14 +20,16 @@ class testSerializer(TestCase):
         self.lexer = AtfLexer().lexer
         self.parser = AtfParser().parser
 
-    def parse(self, any_str):
+    @staticmethod
+    def parse(any_str):
         """
         Parse input string, could be just a line or a whole file content.
         """
         parsed = AtfFile(any_str)
         return parsed
 
-    def serialize(self, any_object):
+    @staticmethod
+    def serialize(any_object):
         """
         Serialize input object, from a simple lemma to a whole AtfFile object.
         """
@@ -40,13 +42,15 @@ class testSerializer(TestCase):
         """
         return self.serialize(self.parse(any_str))
 
-    def open_file(self, filename):
+    @staticmethod
+    def open_file(filename):
         """
         Open serialized file and output contents
         """
         return codecs.open(filename, "r", "utf-8").read()
 
-    def save_file(self, content, filename):
+    @staticmethod
+    def save_file(content, filename):
         """
         Write serialized file on disk
         """
@@ -69,7 +73,8 @@ class testSerializer(TestCase):
         assert serialized_1 == serialized_2
 
     @pytest.mark.xfail
-    def test_line_word(self):
+    @staticmethod
+    def test_line_word():
         """
         Get a sample word with unicode chars and check serialization is
         correct.
@@ -79,7 +84,8 @@ class testSerializer(TestCase):
         line_ser = line.serialize()
         assert line_ser == "1.\t" + u"\u2086"
 
-    def test_line_words(self):
+    @staticmethod
+    def test_line_words():
         """
         Get a sample line of words with unicode chars and test serialization.
         1. [MU] 1.03-KAM {iti}AB GE₆ U₄ 2-KAM
@@ -91,7 +97,8 @@ class testSerializer(TestCase):
                 u'2-KAM']
         assert uwords == gold
 
-    def test_line_lemmas(self):
+    @staticmethod
+    def test_line_lemmas():
         """
         Get a sample line of lemmas with unicode chars and test serialization.
         šatti[year]N; n; Ṭebetu[1]MN; mūša[at night]AV; ūm[day]N; n

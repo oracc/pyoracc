@@ -12,7 +12,8 @@ else:
     from itertools import zip_longest
 
 
-class testLexer(TestCase):
+class TestLexer(TestCase):
+    """A class that contains all tests of the ATFLexer"""
     def setUp(self):
         self.lexer = AtfLexer().lexer
 
@@ -814,3 +815,12 @@ class testLexer(TestCase):
     def test_invalid_id_syntax_error(self):
         string = u"Ṣalbatanu[Mars]CN\n"
         self.ensure_raises_and_not(string, nwarnings=1)
+
+    @staticmethod
+    def test_resolve_keyword_no_extra():
+        '''Test that resolve_keyword works correcty when extra is not passes
+        This never happes in actual code. Hench this test'''
+        mylexer = AtfLexer()
+        result = mylexer.resolve_keyword('obverse',
+                                         mylexer.structures)
+        assert result == 'OBVERSE'

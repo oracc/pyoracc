@@ -16,7 +16,9 @@ class AtfLexer(object):
         keywords.update(extra)
         return keywords
 
-    def resolve_keyword(self, value, source, fallback=None, extra={}):
+    def resolve_keyword(self, value, source, fallback=None, extra=None):
+        if extra is None:
+            extra = {}
         source = self._keyword_dict(source, extra)
         return source.get(value, fallback)
 

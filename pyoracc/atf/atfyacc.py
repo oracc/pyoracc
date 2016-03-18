@@ -126,14 +126,14 @@ class AtfParser(object):
         # Default to a tablet
 
         # Has a default already been added?
-        if len(p[0].objects()) == 0:
+        if not p[0].objects():
             p[0].children.append(OraccObject("tablet"))
         p[0].objects()[-1].children.append(p[2])
 
     def p_text_surface_element(self, p):
         """text : text surface_element %prec OBJECT"""
         p[0] = p[1]
-        if len(p[0].objects()) == 0:
+        if not p[0].objects():
             p[0].children.append(OraccObject("tablet"))
         # Default to obverse of a tablet
         p[0].objects()[-1].children.append(OraccObject("obverse"))
