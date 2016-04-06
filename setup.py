@@ -10,7 +10,9 @@ class MyBuildPy(build_py):
         calling the regular installer in the super class"""
         from pyoracc import _generate_parsetab
         _generate_parsetab()
-        MyBuildPy.run(self)
+        #Can't use super because build_py is an old style class in the Maven
+        #Jython plugin setuptools version 0.6...
+        build_py.run(self)
 
 setup(name='pyoracc',
       version='0.0.1',
