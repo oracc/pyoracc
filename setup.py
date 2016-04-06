@@ -10,7 +10,7 @@ class MyBuildPy(build_py):
         calling the regular installer in the super class"""
         from pyoracc import _generate_parsetab
         _generate_parsetab()
-        super(MyBuildPy, self).run()
+        MyBuildPy.run(self)
 
 setup(name='pyoracc',
       version='0.0.1',
