@@ -318,8 +318,9 @@ class AtfLexer(object):
 
     # Unicode 2019 is right single quotation -- some files use as prime.
     def t_transctrl_ID(self, t):
-        u'[a-zA-Z0-9][a-zA-Z\'\u2019\xb4\.0-9\:\-\[\]\u2080-\u2089]*'
+        u'[a-zA-Z0-9][a-zA-Z\'\u2019\u2032\u02CA\xb4\/\.0-9\:\-\[\]_\u2080-\u2089]*'
         t.value = t.value.replace(u'\u2019', "'")
+        t.value = t.value.replace(u'\u2032', "'")
         t.value = t.value.replace(u'\xb4', "'")
         t.type = self.resolve_keyword(t.value,
                                       AtfLexer.protocol_keywords +
@@ -500,7 +501,7 @@ class AtfLexer(object):
 
     # Error handling rule
     def t_ANY_error(self, t):
-        formatstring = u"Illegal character '{}'".format(t.value[0])
+        formatstring = u"PyOracc got an illegal character '{}'".format(t.value[0])
         if _pyversion() == 2:
             formatstring = formatstring.encode('UTF-8')
         if self.skipinvalid:

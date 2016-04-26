@@ -31,5 +31,5 @@ def test_sample():
 @slow
 def test_whole():
     corpus = Corpus(source=whole_corpus())
-    assert corpus.successes == 2474
-    assert corpus.failures == 394
+    assert corpus.successes == 2477
+    assert corpus.failures == 391
