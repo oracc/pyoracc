@@ -450,6 +450,7 @@ class AtfLexer(object):
     @lex.TOKEN(r'([^\^\n\r]|([\n\r](?!\s*[\n\r])(?!' +
                terminates_paragraph + ')))+')
     def t_para_ID(self, t):
+        t.lexer.lineno += t.value.count("\n")
         t.value = t.value.strip()
         return t
 
