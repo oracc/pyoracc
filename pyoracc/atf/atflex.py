@@ -239,7 +239,9 @@ class AtfLexer(object):
         # Note that \:? absorbs a trailing colon in protocol keywords
         t.value = t.value[1:-1]
         t.lexpos += 1
-        t.type = self.resolve_keyword(t.value,
+        # Use lower here since there are some ATF files with
+        # the protocol incorrectly written as #NOTE:
+        t.type = self.resolve_keyword(t.value.lower(),
                                       AtfLexer.protocols,
                                       extra={'CHECK': 'CHECK'})
         if t.type == "KEY":
