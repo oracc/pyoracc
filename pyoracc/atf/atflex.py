@@ -316,11 +316,15 @@ class AtfLexer(object):
     # And certain tokens deviate from that, rather
     # than the other way round as for base state
 
-    # Unicode 2019 is right single quotation -- some files use as prime.
+    # Unicode 2019 is right single quotation
+    # Unicode 02cCA is MODIFIER LETTER ACUTE ACCENT
+    # Unicode 2032  is PRIME
+    # All of these could be used as prime
     def t_transctrl_ID(self, t):
         u'[a-zA-Z0-9][a-zA-Z\'\u2019\u2032\u02CA\xb4\/\.0-9\:\-\[\]_\u2080-\u2089]*'
         t.value = t.value.replace(u'\u2019', "'")
         t.value = t.value.replace(u'\u2032', "'")
+        t.value = t.value.replace(u'\u02CA', "'")
         t.value = t.value.replace(u'\xb4', "'")
         t.type = self.resolve_keyword(t.value,
                                       AtfLexer.protocol_keywords +
