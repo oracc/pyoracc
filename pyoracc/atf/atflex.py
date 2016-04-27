@@ -507,14 +507,14 @@ class AtfLexer(object):
 
     # Error handling rule
     def t_ANY_error(self, t):
-        formatstring = u"PyOracc got an illegal character '{}'".format(t.value[0])
+        fstring = u"PyOracc got an illegal character '{}'".format(t.value[0])
         if _pyversion() == 2:
-            formatstring = formatstring.encode('UTF-8')
+            formatstring = fstring.encode('UTF-8')
         if self.skipinvalid:
             t.lexer.skip(1)
-            warnings.warn(formatstring, UserWarning)
+            warnings.warn(fstring, UserWarning)
         else:
-            raise SyntaxError(formatstring)
+            raise SyntaxError(fstring)
 
     def __init__(self, skipinvalid=False):
         self.skipinvalid = skipinvalid
