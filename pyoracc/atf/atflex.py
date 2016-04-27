@@ -61,7 +61,7 @@ class AtfLexer(object):
     ]
 
     protocols = ['ATF', 'LEM', 'PROJECT', 'NOTE', "LINK",
-                 "KEY", "BIB", "TR", 'CHECK', 'LEMMATIZER']
+                 "KEY", "BIB", "TR", 'CHECK', 'LEMMATIZER', 'VERSION']
 
     protocol_keywords = ['LANG', 'USE', 'MATH', 'LEGACY', 'MYLINES',
                          'LEXICAL', 'UNICODE', 'DEF']
