@@ -509,7 +509,7 @@ class AtfLexer(object):
     def t_ANY_error(self, t):
         fstring = u"PyOracc got an illegal character '{}'".format(t.value[0])
         if _pyversion() == 2:
-            formatstring = fstring.encode('UTF-8')
+            fstring = fstring.encode('UTF-8')
         if self.skipinvalid:
             t.lexer.skip(1)
             warnings.warn(fstring, UserWarning)
