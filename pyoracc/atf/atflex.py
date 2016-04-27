@@ -316,10 +316,16 @@ class AtfLexer(object):
     # And certain tokens deviate from that, rather
     # than the other way round as for base state
 
-    # Unicode 2019 is right single quotation -- some files use as prime.
+    # Unicode 2019 is right single quotation
+    # Unicode 02cCA is MODIFIER LETTER ACUTE ACCENT
+    # Unicode 2032  is PRIME
+    # All of these could be used as prime
     def t_transctrl_ID(self, t):
-        u'[a-zA-Z0-9][a-zA-Z\'\u2019\xb4\.0-9\:\-\[\]\u2080-\u2089]*'
+        u'[a-zA-Z0-9][a-zA-Z\'\u2019\u2032\u02CA\xb4\/\.0-9\:\-\[\]_' \
+          u'\u2080-\u2089]*'
         t.value = t.value.replace(u'\u2019', "'")
+        t.value = t.value.replace(u'\u2032', "'")
+        t.value = t.value.replace(u'\u02CA', "'")
         t.value = t.value.replace(u'\xb4', "'")
         t.type = self.resolve_keyword(t.value,
                                       AtfLexer.protocol_keywords +
@@ -449,6 +455,7 @@ class AtfLexer(object):
     @lex.TOKEN(r'([^\^\n\r]|([\n\r](?!\s*[\n\r])(?!' +
                terminates_paragraph + ')))+')
     def t_para_ID(self, t):
+        t.lexer.lineno += t.value.count("\n")
         t.value = t.value.strip()
         return t
 
@@ -500,14 +507,14 @@ class AtfLexer(object):
 
     # Error handling rule
     def t_ANY_error(self, t):
-        formatstring = u"Illegal character '{}'".format(t.value[0])
+        fstring = u"PyOracc got an illegal character '{}'".format(t.value[0])
         if _pyversion() == 2:
-            formatstring = formatstring.encode('UTF-8')
+            fstring = fstring.encode('UTF-8')
         if self.skipinvalid:
             t.lexer.skip(1)
-            warnings.warn(formatstring, UserWarning)
+            warnings.warn(fstring, UserWarning)
         else:
-            raise SyntaxError(formatstring)
+            raise SyntaxError(fstring)
 
     def __init__(self, skipinvalid=False):
         self.skipinvalid = skipinvalid

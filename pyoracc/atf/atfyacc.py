@@ -1,4 +1,5 @@
 import ply.yacc as yacc
+from pyoracc import _pyversion
 from .atflex import AtfLexer
 
 from ..model.comment import Comment
@@ -767,6 +768,9 @@ class AtfParser(object):
     )
 
     def p_error(self, p):
+        formatstring = u"PyOracc could not parse token '{}'".format(p)
+        if _pyversion() == 2:
+            formatstring = formatstring.encode('UTF-8')
+        raise SyntaxError(formatstring)
         # All errors currently unrecoverable
         # So just throw
-        raise SyntaxError

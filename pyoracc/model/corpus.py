@@ -13,19 +13,20 @@ class Corpus(object):
         if 'source' in kwargs:
             for dirpath, _, files in os.walk(kwargs['source']):
                 for file in files:
-                    try:
-                        path = os.path.join(dirpath, file)
-                        print("Parsing file", path, "... ", end="")
-                        content = codecs.open(path,
-                                              encoding='utf-8-sig').read()
-                        self.texts.append(AtfFile(content))
+                    if file.endswith('.atf'):
+                        try:
+                            path = os.path.join(dirpath, file)
+                            print("Parsing file", path, "... ", end="")
+                            content = codecs.open(path,
+                                                  encoding='utf-8-sig').read()
+                            self.texts.append(AtfFile(content))
 
-                        self.successes += 1
-                        print("OK")
-                    except:
-                        self.texts.append(None)
-                        self.failures += 1
-                        print("Failed")
+                            self.successes += 1
+                            print("OK")
+                        except SyntaxError as e:
+                            self.texts.append(None)
+                            self.failures += 1
+                            print("Failed with message: '{}'".format(e))
 
 
 if __name__ == '__main__':

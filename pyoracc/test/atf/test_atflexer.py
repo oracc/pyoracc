@@ -337,7 +337,27 @@ class TestLexer(TestCase):
             ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
              "LABEL", "ID", "ID", "NEWLINE"],
             [None, "labeled", "en", "project", None,
-             None, "r", "1'", None, "r", "2'", None]
+             None, "r", "1'", None]
+        )
+
+    def test_translation_label_unicode_prime3(self):
+        self.compare_tokens(
+            "@translation labeled en project\n" +
+            u'@label r 1\u2032\n',
+            ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
+             "LABEL", "ID", "ID", "NEWLINE"],
+            [None, "labeled", "en", "project", None,
+             None, "r", "1'", None]
+        )
+
+    def test_translation_label_unicode_prime4(self):
+        self.compare_tokens(
+            "@translation labeled en project\n" +
+            u'@label r 1\u02CA\n',
+            ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
+             "LABEL", "ID", "ID", "NEWLINE"],
+            [None, "labeled", "en", "project", None,
+             None, "r", "1'", None]
         )
 
     def test_translation_range_label_plus(self):
