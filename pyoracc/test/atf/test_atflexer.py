@@ -452,6 +452,17 @@ class TestLexer(TestCase):
              "ID", "NEWLINE"]
         )
 
+    def test_translation_ATlines_in_translation(self):
+        # @ within Translations mark Foreign
+        # http://oracc.museum.upenn.edu/doc/help/editinginatf/translations/index.html
+        self.compare_tokens(
+            "@translation labeled en project\n" +
+            "@obverse\n" +
+            "1'. @MUD (means) trembling. @MUD (means) dark.",
+            ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
+             "OBVERSE", "NEWLINE", "ID"]
+        )
+
     def test_translation_range_label_periods(self):
         self.compare_tokens(
             "@translation labeled en project\n" +
@@ -521,6 +532,18 @@ class TestLexer(TestCase):
             "@obverse\n" +
             "3.    U₄!-BI? 20* [(ina)] 9.30 ina(DIŠ) MAŠ₂!(BAR)\n" +
             "#note: Note to line.\n",
+            ["TABLET", "NEWLINE", "OBVERSE", "NEWLINE",
+             "LINELABEL"] + ["ID"] * 6 + ["NEWLINE", "NOTE", "ID", "NEWLINE"]
+        )
+
+    def test_hash_note_UPPERCASE(self):
+        # Some files in the corpus such as ctn_4_168.atf
+        # Contains #NOTE: even if the line should be #note:
+        self.compare_tokens(
+            "@tablet\n" +
+            "@obverse\n" +
+            "3.    U₄!-BI? 20* [(ina)] 9.30 ina(DIŠ) MAŠ₂!(BAR)\n" +
+            "#NOTE: Note to line.\n",
             ["TABLET", "NEWLINE", "OBVERSE", "NEWLINE",
              "LINELABEL"] + ["ID"] * 6 + ["NEWLINE", "NOTE", "ID", "NEWLINE"]
         )

@@ -61,7 +61,7 @@ class AtfLexer(object):
     ]
 
     protocols = ['ATF', 'LEM', 'PROJECT', 'NOTE', "LINK",
-                 "KEY", "BIB", "TR", 'CHECK', 'LEMMATIZER']
+                 "KEY", "BIB", "TR", 'CHECK', 'LEMMATIZER', 'VERSION', 'VAR']
 
     protocol_keywords = ['LANG', 'USE', 'MATH', 'LEGACY', 'MYLINES',
                          'LEXICAL', 'UNICODE', 'DEF']
@@ -186,7 +186,7 @@ class AtfLexer(object):
         return t
 
     def t_INITIAL_parallel_labeled_ATID(self, t):
-        '\@[a-zA-Z][a-zA-Z0-9\[\]]*\+?'
+        '^\@[a-zA-Z][a-zA-Z0-9\[\]]*\+?'
         t.value = t.value[1:]
         t.lexpos += 1
         t.type = self.resolve_keyword(t.value,
@@ -239,7 +239,9 @@ class AtfLexer(object):
         # Note that \:? absorbs a trailing colon in protocol keywords
         t.value = t.value[1:-1]
         t.lexpos += 1
-        t.type = self.resolve_keyword(t.value,
+        # Use lower here since there are some ATF files with
+        # the protocol incorrectly written as #NOTE:
+        t.type = self.resolve_keyword(t.value.lower(),
                                       AtfLexer.protocols,
                                       extra={'CHECK': 'CHECK'})
         if t.type == "KEY":
@@ -307,7 +309,7 @@ class AtfLexer(object):
     # one or more newlines returns to the base state
     def t_flagged_text_lemmatize_transctrl_nonequals_absorb_NEWLINE(self, t):
         r'[\n\r]+'
-        t.lexer.lineno += len(t.value)
+        t.lexer.lineno += t.value.count("\n")
         t.lexer.pop_state()
         return t
 
