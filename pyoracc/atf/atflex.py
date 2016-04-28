@@ -323,7 +323,7 @@ class AtfLexer(object):
     # Unicode 2032  is PRIME
     # All of these could be used as prime
     def t_transctrl_ID(self, t):
-        u'[a-zA-Z0-9@][a-zA-Z\'\u2019\u2032\u02CA\xb4\/\.0-9\:\-\[\]_' \
+        u'[a-zA-Z0-9][a-zA-Z\'\u2019\u2032\u02CA\xb4\/\.0-9\:\-\[\]_' \
           u'\u2080-\u2089]*'
         t.value = t.value.replace(u'\u2019', "'")
         t.value = t.value.replace(u'\u2032', "'")
