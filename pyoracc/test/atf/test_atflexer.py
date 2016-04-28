@@ -452,6 +452,17 @@ class TestLexer(TestCase):
              "ID", "NEWLINE"]
         )
 
+    def test_translation_ATlines_in_translation(self):
+        # @ within Translations mark Foreign
+        # http://oracc.museum.upenn.edu/doc/help/editinginatf/translations/index.html
+        self.compare_tokens(
+            "@translation labeled en project\n" +
+            "@obverse\n" +
+            "1'. @MUD (means) trembling. @MUD (means) dark.",
+            ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
+             "OBVERSE", "NEWLINE", "ID"]
+        )
+
     def test_translation_range_label_periods(self):
         self.compare_tokens(
             "@translation labeled en project\n" +
