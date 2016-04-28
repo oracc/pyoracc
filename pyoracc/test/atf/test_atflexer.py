@@ -525,6 +525,18 @@ class TestLexer(TestCase):
              "LINELABEL"] + ["ID"] * 6 + ["NEWLINE", "NOTE", "ID", "NEWLINE"]
         )
 
+    def test_hash_note_UPPERCASE(self):
+        # Some files in the corpus such as ctn_4_168.atf
+        # Contains #NOTE: even if the line should be #note:
+        self.compare_tokens(
+            "@tablet\n" +
+            "@obverse\n" +
+            "3.    U₄!-BI? 20* [(ina)] 9.30 ina(DIŠ) MAŠ₂!(BAR)\n" +
+            "#NOTE: Note to line.\n",
+            ["TABLET", "NEWLINE", "OBVERSE", "NEWLINE",
+             "LINELABEL"] + ["ID"] * 6 + ["NEWLINE", "NOTE", "ID", "NEWLINE"]
+        )
+
     def test_open_text_with_dots(self):
         # This must not come out as a linelabel of Hello.
         self.compare_tokens(
