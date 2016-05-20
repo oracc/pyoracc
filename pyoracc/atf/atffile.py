@@ -31,7 +31,7 @@ def _debug_lex_and_yac_file(file):
     for tok in lexer:
         print(tok)
     print("Lexed file")
-    exer = AtfLexer().lexer
+    lexer = AtfLexer().lexer
     parser = AtfParser().parser
     parser.parse(text, lexer=lexer)
     print("Parsed file")
