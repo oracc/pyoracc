@@ -308,7 +308,7 @@ class AtfLexer(object):
     # In the flagged, text, transctrl and lemmatize states,
     # one or more newlines returns to the base state
     def t_flagged_text_lemmatize_transctrl_nonequals_absorb_NEWLINE(self, t):
-        r'[\n\r]+'
+        r'[\n\r]*\s*[\n\r]+'
         t.lexer.lineno += t.value.count("\n")
         t.lexer.pop_state()
         return t
