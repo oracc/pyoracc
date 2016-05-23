@@ -527,7 +527,7 @@ class AtfParser(object):
     def p_state_singular_desc(self, p):
         """singular_state_desc : state singular_scope"""
         text = list(p)
-        p[0] = State(state=text[0], scope=" ".join(text[1:]))
+        p[0] = State(state=text[1], scope=" ".join(text[2:]))
 
     def p_singular_state_desc_brief(self, p):
         """brief_state_desc : brief_quantifier state"""

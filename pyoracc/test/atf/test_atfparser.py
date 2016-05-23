@@ -431,7 +431,7 @@ class TestParser(TestCase):
         art = self.try_parse(
             "@tablet\n" +
             "@obverse\n" +
-            "$ line blank\n"
+            "$ blank line\n"
         )
         assert art.children[0].children[0].state == "blank"
         assert art.children[0].children[0].scope == "line"
