@@ -847,6 +847,14 @@ class TestLexer(TestCase):
             [1, 1, 3, 3],
             [1, 8, 11, 16])
 
+    def test_blankline_with_tab_inadsorb(self):
+        self.compare_tokens(
+            "# ES mu-lu = lu₂, ša₃-ab = šag\n" +
+            "	\n" +
+            "7. keš₂-da",
+            ["COMMENT", "ID", "NEWLINE", "LINELABEL", "ID"],
+            ["#", "ES mu-lu = lu₂, ša₃-ab = šag", "\n\t\n", '7', "keš₂-da"])
+
     def test_invalid_at_raises_syntax_error(self):
         string = u"@obversel\n"
         self.ensure_raises_and_not(string, nwarnings=1)

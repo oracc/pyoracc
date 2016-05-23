@@ -307,6 +307,8 @@ class AtfLexer(object):
 
     # In the flagged, text, transctrl and lemmatize states,
     # one or more newlines returns to the base state
+    # In several of the files such as bb_2_006.atf the blank line contains tab
+    # or other trailing whitespace
     def t_flagged_text_lemmatize_transctrl_nonequals_absorb_NEWLINE(self, t):
         r'[\n\r]*\s*[\n\r]+'
         t.lexer.lineno += t.value.count("\n")
