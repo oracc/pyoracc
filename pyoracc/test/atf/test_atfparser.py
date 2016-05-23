@@ -426,7 +426,7 @@ class TestParser(TestCase):
         assert art.children[0].children[1].loose == "(something loose)"
 
     def test_strict_dollar_single_reverse(self):
-        """Test that reverse $ line is working correctly as in 
+        """Test that reverse $ line is working correctly as in
             p_state_singular_desc"""
         art = self.try_parse(
             "@tablet\n" +
