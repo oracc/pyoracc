@@ -520,6 +520,15 @@ class AtfParser(object):
         text = list(p)
         p[0] = State(text[-1], " ".join(text[1:-1]))
 
+    # This is reversed compared to the documentation but fairly common so
+    # We have to implement it. I.e. cams/gkab/00atf/ctn_4_032.atf and others
+    # http://oracc.museum.upenn.edu/doc/help/editinginatf/primer/structuretutorial/index.html
+    # section $-lines
+    def p_state_singular_desc(self, p):
+        """singular_state_desc : state singular_scope"""
+        text = list(p)
+        p[0] = State(state=text[1], scope=" ".join(text[2:]))
+
     def p_singular_state_desc_brief(self, p):
         """brief_state_desc : brief_quantifier state"""
         text = list(p)

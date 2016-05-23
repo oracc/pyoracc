@@ -22,16 +22,16 @@ class AtfFile(object):
         return AtfFile.template.render_unicode(**vars(self))
 
 
-def _debug_lex_and_yac_file(file):
+def _debug_lex_and_yac_file(file, debug=0):
     import codecs
     text = codecs.open(file, encoding='utf-8-sig').read()
     from pyoracc.atf.atffile import AtfLexer
-    lexer = AtfLexer().lexer
+    lexer = AtfLexer(debug=debug).lexer
     lexer.input(text)
     for tok in lexer:
         print(tok)
     print("Lexed file")
-    exer = AtfLexer().lexer
+    lexer = AtfLexer().lexer
     parser = AtfParser().parser
     parser.parse(text, lexer=lexer)
     print("Parsed file")

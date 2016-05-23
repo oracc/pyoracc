@@ -425,6 +425,17 @@ class TestParser(TestCase):
         )
         assert art.children[0].children[1].loose == "(something loose)"
 
+    def test_strict_dollar_single_reverse(self):
+        """Test that reverse $ line is working correctly as in
+            p_state_singular_desc"""
+        art = self.try_parse(
+            "@tablet\n" +
+            "@obverse\n" +
+            "$ blank line\n"
+        )
+        assert art.children[0].children[0].state == "blank"
+        assert art.children[0].children[0].scope == "line"
+
     def test_strict_dollar_simple(self):
         art = self.try_parse(
             "@tablet\n" +
