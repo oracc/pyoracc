@@ -34,7 +34,7 @@ cache:
 
 before_install:
     - |
-        # Install jython
+        # Install jython or homebrew python on OSX
         if [ "$MYPYTHON" == "jython" ]; then
           deactivate
           wget $JYTHON_URL -O jython_installer.jar;
