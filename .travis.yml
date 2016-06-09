@@ -17,7 +17,7 @@ matrix:
       env: MYPYTHON=jython - JYTHON_URL="http://search.maven.org/remotecontent?filepath=org/python/jython-installer/2.7.1b3/jython-installer-2.7.1b3.jar"
     - os: linux
       sudo: false
-      python: 2.7
+      python: 3.5
     - os: osx
       osx_image: xcode7.3
       language: generic
