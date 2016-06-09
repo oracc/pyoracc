@@ -21,7 +21,7 @@ matrix:
     - os: osx
       osx_image: xcode7.3
       language: generic
-      env: PIP=pip3
+      env: PIP=pip3 MYPYTHON=python3
 env:
   global:
     - MYPYTHON=python
@@ -55,7 +55,7 @@ install:
         $PIP install --upgrade wheel
         $PIP install --upgrade setuptools
         $PIP install --upgrade ply pep8 mako pytest
-        if [ "$MYPYTHON" == "python" ]; then
+        if [ "$MYPYTHON" != "jython" ]; then
           $PIP install pytest-cov codecov
         fi
 
@@ -75,6 +75,6 @@ script:
   
 after_success:
   - |
-      if [ "$MYPYTHON" == "python" ]; then
+      if [ "$MYPYTHON" != "jython" ]; then
         codecov
       fi
