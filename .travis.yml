@@ -4,23 +4,37 @@ language: python
 
 matrix:
   include:
-    - python: 2.7
-    - python: 2.7
+    - os: linux
+      sudo: false
+      python: 2.7
+    - os: linux
+      sudo: false
+      python: 2.7
       env: MYPYTHON=jython - JYTHON_URL="http://search.maven.org/remotecontent?filepath=org/python/jython-installer/2.7.0/jython-installer-2.7.0.jar"
-    - python: 2.7
+    - os: linux
+      sudo: false
+      python: 2.7
       env: MYPYTHON=jython - JYTHON_URL="http://search.maven.org/remotecontent?filepath=org/python/jython-installer/2.7.1b3/jython-installer-2.7.1b3.jar"
-    - python: 3.5
+    - os: linux
+      sudo: false
+      python: 3.5
+    - os: osx
+      osx_image: xcode7.3
+      language: generic
+      env: PIP=pip3 MYPYTHON=python3
 env:
   global:
     - MYPYTHON=python
+    - PIP=pip
 
 cache:
   directories:
     - $HOME/.cache/pip
+    - $HOME/Library/Caches/pip
 
 before_install:
     - |
-        # Install jython
+        # Install jython or homebrew python on OSX
         if [ "$MYPYTHON" == "jython" ]; then
           deactivate
           wget $JYTHON_URL -O jython_installer.jar;
@@ -29,16 +43,21 @@ before_install:
           jython -c "print ''";
           jython -c "import sys; print sys.version"
         fi
+        if [[ $TRAVIS_OS_NAME == 'osx' ]]; then
+          brew update
+          brew install python3
+          python3 --version
+        fi
 
 install:
     - |
         # Install dependencies
-        pip install --upgrade pip
-        pip install --upgrade wheel
-        pip install --upgrade setuptools
-        pip install --upgrade ply pep8 mako pytest
-        if [ "$MYPYTHON" == "python" ]; then
-          pip install pytest-cov codecov
+        $PIP install --upgrade pip
+        $PIP install --upgrade wheel
+        $PIP install --upgrade setuptools
+        $PIP install --upgrade ply pep8 mako pytest
+        if [ "$MYPYTHON" != "jython" ]; then
+          $PIP install pytest-cov codecov
         fi
 
 script:
@@ -57,6 +76,6 @@ script:
   
 after_success:
   - |
-      if [ "$MYPYTHON" == "python" ]; then
+      if [ "$MYPYTHON" != "jython" ]; then
         codecov
       fi
