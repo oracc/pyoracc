@@ -30,6 +30,7 @@ env:
 cache:
   directories:
     - $HOME/.cache/pip
+    - $HOME/Library/Caches/pip
 
 before_install:
     - |
