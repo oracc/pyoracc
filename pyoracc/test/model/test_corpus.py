@@ -32,5 +32,5 @@ def test_sample():
 def test_whole():
     corpus = Corpus(source=whole_corpus())
     # there is a total of 2868 files in the corpus
-    assert corpus.successes == 2522
-    assert corpus.failures == 346
+    assert corpus.successes == 2527
+    assert corpus.failures == 341
