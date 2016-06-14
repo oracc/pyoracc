@@ -445,6 +445,15 @@ class TestParser(TestCase):
         assert art.children[0].children[0].state == "blank"
         assert art.children[0].children[0].scope == "case"
 
+    def test_strict_dollar_simple_space(self):
+        art = self.try_parse(
+            "@tablet\n" +
+            "@obverse\n" +
+            "$space blank\n"
+        )
+        assert art.children[0].children[0].state == "blank"
+        assert art.children[0].children[0].scope == "space"
+
     def test_strict_dollar_plural_difficult(self):
         art = self.try_parse(
             "@tablet\n" +

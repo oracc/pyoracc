@@ -71,7 +71,7 @@ class AtfLexer(object):
     dollar_keywords = [
         'MOST', 'LEAST', 'ABOUT',
         'SEVERAL', 'SOME', 'REST', 'OF', 'START', 'BEGINNING', 'MIDDLE', 'END',
-        'COLUMNS', 'LINE', 'LINES', 'CASE', 'CASES', 'SURFACE',
+        'COLUMNS', 'LINE', 'LINES', 'CASE', 'CASES', 'SURFACE', 'SPACE',
         'BLANK', 'BROKEN', 'EFFACED', 'ILLEGIBLE', 'MISSING', 'TRACES',
         'RULING', 'SINGLE', 'DOUBLE', 'TRIPLE', 'AT']
 

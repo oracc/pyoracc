@@ -554,7 +554,8 @@ class AtfParser(object):
 
     def p_singular_scope(self, p):
         """singular_scope : LINE
-                          | CASE"""
+                          | CASE
+                          | SPACE"""
         p[0] = p[1]
 
     def p_plural_scope(self, p):
