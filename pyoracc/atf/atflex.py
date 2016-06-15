@@ -455,7 +455,7 @@ class AtfLexer(object):
     # --- Rules for paragaph state----------------------------------
     # Free text, ended by double new line
 
-    terminates_paragraph = "(\#|\@|\&|\Z|(^[^.\ \t]*\.))"
+    terminates_paragraph = "(\#|\@|\&|\Z|(^[0-9\'\u2019\u2032\u02CA\xb4]*\.))"
 
     @lex.TOKEN(r'([^\^\n\r]|([\n\r](?!\s*[\n\r])(?!' +
                terminates_paragraph + ')))+')
