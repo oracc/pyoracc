@@ -757,6 +757,23 @@ class TestLexer(TestCase):
             ["OPENR", "ID", "ID", "CLOSER", "ID", "NEWLINE"]
         )
 
+    def test_blank_after_para_transctrl(self):
+        """[...] should not exit the para state but did previously
+           due to a not as stric regex """
+        self.compare_tokens(
+            "@translation labeled en project\n" +
+            "@(o i 1)\n" +
+            "[(If) in] Tašritu (month VII), on day 1, " +
+            "a solar eclipse takes place: [...].\n\n" +
+            "@(o i 2)\n" +
+            "[...], on day 7, a solar eclipse takes place: [...].\n\n",
+            ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE"] +
+            ["OPENR", "ID", "ID", "ID", "CLOSER"] +
+            ["ID", "NEWLINE"] +
+            ["OPENR", "ID", "ID", "ID", "CLOSER"] +
+            ["ID", "NEWLINE"]
+        )
+
     def test_strict_in_labelled_parallel(self):
         self.compare_tokens(
             "@translation labeled en project\n" +
