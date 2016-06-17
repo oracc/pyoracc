@@ -358,6 +358,8 @@ class AtfLexer(object):
             t.type = "REFERENCE"
         return t
 
+    t_parallel_QUERY = "\?"
+
     def t_parallel_LINELABEL(self, t):
         r'^([^\.\ \t]*)\.[\ \t]*'
         t.value = t.value.strip(" \t.")
@@ -401,7 +403,13 @@ class AtfLexer(object):
     # But reference anchors ^1^ etc do.
     # lines beginning with a space are continuations
     white = r'[\ \t]*'
-    translation_regex = white + "([^\^\n\r]|([\n\r](?=[ \t])))+" + white
+    # translation_regex1 and translation_regex2 are identical appart from the
+    # fact that the first character may not be a ?
+    # We are looking for a string that does not start with ? it may include
+    # newlines if they are followed by a whitespace.
+    translation_regex1 = '([^\?\^\n\r]|([\n\r](?=[ \t])))'
+    translation_regex2 = '([^\^\n\r]|([\n\r](?=[ \t])))*'
+    translation_regex = white + translation_regex1 + translation_regex2 + white
 
     @lex.TOKEN(translation_regex)
     def t_parallel_interlinear_ID(self, t):
