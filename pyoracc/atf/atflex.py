@@ -457,7 +457,7 @@ class AtfLexer(object):
 
     terminates_para = "(\#|\@|\&|\Z|(^[0-9]+[\'\u2019\u2032\u02CA\xb4]?\.))"
 
-    @lex.TOKEN(r'([^\^\n\r]|([\n\r](?!\s*[\n\r])(?!' +
+    @lex.TOKEN(r'([^\^\n\r]|(\r?\n(?!\s*\r?\n)(?!' +
                terminates_para + ')))+')
     def t_para_ID(self, t):
         t.lexer.lineno += t.value.count("\n")
@@ -466,7 +466,7 @@ class AtfLexer(object):
 
     # Paragraph state is ended by a double newline
     def t_para_NEWLINE(self, t):
-        r'[\n\r]\s*[\n\r]+'
+        r'\r?\n\s*[\n\r]*\n'
         t.lexer.lineno += t.value.count("\n")
         t.lexer.pop_state()
         return t
@@ -476,7 +476,7 @@ class AtfLexer(object):
     # Or a linelabel, or the end of the stream.
     # and these tokens are not absorbed by this token
     # Translation paragraph state is ended by a double newline
-    @lex.TOKEN(r'[\n\r](?=' + terminates_para + ')')
+    @lex.TOKEN(r'\r?\n(?=' + terminates_para + ')')
     def t_para_MAGICNEWLINE(self, t):
         t.lexer.lineno += t.value.count("\n")
         t.lexer.pop_state()

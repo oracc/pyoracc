@@ -757,6 +757,23 @@ class TestLexer(TestCase):
             ["OPENR", "ID", "ID", "CLOSER", "ID", "NEWLINE"]
         )
 
+    def test_blank_after_para_transctrl_windows(self):
+        """[...] should not exit the para state but did previously
+           due to a not as stric regex """
+        self.compare_tokens(
+            "@translation labeled en project\r\n" +
+            "@(o i 1')\r\n" +
+            "[...]\r\n\r\n" +
+            "@(o i 2')\r\n" +
+            "[... you put] inside [his] ears [and the evil] " +
+            "afflicting his head [will be eradicated].\r\n\r\n",
+            ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE"] +
+            ["OPENR", "ID", "ID", "ID", "CLOSER"] +
+            ["ID", "NEWLINE"] +
+            ["OPENR", "ID", "ID", "ID", "CLOSER"] +
+            ["ID", "NEWLINE"]
+        )
+
     def test_blank_after_para_transctrl(self):
         """[...] should not exit the para state but did previously
            due to a not as stric regex """
