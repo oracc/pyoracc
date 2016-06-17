@@ -747,6 +747,16 @@ class TestLexer(TestCase):
             ["DOLLAR", "ID"]
         )
 
+    def test_query_in_parallel(self):
+        """"The parallel ID regex was to general and identified ? after
+            @obverse as an ID token not a QUERY"""
+        self.compare_tokens(
+            "@translation parallel en project\n" +
+            "@obverse?",
+            ["TRANSLATION", "PARALLEL", "ID", "PROJECT", "NEWLINE"] +
+            ["OBVERSE", "QUERY"]
+        )
+
     def test_loose_in_labeled(self):
         self.compare_tokens(
             "@translation labeled en project\n" +
