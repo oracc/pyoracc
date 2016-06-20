@@ -416,6 +416,26 @@ class TestParser(TestCase):
         )
         assert art.children[0].children[0].content == "Note to surface."
 
+    def test_dollar_unquantified_reverse(self):
+        art = self.try_parse(
+            "@tablet\n" +
+            "@obverse\n" +
+            "3.    U₄!-BI? 20* [(ina)] 9.30 ina(DIŠ) MAŠ₂!(BAR)\n" +
+            "$ missing lines\n"
+        )
+        assert art.children[0].children[1].state == "missing"
+        assert art.children[0].children[1].scope == "lines"
+
+    def test_dollar_unquantified(self):
+        art = self.try_parse(
+            "@tablet\n" +
+            "@obverse\n" +
+            "3.    U₄!-BI? 20* [(ina)] 9.30 ina(DIŠ) MAŠ₂!(BAR)\n" +
+            "$ columns broken\n"
+        )
+        assert art.children[0].children[1].state == "broken"
+        assert art.children[0].children[1].scope == "columns"
+
     def test_loose_dollar(self):
         art = self.try_parse(
             "@tablet\n" +
