@@ -507,11 +507,15 @@ class AtfParser(object):
     def p_plural_state_description_unquantified(self, p):
         """plural_state_description : plural_scope state
         """
+        # This should probably not be allowed but is happening in the corpus
+        # i.e. ""$ columns broken"
         p[0] = State(p[2], p[1])
 
     def p_plural_state_description_unquantified_reverse(self, p):
         """plural_state_description : state plural_scope
         """
+        # This should probably not be allowed but is happening in the corpus
+        # i.e. ""$ blank lines"
         p[0] = State(p[1], p[2])
 
     def p_plural_state_range_description(self, p):
