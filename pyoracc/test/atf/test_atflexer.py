@@ -767,6 +767,15 @@ class TestLexer(TestCase):
             ["OPENR", "ID", "ID", "CLOSER", "ID", "NEWLINE"]
         )
 
+    def test_ati_in_translation(self):
+        self.compare_tokens(
+            "@translation labeled en project\n" +
+            "@(r 2) I am\n" +
+            "@i{eššēšu-}festival\n",
+            ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE"] +
+            ["OPENR", "ID", "ID", "CLOSER", "ID", "NEWLINE"]
+        )
+
     def test_blank_after_para_transctrl_windows(self):
         """[...] should not exit the para state but did previously
            due to a not as stric regex """

@@ -463,7 +463,8 @@ class AtfLexer(object):
     # --- Rules for paragaph state----------------------------------
     # Free text, ended by double new line
 
-    terminates_para = "(\#|\@|\&|\Z|(^[0-9]+[\'\u2019\u2032\u02CA\xb4]?\.))"
+    terminates_para = \
+        "(\#|\@[^i][^\{]|\&|\Z|(^[0-9]+[\'\u2019\u2032\u02CA\xb4]?\.))"
 
     @lex.TOKEN(r'([^\^\n\r]|(\r?\n(?!\s*\r?\n)(?!' +
                terminates_para + ')))+')
@@ -481,7 +482,8 @@ class AtfLexer(object):
 
     # BUT, exceptionally to fix existing bugs in active members of corpus,
     # it is also ended by an @label or an @(), or a new document,
-    # Or a linelabel, or the end of the stream.
+    # Or a linelabel, or the end of the stream. Importantly it does not end
+    # by @i{xxx} which is used for un translated words.
     # and these tokens are not absorbed by this token
     # Translation paragraph state is ended by a double newline
     @lex.TOKEN(r'\r?\n(?=' + terminates_para + ')')
