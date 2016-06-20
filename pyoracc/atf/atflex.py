@@ -463,7 +463,8 @@ class AtfLexer(object):
     # --- Rules for paragaph state----------------------------------
     # Free text, ended by double new line
 
-    terminates_para = "(\#|\@[^i][^\{]|\&|\Z|(^[0-9]+[\'\u2019\u2032\u02CA\xb4]?\.))"
+    terminates_para = \
+        "(\#|\@[^i][^\{]|\&|\Z|(^[0-9]+[\'\u2019\u2032\u02CA\xb4]?\.))"
 
     @lex.TOKEN(r'([^\^\n\r]|(\r?\n(?!\s*\r?\n)(?!' +
                terminates_para + ')))+')
