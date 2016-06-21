@@ -115,6 +115,13 @@ class TestLexer(TestCase):
             ["BIB", "ID", "NEWLINE"]
         )
 
+    def test_bib_long(self):
+        # not documented but common
+        self.compare_tokens(
+            "#bib:  MEE 4 73 = EV a\n",
+            ["BIB", "ID", "EQUALS", "ID", "NEWLINE"]
+        )
+
     def test_link(self):
         self.compare_tokens(
             "#link: def A = P363716 = TCL 06, 44\n" +

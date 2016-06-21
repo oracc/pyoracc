@@ -62,6 +62,7 @@ class AtfParser(object):
                             | ATF USE LEXICAL newline
                             | key_statement
                             | BIB ID newline
+                            | BIB ID EQUALS ID newline
                             | lemmatizer_statement"""
 
     def p_key_statement(self, p):
