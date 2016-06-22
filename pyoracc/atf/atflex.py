@@ -119,7 +119,7 @@ class AtfLexer(object):
         keyword_tokens +
         base_tokens)))
 
-    state_names = [
+    exclusive_state_names = [
         'flagged',
         'text',
         'lemmatize',
@@ -132,7 +132,14 @@ class AtfLexer(object):
         'absorb'
     ]
 
-    states = [(state, 'exclusive') for state in state_names]
+    exculsive_states = [(state, 'exclusive') for state in exclusive_state_names]
+
+    inclusive_state_names = [
+        'score'
+    ]
+    inclusive_states = [(state, 'inclusive') for state in inclusive_state_names]
+
+    states = exculsive_states + inclusive_states
 
     t_AMPERSAND = "\&"
     t_HASH = "\#"
@@ -216,6 +223,9 @@ class AtfLexer(object):
         if t.type == "TRANSLATION":
             t.lexer.push_state("transctrl")
 
+        if t.type == "SCORE":
+            t.lexer.push_state('score')
+
         if t.type in AtfLexer.long_argument_structures + ["NOTE"]:
             t.lexer.push_state('flagged')
         if t.type is None:
@@ -274,8 +284,8 @@ class AtfLexer(object):
         t.lexer.push_state('text')
         return t
 
-    def t_SCORELABEL(self, t):
-        r'^[^.:\ \t]*\:'
+    def t_score_SCORELABEL(self, t):
+        r'^[^.:\ \t\#][^.:\ \t]*\:'
         t.value = t.value[:-1]
         t.lexer.push_state('text')
         return t
