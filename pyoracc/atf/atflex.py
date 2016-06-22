@@ -132,14 +132,14 @@ class AtfLexer(object):
         'absorb'
     ]
 
-    exculsive_states = [(state, 'exclusive') for state in exclusive_state_names]
+    exc_states = [(state, 'exclusive') for state in exclusive_state_names]
 
     inclusive_state_names = [
         'score'
     ]
-    inclusive_states = [(state, 'inclusive') for state in inclusive_state_names]
+    inc_states = [(state, 'inclusive') for state in inclusive_state_names]
 
-    states = exculsive_states + inclusive_states
+    states = exc_states + inc_states
 
     t_AMPERSAND = "\&"
     t_HASH = "\#"
