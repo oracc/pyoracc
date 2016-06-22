@@ -20,8 +20,8 @@ def test_tiny():
 @slow
 def test_sample():
     corpus = Corpus(source=sample_corpus())
-    assert corpus.successes == 36
-    assert corpus.failures == 3
+    assert corpus.successes == 37
+    assert corpus.failures == 2
 
 
 @pytest.mark.skipif(not whole_corpus(),
@@ -32,5 +32,5 @@ def test_sample():
 def test_whole():
     corpus = Corpus(source=whole_corpus())
     # there is a total of 2868 files in the corpus
-    assert corpus.successes == 2613
-    assert corpus.failures == 255
+    assert corpus.successes == 2646
+    assert corpus.failures == 222
