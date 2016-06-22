@@ -208,6 +208,24 @@ class TestParser(TestCase):
         assert isinstance(art.children[0].children[0].children[0], Line)
         assert isinstance(art.children[0].children[1].children[0], Line)
 
+    def test_score_simple(self):
+        art = self.try_parse(
+            "&X001001 = My Text\n" +
+            "@score matrix parsed\n" +
+            "@tablet\n" +
+            "@obverse\n" +
+            "1. line one\n" +
+            "A₁_obv_i_4′: line one again\n"
+        )
+        assert isinstance(art, Text)
+        assert isinstance(art.children[0], OraccObject)
+        assert isinstance(art.children[0].children[0], OraccObject)
+        assert art.children[0].children[0].objecttype == "obverse"
+        assert isinstance(art.children[0].children[0].children[0], Line)
+        assert isinstance(art.children[0].children[0].children[1], Line)
+        assert art.children[0].children[0].children[1].words == \
+            'line one again'.split()
+
     def test_complex_substructure(self):
         art = self.try_parse(
             "&X001001 = My Text\n" +
