@@ -23,7 +23,8 @@ class Corpus(object):
 
                             self.successes += 1
                             print("OK")
-                        except SyntaxError as e:
+                        except (SyntaxError, IndexError, AttributeError,
+                                UnicodeDecodeError) as e:
                             self.texts.append(None)
                             self.failures += 1
                             print("Failed with message: '{}'".format(e))
