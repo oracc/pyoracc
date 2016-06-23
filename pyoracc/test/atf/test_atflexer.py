@@ -658,6 +658,7 @@ class TestLexer(TestCase):
 
     def test_score_lines(self):
         self.compare_tokens(
+            "@score matrix parsed\n" +
             "1.4′. %n ḫašḫūr [api] lal[laga imḫur-līm?]\n" +
             "#lem: ḫašḫūr[apple (tree)]N; api[reed-bed]N\n\n" +
             "A₁_obv_i_4′: [x x x x x] {ú}la-al-[la-ga? {ú}im-ḫu-ur-lim?]\n" +
@@ -666,6 +667,7 @@ class TestLexer(TestCase):
             "e_obv_15′–16′: {giš}ḪAŠḪUR [GIŠ.GI] — // [{ú}IGI-lim]\n" +
             "#lem: +hašhūru[apple (tree)]N$hašhūr; api[reed-bed]N;" +
             " imhur-līm['heals-a-thousand'-plant]N\n\n",
+            ['SCORE', 'ID', 'ID', "NEWLINE"] +
             ['LINELABEL'] + ['ID'] * 5 + ['NEWLINE'] +
             ['LEM', 'ID', 'SEMICOLON', 'ID', 'NEWLINE'] +
             ['SCORELABEL'] + ['ID'] * 7 + ['NEWLINE'] +

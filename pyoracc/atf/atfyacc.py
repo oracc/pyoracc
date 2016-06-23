@@ -278,6 +278,11 @@ class AtfParser(object):
         p[0] = Line(p[1])
         p[0].words.append(p[2])
 
+    def p_scorelabel(self, p):
+        "line_sequence : SCORELABEL ID"
+        p[0] = Line(p[1])
+        p[0].words.append(p[2])
+
     def p_line_id(self, p):
         "line_sequence : line_sequence ID"
         p[0] = p[1]
