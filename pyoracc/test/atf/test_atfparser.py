@@ -887,6 +887,19 @@ class TestParser(TestCase):
         assert link.code == "P363716"
         assert link.description == "TCL 06, 44"
 
+    def test_link_source(self):
+        text = self.try_parse(
+            "&Q002769 = SB Anzu 1\n" +
+            "#link: source rinap/sources:P345512 = BM 078223\n" +
+            "@tablet\n" +
+            "1. Some text\n"
+        )
+        link = text.links[0]
+        assert isinstance(link, Link)
+        assert link.label is None
+        assert link.code == "rinap/sources:P345512"
+        assert link.description == "BM 078223"
+
     def test_link_declaration_parallel(self):
         text = self.try_parse(
             "&Q002769 = SB Anzu 1\n" +

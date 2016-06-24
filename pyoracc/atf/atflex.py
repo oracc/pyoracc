@@ -64,7 +64,7 @@ class AtfLexer(object):
                  "KEY", "BIB", "TR", 'CHECK', 'LEMMATIZER', 'VERSION', 'VAR']
 
     protocol_keywords = ['LANG', 'USE', 'MATH', 'LEGACY', 'MYLINES',
-                         'LEXICAL', 'UNICODE', 'DEF']
+                         'LEXICAL', 'UNICODE', 'DEF', "SOURCE"]
 
     translation_keywords = ['PARALLEL', 'PROJECT', "LABELED"]
 
