@@ -167,6 +167,16 @@ class TestParser(TestCase):
         assert isinstance(obj.children[0], OraccObject)
         assert obj.children[0].objecttype == "obverse"
 
+    def test_substructure_sealing(self):
+        obj = self.try_parse(
+            "@sealings\n" +
+            "@top\n"
+        )
+        assert isinstance(obj, OraccObject)
+        assert obj.objecttype == "sealings"
+        assert isinstance(obj.children[0], OraccObject)
+        assert obj.children[0].objecttype == "top"
+
     def test_triple_substructure(self):
         art = self.try_parse(
             "&X001001 = My Text\n" +
