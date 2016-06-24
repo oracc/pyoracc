@@ -31,6 +31,8 @@ def test_sample():
 @slow
 def test_whole():
     corpus = Corpus(source=whole_corpus())
-    # there is a total of 2868 files in the corpus
-    assert corpus.successes == 2646
-    assert corpus.failures == 222
+    # there is a total of 8229 files in the corpus
+    # We have ommmited lacost/00atf/cdliatf_unblocked.atf
+    # which is 61 MB and this to large to fit in the git repository
+    assert corpus.successes == 6079
+    assert corpus.failures == 2150
