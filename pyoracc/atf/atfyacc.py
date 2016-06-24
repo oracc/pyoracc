@@ -88,6 +88,12 @@ class AtfParser(object):
         "link : LINK DEF ID EQUALS ID EQUALS ID newline"
         p[0] = Link(p[3], p[5], p[7])
 
+    def p_link_source(self, p):
+        "link : LINK SOURCE ID EQUALS ID newline"
+        # Not documented but fairly common ca 600
+        # texts in the full corpus
+        p[0] = Link(code=p[3], description=p[5])
+
     def p_link_parallel(self, p):
         "link : LINK PARALLEL ID EQUALS ID newline"
         p[0] = Link(None, p[3], p[5])
