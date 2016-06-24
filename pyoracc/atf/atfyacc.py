@@ -202,7 +202,8 @@ class AtfParser(object):
         '''object_specifier : TABLET
                             | ENVELOPE
                             | PRISM
-                            | BULLA'''
+                            | BULLA
+                            | SEALINGS'''
         p[0] = OraccObject(p[1])
 
     def p_object_label(self, p):
@@ -790,8 +791,8 @@ class AtfParser(object):
     precedence = (
         # LOW precedence
         ('nonassoc', 'TRANSLATIONEND'),
-        ('nonassoc', 'TABLET', 'ENVELOPE', 'PRISM', 'BULLA', 'FRAGMENT',
-            'OBJECT', 'MULTI'),
+        ('nonassoc', 'TABLET', 'ENVELOPE', 'PRISM', 'BULLA', 'SEALINGS',
+            'FRAGMENT', 'OBJECT', 'MULTI'),
         ('nonassoc', 'OBVERSE', 'REVERSE', 'LEFT', 'RIGHT', 'TOP', 'BOTTOM',
             'FACE',
             'SURFACE', 'EDGE', 'COLUMN', 'SEAL', 'HEADING', 'LINE'),

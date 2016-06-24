@@ -43,6 +43,7 @@ class AtfLexer(object):
         'EDGE',
         'COLUMN',
         'SEAL',
+        'SEALINGS',
         'WITNESSES',
         'TRANSLATION',
         'NOTE',
