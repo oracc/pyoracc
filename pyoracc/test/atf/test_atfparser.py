@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 '''
 Copyright 2015, 2016 University College London.
 
@@ -17,8 +18,6 @@ You should have received a copy of the GNU General Public License
 along with PyORACC. If not, see <http://www.gnu.org/licenses/>.
 '''
 
-
-# -*- coding: utf-8 -*-
 
 from unittest import TestCase, skip
 import pytest

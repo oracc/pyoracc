@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 '''
 Copyright 2015, 2016 University College London.
 
@@ -18,7 +19,6 @@ along with PyORACC. If not, see <http://www.gnu.org/licenses/>.
 '''
 
 
-# -*- coding: utf-8 -*-
 from __future__ import print_function
 import sys
 from itertools import repeat
