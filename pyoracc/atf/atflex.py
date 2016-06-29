@@ -565,6 +565,7 @@ class AtfLexer(object):
             fstring = fstring.encode('UTF-8')
             valuestring = valuestring.encode('UTF-8')
         if self.skipinvalid:
+            t.lexer.skip(1)
             warnings.warn(fstring, UserWarning)
             return
         else:
