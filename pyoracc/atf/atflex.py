@@ -257,7 +257,8 @@ class AtfLexer(object):
                 warnings.warn(formatstring, UserWarning)
                 return
             else:
-                raise SyntaxError(formatstring)
+                raise SyntaxError(formatstring,
+                                  (None, t.lineno, t.lexpos, t.value[0]))
         return t
 
     def t_labeled_OPENR(self, t):
@@ -296,7 +297,8 @@ class AtfLexer(object):
                 warnings.warn(formatstring, UserWarning)
                 return
             else:
-                raise SyntaxError(formatstring)
+                raise SyntaxError(formatstring,
+                                  (None, t.lineno, t.lexpos, t.value[0]))
         return t
 
     def t_LINELABEL(self, t):
@@ -560,7 +562,7 @@ class AtfLexer(object):
             t.lexer.skip(1)
             warnings.warn(fstring, UserWarning)
         else:
-            raise SyntaxError(fstring)
+            raise SyntaxError(fstring, (None, t.lineno, t.lexpos, t.value[0]))
 
     def __init__(self, skipinvalid=False, debug=0):
         self.skipinvalid = skipinvalid

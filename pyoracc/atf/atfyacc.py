@@ -825,9 +825,13 @@ class AtfParser(object):
     )
 
     def p_error(self, p):
-        formatstring = u"PyOracc could not parse token '{}'".format(p)
+        formatstring = u"PyOracc could not parse token '{}'.".format(p)
+        valuestring = p.value
         if _pyversion() == 2:
             formatstring = formatstring.encode('UTF-8')
-        raise SyntaxError(formatstring)
+            valuestring = valuestring.encode('UTF-8')
+        raise SyntaxError(formatstring,
+                          (None, p.lineno, p.lexpos, valuestring))
         # All errors currently unrecoverable
         # So just throw
+        # Add list of params so PyORACC users can build their own error msgs.
