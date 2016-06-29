@@ -251,13 +251,16 @@ class AtfLexer(object):
             t.lexer.push_state('flagged')
         if t.type is None:
             formatstring = u"Illegal @STRING '{}'".format(t.value)
+            valuestring = t.value
             if _pyversion() == 2:
                 formatstring = formatstring.encode('UTF-8')
+                valuestring = valuestring.encode('UTF-8')
             if self.skipinvalid:
                 warnings.warn(formatstring, UserWarning)
                 return
             else:
-                raise SyntaxError(formatstring)
+                raise SyntaxError(formatstring,
+                                  (None, t.lineno, t.lexpos, valuestring))
         return t
 
     def t_labeled_OPENR(self, t):
@@ -290,13 +293,16 @@ class AtfLexer(object):
             t.lexer.push_state('para')
         if t.type is None:
             formatstring = u"Illegal #STRING '{}'".format(t.value)
+            valuestring = t.value
             if _pyversion() == 2:
                 formatstring = formatstring.encode('UTF-8')
+                valuestring = valuestring.encode('UTF-8')
             if self.skipinvalid:
                 warnings.warn(formatstring, UserWarning)
                 return
             else:
-                raise SyntaxError(formatstring)
+                raise SyntaxError(formatstring,
+                                  (None, t.lineno, t.lexpos, valuestring))
         return t
 
     def t_LINELABEL(self, t):
@@ -554,13 +560,17 @@ class AtfLexer(object):
     # Error handling rule
     def t_ANY_error(self, t):
         fstring = u"PyOracc got an illegal character '{}'".format(t.value[0])
+        valuestring = t.value
         if _pyversion() == 2:
             fstring = fstring.encode('UTF-8')
+            valuestring = valuestring.encode('UTF-8')
         if self.skipinvalid:
             t.lexer.skip(1)
             warnings.warn(fstring, UserWarning)
+            return
         else:
-            raise SyntaxError(fstring)
+            raise SyntaxError(fstring,
+                              (None, t.lineno, t.lexpos, valuestring))
 
     def __init__(self, skipinvalid=False, debug=0):
         self.skipinvalid = skipinvalid
