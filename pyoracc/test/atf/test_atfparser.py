@@ -142,6 +142,14 @@ class TestParser(TestCase):
         )
         assert isinstance(obj, Text)
 
+    def test_seal(self):
+        obj = self.try_parse(
+            "@seal 1\n" +
+            "@label 1\n" +
+            "Seal of Muranu.\n"
+        )
+        assert obj.objecttype == "seal"
+
     def test_simple_object(self):
         obj = self.try_parse(
             "@tablet\n"
