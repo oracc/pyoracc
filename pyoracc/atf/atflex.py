@@ -572,6 +572,7 @@ class AtfLexer(object):
             raise SyntaxError(fstring,
                               (None, t.lineno, t.lexpos, valuestring))
 
-    def __init__(self, skipinvalid=False, debug=0):
+    def __init__(self, skipinvalid=False, debug=0, optimize=0):
         self.skipinvalid = skipinvalid
-        self.lexer = lex.lex(module=self, reflags=re.MULTILINE, debug=debug)
+        self.lexer = lex.lex(module=self, reflags=re.MULTILINE, debug=debug,
+                             optimize=optimize)
