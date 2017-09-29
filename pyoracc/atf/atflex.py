@@ -389,7 +389,8 @@ class AtfLexer(object):
             t.lexer.push_state('transctrl')
 
         if t.type in set(AtfLexer.structures +
-                         AtfLexer.long_argument_structures) - set(["NOTE"]):
+                         AtfLexer.long_argument_structures) - set(["NOTE",
+                                                                   "SEAL"]):
             # Since @structure tokens are so important to the grammar,
             # the keywords refering to structural elements in strict dollar
             # lines must be DIFFERENT TOKENS IN THE LEXER
