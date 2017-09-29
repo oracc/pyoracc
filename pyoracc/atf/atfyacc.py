@@ -291,7 +291,8 @@ class AtfParser(object):
         """dollar          : ruling_statement
                            | loose_dollar_statement
                            | strict_dollar_statement
-                           | simple_dollar_statement"""
+                           | simple_dollar_statement
+                           | seal_statement"""
         p[0] = p[1]
 
     def p_surface_line(self, p):
@@ -458,6 +459,15 @@ class AtfParser(object):
     def p_ruling_statement(self, p):
         "ruling_statement : ruling newline"
         p[0] = p[1]
+
+    def p_seal_statement(self, p):
+        "seal_statement : seal newline"
+        p[0] = p[1]
+
+    def p_seal(self,p):
+        """seal : DOLLAR SEAL
+                | DOLLAR SEAL ID"""
+        p[0] = None    
 
     def p_ruling(self, p):
         """ruling : DOLLAR SINGLE RULING
