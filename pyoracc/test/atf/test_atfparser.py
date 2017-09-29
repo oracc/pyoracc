@@ -144,8 +144,10 @@ class TestParser(TestCase):
 
     def test_seal(self):
         obj = self.try_parse(
+            "@tablet\n" +
             "@seal 1\n" +
-            "@label 1\n" +
+            "@translation labeled en project\n" +
+            "@label seal 1\n" +
             "Seal of Muranu.\n"
         )
         assert obj.objecttype == "seal"
