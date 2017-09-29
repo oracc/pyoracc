@@ -94,7 +94,8 @@ class AtfLexer(object):
         'SEVERAL', 'SOME', 'REST', 'OF', 'START', 'BEGINNING', 'MIDDLE', 'END',
         'COLUMNS', 'LINE', 'LINES', 'CASE', 'CASES', 'SURFACE', 'SPACE',
         'BLANK', 'BROKEN', 'EFFACED', 'ILLEGIBLE', 'MISSING', 'TRACES',
-        'RULING', 'SINGLE', 'DOUBLE', 'TRIPLE', 'AT']
+        'RULING', 'SINGLE', 'DOUBLE', 'TRIPLE', 'AT',
+        'SEAL']
 
     base_tokens = [
         'AMPERSAND',
