@@ -48,6 +48,7 @@ setup(name='pyoracc',
                 'pyoracc/test/fixtures'],
       install_requires=['mako', 'ply'],
       setup_requires=['mako', 'ply'],
+      dependency_links=['https://pypi.python.org/simple/']
       package_data={'pyoracc': ['test/fixtures/*/*.atf']},
       zip_safe=False,
       cmdclass=dict(build_py=MyBuildPy)
