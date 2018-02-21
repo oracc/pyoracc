@@ -141,7 +141,7 @@ class AtfLexer(object):
             t.lexer.push_state('nonequals')
 
         if t.type == "END":
-            if not(self.skipinvalid) or t.lexer.current_state() != 'INITIAL':
+            if not self.skipinvalid or t.lexer.current_state() != 'INITIAL':
                 t.lexer.pop_state()
             t.lexer.push_state('transctrl')
 

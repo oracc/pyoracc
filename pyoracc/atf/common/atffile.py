@@ -42,10 +42,9 @@ class AtfFile(object):
         return AtfFile.template.render_unicode(**vars(self))
 
 
-def _debug_lex_and_yac_file(file, debug=0, skipinvalid=False):
+def _debug_lex_and_yac_file(infile, debug=0, skipinvalid=False):
     import codecs
-    text = codecs.open(file, encoding='utf-8-sig').read()
-    from pyoracc.atf.common.atffile import AtfLexer
+    text = codecs.open(infile, encoding='utf-8-sig').read()
     lexer = AtfLexer(debug=debug, skipinvalid=skipinvalid).lexer
     lexer.input(text)
     for tok in lexer:

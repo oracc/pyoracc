@@ -20,7 +20,7 @@ along with PyORACC. If not, see <http://www.gnu.org/licenses/>.
 
 import ply.yacc as yacc
 from pyoracc import _pyversion
-from .atflex import AtfLexer
+from pyoracc.atf.common.atflexicon import AtfLexicon
 
 from pyoracc.model.comment import Comment
 from pyoracc.model.composite import Composite
@@ -40,7 +40,7 @@ from pyoracc.model.translation import Translation
 
 
 class AtfParser(object):
-    tokens = AtfLexer.tokens
+    tokens = AtfLexicon.TOKENS
 
     def __init__(self, tabmodule='pyoracc.atf.parsetab'):
         self.parser = yacc.yacc(module=self, tabmodule=tabmodule)
