@@ -25,6 +25,7 @@ import ply.lex as lex
 import re
 import warnings
 from pyoracc import _pyversion
+from pyoracc.atf.common.atflexicon import AtfLexicon
 
 
 class AtfLexer(object):
@@ -42,125 +43,32 @@ class AtfLexer(object):
         source = self._keyword_dict(source, extra)
         return source.get(value, fallback)
 
-    structures = [
-        'TABLET',
-        'ENVELOPE',
-        'PRISM',
-        'BULLA',
-        'OBVERSE',
-        'REVERSE',
-        'LEFT',
-        'RIGHT',
-        'TOP',
-        'BOTTOM',
-        'CATCHLINE',
-        'COLOPHON',
-        'DATE',
-        'SIGNATURES',
-        'SIGNATURE',
-        'SUMMARY',
-        'FACE',
-        'EDGE',
-        'COLUMN',
-        'SEAL',
-        'SEALINGS',
-        'WITNESSES',
-        'TRANSLATION',
-        'NOTE',
-        'M',
-        'COMPOSITE',
-        'LABEL',
-        'INCLUDE',
-        'SCORE'
-    ]
+    structures = AtfLexicon.STRUCTURES
 
-    long_argument_structures = [
-        'OBJECT',
-        'SURFACE',
-        'FRAGMENT',
-        'HEADING'
-    ]
+    long_argument_structures = AtfLexicon.LONG_ARGUMENT_STRUCTURES
 
-    protocols = ['ATF', 'LEM', 'PROJECT', 'NOTE', "LINK",
-                 "KEY", "BIB", "TR", 'CHECK', 'LEMMATIZER', 'VERSION', 'VAR']
+    protocols = AtfLexicon.PROTOCOLS
 
-    protocol_keywords = ['LANG', 'USE', 'MATH', 'LEGACY', 'MYLINES',
-                         'LEXICAL', 'UNICODE', 'DEF', "SOURCE"]
+    protocol_keywords = AtfLexicon.PROTOCOL_KEYWORDS
 
-    translation_keywords = ['PARALLEL', 'PROJECT', "LABELED"]
+    translation_keywords = AtfLexicon.TRANSLATION_KEYWORDS
 
-    dollar_keywords = [
-        'MOST', 'LEAST', 'ABOUT',
-        'SEVERAL', 'SOME', 'REST', 'OF', 'START', 'BEGINNING', 'MIDDLE', 'END',
-        'COLUMNS', 'LINE', 'LINES', 'CASE', 'CASES', 'SURFACE', 'SPACE',
-        'BLANK', 'BROKEN', 'EFFACED', 'ILLEGIBLE', 'MISSING', 'TRACES',
-        'RULING', 'SINGLE', 'DOUBLE', 'TRIPLE', 'AT']
+    dollar_keywords = AtfLexicon.DOLLAR_KEYWORDS
 
-    base_tokens = [
-        'AMPERSAND',
-        'LINELABEL',
-        'SCORELABEL',
-        'ID',
-        'DOLLAR',
-        'PARENTHETICALID',
-        'HAT',
-        'SEMICOLON',
-        'EQUALS',
-        'MULTILINGUAL',
-        'LSQUARE',
-        'RSQUARE',
-        'EXCLAIM',
-        'QUERY',
-        'STAR',
-        'RANGE',
-        'HASH',
-        'NEWLINE',
-        'REFERENCE',
-        'MINUS',
-        'FROM',
-        'TO',
-        'PARBAR',
-        'OPENR',
-        'CLOSER',
-        'COMMA',
-        'COMMENT',
-        'EQUALBRACE'
-    ]
+    base_tokens = AtfLexicon.BASE_TOKENS
 
-    keyword_tokens = sorted(list(set(
-        structures +
-        long_argument_structures +
-        protocols +
-        protocol_keywords +
-        dollar_keywords +
-        translation_keywords
-    )))
+    keyword_tokens = AtfLexicon.KEYWORD_TOKENS
 
-    tokens = sorted(list(set(
-        keyword_tokens +
-        base_tokens)))
+    tokens = AtfLexicon.TOKENS
 
-    exclusive_state_names = [
-        'flagged',
-        'text',
-        'lemmatize',
-        'nonequals',
-        'parallel',  # translation
-        'labeled',  # translation
-        'interlinear',  # translation
-        'transctrl',
-        'para',
-        'absorb'
-    ]
+    exclusive_state_names = AtfLexicon.EXCLUSIVE_STATE_NAMES
 
-    exc_states = [(state, 'exclusive') for state in exclusive_state_names]
+    exc_states = AtfLexicon.EXC_STATES
 
-    inclusive_state_names = [
-        'score'
-    ]
-    inc_states = [(state, 'inclusive') for state in inclusive_state_names]
+    inclusive_state_names = AtfLexicon.INCLUSIVE_STATE_NAMES
+    inc_states = AtfLexicon.INC_STATES
 
-    states = exc_states + inc_states
+    states = AtfLexicon.STATES
 
     t_AMPERSAND = "\&"
     t_HASH = "\#"
