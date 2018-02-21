@@ -22,7 +22,7 @@ from __future__ import print_function
 import sys
 import os
 import codecs
-from ..atf.atffile import AtfFile
+from pyoracc.atf.common.atffile import AtfFile
 
 
 class Corpus(object):

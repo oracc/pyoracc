@@ -22,21 +22,21 @@ import ply.yacc as yacc
 from pyoracc import _pyversion
 from .atflex import AtfLexer
 
-from ..model.comment import Comment
-from ..model.composite import Composite
-from ..model.line import Line
-from ..model.link import Link
-from ..model.link_reference import LinkReference
-from ..model.milestone import Milestone
-from ..model.multilingual import Multilingual
-from ..model.note import Note
-from ..model.oraccnamedobject import OraccNamedObject
-from ..model.oraccobject import OraccObject
-from ..model.ruling import Ruling
-from ..model.score import Score
-from ..model.state import State
-from ..model.text import Text
-from ..model.translation import Translation
+from pyoracc.model.comment import Comment
+from pyoracc.model.composite import Composite
+from pyoracc.model.line import Line
+from pyoracc.model.link import Link
+from pyoracc.model.link_reference import LinkReference
+from pyoracc.model.milestone import Milestone
+from pyoracc.model.multilingual import Multilingual
+from pyoracc.model.note import Note
+from pyoracc.model.oraccnamedobject import OraccNamedObject
+from pyoracc.model.oraccobject import OraccObject
+from pyoracc.model.ruling import Ruling
+from pyoracc.model.score import Score
+from pyoracc.model.state import State
+from pyoracc.model.text import Text
+from pyoracc.model.translation import Translation
 
 
 class AtfParser(object):

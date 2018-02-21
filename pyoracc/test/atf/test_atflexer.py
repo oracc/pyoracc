@@ -20,11 +20,10 @@ along with PyORACC. If not, see <http://www.gnu.org/licenses/>.
 
 
 from __future__ import print_function
-import sys
 from itertools import repeat
 from unittest import TestCase
 import pytest
-from ...atf.atflex import AtfLexer
+from pyoracc.atf.common.atflex import AtfLexer
 from pyoracc import _pyversion
 if _pyversion() == 2:
     from itertools import izip_longest as zip_longest
