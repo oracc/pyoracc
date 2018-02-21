@@ -17,7 +17,6 @@ You should have received a copy of the GNU General Public License
 along with PyORACC. If not, see <http://www.gnu.org/licenses/>.
 '''
 
-
 from __future__ import print_function
 import sys
 import os
@@ -26,12 +25,14 @@ from pyoracc.atf.common.atffile import AtfFile
 
 
 class Corpus(object):
-    def __init__(self, pattern="*.atf", **kwargs):
+    def __init__(self, **kwargs):
         self.texts = []
         self.failures = 0
         self.successes = 0
+        self.atftype = kwargs['atftype']
+        self.source = kwargs['source']
         if 'source' in kwargs:
-            for dirpath, _, files in os.walk(kwargs['source']):
+            for dirpath, _, files in os.walk(self.source):
                 for file in files:
                     if file.endswith('.atf'):
                         try:
@@ -39,7 +40,7 @@ class Corpus(object):
                             print("Parsing file", path, "... ", end="")
                             content = codecs.open(path,
                                                   encoding='utf-8-sig').read()
-                            self.texts.append(AtfFile(content))
+                            self.texts.append(AtfFile(content, self.atftype))
 
                             self.successes += 1
                             print("OK")
@@ -51,9 +52,12 @@ class Corpus(object):
 
 
 if __name__ == '__main__':
-    corpus = Corpus(source=sys.argv[1])
-    print()
-    print("Failed with ", corpus.failures, " out of ",
-          corpus.failures + corpus.successes, "(",
-          corpus.failures * 100.0 / (corpus.failures + corpus.successes),
-          "%)")
+    try:
+        corpus = Corpus(atftype=sys.argv[1], source=sys.argv[2])
+        print()
+        print("Failed with ", corpus.failures, " out of ",
+              corpus.failures + corpus.successes, "(",
+              corpus.failures * 100.0 / (corpus.failures + corpus.successes),
+              "%)")
+    except IndexError:
+        print("Input both atffile type and file source like 'python  -m pyoracc.model.corpus cdli ./pyoracc/test/data'")
