@@ -8,9 +8,9 @@ class AtfCDLIParser(AtfParser):
     tokens = AtfParser.tokens
     precedence = AtfParser.precedence
 
-    def __init__(self, tabmodule='pyoracc.atf.parsetab'):
+    def __init__(self, tabmodule='pyoracc.atf.parsetab', debug=0):
         super(AtfCDLIParser, self).__init__(tabmodule)
-        self.parser = yacc.yacc(module=self, tabmodule=tabmodule)
+        self.parser = yacc.yacc(module=self, tabmodule=tabmodule, debug=debug)
 
     def p_document(self, p):
         """document : text

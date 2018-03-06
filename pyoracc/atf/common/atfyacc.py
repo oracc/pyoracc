@@ -42,8 +42,8 @@ from pyoracc.model.translation import Translation
 class AtfParser(object):
     tokens = AtfLexicon.TOKENS
 
-    def __init__(self, tabmodule='pyoracc.atf.parsetab'):
-        self.parser = yacc.yacc(module=self, tabmodule=tabmodule)
+    def __init__(self, tabmodule='pyoracc.atf.parsetab', debug=0):
+        self.parser = yacc.yacc(module=self, tabmodule=tabmodule, debug=debug)
 
     def p_document(self, p):
         """document : text

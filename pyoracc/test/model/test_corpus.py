@@ -32,14 +32,14 @@ slow = pytest.mark.skipif(
 
 
 def test_tiny():
-    corpus = Corpus(source=tiny_corpus())
+    corpus = Corpus(source=tiny_corpus(), atftype='oracc')
     assert corpus.successes == 1
     assert corpus.failures == 1
 
 
 @slow
 def test_sample():
-    corpus = Corpus(source=sample_corpus())
+    corpus = Corpus(source=sample_corpus(), atftype='oracc')
     assert corpus.successes == 37
     assert corpus.failures == 2
 
@@ -50,7 +50,7 @@ def test_sample():
                            "pyoracc")
 @slow
 def test_whole():
-    corpus = Corpus(source=whole_corpus())
+    corpus = Corpus(source=whole_corpus(), atftype='oracc')
     # there is a total of 8229 files in the corpus
     # We have ommmited lacost/00atf/cdliatf_unblocked.atf
     # which is 61 MB and this to large to fit in the git repository
