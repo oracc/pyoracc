@@ -17,7 +17,6 @@ You should have received a copy of the GNU General Public License
 along with PyORACC. If not, see <http://www.gnu.org/licenses/>.
 '''
 
-
 # -*- coding: utf-8 -*-
 from __future__ import print_function
 
@@ -25,6 +24,7 @@ import ply.lex as lex
 import re
 import warnings
 from pyoracc import _pyversion
+from pyoracc.atf.common.atflexicon import AtfLexicon
 
 
 class AtfLexer(object):
@@ -42,125 +42,32 @@ class AtfLexer(object):
         source = self._keyword_dict(source, extra)
         return source.get(value, fallback)
 
-    structures = [
-        'TABLET',
-        'ENVELOPE',
-        'PRISM',
-        'BULLA',
-        'OBVERSE',
-        'REVERSE',
-        'LEFT',
-        'RIGHT',
-        'TOP',
-        'BOTTOM',
-        'CATCHLINE',
-        'COLOPHON',
-        'DATE',
-        'SIGNATURES',
-        'SIGNATURE',
-        'SUMMARY',
-        'FACE',
-        'EDGE',
-        'COLUMN',
-        'SEAL',
-        'SEALINGS',
-        'WITNESSES',
-        'TRANSLATION',
-        'NOTE',
-        'M',
-        'COMPOSITE',
-        'LABEL',
-        'INCLUDE',
-        'SCORE'
-    ]
+    structures = AtfLexicon.STRUCTURES
 
-    long_argument_structures = [
-        'OBJECT',
-        'SURFACE',
-        'FRAGMENT',
-        'HEADING'
-    ]
+    long_argument_structures = AtfLexicon.LONG_ARGUMENT_STRUCTURES
 
-    protocols = ['ATF', 'LEM', 'PROJECT', 'NOTE', "LINK",
-                 "KEY", "BIB", "TR", 'CHECK', 'LEMMATIZER', 'VERSION', 'VAR']
+    protocols = AtfLexicon.PROTOCOLS
 
-    protocol_keywords = ['LANG', 'USE', 'MATH', 'LEGACY', 'MYLINES',
-                         'LEXICAL', 'UNICODE', 'DEF', "SOURCE"]
+    protocol_keywords = AtfLexicon.PROTOCOL_KEYWORDS
 
-    translation_keywords = ['PARALLEL', 'PROJECT', "LABELED"]
+    translation_keywords = AtfLexicon.TRANSLATION_KEYWORDS
 
-    dollar_keywords = [
-        'MOST', 'LEAST', 'ABOUT',
-        'SEVERAL', 'SOME', 'REST', 'OF', 'START', 'BEGINNING', 'MIDDLE', 'END',
-        'COLUMNS', 'LINE', 'LINES', 'CASE', 'CASES', 'SURFACE', 'SPACE',
-        'BLANK', 'BROKEN', 'EFFACED', 'ILLEGIBLE', 'MISSING', 'TRACES',
-        'RULING', 'SINGLE', 'DOUBLE', 'TRIPLE', 'AT']
+    dollar_keywords = AtfLexicon.DOLLAR_KEYWORDS
 
-    base_tokens = [
-        'AMPERSAND',
-        'LINELABEL',
-        'SCORELABEL',
-        'ID',
-        'DOLLAR',
-        'PARENTHETICALID',
-        'HAT',
-        'SEMICOLON',
-        'EQUALS',
-        'MULTILINGUAL',
-        'LSQUARE',
-        'RSQUARE',
-        'EXCLAIM',
-        'QUERY',
-        'STAR',
-        'RANGE',
-        'HASH',
-        'NEWLINE',
-        'REFERENCE',
-        'MINUS',
-        'FROM',
-        'TO',
-        'PARBAR',
-        'OPENR',
-        'CLOSER',
-        'COMMA',
-        'COMMENT',
-        'EQUALBRACE'
-    ]
+    base_tokens = AtfLexicon.BASE_TOKENS
 
-    keyword_tokens = sorted(list(set(
-        structures +
-        long_argument_structures +
-        protocols +
-        protocol_keywords +
-        dollar_keywords +
-        translation_keywords
-    )))
+    keyword_tokens = AtfLexicon.KEYWORD_TOKENS
 
-    tokens = sorted(list(set(
-        keyword_tokens +
-        base_tokens)))
+    tokens = AtfLexicon.TOKENS
 
-    exclusive_state_names = [
-        'flagged',
-        'text',
-        'lemmatize',
-        'nonequals',
-        'parallel',  # translation
-        'labeled',  # translation
-        'interlinear',  # translation
-        'transctrl',
-        'para',
-        'absorb'
-    ]
+    exclusive_state_names = AtfLexicon.EXCLUSIVE_STATE_NAMES
 
-    exc_states = [(state, 'exclusive') for state in exclusive_state_names]
+    exc_states = AtfLexicon.EXC_STATES
 
-    inclusive_state_names = [
-        'score'
-    ]
-    inc_states = [(state, 'inclusive') for state in inclusive_state_names]
+    inclusive_state_names = AtfLexicon.INCLUSIVE_STATE_NAMES
+    inc_states = AtfLexicon.INC_STATES
 
-    states = exc_states + inc_states
+    states = AtfLexicon.STATES
 
     t_AMPERSAND = "\&"
     t_HASH = "\#"
@@ -233,7 +140,7 @@ class AtfLexer(object):
             t.lexer.push_state('nonequals')
 
         if t.type == "END":
-            if not(self.skipinvalid) or t.lexer.current_state() != 'INITIAL':
+            if not self.skipinvalid or t.lexer.current_state() != 'INITIAL':
                 t.lexer.pop_state()
             t.lexer.push_state('transctrl')
 
@@ -336,7 +243,7 @@ class AtfLexer(object):
             t.lexer.push_state('flagged')
 
         if t.type in set(AtfLexer.structures +
-                         AtfLexer.long_argument_structures) - set(["NOTE"]):
+                         AtfLexer.long_argument_structures) - {"NOTE"}:
             # Since @structure tokens are so important to the grammar,
             # the keywords refering to structural elements in strict dollar
             # lines must be DIFFERENT TOKENS IN THE LEXER
@@ -364,7 +271,7 @@ class AtfLexer(object):
     # All of these could be used as prime
     def t_transctrl_ID(self, t):
         u'[a-zA-Z0-9][a-zA-Z\'\u2019\u2032\u02CA\xb4\/\.0-9\:\-\[\]_' \
-          u'\u2080-\u2089]*'
+        u'\u2080-\u2089]*'
         t.value = t.value.replace(u'\u2019', "'")
         t.value = t.value.replace(u'\u2032', "'")
         t.value = t.value.replace(u'\u02CA', "'")
@@ -388,7 +295,7 @@ class AtfLexer(object):
             t.lexer.push_state('transctrl')
 
         if t.type in set(AtfLexer.structures +
-                         AtfLexer.long_argument_structures) - set(["NOTE"]):
+                         AtfLexer.long_argument_structures) - {"NOTE"}:
             # Since @structure tokens are so important to the grammar,
             # the keywords refering to structural elements in strict dollar
             # lines must be DIFFERENT TOKENS IN THE LEXER
@@ -559,7 +466,8 @@ class AtfLexer(object):
 
     # Error handling rule
     def t_ANY_error(self, t):
-        fstring = u"PyOracc got an illegal character '{}'".format(t.value[0])
+        fstring = "PyOracc got an illegal character '{}' at line number '{}' at lex pos '{}'".format(t.value, t.lineno,
+                                                                                                     t.lexpos)
         valuestring = t.value
         if _pyversion() == 2:
             fstring = fstring.encode('UTF-8')

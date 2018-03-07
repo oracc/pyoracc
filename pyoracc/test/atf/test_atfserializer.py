@@ -23,11 +23,11 @@ import codecs
 from unittest import TestCase, skip
 import pytest
 
-from pyoracc.atf.atffile import AtfFile
+from pyoracc.atf.common.atffile import AtfFile
 from pyoracc.test.fixtures import belsunu, output_filepath
 
-from ...atf.atflex import AtfLexer
-from ...atf.atfyacc import AtfParser
+from pyoracc.atf.common.atflex import AtfLexer
+from pyoracc.atf.common.atfyacc import AtfParser
 from pyoracc.model.line import Line
 
 

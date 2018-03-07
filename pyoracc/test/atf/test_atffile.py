@@ -18,7 +18,7 @@ along with PyORACC. If not, see <http://www.gnu.org/licenses/>.
 '''
 
 
-from ...atf.atffile import AtfFile
+from pyoracc.atf.common.atffile import AtfFile
 from ..fixtures import anzu, belsunu, sample_file
 
 
