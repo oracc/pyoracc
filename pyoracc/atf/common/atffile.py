@@ -29,7 +29,6 @@ from mako.template import Template
 
 
 class AtfFile(object):
-
     template = Template("${text.serialize()}")
 
     def __init__(self, content, atftype='oracc'):
@@ -59,14 +58,14 @@ def _debug_lex_and_yac_file(atftype, infile, debug=0, skipinvalid=False):
     text = codecs.open(infile, encoding='utf-8-sig').read()
 
     if not (atftype == "cdli" or atftype == "oracc"):
-        print "Select either \"cdli\" or \"oracc\""
+        print("Select either \"cdli\" or \"oracc\"")
         return
 
     # CDLI Code
     if atftype == "cdli":
         lexer = AtfCDLILexer(debug=debug, skipinvalid=skipinvalid).lexer
         lexer.input(text)
-        #for tok in lexer:
+        # for tok in lexer:
         #    print(tok)
         print("Lexed file")
         lexer = AtfCDLILexer(debug=0).lexer
@@ -75,7 +74,7 @@ def _debug_lex_and_yac_file(atftype, infile, debug=0, skipinvalid=False):
     if atftype == "oracc":
         lexer = AtfOraccLexer(debug=debug, skipinvalid=skipinvalid).lexer
         lexer.input(text)
-        #for tok in lexer:
+        # for tok in lexer:
         #    print(tok)
         print("Lexed file")
         lexer = AtfOraccLexer(debug=0).lexer

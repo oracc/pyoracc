@@ -17,7 +17,6 @@ You should have received a copy of the GNU General Public License
 along with PyORACC. If not, see <http://www.gnu.org/licenses/>.
 '''
 
-
 # -*- coding: utf-8 -*-
 from __future__ import print_function
 
@@ -244,7 +243,7 @@ class AtfLexer(object):
             t.lexer.push_state('flagged')
 
         if t.type in set(AtfLexer.structures +
-                         AtfLexer.long_argument_structures) - set(["NOTE"]):
+                         AtfLexer.long_argument_structures) - {"NOTE"}:
             # Since @structure tokens are so important to the grammar,
             # the keywords refering to structural elements in strict dollar
             # lines must be DIFFERENT TOKENS IN THE LEXER
@@ -272,7 +271,7 @@ class AtfLexer(object):
     # All of these could be used as prime
     def t_transctrl_ID(self, t):
         u'[a-zA-Z0-9][a-zA-Z\'\u2019\u2032\u02CA\xb4\/\.0-9\:\-\[\]_' \
-          u'\u2080-\u2089]*'
+        u'\u2080-\u2089]*'
         t.value = t.value.replace(u'\u2019', "'")
         t.value = t.value.replace(u'\u2032', "'")
         t.value = t.value.replace(u'\u02CA', "'")
@@ -296,7 +295,7 @@ class AtfLexer(object):
             t.lexer.push_state('transctrl')
 
         if t.type in set(AtfLexer.structures +
-                         AtfLexer.long_argument_structures) - set(["NOTE"]):
+                         AtfLexer.long_argument_structures) - {"NOTE"}:
             # Since @structure tokens are so important to the grammar,
             # the keywords refering to structural elements in strict dollar
             # lines must be DIFFERENT TOKENS IN THE LEXER
@@ -467,7 +466,8 @@ class AtfLexer(object):
 
     # Error handling rule
     def t_ANY_error(self, t):
-        fstring = u"PyOracc got an illegal character '{}'".format(t.value[0])
+        fstring = "PyOracc got an illegal character '{}' at line number '{}' at lex pos '{}'".format(t.value, t.lineno,
+                                                                                                     t.lexpos)
         valuestring = t.value
         if _pyversion() == 2:
             fstring = fstring.encode('UTF-8')

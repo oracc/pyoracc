@@ -4,7 +4,6 @@ This file serves as common token lexicon for usage.
 
 
 class AtfLexicon(object):
-
     BASE_TOKENS = ['AMPERSAND', 'LINELABEL', 'SCORELABEL', 'ID', 'DOLLAR', 'PARENTHETICALID', 'HAT', 'SEMICOLON',
                    'EQUALS',
                    'MULTILINGUAL', 'LSQUARE', 'RSQUARE', 'EXCLAIM', 'QUERY', 'STAR', 'RANGE', 'HASH', 'NEWLINE',
@@ -51,4 +50,3 @@ class AtfLexicon(object):
     INC_STATES = [(state, 'inclusive') for state in INCLUSIVE_STATE_NAMES]
 
     STATES = EXC_STATES + INC_STATES
-

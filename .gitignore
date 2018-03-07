@@ -61,5 +61,4 @@ docs/_build/
 
 /.settings/
 pyoracc/test/data/
-error.txt
-correct.txt
+

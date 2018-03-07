@@ -17,7 +17,6 @@ You should have received a copy of the GNU General Public License
 along with PyORACC. If not, see <http://www.gnu.org/licenses/>.
 '''
 
-
 import ply.yacc as yacc
 from pyoracc import _pyversion
 from pyoracc.atf.common.atflexicon import AtfLexicon
@@ -812,15 +811,15 @@ class AtfParser(object):
         # LOW precedence
         ('nonassoc', 'TRANSLATIONEND'),
         ('nonassoc', 'TABLET', 'ENVELOPE', 'PRISM', 'BULLA', 'SEALINGS',
-            'FRAGMENT', 'OBJECT', 'MULTI'),
+         'FRAGMENT', 'OBJECT', 'MULTI'),
         ('nonassoc', 'OBVERSE', 'REVERSE', 'LEFT', 'RIGHT', 'TOP', 'BOTTOM',
-            'FACE',
-            'SURFACE', 'EDGE', 'COLUMN', 'SEAL', 'HEADING', 'LINE'),
+         'FACE',
+         'SURFACE', 'EDGE', 'COLUMN', 'SEAL', 'HEADING', 'LINE'),
         ('nonassoc', "LINELABEL", "DOLLAR", "LEM", "NOTE", 'COMMENT',
-            'CATCHLINE', 'CHECK',
-            'COLOPHON', 'DATE', 'SIGNATURES',
-            'SIGNATURE', 'SUMMARY',
-            'WITNESSES', "PARBAR", "TO", "FROM"),
+         'CATCHLINE', 'CHECK',
+         'COLOPHON', 'DATE', 'SIGNATURES',
+         'SIGNATURE', 'SUMMARY',
+         'WITNESSES', "PARBAR", "TO", "FROM"),
         # HIGH precedence
     )
 
