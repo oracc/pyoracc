@@ -4,13 +4,12 @@ from ply import yacc as yacc
 
 
 class AtfCDLIParser(AtfParser):
-
     tokens = AtfParser.tokens
     precedence = AtfParser.precedence
 
-    def __init__(self, tabmodule='pyoracc.atf.parsetab', debug=0):
-        super(AtfCDLIParser, self).__init__(tabmodule)
-        self.parser = yacc.yacc(module=self, tabmodule=tabmodule, debug=debug)
+    def __init__(self, debug, log):
+        super(AtfCDLIParser, self).__init__(debug, log)
+    #      self.parser = yacc.yacc(module=self, tabmodule='pyoracc.atf.parsetab', debug=debug, debuglog=log)
 
     def p_document(self, p):
         """document : text
@@ -18,8 +17,9 @@ class AtfCDLIParser(AtfParser):
                     | composite"""
         p[0] = p[1]
 
-    def p_codeline(self, p):
-        "text_statement : AMPERSAND ID EQUALS ID newline"
-        p[0] = Text()
-        p[0].code = p[2]
-        p[0].description = p[4]
+    def p_linkreference_label(self, p):
+        """link_reference : link_reference ID
+                          | link_reference COMMA ID
+                          | link_reference REFERENCE"""
+        p[0] = p[1]
+        p[0].label.append(list(p)[-1])

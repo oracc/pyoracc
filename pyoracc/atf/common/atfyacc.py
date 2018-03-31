@@ -41,8 +41,8 @@ from pyoracc.model.translation import Translation
 class AtfParser(object):
     tokens = AtfLexicon.TOKENS
 
-    def __init__(self, tabmodule='pyoracc.atf.parsetab', debug=0):
-        self.parser = yacc.yacc(module=self, tabmodule=tabmodule, debug=debug)
+    def __init__(self, debug=0, log=yacc.NullLogger()):
+        self.parser = yacc.yacc(module=self, tabmodule='pyoracc.atf.parsetab', debug=debug, debuglog=log)
 
     def p_document(self, p):
         """document : text
@@ -824,11 +824,11 @@ class AtfParser(object):
     )
 
     def p_error(self, p):
-        formatstring = u"PyOracc could not parse token '{}'.".format(p)
+        formatstring = u"PyOracc could not parse token {} at line {} at offset {} with value '{}'.".format(p.type, p.lineno, p.lexpos, p.value)
         valuestring = p.value
         if _pyversion() == 2:
-            formatstring = formatstring.encode('UTF-8')
             valuestring = valuestring.encode('UTF-8')
+            formatstring = formatstring.encode('UTF-8')
         raise SyntaxError(formatstring,
                           (None, p.lineno, p.lexpos, valuestring))
         # All errors currently unrecoverable

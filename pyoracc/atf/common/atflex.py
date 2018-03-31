@@ -238,7 +238,7 @@ class AtfLexer(object):
                                           "parallel": "PARALLEL"
                                       },
                                       )
-
+        # print("id " + t.value + t.type)
         if t.type in ['LANG']:
             t.lexer.push_state('flagged')
 
@@ -248,6 +248,7 @@ class AtfLexer(object):
             # the keywords refering to structural elements in strict dollar
             # lines must be DIFFERENT TOKENS IN THE LEXER
             t.type = "REFERENCE"
+        # print("id " + t.value + t.type)
         return t
 
     # In the flagged, text, transctrl and lemmatize states,
@@ -466,8 +467,8 @@ class AtfLexer(object):
 
     # Error handling rule
     def t_ANY_error(self, t):
-        fstring = "PyOracc got an illegal character '{}' at line number '{}' at lex pos '{}'".format(t.value, t.lineno,
-                                                                                                     t.lexpos)
+        fstring = u"PyOracc got an illegal character '{}' at line number '{}' at lex pos '{}'" \
+            .format(t.value, t.lineno, t.lexpos)
         valuestring = t.value
         if _pyversion() == 2:
             fstring = fstring.encode('UTF-8')
@@ -480,6 +481,6 @@ class AtfLexer(object):
             raise SyntaxError(fstring,
                               (None, t.lineno, t.lexpos, valuestring))
 
-    def __init__(self, skipinvalid=False, debug=0):
+    def __init__(self, skipinvalid=False, debug=0, log=lex.NullLogger()):
         self.skipinvalid = skipinvalid
-        self.lexer = lex.lex(module=self, reflags=re.MULTILINE, debug=debug)
+        self.lexer = lex.lex(module=self, reflags=re.MULTILINE, debug=debug, debuglog=log)

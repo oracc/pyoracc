@@ -19,6 +19,8 @@ along with PyORACC. If not, see <http://www.gnu.org/licenses/>.
 
 import codecs
 import sys
+import logging
+
 from pyoracc.atf.cdli.atflex import AtfCDLILexer
 from pyoracc.atf.cdli.atfyacc import AtfCDLIParser
 from pyoracc.atf.common.atflex import AtfLexer
@@ -27,6 +29,15 @@ from pyoracc.atf.oracc.atflex import AtfOraccLexer
 from pyoracc.atf.oracc.atfyacc import AtfOraccParser
 from mako.template import Template
 
+logging.basicConfig(
+    level=logging.INFO,
+    filename="parselog.txt",
+    filemode="w",
+    format="%(filename)10s:%(lineno)4d:%(message)s"
+)
+
+log = logging.getLogger()
+
 
 class AtfFile(object):
     template = Template("${text.serialize()}")
@@ -34,17 +45,19 @@ class AtfFile(object):
     def __init__(self, content, atftype='oracc'):
         self.content = content
         self.type = atftype
+        skipinvalid = False
+        debug = False
         if content[-1] != '\n':
             content += "\n"
         if atftype == 'cdli':
-            lexer = AtfCDLILexer().lexer
-            parser = AtfCDLIParser().parser
+            lexer = AtfCDLILexer(debug=debug, skipinvalid=skipinvalid, log=log).lexer
+            parser = AtfCDLIParser(debug=debug, log=log).parser
         elif atftype == 'oracc':
-            lexer = AtfOraccLexer().lexer
-            parser = AtfOraccParser().parser
+            lexer = AtfOraccLexer(debug=debug, skipinvalid=skipinvalid, log=log).lexer
+            parser = AtfOraccParser(debug=debug, log=log).parser
         else:
-            lexer = AtfLexer().lexer
-            parser = AtfParser().parser
+            lexer = AtfLexer(debug=debug, skipinvalid=skipinvalid, log=log).lexer
+            parser = AtfParser(debug=debug, log=log).parser
         self.text = parser.parse(content, lexer=lexer)
 
     def __str__(self):
@@ -63,22 +76,22 @@ def _debug_lex_and_yac_file(atftype, infile, debug=0, skipinvalid=False):
 
     # CDLI Code
     if atftype == "cdli":
-        lexer = AtfCDLILexer(debug=debug, skipinvalid=skipinvalid).lexer
+        lexer = AtfCDLILexer(debug=debug, skipinvalid=skipinvalid, log=log).lexer
         lexer.input(text)
         # for tok in lexer:
         #    print(tok)
         print("Lexed file")
-        lexer = AtfCDLILexer(debug=0).lexer
-        parser = AtfCDLIParser(debug=debug).parser
+        lexer = AtfCDLILexer(debug=debug, skipinvalid=skipinvalid, log=log).lexer
+        parser = AtfCDLIParser(debug=debug, log=log).parser
 
     if atftype == "oracc":
-        lexer = AtfOraccLexer(debug=debug, skipinvalid=skipinvalid).lexer
+        lexer = AtfOraccLexer(debug=debug, skipinvalid=skipinvalid, log=log).lexer
         lexer.input(text)
         # for tok in lexer:
         #    print(tok)
         print("Lexed file")
-        lexer = AtfOraccLexer(debug=0).lexer
-        parser = AtfOraccParser(debug=debug).parser
+        lexer = AtfOraccLexer(debug=debug, skipinvalid=skipinvalid, log=log).lexer
+        parser = AtfOraccParser(debug=debug, log=log).parser
 
     parser.parse(text, lexer=lexer)
     print("Parsed file")
