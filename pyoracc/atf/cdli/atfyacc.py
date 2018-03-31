@@ -33,10 +33,10 @@ class AtfCDLIParser(AtfParser):
         p[0] = State(p[2])
 
     def p_version_protoocol(self, p):
-        "version_protocol : VERSION ID newline"
+        """version_protocol : VERSION ID newline"""
         p[0] = p[2]
 
     def p_text_version(self, p):
-        "text : text version_protocol"
+        """text : text version_protocol"""
         p[0] = p[1]
         p[0].version = p[2]

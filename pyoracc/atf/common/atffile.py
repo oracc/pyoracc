@@ -30,7 +30,7 @@ from pyoracc.atf.oracc.atfyacc import AtfOraccParser
 from mako.template import Template
 
 logging.basicConfig(
-    level=logging.INFO,
+    level=logging.DEBUG,
     filename="parselog.txt",
     filemode="w",
     format="%(filename)10s:%(lineno)4d:%(message)s"
@@ -38,26 +38,28 @@ logging.basicConfig(
 
 log = logging.getLogger()
 
+consoleHandler = logging.StreamHandler()
+log.addHandler(consoleHandler)
+
 
 class AtfFile(object):
     template = Template("${text.serialize()}")
 
-    def __init__(self, content, atftype='oracc'):
+    def __init__(self, content, atftype='oracc', verbose=False):
         self.content = content
         self.type = atftype
         skipinvalid = False
-        debug = False
         if content[-1] != '\n':
             content += "\n"
         if atftype == 'cdli':
-            lexer = AtfCDLILexer(debug=debug, skipinvalid=skipinvalid, log=log).lexer
-            parser = AtfCDLIParser(debug=debug, log=log).parser
+            lexer = AtfCDLILexer(debug=verbose, skipinvalid=skipinvalid, log=log).lexer
+            parser = AtfCDLIParser(debug=verbose, log=log).parser
         elif atftype == 'oracc':
-            lexer = AtfOraccLexer(debug=debug, skipinvalid=skipinvalid, log=log).lexer
-            parser = AtfOraccParser(debug=debug, log=log).parser
+            lexer = AtfOraccLexer(debug=verbose, skipinvalid=skipinvalid, log=log).lexer
+            parser = AtfOraccParser(debug=verbose, log=log).parser
         else:
-            lexer = AtfLexer(debug=debug, skipinvalid=skipinvalid, log=log).lexer
-            parser = AtfParser(debug=debug, log=log).parser
+            lexer = AtfLexer(debug=verbose, skipinvalid=skipinvalid, log=log).lexer
+            parser = AtfParser(debug=verbose, log=log).parser
         self.text = parser.parse(content, lexer=lexer)
 
     def __str__(self):
