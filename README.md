@@ -69,6 +69,9 @@ To run it on folder:
 To see the console messages of the tool, use --verbose switch
 
     $ pyoracc -i ./pyoracc/test/data -f cdli --verbose
+    
+Note that using the verbose option will also create a parselog.txt file, 
+containing the log output along with displaying it on command line.
 
 If you don't give arguments, it will prompt for the path and atf file type.  
 
@@ -93,12 +96,12 @@ Options:
 
 ### To run on directory
 
-python  -m pyoracc.model.corpus cdli ./pyoracc/test/data
+    $ python  -m pyoracc.model.corpus cdli ./pyoracc/test/data
 
 ### To run on individual file
 
-python -m pyoracc.atf.common.atffile cdli ./pyoracc/test/data/cdli_atf_20180104.atf
+    $ python -m pyoracc.atf.common.atffile cdli ./pyoracc/test/data/cdli_atf_20180104.atf True
 
 ## Running Tests
 
-py.test
+    $ py.test

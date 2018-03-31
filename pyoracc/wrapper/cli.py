@@ -9,7 +9,7 @@ from pyoracc.atf.common.atffile import AtfFile
 def file_process(infile, atftype, verbose=False):
     content = codecs.open(infile,
                           encoding='utf-8-sig').read()
-    AtfFile(content, atftype)
+    AtfFile(content, atftype, verbose)
 
 
 def check_and_process(pathname, atftype, verbose=False):
