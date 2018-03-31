@@ -38,7 +38,7 @@ class MyBuildPy(build_py):
 
 
 setup(name='pyoracc',
-      version='0.0.2',
+      version='0.0.3',
       author='James Hetherington',
       author_email='j.hetherington@ucl.ac.uk',
       url='https://github.com/ucl/pyoracc',
