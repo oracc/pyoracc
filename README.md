@@ -52,12 +52,15 @@ To use it:
 
     $ pyoracc --help
 
+
 *Only files with the .atf extension can be processed.  *
  
 To run it on file:
 
     $ pyoracc -i ./pyoracc/test/data/cdli_atf_20180104.atf -f cdli
-    
+
+For a fresh copy of CDLI ATF, download the data bundle here : https://github.com/cdli-gh/data/blob/master/cdliatf_unblocked.atf
+
 To run it on oracc file:
 
     $ pyoracc -i ./pyoracc/test/data/cdli_atf_20180104.atf -f oracc
