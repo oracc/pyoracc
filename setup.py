@@ -38,15 +38,14 @@ class MyBuildPy(build_py):
 
 
 setup(name='pyoracc',
-      version='0.0.6',
+      version='0.0.7',
       author='James Hetherington',
       author_email='j.hetherington@ucl.ac.uk',
       url='https://github.com/ucl/pyoracc',
       download_url='https://github.com/ucl/pyoracc/archive/master.tar.gz',
-      packages=find_packages(exclude=['test']),
+      packages=find_packages(exclude=["*.test", "*.test.*", "test.*", "test"]),
       install_requires=dependencies,
       setup_requires=dependencies,
-      package_data={'pyoracc': ['test/fixtures/*/*.atf']},
       zip_safe=False,
       cmdclass=dict(build_py=MyBuildPy),
       entry_points={
