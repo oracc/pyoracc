@@ -2,7 +2,7 @@ import os
 import click
 from stat import ST_MODE, S_ISREG
 
-from pyoracc.atf.common.atffile import file_process
+from pyoracc.atf.common.atffile import check_atf
 
 
 def check_and_process(pathname, atftype, verbose=False):
@@ -11,7 +11,7 @@ def check_and_process(pathname, atftype, verbose=False):
         # It's a file, call the callback function
         if verbose:
             click.echo('Info: Parsing {0}.'.format(pathname))
-        file_process(pathname, atftype, verbose)
+        check_atf(pathname, atftype, verbose)
 
 
 @click.command()

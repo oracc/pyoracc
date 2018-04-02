@@ -69,11 +69,11 @@ class AtfFile(object):
         return AtfFile.template.render_unicode(**vars(self))
 
 
-def file_process(infile, atftype, verbose=False):
+def check_atf(infile, atftype, verbose=False):
     content = codecs.open(infile,
                           encoding='utf-8-sig').read()
     AtfFile(content, atftype, verbose)
 
 
 if __name__ == "__main__":
-    file_process(infile=sys.argv[1], atftype=sys.argv[2], verbose=sys.argv[3])
+    check_atf(infile=sys.argv[1], atftype=sys.argv[2], verbose=sys.argv[3])
