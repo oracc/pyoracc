@@ -45,22 +45,23 @@ log.addHandler(consoleHandler)
 class AtfFile(object):
     template = Template("${text.serialize()}")
 
-    def __init__(self, content, atftype='oracc', verbose=False):
-        self.content = content
-        self.type = atftype
+    def __init__(self, content, atftype='oracc', debug=False):
         skipinvalid = False
         if content[-1] != '\n':
             content += "\n"
         if atftype == 'cdli':
-            lexer = AtfCDLILexer(debug=verbose, skipinvalid=skipinvalid, log=log).lexer
-            parser = AtfCDLIParser(debug=verbose, log=log).parser
+            lexer = AtfCDLILexer(debug=debug, skipinvalid=skipinvalid, log=log).lexer
+            parser = AtfCDLIParser(debug=debug, log=log).parser
         elif atftype == 'oracc':
-            lexer = AtfOraccLexer(debug=verbose, skipinvalid=skipinvalid, log=log).lexer
-            parser = AtfOraccParser(debug=verbose, log=log).parser
+            lexer = AtfOraccLexer(debug=debug, skipinvalid=skipinvalid, log=log).lexer
+            parser = AtfOraccParser(debug=debug, log=log).parser
         else:
-            lexer = AtfLexer(debug=verbose, skipinvalid=skipinvalid, log=log).lexer
-            parser = AtfParser(debug=verbose, log=log).parser
-        self.text = parser.parse(content, lexer=lexer)
+            lexer = AtfLexer(debug=debug, skipinvalid=skipinvalid, log=log).lexer
+            parser = AtfParser(debug=debug, log=log).parser
+        if debug:
+            self.text = parser.parse(content, lexer=lexer, debug=log)
+        else:
+            self.text = parser.parse(content, lexer=lexer)
 
     def __str__(self):
         return AtfFile.template.render_unicode(**vars(self))
@@ -76,4 +77,4 @@ def check_atf(infile, atftype, verbose=False):
 
 
 if __name__ == "__main__":
-    check_atf(infile=sys.argv[1], atftype=sys.argv[2], verbose=sys.argv[3])
+    check_atf(infile=sys.argv[1], atftype=sys.argv[2], verbose=(sys.argv[3] == "True"))

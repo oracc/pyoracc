@@ -17,7 +17,7 @@ def check_and_process(pathname, atftype, verbose=False):
 @click.command()
 @click.option('--input_path', '-i', type=click.Path(exists=True, writable=True), prompt=True, required=True,
               help='Input the file/folder name.')
-@click.option('--atf_type', '-f', type=click.Choice(['cdli', 'atf']), prompt=True, required=True,
+@click.option('--atf_type', '-f', type=click.Choice(['cdli', 'oracc']), prompt=True, required=True,
               help='Input the atf file type.')
 @click.option('-v', '--verbose', default=False, required=False, is_flag=True, help='Enables verbose mode')
 @click.version_option()

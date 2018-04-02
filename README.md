@@ -73,7 +73,12 @@ To see the console messages of the tool, use --verbose switch
     $ pyoracc -i ./pyoracc/test/data -f cdli --verbose
     
 Note that using the verbose option will also create a parselog.txt file, 
-containing the log output along with displaying it on command line.
+containing the log output along with displaying it on command line. 
+The verbose output contains the lexical symbols, the parse grammer table
+and the LR parsing table states.
+
+Also note that, first time usage with any atf format will always display 
+the parse tables irrespective of verbose switch.
 
 If you don't give arguments, it will prompt for the path and atf file type.  
 
