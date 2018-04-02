@@ -69,35 +69,11 @@ class AtfFile(object):
         return AtfFile.template.render_unicode(**vars(self))
 
 
-def _debug_lex_and_yac_file(atftype, infile, debug=0, skipinvalid=False):
-    text = codecs.open(infile, encoding='utf-8-sig').read()
-
-    if not (atftype == "cdli" or atftype == "oracc"):
-        print("Select either \"cdli\" or \"oracc\"")
-        return
-
-    # CDLI Code
-    if atftype == "cdli":
-        lexer = AtfCDLILexer(debug=debug, skipinvalid=skipinvalid, log=log).lexer
-        lexer.input(text)
-        # for tok in lexer:
-        #    print(tok)
-        print("Lexed file")
-        lexer = AtfCDLILexer(debug=debug, skipinvalid=skipinvalid, log=log).lexer
-        parser = AtfCDLIParser(debug=debug, log=log).parser
-
-    if atftype == "oracc":
-        lexer = AtfOraccLexer(debug=debug, skipinvalid=skipinvalid, log=log).lexer
-        lexer.input(text)
-        # for tok in lexer:
-        #    print(tok)
-        print("Lexed file")
-        lexer = AtfOraccLexer(debug=debug, skipinvalid=skipinvalid, log=log).lexer
-        parser = AtfOraccParser(debug=debug, log=log).parser
-
-    parser.parse(text, lexer=lexer)
-    print("Parsed file")
+def file_process(infile, atftype, verbose=False):
+    content = codecs.open(infile,
+                          encoding='utf-8-sig').read()
+    AtfFile(content, atftype, verbose)
 
 
 if __name__ == "__main__":
-    _debug_lex_and_yac_file(sys.argv[1], sys.argv[2], sys.argv[3])
+    file_process(infile=sys.argv[1], atftype=sys.argv[2], verbose=sys.argv[3])

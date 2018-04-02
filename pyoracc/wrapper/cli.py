@@ -1,15 +1,8 @@
 import os
 import click
-import codecs
 from stat import ST_MODE, S_ISREG
 
-from pyoracc.atf.common.atffile import AtfFile
-
-
-def file_process(infile, atftype, verbose=False):
-    content = codecs.open(infile,
-                          encoding='utf-8-sig').read()
-    AtfFile(content, atftype, verbose)
+from pyoracc.atf.common.atffile import file_process
 
 
 def check_and_process(pathname, atftype, verbose=False):

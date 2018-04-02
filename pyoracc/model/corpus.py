@@ -53,7 +53,7 @@ class Corpus(object):
 
 if __name__ == '__main__':
     try:
-        corpus = Corpus(atftype=sys.argv[1], source=sys.argv[2])
+        corpus = Corpus(source=sys.argv[1], atftype=sys.argv[2])
         print()
         print("Failed with ", corpus.failures, " out of ",
               corpus.failures + corpus.successes, "(",

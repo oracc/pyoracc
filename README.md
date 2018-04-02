@@ -52,7 +52,6 @@ To use it:
 
     $ pyoracc --help
 
-
 *Only files with the .atf extension can be processed.  *
  
 To run it on file:
@@ -95,16 +94,23 @@ Options:
 
 ```
 
-## Internal Dev Usage and Test
+## Internal Dev Usage
 
 ### To run on directory
 
-    $ python  -m pyoracc.model.corpus cdli ./pyoracc/test/data
+    $ python  -m pyoracc.model.corpus ./pyoracc/test/data  cdli
 
 ### To run on individual file
 
-    $ python -m pyoracc.atf.common.atffile cdli ./pyoracc/test/data/cdli_atf_20180104.atf True
+    $ python -m pyoracc.atf.common.atffile ./pyoracc/test/data/cdli_atf_20180104.atf cdli True
 
 ## Running Tests
 
     $ py.test
+    
+## API Consumption
+
+```python
+from pyoracc.atf.common.atffile import file_process
+file_process(pathname, atftype, verbose)
+```
