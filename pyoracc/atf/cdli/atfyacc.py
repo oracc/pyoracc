@@ -32,11 +32,20 @@ class AtfCDLIParser(AtfParser):
         # print(p[2])
         p[0] = State(p[2])
 
+    # to remove later
     def p_version_protoocol(self, p):
         """version_protocol : VERSION ID newline"""
         p[0] = p[2]
 
+    # to remove later
     def p_text_version(self, p):
         """text : text version_protocol"""
         p[0] = p[1]
         p[0].version = p[2]
+
+    def p_codeline(self, p):
+        """text_statement : AMPERSAND ID EQUALS ID newline
+                            | AMPERSAND ID EQUALS ID QUERY newline """
+        p[0] = Text()
+        p[0].code = p[2]
+        p[0].description = p[4]
