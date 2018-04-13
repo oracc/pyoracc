@@ -21,7 +21,8 @@ class AtfCDLIParser(AtfParser):
     def p_linkreference_label(self, p):
         """link_reference : link_reference ID
                           | link_reference COMMA ID
-                          | link_reference REFERENCE"""
+                          | link_reference REFERENCE
+                          | link_reference ID QUERY"""
         p[0] = p[1]
         p[0].label.append(list(p)[-1])
 
