@@ -1,6 +1,8 @@
 pyoracc
 =======
 
+[![Build Status](https://travis-ci.org/cdli-gh/pyoracc.svg?branch=master)](https://travis-ci.org/cdli-gh/pyoracc) 
+
 Python tools for working with ORACC
 
 Depends on PLY, Mako and Pytest
