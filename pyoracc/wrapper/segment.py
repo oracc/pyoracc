@@ -25,6 +25,9 @@ class Segmentor:
                 self.__parse(i, line.strip())
 
     def write2file(self):
+        if not os.path.exists(self.outfolder):
+            click.echo('Info: Creating output folder {0}.'.format(self.outfolder))
+            os.makedirs(self.outfolder)
         outfile_name = os.path.join(self.outfolder, self.outputFilename + ".atf")
         if self.verbose:
             click.echo('Info: Writing to file {0}.'.format(outfile_name))
