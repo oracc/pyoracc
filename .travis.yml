@@ -52,10 +52,10 @@ before_install:
 install:
     - |
         # Install dependencies
-        $PIP install --upgrade pip
-        $PIP install --upgrade wheel
-        $PIP install --upgrade setuptools
-        $PIP install --upgrade ply pep8 mako pytest
+        $PIP install pip==8.1.2
+        $PIP install wheel
+        $PIP install setuptools
+        $PIP install ply pep8 mako pytest
         if [ "$MYPYTHON" != "jython" ]; then
           $PIP install pytest-cov codecov
         fi
