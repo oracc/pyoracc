@@ -1,5 +1,4 @@
 from pyoracc.atf.common.atfyacc import AtfParser
-from ply import yacc as yacc
 
 
 class AtfOraccParser(AtfParser):

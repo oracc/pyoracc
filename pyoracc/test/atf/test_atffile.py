@@ -42,6 +42,7 @@ def test_composite():
     assert afile.text.texts[1].code == "Q002770"
     assert afile.text.texts[1].description == "SB Anzu 2"
 
+
 # Pairs of filenames and CDLI IDs chosen form composite files
 composites = [
     ['SAA19_13', 'P393708'],

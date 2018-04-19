@@ -9,7 +9,8 @@ OUTPUT_FOLDER = 'output'
 class Segmentor:
     def __init__(self, inputFile, verbose):
         self.inputFileName = inputFile
-        self.outfolder = os.path.join(os.path.dirname(self.inputFileName), OUTPUT_FOLDER)
+        self.outfolder = os.path.join(os.path.dirname(self.inputFileName),
+                                      OUTPUT_FOLDER)
         self.verbose = verbose
         self.__reset__()
 
@@ -26,9 +27,11 @@ class Segmentor:
 
     def write2file(self):
         if not os.path.exists(self.outfolder):
-            click.echo('Info: Creating output folder {0}.'.format(self.outfolder))
+            click.echo(
+                'Info: Creating output folder {0}.'.format(self.outfolder))
             os.makedirs(self.outfolder)
-        outfile_name = os.path.join(self.outfolder, self.outputFilename + ".atf")
+        outfile_name = os.path.join(self.outfolder,
+                                    self.outputFilename + ".atf")
         if self.verbose:
             click.echo('Info: Writing to file {0}.'.format(outfile_name))
         with codecs.open(outfile_name, 'w+', 'utf-8') as outputFile:
@@ -49,7 +52,9 @@ class Segmentor:
 
 if __name__ == '__main__':
     try:
-        segmentor = Segmentor(inputFile=sys.argv[1], verbose=(sys.argv[2] == "True"))
+        segmentor = Segmentor(inputFile=sys.argv[1],
+                              verbose=(sys.argv[2] == "True"))
         segmentor.convert()
     except IndexError:
-        print("Input both atffile file source and verbose flag like 'python segment.py cdli_atf_20180104.atf True")
+        print("Input both atffile file source and verbose flag like "
+              "'python segment.py cdli_atf_20180104.atf True")

@@ -111,7 +111,9 @@ Options:
 
 ## Running Tests
 
-    $ py.test
+Before running pytest and coverage, install [py.test](https://docs.pytest.org/en/latest/getting-started.html) and [pytest-cov](https://pypi.org/project/pytest-cov/).
+
+    $ py.test --cov pyoracc --cov-report html:cov_html --cov-report xml:cov.xml --cov-report annotate:cov_annotate --runslow
     
 ## API Consumption
 

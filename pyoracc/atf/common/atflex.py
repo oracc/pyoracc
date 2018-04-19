@@ -272,7 +272,7 @@ class AtfLexer(object):
     # All of these could be used as prime
     def t_transctrl_ID(self, t):
         u'[a-zA-Z0-9][a-zA-Z\'\u2019\u2032\u02CA\xb4\/\.0-9\:\-\[\]_' \
-        u'\u2080-\u2089]*'
+            u'\u2080-\u2089]*'
         t.value = t.value.replace(u'\u2019', "'")
         t.value = t.value.replace(u'\u2032', "'")
         t.value = t.value.replace(u'\u02CA', "'")
@@ -467,7 +467,8 @@ class AtfLexer(object):
 
     # Error handling rule
     def t_ANY_error(self, t):
-        fstring = u"PyOracc got an illegal character '{}' at line number '{}' at lex pos '{}'" \
+        fstring = u"PyOracc got an illegal character " \
+                  u"'{}' at line number '{}' at lex pos '{}'" \
             .format(t.value, t.lineno, t.lexpos)
         valuestring = t.value
         if _pyversion() == 2:
@@ -483,4 +484,5 @@ class AtfLexer(object):
 
     def __init__(self, skipinvalid=False, debug=0, log=lex.NullLogger()):
         self.skipinvalid = skipinvalid
-        self.lexer = lex.lex(module=self, reflags=re.MULTILINE, debug=debug, debuglog=log)
+        self.lexer = lex.lex(module=self, reflags=re.MULTILINE, debug=debug,
+                             debuglog=log)

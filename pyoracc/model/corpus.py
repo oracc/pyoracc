@@ -60,4 +60,5 @@ if __name__ == '__main__':
               corpus.failures * 100.0 / (corpus.failures + corpus.successes),
               "%)")
     except IndexError:
-        print("Input both atffile type and file source like 'python  -m pyoracc.model.corpus cdli ./pyoracc/test/data'")
+        print("Input both atffile type and file source like 'python  -m "
+              "pyoracc.model.corpus cdli ./pyoracc/test/data'")

@@ -50,13 +50,16 @@ class AtfFile(object):
         if content[-1] != '\n':
             content += "\n"
         if atftype == 'cdli':
-            lexer = AtfCDLILexer(debug=debug, skipinvalid=skipinvalid, log=log).lexer
+            lexer = AtfCDLILexer(debug=debug, skipinvalid=skipinvalid,
+                                 log=log).lexer
             parser = AtfCDLIParser(debug=debug, log=log).parser
         elif atftype == 'oracc':
-            lexer = AtfOraccLexer(debug=debug, skipinvalid=skipinvalid, log=log).lexer
+            lexer = AtfOraccLexer(debug=debug, skipinvalid=skipinvalid,
+                                  log=log).lexer
             parser = AtfOraccParser(debug=debug, log=log).parser
         else:
-            lexer = AtfLexer(debug=debug, skipinvalid=skipinvalid, log=log).lexer
+            lexer = AtfLexer(debug=debug, skipinvalid=skipinvalid,
+                             log=log).lexer
             parser = AtfParser(debug=debug, log=log).parser
         if debug:
             self.text = parser.parse(content, lexer=lexer, debug=log)
@@ -77,4 +80,5 @@ def check_atf(infile, atftype, verbose=False):
 
 
 if __name__ == "__main__":
-    check_atf(infile=sys.argv[1], atftype=sys.argv[2], verbose=(sys.argv[3] == "True"))
+    check_atf(infile=sys.argv[1], atftype=sys.argv[2],
+              verbose=(sys.argv[3] == "True"))

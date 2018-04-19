@@ -69,7 +69,7 @@ script:
       if [ "$MYPYTHON" == "jython" ]; then
         py.test
       else
-        py.test --cov=pyoracc --cov-report xml --runslow
+        py.test --cov=pyoracc --cov-report xml --cov-report html --cov-report annotate --runslow
       fi
 
   - pep8 --exclude=parsetab.py .

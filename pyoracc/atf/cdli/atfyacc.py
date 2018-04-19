@@ -1,7 +1,10 @@
+from pyoracc.model.milestone import Milestone
+
+from pyoracc.model.oraccobject import OraccObject
+
 from pyoracc.atf.common.atfyacc import AtfParser
 from pyoracc.model.state import State
 from pyoracc.model.text import Text
-from ply import yacc as yacc
 
 
 class AtfCDLIParser(AtfParser):
@@ -10,7 +13,6 @@ class AtfCDLIParser(AtfParser):
 
     def __init__(self, debug, log):
         super(AtfCDLIParser, self).__init__(debug, log)
-    #      self.parser = yacc.yacc(module=self, tabmodule='pyoracc.atf.parsetab', debug=debug, debuglog=log)
 
     def p_document(self, p):
         """document : text
@@ -50,3 +52,23 @@ class AtfCDLIParser(AtfParser):
         p[0] = Text()
         p[0].code = p[2]
         p[0].description = p[4]
+
+    def p_surface_nolabel(self, p):
+        '''surface_specifier  : OBVERSE
+                              | REVERSE
+                              | LEFT
+                              | RIGHT
+                              | TOP
+                              | BOTTOM
+                              | EDGE'''
+        p[0] = OraccObject(p[1])
+
+    def p_milestone_brief(self, p):
+        """milestone_name : CATCHLINE
+                          | COLOPHON
+                          | DATE
+                          | SIGNATURES
+                          | SIGNATURE
+                          | SUMMARY
+                          | WITNESSES"""
+        p[0] = Milestone(p[1])
