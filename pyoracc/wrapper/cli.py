@@ -23,7 +23,7 @@ def check_and_process(pathname, atftype, verbose=False):
               prompt=True, required=True,
               help='Input the atf file type.')
 @click.option('-v', '--verbose', default=False, required=False, is_flag=True,
-              help='Enables verbose mode')
+              help='Enables verbose mode.')
 @click.version_option()
 def main(input_path, atf_type, verbose):
     """My Tool does one work, and one work well."""

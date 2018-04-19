@@ -1,9 +1,9 @@
 pyoracc
 =======
 
-[![Build Status](https://travis-ci.org/cdli-gh/pyoracc.svg?branch=master)](https://travis-ci.org/cdli-gh/pyoracc) 
+[![Build Status](https://travis-ci.org/oracc/pyoracc.svg?branch=master)](https://travis-ci.org/oracc/pyoracc) 
 [![Maintainability](https://api.codeclimate.com/v1/badges/7244ac087b45146c5e3e/maintainability)](https://codeclimate.com/github/cdli-gh/pyoracc/maintainability)
-[![codecov](https://codecov.io/gh/cdli-gh/pyoracc/branch/master/graph/badge.svg)](https://codecov.io/gh/cdli-gh/pyoracc)
+[![codecov](https://codecov.io/gh/oracc/pyoracc/branch/master/graph/badge.svg)](https://codecov.io/gh/oracc/pyoracc)
 
 Python tools for working with ORACC
 

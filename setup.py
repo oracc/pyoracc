@@ -39,8 +39,8 @@ class MyBuildPy(build_py):
 
 setup(name='pyoracc',
       version='0.1.0',
-      author='James Hetherington',
-      author_email='j.hetherington@ucl.ac.uk',
+      author='UCL Research IT Services',
+      author_email='rc-softdev@ucl.ac.uk',
       url='https://github.com/ucl/pyoracc',
       download_url='https://github.com/ucl/pyoracc/archive/master.tar.gz',
       packages=find_packages(exclude=["*.test", "*.test.*", "test.*", "test"]),
