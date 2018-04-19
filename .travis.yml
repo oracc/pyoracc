@@ -45,6 +45,8 @@ before_install:
         fi
         if [[ $TRAVIS_OS_NAME == 'osx' ]]; then
           brew update
+          brew upgrade
+          brew upgrade python
           brew install python3
           python3 --version
         fi
@@ -55,9 +57,12 @@ install:
         $PIP install pip==8.1.2
         $PIP install wheel
         $PIP install setuptools
-        $PIP install ply pep8 mako pytest
+        $PIP install ply pep8 mako
+        if [ "$MYPYTHON" == "jython" ]; then
+          $PIP install pytest==2.9.2
+        fi
         if [ "$MYPYTHON" != "jython" ]; then
-          $PIP install pytest-cov codecov
+          $PIP install pytest pytest-cov codecov
         fi
 
 script:
