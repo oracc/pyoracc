@@ -18,7 +18,7 @@ along with PyORACC. If not, see <http://www.gnu.org/licenses/>.
 '''
 
 
-from ...atf.atffile import AtfFile
+from pyoracc.atf.common.atffile import AtfFile
 from ..fixtures import anzu, belsunu, sample_file
 
 
@@ -41,6 +41,7 @@ def test_composite():
     assert afile.text.texts[0].description == "SB Anzu 1"
     assert afile.text.texts[1].code == "Q002770"
     assert afile.text.texts[1].description == "SB Anzu 2"
+
 
 # Pairs of filenames and CDLI IDs chosen form composite files
 composites = [

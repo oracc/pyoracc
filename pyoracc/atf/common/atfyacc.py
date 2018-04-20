@@ -17,33 +17,33 @@ You should have received a copy of the GNU General Public License
 along with PyORACC. If not, see <http://www.gnu.org/licenses/>.
 '''
 
-
 import ply.yacc as yacc
 from pyoracc import _pyversion
-from .atflex import AtfLexer
+from pyoracc.atf.common.atflexicon import AtfLexicon
 
-from ..model.comment import Comment
-from ..model.composite import Composite
-from ..model.line import Line
-from ..model.link import Link
-from ..model.link_reference import LinkReference
-from ..model.milestone import Milestone
-from ..model.multilingual import Multilingual
-from ..model.note import Note
-from ..model.oraccnamedobject import OraccNamedObject
-from ..model.oraccobject import OraccObject
-from ..model.ruling import Ruling
-from ..model.score import Score
-from ..model.state import State
-from ..model.text import Text
-from ..model.translation import Translation
+from pyoracc.model.comment import Comment
+from pyoracc.model.composite import Composite
+from pyoracc.model.line import Line
+from pyoracc.model.link import Link
+from pyoracc.model.link_reference import LinkReference
+from pyoracc.model.milestone import Milestone
+from pyoracc.model.multilingual import Multilingual
+from pyoracc.model.note import Note
+from pyoracc.model.oraccnamedobject import OraccNamedObject
+from pyoracc.model.oraccobject import OraccObject
+from pyoracc.model.ruling import Ruling
+from pyoracc.model.score import Score
+from pyoracc.model.state import State
+from pyoracc.model.text import Text
+from pyoracc.model.translation import Translation
 
 
 class AtfParser(object):
-    tokens = AtfLexer.tokens
+    tokens = AtfLexicon.TOKENS
 
-    def __init__(self, tabmodule='pyoracc.atf.parsetab'):
-        self.parser = yacc.yacc(module=self, tabmodule=tabmodule)
+    def __init__(self, debug=0, log=yacc.NullLogger()):
+        self.parser = yacc.yacc(module=self, tabmodule='pyoracc.atf.parsetab',
+                                debug=debug, debuglog=log)
 
     def p_document(self, p):
         """document : text
@@ -812,24 +812,27 @@ class AtfParser(object):
         # LOW precedence
         ('nonassoc', 'TRANSLATIONEND'),
         ('nonassoc', 'TABLET', 'ENVELOPE', 'PRISM', 'BULLA', 'SEALINGS',
-            'FRAGMENT', 'OBJECT', 'MULTI'),
+         'FRAGMENT', 'OBJECT', 'MULTI'),
         ('nonassoc', 'OBVERSE', 'REVERSE', 'LEFT', 'RIGHT', 'TOP', 'BOTTOM',
-            'FACE',
-            'SURFACE', 'EDGE', 'COLUMN', 'SEAL', 'HEADING', 'LINE'),
+         'FACE',
+         'SURFACE', 'EDGE', 'COLUMN', 'SEAL', 'HEADING', 'LINE'),
         ('nonassoc', "LINELABEL", "DOLLAR", "LEM", "NOTE", 'COMMENT',
-            'CATCHLINE', 'CHECK',
-            'COLOPHON', 'DATE', 'SIGNATURES',
-            'SIGNATURE', 'SUMMARY',
-            'WITNESSES', "PARBAR", "TO", "FROM"),
+         'CATCHLINE', 'CHECK',
+         'COLOPHON', 'DATE', 'SIGNATURES',
+         'SIGNATURE', 'SUMMARY',
+         'WITNESSES', "PARBAR", "TO", "FROM"),
         # HIGH precedence
     )
 
     def p_error(self, p):
-        formatstring = u"PyOracc could not parse token '{}'.".format(p)
+        formatstring = u"PyOracc could not parse token {} at line {} at " \
+                       u"offset {} with value '{}'.".format(p.type,
+                                                            p.lineno,
+                                                            p.lexpos, p.value)
         valuestring = p.value
         if _pyversion() == 2:
-            formatstring = formatstring.encode('UTF-8')
             valuestring = valuestring.encode('UTF-8')
+            formatstring = formatstring.encode('UTF-8')
         raise SyntaxError(formatstring,
                           (None, p.lineno, p.lexpos, valuestring))
         # All errors currently unrecoverable
