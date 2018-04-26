@@ -107,9 +107,9 @@ Options:
 
 ### Development Guideline
 
-ORACC atf based changes will go in pyoracc/atf/oracc
-CDLI atf based changes will go in pyoracc/atf/cdli
-Common atf based changes will go in pyoracc/atf/common
+* ORACC atf based changes will go in pyoracc/atf/oracc
+* CDLI atf based changes will go in pyoracc/atf/cdli
+* Common atf based changes will go in pyoracc/atf/common
 
 ### To run on directory
 
