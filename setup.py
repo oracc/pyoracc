@@ -32,7 +32,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 
 dependencies = ['click', 'mako', 'ply']
 
-extra_dependencies = ['pytest', 'pytest-cov', 'codecov']
+extra_dependencies = ['pytest', 'pytest-cov', 'codecov', 'pycodestyle']
 
 
 class MyBuildPy(build_py):
@@ -53,47 +53,14 @@ setup(name='pyoracc',
       version='0.1.0',
       author='UCL Research IT Services',
       author_email='rc-softdev@ucl.ac.uk',
-      # This is a one-line description or tagline of what your project does. This
-      # corresponds to the "Summary" metadata field:
-      # https://packaging.python.org/specifications/core-metadata/#summary
-      description='Python tools for working with ORACC/CDLI ATF files',  # Required
-
-      # This is an optional longer description of your project that represents
-      # the body of text which users will see when they visit PyPI.
-      #
-      # Often, this is the same as your README, so you can just read it in from
-      # that file directly (as we have already done above)
-      #
-      # This field corresponds to the "Description" metadata field:
-      # https://packaging.python.org/specifications/core-metadata/#description-optional
-      long_description=long_description,  # Optional
-
-      # Denotes that our long_description is in Markdown; valid values are
-      # text/plain, text/x-rst, and text/markdown
-      #
-      # Optional if long_description is written in reStructuredText (rst) but
-      # required for plain-text or Markdown; if unspecified, "applications should
-      # attempt to render [the long_description] as text/x-rst; charset=UTF-8 and
-      # fall back to text/plain if it is not valid rst" (see link below)
-      #
-      # This field corresponds to the "Description-Content-Type" metadata field:
-      # https://packaging.python.org/specifications/core-metadata/#description-content-type-optional
-      long_description_content_type='text/markdown',  # Optional (see note above)
-
+      description='Python tools for working with ORACC/CDLI ATF files',
+      long_description=long_description,
+      long_description_content_type='text/markdown',
       url='https://github.com/ucl/pyoracc',
       download_url='https://github.com/ucl/pyoracc/archive/master.tar.gz',
       license='GPLv3',
       packages=find_packages(exclude=["*.test", "*.test.*", "test.*", "test"]),
       install_requires=dependencies,
-      setup_requires=dependencies,
-      # List additional groups of dependencies here (e.g. development
-      # dependencies). Users will be able to install these using the "extras"
-      # syntax, for example:
-      #
-      #   $ pip install sampleproject[dev]
-      #
-      # Similar to `install_requires` above, these must be valid existing
-      # projects.
       extras_require={  # Optional
           'dev': extra_dependencies,
           'test': extra_dependencies,
@@ -129,14 +96,10 @@ setup(name='pyoracc',
           'Topic :: Software Development :: Libraries :: Python Modules',
           'Topic :: Utilities'
       ],
-      # This field adds keywords for your project which will appear on the
-      # project page. What does your project relate to?
-      #
-      # Note that this is a string of words separated by whitespace, not a list.
       keywords='oracc cdli atf cuneiform parser',  # Optional
       project_urls={  # Optional
           'Bug Reports': 'https://github.com/oracc/pyoracc/issues',
-          'Donating!': 'http://oracc.museum.upenn.edu/doc/about/contributing/index.html',
+          'Donating!': 'http://oracc.museum.upenn.edu/doc/about/contributing/',
           'Help!': 'http://oracc.museum.upenn.edu/doc/help/index.html',
           'Source': 'https://github.com/oracc/pyoracc/',
       },

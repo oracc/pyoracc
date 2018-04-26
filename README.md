@@ -124,7 +124,11 @@ Common atf based changes will go in pyoracc/atf/common
 Before running pytest and coverage, install [py.test](https://docs.pytest.org/en/latest/getting-started.html) and [pytest-cov](https://pypi.org/project/pytest-cov/).
 
     $ py.test --cov=pyoracc --cov-report xml --cov-report html --cov-report annotate --runslow
-    
+
+Before running pycodestyle, install [pycodestyle](https://pypi.org/project/pycodestyle/).
+
+    $ pycodestyle
+
 ## API Consumption
 
 ```python
