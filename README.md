@@ -5,7 +5,7 @@ pyoracc
 [![Maintainability](https://api.codeclimate.com/v1/badges/7244ac087b45146c5e3e/maintainability)](https://codeclimate.com/github/cdli-gh/pyoracc/maintainability)
 [![codecov](https://codecov.io/gh/oracc/pyoracc/branch/master/graph/badge.svg)](https://codecov.io/gh/oracc/pyoracc)
 
-Python tools for working with ORACC
+Python tools for working with ORACC/C-ATF files
 
 Depends on PLY, Mako and Pytest
 
@@ -105,6 +105,12 @@ Options:
 
 ## Internal Dev Usage
 
+### Development Guideline
+
+* ORACC atf based changes will go in pyoracc/atf/oracc
+* CDLI atf based changes will go in pyoracc/atf/cdli
+* Common atf based changes will go in pyoracc/atf/common
+
 ### To run on directory
 
     $ python  -m pyoracc.model.corpus ./pyoracc/test/data  cdli
@@ -118,7 +124,11 @@ Options:
 Before running pytest and coverage, install [py.test](https://docs.pytest.org/en/latest/getting-started.html) and [pytest-cov](https://pypi.org/project/pytest-cov/).
 
     $ py.test --cov=pyoracc --cov-report xml --cov-report html --cov-report annotate --runslow
-    
+
+Before running pycodestyle, install [pycodestyle](https://pypi.org/project/pycodestyle/).
+
+    $ pycodestyle
+
 ## API Consumption
 
 ```python

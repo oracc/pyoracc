@@ -20,7 +20,19 @@ along with PyORACC. If not, see <http://www.gnu.org/licenses/>.
 from setuptools import find_packages, setup
 from setuptools.command.build_py import build_py
 
+# To use a consistent encoding
+from codecs import open
+from os import path
+
+here = path.abspath(path.dirname(__file__))
+
+# Get the long description from the README file
+with open(path.join(here, 'README.md'), encoding='utf-8') as f:
+    long_description = f.read()
+
 dependencies = ['click', 'mako', 'ply']
+
+extra_dependencies = ['pytest', 'pytest-cov', 'codecov', 'pycodestyle']
 
 
 class MyBuildPy(build_py):
@@ -41,11 +53,18 @@ setup(name='pyoracc',
       version='0.1.0',
       author='UCL Research IT Services',
       author_email='rc-softdev@ucl.ac.uk',
+      description='Python tools for working with ORACC/CDLI ATF files',
+      long_description=long_description,
+      long_description_content_type='text/markdown',
       url='https://github.com/ucl/pyoracc',
       download_url='https://github.com/ucl/pyoracc/archive/master.tar.gz',
+      license='GPLv3',
       packages=find_packages(exclude=["*.test", "*.test.*", "test.*", "test"]),
       install_requires=dependencies,
-      setup_requires=dependencies,
+      extras_require={  # Optional
+          'dev': extra_dependencies,
+          'test': extra_dependencies,
+      },
       zip_safe=False,
       cmdclass=dict(build_py=MyBuildPy),
       entry_points={
@@ -58,13 +77,15 @@ setup(name='pyoracc',
           # 'Development Status :: 1 - Planning',
           # 'Development Status :: 2 - Pre-Alpha',
           # 'Development Status :: 3 - Alpha',
-          'Development Status :: 4 - Beta',
-          # 'Development Status :: 5 - Production/Stable',
+          # 'Development Status :: 4 - Beta',
+          'Development Status :: 5 - Production/Stable',
           # 'Development Status :: 6 - Mature',
           # 'Development Status :: 7 - Inactive',
           'Environment :: Console',
           'Intended Audience :: Developers',
-          'License :: OSI Approved :: BSD License',
+          'Intended Audience :: Education',
+          'Intended Audience :: Science/Research',
+          'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
           'Operating System :: POSIX',
           'Operating System :: MacOS',
           'Operating System :: Unix',
@@ -73,5 +94,14 @@ setup(name='pyoracc',
           'Programming Language :: Python :: 2',
           'Programming Language :: Python :: 3',
           'Topic :: Software Development :: Libraries :: Python Modules',
-      ]
+          'Topic :: Utilities'
+      ],
+      keywords='oracc cdli atf cuneiform parser',  # Optional
+      project_urls={  # Optional
+          'Bug Reports': 'https://github.com/oracc/pyoracc/issues',
+          'Donating!': 'http://oracc.museum.upenn.edu/doc/about/contributing/',
+          'Help!': 'http://oracc.museum.upenn.edu/doc/help/index.html',
+          'Source': 'https://github.com/oracc/pyoracc/',
+      },
+      python_requires='>=2.6, !=3.0.*, !=3.1.*, !=3.2.*, <4'
       )
