@@ -20,6 +20,7 @@ along with PyORACC. If not, see <http://www.gnu.org/licenses/>.
 
 from pyoracc.atf.common.atffile import AtfFile
 from ..fixtures import anzu, belsunu, sample_file
+import pytest
 
 
 def test_create():
@@ -88,36 +89,22 @@ texts = [
     ]
 
 
-def consider_composite(name, code):
+@pytest.mark.parametrize('name, code', [
+    (text[0], text[1]) for text in composites])
+def test_composite_code(name, code):
     """
-    Parses ATF and checks CDLI ID coincides
+    Parses ATF and checks CDLI ID coincides.
     """
     afile = AtfFile(sample_file(name))
     assert afile.text.texts[0].code == code
 
 
-def consider_file(name, code, description):
+@pytest.mark.parametrize('name, code, description', [
+    (text[0], text[1], text[2]) for text in texts])
+def test_text_designation(name, code, description):
     """
-    Parses ATF and checks CDLI ID and text description coincide
+    Parses ATF and checks CDLI ID and text description coincide.
     """
     afile = AtfFile(sample_file(name))
     assert afile.text.code == code
     assert afile.text.description == description
-
-
-def test_texts():
-    """"
-    Go through list of selected filenames and check parser deals non-composite
-    files.
-    """
-    for text in texts:
-        yield consider_file, text[0], text[1], text[2]
-
-
-def test_composites():
-    """
-    Go through list of selected composites and check parser deals with
-    composite files correctly
-    """
-    for composite in composites:
-        yield consider_composite, composite[0], composite[1]
