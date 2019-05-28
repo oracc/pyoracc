@@ -62,7 +62,7 @@ install:
         $PIP install setuptools
         $PIP install ply pep8 mako
         if [ "$MYPYTHON" != "jython" ]; then
-          $PIP install pytest pytest-cov codecov
+          $PIP install --upgrade pytest pytest-cov codecov
         fi
 
 script:
