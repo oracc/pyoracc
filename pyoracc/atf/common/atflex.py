@@ -69,36 +69,36 @@ class AtfLexer(object):
 
     states = AtfLexicon.STATES
 
-    t_AMPERSAND = "\&"
-    t_HASH = "\#"
-    t_EXCLAIM = "\!"
-    t_QUERY = "\?"
-    t_STAR = "\*"
-    t_DOLLAR = "\$"
-    t_MINUS = "\-"
-    t_FROM = "\<\<"
-    t_TO = "\>\>"
-    t_COMMA = "\,"
-    t_PARBAR = "\|\|"
+    t_AMPERSAND = r'\&'
+    t_HASH = r'\#'
+    t_EXCLAIM = r'\!'
+    t_QUERY = r'\?'
+    t_STAR = r'\*'
+    t_DOLLAR = r'\$'
+    t_MINUS = r'\-'
+    t_FROM = r'\<\<'
+    t_TO = r'\>\>'
+    t_COMMA = r'\,'
+    t_PARBAR = r'\|\|'
 
-    t_INITIAL_transctrl_PARENTHETICALID = "\([^\n\r]*\)"
+    t_INITIAL_transctrl_PARENTHETICALID = r'\([^\n\r]*\)'
 
     def t_INITIAL_transctrl_WHITESPACE(self, t):
         r'[\t ]+'
         # NO TOKEN
 
     def t_MULTILINGUAL(self, t):
-        "\=\="
+        r'\=\='
         t.lexer.push_state("text")
         return t
 
     def t_EQUALBRACE(self, t):
-        "^\=\{"
+        r'^\=\{'
         t.lexer.push_state('text')
         return t
 
     def t_EQUALS(self, t):
-        "\="
+        r'\='
         t.lexer.push_state('flagged')
         return t
 
@@ -121,7 +121,7 @@ class AtfLexer(object):
         return t
 
     def t_INITIAL_parallel_labeled_ATID(self, t):
-        '^\@[a-zA-Z][a-zA-Z0-9\[\]]*\+?'
+        r'^\@[a-zA-Z][a-zA-Z0-9\[\]]*\+?'
         t.value = t.value[1:]
         t.lexpos += 1
         t.type = self.resolve_keyword(t.value,
@@ -171,13 +171,13 @@ class AtfLexer(object):
         return t
 
     def t_labeled_OPENR(self, t):
-        "\@\("
+        r'\@\('
         t.lexer.push_state("para")
         t.lexer.push_state("transctrl")
         return t
 
     def t_INITIAL_parallel_labeled_HASHID(self, t):
-        '\#[a-zA-Z][a-zA-Z0-9\[\]]+\:'
+        r'\#[a-zA-Z][a-zA-Z0-9\[\]]+\:'
         # Note that \:? absorbs a trailing colon in protocol keywords
         t.value = t.value[1:-1]
         t.lexpos += 1
@@ -303,7 +303,7 @@ class AtfLexer(object):
             t.type = "REFERENCE"
         return t
 
-    t_parallel_QUERY = "\?"
+    t_parallel_QUERY = r'\?'
 
     def t_parallel_LINELABEL(self, t):
         r'^([^\.\ \t]*)\.[\ \t]*'
@@ -311,14 +311,14 @@ class AtfLexer(object):
         return t
 
     def t_parallel_labeled_DOLLAR(self, t):
-        "^\$"
+        r'^\$'
         t.lexer.push_state("absorb")
         return t
 
-    t_transctrl_MINUS = "\-\ "
+    t_transctrl_MINUS = r'\-\ '
 
     def t_transctrl_CLOSER(self, t):
-        "\)"
+        r'\)'
         t.lexer.pop_state()
         return t
 
@@ -352,8 +352,8 @@ class AtfLexer(object):
     # fact that the first character may not be a ?
     # We are looking for a string that does not start with ? it may include
     # newlines if they are followed by a whitespace.
-    translation_regex1 = '([^\?\^\n\r]|([\n\r](?=[ \t])))'
-    translation_regex2 = '([^\^\n\r]|([\n\r](?=[ \t])))*'
+    translation_regex1 = r'([^\?\^\n\r]|([\n\r](?=[ \t])))'
+    translation_regex2 = r'([^\^\n\r]|([\n\r](?=[ \t])))*'
     translation_regex = white + translation_regex1 + translation_regex2 + white
 
     @lex.TOKEN(translation_regex)
@@ -399,12 +399,12 @@ class AtfLexer(object):
         t.value = t.value.strip()
         return t
 
-    t_flagged_HASH = "\#"
-    t_flagged_EXCLAIM = "\!"
-    t_flagged_QUERY = "\?"
-    t_flagged_STAR = "\*"
-    t_flagged_parallel_para_HAT = "[\ \t]*\^[\ \t]*"
-    t_flagged_EQUALS = "\="
+    t_flagged_HASH = r'\#'
+    t_flagged_EXCLAIM = r'\!'
+    t_flagged_QUERY = r'\?'
+    t_flagged_STAR = r'\*'
+    t_flagged_parallel_para_HAT = r'[\ \t]*\^[\ \t]*'
+    t_flagged_EQUALS = r'\='
     # --- Rules for paragaph state----------------------------------
     # Free text, ended by double new line
 
@@ -441,11 +441,11 @@ class AtfLexer(object):
     # --- RULES FOR THE nonequals STATE -----
     # Absorb everything except an equals
     def t_nonequals_ID(self, t):
-        "[^\=\n\r]+"
+        r'[^\=\n\r]+'
         t.value = t.value.strip()
         return t
 
-    t_nonequals_EQUALS = "\="
+    t_nonequals_EQUALS = r'\='
 
     # --- RULES FOR THE absorb STATE -----
     # Absorb everything
@@ -455,14 +455,14 @@ class AtfLexer(object):
         return t
 
     # --- RULES FOR THE text STATE ----
-    t_text_ID = "[^\ \t \n\r]+"
+    t_text_ID = r'[^\ \t \n\r]+'
 
     def t_text_SPACE(self, t):
         r'[\ \t]'
         # No token generated
 
     # --- RULES FOR THE lemmatize STATE
-    t_lemmatize_ID = "[^\;\n\r]+"
+    t_lemmatize_ID = r'[^\;\n\r]+'
     t_lemmatize_SEMICOLON = r'\;[\ \t]*'
 
     # Error handling rule
