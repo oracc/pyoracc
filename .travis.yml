@@ -19,7 +19,6 @@ matrix:
       sudo: false
       python: 3.5
     - os: osx
-      osx_image: xcode7.3
       language: generic
       env: PIP=pip3 MYPYTHON=python3
 env:
@@ -63,7 +62,7 @@ install:
         $PIP install setuptools
         $PIP install ply pep8 mako
         if [ "$MYPYTHON" != "jython" ]; then
-          $PIP install pytest pytest-cov codecov
+          $PIP install --upgrade pytest pytest-cov codecov
         fi
 
 script:
@@ -75,7 +74,7 @@ script:
       if [ "$MYPYTHON" == "jython" ]; then
         py.test
       else
-        py.test --cov=pyoracc --cov-report xml --cov-report html --runslow
+        pytest --cov=pyoracc --runslow
       fi
 
   - pep8 --exclude=parsetab.py .
