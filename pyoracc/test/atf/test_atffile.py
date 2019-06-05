@@ -21,6 +21,7 @@ along with PyORACC. If not, see <http://www.gnu.org/licenses/>.
 from pyoracc.atf.common.atffile import AtfFile
 from ..fixtures import anzu, belsunu, sample_file
 import pytest
+import json
 
 
 def test_create():
@@ -108,3 +109,18 @@ def test_text_designation(name, code, description):
     afile = AtfFile(sample_file(name))
     assert afile.text.code == code
     assert afile.text.description == description
+
+
+@pytest.mark.parametrize('name', [text[0] for text in texts])
+def test_json_serialization(name):
+    """
+    Parses ATF and verifies the to_json() method output.
+    """
+    afile = AtfFile(sample_file(name))
+    js = afile.to_json()
+    result = json.loads(js)
+    assert result
+    noskipjs = afile.to_json(skip_empty=False)
+    result = json.loads(noskipjs)
+    assert result
+    assert len(noskipjs) >= len(js)
