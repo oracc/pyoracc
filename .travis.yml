@@ -51,8 +51,7 @@ install:
         # Install dependencies
         $PIP install pip
         if [ "$MYPYTHON" == "jython" ]; then
-          $PIP install pip==8.1.2
-          $PIP install pytest==2.9.2
+          $PIP install pytest
         fi
         $PIP install wheel
         $PIP install setuptools
