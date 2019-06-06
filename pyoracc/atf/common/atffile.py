@@ -21,6 +21,7 @@ import codecs
 import sys
 import logging
 import json
+from numbers import Number
 
 from pyoracc.atf.cdli.atflex import AtfCDLILexer
 from pyoracc.atf.cdli.atfyacc import AtfCDLIParser
@@ -92,7 +93,7 @@ class AtfFile(object):
             return {k: v
                     for k, v in vars(obj).items()
                     if not str(k).startswith('_') and not (
-                        skip_empty and not v and not isinstance(v, bool)
+                        skip_empty and not v and not isinstance(v, Number)
                     )}
 
         kwargs.setdefault('indent', 2)
