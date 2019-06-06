@@ -10,11 +10,7 @@ matrix:
     - os: linux
       sudo: false
       python: 2.7
-      env: MYPYTHON=jython - JYTHON_URL="http://search.maven.org/remotecontent?filepath=org/python/jython-installer/2.7.0/jython-installer-2.7.0.jar"
-    - os: linux
-      sudo: false
-      python: 2.7
-      env: MYPYTHON=jython - JYTHON_URL="http://search.maven.org/remotecontent?filepath=org/python/jython-installer/2.7.1b3/jython-installer-2.7.1b3.jar"
+      env: MYPYTHON=jython - JYTHON_URL="https://search.maven.org/remotecontent?filepath=org/python/jython-installer/2.7.1/jython-installer-2.7.1.jar"
     - os: linux
       sudo: false
       python: 3.5
@@ -55,8 +51,7 @@ install:
         # Install dependencies
         $PIP install pip
         if [ "$MYPYTHON" == "jython" ]; then
-          $PIP install pip==8.1.2
-          $PIP install pytest==2.9.2
+          $PIP install pytest
         fi
         $PIP install wheel
         $PIP install setuptools
