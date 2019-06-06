@@ -33,10 +33,10 @@ class Corpus(object):
         self.source = kwargs['source']
         if 'source' in kwargs:
             for dirpath, _, files in os.walk(self.source):
-                for file in files:
-                    if file.endswith('.atf'):
+                for filename in files:
+                    if filename.endswith('.atf'):
                         try:
-                            path = os.path.join(dirpath, file)
+                            path = os.path.join(dirpath, filename)
                             print("Parsing file", path, "... ", end="")
                             content = codecs.open(path,
                                                   encoding='utf-8-sig').read()

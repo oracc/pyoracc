@@ -124,7 +124,7 @@ Options:
 
 Before running pytest and coverage, install [py.test](https://docs.pytest.org/en/latest/getting-started.html) and [pytest-cov](https://pypi.org/project/pytest-cov/).
 
-    $ py.test --cov=pyoracc --cov-report xml --cov-report html --cov-report annotate --runslow
+    $ py.test --cov=pyoracc --cov-report xml --cov-report html --cov-report annotate
 
 Before running pycodestyle, install [pycodestyle](https://pypi.org/project/pycodestyle/).
 
