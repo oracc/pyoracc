@@ -96,7 +96,6 @@ class AtfFile(object):
                     )}
 
         kwargs.setdefault('indent', 2)
-        kwargs.setdefault('sort_keys', True)
         kwargs.setdefault('default', _make_serializable)
         return json.dumps(self.text, **kwargs)
 
