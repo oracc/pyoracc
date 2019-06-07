@@ -20,6 +20,8 @@ along with PyORACC. If not, see <http://www.gnu.org/licenses/>.
 import codecs
 import sys
 import logging
+import json
+from numbers import Number
 
 from pyoracc.atf.cdli.atflex import AtfCDLILexer
 from pyoracc.atf.cdli.atfyacc import AtfCDLIParser
@@ -71,6 +73,32 @@ class AtfFile(object):
 
     def serialize(self):
         return AtfFile.template.render_unicode(**vars(self))
+
+    def to_json(self, skip_empty=True, **kwargs):
+        '''Return a JSON representation of the parsed file.
+
+        The optional skip_empty argument determines whether keys
+        with empty values are included in the output. Set it to
+        False to see all possible object members.
+
+        Otherwise it accepts the same optional arguments as
+        json.dumps().'''
+        def _make_serializable(obj):
+            '''Construct a dict representation of an object.
+
+            This is necessary to handle our custom objects
+            which json.JSONEncoder doesn't know how to
+            serialize.'''
+
+            return {k: v
+                    for k, v in vars(obj).items()
+                    if not str(k).startswith('_') and not (
+                        skip_empty and not v and not isinstance(v, Number)
+                    )}
+
+        kwargs.setdefault('indent', 2)
+        kwargs.setdefault('default', _make_serializable)
+        return json.dumps(self.text, **kwargs)
 
 
 def check_atf(infile, atftype, verbose=False):
