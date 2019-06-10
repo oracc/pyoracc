@@ -225,7 +225,7 @@ class AtfLexer(object):
         return t
 
     def t_ID(self, t):
-        u'[a-zA-Z0-9][a-zA-Z\'\u2019\xb4\/\.0-9\:\-\[\]_\u2080-\u2089]*'
+        r'[a-zA-Z0-9][a-zA-Z0-9/.:_\-\[\]' u'\'\u2019\xb4\u2080-\u2089]*'
         t.value = t.value.replace(u'\u2019', "'")
         t.value = t.value.replace(u'\xb4', "'")
         t.type = self.resolve_keyword(t.value,
@@ -271,7 +271,7 @@ class AtfLexer(object):
     # Unicode 2032  is PRIME
     # All of these could be used as prime
     def t_transctrl_ID(self, t):
-        u'[a-zA-Z0-9][a-zA-Z\'\u2019\u2032\u02CA\xb4\/\.0-9\:\-\[\]_' \
+        r'[a-zA-Z0-9][a-zA-Z0-9/.:_\-\[\]' u'\'\u2019\u2032\u02CA\xb4' \
             u'\u2080-\u2089]*'
         t.value = t.value.replace(u'\u2019', "'")
         t.value = t.value.replace(u'\u2032', "'")
@@ -409,7 +409,7 @@ class AtfLexer(object):
     # Free text, ended by double new line
 
     terminates_para = \
-        "(\#|\@[^i][^\{]|\&|\Z|(^[0-9]+[\'\u2019\u2032\u02CA\xb4]?\.))"
+        r'(#|@[^i][^{]|&|\Z|(^[0-9]+' u'[\'\u2019\u2032\u02CA\xb4]\\.))'
 
     @lex.TOKEN(r'([^\^\n\r]|(\r?\n(?!\s*\r?\n)(?!' +
                terminates_para + ')))+')
