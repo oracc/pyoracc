@@ -68,7 +68,7 @@ script:
       $MYPYTHON -c "from pyoracc import _generate_parsetab; _generate_parsetab()"
       echo "Running tests"
       if [ "$MYPYTHON" == "jython" ]; then
-        py.test
+        pytest
       else
         pytest --cov=pyoracc
       fi
