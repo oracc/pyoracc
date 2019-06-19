@@ -15,6 +15,7 @@ matrix:
       sudo: false
       python: 3.5
     - os: osx
+      osx_image: xcode10
       language: generic
       env: PIP=pip3 MYPYTHON=python3
 env:
