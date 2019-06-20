@@ -574,6 +574,19 @@ class TestLexer(TestCase):
              "LINELABEL"] + ["ID"] * 6 + ["NEWLINE", "NOTE", "ID", "NEWLINE"]
         )
 
+    def test_hash_note_multiline(self):
+        # Notes can be free text until a double-newline.
+        line = "a-šar _saḫar.ḫi.a_ bu-bu-su-nu"
+        self.compare_tokens(
+            "1. " + line + "\n" +
+            "#note: Does this combine with the next line?\n"
+            "It should.\n\n",
+            ["LINELABEL"] + ["ID"] * len(line.split()) + ["NEWLINE"] +
+            ["NOTE", "ID", "NEWLINE"],
+            ['1'] + line.split() +
+            [None, None, "Does this combine with the next line?\nIt should."]
+        )
+
     def test_open_text_with_dots(self):
         # This must not come out as a linelabel of Hello.
         self.compare_tokens(
