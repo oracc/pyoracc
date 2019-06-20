@@ -409,13 +409,14 @@ class AtfLexer(object):
     # Free text, ended by double new line
 
     terminates_para = \
-        r'(#|@[^i][^{]|&|\Z|(^[0-9]+' u'[\'\u2019\u2032\u02CA\xb4]\\.))'
+        r'(#|@[^i][^{]|&|\Z|(^[0-9]+' u'[\'\u2019\u2032\u02CA\xb4]?\\.))'
 
     @lex.TOKEN(r'([^\^\n\r]|(\r?\n(?!\s*\r?\n)(?!' +
                terminates_para + ')))+')
     def t_para_ID(self, t):
         t.lexer.lineno += t.value.count("\n")
         t.value = t.value.strip()
+        print(' *** in t_para_ID with value', t.value, ' ***')
         return t
 
     # Paragraph state is ended by a double newline
@@ -428,9 +429,9 @@ class AtfLexer(object):
     # BUT, exceptionally to fix existing bugs in active members of corpus,
     # it is also ended by an @label or an @(), or a new document,
     # Or a linelabel, or the end of the stream. Importantly it does not end
-    # by @i{xxx} which is used for un translated words.
-    # and these tokens are not absorbed by this token
-    # Translation paragraph state is ended by a double newline
+    # by @i{xxx} which is used for untranslated words.
+    # Those tokens are not absorbed by this token.
+    # Translation paragraph state is ended by a double newline.
     @lex.TOKEN(r'\r?\n(?=' + terminates_para + ')')
     def t_para_MAGICNEWLINE(self, t):
         t.lexer.lineno += t.value.count("\n")
