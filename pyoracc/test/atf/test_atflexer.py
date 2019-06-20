@@ -912,11 +912,15 @@ class TestLexer(TestCase):
     def compare_note_ended_by_line(self, line_label):
         'Helper for Note para state termination.'
         # Sample text.
-        line1 = "a-šar _saḫar.ḫi.a_ bu-bu-su-nu"
-        line2 = "a-kal-ši-na ṭi-id-di"
+        line1 = u"a-šar _saḫar.ḫi.a_ bu-bu-su-nu"
+        line2 = u"a-kal-ši-na ṭi-id-di"
         # Generate the successive line numbers in the same style.
         label1 = line_label
-        label2 = str(int(label1[:1]) + 1) + label1[1:]
+        next = int(label1[:1]) + 1
+        if _pyversion() == 2:
+            label2 = unicode(next) + label1[1:]
+        else:
+            label2 = str(next) + label1[1:]
         self.compare_tokens(
             label1 + ". " + line1 + "\n" +
             "#note: Does this combine with the next line?\n" +
