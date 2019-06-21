@@ -916,11 +916,11 @@ class TestLexer(TestCase):
         line2 = u"a-kal-ši-na ṭi-id-di"
         # Generate the successive line numbers in the same style.
         label1 = line_label
-        next = int(label1[:1]) + 1
+        next_label = int(label1[:1]) + 1
         if _pyversion() == 2:
-            label2 = unicode(next) + label1[1:]
+            label2 = unicode(next_label) + label1[1:]
         else:
-            label2 = str(next) + label1[1:]
+            label2 = str(next_label) + label1[1:]
         self.compare_tokens(
             label1 + ". " + line1 + "\n" +
             "#note: Does this combine with the next line?\n" +
