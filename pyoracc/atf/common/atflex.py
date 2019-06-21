@@ -416,7 +416,6 @@ class AtfLexer(object):
     def t_para_ID(self, t):
         t.lexer.lineno += t.value.count("\n")
         t.value = t.value.strip()
-        print(' *** in t_para_ID with value', t.value, ' ***')
         return t
 
     # Paragraph state is ended by a double newline
