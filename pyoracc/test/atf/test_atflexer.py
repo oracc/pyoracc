@@ -30,14 +30,9 @@ else:
     from itertools import zip_longest
 
 
-@pytest.fixture
-def lexer():
-    """AtfLexer instance used by each test."""
-    return AtfLexer().lexer
-
-
-def compare_tokens(lexer, content, expected_types, expected_values=None,
+def compare_tokens(content, expected_types, expected_values=None,
                    expected_lineno=None, expected_lexpos=None):
+    lexer = AtfLexer().lexer
     lexer.input(content)
     if expected_values is None:
         expected_values = repeat(None)
@@ -62,7 +57,8 @@ def compare_tokens(lexer, content, expected_types, expected_values=None,
             assert token.lexpos == e_lexpos
 
 
-def ensure_raises_and_not(lexer, string, nwarnings):
+def ensure_raises_and_not(string, nwarnings):
+    lexer = AtfLexer().lexer
     lexer.input(string)
     with pytest.raises(SyntaxError) as excinfo:
         for i in lexer:
@@ -76,18 +72,16 @@ def ensure_raises_and_not(lexer, string, nwarnings):
     assert len(record) == nwarnings
 
 
-def test_code(lexer):
+def test_code():
     compare_tokens(
-        lexer,
         "&X001001 = JCS 48, 089\n",
         ["AMPERSAND", "ID", "EQUALS", "ID", "NEWLINE"],
         [None, "X001001", None, "JCS 48, 089"]
     )
 
 
-def test_crlf(lexer):
+def test_crlf():
     compare_tokens(
-        lexer,
         "&X001001 = JCS 48, 089\r\n" +
         "#project: cams/gkab\n\r",
         ["AMPERSAND", "ID", "EQUALS", "ID", "NEWLINE"] +
@@ -95,77 +89,68 @@ def test_crlf(lexer):
     )
 
 
-def test_project(lexer):
+def test_project():
     compare_tokens(
-        lexer,
         "#project: cams/gkab\n",
         ["PROJECT", "ID", "NEWLINE"],
         [None, "cams/gkab", None]
     )
 
 
-def test_key(lexer):
+def test_key():
     compare_tokens(
-        lexer,
         "#key: cdli=ND 02688\n",
         ["KEY", "ID", "EQUALS", "ID", "NEWLINE"],
         [None, "cdli", None, "ND 02688", None]
     )
 
 
-def test_language_protocol(lexer):
+def test_language_protocol():
     compare_tokens(
-        lexer,
         "#atf: lang akk-x-stdbab\n",
         ["ATF", "LANG", "ID", "NEWLINE"],
         [None, None, "akk-x-stdbab"]
     )
 
 
-def test_use_unicode(lexer):
+def test_use_unicode():
     compare_tokens(
-        lexer,
         "#atf: use unicode\n",
         ["ATF", "USE", "UNICODE", "NEWLINE"]
     )
 
 
-def test_use_math(lexer):
+def test_use_math():
     compare_tokens(
-        lexer,
         "#atf: use math\n",
         ["ATF", "USE", "MATH", "NEWLINE"]
     )
 
 
-def test_use_legacy(lexer):
+def test_use_legacy():
     compare_tokens(
-        lexer,
         "#atf: use legacy\n",
         ["ATF", "USE", "LEGACY", "NEWLINE"]
     )
 
 
-def test_bib(lexer):
+def test_bib():
     compare_tokens(
-        lexer,
         "#bib:  MEE 15 54\n",
         ["BIB", "ID", "NEWLINE"]
     )
 
 
-def test_bib_long(lexer):
+def test_bib_long():
     # not documented but common
     compare_tokens(
-        lexer,
         "#bib:  MEE 4 73 = EV a\n",
         ["BIB", "ID", "EQUALS", "ID", "NEWLINE"]
     )
 
 
-def test_link(lexer):
+def test_link():
     compare_tokens(
-        lexer,
         "#link: def A = P363716 = TCL 06, 44\n" +
         "@tablet\n",
         ["LINK", "DEF", "ID", "EQUALS", "ID", "EQUALS", "ID", "NEWLINE",
@@ -174,9 +159,8 @@ def test_link(lexer):
     )
 
 
-def test_link_parallel_slash(lexer):
+def test_link_parallel_slash():
     compare_tokens(
-        lexer,
         "#link: parallel dcclt/obale:P274929 = IM 070209\n" +
         "@tablet\n",
         ["LINK", "PARALLEL", "ID", "EQUALS", "ID", "NEWLINE",
@@ -185,9 +169,8 @@ def test_link_parallel_slash(lexer):
     )
 
 
-def test_link_parallel(lexer):
+def test_link_parallel():
     compare_tokens(
-        lexer,
         "#link: parallel abcd:P363716 = TCL 06, 44\n" +
         "@tablet\n",
         ["LINK", "PARALLEL", "ID", "EQUALS", "ID", "NEWLINE",
@@ -196,111 +179,98 @@ def test_link_parallel(lexer):
     )
 
 
-def test_link_reference(lexer):
+def test_link_reference():
     compare_tokens(
-        lexer,
         "|| A o ii 10\n",
         ["PARBAR", "ID", "ID", "ID", "ID", "NEWLINE"]
     )
 
 
-def test_link_reference_range(lexer):
+def test_link_reference_range():
     compare_tokens(
-        lexer,
         "|| A o ii 10 -  o ii 12 \n",
         ["PARBAR", "ID", "ID", "ID", "ID", "MINUS",
          "ID", "ID", "ID", "NEWLINE"]
     )
 
 
-def test_link_reference_prime_range(lexer):
+def test_link_reference_prime_range():
     compare_tokens(
-        lexer,
         "|| A o ii 10' -  o ii' 12 \n",
         ["PARBAR", "ID", "ID", "ID", "ID", "MINUS",
          "ID", "ID", "ID", "NEWLINE"]
     )
 
 
-def test_score(lexer):
+def test_score():
     compare_tokens(
-        lexer,
         "@score matrix parsed word\n",
         ["SCORE", "ID", "ID", "ID", "NEWLINE"]
     )
 
 
-def test_division_tablet(lexer):
+def test_division_tablet():
     compare_tokens(
-        lexer,
         "@tablet",
         ["TABLET"]
     )
 
 
-def test_text_linenumber(lexer):
+def test_text_linenumber():
     compare_tokens(
-        lexer,
         "1.    [MU] 1.03-KAM {iti}AB GE₆ U₄ 2-KAM",
         ["LINELABEL"] + ['ID'] * 6
     )
 
 
-def test_lemmatize(lexer):
+def test_lemmatize():
     compare_tokens(
-        lexer,
         "#lem: šatti[year]N; n; Ṭebetu[1]MN; " +
         "mūša[at night]AV; ūm[day]N; n",
         ["LEM"] + ['ID', 'SEMICOLON'] * 5 + ['ID']
     )
 
 
-def test_loose_dollar(lexer):
+def test_loose_dollar():
     compare_tokens(
-        lexer,
         "$ (a loose dollar line)",
         ["DOLLAR", "PARENTHETICALID"],
         [None, "(a loose dollar line)"]
     )
 
 
-def test_loose_nested_dollar(lexer):
+def test_loose_nested_dollar():
     compare_tokens(
-        lexer,
         "$ (a (very) loose dollar line)",
         ["DOLLAR", "PARENTHETICALID"],
         [None, "(a (very) loose dollar line)"]
     )
 
 
-def test_loose_end_nested_dollar(lexer):
+def test_loose_end_nested_dollar():
     compare_tokens(
-        lexer,
         "$ (a loose dollar line (wow))",
         ["DOLLAR", "PARENTHETICALID"],
         [None, "(a loose dollar line (wow))"]
     )
 
 
-def test_strict_dollar(lexer):
+def test_strict_dollar():
     compare_tokens(
-        lexer,
         "$ reverse blank",
         ["DOLLAR", "REFERENCE", "BLANK"]
     )
 
 
-def test_translation_intro(lexer):
+def test_translation_intro():
     compare_tokens(
-        lexer,
         "@translation parallel en project",
         ["TRANSLATION", "PARALLEL", "ID", "PROJECT"]
     )
 
 
-def test_translation_text(lexer):
+def test_translation_text():
     compare_tokens(
-        lexer,
         "@translation parallel en project\n" +
         "1.    Year 63, Ṭebetu (Month X), night of day 2:^1^",
         ["TRANSLATION", "PARALLEL", "ID", "PROJECT", "NEWLINE",
@@ -311,9 +281,8 @@ def test_translation_text(lexer):
     )
 
 
-def test_translation_multiline_text(lexer):
+def test_translation_multiline_text():
     compare_tokens(
-        lexer,
         "@translation parallel en project\n" +
         "1.    Year 63, Ṭebetu (Month X)\n" +
         " , night of day 2\n",
@@ -324,9 +293,8 @@ def test_translation_multiline_text(lexer):
     )
 
 
-def test_translation_labeled_text(lexer):
+def test_translation_labeled_text():
     compare_tokens(
-        lexer,
         "@translation labeled en project\n" +
         "@label o 4\n" +
         "Then it will be taken for the rites and rituals.\n\n",
@@ -339,9 +307,8 @@ def test_translation_labeled_text(lexer):
     )
 
 
-def test_translation_labeled_noted_text(lexer):
+def test_translation_labeled_noted_text():
     compare_tokens(
-        lexer,
         "@translation labeled en project\n" +
         "@label r 8\n" +
         "The priest says the gods have performed these actions. ^1^\n\n" +
@@ -360,9 +327,8 @@ def test_translation_labeled_noted_text(lexer):
     )
 
 
-def test_translation_labeled_dashlabel(lexer):
+def test_translation_labeled_dashlabel():
     compare_tokens(
-        lexer,
         "@translation labeled en project\n" +
         "@label o 14-15 - o 20\n" +
         "You strew all (kinds of) seed.\n\n",
@@ -374,9 +340,8 @@ def test_translation_labeled_dashlabel(lexer):
     )
 
 
-def test_translation_labeled_atlabel(lexer):
+def test_translation_labeled_atlabel():
     compare_tokens(
-        lexer,
         "@translation labeled en project\n" +
         "@(o 20) You strew all (kinds of) seed.\n" +
         "@(o i 2) No-one will occupy the king of Akkad's throne.\n\n",
@@ -390,9 +355,8 @@ def test_translation_labeled_atlabel(lexer):
     )
 
 
-def test_translation_range_label_prime(lexer):
+def test_translation_range_label_prime():
     compare_tokens(
-        lexer,
         "@translation labeled en project\n" +
         "@label r 1' - r 2'\n",
         ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
@@ -402,9 +366,8 @@ def test_translation_range_label_prime(lexer):
     )
 
 
-def test_translation_label_unicode_suffix(lexer):
+def test_translation_label_unicode_suffix():
     compare_tokens(
-        lexer,
         "@translation labeled en project\n" +
         u'@label r A\u2081\n',
         ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
@@ -414,9 +377,8 @@ def test_translation_label_unicode_suffix(lexer):
     )
 
 
-def test_translation_label_unicode_prime(lexer):
+def test_translation_label_unicode_prime():
     compare_tokens(
-        lexer,
         "@translation labeled en project\n" +
         u'@label r 1\u2019\n',
         ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
@@ -426,9 +388,8 @@ def test_translation_label_unicode_prime(lexer):
     )
 
 
-def test_translation_label_unicode_prime2(lexer):
+def test_translation_label_unicode_prime2():
     compare_tokens(
-        lexer,
         "@translation labeled en project\n" +
         u'@label r 1\xb4\n',
         ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
@@ -438,9 +399,8 @@ def test_translation_label_unicode_prime2(lexer):
     )
 
 
-def test_translation_label_unicode_prime3(lexer):
+def test_translation_label_unicode_prime3():
     compare_tokens(
-        lexer,
         "@translation labeled en project\n" +
         u'@label r 1\u2032\n',
         ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
@@ -450,9 +410,8 @@ def test_translation_label_unicode_prime3(lexer):
     )
 
 
-def test_translation_label_unicode_prime4(lexer):
+def test_translation_label_unicode_prime4():
     compare_tokens(
-        lexer,
         "@translation labeled en project\n" +
         u'@label r 1\u02CA\n',
         ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
@@ -462,9 +421,8 @@ def test_translation_label_unicode_prime4(lexer):
     )
 
 
-def test_translation_range_label_plus(lexer):
+def test_translation_range_label_plus():
     compare_tokens(
-        lexer,
         "@translation labeled en project\n" +
         "@label+ o 28\n",
         ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
@@ -472,10 +430,9 @@ def test_translation_range_label_plus(lexer):
     )
 
 
-def test_translation_label_long_reference(lexer):
+def test_translation_label_long_reference():
     "Translations can have full surface names rather than single letter"
     compare_tokens(
-        lexer,
         "@translation labeled en project\n" +
         "@label obverse 28\n",
         ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
@@ -483,9 +440,8 @@ def test_translation_label_long_reference(lexer):
     )
 
 
-def test_translation_symbols_in_translation(lexer):
+def test_translation_symbols_in_translation():
     compare_tokens(
-        lexer,
         "@translation labeled en project\n" +
         "@label o 1'\n" +
         "[...] ... (zodiacal sign) 8, 10° = (sign) 12, 10°\n\n",
@@ -495,9 +451,8 @@ def test_translation_symbols_in_translation(lexer):
     )
 
 
-def test_translation_ats_in_translation(lexer):
+def test_translation_ats_in_translation():
     compare_tokens(
-        lexer,
         "@translation labeled en project\n" +
         "@label o 1'\n" +
         "@kupputu (means): affliction (@? and) reduction?@;" +
@@ -508,12 +463,11 @@ def test_translation_ats_in_translation(lexer):
     )
 
 
-def test_translation_blank_line_begins_translation(lexer):
+def test_translation_blank_line_begins_translation():
     # A double newline normally ends a translation paragraph
     # But this is NOT the case at the beginning of a section,
     # Apparently.
     compare_tokens(
-        lexer,
         "@translation labeled en project\n" +
         "@label o 16\n" +
         "\n" +
@@ -525,12 +479,11 @@ def test_translation_blank_line_begins_translation(lexer):
     )
 
 
-def test_translation_blank_line_amid_translation(lexer):
+def test_translation_blank_line_amid_translation():
     # A double newline normally ends a translation paragraph
     # But this is NOT the case at the beginning of a section,
     # Apparently.
     compare_tokens(
-        lexer,
         "@translation labeled en project\n" +
         "@(4) their [cri]mes [have been forgiven] by the king." +
         " (As to) all [the\n" +
@@ -546,12 +499,11 @@ def test_translation_blank_line_amid_translation(lexer):
     )
 
 
-def test_translation_no_blank_line_in_labeled_translation(lexer):
+def test_translation_no_blank_line_in_labeled_translation():
     # This functionality is expressly forbidden at
     # http://build.oracc.org/doc2/help/editinginatf/translations/index.html
     # But appears is in cm_31_139 anyway
     compare_tokens(
-        lexer,
         "@translation labeled en project\n" +
         "@label o 13\n" +
         "@al-@ŋa₂-@ŋa₂ @al-@ŋa₂-@ŋa₂ @šag₄-@ba-@ni" +
@@ -568,11 +520,10 @@ def test_translation_no_blank_line_in_labeled_translation(lexer):
     )
 
 
-def test_translation_ATlines_in_translation(lexer):
+def test_translation_ATlines_in_translation():
     # @ within Translations mark Foreign
     # http://oracc.museum.upenn.edu/doc/help/editinginatf/translations/index.html
     compare_tokens(
-        lexer,
         "@translation labeled en project\n" +
         "@obverse\n" +
         "1'. @MUD (means) trembling. @MUD (means) dark.",
@@ -581,9 +532,8 @@ def test_translation_ATlines_in_translation(lexer):
     )
 
 
-def test_translation_range_label_periods(lexer):
+def test_translation_range_label_periods():
     compare_tokens(
-        lexer,
         "@translation labeled en project\n" +
         "@label t.e. 1\n",
         ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
@@ -592,9 +542,8 @@ def test_translation_range_label_periods(lexer):
          None, "t.e.", "1"])
 
 
-def test_interlinear_translation(lexer):
+def test_interlinear_translation():
     compare_tokens(
-        lexer,
         "@tablet\n" +
         "1'. ⸢x⸣\n" +
         "#tr: English\n",
@@ -603,9 +552,8 @@ def test_interlinear_translation(lexer):
          "TR", "ID", "NEWLINE"])
 
 
-def test_multilineinterlinear_translation(lexer):
+def test_multilineinterlinear_translation():
     compare_tokens(
-        lexer,
         "@tablet\n" +
         "1'. ⸢x⸣\n" +
         "#tr: English\n" +
@@ -615,54 +563,48 @@ def test_multilineinterlinear_translation(lexer):
          "TR", "ID", "NEWLINE"])
 
 
-def test_note_internalflag(lexer):
+def test_note_internalflag():
     compare_tokens(
-        lexer,
         "@note Hello James's World",
         ["NOTE", "ID"],
         [None, "Hello James's World"]
     )
 
 
-def test_note_internalspace(lexer):
+def test_note_internalspace():
     compare_tokens(
-        lexer,
         "@note Hello James",
         ["NOTE", "ID"],
         [None, "Hello James"]
     )
 
 
-def test_note_onechar(lexer):
+def test_note_onechar():
     compare_tokens(
-        lexer,
         "@note H",
         ["NOTE", "ID"],
         [None, "H"]
     )
 
 
-def test_note_short(lexer):
+def test_note_short():
     compare_tokens(
-        lexer,
         "@note I'm",
         ["NOTE", "ID"],
         [None, "I'm"]
     )
 
 
-def test_division_note(lexer):
+def test_division_note():
     compare_tokens(
-        lexer,
         "@note ^1^ A note to the translation.\n",
         ["NOTE", "HAT", "ID", "HAT", "ID", "NEWLINE"],
         [None, None, "1", None, "A note to the translation.", None]
     )
 
 
-def test_hash_note(lexer):
+def test_hash_note():
     compare_tokens(
-        lexer,
         "@tablet\n" +
         "@obverse\n" +
         "3.    U₄!-BI? 20* [(ina)] 9.30 ina(DIŠ) MAŠ₂!(BAR)\n" +
@@ -672,11 +614,10 @@ def test_hash_note(lexer):
     )
 
 
-def test_hash_note_UPPERCASE(lexer):
+def test_hash_note_UPPERCASE():
     # Some files in the corpus such as ctn_4_168.atf
     # Contains #NOTE: even if the line should be #note:
     compare_tokens(
-        lexer,
         "@tablet\n" +
         "@obverse\n" +
         "3.    U₄!-BI? 20* [(ina)] 9.30 ina(DIŠ) MAŠ₂!(BAR)\n" +
@@ -686,11 +627,10 @@ def test_hash_note_UPPERCASE(lexer):
     )
 
 
-def test_hash_note_multiline(lexer):
+def test_hash_note_multiline():
     # Notes can be free text until a double-newline.
     line = "a-šar _saḫar.ḫi.a_ bu-bu-su-nu"
     compare_tokens(
-        lexer,
         "1. " + line + "\n" +
         "#note: Does this combine with the next line?\n"
         "It should.\n\n",
@@ -701,10 +641,9 @@ def test_hash_note_multiline(lexer):
     )
 
 
-def test_open_text_with_dots(lexer):
+def test_open_text_with_dots():
     # This must not come out as a linelabel of Hello.
     compare_tokens(
-        lexer,
         "@translation labeled en project\n" +
         "@label o 1\nHello. World\n\n",
         ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE",
@@ -713,48 +652,42 @@ def test_open_text_with_dots(lexer):
     )
 
 
-def test_flagged_object(lexer):
+def test_flagged_object():
     compare_tokens(
-        lexer,
         "@object which is remarkable and broken!#\n",
         ["OBJECT", "ID", "EXCLAIM", "HASH", "NEWLINE"])
 
 
-def test_comment(lexer):
+def test_comment():
     compare_tokens(
-        lexer,
         "# I've added various things for test purposes\n",
         ['COMMENT', "ID", "NEWLINE"]
     )
 
 
-def test_nospace_comment(lexer):
+def test_nospace_comment():
     compare_tokens(
-        lexer,
         "#I've added various things for test purposes\n",
         ['COMMENT', "ID", "NEWLINE"]
     )
 
 
-def test_check_comment(lexer):
+def test_check_comment():
     compare_tokens(
-        lexer,
         "#CHECK: I've added various things for test purposes\n",
         ['CHECK', "ID", "NEWLINE"]
     )
 
 
-def test_dotline(lexer):
+def test_dotline():
     compare_tokens(
-        lexer,
         ". \n",
         ['NEWLINE']
     )
 
 
-def test_translation_heading(lexer):
+def test_translation_heading():
     compare_tokens(
-        lexer,
         "@translation parallel en project\n" +
         "@h1 A translation heading\n",
         ["TRANSLATION", "PARALLEL", "ID", "PROJECT", "NEWLINE"] +
@@ -762,9 +695,8 @@ def test_translation_heading(lexer):
     )
 
 
-def test_heading(lexer):
+def test_heading():
     compare_tokens(
-        lexer,
         "@obverse\n" +
         "@h1 A heading\n",
         ["OBVERSE", "NEWLINE"] +
@@ -772,45 +704,40 @@ def test_heading(lexer):
     )
 
 
-def test_double_comment(lexer):
+def test_double_comment():
     """Not sure if this is correct; but can't find
     anything in structure or lemmatization doc"""
     compare_tokens(
-        lexer,
         "## papān libbi[belly] (already in gloss, same spelling)\n",
         ['COMMENT', 'ID', 'NEWLINE']
     )
 
 
-def test_ruling(lexer):
+def test_ruling():
     compare_tokens(
-        lexer,
         "$ single ruling",
         ["DOLLAR", "SINGLE", "RULING"]
     )
 
 
-def test_described_object(lexer):
+def test_described_object():
     compare_tokens(
-        lexer,
         "@object An object that fits no other category\n",
         ["OBJECT", "ID", "NEWLINE"],
         [None, "An object that fits no other category"]
     )
 
 
-def test_nested_object(lexer):
+def test_nested_object():
     compare_tokens(
-        lexer,
         "@tablet\n" +
         "@obverse\n",
         ["TABLET", "NEWLINE", "OBVERSE", "NEWLINE"]
     )
 
 
-def test_object_line(lexer):
+def test_object_line():
     compare_tokens(
-        lexer,
         "@tablet\n" +
         "@obverse\n" +
         "1.    [MU] 1.03-KAM {iti}AB GE₆ U₄ 2-KAM\n"
@@ -823,17 +750,15 @@ def test_object_line(lexer):
     )
 
 
-def test_dot_in_linelabel(lexer):
+def test_dot_in_linelabel():
     compare_tokens(
-        lexer,
         "1.1.    [MU]\n",
         ['LINELABEL', 'ID', 'NEWLINE']
     )
 
 
-def test_score_lines(lexer):
+def test_score_lines():
     compare_tokens(
-        lexer,
         "@score matrix parsed\n" +
         "1.4′. %n ḫašḫūr [api] lal[laga imḫur-līm?]\n" +
         "#lem: ḫašḫūr[apple (tree)]N; api[reed-bed]N\n\n" +
@@ -853,9 +778,8 @@ def test_score_lines(lexer):
     )
 
 
-def test_composite(lexer):
+def test_composite():
     compare_tokens(
-        lexer,
         "&Q002769 = SB Anzu 1\n" +
         "@composite\n" +
         "#project: cams/gkab\n" +
@@ -873,9 +797,8 @@ def test_composite(lexer):
     )
 
 
-def test_translated_composite(lexer):
+def test_translated_composite():
     compare_tokens(
-        lexer,
         "&Q002769 = SB Anzu 1\n" +
         "@composite\n" +
         "#project: cams/gkab\n" +
@@ -897,9 +820,8 @@ def test_translated_composite(lexer):
     )
 
 
-def test_equalbrace(lexer):
+def test_equalbrace():
     compare_tokens(
-        lexer,
         "@tablet\n" +
         "@reverse\n" +
         "2'.    ITI# an-ni-u2#\n" +
@@ -911,9 +833,8 @@ def test_equalbrace(lexer):
     )
 
 
-def test_multilingual_interlinear(lexer):
+def test_multilingual_interlinear():
     compare_tokens(
-        lexer,
         "@tablet\n" +
         "@obverse\n" +
         "1. dim₃#-me-er# [...]\n" +
@@ -933,9 +854,8 @@ def test_multilingual_interlinear(lexer):
     )
 
 
-def test_strict_in_parallel(lexer):
+def test_strict_in_parallel():
     compare_tokens(
-        lexer,
         "@translation parallel en project\n" +
         "$ reverse blank",
         ["TRANSLATION", "PARALLEL", "ID", "PROJECT", "NEWLINE"] +
@@ -943,11 +863,10 @@ def test_strict_in_parallel(lexer):
     )
 
 
-def test_query_in_parallel(lexer):
+def test_query_in_parallel():
     """"The parallel ID regex was to general and identified ? after
         @obverse as an ID token not a QUERY"""
     compare_tokens(
-        lexer,
         "@translation parallel en project\n" +
         "@obverse?",
         ["TRANSLATION", "PARALLEL", "ID", "PROJECT", "NEWLINE"] +
@@ -955,9 +874,8 @@ def test_query_in_parallel(lexer):
     )
 
 
-def test_loose_in_labeled(lexer):
+def test_loose_in_labeled():
     compare_tokens(
-        lexer,
         "@translation labeled en project\n" +
         "$ (Break)\n" +
         "@(r 2) I am\n\n",
@@ -967,9 +885,8 @@ def test_loose_in_labeled(lexer):
     )
 
 
-def test_ati_in_translation(lexer):
+def test_ati_in_translation():
     compare_tokens(
-        lexer,
         "@translation labeled en project\n" +
         "@(r 2) I am\n" +
         "@i{eššēšu-}festival\n",
@@ -978,11 +895,10 @@ def test_ati_in_translation(lexer):
     )
 
 
-def test_blank_after_para_transctrl_windows(lexer):
+def test_blank_after_para_transctrl_windows():
     """[...] should not exit the para state but did previously
        due to a not as stric regex """
     compare_tokens(
-        lexer,
         "@translation labeled en project\r\n" +
         "@(o i 1')\r\n" +
         "[...]\r\n\r\n" +
@@ -997,11 +913,10 @@ def test_blank_after_para_transctrl_windows(lexer):
     )
 
 
-def test_blank_after_para_transctrl(lexer):
+def test_blank_after_para_transctrl():
     """[...] should not exit the para state but did previously
        due to a not as stric regex """
     compare_tokens(
-        lexer,
         "@translation labeled en project\n" +
         "@(o i 1)\n" +
         "[(If) in] Tašritu (month VII), on day 1, " +
@@ -1016,9 +931,8 @@ def test_blank_after_para_transctrl(lexer):
     )
 
 
-def test_strict_in_labelled_parallel(lexer):
+def test_strict_in_labelled_parallel():
     compare_tokens(
-        lexer,
         "@translation labeled en project\n" +
         "$ reverse blank",
         ["TRANSLATION", "LABELED", "ID", "PROJECT", "NEWLINE"] +
@@ -1026,9 +940,8 @@ def test_strict_in_labelled_parallel(lexer):
     )
 
 
-def test_strict_as_loose_in_translation(lexer):
+def test_strict_as_loose_in_translation():
     compare_tokens(
-        lexer,
         "@translation parallel en project\n" +
         "$ Continued in text no. 2\n",
         ["TRANSLATION", "PARALLEL", "ID", "PROJECT", "NEWLINE"] +
@@ -1036,9 +949,8 @@ def test_strict_as_loose_in_translation(lexer):
     )
 
 
-def test_punctuated_translation(lexer):
+def test_punctuated_translation():
     compare_tokens(
-        lexer,
         "@translation parallel en project\n" +
         "1. 'What is going on?', said the King!\n",
         ["TRANSLATION", "PARALLEL", "ID", "PROJECT", "NEWLINE"] +
@@ -1048,9 +960,8 @@ def test_punctuated_translation(lexer):
     )
 
 
-def test_translation_note(lexer):
+def test_translation_note():
     compare_tokens(
-        lexer,
         "@translation parallel en project\n" +
         "@reverse\n" +
         "#note: reverse uninscribed\n",
@@ -1060,9 +971,8 @@ def test_translation_note(lexer):
     )
 
 
-def test_equals_in_translation_note(lexer):
+def test_equals_in_translation_note():
     compare_tokens(
-        lexer,
         "@translation parallel en project\n" +
         "@reverse\n" +
         '#note: The CAD translation šarriru = "humble",\n',
@@ -1072,9 +982,8 @@ def test_equals_in_translation_note(lexer):
         )
 
 
-def test_note_ended_by_strucuture(lexer):
+def test_note_ended_by_strucuture():
     compare_tokens(
-        lexer,
         "@translation parallel en project\n" +
         "@obverse\n" +
         '#note: The CAD translation šarriru = "humble",\n' +
@@ -1094,7 +1003,7 @@ def test_note_ended_by_strucuture(lexer):
     u"5\u02CA",
     u"6\xb4"
 ])
-def test_note_ended_by_line(lexer, line_label):
+def test_note_ended_by_line(line_label):
     'Notes can be free text until the next line label.'
     # Sample text.
     line1 = u"a-šar _saḫar.ḫi.a_ bu-bu-su-nu"
@@ -1107,7 +1016,6 @@ def test_note_ended_by_line(lexer, line_label):
     else:
         label2 = str(next_label) + label1[1:]
     compare_tokens(
-        lexer,
         label1 + ". " + line1 + "\n" +
         "#note: Does this combine with the next line?\n" +
         label2 + ". " + line2 + "\n",
@@ -1120,9 +1028,8 @@ def test_note_ended_by_line(lexer, line_label):
     )
 
 
-def test_milestone(lexer):
+def test_milestone():
     compare_tokens(
-        lexer,
         "@tablet\n" +
         "@obverse\n" +
         "@m=locator catchline\n" +
@@ -1134,9 +1041,8 @@ def test_milestone(lexer):
     )
 
 
-def test_include(lexer):
+def test_include():
     compare_tokens(
-        lexer,
         "@tablet\n" +
         "@obverse\n" +
         "@include dcclt:P229061 = MSL 07, 197 V02, 210 V11\n",
@@ -1146,9 +1052,8 @@ def test_include(lexer):
     )
 
 
-def test_double_newline_and_lexpos(lexer):
+def test_double_newline_and_lexpos():
     compare_tokens(
-        lexer,
         "@obverse\n" +
         "\n" +
         "#note:\n",
@@ -1158,9 +1063,8 @@ def test_double_newline_and_lexpos(lexer):
         [1, 8, 11, 16])
 
 
-def test_blankline_with_tab_inadsorb(lexer):
+def test_blankline_with_tab_inadsorb():
     compare_tokens(
-        lexer,
         "# ES mu-lu = lu₂, ša₃-ab = šag\n" +
         "	\n" +
         "7. keš₂-da",
@@ -1168,19 +1072,19 @@ def test_blankline_with_tab_inadsorb(lexer):
         ["#", "ES mu-lu = lu₂, ša₃-ab = šag", "\n\t\n", '7', "keš₂-da"])
 
 
-def test_invalid_at_raises_syntax_error(lexer):
+def test_invalid_at_raises_syntax_error():
     string = u"@obversel\n"
-    ensure_raises_and_not(lexer, string, nwarnings=1)
+    ensure_raises_and_not(string, nwarnings=1)
 
 
-def test_invalid_hash_raises_syntax_error(lexer):
+def test_invalid_hash_raises_syntax_error():
     string = u"#lems: Ṣalbatanu[Mars]CN\n"
-    ensure_raises_and_not(lexer, string, nwarnings=2)
+    ensure_raises_and_not(string, nwarnings=2)
 
 
-def test_invalid_id_syntax_error(lexer):
+def test_invalid_id_syntax_error():
     string = u"Ṣalbatanu[Mars]CN\n"
-    ensure_raises_and_not(lexer, string, nwarnings=1)
+    ensure_raises_and_not(string, nwarnings=1)
 
 
 def test_resolve_keyword_no_extra():
