@@ -54,22 +54,6 @@ def parse_then_serialize(any_str):
     return serialize(parse(any_str))
 
 
-def open_file(filename):
-    """
-    Open serialized file and output contents
-    """
-    return codecs.open(filename, "r", "utf-8").read()
-
-
-def save_file(content, filename):
-    """
-    Write serialized file on disk
-    """
-    serialized_file = codecs.open(filename, "w", "utf-8")
-    serialized_file.write(content)
-    serialized_file.close()
-
-
 def test_belsunu_serializer():
     """
     Parse belsunu.atf, then serialize, parse again, serialize again,
@@ -80,7 +64,6 @@ def test_belsunu_serializer():
     then compare the two serializations.
     """
     serialized_1 = parse_then_serialize(belsunu())
-    save_file(serialized_1, output_filepath("belsunu.atf"))
     serialized_2 = parse_then_serialize(serialized_1)
     assert serialized_1 == serialized_2
 
