@@ -19,16 +19,11 @@ along with PyORACC. If not, see <http://www.gnu.org/licenses/>.
 '''
 
 
-import codecs
-from unittest import TestCase, skip
 import pytest
 
 from pyoracc.atf.common.atffile import AtfFile
-from pyoracc.test.fixtures import belsunu, output_filepath
-
-from pyoracc.atf.common.atflex import AtfLexer
-from pyoracc.atf.common.atfyacc import AtfParser
 from pyoracc.model.line import Line
+from pyoracc.test.fixtures import belsunu
 
 
 def parse(any_str):
