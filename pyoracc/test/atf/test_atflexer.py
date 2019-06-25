@@ -1086,8 +1086,16 @@ def test_note_ended_by_strucuture(lexer):
     )
 
 
-def compare_note_ended_by_line(lexer, line_label):
-    'Helper for Note para state termination.'
+@pytest.mark.parametrize('line_label', [
+    "1",
+    "2'",
+    u"3\u2019",
+    u"4\u2032",
+    u"5\u02CA",
+    u"6\xb4"
+])
+def test_note_ended_by_line(lexer, line_label):
+    'Notes can be free text until the next line label.'
     # Sample text.
     line1 = u"a-šar _saḫar.ḫi.a_ bu-bu-su-nu"
     line2 = u"a-kal-ši-na ṭi-id-di"
@@ -1110,17 +1118,6 @@ def compare_note_ended_by_line(lexer, line_label):
         [None, None, "Does this combine with the next line?", None] +
         [label2] + line2.split() + [None]
     )
-
-
-def test_note_ended_by_line(lexer):
-    'Notes can be free text until the next line label.'
-    for label in ["1",
-                  "2'",
-                  u"3\u2019",
-                  u"4\u2032",
-                  u"5\u02CA",
-                  u"6\xb4"]:
-        compare_note_ended_by_line(lexer, label)
 
 
 def test_milestone(lexer):
