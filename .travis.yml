@@ -38,13 +38,6 @@ before_install:
           jython -c "print ''";
           jython -c "import sys; print sys.version"
         fi
-        if [[ $TRAVIS_OS_NAME == 'osx' ]]; then
-          brew update
-          brew upgrade
-          brew upgrade python
-          brew install python3
-          python3 --version
-        fi
 
 install:
     - |
@@ -55,7 +48,8 @@ install:
         fi
         $PIP install wheel
         $PIP install setuptools
-        $PIP install ply pep8 mako
+        $PIP install ply mako
+        $PIP install pycodestyle
         if [ "$MYPYTHON" != "jython" ]; then
           $PIP install --upgrade pytest pytest-cov codecov
         fi
@@ -67,12 +61,12 @@ script:
       $MYPYTHON -c "from pyoracc import _generate_parsetab; _generate_parsetab()"
       echo "Running tests"
       if [ "$MYPYTHON" == "jython" ]; then
-        py.test
+        pytest
       else
         pytest --cov=pyoracc
       fi
 
-  - pep8 --exclude=parsetab.py .
+  - pycodestyle --exclude=parsetab.py
   
 after_success:
   - |

@@ -574,6 +574,19 @@ class TestLexer(TestCase):
              "LINELABEL"] + ["ID"] * 6 + ["NEWLINE", "NOTE", "ID", "NEWLINE"]
         )
 
+    def test_hash_note_multiline(self):
+        # Notes can be free text until a double-newline.
+        line = "a-šar _saḫar.ḫi.a_ bu-bu-su-nu"
+        self.compare_tokens(
+            "1. " + line + "\n" +
+            "#note: Does this combine with the next line?\n"
+            "It should.\n\n",
+            ["LINELABEL"] + ["ID"] * len(line.split()) + ["NEWLINE"] +
+            ["NOTE", "ID", "NEWLINE"],
+            ['1'] + line.split() +
+            [None, None, "Does this combine with the next line?\nIt should."]
+        )
+
     def test_open_text_with_dots(self):
         # This must not come out as a linelabel of Hello.
         self.compare_tokens(
@@ -895,6 +908,40 @@ class TestLexer(TestCase):
             ["NOTE", "ID", "NEWLINE"] +
             ["REVERSE"]
         )
+
+    def compare_note_ended_by_line(self, line_label):
+        'Helper for Note para state termination.'
+        # Sample text.
+        line1 = u"a-šar _saḫar.ḫi.a_ bu-bu-su-nu"
+        line2 = u"a-kal-ši-na ṭi-id-di"
+        # Generate the successive line numbers in the same style.
+        label1 = line_label
+        next_label = int(label1[:1]) + 1
+        if _pyversion() == 2:
+            label2 = unicode(next_label) + label1[1:]
+        else:
+            label2 = str(next_label) + label1[1:]
+        self.compare_tokens(
+            label1 + ". " + line1 + "\n" +
+            "#note: Does this combine with the next line?\n" +
+            label2 + ". " + line2 + "\n",
+            ["LINELABEL"] + ["ID"] * len(line1.split()) + ["NEWLINE"] +
+            ["NOTE", "ID", "NEWLINE"] +
+            ["LINELABEL"] + ["ID"] * len(line2.split()) + ["NEWLINE"],
+            [label1] + line1.split() +
+            [None, None, "Does this combine with the next line?", None] +
+            [label2] + line2.split() + [None]
+        )
+
+    def test_note_ended_by_line(self):
+        'Notes can be free text until the next line label.'
+        for label in ["1",
+                      "2'",
+                      u"3\u2019",
+                      u"4\u2032",
+                      u"5\u02CA",
+                      u"6\xb4"]:
+            self.compare_note_ended_by_line(label)
 
     def test_milestone(self):
         self.compare_tokens(
