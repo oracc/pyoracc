@@ -113,23 +113,21 @@ def test_text_code_and_description():
     """
     Check if serializing works for the code/description case - first line
     of ATF texts.
-    Note the parser always returns an AtfFile object, even when it's not
-    ATF-compliant.
     """
-    atf = parse("&X001001 = JCS 48, 089\n")
+    text = "&X001001 = JCS 48, 089\n"
+    atf = parse(text)
     serialized = serialize(atf)
-    assert serialized.strip()+"\n" == "&X001001 = JCS 48, 089\n"
+    assert serialized.strip()+"\n" == text
 
 
 @pytest.mark.xfail
 def test_text_project():
     """
     Check if serializing works for the project lines.
-    Note the parser always returns an AtfFile object, even when it's not
-    ATF-compliant.
     """
-    serialized = parse_then_serialize("#project: cams/gkab\n")
-    assert serialized.strip()+"\n" == "#project: cams/gkab\n"
+    text = "#project: cams/gkab\n"
+    serialized = parse_then_serialize(text)
+    assert serialized.strip()+"\n" == text
 
 
 @pytest.mark.skip("test_text_language is not implemented yet")
