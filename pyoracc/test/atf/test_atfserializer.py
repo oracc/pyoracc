@@ -26,29 +26,6 @@ from pyoracc.model.line import Line
 from pyoracc.test.fixtures import belsunu
 
 
-def parse(any_str):
-    """
-    Parse input string, could be just a line or a whole file content.
-    """
-    parsed = AtfFile(any_str)
-    return parsed
-
-
-def serialize(any_object):
-    """
-    Serialize input object, from a simple lemma to a whole AtfFile object.
-    """
-    serialized = any_object.serialize()
-    return serialized
-
-
-def parse_then_serialize(any_str):
-    """
-    Shorthand for testing serialization.
-    """
-    return serialize(parse(any_str))
-
-
 def test_belsunu_serializer():
     """
     Parse belsunu.atf, then serialize, parse again, serialize again,
@@ -58,8 +35,8 @@ def test_belsunu_serializer():
     The solution is to parse again the serialized file, serialize again,
     then compare the two serializations.
     """
-    serialized_1 = parse_then_serialize(belsunu())
-    serialized_2 = parse_then_serialize(serialized_1)
+    serialized_1 = AtfFile(belsunu()).serialize()
+    serialized_2 = AtfFile(serialized_1).serialize()
     assert serialized_1 == serialized_2
 
 
@@ -110,8 +87,8 @@ def test_text_code_and_description():
     of ATF texts.
     """
     text = "&X001001 = JCS 48, 089\n"
-    atf = parse(text)
-    serialized = serialize(atf)
+    atf = AtfFile(text)
+    serialized = atf.serialize()
     assert serialized.strip()+"\n" == text
 
 
@@ -121,7 +98,7 @@ def test_text_project():
     Check if serializing works for the project lines.
     """
     text = "#project: cams/gkab\n"
-    serialized = parse_then_serialize(text)
+    serialized = AtfFile(text).serialize()
     assert serialized.strip()+"\n" == text
 
 
