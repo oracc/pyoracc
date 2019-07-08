@@ -19,7 +19,6 @@ along with PyORACC. If not, see <http://www.gnu.org/licenses/>.
 '''
 
 
-from unittest import TestCase
 import pytest
 
 from pyoracc.atf.common.atflex import AtfLexer
@@ -39,8 +38,10 @@ from ...model.text import Text
 from ...model.translation import Translation
 
 
-class TestParser(TestCase):
+class TestParser:
     """A class that contains all tests of the ATFParser"""
+
+    @pytest.fixture(autouse=True)
     def setUp(self):
         self.lexer = AtfLexer().lexer
 
