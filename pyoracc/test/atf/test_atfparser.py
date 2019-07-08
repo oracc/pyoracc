@@ -33,6 +33,7 @@ from ...model.multilingual import Multilingual
 from ...model.oraccnamedobject import OraccNamedObject
 from ...model.oraccobject import OraccObject
 from ...model.ruling import Ruling
+from ...model.score import Score
 from ...model.state import State
 from ...model.text import Text
 from ...model.translation import Translation
@@ -148,6 +149,7 @@ def test_score():
         "#project: cmawro\n"
     )
     assert isinstance(obj, Text)
+    assert isinstance(obj.score, Score)
 
 
 def test_simple_object():
@@ -264,6 +266,7 @@ def test_score_simple():
         "A₁_obv_i_4′: line one again\n"
     )
     assert isinstance(art, Text)
+    assert isinstance(art.score, Score)
     assert isinstance(art.children[0], OraccObject)
     assert isinstance(art.children[0].children[0], OraccObject)
     assert art.children[0].children[0].objecttype == "obverse"
