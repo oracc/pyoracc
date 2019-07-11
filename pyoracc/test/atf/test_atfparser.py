@@ -149,17 +149,28 @@ def test_text_protocol_language():
     assert text.language == "akk-x-stdbab"
 
 
-def test_score():
+@pytest.mark.parametrize('mode', [
+    'matrix parsed word',
+    'matrix parsed',
+    'matrix unparsed',
+    'synoptic parsed',
+    'synoptic unparsed',
+])
+def test_score(mode):
     obj = try_parse(
         "&Q004184 = MB Boghazkoy Anti-witchcraft Text 1 [CMAwRo 1.1]\n" +
-        "@score matrix parsed word\n" +
+        "@score " + mode + "\n" +
         "#project: cmawro\n"
     )
     assert isinstance(obj, Text)
     assert isinstance(obj.score, Score)
-    assert obj.score.ttype == 'matrix'
-    assert obj.score.mode == 'parsed'
-    assert obj.score.word
+    keys = mode.split()
+    expected_type = 'matrix' if 'matrix' in keys else 'synoptic'
+    expected_mode = 'parsed' if 'parsed' in keys else 'unparsed'
+    expected_word = 'word' in keys
+    assert obj.score.ttype == expected_type
+    assert obj.score.mode == expected_mode
+    assert obj.score.word == expected_word
 
 
 def test_simple_object():
