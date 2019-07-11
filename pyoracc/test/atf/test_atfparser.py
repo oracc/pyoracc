@@ -74,67 +74,67 @@ def test_text_language():
     assert text.language == "akk-x-stdbab"
 
 
+@pytest.mark.skip('Parser has no support for the key protocol.')
 def test_key_protocol():
     text = try_parse(
         "&X001001 = JCS 48, 089\n" +
         "#key: cdli=ND 02688\n"
     )
     assert isinstance(text, Text)
-    # TODO: Parser has no support for the key protocol.
 
 
+@pytest.mark.skip('Parser has no support for the key protocol.')
 def test_double_equals_in_key_protocol():
     text = try_parse(
         "&X001001 = JCS 48, 089\n" +
         "#key: musno=Ki 1904-10-9,049 = BM 099020\n"
     )
     assert isinstance(text, Text)
-    # TODO: Parser has no support for the key protocol.
 
 
+@pytest.mark.skip('Parser has no support for the key protocol.')
 def test_many_equals_in_key_protocol():
     text = try_parse(
         "&X001001 = JCS 48, 089\n" +
         "#key: musno=VAT 10433 (= Ass 04691 = NARGD 30)\n"
     )
     assert isinstance(text, Text)
-    # TODO: Parser has no support for the key protocol.
 
 
+@pytest.mark.skip('Parser has no support for the key protocol.')
 def test_empty_key_in_key_protocol():
     text = try_parse(
         "&X001001 = JCS 48, 089\n" +
         "#key: date=\n"
     )
     assert isinstance(text, Text)
-    # TODO: Parser has no support for the key protocol.
 
 
+@pytest.mark.skip('Parser has no support for the mylines protocol.')
 def test_mylines_protocol():
     text = try_parse(
         "&X001001 = JCS 48, 089\n" +
         "#atf: use mylines\n"
     )
     assert isinstance(text, Text)
-    # TODO: Parser has no support for the mylines protocol.
 
 
+@pytest.mark.skip('Parser has no support for the lexical protocol.')
 def test_lexical_protocol():
     text = try_parse(
         "&X001001 = JCS 48, 089\n" +
         "#atf: use lexical\n"
     )
     assert isinstance(text, Text)
-    # TODO: Parser has no support for the lexical protocol.
 
 
+@pytest.mark.skip('Parser has no support for the lemmatizer protocol.')
 def test_lemmatizer_protocol():
     text = try_parse(
         "&X001001 = JCS 48, 089\n" +
         "#lemmatizer: sparse do sv sn eq tx\n"
     )
     assert isinstance(text, Text)
-    # TODO: Parser has no support for the lemmatizer protocol.
 
 
 def test_text_protocol_language():
@@ -378,7 +378,10 @@ def test_line():
     assert len(art.children[0].children[0].words) == 6
 
 
+@pytest.mark.skip("Parser has no support for the '={' annotation.")
 def test_line_equalsbrace():
+    # This seems to be used to mark interlinear glosses
+    # in the original text.
     art = try_parse(
         "@tablet\n" +
         "@reverse\n" +
@@ -387,9 +390,6 @@ def test_line_equalsbrace():
     )
     assert isinstance(art, OraccObject)
     assert len(art.children[0].children[0].words) == 2
-    # TODO: Parser has no support for the '={' annotation.
-    # This seems to be used to mark interlinear glosses
-    # in the original text.
 
 
 def test_line_lemmas():
