@@ -157,6 +157,9 @@ def test_score():
     )
     assert isinstance(obj, Text)
     assert isinstance(obj.score, Score)
+    assert obj.score.ttype == 'matrix'
+    assert obj.score.mode == 'parsed'
+    assert obj.score.word
 
 
 def test_simple_object():
